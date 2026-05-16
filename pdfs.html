@@ -58,6 +58,11 @@
       <a href="contact.html" class="nav-link">Contact</a>
     </nav>
     <div class="nav-controls">
+      <div class="lang-switcher" role="group" aria-label="Language">
+        <button class="lang-btn" type="button" data-lang-btn="en" aria-pressed="true">EN</button>
+        <button class="lang-btn" type="button" data-lang-btn="ti" aria-pressed="false" lang="ti">ትግርኛ</button>
+        <button class="lang-btn" type="button" data-lang-btn="am" aria-pressed="false" lang="am">አማርኛ</button>
+      </div>
       <button class="icon-btn" onclick="toggleTheme()" aria-label="Toggle theme">
         <svg class="svg-icon" aria-hidden="true"><use id="theme-use" href="#i-moon"/></svg>
       </button>
@@ -78,6 +83,11 @@
     <a href="downloads.html" class="mobile-link" onclick="toggleMobileMenu()">Downloads</a>
     <a href="blog.html" class="mobile-link" onclick="toggleMobileMenu()">Blog</a>
     <a href="contact.html" class="mobile-link" onclick="toggleMobileMenu()">Contact</a>
+    <div class="lang-switcher" role="group" aria-label="Language">
+      <button class="lang-btn" type="button" data-lang-btn="en">EN</button>
+      <button class="lang-btn" type="button" data-lang-btn="ti" lang="ti">ትግርኛ</button>
+      <button class="lang-btn" type="button" data-lang-btn="am" lang="am">አማርኛ</button>
+    </div>
     <a href="https://t.me/ayetechub" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:10px">Join Telegram</a>
   </div>
 </header>
@@ -258,5 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+<div id="i18n-draft-notice" hidden role="status" aria-live="polite"></div>
+<script src="js/i18n.js" defer></script>
 </body>
 </html>

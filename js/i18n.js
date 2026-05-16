@@ -1,17 +1,22 @@
 /* ============================================================
-   AYE Tech Hub — i18n Engine
+   AYE Tech Hub — i18n Engine  v2
    ------------------------------------------------------------
    Lightweight, dependency-free internationalization.
+
+   Translation files live in /js/i18n/<code>.js as ES modules.
+   Each exports a default object with nested key groups.
 
    How it works:
    1. On page load, reads the saved language from localStorage,
       or detects the browser language, or falls back to English.
-   2. Fetches the matching JSON file from /lang/<code>.json.
-   3. Walks the DOM and swaps the content of any element with a
+   2. Dynamically imports the matching /js/i18n/<code>.js module.
+      Uses an absolute root-relative path so subdirectory pages
+      (e.g. /courses/plc.html) resolve the same file as root pages.
+   3. Walks the DOM and swaps content of any element with a
       data-i18n="some.dotted.key" attribute.
-   4. For attributes (placeholder, aria-label, title, href, etc.)
+   4. For attributes (placeholder, aria-label, title, etc.)
       use data-i18n-attr="placeholder:some.key,title:other.key".
-   5. For raw HTML (where the value contains tags), append "_html"
+   5. For raw HTML (where value contains tags), append "_html"
       to the JSON key OR use data-i18n-html="some.key".
    6. If a translation is missing or empty, falls back to English
       automatically. No broken pages.
@@ -19,27 +24,47 @@
    Public API:
    - window.i18n.setLang('en' | 'ti' | 'am')
    - window.i18n.getLang()
-   - window.i18n.t('dotted.key')          // get a single string
-   - window.i18n.refresh()                // re-apply translations
+   - window.i18n.t('dotted.key')      // get a single string
+   - window.i18n.refresh()            // re-apply translations
+   - window.i18n.SUPPORTED            // ['en','ti','am']
    ============================================================ */
 
 (function () {
   'use strict';
 
-  const SUPPORTED = ['en', 'ti', 'am'];
+  const SUPPORTED   = ['en', 'ti', 'am'];
   const DEFAULT_LANG = 'en';
-  const STORAGE_KEY = 'ayetechub_lang';
-  const BASE_PATH = 'lang/'; // relative to index.html
+  const STORAGE_KEY  = 'ayetechub_lang';
 
-  // Cache loaded language files so we don't refetch
+  /* Resolve the base URL for /js/i18n/ regardless of page depth.
+     We find the <script> tag that loaded this file and compute
+     the sibling i18n/ directory from its absolute src URL.      */
+  function resolveBase() {
+    try {
+      const scripts = document.querySelectorAll('script[src]');
+      for (const s of scripts) {
+        const src = s.getAttribute('src') || '';
+        if (src.includes('i18n') && src.endsWith('.js')) {
+          const abs = new URL(src, document.baseURI).href;
+          // abs ends in "js/i18n.js" — replace tail with "js/i18n/"
+          return abs.replace(/i18n\.js$/, 'i18n/');
+        }
+      }
+    } catch (e) { /* ignore */ }
+    // Fallback: absolute from domain root
+    return window.location.origin + '/js/i18n/';
+  }
+
+  const BASE_URL = resolveBase(); // e.g. https://ayetechub.com/js/i18n/
+
+  // Cache loaded modules
   const cache = {};
   let currentLang = DEFAULT_LANG;
   let currentDict = {};
-  let englishDict = {}; // always loaded as fallback
+  let englishDict  = {};
 
   // ----- utilities -------------------------------------------------
 
-  /** Look up a dotted key like "nav.about" in a nested object. */
   function lookup(dict, key) {
     if (!dict || !key) return undefined;
     const parts = key.split('.');
@@ -51,7 +76,6 @@
     return node;
   }
 
-  /** Get a translation with English fallback. Returns '' if truly missing. */
   function t(key) {
     let val = lookup(currentDict, key);
     if (val === undefined || val === null || val === '') {
@@ -60,16 +84,17 @@
     return val == null ? '' : String(val);
   }
 
-  /** Detect the user's preferred language. */
+  // ----- language detection ----------------------------------------
+
   function detectLang() {
     // 1. URL override: ?lang=ti
     try {
-      const url = new URL(window.location.href);
-      const fromUrl = url.searchParams.get('lang');
-      if (fromUrl && SUPPORTED.includes(fromUrl)) return fromUrl;
+      const url   = new URL(window.location.href);
+      const param = url.searchParams.get('lang');
+      if (param && SUPPORTED.includes(param)) return param;
     } catch (e) { /* ignore */ }
 
-    // 2. Saved choice
+    // 2. Saved preference
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved && SUPPORTED.includes(saved)) return saved;
@@ -83,30 +108,68 @@
     return DEFAULT_LANG;
   }
 
-  /** Fetch a language file (with cache). */
+  // ----- module loading --------------------------------------------
+
   async function loadDict(code) {
     if (cache[code]) return cache[code];
+
+    // Try ES dynamic import first (works on GitHub Pages with HTTPS)
     try {
-      const res = await fetch(BASE_PATH + code + '.json', { cache: 'no-cache' });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      const dict = await res.json();
-      cache[code] = dict;
-      return dict;
+      const url = BASE_URL + code + '.js';
+      const mod = await import(url);
+      const dict = mod.default || mod;
+      if (dict && typeof dict === 'object') {
+        cache[code] = dict;
+        return dict;
+      }
     } catch (err) {
-      console.warn('[i18n] Could not load ' + code + '.json:', err.message);
-      return null;
+      // Fall back to fetch + eval for environments that block import()
+      try {
+        const url = BASE_URL + code + '.js';
+        const res = await fetch(url, { cache: 'no-cache' });
+        if (res.ok) {
+          const text = await res.text();
+          // Extract the exported object from "export default { ... };"
+          const match = text.match(/export\s+default\s+([\s\S]+?);?\s*$/);
+          if (match) {
+            /* eslint-disable no-new-func */
+            const dict = new Function('return (' + match[1] + ')')();
+            /* eslint-enable no-new-func */
+            if (dict && typeof dict === 'object') {
+              cache[code] = dict;
+              return dict;
+            }
+          }
+        }
+      } catch (fetchErr) {
+        console.warn('[i18n] Could not load ' + code + '.js:', fetchErr.message);
+      }
     }
+
+    // Also try legacy lang/<code>.json as a last resort
+    try {
+      const origin  = window.location.origin;
+      const jsonUrl = origin + '/lang/' + code + '.json';
+      const res     = await fetch(jsonUrl, { cache: 'no-cache' });
+      if (res.ok) {
+        const dict = await res.json();
+        cache[code] = dict;
+        return dict;
+      }
+    } catch (e) { /* ignore */ }
+
+    console.warn('[i18n] All loading strategies failed for:', code);
+    return null;
   }
 
   // ----- DOM application -------------------------------------------
 
-  /** Apply translations to all marked elements in the document. */
   function applyToDom() {
-    // data-i18n="key"  -> textContent or innerHTML if key ends in _html
+    // data-i18n="key"
     document.querySelectorAll('[data-i18n]').forEach((el) => {
       const key = el.getAttribute('data-i18n');
       const val = t(key);
-      if (val === '') return; // keep existing content if nothing to use
+      if (val === '') return;
       if (key.endsWith('_html')) {
         el.innerHTML = val;
       } else {
@@ -132,21 +195,22 @@
       });
     });
 
-    // Update <html lang="...">
+    // Update <html lang="..."> and dir="..."
     document.documentElement.setAttribute('lang', currentLang);
     const dir = lookup(currentDict, '_meta.dir') || 'ltr';
     document.documentElement.setAttribute('dir', dir);
 
-    // Update active state on switcher
+    // Sync active state on all lang switcher buttons
     document.querySelectorAll('[data-lang-btn]').forEach((btn) => {
       const code = btn.getAttribute('data-lang-btn');
-      btn.classList.toggle('is-active', code === currentLang);
-      btn.setAttribute('aria-pressed', code === currentLang ? 'true' : 'false');
+      const active = code === currentLang;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
 
-    // Show draft notice if the current language is still a template
-    const notice = document.getElementById('i18n-draft-notice');
-    const status = lookup(currentDict, '_meta.status') || '';
+    // Draft / incomplete translation notice
+    const notice   = document.getElementById('i18n-draft-notice');
+    const status   = lookup(currentDict, '_meta.status') || '';
     const noticeText = lookup(currentDict, 'lang_switcher.draft_notice') || '';
     if (notice) {
       if (currentLang !== 'en' && /TEMPLATE|DRAFT|NOT YET/i.test(status) && noticeText) {
@@ -165,10 +229,11 @@
       console.warn('[i18n] Unsupported language:', code);
       return;
     }
+
     currentLang = code;
     try { localStorage.setItem(STORAGE_KEY, code); } catch (e) { /* ignore */ }
 
-    // Make sure English is always loaded (as fallback)
+    // Always keep English loaded as fallback
     if (!englishDict || !englishDict._meta) {
       englishDict = (await loadDict('en')) || {};
     }
@@ -176,18 +241,16 @@
     if (code === 'en') {
       currentDict = englishDict;
     } else {
-      const dict = await loadDict(code);
+      const dict  = await loadDict(code);
       currentDict = dict || englishDict;
     }
 
     applyToDom();
-    // Notify any listeners (e.g., the typing animation)
     document.dispatchEvent(new CustomEvent('i18n:changed', { detail: { lang: code } }));
   }
 
-  function getLang() { return currentLang; }
-
-  function refresh() { applyToDom(); }
+  function getLang()  { return currentLang; }
+  function refresh()  { applyToDom(); }
 
   window.i18n = { setLang, getLang, t, refresh, SUPPORTED };
 
@@ -197,7 +260,7 @@
     const initial = detectLang();
     await setLang(initial);
 
-    // Wire up switcher buttons
+    // Wire up all lang-switcher buttons (desktop + mobile)
     document.querySelectorAll('[data-lang-btn]').forEach((btn) => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();

@@ -47,6 +47,33 @@ function icon(name, cls = '', size = '1em') {
   return `<svg style="width:${size};height:${size};fill:currentColor;display:inline-block;vertical-align:-0.125em;flex-shrink:0" class="${cls}" aria-hidden="true" viewBox="0 0 24 24">${path}</svg>`;
 }
 
+/* ---- i18n helper for dynamic card content ----
+   Accepts a plain string OR a {en, ti, am} object.
+   Falls back through: current lang → English → raw value. */
+function getLocalizedText(field) {
+  if (!field) return '';
+  if (typeof field === 'string') return field;
+  if (typeof field === 'object') {
+    const lang = (window.i18n && window.i18n.getLang()) || 'en';
+    return field[lang] || field.en || Object.values(field)[0] || '';
+  }
+  return String(field);
+}
+window.getLocalizedText = getLocalizedText;
+
+/* Re-render all registered grids when the language changes */
+const _gridRegistry = [];
+function registerGrid(id, items, renderFn, emptyMsg) {
+  _gridRegistry.push({ id, items, renderFn, emptyMsg });
+}
+document.addEventListener('i18n:changed', () => {
+  _gridRegistry.forEach(({ id, items, renderFn, emptyMsg }) => {
+    renderGrid(id, items, renderFn, emptyMsg);
+  });
+  // Also refresh filter labels if the page exposes a re-filter function
+  if (typeof window.__refilter === 'function') window.__refilter();
+});
+
 /* ---- Category labels ---- */
 const CAT_LABELS = {
   all: 'All', plc: 'PLC & Automation', electrical: 'Electrical',
@@ -69,10 +96,14 @@ function renderCourseCard(c, root = '.') {
   const levelColor = LEVEL_COLORS[c.level] || '#00d4ff';
   const badgeClass = c.badge === 'FREE' ? 'badge-free' : 'badge-premium';
   const tags = (c.tags || []).slice(0, 3).map(t => `<span class="course-tag">${t}</span>`).join('');
-  const stars = '★'.repeat(Math.round(c.rating));
+  const title = getLocalizedText(c.title);
+  const desc  = getLocalizedText(c.description);
+  const lang  = (window.i18n && window.i18n.getLang()) || 'en';
+  const openLabel = (window.i18n && window.i18n.t('courses.enroll_btn')) || 'Open Course';
+  const lessonWord = (window.i18n && window.i18n.t('common.lessons')) || 'lessons';
 
   return `
-<article class="course-card-v2 reveal" data-category="${c.category}" data-title="${c.title}">
+<article class="course-card-v2 reveal" data-category="${c.category}" data-title="${title}">
   <div class="course-thumb-v2" style="background:${c.bgGradient};color:${c.color}">
     ${icon(c.icon, 'c-icon')}
     <span class="c-label">${(c.category || '').toUpperCase()}</span>
@@ -81,19 +112,19 @@ function renderCourseCard(c, root = '.') {
   </div>
   <div class="course-body-v2">
     <div class="course-rating">${icon('star', '', '0.85em')} ${c.rating} <span style="color:var(--text-muted);font-weight:400">(${c.students})</span></div>
-    <h3>${c.title}</h3>
-    <p>${c.description}</p>
+    <h3>${title}</h3>
+    <p>${desc}</p>
     <div class="course-meta-row">
       <div class="course-meta-item">${icon('clock')} ${c.duration}</div>
-      <div class="course-meta-item">${icon('graduation')} ${c.lessons} lessons</div>
+      <div class="course-meta-item">${icon('graduation')} ${c.lessons} ${lessonWord}</div>
       <div class="course-meta-item">${icon('users')} ${c.students}</div>
     </div>
     <div class="course-tags">${tags}</div>
     <div class="course-actions">
       <a href="${root}${c.url}" class="btn btn-primary">
-        ${icon('graduation')} Open Course
+        ${icon('graduation')} ${openLabel}
       </a>
-      <button class="btn btn-outline" onclick="notify('Download', '${c.title} — course materials coming soon.')" aria-label="Download">
+      <button class="btn btn-outline" onclick="notify('Download', '${title} — course materials coming soon.')" aria-label="Download">
         ${icon('download')}
       </button>
     </div>
@@ -108,34 +139,39 @@ function renderPdfCard(p) {
   const badgeClass = p.badge === 'FREE' ? 'badge-free' : 'badge-premium';
   const fileAvailable = p.file && p.file !== '#coming-soon';
   const iconColor = p.color || '#00d4ff';
+  const title = getLocalizedText(p.title);
+  const desc  = getLocalizedText(p.description);
+  const dlLabel    = (window.i18n && window.i18n.t('common.download'))     || 'Download';
+  const soonLabel  = (window.i18n && window.i18n.t('common.coming_soon'))  || 'Coming Soon';
+  const pagesWord  = (window.i18n && window.i18n.t('common.pages'))        || 'pages';
 
   return `
-<article class="pdf-card-v2 reveal" data-category="${p.category}" data-title="${p.title}">
+<article class="pdf-card-v2 reveal" data-category="${p.category}" data-title="${title}">
   <div class="pdf-card-header">
     <div class="pdf-icon-circle" style="background:linear-gradient(135deg,${iconColor}33,${iconColor}55);box-shadow:0 4px 12px ${iconColor}33">
       ${icon('pdf', '', '22px')}
     </div>
     <div class="pdf-card-info">
       <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:4px">
-        <h4>${p.title}</h4>
+        <h4>${title}</h4>
         <span class="c-badge ${badgeClass}" style="white-space:nowrap;font-size:0.65rem;padding:2px 8px;border-radius:10px">${p.badge}</span>
       </div>
-      <p>${p.description}</p>
+      <p>${desc}</p>
     </div>
   </div>
   <div class="pdf-card-meta">
-    <span class="pdf-meta-chip">${icon('file')} ${p.pages} pages</span>
+    <span class="pdf-meta-chip">${icon('file')} ${p.pages} ${pagesWord}</span>
     <span class="pdf-meta-chip">${icon('hdd')} ${p.size}</span>
     <span class="pdf-meta-chip">${icon('download')} ${p.downloads}</span>
   </div>
   <div class="pdf-card-actions">
     ${fileAvailable
-      ? `<a href="${p.file}" class="btn btn-primary" download>${icon('download')} Download</a>`
-      : `<button class="btn btn-primary" onclick="notify('Coming Soon','${p.title} will be available soon.')" style="background:rgba(0,212,255,0.15);border:1px solid var(--border-strong)">${icon('download')} Coming Soon</button>`
+      ? `<a href="${p.file}" class="btn btn-primary" download>${icon('download')} ${dlLabel}</a>`
+      : `<button class="btn btn-primary" onclick="notify('${soonLabel}','${title}')" style="background:rgba(0,212,255,0.15);border:1px solid var(--border-strong)">${icon('download')} ${soonLabel}</button>`
     }
     ${p.preview
       ? `<button class="btn btn-outline" onclick="openPdfModal('${p.id}')" aria-label="Preview">${icon('eye')} Preview</button>`
-      : `<button class="btn btn-outline" onclick="notify('Info','${p.title}')">Info</button>`
+      : `<button class="btn btn-outline" onclick="notify('Info','${title}')">Info</button>`
     }
   </div>
 </article>`.trim();
@@ -146,16 +182,18 @@ function renderPdfCard(p) {
 ============================================================== */
 function renderTutorialCard(t, root = '') {
   const levelColor = LEVEL_COLORS[t.level] || '#00d4ff';
+  const title = getLocalizedText(t.title);
+  const desc  = getLocalizedText(t.description);
   return `
-<article class="tutorial-card reveal" onclick="window.open('${t.url}','_blank')" data-category="${t.category}" data-title="${t.title}">
+<article class="tutorial-card reveal" onclick="window.open('${t.url}','_blank')" data-category="${t.category}" data-title="${title}">
   <div class="tutorial-thumb">
-    <img src="${root}${t.thumbnail}" alt="${t.title}" loading="lazy" onerror="this.style.display='none'" />
+    <img src="${root}${t.thumbnail}" alt="${title}" loading="lazy" onerror="this.style.display='none'" />
     <div class="tutorial-play">${icon('play', '', '22px')}</div>
     <span class="tutorial-duration">${t.duration}</span>
   </div>
   <div class="tutorial-body">
-    <h3>${t.title}</h3>
-    <p>${t.description}</p>
+    <h3>${title}</h3>
+    <p>${desc}</p>
     <div class="tutorial-footer">
       <span class="t-views">${icon('eye', '', '12px')} ${t.views} views</span>
       <span style="color:${levelColor};font-size:0.72rem;font-weight:600">${t.level}</span>
@@ -224,11 +262,15 @@ function renderDownloadCard(d) {
    BLOG CARD RENDERER
 ============================================================== */
 function renderBlogCard(b, root = '') {
-  const date = new Date(b.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+  const locale = (window.i18n && window.i18n.getLang() === 'en') ? 'en-US' : 'en-US';
+  const date = new Date(b.date).toLocaleDateString(locale, { year: 'numeric', month: 'short', day: 'numeric' });
+  const title  = getLocalizedText(b.title);
+  const excerpt = getLocalizedText(b.excerpt);
+  const readMoreLabel = (window.i18n && window.i18n.t('blog.read_btn')) || 'Read More';
   return `
 <article class="blog-card-v2 reveal" data-category="${b.category}">
   <div class="blog-img-v2">
-    <img src="${root}${b.image}" alt="${b.title}" loading="lazy" onerror="this.style.display='none'" />
+    <img src="${root}${b.image}" alt="${title}" loading="lazy" onerror="this.style.display='none'" />
     <span class="blog-category-chip">${CAT_LABELS[b.category] || b.category}</span>
   </div>
   <div class="blog-body-v2">
@@ -236,9 +278,9 @@ function renderBlogCard(b, root = '') {
       <span>${icon('calendar', '', '12px')} ${date}</span>
       <span>${icon('clock', '', '12px')} ${b.readTime}</span>
     </div>
-    <h3>${b.title}</h3>
-    <p>${b.excerpt}</p>
-    <a href="${b.url}" class="read-more-link">Read More ${icon('arrowRight', '', '14px')}</a>
+    <h3>${title}</h3>
+    <p>${excerpt}</p>
+    <a href="${b.url}" class="read-more-link">${readMoreLabel} ${icon('arrowRight', '', '14px')}</a>
   </div>
 </article>`.trim();
 }
@@ -249,8 +291,14 @@ function renderBlogCard(b, root = '') {
 function filterAndSearch(items, { category = 'all', query = '' }) {
   return items.filter(item => {
     const matchCat = category === 'all' || item.category === category;
-    const searchable = (item.title + ' ' + (item.description || '') + ' ' + (item.tags || []).join(' ')).toLowerCase();
-    const matchQ = !query || searchable.includes(query.toLowerCase());
+    // Build searchable string from all language variants of title + description
+    const allText = [
+      getLocalizedText(item.title),
+      getLocalizedText(item.description || item.excerpt || ''),
+      typeof item.title === 'object' ? Object.values(item.title).join(' ') : '',
+      (item.tags || []).join(' ')
+    ].join(' ').toLowerCase();
+    const matchQ = !query || allText.includes(query.toLowerCase());
     return matchCat && matchQ;
   });
 }

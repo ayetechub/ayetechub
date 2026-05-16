@@ -39,6 +39,11 @@
       <a href="../contact.html" class="nav-link">Contact</a>
     </nav>
     <div class="nav-controls">
+      <div class="lang-switcher" role="group" aria-label="Language">
+        <button class="lang-btn" type="button" data-lang-btn="en" aria-pressed="true">EN</button>
+        <button class="lang-btn" type="button" data-lang-btn="ti" aria-pressed="false" lang="ti">ትግርኛ</button>
+        <button class="lang-btn" type="button" data-lang-btn="am" aria-pressed="false" lang="am">አማርኛ</button>
+      </div>
       <button class="icon-btn" onclick="toggleTheme()" aria-label="Toggle theme"><svg class="svg-icon"><use id="theme-use" href="#i-moon"/></svg></button>
       <a href="https://t.me/ayetechub" target="_blank" rel="noopener" class="btn btn-primary btn-sm hide-mobile"><svg class="svg-icon"><use href="#i-telegram"/></svg> Telegram</a>
       <button class="icon-btn hamburger" onclick="toggleMobileMenu()"><svg class="svg-icon"><use href="#i-menu"/></svg></button>
@@ -49,6 +54,11 @@
     <a href="../courses.html" class="mobile-link" onclick="toggleMobileMenu()" style="color:var(--neon)">Courses</a>
     <a href="../tutorials.html" class="mobile-link" onclick="toggleMobileMenu()">Tutorials</a>
     <a href="../contact.html" class="mobile-link" onclick="toggleMobileMenu()">Contact</a>
+    <div class="lang-switcher" role="group" aria-label="Language">
+      <button class="lang-btn" type="button" data-lang-btn="en">EN</button>
+      <button class="lang-btn" type="button" data-lang-btn="ti" lang="ti">ትግርኛ</button>
+      <button class="lang-btn" type="button" data-lang-btn="am" lang="am">አማርኛ</button>
+    </div>
   </div>
 </header>
 
@@ -102,5 +112,7 @@
 <div id="pdf-modal-page" class="modal-overlay" style="display:none"></div>
 <script src="../assets/js/data.js"></script>
 <script src="../assets/js/platform.js"></script>
+<div id="i18n-draft-notice" hidden role="status" aria-live="polite"></div>
+<script src="../js/i18n.js" defer></script>
 </body>
 </html>

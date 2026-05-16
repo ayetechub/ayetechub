@@ -54,6 +54,11 @@
       <a href="../contact.html" class="nav-link">Contact</a>
     </nav>
     <div class="nav-controls">
+      <div class="lang-switcher" role="group" aria-label="Language">
+        <button class="lang-btn" type="button" data-lang-btn="en" aria-pressed="true">EN</button>
+        <button class="lang-btn" type="button" data-lang-btn="ti" aria-pressed="false" lang="ti">ትግርኛ</button>
+        <button class="lang-btn" type="button" data-lang-btn="am" aria-pressed="false" lang="am">አማርኛ</button>
+      </div>
       <button class="icon-btn" onclick="toggleTheme()" aria-label="Toggle theme">
         <svg class="svg-icon" aria-hidden="true"><use id="theme-use" href="#i-moon"/></svg>
       </button>
@@ -74,6 +79,11 @@
     <a href="../downloads.html" class="mobile-link" onclick="toggleMobileMenu()">Downloads</a>
     <a href="../blog.html" class="mobile-link" onclick="toggleMobileMenu()">Blog</a>
     <a href="../contact.html" class="mobile-link" onclick="toggleMobileMenu()">Contact</a>
+    <div class="lang-switcher" role="group" aria-label="Language">
+      <button class="lang-btn" type="button" data-lang-btn="en">EN</button>
+      <button class="lang-btn" type="button" data-lang-btn="ti" lang="ti">ትግርኛ</button>
+      <button class="lang-btn" type="button" data-lang-btn="am" lang="am">አማርኛ</button>
+    </div>
   </div>
 </header>
 
@@ -225,5 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
   notify('Welcome!', 'PLC Programming Fundamentals – 24 lessons');
 });
 </script>
+<div id="i18n-draft-notice" hidden role="status" aria-live="polite"></div>
+<script src="../js/i18n.js" defer></script>
 </body>
 </html>

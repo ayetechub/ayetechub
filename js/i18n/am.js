@@ -1,0 +1,283 @@
+/* AYE Tech Hub — Amharic (am) translations
+   ትርጉም አማርኛ — AYE Tech Hub
+   Reviewed by: Amharic-speaking reviewer */
+export default {
+  _meta: { language: 'Amharic', code: 'am', dir: 'ltr', status: 'complete', fallback: 'en' },
+
+  nav: {
+    about: 'ስለ እኛ',
+    divisions: 'ክፍሎች',
+    services: 'አገልግሎቶች 🇪🇹',
+    services_mobile: '🇪🇹 አገልግሎቶች በትግራይ',
+    founder: 'መስራች',
+    founder_mobile: 'ከመስራቹ ጋር ተዋወቁ',
+    courses: 'ኮርሶች',
+    pdfs: 'ፒዲኤፎች',
+    pdfs_mobile: 'PDF ማውረድ',
+    youtube: 'ዩቱብ',
+    blog: 'ብሎግ',
+    contact: 'ያናጋሩን',
+    enroll: 'ይመዝገቡ',
+    brand_tag: 'የወደፊቱን በምህንድስና መገንባት'
+  },
+
+  hero: {
+    tag: 'የምህንድስና አገልግሎቶች & ትምህርት · 🇪🇹 → 🌍',
+    headline_1: 'የወደፊቱን ምህንድስና',
+    headline_2: 'ከ',
+    subtitle_html: 'AYE Tech Hub <strong style="color:#22c55e">በትግራይ ውስጥ ትክክለኛ የምህንድስና አገልግሎቶችን</strong> (HVAC, MEP, ሶላር, ግንባታ) እና <strong style="color:var(--neon)">ያደገ የምህንድስና ትምህርት መድረክ</strong> — የኮሪያ ደረጃዎችን ከኢትዮጵያዊ ሥሮች ጋር ጥምር። በምህንዶስ ለምህንዶስ የተሠራ።',
+    btn_services: '🇪🇹 የምህንድስና አገልግሎቶች',
+    btn_founder: 'ከመስራቹ ጋር ተዋወቁ',
+    btn_pdfs: 'ነፃ PDFዎች',
+    btn_telegram: 'ቴሌግራም ተቀላቀሉ',
+    stat_tigray_label: '🇪🇹 አገልግሎቶች ትግራይ',
+    stat_pdf_label: 'PDF ቤተ-ክምችቶች',
+    stat_courses_label: 'ቪዲዮ ኮርሶች',
+    stat_year_label: 'የምስረታ ዓመት'
+  },
+
+  about: {
+    tag: 'ስለ AYE Tech Hub',
+    title: 'ወደ ምህንድስና ልቀት የሚወስደው መንገድ',
+    p1_html: 'AYE Tech Hub <strong style="color:var(--text)">ዋና ዓለም አቀፍ የምህንድስና ትምህርት መድረክ</strong> — ጽንሰ-ሀሳቡ ካለው እውቀት እና ትክክለኛ ኢንዱስትሪ ተፈፃሚነት ሕዋሰ ለማሸሻፍ ያተኮረ ነው።',
+    p2: 'በ PLC ፕሮግራሚንግ፣ ኢንዱስትሪ አውቶሜሽን፣ ኤሌክትሪካልና ሜካኒካል ምህንድስና፣ CAD/Revit ዲዛይን፣ AI መሣሪያዎች እና ዲጂታል PDF ትምህርት ሥርዓቶች ቁልፍ ሀብቶችን እናቀርባለን — ምህንዶሶችን እና ተማሪዎቸን በኢትዮጵያ እና በዓለም ሁሉ ያሳለጥናል።',
+    badge_main: '2026',
+    badge_sub: 'የምስረታ ዓመት',
+    feature_automation_title: 'ኢንዱስትሪ አውቶሜሽን',
+    feature_automation_desc: 'PLC ሥርዓቶች & ቁጥጥሮች',
+    feature_electrical_title: 'ኤሌክትሪካል ምህንድስና',
+    feature_electrical_desc: 'ሰርኪቶች፣ ሥርዓቶች & ዲዛይን',
+    feature_cad_title: 'CAD & Revit ዲዛይን',
+    feature_cad_desc: '2D, 3D & BIM ሞዴሊንግ',
+    feature_ai_title: 'AI መሣሪያዎች & ሀብቶች',
+    feature_ai_desc: 'ወደፊት ዝግጁ ምህንድስና',
+    feature_pdf_title: 'PDF ትምህርት ሥርዓት',
+    feature_pdf_desc: 'ያደገ ቤተ-ክምችቶች — 2026',
+    feature_mech_title: 'ሜካኒካል ምህንድስና',
+    feature_mech_desc: 'ጥገናና ሥርዓቶች'
+  },
+
+  divisions: {
+    tag: 'ክፍሎቻችን',
+    title_1: 'ሁለት ኃያል ክፍሎች።',
+    title_2: 'አንድ ሙሉ መድረክ።',
+    subtitle: 'እያንዳንዱ ክፍል ሙያዊ ጥራት እና ጥልቀት ያለው ልዩ የምህንድስና እውቀት ለማቅረብ ተሠርቷል።',
+    engine_tagline: 'ተማሩ • ዲዛይን ሥሩ • ሂኑ • አዳዲስ ሃሳቦች ሥሩ',
+    engine_desc: 'AYE Tech Hub ኢንዱስትሪ ምህንድስናን ዋና — PLC ፕሮግራሚንግ፣ አውቶሜሽን ሥርዓቶች፣ CAD/Revit ዲዛይን፣ ኤሌክትሪካልና ሜካኒካል ምህንድስና፣ ሙያዊ ቴክኒካዊ ስልጠና ላይ ያተኮረ።',
+    engine_spec_1_title: 'በቅርቡ ይጀምራል',
+    engine_spec_1_sub: 'HD ቪዲዮ ዳሳት',
+    engine_spec_2_title: 'መሥርት አባላት',
+    engine_spec_2_sub: 'ቅድሚያ ወደ',
+    engine_cta: 'ዩቱብ ቻናልን ጎብኙ',
+    pro_tagline: 'ዲዛይን ሥሩ • ተማሩ • አዳዲስ ሃሳቦች ሥሩ',
+    pro_desc: 'ዲጂታዊ የእውቀት ማዕከል — PDF የምህንድስና ሀብቶች፣ AI ምርታማነት መሣሪያዎች፣ ቴክኒካዊ ኢ-መጻሕፍቶ፣ ቁሳቁሶች፣ ዘመናዊ ሙያዊ ፈጣሪዎች ሀብቶች ላይ ያተኮረ።',
+    pro_spec_1_title: 'ትክክለኛ PDFዎች',
+    pro_spec_1_sub: 'ያደገ ቤተ-ክምችቶች',
+    pro_spec_2_title: 'ዓለም አቀፍ ዕድል',
+    pro_spec_2_sub: 'ነፃ ማውረዶች',
+    pro_cta_download: 'ሀብቶቸን አውርዱ',
+    pro_cta_join: 'ይቀላቀሉ'
+  },
+
+  services: {
+    tag: 'የምህንድስና አገልግሎቶች',
+    title: 'ለትግራይ ኮሪያ-ጥራት ምህንድስና',
+    subtitle: 'ከዲዛይን ወደ ጭነት — ለቤቶች እና ንግዶች በትግራይ፣ ኢትዮጵያ ውስጥ የኮሪያ ደረጃዎችን ማምጣት።',
+    live_badge: 'አሁን በትግራይ ዝግጁ',
+    tagline_main: 'ቦታዎን',
+    tagline_highlight: 'ምቹ፣ ንፁህ & ቀልጣፋ',
+    hero_desc: 'በትግራይ ውስጥ ቤቶዎን ወይም ሥራ ቤትን እያቀዱ ወይም እየገነቡ ነው? ትክክለኛ ክህሎትና ልምድ ያለው ያካባቢ ቡድናችን ምርጥ ጥራትን ለማምጣት ይሠራል — ጥሩ ፍጻሜ፣ ኃይል ቀልጣፋ፣ ኮሪያ-ተሠልጥኖ የምህንድስና ደረጃዎች።',
+    languages_bar_html: '🌍 <strong>ቋንቋዎች፦</strong> ትግርኛ · አማርኛ · English',
+    card_hvac_title: 'HVAC ጭነት',
+    card_hvac_desc: 'ለቤቶች እና ሥራ ህንፃዎች ማሞቅ፣ አየር ማናፈሻ እና ማቀዝቀዣ ሥርዓቶች። ኃይል-ቀልጣፋ ምቾት መፍትሔዎች።',
+    card_mep_title: 'MEP ምህንድስና',
+    card_mep_desc: 'ለቤቶች እና ሥራ ፕሮጀክቶች ሙሉ ሜካኒካዊ፣ ኤሌክትሪካዊ፣ እና ቧምቧ ዲዛይን እና ጭነት።',
+    card_solar_title: 'ሶላር ጭነት',
+    card_solar_desc: 'ከፍርቃ-ዓሻ ኃይል ሥርዓቶችና ከፍርቃ-ዓሻ ኃይል ሥርዓቶች። ለትግራይ የአየር ሁኔታ ተስማሚ አስተማማኝ፣ ንፁህ ኃይል።',
+    card_construction_title: 'ግንባታ & ሳኒቴሪ',
+    card_construction_desc: 'ለቤቶች & ሥራ ህንፃ ግንባታ፣ ከሰለጠኑ ቴክኒሸኖች ሙሉ የሳኒቴሪ ሥርዓቶች ጭነትን ጨምሮ።',
+    card_interior_title: 'የውስጥ ዲዛይን & ፍጻሜ',
+    card_interior_desc: 'ጥሩ የውስጥ ዲዛይን፣ ዘመናዊ ጣሪያ ሥራ፣ ፍጻሜ፣ እና ቦታዎን ሊሻሽሉ የሚችሉ ሌሎች ዕቃዎች።',
+    card_arch_title: 'አርኪቴክቸሪካዊ & ህንፃ ዲዛይን',
+    card_arch_desc: 'ሙያዊ አርኪቴክቸሪካዊ ሥዕሎች፣ ህንፃ ዲዛይን፣ እና ለፕሮጀቱ ስኬት የምህንድስና ምክር።',
+    why_korean_title: 'ኮሪያ ደረጃዎች',
+    why_korean_desc: 'ከ7+ ዓመት ኮሪያ ኢንዱስትሪ ልምድ የተገኘ ኢንዱስትሪ-ደረጃ የምህንድስና ልምዶች።',
+    why_qualified_title: 'ሰልጣኝ ባለሙያዎች',
+    why_qualified_desc: 'በየፕሮጀቱ ምርጥ ጥራት ለማቅረብ ቃላቸውን የሰጡ ምስክር ቴክኒሸኖች እና ምህንዶሶች።',
+    why_energy_title: 'ኃይል-ቀልጣፋ',
+    why_energy_desc: 'ለዘለቄታዊ ቀልጣፋነት፣ ዘላቂነት፣ እና ወጪ ቅናሽ ዘምናዊ መፍትሔዎች።',
+    why_honest_title: 'ሐቀኛ ዋጋ',
+    why_honest_desc: 'ሁሉ ናቸው ዋጋዎች፣ ሐቀኛ ዋጋ፣ እና አስተማማኝ ጊዜ — ምንም ድብቅ ድንቅ የለም።',
+    contact_title: '📞 ያናጋሩን — በደቂቃዎች ውስጥ ምላሽ',
+    contact_subtitle: 'ለነፃ ምክሮች፣ ዋጋ ግምቶች፣ ወይም ቦታ ጉብኝት ለማድረግ WhatsApp ይምረሱ።',
+    wa_tigray_title: '🇪🇹 ቦቱ ቡድን ትግራይ',
+    wa_tigray_sub: 'ቦታ-ላይ አገልግሎት · ቦታ ጉብኝቶች · ዋጋ ግምቶች',
+    wa_korea_title: '🇰🇷 ኣወት — መስራች',
+    wa_korea_sub: 'ፕሮጀክት ቅንጅት · ቀጠሮዎች',
+    wa_tigray_msg: 'ሰላም AYE Tech Hub! በትግራይ ውስጥ ስለ ምህንድስና አገልግሎቶቻችሁ ዝርዝሮቹን ትካፈሉኝ?',
+    wa_korea_msg: 'ሰላም ኣወት! ከ AYE Tech Hub ጋር ፕሮጀክት ልነጋገር ፈልጊያለሁ።'
+  },
+
+  pdfs: {
+    tag: 'የሀብቶች ማዕከል',
+    title: 'PDF ማውረጃ ማዕከል',
+    subtitle: 'ትክክለኛ የምህንድስና ሀብቶች ከ ኣወት ጌ. ኤናወይ። ነፃ መምሪያዎች፣ ቴክኒካዊ ኢ-ጻሕፍቶ፣ ቁሳቁሶች — ያደጉ ቤተ-ክምችቶች፣ 2026።',
+    search_placeholder: 'PDFዎች፣ መምሪያዎች፣ ማኑዋሎች ፈልጉ...',
+    filter_all: 'ሁሉ',
+    filter_plc: 'PLC',
+    filter_electrical: 'ኤሌክትሪካዊ',
+    filter_mechanical: 'ሜካኒካዊ',
+    filter_ai: 'AI መሣሪያዎች'
+  },
+
+  courses: {
+    tag: 'የምህንድስና ኮርሶች',
+    title: 'ዛሬ ይማሩ',
+    subtitle: 'ለትክክለኛ ሥራ የተዘጋጁ ሙያዊ የምህንድስና ኮርሶች።',
+    filter_all: 'ሁሉም ኮርሶች',
+    filter_plc: 'PLC & አውቶሜሽን',
+    filter_electrical: 'ኤሌክትሪካዊ',
+    filter_mechanical: 'ሜካኒካዊ',
+    filter_design: 'CAD & ዲዛይን',
+    filter_ai: 'AI መሣሪያዎች',
+    enroll_btn: 'መማርን ይጀምሩ',
+    level_beginner: 'ጀማሪ',
+    level_intermediate: 'መካከለኛ',
+    level_advanced: 'ምሩጥ',
+    badge_free: 'ነፃ',
+    badge_premium: 'ፕሪሚዬም'
+  },
+
+  tutorials: {
+    tag: 'ቪዲዮ ዳሳት',
+    title: 'ተመልከቱ & ተማሩ',
+    subtitle: 'ነፃ የምህንድስና ዳሳት በዩቱብ — አዳዲስ ቪዲዮዎች ይጠብቁ።',
+    watch_btn: 'አሁን ይመልከቱ',
+    subscribe_btn: 'በዩቱብ ይሰሙ'
+  },
+
+  blog: {
+    tag: 'የምህንድስና ብሎግ',
+    title: 'ዝቅተኛ ጽሑፎች',
+    subtitle: 'የምህንድስና ጥቆማዎች፣ ቴክኒካዊ መምሪያዎች፣ ናይ ኢንዱስትሪ ዜና ከ AYE Tech Hub።',
+    read_btn: 'ጽሑፍ ያንብቡ',
+    min_read: 'ደቂቃ ንባብ'
+  },
+
+  downloads: {
+    tag: 'ነፃ ማውረዶች',
+    title: 'ማውረጃ ማዕከል',
+    subtitle: 'ለምህንዶሶች ነፃ መሣሪያዎች፣ ቅጾች፣ ሀብቶች።',
+    download_btn: 'ነፃ አውርዱ',
+    filter_all: 'ሁሉ'
+  },
+
+  ai_tools: {
+    tag: 'AI መሣሪያዎች',
+    title: 'AI ለምህንዶሶች',
+    subtitle: 'የምህንድስና ምርታማነትዎን ለማሳደግ የተዘጋጁ AI መሣሪያዎች።',
+    try_btn: 'ሞክሩ',
+    guide_btn: 'መምሪያ ይመልከቱ'
+  },
+
+  lang_switcher: {
+    label: 'ቋንቋ',
+    en: 'EN',
+    ti: 'ትግርኛ',
+    am: 'አማርኛ',
+    draft_notice: ''
+  },
+
+  common: {
+    skip_to_content: 'ወደ ይዘት ዝለሉ',
+    loading: 'እየጫነ...',
+    close: 'ዝጋ',
+    open_menu: 'ምናሌ ክፈት',
+    toggle_theme: 'ቀለም ቀይር',
+    search: 'ፈልጉ',
+    filter: 'ጣሱ',
+    all: 'ሁሉ',
+    free: 'ነፃ',
+    premium: 'ፕሪሚዬም',
+    coming_soon: 'በቅርቡ',
+    download: 'አውርዱ',
+    enroll: 'አሁን ይመዝገቡ',
+    watch: 'ይመልከቱ',
+    read_more: 'ተጨማሪ ያንብቡ',
+    lessons: 'ዳሳቶች',
+    hours: 'ሰዓቶች',
+    students: 'ተማሪዎች',
+    pages: 'ገጾች',
+    share: 'አካፍሉ'
+  },
+
+  founder: {
+    tag: 'ከመስራቹ ጋር ተዋወቁ',
+    title: 'ከ AYE Tech Hub ጀርባ ያለው ባለ ራዕይ',
+    subtitle: 'ከኢትዮጵያ ክፍሎች ወደ ኮሪያ ሮቦቲክስ ዕዮ-ቤቶ — ለአፍሪካ ዓለም አቀፍ የምህንድስና ትምህርት መድረክ ምሥረት።',
+    badge: 'መስራች & CEO',
+    role: 'ሜካኒካዊ ምህንዶስ · ሮቦቲክስ & PLC ስፔሻሊስት · አስተማሪ'
+  },
+
+  contact: {
+    tag: 'ያናጋሩን',
+    title: 'ያናጋሩን',
+    subtitle: 'ጥያቄዎች፣ ትብብር ሃሳቦች፣ ወይም ድጋፍ ይፈልጋሉ? ዝግጁ ነን።',
+    label_email: 'ኢሜይል',
+    label_wa_tigray: 'WhatsApp · 🇪🇹 ቡድን ትግራይ',
+    label_wa_korea: 'WhatsApp · 🇰🇷 መስራች (ኣወት)',
+    location_html: '🇪🇹 ትግራይ፣ ኢትዮጵያ · 🇰🇷 ጊምፖ፣ ደቡብ ኮሪያ',
+    location_note: 'አገልግሎቶቸ በቦታ ቦቱ ትግራይ ይቀርቡ',
+    form_title: 'መልዕክት ላክ',
+    form_first_name: 'የመጀመሪያ ስም',
+    form_first_name_ph: 'ዓበበ',
+    form_last_name: 'የአባት ስም',
+    form_last_name_ph: 'ቀቤደ',
+    form_email: 'ኢሜይል አድሬስ',
+    form_email_ph: 'your@email.com',
+    form_subject: 'ርዕሰ-ጉዳይ',
+    form_subject_ph: 'ስለ ኮርስ ጥያቄ፣ ትብብር፣ ድጋፍ...',
+    form_message: 'መልዕክት',
+    form_message_ph: 'እንዴት ልናግዝህ እንደምንችል ንገሩን...',
+    form_submit: 'መልዕክት ላክ'
+  },
+
+  faq: {
+    tag: 'ብዙ የሚጠየቁ ጥያቄዎች',
+    title: 'ብዙ የሚጠየቁ ጥያቄዎች',
+    q1: 'ኮርሶቹ እና PDFዎቹ ሙሉ ለሙሉ ነፃ ናቸው?',
+    a1: 'አብዛኛዎቹ ዩቱብ ዳሳቶች እና ብዙ PDF ሀብቶች ሙሉ ለሙሉ ነፃ ናቸው። ከፍተኛ ይዘትም አለ — ምሩጥ ኮርስ ቡለሞችን፣ ሙሉ ማኑዋሎችን፣ እና ምሩጥ PDF ጥቅሎችን ጨምሮ ባለ ቴሌግራም ቻናል እና ድረ-ገጻችን ይርከባሉ።',
+    q2: 'AYE TechEngine እና AYE TechPro መካከል ያለው ልዩነት ምንድን ነው?',
+    a2: 'AYE TechEngine በእጅ ልምምድ ምህንድስና ስልጠናዎ ላይ — PLC፣ አውቶሜሽን፣ CAD/Revit፣ ኤሌክትሪካልና ሜካኒካዊ ሥርዓቶች ዋናዎቹ ዩቱብ ዳሳቶች ናቸው። AYE TechPro ዲጂታዊ ሀብቶች ላይ — PDF ኢ-ጻሕፍቶ፣ AI መምሪያዎች፣ ቴክኒካዊ ቁሳቁሶች እና ምርታማነት ሀብቶችን ያቀርባሉ።',
+    q3: 'ምህንድስናን ለመጀመር ቅድሚ ልምዶ ያስፈልጋሉ?',
+    a3: 'ምንም ቅድሚ ልምዶ አያስፈልጉ! ሙሉ ጀማሪዎች ጀምሮ ከፍተኛ ሙያዊ ደረጃ ድረስ ያሉ ኮርሶቸ አሉ። "ጀማሪ" ሲሉ ኮርሶች ጀምሩ ወደ ፈለጉ ፍጥነት ቀጥሉ።',
+    q4: 'ምሩጥ ሀብቶቸን ለማግኘት ምን ማድረግ ይቻላል?',
+    a4: 'ምሩጥ PDFዎችን እና ሀብቶቸን ለማግኘት ወደ ቴሌግራም ቻናላችን ተቀላቀሉ። ቡለም ጥቅሎቸ ለማግኘት ቀጥታ ያናጋሩን። ነፃ ሀብቶቸ ሁሉ ምዝገባ ሳያስፈልግ ቀጥታ ከዚህ ድረ-ገጽ ሊርከቡ ይቻሉ።'
+  },
+
+  footer: {
+    tagline: 'ለዓለም አቀፍ ምህንዶሶች AYE TechEngine እና AYE TechPro ያቀፈ ፕሪሚዬም የምህንድስና ትምህርት መድረክ።',
+    col_quick_links: 'ቀላል ርዕሶቸ',
+    col_services: 'አገልግሎቶቸ',
+    col_newsletter: 'ዜናዊ ደብዳቤ',
+    link_about: 'ስለ AYE Tech Hub',
+    link_divisions: 'ክፍሎቻችን',
+    link_services: '🇪🇹 አገልግሎቶቸ በትግራይ',
+    link_youtube: 'ዩቱብ ዳሳቶቸ',
+    link_blog: 'የምህንድስና ብሎግ',
+    link_privacy: 'ፕራይቪሲ ፖሊሲ',
+    link_terms: 'ሁኔታዎቸ',
+    link_sitemap: 'የዳና-ካርታ',
+    service_plc: '⚡ PLC ፕሮግራሚንግ ስልጠና',
+    service_arch: '🏗️ አርኪቴክቸሪካዊ ዲዛይን',
+    service_elec: '💡 ኤሌክትሪካዊ ምህንድስና',
+    service_mech: '🔧 ሜካኒካዊ ሥርዓቶቸ',
+    service_ai: '🤖 AI መሣሪያዎቸ ስልጠና',
+    service_pdf: '📄 PDF ሀብቶቸ',
+    service_cad: '📐 CAD & BIM ዲዛይን',
+    newsletter_desc: 'ነፃ PDFዎቸ፣ ኮርስ ዝርዝሮቸ፣ እና የምህንድስና ምክሮቸ ወደ ኢሜይልዎ ይላኩ።',
+    newsletter_placeholder: 'ኢሜይል ያስገቡ',
+    newsletter_spam: 'ስፓም የለም። ሁልጊዜ ማቆም ይቻሉ።',
+    copyright: '© 2026 AYE Tech Hub. ሁሉም መብቶቸ ተጠብቀዋሉ። | AYE TechEngine & AYE TechPro'
+  }
+};

@@ -13,14 +13,22 @@
 const COURSES = [
   {
     id: 'plc-fundamentals',
-    title: 'PLC Programming Fundamentals',
+    title: {
+      en: 'PLC Programming Fundamentals',
+      ti: 'PLC ፕሮግራሚን መሰረታዊ',
+      am: 'PLC ፕሮግራሚንግ መሰረታዊ'
+    },
     category: 'plc',
     level: 'Beginner',
     duration: '12 hrs',
     lessons: 24,
     students: '1.2K',
     rating: 4.9,
-    description: 'Master Siemens S7, Ladder Logic, Function Block Diagram & industrial automation from scratch.',
+    description: {
+      en: 'Master Siemens S7, Ladder Logic, Function Block Diagram & industrial automation from scratch.',
+      ti: 'Siemens S7, Ladder Logic, Function Block Diagram & ናይ ኢንዱስትሪ ኦቶሜሽን ካብ ምጅማሩ ተምሃሩ።',
+      am: 'Siemens S7, Ladder Logic, Function Block Diagram & ኢንዱስትሪ አውቶሜሽን ከስር ጀምሮ ተማሩ።'
+    },
     instructor: 'Awet G. Nway',
     color: '#00d4ff',
     bgGradient: 'linear-gradient(135deg,#001a33,#003366)',
@@ -31,14 +39,22 @@ const COURSES = [
   },
   {
     id: 'electrical-engineering',
-    title: 'Electrical Engineering Fundamentals',
+    title: {
+      en: 'Electrical Engineering Fundamentals',
+      ti: 'ኤለክትሪካዊ ምህንድስና መሰረታዊ',
+      am: 'ኤሌክትሪካል ምህንድስና መሰረታዊ'
+    },
     category: 'electrical',
     level: 'Beginner',
     duration: '8 hrs',
     lessons: 18,
     students: '980',
     rating: 4.8,
-    description: 'Circuit analysis, power systems, wiring diagrams, and electrical safety for real-world applications.',
+    description: {
+      en: 'Circuit analysis, power systems, wiring diagrams, and electrical safety for real-world applications.',
+      ti: 'ናይ ሰርኪት ምትንታን፣ ናይ ሃይሊ ስርዓታት፣ ናይ ሽቦ ስዕሊ፣ ናይ ኤለክትሪካዊ ድሕነት ን ሓቀኛ ዓለም ትጽቢት።',
+      am: 'የሰርኪት ትንተና፣ የኃይል ሥርዓቶች፣ የሽቦ ሥዕሎች፣ እና ለትክክለኛ አፕሊኬሽን ኤሌክትሪካዊ ደህንነት።'
+    },
     instructor: 'Awet G. Nway',
     color: '#eab308',
     bgGradient: 'linear-gradient(135deg,#1a0a00,#3a1a00)',
@@ -49,14 +65,22 @@ const COURSES = [
   },
   {
     id: 'industrial-automation',
-    title: 'Industrial Automation & SCADA',
+    title: {
+      en: 'Industrial Automation & SCADA',
+      ti: 'ናይ ኢንዱስትሪ ኦቶሜሽን & SCADA',
+      am: 'ኢንዱስትሪ አውቶሜሽን & SCADA'
+    },
     category: 'plc',
     level: 'Intermediate',
     duration: '16 hrs',
     lessons: 32,
     students: '750',
     rating: 4.9,
-    description: 'HMI programming, SCADA systems, VFD drives, sensor integration, and industrial network protocols.',
+    description: {
+      en: 'HMI programming, SCADA systems, VFD drives, sensor integration, and industrial network protocols.',
+      ti: 'HMI ፕሮግራሚን፣ SCADA ስርዓታት፣ VFD ድራይቭ፣ ናይ ሴንሰር ምትእስሳር፣ ናይ ኢንዱስትሪ ናይ ኔትወርክ ፕሮቶኮላት።',
+      am: 'HMI ፕሮግራሚንግ፣ SCADA ሥርዓቶች፣ VFD ድራይቭ፣ የሴንሰር ውህደት፣ ናይ ኢንዱስትሪ ፕሮቶኮሎች።'
+    },
     instructor: 'Awet G. Nway',
     color: '#22c55e',
     bgGradient: 'linear-gradient(135deg,#001a1a,#003333)',
@@ -67,14 +91,22 @@ const COURSES = [
   },
   {
     id: 'mechanical-engineering',
-    title: 'Mechanical Engineering Essentials',
+    title: {
+      en: 'Mechanical Engineering Essentials',
+      ti: 'ሜካኒካዊ ምህንድስና መሰረታዊ',
+      am: 'ሜካኒካል ምህንድስና መሰረቶች'
+    },
     category: 'mechanical',
     level: 'Beginner',
     duration: '10 hrs',
     lessons: 20,
     students: '600',
     rating: 4.7,
-    description: 'Thermodynamics, fluid mechanics, machine design, and manufacturing processes explained clearly.',
+    description: {
+      en: 'Thermodynamics, fluid mechanics, machine design, and manufacturing processes explained clearly.',
+      ti: 'ቴርሞዳይናሚክስ፣ ናይ ፍሳሽ ሜካኒክስ፣ ናይ መሳርሒ ዲዛይን፣ ናይ ምፍራይ ስርዓታት ብሩህ ብሆነ ዝተገለጸ።',
+      am: 'ቴርሞዳይናሚክስ፣ ፈሳሽ ሜካኒክስ፣ ማሽን ዲዛይን፣ እና ምርት ሂደቶች በቀላሉ ተገልጸዋሉ።'
+    },
     instructor: 'Awet G. Nway',
     color: '#a78bfa',
     bgGradient: 'linear-gradient(135deg,#0d001a,#1a0033)',
@@ -85,14 +117,22 @@ const COURSES = [
   },
   {
     id: 'revit-cad',
-    title: 'Revit & AutoCAD for Engineers',
+    title: {
+      en: 'Revit & AutoCAD for Engineers',
+      ti: 'Revit & AutoCAD ንኢንጂነራት',
+      am: 'Revit & AutoCAD ለምህንዶሶች'
+    },
     category: 'design',
     level: 'Beginner',
     duration: '14 hrs',
     lessons: 28,
     students: '890',
     rating: 4.8,
-    description: 'BIM fundamentals, 3D modeling, MEP systems in Revit, and professional AutoCAD drafting skills.',
+    description: {
+      en: 'BIM fundamentals, 3D modeling, MEP systems in Revit, and professional AutoCAD drafting skills.',
+      ti: 'BIM መሰረታዊ፣ 3D ሞዴሊን፣ MEP ስርዓታት ኣብ Revit፣ ሙያዊ AutoCAD ናይ ምሳልሕ ክእለት።',
+      am: 'BIM መሰረቶች፣ 3D ሞዴሊንግ፣ MEP ሥርዓቶች በ Revit፣ ሙያዊ AutoCAD ዲዛይን ክህሎቶች።'
+    },
     instructor: 'Awet G. Nway',
     color: '#f97316',
     bgGradient: 'linear-gradient(135deg,#1a0800,#3a1500)',
@@ -103,14 +143,22 @@ const COURSES = [
   },
   {
     id: 'ai-for-engineers',
-    title: 'AI Tools for Engineers',
+    title: {
+      en: 'AI Tools for Engineers',
+      ti: 'AI ሓጋዚ ንኢንጂነራት',
+      am: 'AI መሣሪያዎች ለምህንዶሶች'
+    },
     category: 'ai',
     level: 'Beginner',
     duration: '6 hrs',
     lessons: 12,
     students: '1.5K',
     rating: 5.0,
-    description: 'ChatGPT, Gemini, Copilot, AI-assisted design and analysis tools for modern engineering workflows.',
+    description: {
+      en: 'ChatGPT, Gemini, Copilot, AI-assisted design and analysis tools for modern engineering workflows.',
+      ti: 'ChatGPT, Gemini, Copilot, ናይ AI ሓጋዚ ዲዛይን ን ምትንታን ሓጋዚ ን ዘምናዊ ናይ ምህንድስና ምህዞ።',
+      am: 'ChatGPT, Gemini, Copilot, AI-ተሸሽጦ ዲዛይን እና ትንተና መሣሪያዎች ለዘመናዊ ምህንድስና።'
+    },
     instructor: 'Awet G. Nway',
     color: '#ec4899',
     bgGradient: 'linear-gradient(135deg,#1a0010,#330020)',
@@ -121,14 +169,22 @@ const COURSES = [
   },
   {
     id: 'solar-hvac',
-    title: 'Solar & HVAC Systems Design',
+    title: {
+      en: 'Solar & HVAC Systems Design',
+      ti: 'ናይ ሶላር & HVAC ስርዓታት ዲዛይን',
+      am: 'ሶላር & HVAC ሥርዓቶች ዲዛይን'
+    },
     category: 'mechanical',
     level: 'Intermediate',
     duration: '18 hrs',
     lessons: 36,
     students: '420',
     rating: 4.9,
-    description: 'Solar PV system design, HVAC load calculations, ductwork design, and energy efficiency principles.',
+    description: {
+      en: 'Solar PV system design, HVAC load calculations, ductwork design, and energy efficiency principles.',
+      ti: 'ናይ ሶላር PV ስርዓት ዲዛይን፣ HVAC ናይ ጻዕሪ ስሌት፣ ናይ ቱቦ ዲዛይን፣ ናይ ሃይሊ ቀጥዒ ኣካይዳ።',
+      am: 'ሶላር PV ሥርዓት ዲዛይን፣ HVAC ጭነት ስሌቶች፣ ዳክት ዲዛይን፣ የኃይል ቀልጣፋ መርሆዎች።'
+    },
     instructor: 'Awet G. Nway',
     color: '#fbbf24',
     bgGradient: 'linear-gradient(135deg,#1a1000,#332000)',
@@ -139,14 +195,22 @@ const COURSES = [
   },
   {
     id: 'robotics-maintenance',
-    title: 'Robotics & Maintenance',
+    title: {
+      en: 'Robotics & Maintenance',
+      ti: 'ሮቦቲክስ & ዕቀባ',
+      am: 'ሮቦቲክስ & ጥገና'
+    },
     category: 'plc',
     level: 'Advanced',
     duration: '20 hrs',
     lessons: 40,
     students: '310',
     rating: 4.9,
-    description: 'Industrial robot programming, preventive maintenance, troubleshooting, and safety standards.',
+    description: {
+      en: 'Industrial robot programming, preventive maintenance, troubleshooting, and safety standards.',
+      ti: 'ናይ ኢንዱስትሪ ሮቦት ፕሮግራሚን፣ ናይ ቅድሚ ምዕቃብ ዕቀባ፣ ናይ ጸገም ፍታሕ፣ ናይ ድሕነት ደረጃ።',
+      am: 'ናይ ኢንዱስትሪ ሮቦት ፕሮግራሚንግ፣ ቅድሚያ ጥገና፣ ችግር መፍቻ፣ እና የደህንነት ደረጃዎች።'
+    },
     instructor: 'Awet G. Nway',
     color: '#06b6d4',
     bgGradient: 'linear-gradient(135deg,#001518,#002a30)',
@@ -166,39 +230,63 @@ const COURSES = [
 const PDFS = [
   {
     id: 'plc-guide',
-    title: 'PLC Programming Complete Guide',
+    title: {
+      en: 'PLC Programming Complete Guide',
+      ti: 'ምሉእ መምርሒ PLC ፕሮግራሚን',
+      am: 'PLC ፕሮግራሚንግ ሙሉ መምሪያ'
+    },
     category: 'plc',
     pages: 142,
     size: '8.4 MB',
     downloads: '3.2K',
     badge: 'FREE',
-    description: 'Comprehensive Siemens S7 PLC guide covering Ladder Logic, FBD, and industrial programming.',
+    description: {
+      en: 'Comprehensive Siemens S7 PLC guide covering Ladder Logic, FBD, and industrial programming.',
+      ti: 'ምሉእ Siemens S7 PLC መምርሒ ናይ Ladder Logic, FBD, ናይ ኢንዱስትሪ ፕሮግራሚን ዝሸፍን።',
+      am: 'ሙሉ Siemens S7 PLC መምሪያ Ladder Logic, FBD, እና ኢንዱስትሪ ፕሮግራሚንግ የሚሸፍን።'
+    },
     file: 'pdfs/plc-programming-guide.pdf',
     color: '#00d4ff',
     preview: true
   },
   {
     id: 'electrical-safety',
-    title: 'Electrical Safety Handbook',
+    title: {
+      en: 'Electrical Safety Handbook',
+      ti: 'ናይ ኤለክትሪካዊ ድሕነት ሓጋዚ',
+      am: 'የኤሌክትሪካዊ ደህንነት ማኑዋል'
+    },
     category: 'electrical',
     pages: 98,
     size: '5.2 MB',
     downloads: '2.8K',
     badge: 'FREE',
-    description: 'Complete electrical safety standards, LOTO procedures, and arc flash protection guide.',
+    description: {
+      en: 'Complete electrical safety standards, LOTO procedures, and arc flash protection guide.',
+      ti: 'ምሉእ ናይ ኤለክትሪካዊ ድሕነት ደረጃ፣ LOTO ኣሰራርሓ፣ ናይ Arc Flash ምክልኻል መምርሒ።',
+      am: 'ሙሉ ኤሌክትሪካዊ ደህንነት ደረጃዎች፣ LOTO ሂደቶች፣ እና Arc Flash ጥበቃ መምሪያ።'
+    },
     file: 'pdfs/electrical-safety-handbook.pdf',
     color: '#eab308',
     preview: true
   },
   {
     id: 'autocad-cheatsheet',
-    title: 'AutoCAD Commands Cheat Sheet',
+    title: {
+      en: 'AutoCAD Commands Cheat Sheet',
+      ti: 'AutoCAD ትእዛዛት ሓጺር ወረቐት',
+      am: 'AutoCAD ትዕዛዞች አጭር ዝርዝር'
+    },
     category: 'design',
     pages: 24,
     size: '1.8 MB',
     downloads: '5.1K',
     badge: 'FREE',
-    description: 'Essential AutoCAD shortcuts, commands and workflows for faster engineering drafting.',
+    description: {
+      en: 'Essential AutoCAD shortcuts, commands and workflows for faster engineering drafting.',
+      ti: 'መሰረታዊ AutoCAD ሓጺር ትእዛዛት፣ ትእዛዛትን ስርዓትን ን ቀልጣፋ ናይ ምህንድስና ምሳልሕ።',
+      am: 'ዋና AutoCAD አቋራጮች፣ ትዕዛዞች እና ለፈጣን ምህንድስና ዲዛይን ሥርዓቶች።'
+    },
     file: 'pdfs/autocad-cheatsheet.pdf',
     color: '#f97316',
     preview: true
