@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Revit & AutoCAD for Engineers - AYE Tech Hub</title>
+<meta name="description" content="Learn Revit & AutoCAD for Engineers with AYE Tech Hub. Free engineering course." />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23020817'/%3E%3Crect x='3' y='3' width='94' height='94' rx='20' fill='none' stroke='%2300d4ff' stroke-width='3'/%3E%3Ctext x='50' y='62' font-family='Arial Black,sans-serif' font-size='30' font-weight='900' fill='%2300d4ff' text-anchor='middle'%3EAYE%3C/text%3E%3C/svg%3E" />
+<link rel="alternate icon" type="image/png" href="../assets/images/favicon.png" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="stylesheet" href="../assets/css/pages.css" />
+</head>
+<body>
+<div id="loading-screen"><div class="loading-logo">AYE</div><div class="loading-bar-wrap"><div class="loading-bar"></div></div><div class="loading-text">LOADING COURSE</div></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.39 5.39 0 0 1-4.4 2.26 5.5 5.5 0 0 1-3.14-10A9.32 9.32 0 0 0 12 3z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><path fill="currentColor" d="M6.76 4.84 4.96 3.05 3.55 4.46l1.79 1.79zM4 10.5H1v2h3zm9-9.95h-2V3.5h2zm7.45 3.91-1.41-1.41-1.79 1.79 1.41 1.41zM17.24 18.16l1.79 1.8 1.41-1.41-1.8-1.79zM20 10.5v2h3v-2zM12 5.5a6 6 0 0 0-6 6c0 3.31 2.69 6 6 6s6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2zM4.96 19.95l1.41 1.41 1.79-1.8-1.41-1.41z"/></symbol>
+  <symbol id="i-telegram" viewBox="0 0 24 24"><path fill="currentColor" d="M22 3 2 11l6 2 2 7 4-5 6 5 2-17zm-5 5L10 14l-1 4-1-3 9-7z"/></symbol>
+  <symbol id="i-youtube" viewBox="0 0 24 24"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></symbol>
+  <symbol id="i-graduation" viewBox="0 0 24 24"><path fill="currentColor" d="M5 13.18v4L12 21l7-3.82v-4L12 17zM12 3 1 9l11 6 9-4.91V17h2V9z"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path fill="currentColor" d="M19 9h-4V3H9v6H5l7 7zM5 18v2h14v-2z"/></symbol>
+</defs></svg>
+
+<header id="navbar">
+  <div class="container nav-inner">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/logo.png" alt="AYE Tech Hub" style="width:42px;height:42px;border-radius:10px;object-fit:cover;" />
+      <div><div class="brand-name">AYE Tech Hub</div><div class="brand-tag">Engineering the Future</div></div>
+    </a>
+    <nav class="nav-menu">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../courses.html" class="nav-link active">Courses</a>
+      <a href="../pdfs.html" class="nav-link">PDF Library</a>
+      <a href="../tutorials.html" class="nav-link">Tutorials</a>
+      <a href="../ai-tools.html" class="nav-link">AI Tools</a>
+      <a href="../downloads.html" class="nav-link">Downloads</a>
+      <a href="../blog.html" class="nav-link">Blog</a>
+      <a href="../contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="nav-controls">
+      <button class="icon-btn" onclick="toggleTheme()" aria-label="Toggle theme"><svg class="svg-icon"><use id="theme-use" href="#i-moon"/></svg></button>
+      <a href="https://t.me/ayetechub" target="_blank" rel="noopener" class="btn btn-primary btn-sm hide-mobile"><svg class="svg-icon"><use href="#i-telegram"/></svg> Telegram</a>
+      <button class="icon-btn hamburger" onclick="toggleMobileMenu()"><svg class="svg-icon"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="container">
+    <a href="../index.html" class="mobile-link" onclick="toggleMobileMenu()">Home</a>
+    <a href="../courses.html" class="mobile-link" onclick="toggleMobileMenu()" style="color:var(--neon)">Courses</a>
+    <a href="../tutorials.html" class="mobile-link" onclick="toggleMobileMenu()">Tutorials</a>
+    <a href="../contact.html" class="mobile-link" onclick="toggleMobileMenu()">Contact</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container page-hero-content">
+    <div class="breadcrumb"><a href="../index.html">Home</a><span class="sep">/</span><a href="../courses.html">Courses</a><span class="sep">/</span><span>Revit & AutoCAD for Engineers</span></div>
+    <div class="section-tag reveal"><svg class="svg-icon"><use href="#i-graduation"/></svg> Course</div>
+    <h1 class="gradient-text reveal">Revit & AutoCAD for Engineers</h1>
+    <p class="reveal">Structured learning path by Awet G. Nway. Watch on YouTube, download the PDF guide, and join our Telegram study group.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px" class="reveal">
+      <a href="https://www.youtube.com/@ayetechub" target="_blank" rel="noopener" class="btn btn-primary" style="background:linear-gradient(135deg,#c4302b,#ff0000)">
+        <svg class="svg-icon"><use href="#i-youtube"/></svg> Watch on YouTube
+      </a>
+      <a href="https://t.me/ayetechub" target="_blank" rel="noopener" class="btn btn-outline">
+        <svg class="svg-icon"><use href="#i-telegram"/></svg> Join Study Group
+      </a>
+      <a href="../pdfs.html" class="btn btn-outline">
+        <svg class="svg-icon"><use href="#i-download"/></svg> Course PDF
+      </a>
+    </div>
+  </div>
+</section>
+
+<section style="padding:20px 0 80px">
+  <div class="container">
+    <div class="featured-banner reveal">
+      <div class="featured-banner-icon" style="background:linear-gradient(135deg,#1a0800,#3a1500);color:#f97316">
+        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M5 13.18v4L12 21l7-3.82v-4L12 17zM12 3 1 9l11 6 9-4.91V17h2V9z"/></svg>
+      </div>
+      <div class="featured-banner-text">
+        <h2 class="gradient-text">Course Coming to Platform Soon</h2>
+        <p>Full interactive course content is being prepared. Subscribe on YouTube for immediate access to all lessons. Join Telegram for course announcements and free PDFs.</p>
+      </div>
+      <div class="featured-banner-actions">
+        <a href="https://www.youtube.com/@ayetechub" target="_blank" rel="noopener" class="btn btn-primary">Subscribe Free</a>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:40px">
+      <a href="../courses.html" class="btn btn-outline">← Back to All Courses</a>
+    </div>
+  </div>
+</section>
+
+<button id="btt-btn" onclick="scrollToTop()" aria-label="Back to top"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M4 12 5.41 13.41 11 7.83V20H13V7.83l5.58 5.59L20 12l-8-8z"/></svg></button>
+<div id="notif" class="notif-bar" role="alert">
+  <div class="notif-icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8z"/></svg></div>
+  <div class="notif-text"><strong class="notif-title"></strong><span class="notif-msg"></span></div>
+  <div class="notif-close" onclick="document.getElementById('notif').classList.remove('show')"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></div>
+</div>
+<div id="pdf-modal-page" class="modal-overlay" style="display:none"></div>
+<script src="../assets/js/data.js"></script>
+<script src="../assets/js/platform.js"></script>
+</body>
+</html>

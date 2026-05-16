@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PLC Programming Fundamentals – AYE Tech Hub</title>
+<meta name="description" content="Learn PLC programming from scratch. Siemens S7, Ladder Logic, FBD, and industrial automation. Free course by AYE Tech Hub." />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23020817'/%3E%3Crect x='3' y='3' width='94' height='94' rx='20' fill='none' stroke='%2300d4ff' stroke-width='3'/%3E%3Ctext x='50' y='62' font-family='Arial Black,sans-serif' font-size='30' font-weight='900' fill='%2300d4ff' text-anchor='middle'%3EAYE%3C/text%3E%3C/svg%3E" />
+<link rel="alternate icon" type="image/png" href="../assets/images/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;700&display=swap" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="stylesheet" href="../assets/css/pages.css" />
+</head>
+<body>
+
+<div id="loading-screen">
+  <div class="loading-logo">AYE</div>
+  <div class="loading-bar-wrap"><div class="loading-bar"></div></div>
+  <div class="loading-text">LOADING COURSE</div>
+</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path fill="currentColor" d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.39 5.39 0 0 1-4.4 2.26 5.5 5.5 0 0 1-3.14-10A9.32 9.32 0 0 0 12 3z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><path fill="currentColor" d="M6.76 4.84 4.96 3.05 3.55 4.46l1.79 1.79zM4 10.5H1v2h3zm9-9.95h-2V3.5h2zm7.45 3.91-1.41-1.41-1.79 1.79 1.41 1.41zM17.24 18.16l1.79 1.8 1.41-1.41-1.8-1.79zM20 10.5v2h3v-2zM12 5.5a6 6 0 0 0-6 6c0 3.31 2.69 6 6 6s6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2zM4.96 19.95l1.41 1.41 1.79-1.8-1.41-1.41z"/></symbol>
+    <symbol id="i-telegram" viewBox="0 0 24 24"><path fill="currentColor" d="M22 3 2 11l6 2 2 7 4-5 6 5 2-17zm-5 5L10 14l-1 4-1-3 9-7z"/></symbol>
+    <symbol id="i-graduation" viewBox="0 0 24 24"><path fill="currentColor" d="M5 13.18v4L12 21l7-3.82v-4L12 17zM12 3 1 9l11 6 9-4.91V17h2V9z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8z"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path fill="currentColor" d="M19 9h-4V3H9v6H5l7 7zM5 18v2h14v-2z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></symbol>
+    <symbol id="i-youtube" viewBox="0 0 24 24"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path fill="currentColor" d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path fill="currentColor" d="m20 11-1.41-1.41L13 15.17V4h-2v11.17l-5.58-5.59L4 11l8 8z" transform="rotate(180 12 12)"/></symbol>
+  </defs>
+</svg>
+
+<header id="navbar">
+  <div class="container nav-inner">
+    <a href="../index.html" class="brand" aria-label="AYE Tech Hub home">
+      <img src="../assets/images/logo.png" alt="AYE Tech Hub Logo" style="width:42px;height:42px;border-radius:10px;object-fit:cover;" />
+      <div><div class="brand-name">AYE Tech Hub</div><div class="brand-tag">Engineering the Future</div></div>
+    </a>
+    <nav class="nav-menu" aria-label="Main navigation">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../courses.html" class="nav-link active">Courses</a>
+      <a href="../pdfs.html" class="nav-link">PDF Library</a>
+      <a href="../tutorials.html" class="nav-link">Tutorials</a>
+      <a href="../ai-tools.html" class="nav-link">AI Tools</a>
+      <a href="../downloads.html" class="nav-link">Downloads</a>
+      <a href="../blog.html" class="nav-link">Blog</a>
+      <a href="../contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="nav-controls">
+      <button class="icon-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+        <svg class="svg-icon" aria-hidden="true"><use id="theme-use" href="#i-moon"/></svg>
+      </button>
+      <a href="https://t.me/ayetechub" target="_blank" rel="noopener" class="btn btn-primary btn-sm hide-mobile">
+        <svg class="svg-icon" aria-hidden="true"><use href="#i-telegram"/></svg> Telegram
+      </a>
+      <button class="icon-btn hamburger" onclick="toggleMobileMenu()" aria-label="Open menu">
+        <svg class="svg-icon" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="container">
+    <a href="../index.html" class="mobile-link" onclick="toggleMobileMenu()">Home</a>
+    <a href="../courses.html" class="mobile-link" onclick="toggleMobileMenu()" style="color:var(--neon)">Courses</a>
+    <a href="../pdfs.html" class="mobile-link" onclick="toggleMobileMenu()">PDF Library</a>
+    <a href="../tutorials.html" class="mobile-link" onclick="toggleMobileMenu()">Tutorials</a>
+    <a href="../ai-tools.html" class="mobile-link" onclick="toggleMobileMenu()">AI Tools</a>
+    <a href="../downloads.html" class="mobile-link" onclick="toggleMobileMenu()">Downloads</a>
+    <a href="../blog.html" class="mobile-link" onclick="toggleMobileMenu()">Blog</a>
+    <a href="../contact.html" class="mobile-link" onclick="toggleMobileMenu()">Contact</a>
+  </div>
+</header>
+
+<div class="container lesson-layout">
+
+  <!-- Lesson Sidebar -->
+  <aside class="lesson-sidebar">
+    <div class="lesson-sidebar-head">
+      <h3>PLC Programming Fundamentals</h3>
+      <div class="progress-info">0 of 24 lessons completed</div>
+      <div class="lesson-progress-bar"><div class="lesson-progress-fill" id="lp-bar" style="width:0%"></div></div>
+    </div>
+    <div class="lesson-list" id="lesson-list"></div>
+  </aside>
+
+  <!-- Lesson Content -->
+  <main class="lesson-content">
+    <!-- Video Area -->
+    <div class="lesson-video-area" id="video-area">
+      <div class="lesson-video-placeholder">
+        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>
+        <p>Watch on YouTube</p>
+        <a href="https://www.youtube.com/@ayetechub" target="_blank" rel="noopener" class="btn btn-primary">
+          Open YouTube Channel
+        </a>
+      </div>
+    </div>
+
+    <!-- Lesson Body -->
+    <div class="lesson-body" id="lesson-body">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a><span class="sep">/</span>
+        <a href="../courses.html">Courses</a><span class="sep">/</span>
+        <span>PLC Programming Fundamentals</span>
+      </div>
+      <h2 id="lesson-title">Introduction to PLC Systems</h2>
+      <div id="lesson-content-text">
+        <p>Welcome to the <strong>PLC Programming Fundamentals</strong> course by AYE Tech Hub. In this course, you will learn how to program Siemens S7 PLCs from scratch, covering everything from hardware setup to complex automation programs.</p>
+        <p>This lesson introduces you to what a Programmable Logic Controller (PLC) is, how it works, and why it is the backbone of modern industrial automation systems.</p>
+        <h3 style="font-size:1rem;margin:20px 0 8px;color:var(--neon)">What You'll Learn</h3>
+        <ul style="list-style:disc;padding-left:20px;color:var(--text-soft);line-height:2">
+          <li>What is a PLC and how does it work</li>
+          <li>PLC hardware components (CPU, I/O modules, power supply)</li>
+          <li>The PLC scan cycle: Input → Process → Output</li>
+          <li>Siemens SIMATIC S7-300 and S7-400 overview</li>
+          <li>Introduction to TIA Portal programming software</li>
+        </ul>
+        <h3 style="font-size:1rem;margin:20px 0 8px;color:var(--neon)">Prerequisites</h3>
+        <p>No prior PLC knowledge required. Basic understanding of electricity (voltage, current) is helpful but not mandatory.</p>
+      </div>
+
+      <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap">
+        <a href="https://www.youtube.com/@ayetechub" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg class="svg-icon" aria-hidden="true"><use href="#i-youtube"/></svg> Watch on YouTube
+        </a>
+        <a href="../pdfs/plc-programming-guide.pdf" class="btn btn-outline" download>
+          <svg class="svg-icon" aria-hidden="true"><use href="#i-download"/></svg> Download Course PDF
+        </a>
+        <a href="https://t.me/ayetechub" target="_blank" rel="noopener" class="btn btn-outline">
+          <svg class="svg-icon" aria-hidden="true"><use href="#i-telegram"/></svg> Join Study Group
+        </a>
+      </div>
+    </div>
+
+    <!-- Lesson Navigation -->
+    <div class="lesson-nav-btns">
+      <button class="btn btn-outline" id="prev-btn" onclick="prevLesson()" disabled>← Previous</button>
+      <button class="btn btn-primary" id="next-btn" onclick="nextLesson()">Next Lesson →</button>
+    </div>
+  </main>
+</div>
+
+<button id="btt-btn" onclick="scrollToTop()" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><path fill="currentColor" d="M4 12 5.41 13.41 11 7.83V20H13V7.83l5.58 5.59L20 12l-8-8z"/></svg>
+</button>
+<div id="notif" class="notif-bar" role="alert">
+  <div class="notif-icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8z"/></svg></div>
+  <div class="notif-text"><strong class="notif-title"></strong><span class="notif-msg"></span></div>
+  <div class="notif-close" onclick="document.getElementById('notif').classList.remove('show')">
+    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+  </div>
+</div>
+<div id="pdf-modal-page" class="modal-overlay" style="display:none"></div>
+
+<script src="../assets/js/data.js"></script>
+<script src="../assets/js/platform.js"></script>
+<script>
+'use strict';
+const LESSONS = [
+  { title: 'Introduction to PLC Systems', desc: 'What is a PLC, how it works, and where it is used in industry.' },
+  { title: 'PLC Hardware Components', desc: 'CPU, I/O modules, power supply, communication modules.' },
+  { title: 'Siemens S7-300 Overview', desc: 'Understanding the S7-300 hardware and wiring basics.' },
+  { title: 'TIA Portal Installation', desc: 'Installing and configuring Siemens TIA Portal software.' },
+  { title: 'Creating Your First PLC Project', desc: 'Step-by-step walkthrough of your first TIA Portal project.' },
+  { title: 'Ladder Logic Basics', desc: 'Contacts, coils, and basic ladder diagram structure.' },
+  { title: 'Normally Open & Normally Closed Contacts', desc: 'Understanding NO, NC contacts and their applications.' },
+  { title: 'Timers in PLC', desc: 'TON, TOF, and TONR timer blocks explained.' },
+  { title: 'Counters in PLC', desc: 'Up, down, and up-down counters in Siemens PLCs.' },
+  { title: 'Math Functions in PLC', desc: 'ADD, SUB, MUL, DIV operations in Ladder Logic.' },
+  { title: 'Comparison Instructions', desc: 'EQ, NEQ, GT, LT, GEQ, LEQ comparison blocks.' },
+  { title: 'Introduction to FBD', desc: 'Function Block Diagram – structure and basic blocks.' },
+  { title: 'Creating Custom Function Blocks', desc: 'Reusable function blocks and their parameters.' },
+  { title: 'Data Types in PLC', desc: 'BOOL, INT, DINT, REAL, STRING data types explained.' },
+  { title: 'PLC Addressing', desc: 'Input (I), Output (Q), Memory (M) addressing in S7.' },
+  { title: 'HMI Integration Basics', desc: 'Connecting a Siemens HMI panel to the S7 PLC.' },
+  { title: 'Motor Start/Stop Control', desc: 'Classic motor control circuit in Ladder Logic.' },
+  { title: 'Conveyor System Automation', desc: 'Automating a simple conveyor belt system.' },
+  { title: 'Traffic Light System Project', desc: 'Complete traffic light automation using timers.' },
+  { title: 'Alarm Management', desc: 'Configuring alarms and fault detection in PLC programs.' },
+  { title: 'PROFIBUS Communication', desc: 'Setting up PROFIBUS DP between master and slave devices.' },
+  { title: 'PLC Troubleshooting Techniques', desc: 'Diagnosing and fixing common PLC program faults.' },
+  { title: 'Safety PLCs Overview', desc: 'Introduction to failsafe (F) PLCs and safety concepts.' },
+  { title: 'Final Project: Complete Automation System', desc: 'Build a complete automated system from scratch.' }
+];
+
+let currentLesson = 0;
+const completed = new Set();
+
+function renderSidebar() {
+  const list = document.getElementById('lesson-list');
+  list.innerHTML = LESSONS.map((l, i) => `
+    <div class="lesson-item ${i === currentLesson ? 'active' : ''} ${completed.has(i) ? 'completed' : ''}"
+         onclick="goToLesson(${i})">
+      <div class="lesson-num">${completed.has(i) ? '✓' : i + 1}</div>
+      <div>${l.title}</div>
+    </div>`).join('');
+}
+
+function goToLesson(idx) {
+  currentLesson = idx;
+  const l = LESSONS[idx];
+  document.getElementById('lesson-title').textContent = l.title;
+  document.getElementById('lesson-content-text').innerHTML = `<p>${l.desc}</p>
+    <p style="color:var(--text-muted);font-size:0.85rem;margin-top:14px">Full lesson content available on our YouTube channel. Click "Watch on YouTube" below.</p>`;
+  document.getElementById('prev-btn').disabled = idx === 0;
+  document.getElementById('next-btn').disabled = idx === LESSONS.length - 1;
+  completed.add(Math.max(0, idx - 1));
+  const pct = Math.round((completed.size / LESSONS.length) * 100);
+  document.getElementById('lp-bar').style.width = pct + '%';
+  renderSidebar();
+  document.querySelector('.lesson-content').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function nextLesson() { if (currentLesson < LESSONS.length - 1) goToLesson(currentLesson + 1); }
+function prevLesson() { if (currentLesson > 0) goToLesson(currentLesson - 1); }
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderSidebar();
+  notify('Welcome!', 'PLC Programming Fundamentals – 24 lessons');
+});
+</script>
+</body>
+</html>
