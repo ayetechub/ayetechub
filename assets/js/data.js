@@ -415,6 +415,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'industrial-maintenance-manual',
+    title: {
+      en: 'Industrial Maintenance Manual — Preventive, Predictive & Reliability-Centered Engineering',
+      ti: 'ናይ ኢንዳስትሪ ሓለዋ መምርሒ — ናይ ምሕያሽ፣ ናይ ትንቢት ምሕሳብን ናይ ምርካብ ምህንድስናን',
+      am: 'የኢንዱስትሪ ጥገና መምሪያ — መከላከያ፣ ትንበያ እና አስተማማኝነት ምህንድስና'
+    },
+    category: 'mechanical',
+    pages: 15,
+    size: '42 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Complete industrial maintenance guide covering PM, PdM, RCM, CMMS, lubrication, mechanical & electrical systems, LOTO safety, KPIs, and troubleshooting.',
+      ti: 'ምሉእ ናይ ኢንዳስትሪ ሓለዋ መምርሒ ዝሓዘ PM, PdM, RCM, CMMS, ቅብኢ, ናይ ሜካኒካልን ኤሌክትሪካልን ስርዓታት፣ LOTO ድሕነት፣ KPIs፣ ናይ ምፍታሕ ጸገም ።',
+      am: 'ሙሉ የኢንዱስትሪ ጥገና መምሪያ PM፣ PdM፣ RCM፣ CMMS፣ ቅባት፣ ሜካኒካል እና ኤሌክትሪካል ስርዓቶች፣ LOTO ደህንነት፣ KPIs፣ እና የችግር ፈቺ ዘዴዎችን ያካትታል።'
+    },
+    file: 'pdfs/industrial-maintenance-manual.pdf',
+    color: '#22c55e',
+    preview: true
+  },
+  {
     id: 'scada-manual',
     title: 'SCADA & HMI Programming Manual',
     category: 'plc',
