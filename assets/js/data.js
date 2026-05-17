@@ -236,12 +236,12 @@ const PDFS = [
       am: 'PLC ፕሮግራሚንግ ሙሉ መምሪያ'
     },
     category: 'plc',
-    pages: 142,
-    size: '8.4 MB',
-    downloads: '3.2K',
+    pages: 23,
+    size: '68 KB',
+    downloads: '0',
     badge: 'FREE',
     description: {
-      en: 'Comprehensive Siemens S7 PLC guide covering Ladder Logic, FBD, and industrial programming.',
+      en: 'Comprehensive Siemens S7 PLC guide covering Ladder Logic, FBD, Structured Text, HMI, PROFINET, Safety SIL, and career pathways — by Awet G. Nway.',
       ti: 'ምሉእ Siemens S7 PLC መምርሒ ናይ Ladder Logic, FBD, ናይ ኢንዱስትሪ ፕሮግራሚን ዝሸፍን።',
       am: 'ሙሉ Siemens S7 PLC መምሪያ Ladder Logic, FBD, እና ኢንዱስትሪ ፕሮግራሚንግ የሚሸፍን።'
     },
@@ -257,12 +257,12 @@ const PDFS = [
       am: 'የኤሌክትሪካዊ ደህንነት ማኑዋል'
     },
     category: 'electrical',
-    pages: 98,
-    size: '5.2 MB',
-    downloads: '2.8K',
+    pages: 21,
+    size: '56 KB',
+    downloads: '0',
     badge: 'FREE',
     description: {
-      en: 'Complete electrical safety standards, LOTO procedures, and arc flash protection guide.',
+      en: 'Complete electrical safety handbook: LOTO procedures, arc flash protection, PPE selection, grounding, NFPA 70E, IEC 60364, OSHA compliance — by Awet G. Nway.',
       ti: 'ምሉእ ናይ ኤለክትሪካዊ ድሕነት ደረጃ፣ LOTO ኣሰራርሓ፣ ናይ Arc Flash ምክልኻል መምርሒ።',
       am: 'ሙሉ ኤሌክትሪካዊ ደህንነት ደረጃዎች፣ LOTO ሂደቶች፣ እና Arc Flash ጥበቃ መምሪያ።'
     },
@@ -278,9 +278,9 @@ const PDFS = [
       am: 'AutoCAD ትዕዛዞች አጭር ዝርዝር'
     },
     category: 'design',
-    pages: 24,
-    size: '1.8 MB',
-    downloads: '5.1K',
+    pages: 20,
+    size: '55 KB',
+    downloads: '0',
     badge: 'FREE',
     description: {
       en: 'Essential AutoCAD shortcuts, commands and workflows for faster engineering drafting.',
@@ -295,9 +295,9 @@ const PDFS = [
     id: 'revit-mep',
     title: 'Revit MEP Complete Reference',
     category: 'design',
-    pages: 210,
-    size: '12.6 MB',
-    downloads: '1.9K',
+    pages: 14,
+    size: '45 KB',
+    downloads: '0',
     badge: 'FREE',
     description: 'Full MEP systems modeling in Revit: HVAC, electrical, plumbing from beginner to advanced.',
     file: 'pdfs/revit-mep-reference.pdf',
@@ -329,9 +329,9 @@ const PDFS = [
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'mechanical',
-    pages: 178,
-    size: '9.8 MB',
-    downloads: '1.4K',
+    pages: 14,
+    size: '43 KB',
+    downloads: '0',
     badge: 'FREE',
     description: 'Full HVAC load calculation, duct sizing, equipment selection, and energy code compliance.',
     file: 'pdfs/hvac-design-manual.pdf',
@@ -363,13 +363,55 @@ const PDFS = [
     id: 'solar-pv-guide',
     title: 'Solar PV System Design Guide',
     category: 'electrical',
-    pages: 88,
-    size: '6.1 MB',
-    downloads: '2.1K',
+    pages: 14,
+    size: '42 KB',
+    downloads: '0',
     badge: 'FREE',
     description: 'Complete off-grid and on-grid solar PV design from site assessment to commissioning.',
     file: 'pdfs/solar-pv-design-guide.pdf',
     color: '#fbbf24',
+    preview: true
+  },
+  {
+    id: 'plc-course-guide',
+    title: {
+      en: 'PLC Practical Course Guide — From Fundamentals to Industrial Application',
+      ti: 'PLC ናይ ተሞክሮ ናይ ትምህርቲ መምርሒ — ካብ መሰረት ክሳብ ናይ ኢንዱስትሪ ትጽቢት',
+      am: 'PLC ተግባራዊ የኮርስ መምሪያ — ከመሰረት እስከ ኢንዱስትሪ ትግበራ'
+    },
+    category: 'plc',
+    pages: 27,
+    size: '2.1 MB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Complete PLC practical course guide covering fundamentals through industrial application — by Awet G. Nway.',
+      ti: 'ምሉእ PLC ናይ ተሞክሮ ናይ ትምህርቲ መምርሒ ካብ መሰረታዊ ክሳብ ናይ ኢንዱስትሪ ትጽቢት — ብ Awet G. Nway።',
+      am: 'ሙሉ PLC ተግባራዊ የኮርስ መምሪያ ከመሰረታዊ እስከ ኢንዱስትሪ ትግበራ — በ Awet G. Nway።'
+    },
+    file: 'pdfs/plc-course-guide.pdf',
+    color: '#00d4ff',
+    preview: true
+  },
+  {
+    id: 'pumps-course-guide',
+    title: {
+      en: 'Pumps Complete Engineering Course — Classification, Centrifugal, Reciprocating, Surface & Submersible',
+      ti: 'ምሉእ ናይ ምህንድስና ናይ ፓምፕ ትምህርቲ — ምምቃል፣ ሴንትሪፉጋል፣ ሬሲፕሮኬቲን፣ ናይ ልዕሊ ምድሪ & ናይ ትሕቲ ማይ',
+      am: 'ሙሉ የፓምፕ ምህንድስና ኮርስ — ምደባ፣ ሴንትሪፉጋል፣ ሬሲፕሮኬቲንግ፣ ወለል እና ንዑስ ምድር'
+    },
+    category: 'mechanical',
+    pages: 28,
+    size: '3.4 MB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Complete pumps engineering course covering classification, centrifugal, reciprocating, surface, submersible, and pump selection — by Awet G. Nway.',
+      ti: 'ምሉእ ናይ ምህንድስና ናይ ፓምፕ ትምህርቲ ናይ ምምቃል፣ ሴንትሪፉጋል፣ ሬሲፕሮኬቲን፣ ናይ ልዕሊ ምድሪ፣ ናይ ትሕቲ ማይ ፓምፕ ምርጫ ዝሸፍን — ብ Awet G. Nway።',
+      am: 'ሙሉ የፓምፕ ምህንድስና ኮርስ ምደባ፣ ሴንትሪፉጋል፣ ሬሲፕሮኬቲንግ፣ ወለል፣ ንዑስ ምድር፣ እና የፓምፕ ምርጫ የሚሸፍን — በ Awet G. Nway።'
+    },
+    file: 'pdfs/pumps-course-guide.pdf',
+    color: '#22c55e',
     preview: true
   },
   {
