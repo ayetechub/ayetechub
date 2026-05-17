@@ -306,14 +306,22 @@ const PDFS = [
   },
   {
     id: 'ai-engineering-guide',
-    title: 'AI Tools for Engineers – 2026 Guide',
+    title: {
+      en: 'AI Engineering — Practical Course Guide',
+      ti: 'AI ምህንድስና — ናይ ተሞክሮ ናይ ትምህርቲ መምርሒ',
+      am: 'AI ምህንድስና — ተግባራዊ የኮርስ መምሪያ'
+    },
     category: 'ai',
-    pages: 56,
-    size: '3.4 MB',
-    downloads: '4.7K',
+    pages: 15,
+    size: '240 KB',
+    downloads: '0',
     badge: 'FREE',
-    description: 'Practical guide to using ChatGPT, Gemini, Copilot, and other AI tools in engineering projects.',
-    file: 'pdfs/ai-engineering-guide.pdf',
+    description: {
+      en: 'From Foundations to Real-World Deployment. 5-stage learning roadmap, tools, career paths, and responsible AI — by Awet G. Nway.',
+      ti: 'ካብ መሰረታዊ ክሳብ ናይ ሓቀኛ ዓለም ምዝርጋሕ። ናይ 5-ምዕራፍ ናይ ትምህርቲ ካርታ፣ ሓጋዚ፣ ናይ ሞያ ጐደና፣ ዝሕተፍ AI — ብ Awet G. Nway።',
+      am: 'ከመሰረት እስከ ትክክለኛ ዓለም ማሰማራት። 5-ደረጃ የትምህርት ካርታ፣ መሳሪያዎች፣ የሙያ መንገዶች — በ Awet G. Nway።'
+    },
+    file: 'pdfs/ai-engineering-course.pdf',
     color: '#ec4899',
     preview: true
   },
@@ -328,6 +336,27 @@ const PDFS = [
     description: 'Full HVAC load calculation, duct sizing, equipment selection, and energy code compliance.',
     file: 'pdfs/hvac-design-manual.pdf',
     color: '#22c55e',
+    preview: true
+  },
+  {
+    id: 'motor-starters-guide',
+    title: {
+      en: 'Motor Starters — Complete Engineering Course Guide',
+      ti: 'ናይ ሞተር ስታርተራት — ምሉእ ናይ ምህንድስና ናይ ትምህርቲ መምርሒ',
+      am: 'የሞተር ስታርተሮች — ሙሉ የምህንድስና የኮርስ መምሪያ'
+    },
+    category: 'mechanical',
+    pages: 33,
+    size: '7.3 MB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Complete guide to DOL, Star-Delta, Autotransformer, Soft Starters & VFDs — with circuit diagrams, pros/cons tables, and protection selection.',
+      ti: 'ምሉእ መምርሒ DOL, Star-Delta, Autotransformer, Soft Starters & VFDs — ምስ ናይ ሰርኪት ስዕሊ፣ ናይ ምርጫ ሰደቓ፣ ምክልኻልን።',
+      am: 'ሙሉ DOL, Star-Delta, Autotransformer, Soft Starters & VFDs መምሪያ — ሰርኪት ዲያግራሞች፣ ሠንጠረዦች፣ እና ጥበቃ ምርጫ ጋር።'
+    },
+    file: 'pdfs/motor-starters-guide.pdf',
+    color: '#a78bfa',
     preview: true
   },
   {
