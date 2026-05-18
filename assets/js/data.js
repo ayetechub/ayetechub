@@ -373,6 +373,19 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'solar-pv-panel-construction',
+    title: 'Solar PV Panel Construction — Layers, Cells, Electrical Architecture & Manufacturing',
+    category: 'electrical',
+    pages: 9,
+    size: '1 MB',
+    downloads: '0',
+    badge: 'FREE',
+    description: 'Deep-dive into how a solar PV module is physically built: every layer from tempered glass to backsheet, p–n junction physics, cell types (mono, poly, PERC, bifacial, thin-film), internal wiring, 10-step manufacturing process, and quality standards (IEC 61215 / 61730).',
+    file: 'pdfs/solar-pv-panel-construction.pdf',
+    color: '#fbbf24',
+    preview: true
+  },
+  {
     id: 'plc-course-guide',
     title: {
       en: 'PLC Practical Course Guide — From Fundamentals to Industrial Application',
