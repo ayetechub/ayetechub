@@ -389,6 +389,90 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'ai-30day-day01-intro-to-ai',
+    title: {
+      en: '30-Day AI Course — Day 1: Introduction to Artificial Intelligence',
+      ti: '30-መዓልቲ AI ኮርስ — መዓልቲ 1: መእተዊ ናብ ሰናይ ምህሮ',
+      am: '30-ቀን AI ኮርስ — ቀን 1: ወደ ሰው ሰራሽ ብልሃት መግቢያ'
+    },
+    category: 'ai',
+    pages: 8,
+    size: '2.1 MB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'What AI really is, how it got here, and why it matters now. Covers ANI/AGI/ASI, subfields (ML, NLP, Computer Vision, Robotics, Generative AI), AI vs traditional programming, and common misconceptions — by Awet G. Nway.',
+      ti: 'AI ብሓቂ እንታይ ምዃኑ፣ ከመይ ናብዚ ምስ ዝበጽሐ፣ ስለምንታይ ሕጂ ዘገድስ። ANI/AGI/ASI፣ ንዑስ ዓውደ-ፍልጠታት (ML, NLP, Computer Vision)፣ AI ኣምጻ ዝተሓሳሰበ ፕሮግራሚን — ብ Awet G. Nway።',
+      am: 'AI ምን እንደሆነ፣ እንዴት እዚህ እንደደረሰ፣ እና አሁን ስለምን እንደሚጠቅም። ANI/AGI/ASI፣ ንዑስ ዘርፎች (ML, NLP, Computer Vision)፣ AI ከባህላዊ ፕሮግራሚንግ ጋር ያለው ልዩነት — በ Awet G. Nway።'
+    },
+    file: 'pdfs/ai-30day-day01-intro-to-ai.pdf',
+    color: '#ec4899',
+    preview: true
+  },
+  {
+    id: 'ai-30day-day02-how-ai-works',
+    title: {
+      en: '30-Day AI Course — Day 2: How AI Works',
+      ti: '30-መዓልቲ AI ኮርስ — መዓልቲ 2: AI ከመይ ይሰርሕ',
+      am: '30-ቀን AI ኮርስ — ቀን 2: AI እንዴት ይሰራል'
+    },
+    category: 'ai',
+    pages: 9,
+    size: '2.3 MB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Under the hood: neural networks, training, and why GPUs matter. Covers the 3 stages of AI (data→training→inference), weights & parameters, backpropagation, and a full worked example — by Awet G. Nway.',
+      ti: 'ኣብ ትሕቲ ዝኾፈ: ናይ ነውራል ኔትወርካት፣ ምሰልጣን፣ ስለምንታይ GPU ዘገድስ። 3 ምዕራፋት AI (data→training→inference)፣ ናይ weights & parameters — ብ Awet G. Nway።',
+      am: 'በስር: ነርቭ ኔትወርኮች፣ ስልጠና፣ GPU ለምን እንደሚጠቅም። የ AI 3 ደረጃዎች (data→training→inference)፣ weights & parameters — በ Awet G. Nway።'
+    },
+    file: 'pdfs/ai-30day-day02-how-ai-works.pdf',
+    color: '#ec4899',
+    preview: true
+  },
+  {
+    id: 'ai-30day-day03-ai-in-daily-life',
+    title: {
+      en: '30-Day AI Course — Day 3: AI in Daily Life',
+      ti: '30-መዓልቲ AI ኮርስ — መዓልቲ 3: AI ኣብ ዕለታዊ ህይወት',
+      am: '30-ቀን AI ኮርስ — ቀን 3: AI በዕለት ተዕለት ህይወት'
+    },
+    category: 'ai',
+    pages: 11,
+    size: '3.1 MB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'How AI already runs your day — recommendation systems, voice assistants, maps, smart homes, healthcare wearables, banking fraud detection, and hidden AI you never notice — by Awet G. Nway.',
+      ti: 'AI ዕለታዊ ህይወትካ ብኸምዚ ይዛወርዎ — ናይ ምምኻር ስርዓታት፣ ናይ ድምጺ ሓጋዚ፣ ካርታ፣ ብልሃተኛ ገዛ፣ ናይ ጥዕና ዌርብልስ — ብ Awet G. Nway።',
+      am: 'AI ቀናዊ ህይወትዎን ቀድሞ እንዴት እንደሚያስተዳድር — የምክረ ሥርዓቶች፣ የድምጽ ረዳቶች፣ ካርታዎች፣ ብልህ ቤቶች፣ ጤና ዌርብልስ — በ Awet G. Nway።'
+    },
+    file: 'pdfs/ai-30day-day03-ai-in-daily-life.pdf',
+    color: '#ec4899',
+    preview: true
+  },
+  {
+    id: 'ai-30day-day04-machine-learning-basics',
+    title: {
+      en: '30-Day AI Course — Day 4: Machine Learning Basics',
+      ti: '30-መዓልቲ AI ኮርስ — መዓልቲ 4: መሰረታዊ ናይ ማሽን ለርኒን',
+      am: '30-ቀን AI ኮርስ — ቀን 4: የማሽን ለርኒንግ መሰረታዊ ነገሮች'
+    },
+    category: 'ai',
+    pages: 9,
+    size: '2.8 MB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'How computers learn from data without being told the rules. Covers supervised vs unsupervised vs reinforcement learning, the 6-step ML workflow, overfitting/underfitting, and algorithm selection cheat sheet — by Awet G. Nway.',
+      ti: 'ኮምፕዩተር ብዘይ ዝተነግሮ ሕጊ ካብ ዳታ ከመይ ይመሃር። supervised vs unsupervised vs reinforcement learning፣ 6-ስጉምቲ ML workflow — ብ Awet G. Nway።',
+      am: 'ደንቡ ሳይነገረው ኮምፒዩተር ከዳታ እንዴት እንደሚማር። supervised vs unsupervised vs reinforcement learning፣ 6-ደረጃ ML workflow — በ Awet G. Nway።'
+    },
+    file: 'pdfs/ai-30day-day04-machine-learning-basics.pdf',
+    color: '#ec4899',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'mechanical',
