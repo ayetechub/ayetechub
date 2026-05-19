@@ -229,6 +229,27 @@ const COURSES = [
 ============================================================ */
 const PDFS = [
   {
+    id: 'industrial-plc-blueprint',
+    title: {
+      en: 'Industrial PLC Blueprint — From Fundamentals to Industrial Application',
+      ti: 'ናይ ኢንዱስትሪ PLC ብሉፕሪንት — ካብ መሰረታዊ ክሳብ ናይ ኢንዱስትሪ ትጽቢት',
+      am: 'ኢንዱስትሪ PLC ብሉፕሪንት — ከመሰረት እስከ ኢንዱስትሪ አፕሊኬሽን'
+    },
+    category: 'plc',
+    pages: 20,
+    size: '22 MB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Visual course guide covering PLC hardware anatomy, scan cycle, sinking/sourcing wiring, IEC 61131-3 languages, ladder logic, timers/counters, industrial networks (Modbus, PROFINET, OPC UA), safety, troubleshooting, and career pathways — by Awet G. Nway.',
+      ti: 'ናይ ምስሊ ኮርስ መምርሒ ናይ PLC ሃርድዌር ቀዛፊ፣ ናይ ስካን ዑደት፣ IEC 61131-3 ቋንቋታት፣ Ladder Logic፣ ናይ ኢንዱስትሪ ኔትወርካት፣ ናይ ድሕነት፣ ናይ ምፍታሽን ናይ ስራሕ ጉዕዞን ዝሸፍን — ብ Awet G. Nway።',
+      am: 'የPLC ሃርድዌር አናቶሚ፣ ስካን ሳይክል፣ IEC 61131-3 ቋንቋዎች፣ Ladder Logic፣ ኢንዱስትሪ ኔትወርኮች፣ ደህንነት፣ ፍትሻ እና ናይ ሙያ ጉዞ ዝሸፍን የምስል ኮርስ መምሪያ — በ Awet G. Nway።'
+    },
+    file: 'pdfs/industrial-plc-blueprint.pdf',
+    color: '#00d4ff',
+    preview: true
+  },
+  {
     id: 'plc-guide',
     title: {
       en: 'PLC Programming Complete Guide',
@@ -247,6 +268,48 @@ const PDFS = [
     },
     file: 'pdfs/plc-programming-guide.pdf',
     color: '#00d4ff',
+    preview: true
+  },
+  {
+    id: 'ee-fundamentals-ch1-ch2',
+    title: {
+      en: 'EE Fundamentals — Ch.1 & 2: Signals, Systems & Complex Numbers',
+      ti: 'EE መሰረታዊ — ምዕ.1 & 2: ምልክታት፣ ስርዓታት & ውሱብ ቁጽርታት',
+      am: 'EE መሰረቶች — ምዕ.1 & 2: ምልክቶች፣ ሥርዓቶች & ውስብስብ ቁጥሮች'
+    },
+    category: 'electrical',
+    pages: 11,
+    size: '1.2 MB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'AYE TechEngine course guide covering signals, systems, complex numbers, Euler\'s relation, elemental signals, and LTI systems — Chapters 1 & 2 by Awet G. Nway.',
+      ti: 'AYE TechEngine ናይ ኮርስ መምርሒ ምልክታት፣ ስርዓታት፣ ውሱብ ቁጽርታት፣ ናይ Euler ምትእስሳር፣ ናይ LTI ስርዓታት — ምዕ. 1 & 2 ብ Awet G. Nway።',
+      am: 'AYE TechEngine ናይ ኮርስ መምሪያ ምልክቶች፣ ሥርዓቶች፣ ውስብስብ ቁጥሮች፣ Euler ቀመር፣ LTI ሥርዓቶች — ምዕ. 1 & 2 በ Awet G. Nway።'
+    },
+    file: 'pdfs/ee-fundamentals-ch1-ch2.pdf',
+    color: '#eab308',
+    preview: true
+  },
+  {
+    id: 'transformers-course-guide',
+    title: {
+      en: 'Transformers — Principles, Construction, Applications & Troubleshooting',
+      ti: 'ትራንስፎርመራት — መሰረታዊ ሕጊ፣ ህንፃ፣ ትጽቢት & ምፍታሽ',
+      am: 'ትራንስፎርሞች — መሰረታዊ ህግ፣ ግንባታ፣ አፕሊኬሽን & ፍትሻ'
+    },
+    category: 'electrical',
+    pages: 11,
+    size: '1.2 MB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Senior-engineer-level guide covering electromagnetic induction, transformer construction, step-up/step-down, three-phase vector groups (Dyn11/YNd1), losses, cooling classes (ONAN–OFAF), industrial applications, and a full troubleshooting & PM schedule — by Awet G. Nway.',
+      ti: 'ናይ ዓበይቲ ምህንድስና ደረጃ መምርሒ ናይ ኤለክትሮማግኔቲክ ምትእስሳር፣ ህንፃ ትራንስፎርመር፣ ሰለስተ-ፋዝ ቬክተር ጉጅለ፣ ናይ ሃሪ ደረጃታት፣ ናይ ኢንዱስትሪ ትጽቢት፣ ምፍታሽን PM ፕሮግራምን ዝሸፍን — ብ Awet G. Nway።',
+      am: 'ኤሌክትሮማግኔቲክ ኢንደክሽን፣ ትራንስፎርመር ግንባታ፣ ሶስት-ፋዝ ቬክተር ቡድኖች፣ ኪሳራዎች፣ የማቀዝቀዣ ክፍሎች፣ ኢንዱስትሪ አፕሊኬሽን እና PM መርሃ ግብር ዝሸፍን ናይ ከፍተኛ ምህንድስና መምሪያ — በ Awet G. Nway።'
+    },
+    file: 'pdfs/transformers-course-guide.pdf',
+    color: '#eab308',
     preview: true
   },
   {
