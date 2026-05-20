@@ -867,6 +867,102 @@ const AI_TOOLS = [
     icon: 'cogs',
     color: '#dc2626',
     useCases: ['Calculations','Physics','Unit Conversion','Plotting']
+  },
+  {
+    id: 'canva',
+    name: 'Canva AI',
+    category: 'design',
+    description: 'Design platform with powerful AI tools — generate images, create presentations, edit videos, and produce professional visuals in minutes.',
+    badge: 'Design',
+    badgeColor: '#ec4899',
+    url: 'https://canva.com',
+    icon: 'compass',
+    color: '#7d2ae8',
+    useCases: ['Presentations','Graphics','Social Media','Templates']
+  },
+  {
+    id: 'kimi',
+    name: 'Kimi 2.6',
+    category: 'general',
+    description: 'Moonshot AI\'s frontier model with a 1M-token context window — ideal for analyzing large documents, codebases, and multi-step reasoning.',
+    badge: 'Recommended',
+    badgeColor: '#f97316',
+    url: 'https://kimi.ai',
+    icon: 'robot',
+    color: '#6366f1',
+    useCases: ['Long Context','Research','Multimodal','Reasoning']
+  },
+  {
+    id: 'deepseek',
+    name: 'DeepSeek',
+    category: 'general',
+    description: 'High-performance open-source AI model excelling at math, coding, and scientific reasoning — free and on par with top proprietary models.',
+    badge: 'Essential',
+    badgeColor: '#22c55e',
+    url: 'https://chat.deepseek.com',
+    icon: 'search',
+    color: '#1e40af',
+    useCases: ['Coding','Math','Research','Analysis']
+  },
+  {
+    id: 'elevenlabs',
+    name: 'ElevenLabs',
+    category: 'productivity',
+    description: 'Industry-leading AI voice generator — create realistic narrations, clone voices, and produce multilingual audio for courses and content.',
+    badge: 'Audio',
+    badgeColor: '#f59e0b',
+    url: 'https://elevenlabs.io',
+    icon: 'play',
+    color: '#f59e0b',
+    useCases: ['Voice Generation','Text-to-Speech','Narration','Multilingual']
+  },
+  {
+    id: 'heygen',
+    name: 'HeyGen',
+    category: 'productivity',
+    description: 'Create professional AI avatar videos — perfect for training videos, course presentations, and explainer content without a camera.',
+    badge: 'Video',
+    badgeColor: '#8b5cf6',
+    url: 'https://heygen.com',
+    icon: 'play',
+    color: '#8b5cf6',
+    useCases: ['AI Avatars','Video Creation','Training Videos','Presentations']
+  },
+  {
+    id: 'notebooklm',
+    name: 'NotebookLM',
+    category: 'research',
+    description: 'Google\'s AI research assistant — upload PDFs, papers, and documents, then chat with them, get summaries, and generate audio overviews.',
+    badge: 'Research',
+    badgeColor: '#0ea5e9',
+    url: 'https://notebooklm.google.com',
+    icon: 'file',
+    color: '#4285f4',
+    useCases: ['Document Analysis','Summarization','Audio Overviews','Note-taking']
+  },
+  {
+    id: 'suno',
+    name: 'Suno',
+    category: 'productivity',
+    description: 'Generate full songs with vocals, instruments, and lyrics from a text prompt — ideal for course intros, background music, and creative projects.',
+    badge: 'Audio',
+    badgeColor: '#f97316',
+    url: 'https://suno.ai',
+    icon: 'play',
+    color: '#ec4899',
+    useCases: ['Music Generation','Jingles','Background Music','Audio Content']
+  },
+  {
+    id: 'capcut',
+    name: 'CapCut',
+    category: 'design',
+    description: 'AI-powered video editor with auto captions, background removal, voice enhancement, and smart templates — free on web and mobile.',
+    badge: 'Video',
+    badgeColor: '#3b82f6',
+    url: 'https://capcut.com',
+    icon: 'play',
+    color: '#1d4ed8',
+    useCases: ['Video Editing','Auto Captions','AI Effects','Social Media']
   }
 ];
 
