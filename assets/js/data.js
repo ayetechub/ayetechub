@@ -963,6 +963,30 @@ const AI_TOOLS = [
     icon: 'play',
     color: '#1d4ed8',
     useCases: ['Video Editing','Auto Captions','AI Effects','Social Media']
+  },
+  {
+    id: 'claude-code',
+    name: 'Claude Code',
+    category: 'coding',
+    description: 'Anthropic\'s agentic AI coding tool — write, edit, debug, and refactor entire codebases from the terminal using natural language commands.',
+    badge: 'Coding',
+    badgeColor: '#6d28d9',
+    url: 'https://claude.ai/code',
+    icon: 'microchip',
+    color: '#d97706',
+    useCases: ['Code Generation','Debugging','Refactoring','Terminal Agent']
+  },
+  {
+    id: 'vscode',
+    name: 'VS Code',
+    category: 'coding',
+    description: 'Microsoft\'s free, open-source code editor with AI-powered GitHub Copilot, thousands of extensions, and built-in Git and terminal support.',
+    badge: 'Coding',
+    badgeColor: '#6d28d9',
+    url: 'https://code.visualstudio.com',
+    icon: 'microchip',
+    color: '#007acc',
+    useCases: ['Code Editing','Extensions','Debugging','Git Integration']
   }
 ];
 
