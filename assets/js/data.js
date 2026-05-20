@@ -473,6 +473,48 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'ai-30day-day05-deep-learning-neural-networks',
+    title: {
+      en: '30-Day AI Course — Day 5: Deep Learning & Neural Networks',
+      ti: '30-መዓልቲ AI ኮርስ — መዓልቲ 5: ዲፕ ለርኒን ን ኒውራል ኔትወርክስ',
+      am: '30-ቀን AI ኮርስ — ቀን 5: ዲፕ ለርኒንግ እና ነርቭ አውታረ መረቦች'
+    },
+    category: 'ai',
+    pages: 8,
+    size: '1.7 MB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'The engine behind ChatGPT, self-driving cars & image generation. Covers biological vs artificial neurons, backpropagation, activation functions (Sigmoid/ReLU/Tanh), CNN/RNN-LSTM/Transformer families, and the AlexNet milestone — by Awet G. Nway.',
+      ti: 'ኣብ ድሕሪ ChatGPT፣ self-driving cars ን image generation ዘሎ ሞተር። biological vs artificial neurons፣ backpropagation፣ CNN/RNN/Transformer — ብ Awet G. Nway።',
+      am: 'ከ ChatGPT፣ ራስ-ሰር መኪናዎች እና ምስል ፈጠራ ጀርባ ያለው ሞተር። ባዮሎጂካል vs አርቲፊሻል ነርቭ፣ backpropagation፣ CNN/RNN/Transformer — በ Awet G. Nway።'
+    },
+    file: 'pdfs/ai-30day-day05-deep-learning-neural-networks.pdf',
+    color: '#ec4899',
+    preview: true
+  },
+  {
+    id: 'ai-30day-day06-generative-ai',
+    title: {
+      en: '30-Day AI Course — Day 6: Generative AI',
+      ti: '30-መዓልቲ AI ኮርስ — መዓልቲ 6: ጀነሬቲቭ AI',
+      am: '30-ቀን AI ኮርስ — ቀን 6: ጀነሬቲቭ AI'
+    },
+    category: 'ai',
+    pages: 8,
+    size: '1.2 MB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'How AI creates text, images, audio & video from a prompt. Covers discriminative vs generative AI, LLM token generation, diffusion models, the 5-ingredient prompt formula, real-world use cases, and risks (hallucination/deepfakes/bias) — by Awet G. Nway.',
+      ti: 'AI ካብ prompt ጽሑፍ፣ ስእሊ፣ ድምጺ ን ቪዲዮ ከመይ ይፈጥር። LLM token generation፣ diffusion models፣ 5-ነጥቢ prompt formula — ብ Awet G. Nway።',
+      am: 'AI ከ prompt ጽሑፍ፣ ምስል፣ ድምጽ እና ቪዲዮ እንዴት እንደሚፈጥር። LLM token generation፣ diffusion models፣ 5-ንጥረ ነገር prompt formula — በ Awet G. Nway።'
+    },
+    file: 'pdfs/ai-30day-day06-generative-ai.pdf',
+    color: '#ec4899',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'mechanical',
