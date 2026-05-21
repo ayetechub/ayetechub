@@ -250,6 +250,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'industrial-awakening',
+    title: {
+      en: 'Industrial Awakening — The Engineer\'s Guide to Success: Escaping the Farm',
+      ti: 'ናይ ኢንዱስትሪ ምትንሳእ — ናይ ኢንጂነር መምርሒ ናብ ዓወት: ካብ ሕርሻ ምውጻእ',
+      am: 'ኢንዱስትሪያዊ ንቃት — የምህንድስና ስኬት መምሪያ: ከእርሻ ማምለጫ'
+    },
+    category: 'plc',
+    pages: 13,
+    size: '13.3 MB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'A visual manifesto for the modern engineer. Uses Animal Farm archetypes (Boxer, Snowball, Benjamin) to expose the mindset gap between analog workers and digital innovators — covering PLC automation, robotics, AI career strategy, and the AYE Tech Hub standard — by Awet G. Nway.',
+      ti: 'ናይ ዘመናዊ ኢንጂነር ምስሊ ማኒፌስቶ። ናይ Animal Farm ምሳሌታት ተጠቒሙ ናይ ኣናሎግ ሰራሕተኛ ን ናይ ዲጂታል ፈጠርቲ ዝፈላሊ ናይ ኣእምሮ ፍልልይ ይቃልዕ — PLC automation፣ robotics፣ AI career — ብ Awet G. Nway።',
+      am: 'ለዘመናዊ መሐንዲስ ምስላዊ ማኒፌስቶ። የ Animal Farm ምሳሌዎችን ተጠቅሞ ቀጣናዊ ሰራተኛ እና ዲጂታል ፈጠራ ሰው መካከል ያለውን የአስተሳሰብ ልዩነት ያጋልጣል — PLC automation፣ robotics፣ AI career strategy — በ Awet G. Nway።'
+    },
+    file: 'pdfs/industrial-awakening.pdf',
+    color: '#f97316',
+    preview: true
+  },
+  {
     id: 'plc-guide',
     title: {
       en: 'PLC Programming Complete Guide',
@@ -511,6 +532,48 @@ const PDFS = [
       am: 'AI ከ prompt ጽሑፍ፣ ምስል፣ ድምጽ እና ቪዲዮ እንዴት እንደሚፈጥር። LLM token generation፣ diffusion models፣ 5-ንጥረ ነገር prompt formula — በ Awet G. Nway።'
     },
     file: 'pdfs/ai-30day-day06-generative-ai.pdf',
+    color: '#ec4899',
+    preview: true
+  },
+  {
+    id: 'ai-30day-day07-llms-in-depth',
+    title: {
+      en: '30-Day AI Course — Day 7: Large Language Models In Depth',
+      ti: '30-መዓልቲ AI ኮርስ — መዓልቲ 7: ናይ ዓቢ ቋንቋ ሞዴላት ኣብ ዕምቆት',
+      am: '30-ቀን AI ኮርስ — ቀን 7: ትልልቅ የቋንቋ ሞዴሎች በጥልቀት'
+    },
+    category: 'ai',
+    pages: 8,
+    size: '1.2 MB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'The engine behind ChatGPT, Claude & Gemini explained properly. Covers transformer architecture, self-attention, the 3-stage training pipeline (pretraining/SFT/RLHF), major LLM families of 2026, context windows, RAG, and model size selection — by Awet G. Nway.',
+      ti: 'ኣብ ድሕሪ ChatGPT፣ Claude ን Gemini ዘሎ ሞተር ብኽብረት ተገሊጹ። Transformer architecture፣ self-attention፣ 3-ደረጃ training (pretraining/SFT/RLHF)፣ ናይ 2026 ዓቢ LLM ስድራ — ብ Awet G. Nway።',
+      am: 'ከ ChatGPT፣ Claude እና Gemini ጀርባ ያለው ሞተር በትክክል ተብራርቷል። Transformer architecture፣ self-attention፣ 3-ደረጃ training፣ የ2026 ዋና LLM ቤተሰቦች፣ context windows፣ RAG — በ Awet G. Nway።'
+    },
+    file: 'pdfs/ai-30day-day07-llms-in-depth.pdf',
+    color: '#ec4899',
+    preview: true
+  },
+  {
+    id: 'ai-30day-day08-computer-vision',
+    title: {
+      en: '30-Day AI Course — Day 8: Computer Vision in Practice',
+      ti: '30-መዓልቲ AI ኮርስ — መዓልቲ 8: ኮምፕዩተር ቪዥን ኣብ ግብሪ',
+      am: '30-ቀን AI ኮርስ — ቀን 8: ኮምፒዩተር ቪዥን በተግባር'
+    },
+    category: 'ai',
+    pages: 8,
+    size: '1.2 MB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'How AI sees the world — from phone cameras to self-driving cars. Covers the 6-stage vision pipeline, 4 core tasks (classification/detection/segmentation/pose), CNNs vs Vision Transformers, factory defect inspection, medical imaging, and edge vs cloud AI — by Awet G. Nway.',
+      ti: 'AI ዓለም ከመይ ይርእያ — ካብ ናይ ስልኪ ካሜራ ክሳብ ናይ ርእሰ-ምራሕ መኪናታት። 6-ደረጃ vision pipeline፣ CNN vs Vision Transformer፣ ናይ ፋብሪካ ምክትታል — ብ Awet G. Nway።',
+      am: 'AI ዓለምን ከምዴት ያያት — ከስልክ ካሜራ እስከ ራስ-ሰር መኪናዎች። 6-ደረጃ vision pipeline፣ CNN vs Vision Transformer፣ የፋብሪካ ጉድለት ምርመራ — በ Awet G. Nway።'
+    },
+    file: 'pdfs/ai-30day-day08-computer-vision.pdf',
     color: '#ec4899',
     preview: true
   },
