@@ -1,0 +1,18 @@
+# Environment variables — NEVER commit these
+.env
+.env.local
+.env.*.local
+
+# Vercel build output
+.vercel
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/

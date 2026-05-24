@@ -1,0 +1,16 @@
+{
+  "name": "ayetechub",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AYE Tech Hub — Engineering Education Platform",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "devDependencies": {
+    "vercel": "latest"
+  }
+}
