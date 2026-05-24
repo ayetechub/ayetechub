@@ -8,7 +8,7 @@
 /* ---- Root container ---- */
 #aye-ai-widget {
   position: fixed;
-  bottom: 24px;
+  bottom: 90px; /* above the #back-to-top arrow (46px tall at bottom:24px) */
   left: 24px;
   z-index: 997;
   font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
@@ -843,7 +843,7 @@
   }
   #aye-ai-btn {
     position: fixed;
-    bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(82px + env(safe-area-inset-bottom, 0px)); /* above back-to-top arrow */
     left: 18px;
     width: 54px;
     height: 54px;
