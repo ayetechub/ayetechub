@@ -386,6 +386,7 @@
     panel.classList.toggle('open', panelOpen);
     btn.classList.toggle('panel-open', panelOpen);
     panel.setAttribute('aria-hidden', String(!panelOpen));
+    document.body.classList.toggle('ai-panel-open', panelOpen);
     btn.setAttribute('aria-expanded', String(panelOpen));
 
     if (panelOpen) {

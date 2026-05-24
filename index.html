@@ -1307,6 +1307,14 @@ html[lang="am"] body{
 @media(max-width:880px){
   header .lang-switcher{display:none}
 }
+/* Hide fixed buttons that overlap the AI chat panel on mobile */
+@media(max-width:640px){
+  body.ai-panel-open #back-to-top,
+  body.ai-panel-open .floating-whatsapp{
+    visibility:hidden !important;
+    pointer-events:none !important;
+  }
+}
 /* Draft notice banner for incomplete translations */
 #i18n-draft-notice{
   position:fixed;
