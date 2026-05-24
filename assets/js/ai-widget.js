@@ -181,10 +181,12 @@
 
       /* Build SpeechRecognition instance */
       recognition = new SpeechRec();
-      recognition.continuous      = true;
+      recognition.continuous      = false; /* single-utterance: browser auto-stops and always fires isFinal */
       recognition.interimResults  = true;
       recognition.lang            = STT_LANG[getLang()] || 'en-US';
       recognition.maxAlternatives = 1;
+
+      let finalFired = false;
 
       recognition.onresult = (e) => {
         let interim = '';
@@ -194,17 +196,24 @@
           if (e.results[i].isFinal) final += t;
           else interim += t;
         }
-        if (final.trim())   onFinal(final.trim());
+        if (final.trim()) { finalFired = true; onFinal(final.trim()); }
         else if (interim)   onInterim(interim.trim());
       };
 
       recognition.onerror = (e) => {
-        /* no-speech is normal (silence timeout) — don't treat as error */
         if (e.error !== 'no-speech') console.warn('[AYE Voice] STT error:', e.error);
         _stopListeningInternal();
       };
 
-      recognition.onend = () => { _stopListeningInternal(); };
+      recognition.onend = () => {
+        /* Fallback: if recognition ended without a final result, send whatever interim text is in the input */
+        if (!finalFired) {
+          const inp = qs('aye-ai-input');
+          const text = inp ? inp.value.trim() : '';
+          if (text) onFinal(text);
+        }
+        _stopListeningInternal();
+      };
 
       recognition.start();
       isListening = true;
