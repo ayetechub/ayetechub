@@ -701,6 +701,69 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'master-hvac-engineering-complete-guide',
+    title: {
+      en: 'Master HVAC Engineering — The Complete Professional Guide',
+      ti: 'ማስተር HVAC ምህንድስና — ምሉእ ናይ ሞያ መምርሒ',
+      am: 'ማስተር HVAC ምህንድስና — ሙሉ ሙያዊ መምሪያ'
+    },
+    category: 'mechanical',
+    pages: 11,
+    size: '100 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Complete HVAC professional guide covering refrigeration cycle, split & window AC systems, industrial chillers, installation procedures, safety, PPE, and troubleshooting — by Awet G. Nway.',
+      ti: 'ምሉእ ናይ HVAC ሞያ መምርሒ ናይ ምዝዋር ዑደት፣ ናይ ምቕዋም & ናይ መስኮት AC ስርዓታት፣ ናይ ኢንዱስትሪ ቺለር፣ ናይ ምትካል ኣሰራርሓ፣ ድሕነት፣ PPE፣ ናይ ምፍታሕ ጸገም ዝሸፍን — ብ Awet G. Nway።',
+      am: 'ሙሉ HVAC ሙያዊ መምሪያ ምፍሰሻ ዑደት፣ ስፕሊት & ዊንዶው AC ሥርዓቶች፣ ኢንዱስትሪ ቺለር፣ የጭነት ሂደቶች፣ ደህንነት፣ PPE፣ እና ፍትሻ ዘዴዎችን ዝሸፍን — በ Awet G. Nway።'
+    },
+    file: 'pdfs/master-hvac-engineering-complete-guide.pdf',
+    color: '#22c55e',
+    preview: true
+  },
+  {
+    id: 'plc-101-brain-of-industrial-automation',
+    title: {
+      en: 'PLC 101 — The Brain of Industrial Automation',
+      ti: 'PLC 101 — ሓሳብ ናይ ኢንዱስትሪ ኦቶሜሽን',
+      am: 'PLC 101 — የኢንዱስትሪ አውቶሜሽን አንጎል'
+    },
+    category: 'plc',
+    pages: 9,
+    size: '100 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Beginner-to-pro PLC guide covering scan cycle, hardware building blocks (CPU, PSU, I/O), ladder logic with seal-in contacts, compact vs modular configurations, and IEC 61131-3 languages — by Awet G. Nway.',
+      ti: 'ናይ ጀማሪ ክሳብ ሞያ PLC መምርሒ ናይ ስካን ዑደት፣ ናይ ሃርድዌር ኣካላት (CPU, PSU, I/O)፣ Ladder Logic፣ ናይ ምምጻእ ርክብ፣ compact vs modular ዝሸፍን — ብ Awet G. Nway።',
+      am: 'ከጀማሪ እስከ ሙያ PLC መምሪያ ስካን ሳይክል፣ ሃርድዌር አካላት (CPU, PSU, I/O)፣ Ladder Logic፣ ማህተም ግንኙነት፣ compact vs modular ዝሸፍን — በ Awet G. Nway።'
+    },
+    file: 'pdfs/plc-101-brain-of-industrial-automation.pdf',
+    color: '#00d4ff',
+    preview: true
+  },
+  {
+    id: 'solar-power-101-from-sun-to-socket',
+    title: {
+      en: 'Solar Power 101 — From Sun to Socket',
+      ti: 'ናይ ፀሓይ ሃይሊ 101 — ካብ ፀሓይ ናብ ፕሪዛ',
+      am: 'የፀሐይ ኃይል 101 — ከፀሐይ እስከ መሳቢያ'
+    },
+    category: 'electrical',
+    pages: 10,
+    size: '100 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Complete beginner-to-pro solar PV guide covering PV arrays, MPPT vs PWM charge controllers, battery sizing (lead-acid vs LiFePO4), pure sine inverters, off-grid/grid-tied/hybrid topologies, and a worked off-grid cabin design — by Awet G. Nway.',
+      ti: 'ምሉእ ናይ ጀማሪ ናብ ሞያ ናይ ፀሓይ PV መምርሒ ናይ PV arrays፣ MPPT vs PWM charge controllers፣ ናይ battery sizing፣ pure sine inverters፣ off-grid/grid-tied/hybrid ዝሸፍን — ብ Awet G. Nway።',
+      am: 'ሙሉ ከጀማሪ እስከ ሙያ የፀሐይ PV መምሪያ PV arrays፣ MPPT vs PWM charge controllers፣ ባትሪ ማስጠናት፣ pure sine inverters፣ off-grid/grid-tied/hybrid ቶፖሎጂዎችን ያካትታል — በ Awet G. Nway።'
+    },
+    file: 'pdfs/solar-power-101-from-sun-to-socket.pdf',
+    color: '#fbbf24',
+    preview: true
+  },
+  {
     id: 'scada-manual',
     title: 'SCADA & HMI Programming Manual',
     category: 'plc',
