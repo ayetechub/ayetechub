@@ -304,9 +304,9 @@ const PDFS = [
     downloads: '0',
     badge: 'FREE',
     description: {
-      en: 'AYE TechEngine course guide covering signals, systems, complex numbers, Euler\'s relation, elemental signals, and LTI systems — Chapters 1 & 2 by Awet G. Nway.',
-      ti: 'AYE TechEngine ናይ ኮርስ መምርሒ ምልክታት፣ ስርዓታት፣ ውሱብ ቁጽርታት፣ ናይ Euler ምትእስሳር፣ ናይ LTI ስርዓታት — ምዕ. 1 & 2 ብ Awet G. Nway።',
-      am: 'AYE TechEngine ናይ ኮርስ መምሪያ ምልክቶች፣ ሥርዓቶች፣ ውስብስብ ቁጥሮች፣ Euler ቀመር፣ LTI ሥርዓቶች — ምዕ. 1 & 2 በ Awet G. Nway።'
+      en: 'AYE Tech Hub course guide covering signals, systems, complex numbers, Euler\'s relation, elemental signals, and LTI systems — Chapters 1 & 2 by Awet G. Nway.',
+      ti: 'AYE Tech Hub ናይ ኮርስ መምርሒ ምልክታት፣ ስርዓታት፣ ውሱብ ቁጽርታት፣ ናይ Euler ምትእስሳር፣ ናይ LTI ስርዓታት — ምዕ. 1 & 2 ብ Awet G. Nway።',
+      am: 'AYE Tech Hub ናይ ኮርስ መምሪያ ምልክቶች፣ ሥርዓቶች፣ ውስብስብ ቁጥሮች፣ Euler ቀመር፣ LTI ሥርዓቶች — ምዕ. 1 & 2 በ Awet G. Nway።'
     },
     file: 'pdfs/ee-fundamentals-ch1-ch2.pdf',
     color: '#eab308',

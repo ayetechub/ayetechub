@@ -246,8 +246,8 @@ export default {
     title: 'Frequently Asked Questions',
     q1: 'Are the courses and PDFs completely free?',
     a1: 'Most YouTube tutorials and many PDF resources are completely free. We also offer premium content including advanced course bundles, comprehensive handbooks, and premium PDF packs through our Telegram channel and website.',
-    q2: 'What is the difference between AYE TechEngine and AYE TechPro?',
-    a2: 'AYE TechEngine focuses on hands-on engineering training — PLC, automation, CAD/Revit, electrical and mechanical systems delivered primarily through YouTube tutorials. AYE TechPro focuses on digital resources — PDF ebooks, AI tools guides, technical study materials and productivity resources.',
+    q2: 'What engineering topics does AYE Tech Hub cover?',
+    a2: 'AYE Tech Hub covers PLC programming, industrial automation, electrical engineering, mechanical engineering, Revit & CAD, AI tools for engineers, solar & HVAC, and robotics & maintenance — with both free YouTube tutorials and premium courses.',
     q3: 'Do I need prior engineering experience to start?',
     a3: 'No prior experience required! We have courses structured for complete beginners all the way to advanced professionals. Start with our "Beginner" labeled courses and progress at your own pace.',
     q4: 'How can I access the premium resources?',
@@ -255,7 +255,7 @@ export default {
   },
 
   footer: {
-    tagline: 'Premium engineering education platform combining AYE TechEngine and AYE TechPro for engineers worldwide.',
+    tagline: 'Premium engineering education platform for engineers across Africa and beyond.',
     col_quick_links: 'QUICK LINKS',
     col_services: 'SERVICES',
     col_newsletter: 'NEWSLETTER',
@@ -277,6 +277,6 @@ export default {
     newsletter_desc: 'Get free PDFs, course updates and engineering tips delivered to your inbox.',
     newsletter_placeholder: 'Enter email',
     newsletter_spam: 'No spam, ever. Unsubscribe anytime.',
-    copyright: '© 2026 AYE Tech Hub. All rights reserved. | AYE TechEngine & AYE TechPro'
+    copyright: '© 2026 AYE Tech Hub. All rights reserved.'
   }
 };
