@@ -13,7 +13,7 @@
      you keep GitHub Pages and deploy the API separately:
      const AI_ENDPOINT = 'https://your-project.vercel.app/api/chat';
   ---------------------------------------------------------- */
-  const AI_ENDPOINT = '/api/chat';
+  const AI_ENDPOINT = 'https://www.ayetechub.com/api/chat';
 
   /* ----------------------------------------------------------
      WIDGET STATE
@@ -589,7 +589,9 @@
 
       if (!response.ok) {
         let errMsg = 'Something went wrong. Please try again.';
-        try { const d = await response.json(); if (d.error) errMsg = d.error; } catch (_) {}
+        try { const d = await response.json(); if (d.error) errMsg = d.error; } catch (_) {
+          errMsg = `Error ${response.status}: Something went wrong. Please try again.`;
+        }
         showError(errMsg);
         history.pop();
         return;
