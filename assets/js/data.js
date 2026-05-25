@@ -620,6 +620,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'fit-hub-day02-hiit-101-fat-burning',
+    title: {
+      en: 'AYE Fit Hub — Day 2: HIIT 101 – The Science of Fat Burning in 20 Minutes',
+      ti: 'AYE Fit Hub — መዓልቲ 2: HIIT 101 – ሳይንስ ናይ ምቃጻል ስብሒ ኣብ 20 ደቓይቕ',
+      am: 'AYE Fit Hub — ቀን 2: HIIT 101 – የስብ ማቃጠል ሳይንስ በ20 ደቂቃ'
+    },
+    category: 'fit-hub',
+    pages: 6,
+    size: '90 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'What HIIT is, why EPOC burns fat for 24 hours after training, the four HIIT formats (Work:Rest, Tabata, EMOM, AMRAP), a 20-minute no-equipment fat-burning circuit, cool-down, and quick reference rules — by Awet G. Nway.',
+      ti: 'HIIT እንታይ ምዃኑ፣ ስለምንታይ EPOC ድሕሪ ናይ ምስልጣን ንልዕሊ 24 ሰዓት ስብሒ ይቃጸሎ፣ ናይ 20-ደቓይቕ ወርክኣውት — ብ Awet G. Nway።',
+      am: 'HIIT ምንድነው፣ EPOC ለ24 ሰዓት ስብ የሚያቃጥለው ለምን፣ 4 የHIIT ቅርጾች፣ 20-ደቂቃ ወርክኣውት — በ Awet G. Nway።'
+    },
+    file: 'pdfs/aye-fit-hub-day02-hiit-101-fat-burning.pdf',
+    color: '#f97316',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'mechanical',
