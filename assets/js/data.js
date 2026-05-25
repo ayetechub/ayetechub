@@ -641,6 +641,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'fit-hub-day03-core-anatomy',
+    title: {
+      en: 'AYE Fit Hub — Day 3: Core Anatomy – Why Your Core Is More Than Abs',
+      ti: 'AYE Fit Hub — መዓልቲ 3: Core Anatomy – ስለምንታይ ናይ ሰውነትካ ማእከል ካብ Abs ዝበዝሕ ምዃኑ',
+      am: 'AYE Fit Hub — ቀን 3: Core Anatomy – ኮርህ ከምብቶ አብስ የበለጠ የሆነው ለምን'
+    },
+    category: 'fit-hub',
+    pages: 5,
+    size: '92 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Complete core muscle anatomy (9 muscle groups), bracing vs sucking-in technique, 7-exercise core foundation circuit, lower back pain prevention, and breathing mechanics — by Awet G. Nway.',
+      ti: 'ናይ core ጭዋዳ anatomy (9 ጉጅለታት ጭዋዳ)፣ bracing vs sucking-in ቴክኒክ፣ 7 ናይ ልምምድ core circuit — ብ Awet G. Nway።',
+      am: 'የcore ጡንቻ anatomy (9 ጡንቻ ቡድኖች)፣ bracing vs sucking-in ቴክኒክ፣ 7 ናቸው core circuit ልምምድ — በ Awet G. Nway።'
+    },
+    file: 'pdfs/aye-fit-hub-day03-core-anatomy.pdf',
+    color: '#a78bfa',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'mechanical',
