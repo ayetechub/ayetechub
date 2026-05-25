@@ -599,6 +599,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'fit-hub-day01-welcome-30day-transformation',
+    title: {
+      en: 'AYE Fit Hub — Day 1: Welcome to Your 30-Day Transformation',
+      ti: 'AYE Fit Hub — መዓልቲ 1: ናብ 30-መዓልቲ ምቕያርካ ንቑሕ ኩን',
+      am: 'AYE Fit Hub — ቀን 1: ወደ 30-ቀን ለውጥህ እንኳን ደህና መጣህ'
+    },
+    category: 'fit-hub',
+    pages: 5,
+    size: '85 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Kick off your 30-day fitness journey: program overview, body baseline measurements guide, foundation strength circuit workout, core principles, and Day 1 self-check question — by Awet G. Nway.',
+      ti: 'ናይ 30-መዓልቲ ናይ ጥዕና መገዲ ጀምር: ናይ ፕሮግራም ክልሰ-ሓሳብ፣ ናይ ሰውነት baseline ዕቐባ ምምዕዳው፣ ናይ ሓቕነት ጉልበት ወርክ ኣውት — ብ Awet G. Nway።',
+      am: '30-ቀን የአካላዊ ብቃት ጉዞህን ጀምር: የፕሮግራም አጠቃላይ እይታ፣ የሰውነት baseline ልኬቶች ማብሪያ፣ የመሰረት ጥንካሬ ዙር ልምምድ፣ ዋና መርሆዎች — በ Awet G. Nway።'
+    },
+    file: 'pdfs/aye-fit-hub-day01-welcome-30day-transformation.pdf',
+    color: '#00d4ff',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'mechanical',

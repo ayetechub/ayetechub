@@ -783,7 +783,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const fitnessPdfs = (typeof PDFS !== 'undefined')
-    ? PDFS.filter(p => p.category === 'fitness')
+    ? PDFS.filter(p => p.category === 'fitness' || p.category === 'fit-hub')
     : [];
 
   if (fitnessPdfs.length > 0) {
