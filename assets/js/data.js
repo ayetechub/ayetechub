@@ -578,6 +578,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'ai-30day-day10-neural-networks',
+    title: {
+      en: '30-Day AI Course — Day 10: Neural Networks — The Building Blocks of Deep Learning',
+      ti: '30-መዓልቲ AI ኮርስ — መዓልቲ 10: ናይ Neural Networks — ናይ Deep Learning መሰረታዊ ኣካላት',
+      am: '30-ቀን AI ኮርስ — ቀን 10: Neural Networks — የDeep Learning መሰረት ብሎኮች'
+    },
+    category: 'ai',
+    pages: 9,
+    size: '1.3 MB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Biological vs artificial neurons, perceptron formula, feedforward networks (MLP), activation functions (Sigmoid, ReLU, Tanh, Softmax, GELU), backpropagation, gradient descent, and hands-on Python exercises — by Awet G. Nway.',
+      ti: 'ናይ ባዮሎጂካልን ናይ ሰብ ሰርሖን ኒዩሮን፣ ናይ perceptron ቀመር፣ feedforward networks (MLP)፣ activation functions (ReLU, Sigmoid, Tanh)፣ backpropagation፣ gradient descent፣ ናይ Python ልምምዳት — ብ Awet G. Nway።',
+      am: 'ባዮሎጂካል እና ሰው-ሰራሽ ኒውሮን፣ perceptron ቀመር፣ feedforward networks (MLP)፣ activation functions (ReLU, Sigmoid, Tanh)፣ backpropagation፣ gradient descent፣ እና Python ልምምዶች — በ Awet G. Nway።'
+    },
+    file: 'pdfs/ai-30day-day10-neural-networks.pdf',
+    color: '#ec4899',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'mechanical',
