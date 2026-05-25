@@ -662,6 +662,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'fit-hub-day04-home-workout-setup',
+    title: {
+      en: 'AYE Fit Hub — Day 4: Home Workout Setup – No Equipment, No Excuses',
+      ti: 'AYE Fit Hub — መዓልቲ 4: ናይ ገዛ ወርክኣውት ምቕራብ – ብዘይ ናውቲ፣ ብዘይ ምኽኒት',
+      am: 'AYE Fit Hub — ቀን 4: የቤት ልምምድ ዝግጅት – ምንም መሳሪያ የለም፣ ምክንያት የለም'
+    },
+    category: 'fit-hub',
+    pages: 5,
+    size: '93 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Home training space checklist, exercise substitution table (easier & harder versions), 8-exercise full-body circuit, weekly training template for Days 1–7, and common excuses answered — by Awet G. Nway.',
+      ti: 'ናይ ገዛ ምስልጣን ቦታ checklist፣ ናይ ምትካእ ልምምዳት ሰንጠረጽ፣ 8 ናይ ምሉእ ሰውነት circuit — ብ Awet G. Nway።',
+      am: 'የቤት ልምምድ ቦታ checklist፣ የልምምድ substitution ሰንጠረዥ፣ 8 ልምምድ full-body circuit — በ Awet G. Nway።'
+    },
+    file: 'pdfs/aye-fit-hub-day04-home-workout-setup.pdf',
+    color: '#22c55e',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'mechanical',
