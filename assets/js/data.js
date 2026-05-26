@@ -725,6 +725,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'fit-hub-day07-recovery-active-rest',
+    title: {
+      en: 'AYE Fit Hub — Day 7: Recovery Day – Active Rest That Speeds Progress',
+      ti: 'AYE Fit Hub — መዓልቲ 7: መዓልቲ ምሕዳስ – ንቑሕ ዕረፍቲ ምምሕያሽ ዝቐልጥፍ',
+      am: 'AYE Fit Hub — ቀን 7: የማገገሚያ ቀን – ሂደቱን የሚያፋጥን ንቁ እረፍት'
+    },
+    category: 'fit-hub',
+    pages: 5,
+    size: '93 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Science of muscle repair, recovery timeline, sleep optimisation guide, 25-min active recovery routine, Week 1 progress review table, Week 2 preview, and self-check — by Awet G. Nway.',
+      ti: 'ሳይንስ ናይ ጭዋዳ ጽገና፣ ናይ ምሕዳስ ጊዜ ሰሌዳ፣ ናይ ድቃስ ምምሕያሽ፣ 25-ደቓይቕ ናይ active recovery — ብ Awet G. Nway።',
+      am: 'የጡንቻ ጥገና ሳይንስ፣ የማገገሚያ ጊዜ ሰሌዳ፣ የእንቅልፍ ማሻሻያ፣ 25-ደቂቃ active recovery routine — በ Awet G. Nway።'
+    },
+    file: 'pdfs/aye-fit-hub-day07-recovery-active-rest.pdf',
+    color: '#00d4ff',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'mechanical',
