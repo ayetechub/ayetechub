@@ -683,6 +683,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'fit-hub-day05-nutrition-basics-macros',
+    title: {
+      en: 'AYE Fit Hub — Day 5: Nutrition Basics – Macros Made Simple',
+      ti: 'AYE Fit Hub — መዓልቲ 5: መሰረታዊ ምግቢ – Macros ብቐሊሉ',
+      am: 'AYE Fit Hub — ቀን 5: የምግብ መሰረታዊ ነገሮች – Macros በቀላሉ'
+    },
+    category: 'fit-hub',
+    pages: 5,
+    size: '94 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'The three macronutrients explained, TDEE calculation, calorie targets by goal, protein targets by bodyweight, daily meal template, plate method, and nutrition quick reference rules — by Awet G. Nway.',
+      ti: 'ሰለስቲኦም macronutrients ብምብራህ፣ TDEE ሕሳብ፣ ናይ ካሎሪ ዕላማ፣ ናይ ዕለታዊ ምግቢ template — ብ Awet G. Nway።',
+      am: 'ሶስቱ macronutrients ማብራሪያ፣ TDEE ስሌት፣ የካሎሪ ዒላማ በግብ፣ የዕለት ምግብ template — በ Awet G. Nway።'
+    },
+    file: 'pdfs/aye-fit-hub-day05-nutrition-basics-macros.pdf',
+    color: '#eab308',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'mechanical',
