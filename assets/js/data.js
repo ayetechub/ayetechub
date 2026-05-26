@@ -704,6 +704,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'fit-hub-day06-mindset-shift',
+    title: {
+      en: 'AYE Fit Hub — Day 6: The Mindset Shift – From Wanting to Doing',
+      ti: 'AYE Fit Hub — መዓልቲ 6: ናይ ሓሳብ ምቕያር – ካብ ምደላይ ናብ ምግባር',
+      am: 'AYE Fit Hub — ቀን 6: የአዕምሮ ለውጥ – ከመፈለግ ወደ ማድረግ'
+    },
+    category: 'fit-hub',
+    pages: 5,
+    size: '91 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Why motivation fails, identity vs motivation comparison, the habit loop, implementation intentions, environment design, 5-minute daily mindset routine, and defeating inner excuses — by Awet G. Nway.',
+      ti: 'ስለምንታይ motivation ዘይሰርሕ፣ identity vs motivation፣ ናይ habit loop፣ ምምቕራጽ ቦታ፣ ናይ 5-ደቓይቕ ናይ ዕለት mindset routine — ብ Awet G. Nway።',
+      am: 'motivation ለምን እንደሚወድቅ፣ identity vs motivation፣ habit loop፣ አካባቢ ዲዛይን፣ 5-ደቂቃ ዕለታዊ mindset routine — በ Awet G. Nway።'
+    },
+    file: 'pdfs/aye-fit-hub-day06-mindset-shift.pdf',
+    color: '#a78bfa',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'mechanical',
