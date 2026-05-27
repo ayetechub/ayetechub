@@ -809,6 +809,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'hvac-curriculum-001-intro-to-hvac',
+    title: {
+      en: 'HVAC-001: Introduction to HVAC Engineering',
+      ti: 'HVAC-001: መእተዊ ናብ HVAC ምህንድስና',
+      am: 'HVAC-001: ወደ HVAC ምህንድስና መግቢያ'
+    },
+    category: 'hvac',
+    pages: 4,
+    size: '100 KB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: 'What HVAC is, the four core functions, key components from compressors to chillers, the refrigeration cycle, HVAC system types, and career pathways in the MEP engineering industry — by Awet G. Nway.',
+      ti: 'HVAC እንታይ ምዃኑ፣ ኣርባዕቲኦም መሰረታዊ ተግባራት፣ ካብ compressors ክሳብ chillers ዝበጽሑ ቁልፊ ኣካላት፣ refrigeration cycle — ብ Awet G. Nway።',
+      am: 'HVAC ምን እንደሆነ፣ አራቱ ዋና ዋና ተግባራት፣ ከcondenser እስከ chiller ያሉ ቁልፍ ክፍሎች፣ refrigeration cycle — በ Awet G. Nway።'
+    },
+    file: 'pdfs/HVAC-001-Introduction-to-HVAC.pdf',
+    color: '#22c55e',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'mechanical',
