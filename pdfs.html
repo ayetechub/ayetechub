@@ -148,11 +148,13 @@
       </div>
       <div class="filter-tags" id="pdf-filters">
         <button class="filter-tag active" data-cat="all">All</button>
+        <button class="filter-tag" data-cat="ai">AI</button>
+        <button class="filter-tag" data-cat="ai-curriculum">AI Curriculum</button>
+        <button class="filter-tag" data-cat="fit-hub">Fit Hub</button>
         <button class="filter-tag" data-cat="plc">PLC</button>
         <button class="filter-tag" data-cat="electrical">Electrical</button>
         <button class="filter-tag" data-cat="mechanical">Mechanical</button>
         <button class="filter-tag" data-cat="design">CAD/Design</button>
-        <button class="filter-tag" data-cat="ai">AI Tools</button>
       </div>
       <div class="result-count" data-count-for="pdf-grid">9 results</div>
     </div>
@@ -250,7 +252,18 @@
 let _cat = 'all', _q = '';
 
 function renderPdfs() {
-  const filtered = filterAndSearch(PDFS, { category: _cat, query: _q });
+  const AI_CATS = ['ai', 'ai-30day', 'ai-curriculum'];
+  const q = _q.toLowerCase();
+  const filtered = PDFS.filter(p => {
+    const matchCat = _cat === 'all'
+      || (_cat === 'ai' && AI_CATS.includes(p.category))
+      || p.category === _cat;
+    if (!matchCat) return false;
+    if (!q) return true;
+    const title = typeof p.title === 'object' ? Object.values(p.title).join(' ') : (p.title || '');
+    const desc  = typeof p.description === 'object' ? Object.values(p.description).join(' ') : (p.description || '');
+    return (title + ' ' + desc).toLowerCase().includes(q);
+  });
   renderGrid('pdf-grid', filtered, p => renderPdfCard(p), 'No PDFs found');
 }
 
