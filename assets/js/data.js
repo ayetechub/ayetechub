@@ -887,7 +887,7 @@ const PDFS = [
   {
     id: 'solar-pv-guide',
     title: 'Solar PV System Design Guide',
-    category: 'electrical',
+    category: 'solar',
     pages: 14,
     size: '42 KB',
     downloads: '0',
@@ -900,7 +900,7 @@ const PDFS = [
   {
     id: 'solar-pv-panel-construction',
     title: 'Solar PV Panel Construction — Layers, Cells, Electrical Architecture & Manufacturing',
-    category: 'electrical',
+    category: 'solar',
     pages: 9,
     size: '1 MB',
     downloads: '0',
@@ -1022,7 +1022,7 @@ const PDFS = [
       ti: 'ናይ ፀሓይ ሃይሊ 101 — ካብ ፀሓይ ናብ ፕሪዛ',
       am: 'የፀሐይ ኃይል 101 — ከፀሐይ እስከ መሳቢያ'
     },
-    category: 'electrical',
+    category: 'solar',
     pages: 10,
     size: '100 KB',
     downloads: '0',
