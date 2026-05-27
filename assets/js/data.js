@@ -1327,6 +1327,60 @@ const AI_TOOLS = [
 ];
 
 /* ============================================================
+   CAD & ENGINEERING SOFTWARE
+============================================================ */
+const CAD_TOOLS = [
+  {
+    id: 'autocad',
+    name: 'AutoCAD',
+    category: 'drafting',
+    description: 'Autodesk\'s industry-standard 2D drafting and 3D modelling software — used worldwide for engineering drawings, architectural plans, and technical documentation. Free student licence via Autodesk Education.',
+    badge: 'Industry Standard',
+    badgeColor: '#ef4444',
+    url: 'https://www.autodesk.com/products/autocad/overview',
+    icon: 'compass',
+    color: '#b91c1c',
+    useCases: ['2D Drafting', '3D Modelling', 'Engineering Drawings', 'Free Student Licence']
+  },
+  {
+    id: 'revit',
+    name: 'Revit',
+    category: 'bim',
+    description: 'Autodesk\'s BIM platform for architects, structural engineers, and MEP professionals. Design, document, and coordinate building projects in one intelligent model. Free student licence via Autodesk Education.',
+    badge: 'BIM Standard',
+    badgeColor: '#3b82f6',
+    url: 'https://www.autodesk.com/products/revit/overview',
+    icon: 'industry',
+    color: '#1d4ed8',
+    useCases: ['BIM Modelling', 'Architecture', 'MEP Engineering', 'Free Student Licence']
+  },
+  {
+    id: 'coohom',
+    name: 'Coohom',
+    category: 'design',
+    description: 'Cloud-based 3D interior design and rendering platform — create photorealistic renders, floor plans, and virtual walkthroughs instantly with no installation. Free plan available with paid upgrades.',
+    badge: 'Free Plan',
+    badgeColor: '#22c55e',
+    url: 'https://www.coohom.com',
+    icon: 'compass',
+    color: '#7c3aed',
+    useCases: ['Interior Design', '3D Rendering', 'Floor Plans', 'Virtual Walkthroughs']
+  },
+  {
+    id: 'prota-structure',
+    name: 'Prota Structure',
+    category: 'structural',
+    description: 'Comprehensive structural analysis and design software by Prota Software — covers reinforced concrete, steel, and timber design with full BIM integration. Free trial and student licences available.',
+    badge: 'Free Trial',
+    badgeColor: '#f97316',
+    url: 'https://www.protasoftware.com',
+    icon: 'cogs',
+    color: '#ea580c',
+    useCases: ['Structural Analysis', 'RC Design', 'Steel Design', 'BIM Integration']
+  }
+];
+
+/* ============================================================
    DOWNLOADS
 ============================================================ */
 const DOWNLOADS = [
