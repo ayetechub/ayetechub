@@ -767,6 +767,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'fit-hub-day09-tabata-training',
+    title: {
+      en: 'AYE Fit Hub — Day 9: Tabata Training – 4 Minutes That Change Everything',
+      ti: 'AYE Fit Hub — መዓልቲ 9: Tabata ልምምድ – 4 ደቓይቕ ዘቕይራ ኩሉ',
+      am: 'AYE Fit Hub — ቀን 9: Tabata ስልጠና – ሁሉን የሚቀይሩ 4 ደቂቃዎች'
+    },
+    category: 'fit-hub',
+    pages: 5,
+    size: '95 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'The 1996 Izumi Tabata study, HIIT vs Tabata vs EMOM comparison, 3-block Tabata session (Jump Squat, Push-Up, Burpee — 8×20/10), cool-down, and quick reference card — by Awet G. Nway.',
+      ti: '1996 Izumi Tabata ምርምር፣ HIIT vs Tabata vs EMOM ምምስስሳል፣ 3 ናይ Tabata ብሎካት (Jump Squat, Push-Up, Burpee — 8×20/10) — ብ Awet G. Nway።',
+      am: '1996 Izumi Tabata ጥናት፣ HIIT vs Tabata vs EMOM ማወዳደሪያ፣ 3 Tabata ብሎኮች (Jump Squat, Push-Up, Burpee — 8×20/10) — በ Awet G. Nway።'
+    },
+    file: 'pdfs/aye-fit-hub-day09-tabata-training.pdf',
+    color: '#f97316',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'mechanical',
