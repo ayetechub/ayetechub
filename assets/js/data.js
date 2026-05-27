@@ -830,6 +830,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'solar-curriculum-001-intro-to-solar',
+    title: {
+      en: 'SOLAR-001: Introduction to Solar Energy',
+      ti: 'SOLAR-001: መእተዊ ናብ ሶላር ኢነርጂ',
+      am: 'SOLAR-001: ወደ ፀሐይ ኃይል መግቢያ'
+    },
+    category: 'solar',
+    pages: 4,
+    size: '110 KB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: 'What solar energy is, the photovoltaic effect, the 5 core system components, off-grid vs on-grid vs hybrid system types, key engineering numbers, and solar career pathways — with diagrams — by Awet G. Nway.',
+      ti: 'ሶላር ኢነርጂ እንታይ ምዃኑ፣ ናይ PV ስርዓት ኣካላት፣ off-grid vs on-grid vs hybrid ዓይነታት፣ ቁልፊ ናይ ምህንድስና ቁጽርታት — ብ Awet G. Nway።',
+      am: 'ፀሐይ ኃይል ምን እንደሆነ፣ የPV ሥርዓት ክፍሎች፣ off-grid vs on-grid vs hybrid ዓይነቶች፣ ቁልፍ የምህንድስና ቁጥሮች — በ Awet G. Nway።'
+    },
+    file: 'pdfs/SOLAR-001-Introduction-to-Solar-Energy.pdf',
+    color: '#fbbf24',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'hvac',
