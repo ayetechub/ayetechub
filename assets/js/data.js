@@ -746,6 +746,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'fit-hub-day08-progressive-overload',
+    title: {
+      en: 'AYE Fit Hub — Day 8: Progressive Overload – The Secret to Never Plateauing',
+      ti: 'AYE Fit Hub — መዓልቲ 8: Progressive Overload – ምስጢር ናይ ዘይምቁራጽ ምምሕያሽ',
+      am: 'AYE Fit Hub — ቀን 8: Progressive Overload – ሁልጊዜ እየሻሻልኩ ለሚሉ ምስጢር'
+    },
+    category: 'fit-hub',
+    pages: 5,
+    size: '95 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'The 5 methods of progressive overload, Week 1 vs Week 2 training comparison, 8-exercise Build Phase circuit with harder variants, volume tracking system, and the 10% rule — by Awet G. Nway.',
+      ti: 'ሓሙሽተ ኣገባባት ናይ progressive overload፣ Week 1 vs Week 2 ምምስስሳል፣ 8 ናይ Build Phase ልምምዳት — ብ Awet G. Nway።',
+      am: '5 የprogressive overload ዘዴዎች፣ Week 1 vs Week 2 ማወዳደሪያ፣ 8 ልምምድ Build Phase circuit — በ Awet G. Nway።'
+    },
+    file: 'pdfs/aye-fit-hub-day08-progressive-overload.pdf',
+    color: '#22c55e',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'mechanical',
