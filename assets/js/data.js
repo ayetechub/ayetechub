@@ -832,7 +832,7 @@ const PDFS = [
   {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
-    category: 'mechanical',
+    category: 'hvac',
     pages: 14,
     size: '43 KB',
     downloads: '0',
@@ -959,7 +959,7 @@ const PDFS = [
       ti: 'ማስተር HVAC ምህንድስና — ምሉእ ናይ ሞያ መምርሒ',
       am: 'ማስተር HVAC ምህንድስና — ሙሉ ሙያዊ መምሪያ'
     },
-    category: 'mechanical',
+    category: 'hvac',
     pages: 11,
     size: '100 KB',
     downloads: '0',
