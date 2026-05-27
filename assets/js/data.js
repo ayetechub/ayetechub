@@ -788,6 +788,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'ai-curriculum-001-intro-to-ai',
+    title: {
+      en: 'AI-001: Introduction to Artificial Intelligence',
+      ti: 'AI-001: መእተዊ ናብ Artificial Intelligence',
+      am: 'AI-001: ወደ Artificial Intelligence መግቢያ'
+    },
+    category: 'ai-curriculum',
+    pages: 5,
+    size: '100 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'What AI is, the 70-year history from Turing to ChatGPT, Narrow vs General vs Super AI, the data-to-prediction pipeline, three learning types, and real AI applications in engineering — by Awet G. Nway.',
+      ti: 'AI እንታይ ምዃኑ፣ ካብ Turing ክሳብ ChatGPT ናይ 70 ዓመት ታሪኽ፣ Narrow vs General vs Super AI፣ ናይ data-to-prediction pipeline — ብ Awet G. Nway።',
+      am: 'AI ምን እንደሆነ፣ ከTuring እስከ ChatGPT 70 ዓመት ታሪክ፣ Narrow vs General vs Super AI፣ data-to-prediction pipeline — በ Awet G. Nway።'
+    },
+    file: 'pdfs/AI-001-Introduction-to-Artificial-Intelligence.pdf',
+    color: '#6366f1',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'mechanical',
