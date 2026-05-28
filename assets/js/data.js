@@ -956,6 +956,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'solar-curriculum-002-radiation-basics',
+    title: {
+      en: 'SOLAR-002: Solar Radiation Basics',
+      ti: 'SOLAR-002: ናይ ሶላር ጨረር መሰረታዊ',
+      am: 'SOLAR-002: የፀሐይ ጨረር መሰረታዊ'
+    },
+    category: 'solar',
+    pages: 4,
+    size: '110 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'GHI, DNI, DHI irradiance components, the solar constant, peak sun hours (PSH) concept and regional data, tilt angle and azimuth optimisation, sun path, shading losses, and the panel sizing formula — with diagrams — by Awet G. Nway.',
+      ti: 'GHI/DNI/DHI፣ solar constant፣ Peak Sun Hours፣ tilt angle፣ sun path፣ shading losses፣ ናይ panel sizing formula — ብ Awet G. Nway።',
+      am: 'GHI/DNI/DHI፣ solar constant፣ Peak Sun Hours፣ tilt angle፣ sun path፣ shading losses — በ Awet G. Nway።'
+    },
+    file: 'pdfs/SOLAR-002-Solar-Radiation-Basics.pdf',
+    color: '#fbbf24',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'hvac',
