@@ -788,6 +788,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'fit-hub-day10-flexibility-fundamentals',
+    title: {
+      en: 'Day 10: Flexibility Fundamentals — Mobility for Athletes',
+      ti: 'ቀን 10: ናይ ጽዕነት መሰረታት — ሞቢሊቲ ንኣትሌታት',
+      am: 'ቀን 10: የተለጣጠፍነት መሰረቶች — ለስፖርተኞች ሞቢሊቲ'
+    },
+    category: 'fit-hub',
+    pages: 4,
+    size: '120 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Flexibility vs mobility explained, the science of how muscles stretch (muscle spindle & GTO), 4 stretching types with diagrams, a 10-exercise full-body routine, the 7 key tight zones, and a flexibility progression plan — by Awet G. Nway.',
+      ti: 'Flexibility vs mobility ምምስስሳል፣ ሳይንስ ናይ ጽዕነት፣ 4 ዓይነታት ናይ stretching፣ 10 ናይ ምሉእ ሰውነት ልምምድ፣ 7 ቀንዲ ዝጠቀጥቁ ቦታታት — ብ Awet G. Nway።',
+      am: 'Flexibility vs mobility ማብራሪያ፣ ጡንቻ እንዴት እንደሚዘረጋ ሳይንስ፣ 4 ዓይነት ዘርጋታዎች፣ 10 ሙሉ ሰውነት ልምምዶች፣ 7 ቁልፍ ጥብቅ አካባቢዎች — በ Awet G. Nway።'
+    },
+    file: 'pdfs/aye-fit-hub-day10-flexibility-fundamentals.pdf',
+    color: '#22c55e',
+    preview: true
+  },
+  {
     id: 'ai-curriculum-001-intro-to-ai',
     title: {
       en: 'AI-001: Introduction to Artificial Intelligence',
