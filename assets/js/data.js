@@ -1061,6 +1061,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'solar-curriculum-003-solar-system-components',
+    title: {
+      en: 'SOLAR-003: Solar System Components',
+      ti: 'SOLAR-003: ናይ ሶላር ስርዓት ኣካላት',
+      am: 'SOLAR-003: የፀሐይ ኃይል ሥርዓት ክፍሎች'
+    },
+    category: 'solar',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'The five core solar system components: panel technologies (mono/poly/thin-film/bifacial), inverter types (string/micro/hybrid), battery chemistry comparison (lead-acid vs LFP), MPPT vs PWM charge controllers, and Balance of System (BOS) — with diagrams — by Awet G. Nway.',
+      ti: 'ሓምሸቲኦም ናይ solar ኣካላት፣ ዓይነታት panel፣ inverter types (string/micro/hybrid)፣ battery chemistry፣ MPPT vs PWM፣ Balance of System — ብ Awet G. Nway።',
+      am: 'አምስቱ ዋና solar ክፍሎች፣ panel ዓይነቶች፣ inverter ዓይነቶች (string/micro/hybrid)፣ battery chemistry ንጽጽር፣ MPPT vs PWM፣ Balance of System — በ Awet G. Nway።'
+    },
+    file: 'pdfs/SOLAR-003-Solar-System-Components.pdf',
+    color: '#fbbf24',
+    preview: true
+  },
+  {
     id: 'ai-curriculum-002-understanding-chatgpt',
     title: {
       en: 'AI-002: Understanding ChatGPT',
