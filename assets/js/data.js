@@ -935,6 +935,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'hvac-curriculum-002-refrigeration-cycle',
+    title: {
+      en: 'HVAC-002: The Refrigeration Cycle',
+      ti: 'HVAC-002: ናይ ማቀዝቀዝ ዑደት',
+      am: 'HVAC-002: የማቀዝቀዝ ዑደት'
+    },
+    category: 'hvac',
+    pages: 4,
+    size: '110 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'The 4-stage vapor compression cycle, how each component works, refrigerant comparison (R-22/R-410A/R-32/R-454B), COP and EER efficiency metrics, and heat pump heating and cooling modes — with diagrams — by Awet G. Nway.',
+      ti: 'ናይ vapor compression cycle 4 ደረጃታት፣ ኣካላት፣ ናይ refrigerant ምፍላጥ፣ COP/EER፣ heat pump — ብ Awet G. Nway።',
+      am: 'የvapor compression cycle 4 ደረጃዎች፣ ክፍሎች፣ refrigerant ንጽጽር፣ COP/EER፣ heat pump — በ Awet G. Nway።'
+    },
+    file: 'pdfs/HVAC-002-Refrigeration-Cycle.pdf',
+    color: '#00d4ff',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'hvac',
