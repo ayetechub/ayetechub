@@ -998,6 +998,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'mech-curriculum-002-engineering-materials',
+    title: {
+      en: 'MECH-002: Engineering Materials',
+      ti: 'MECH-002: ናይ ምህንድስና ቁሳቁስ',
+      am: 'MECH-002: የምህንድስና ቁሳቁሶች'
+    },
+    category: 'mechanical',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'The four material classes (metals, polymers, ceramics, composites), key mechanical properties (E, yield strength, UTS, fatigue, toughness), the stress-strain curve explained, common engineering metals with properties table, heat treatment of steel, and material selection map — with diagrams — by Awet G. Nway.',
+      ti: 'ኣርባዕቲኦም ናይ ቁሳቁስ ዓይነታት፣ ቀንዲ ናይ ሜካኒካዊ ምስልታት፣ stress-strain curve፣ heat treatment፣ material selection map — ብ Awet G. Nway።',
+      am: 'አራቱ የቁሳቁስ ክፍሎች፣ ቁልፍ ሜካኒካዊ ባሕሪያት፣ stress-strain curve፣ heat treatment፣ material selection map — በ Awet G. Nway።'
+    },
+    file: 'pdfs/MECH-002-Engineering-Materials.pdf',
+    color: '#f97316',
+    preview: true
+  },
+  {
     id: 'elec-curriculum-001-intro-to-electricity',
     title: {
       en: 'ELEC-001: Introduction to Electricity',
