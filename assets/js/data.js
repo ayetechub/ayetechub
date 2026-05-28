@@ -893,6 +893,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'mech-curriculum-001-intro-to-mechanical',
+    title: {
+      en: 'MECH-001: Introduction to Mechanical Engineering',
+      ti: 'MECH-001: መእተዊ ናብ ሜካኒካል ምህንድስና',
+      am: 'MECH-001: ወደ ሜካኒካል ምህንድስና መግቢያ'
+    },
+    category: 'mechanical',
+    pages: 4,
+    size: '110 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'The 5 core ME disciplines, the engineering design process, essential software tools, fundamental concepts (stress, strain, forces), and mechanical career pathways — with diagrams — by Awet G. Nway.',
+      ti: '5 ቀንዲ ዓርሶ-ምህንድስና ዓውዲታት፣ ናይ ምህንድስና ምድላው ኣሰራርሓ፣ ቀንዲ ሶፍትዌር፣ stress/strain/forces — ብ Awet G. Nway።',
+      am: '5 ዋና ME ዲሲፕሊኖች፣ የምህንድስና ንድፍ ሂደት፣ አስፈላጊ ሶፍትዌሮች፣ stress/strain/forces — በ Awet G. Nway።'
+    },
+    file: 'pdfs/MECH-001-Introduction-to-Mechanical-Engineering.pdf',
+    color: '#f97316',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'hvac',
