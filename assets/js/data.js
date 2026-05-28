@@ -914,6 +914,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'elec-curriculum-001-intro-to-electricity',
+    title: {
+      en: 'ELEC-001: Introduction to Electricity',
+      ti: 'ELEC-001: መእተዊ ናብ ኤሌክትሪሲቲ',
+      am: 'ELEC-001: ወደ ኤሌክትሪሲቲ መግቢያ'
+    },
+    category: 'electrical',
+    pages: 4,
+    size: '110 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: "Voltage, current, resistance and Ohm's Law; AC vs DC; the power grid (generation to outlet); electrical safety fundamentals; and electrical career pathways — with diagrams — by Awet G. Nway.",
+      ti: "ቮልቴጅ፣ ሞቕሒ፣ resistance፣ Ohm's Law፣ AC vs DC፣ ናይ ሓይሊ ኣውታረ-መርበብ — ብ Awet G. Nway።",
+      am: "ቮልቴጅ፣ ሞገድ፣ resistance፣ Ohm's Law፣ AC vs DC፣ ኤሌክትሪካዊ ኃይል ፍሰት — በ Awet G. Nway።"
+    },
+    file: 'pdfs/ELEC-001-Introduction-to-Electricity.pdf',
+    color: '#3b82f6',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'hvac',
