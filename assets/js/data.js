@@ -809,6 +809,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'fit-hub-day11-meal-prep-mastery',
+    title: {
+      en: 'Day 11: Meal Prep Mastery — Cook Once, Eat All Week',
+      ti: 'ቀን 11: ናይ ምቅርራብ ምግቢ ጥበብ — ሓንሳብ ሰርሕ፣ ምሉእ ሰሙን ብላዕ',
+      am: 'ቀን 11: የምግብ ዝግጅት ጥበብ — አንድ ጊዜ ብሰርሃ፣ ሳምንቱን ሙሉ ብላ'
+    },
+    category: 'fit-hub',
+    pages: 4,
+    size: '120 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Why meal prep eliminates diet failure, the 5-step batch cooking system, best proteins/carbs/veg to prep in bulk, the container macro method (35/35/30), a sample 7-day plan, and safe food storage times — by Awet G. Nway.',
+      ti: 'ናይ ምቅርራብ ምግቢ 5 ስጉምቲ ስርዓት፣ ዝበለጸ proteins/carbs/veg ኣብ bulk፣ ናይ container macro method (35/35/30)፣ ናይ 7-ቀን ውጥን — ብ Awet G. Nway።',
+      am: 'ምግብ ቅድሚያ ማዘጋጀት 5 ደረጃ ሥርዓት፣ ምርጥ proteins/carbs/veg ብብዛት፣ container macro method (35/35/30)፣ 7-ቀን ዕቅድ — በ Awet G. Nway።'
+    },
+    file: 'pdfs/aye-fit-hub-day11-meal-prep-mastery.pdf',
+    color: '#22c55e',
+    preview: true
+  },
+  {
     id: 'ai-curriculum-001-intro-to-ai',
     title: {
       en: 'AI-001: Introduction to Artificial Intelligence',
