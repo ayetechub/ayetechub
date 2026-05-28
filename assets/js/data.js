@@ -893,6 +893,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'plc-curriculum-002-plc-hardware-deep-dive',
+    title: {
+      en: 'PLC-002: PLC Hardware Deep Dive',
+      ti: 'PLC-002: PLC ሃርድወር ዕምቆት',
+      am: 'PLC-002: PLC ሃርድዌር ጥልቅ ዳሰሳ'
+    },
+    category: 'plc',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'CPU architecture, memory types (ROM/EEPROM/RAM), I/O module types, sinking vs sourcing wiring, I/O addressing across 5 PLC brands, and power supply best practices — with diagrams — by Awet G. Nway.',
+      ti: 'CPU ኣርኪቴክቸር፣ ዓይነታት ዝኽሪ፣ I/O module ዓይነታት፣ sinking vs sourcing ሽቦ፣ I/O ኣድራሻ ኣብ 5 ናይ PLC ብራንዳት — ብ Awet G. Nway።',
+      am: 'CPU አርኪቴክቸር፣ የማህደረ ትውስታ ዓይነቶች፣ I/O module ዓይነቶች፣ sinking vs sourcing መስመር፣ I/O አድራሻ ለ5 PLC ብራንዶች — በ Awet G. Nway።'
+    },
+    file: 'pdfs/PLC-002-PLC-Hardware-Deep-Dive.pdf',
+    color: '#22c55e',
+    preview: true
+  },
+  {
     id: 'mech-curriculum-001-intro-to-mechanical',
     title: {
       en: 'MECH-001: Introduction to Mechanical Engineering',
