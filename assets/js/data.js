@@ -872,6 +872,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'plc-curriculum-001-intro-to-plc',
+    title: {
+      en: 'PLC-001: Introduction to PLC Programming',
+      ti: 'PLC-001: መእተዊ ናብ PLC ፕሮግራሚን',
+      am: 'PLC-001: ወደ PLC ፕሮግራሚንግ መግቢያ'
+    },
+    category: 'plc',
+    pages: 4,
+    size: '110 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'What a PLC is, the scan cycle, hardware architecture (CPU/I/O modules), IEC 61131-3 programming languages, ladder logic basics, industrial applications, and PLC career pathways — with diagrams — by Awet G. Nway.',
+      ti: 'PLC እንታይ ምዃኑ፣ scan cycle፣ hardware ኣርኪቴክቸር፣ IEC 61131-3 ቋንቋታት፣ ladder logic መሰረታዊ — ብ Awet G. Nway።',
+      am: 'PLC ምን እንደሆነ፣ scan cycle፣ hardware አርኪቴክቸር፣ IEC 61131-3 ቋንቋዎች፣ ladder logic መሰረታዊ — በ Awet G. Nway።'
+    },
+    file: 'pdfs/PLC-001-Introduction-to-PLC-Programming.pdf',
+    color: '#22c55e',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'hvac',
