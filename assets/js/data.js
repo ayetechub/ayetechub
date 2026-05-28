@@ -977,6 +977,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'ai-curriculum-002-understanding-chatgpt',
+    title: {
+      en: 'AI-002: Understanding ChatGPT',
+      ti: 'AI-002: ናይ ChatGPT ምርዳእ',
+      am: 'AI-002: ChatGPT መረዳዳት'
+    },
+    category: 'ai-curriculum',
+    pages: 4,
+    size: '110 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'What ChatGPT is, GPT model history (GPT-1 to GPT-4o), how LLMs work, model version comparison, effective prompting techniques, real-world use cases by profession, and key limitations including hallucinations — with diagrams — by Awet G. Nway.',
+      ti: 'ChatGPT እንታይ ምዃኑ፣ GPT ታሪኽ፣ LLM ከም ዝሰርሕ፣ ናይ model ምዕባለ፣ prompting techniques — ብ Awet G. Nway።',
+      am: 'ChatGPT ምን እንደሆነ፣ GPT ታሪክ፣ LLM አሠራር፣ model ዝርዝር፣ prompting techniques — በ Awet G. Nway።'
+    },
+    file: 'pdfs/AI-002-Understanding-ChatGPT.pdf',
+    color: '#8b5cf6',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'hvac',
