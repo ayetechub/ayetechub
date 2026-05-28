@@ -914,6 +914,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'mep-curriculum-001-intro-to-mep',
+    title: {
+      en: 'MEP-001: Introduction to MEP Engineering',
+      ti: 'MEP-001: መእተዊ ናብ MEP ምህንድስና',
+      am: 'MEP-001: ወደ MEP ምህንድስና መግቢያ'
+    },
+    category: 'mep',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: 'What MEP Engineering is, the three disciplines (Mechanical, Electrical, Plumbing), MEP in the construction process, key roles, international codes and standards, and MEP career pathways — with diagrams — by Awet G. Nway.',
+      ti: 'MEP ምህንድስና እንታይ ምዃኑ፣ ሰለስቲኦም ዲሲፕሊናት (Mechanical, Electrical, Plumbing)፣ MEP ኣብ ህንጻ ስርዓት — ብ Awet G. Nway።',
+      am: 'MEP ምህንድስና ምን እንደሆነ፣ ሦስቱ ዲሲፕሊኖች (ሜካኒካል፣ ኤሌክትሪካል፣ ፓምፒንግ)፣ ዓለም አቀፍ ኮዶች — በ Awet G. Nway።'
+    },
+    file: 'pdfs/MEP-001-Introduction-to-MEP-Engineering.pdf',
+    color: '#0d9488',
+    preview: true
+  },
+  {
     id: 'mech-curriculum-001-intro-to-mechanical',
     title: {
       en: 'MECH-001: Introduction to Mechanical Engineering',
