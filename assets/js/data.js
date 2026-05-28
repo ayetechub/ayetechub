@@ -956,6 +956,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'mep-curriculum-002-mep-in-building-construction',
+    title: {
+      en: 'MEP-002: MEP in Building Construction',
+      ti: 'MEP-002: MEP ኣብ ህንጻ ኮንስትራክሽን',
+      am: 'MEP-002: MEP በህንፃ ግንባታ ውስጥ'
+    },
+    category: 'mep',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'MEP coordination workflow (7 stages), the Rule of 10 (design vs site clash cost), MEP spatial zones (ceiling void, riser shaft, plant room, roof), drawing types (GA plans, schematics, schedules, as-builts), and MEP specification structure — with diagrams — by Awet G. Nway.',
+      ti: 'MEP coordination workflow፣ ናይ MEP spatial zones (ceiling void, riser shaft, plant room)፣ drawing types፣ specification structure — ብ Awet G. Nway።',
+      am: 'MEP coordination workflow፣ MEP spatial zones (ceiling void፣ riser shaft፣ plant room)፣ drawing types፣ specification structure — በ Awet G. Nway።'
+    },
+    file: 'pdfs/MEP-002-MEP-in-Building-Construction.pdf',
+    color: '#0d9488',
+    preview: true
+  },
+  {
     id: 'mech-curriculum-001-intro-to-mechanical',
     title: {
       en: 'MECH-001: Introduction to Mechanical Engineering',
