@@ -1019,6 +1019,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'hvac-curriculum-003-hvac-components',
+    title: {
+      en: 'HVAC-003: HVAC Components',
+      ti: 'HVAC-003: ናይ HVAC ኣካላት',
+      am: 'HVAC-003: የHVAC ክፍሎች'
+    },
+    category: 'hvac',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'The four core refrigeration components (compressor, condenser, expansion device, evaporator), compressor types by application, TXV vs capillary tube, AHU component layout, fan types, and filter grades — with diagrams — by Awet G. Nway.',
+      ti: 'ኣርባዕቲኦም ናይ refrigeration ኣካላት፣ ዓይነታት compressor፣ TXV vs capillary tube፣ AHU layout፣ ዓይነታት fan — ብ Awet G. Nway።',
+      am: 'አራቱ ዋና refrigeration ክፍሎች፣ የcompressor ዓይነቶች፣ TXV vs capillary tube፣ AHU layout፣ የfan ዓይነቶች — በ Awet G. Nway።'
+    },
+    file: 'pdfs/HVAC-003-HVAC-Components.pdf',
+    color: '#00d4ff',
+    preview: true
+  },
+  {
     id: 'solar-curriculum-002-radiation-basics',
     title: {
       en: 'SOLAR-002: Solar Radiation Basics',
