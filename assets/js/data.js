@@ -1040,6 +1040,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'elec-curriculum-002-basic-electrical-quantities',
+    title: {
+      en: 'ELEC-002: Basic Electrical Quantities',
+      ti: 'ELEC-002: መሰረታዊ ናይ ኤሌክትሪክ ብዛዕታት',
+      am: 'ELEC-002: መሰረታዊ የኤሌክትሪክ መጠኖች'
+    },
+    category: 'electrical',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'All six core electrical quantities (V, I, R, P, E, f) with units and formulas, the water pipe analogy, Ohm\'s Law formula wheel (12 formulas), 4 worked examples, resistance factors (ρ, L, A, temperature), AC sine wave (peak vs RMS), capacitance, inductance, and a master reference table — with diagrams — by Awet G. Nway.',
+      ti: 'ሽድሽቲኦም ናይ ኤሌክትሪክ ብዛዕታት (V, I, R, P, E, f)፣ ናይ ማይ ኣናሎጂ፣ Ohm\'s Law wheel፣ AC sine wave (peak vs RMS) — ብ Awet G. Nway።',
+      am: 'ስድስቱ ዋና የኤሌክትሪክ መጠኖች (V, I, R, P, E, f)፣ የውሃ ቱቦ ምሳሌ፣ Ohm\'s Law wheel፣ AC sine wave (peak vs RMS) — በ Awet G. Nway።'
+    },
+    file: 'pdfs/ELEC-002-Basic-Electrical-Quantities.pdf',
+    color: '#3b82f6',
+    preview: true
+  },
+  {
     id: 'hvac-curriculum-002-refrigeration-cycle',
     title: {
       en: 'HVAC-002: The Refrigeration Cycle',
