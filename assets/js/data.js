@@ -1061,6 +1061,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'mech-curriculum-003-engineering-mechanics',
+    title: {
+      en: 'MECH-003: Engineering Mechanics',
+      ti: 'MECH-003: ናይ ምህንድስና ሜካኒክስ',
+      am: 'MECH-003: የምህንድስና ሜካኒክስ'
+    },
+    category: 'mechanical',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Newton\'s 3 laws, force vector resolution diagram, 7 mechanical quantities table, FBD of a simply supported beam (UDL, reactions, BMD), 6-step beam problem method, 3 support types diagram (pin/roller/fixed), moments and couples, friction (static/kinetic/rolling), and dynamics (kinematics, F=ma, energy, impulse) — with diagrams — by Awet G. Nway.',
+      ti: 'ናይ Newton 3 ሕግታት፣ force vector resolution diagram፣ FBD ናይ beam፣ 3 support types (pin/roller/fixed)፣ moments & friction፣ dynamics — ብ Awet G. Nway።',
+      am: 'የNewton 3 ህጎች፣ force vector resolution diagram፣ beam FBD፣ 3 support types (pin/roller/fixed)፣ moments & friction፣ dynamics — በ Awet G. Nway።'
+    },
+    file: 'pdfs/MECH-003-Engineering-Mechanics.pdf',
+    color: '#f97316',
+    preview: true
+  },
+  {
     id: 'elec-curriculum-001-intro-to-electricity',
     title: {
       en: 'ELEC-001: Introduction to Electricity',
