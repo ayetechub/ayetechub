@@ -229,6 +229,27 @@ const COURSES = [
 ============================================================ */
 const PDFS = [
   {
+    id: 'ct-001-introduction-to-critical-thinking',
+    title: {
+      en: 'CT-001: Introduction to Critical Thinking in the AI Age',
+      ti: 'CT-001: መእተዊ ናብ ሓሳባዊ ሕሳብ ኣብ ዘመነ AI',
+      am: 'CT-001: ወደ ወሳኝ አስተሳሰብ በ AI ዘመን መግቢያ'
+    },
+    category: 'critical-thinking',
+    pages: 4,
+    size: '120 KB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: 'Why critical thinking is the most valuable skill in 2026, the 6 core CT skills (analysis, evaluation, inference, explanation, self-regulation, interpretation), how AI amplifies your thinking style, the Paul-Elder 8-element framework, and a 10-day starter challenge — with diagrams — by Awet G. Nway.',
+      ti: 'Critical thinking ስለምንታይ ቀዳምነት ክእለት ምዃኑ፣ 6 ቀንዲ ክእለታት CT፣ AI ሓሳብካ ኸመይ ዘጉልህ፣ Paul-Elder framework፣ 10-ቀን challenge — ብ Awet G. Nway።',
+      am: 'Critical thinking ለምን ቁ.1 ክህሎት እንደሆነ፣ 6 ዋና CT ክህሎቶች፣ AI አስተሳሰብህን ኻ አጉልቶ ያሳያል፣ Paul-Elder framework፣ 10-ቀን challenge — በ Awet G. Nway።'
+    },
+    file: 'pdfs/CT-001-Introduction-to-Critical-Thinking.pdf',
+    color: '#7c3aed',
+    preview: true
+  },
+  {
     id: 'industrial-plc-blueprint',
     title: {
       en: 'Industrial PLC Blueprint — From Fundamentals to Industrial Application',
