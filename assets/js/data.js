@@ -1397,6 +1397,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'ai-curriculum-003-prompt-engineering-basics',
+    title: {
+      en: 'AI-003: Prompt Engineering Basics',
+      ti: 'AI-003: መሰረታዊ ናይ Prompt Engineering',
+      am: 'AI-003: Prompt Engineering መሰረታዊ'
+    },
+    category: 'ai-curriculum',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'The 5-component prompt anatomy (Role/Context/Task/Format/Constraints), four prompting techniques (zero-shot/few-shot/chain-of-thought/system prompt), weak vs strong prompt comparison diagram, 15 copy-paste prompt templates for engineering and work, temperature and AI parameter guide — with diagrams — by Awet G. Nway.',
+      ti: '5-component prompt anatomy፣ zero-shot/few-shot/chain-of-thought techniques፣ weak vs strong prompt diagram፣ 15 prompt templates፣ temperature & parameters — ብ Awet G. Nway።',
+      am: '5-component prompt anatomy፣ zero-shot/few-shot/chain-of-thought techniques፣ weak vs strong prompt diagram፣ 15 prompt templates፣ temperature & parameters — በ Awet G. Nway።'
+    },
+    file: 'pdfs/AI-003-Prompt-Engineering-Basics.pdf',
+    color: '#8b5cf6',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'hvac',
