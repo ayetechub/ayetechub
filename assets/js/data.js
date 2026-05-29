@@ -1187,6 +1187,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'solar-curriculum-004-solar-panels',
+    title: {
+      en: 'SOLAR-004: Solar Panels — In Depth',
+      ti: 'SOLAR-004: ናይ ሶላር ፓነላት ዕምቆት',
+      am: 'SOLAR-004: የፀሐይ ፓናሎች — ጥልቅ ዳሰሳ'
+    },
+    category: 'solar',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'The I-V curve (Isc, Voc, Vmp, Imp, MPP, Fill Factor), P-V curve, MPPT explained, temperature coefficients and derating diagram, how to read a panel datasheet, bypass diodes, series vs parallel wiring diagram, shading losses, and panel selection guide — with diagrams — by Awet G. Nway.',
+      ti: 'I-V curve (Isc, Voc, Vmp, Imp, MPP)፣ temperature coefficients፣ datasheet ምንባብ፣ bypass diodes፣ series vs parallel wiring፣ shading losses፣ panel selection — ብ Awet G. Nway።',
+      am: 'I-V curve (Isc, Voc, Vmp, Imp, MPP)፣ temperature coefficients፣ datasheet ማንበብ፣ bypass diodes፣ series vs parallel wiring፣ shading losses፣ panel selection — በ Awet G. Nway።'
+    },
+    file: 'pdfs/SOLAR-004-Solar-Panels.pdf',
+    color: '#fbbf24',
+    preview: true
+  },
+  {
     id: 'ai-curriculum-002-understanding-chatgpt',
     title: {
       en: 'AI-002: Understanding ChatGPT',
