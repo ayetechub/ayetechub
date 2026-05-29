@@ -956,6 +956,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'plc-curriculum-003-io-wiring-and-addressing',
+    title: {
+      en: 'PLC-003: I/O Wiring and Addressing',
+      ti: 'PLC-003: ናይ I/O ሽቦን ኣድራሻን',
+      am: 'PLC-003: I/O ሽቦ እና አድራሻ'
+    },
+    category: 'plc',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'NPN vs PNP sinking/sourcing wiring diagram, DI module specs, transistor vs relay DO types, 4-20 mA 2/3/4-wire analog wiring, Pt100/thermocouple connections, I/O addressing for 6 PLC brands (Siemens/AB/Mitsubishi/Omron/Schneider), and 7 wiring best practices — with diagrams — by Awet G. Nway.',
+      ti: 'NPN vs PNP sinking/sourcing wiring፣ transistor vs relay DO፣ 4-20 mA analog wiring (2/3/4-wire)፣ I/O addressing ን 6 PLC brands — ብ Awet G. Nway።',
+      am: 'NPN vs PNP sinking/sourcing wiring፣ transistor vs relay DO፣ 4-20 mA analog wiring (2/3/4-wire)፣ I/O addressing ለ6 PLC brands — በ Awet G. Nway።'
+    },
+    file: 'pdfs/PLC-003-IO-Wiring-and-Addressing.pdf',
+    color: '#22c55e',
+    preview: true
+  },
+  {
     id: 'mep-curriculum-001-intro-to-mep',
     title: {
       en: 'MEP-001: Introduction to MEP Engineering',
