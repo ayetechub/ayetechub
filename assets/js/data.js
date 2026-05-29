@@ -830,6 +830,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'fit-hub-day12-sleep-and-recovery',
+    title: {
+      en: 'Day 12: Sleep & Recovery — The Overlooked Performance Tool',
+      ti: 'ቀን 12: ድቃስን ምሕዳስን — ዝዝንጋዕ ናይ ፈጻምነት መሳርሒ',
+      am: 'ቀን 12: እንቅልፍ እና ማገገም — የተዘነጋው የአፈጻጸም መሳሪያ'
+    },
+    category: 'fit-hub',
+    pages: 4,
+    size: '120 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Why sleep is your #1 performance drug, the 5 sleep stages and what each repairs, HGH/testosterone/cortisol hormone timeline, 10 science-backed sleep hygiene habits, and a Day 12 active recovery protocol — with diagrams — by Awet G. Nway.',
+      ti: 'ድቃስ ቀንዲ ናይ ፈጻምነት መሳርሒ ምዃኑ፣ ሓምሸቲኦም ናይ ድቃስ ደረጃታት፣ HGH/testosterone/cortisol፣ 10 ናይ ድቃስ ልምምዲ — ብ Awet G. Nway።',
+      am: 'እንቅልፍ ቁ.1 የአፈጻጸም መሳሪያ ምን ምክንያት፣ 5 የእንቅልፍ ደረጃዎች፣ HGH/testosterone/cortisol ሆርሞኖች፣ 10 የእንቅልፍ ጤና ልምዶች — በ Awet G. Nway።'
+    },
+    file: 'pdfs/aye-fit-hub-day12-sleep-and-recovery.pdf',
+    color: '#22c55e',
+    preview: true
+  },
+  {
     id: 'ai-curriculum-001-intro-to-ai',
     title: {
       en: 'AI-001: Introduction to Artificial Intelligence',
