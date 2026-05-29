@@ -1124,6 +1124,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'elec-curriculum-003-ohms-law',
+    title: {
+      en: 'ELEC-003: Ohm\'s Law, Series & Parallel Circuits',
+      ti: 'ELEC-003: ናይ Ohm ሕጊ፣ Series & Parallel Circuits',
+      am: 'ELEC-003: የOhm ህግ፣ Series & Parallel ወረዳዎች'
+    },
+    category: 'electrical',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Series circuit diagram (R_T=R1+R2+R3, same current, voltage divider rule), parallel circuit diagram (1/R_T=Σ1/Rn, same voltage, current divider), KVL and KCL diagram, 6-step circuit solving method, 4 practical worked examples (cable sizing, fuse selection, voltage drop), and series vs parallel comparison — with diagrams — by Awet G. Nway.',
+      ti: 'Series circuit diagram፣ parallel circuit diagram፣ KVL & KCL diagram፣ 6-step circuit solving method፣ 4 practical examples (cable sizing, fuse selection) — ብ Awet G. Nway።',
+      am: 'Series circuit diagram፣ parallel circuit diagram፣ KVL & KCL diagram፣ 6-step circuit solving method፣ 4 practical examples (cable sizing, fuse selection) — በ Awet G. Nway።'
+    },
+    file: 'pdfs/ELEC-003-Ohms-Law.pdf',
+    color: '#3b82f6',
+    preview: true
+  },
+  {
     id: 'hvac-curriculum-002-refrigeration-cycle',
     title: {
       en: 'HVAC-002: The Refrigeration Cycle',
