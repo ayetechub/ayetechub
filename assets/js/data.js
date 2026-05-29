@@ -1124,6 +1124,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'hvac-curriculum-004-air-conditioning-basics',
+    title: {
+      en: 'HVAC-004: Air Conditioning Basics',
+      ti: 'HVAC-004: መሰረታዊ ናይ ኤር ኮንዲሽን',
+      am: 'HVAC-004: የኤር ኮንዲሽኒንግ መሰረታዊ'
+    },
+    category: 'hvac',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'How AC moves heat (not creates cold), split system cross-section diagram, inverter vs fixed-speed, 6 AC system types (window/split/multi-split/VRF/packaged/chilled water), cooling capacity units (kW/BTU/tons), EER/SEER/COP efficiency ratings, and system selection guide — with diagrams — by Awet G. Nway.',
+      ti: 'AC ሙቀት ከመ ዝንቀሳቐስ፣ split system diagram፣ inverter vs fixed-speed፣ 6 ዓይነታት AC (window/split/multi-split/VRF/packaged)፣ EER/SEER/COP — ብ Awet G. Nway።',
+      am: 'AC ሙቀት ማስተላለፊያ ምን ምክንያት፣ split system diagram፣ inverter vs fixed-speed፣ 6 ዓይነት AC ስርዓቶች፣ EER/SEER/COP ቅልጥፍና — በ Awet G. Nway።'
+    },
+    file: 'pdfs/HVAC-004-Air-Conditioning-Basics.pdf',
+    color: '#00d4ff',
+    preview: true
+  },
+  {
     id: 'solar-curriculum-002-radiation-basics',
     title: {
       en: 'SOLAR-002: Solar Radiation Basics',
