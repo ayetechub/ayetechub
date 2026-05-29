@@ -271,6 +271,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'ct-003-how-to-spot-misinformation',
+    title: {
+      en: 'CT-003: How to Spot Misinformation and Fake News',
+      ti: 'CT-003: ምስሕት ሓሶታትን ሓሶት ዜናን ኸምዚ ኽትፈልጥ',
+      am: 'CT-003: የሀሰት መረጃ እና ሐሰት ዜናን እንዴት መለየት እንደሚቻል'
+    },
+    category: 'critical-thinking',
+    pages: 4,
+    size: '120 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Misinformation vs disinformation vs mal-information defined, the 7 types of information disorder (First Draft framework), the SIFT method (Stop/Investigate/Find/Trace), misinformation lifecycle diagram, 7 red flags checklist, AI fakes (deepfakes/synthetic text/voice cloning), and a 10-point verification checklist — with diagrams — by Awet G. Nway.',
+      ti: 'Misinformation vs disinformation vs mal-information ትርጉም፣ 7 ዓይነታት ናይ information disorder፣ SIFT method፣ 7 red flags፣ AI fakes፣ 10-point verification checklist — ብ Awet G. Nway።',
+      am: 'Misinformation vs disinformation ትርጓሜ፣ 7 ዓይነት information disorder፣ SIFT method፣ 7 red flags፣ AI fakes (deepfakes/voice cloning)፣ 10-point verification checklist — በ Awet G. Nway።'
+    },
+    file: 'pdfs/CT-003-How-to-Spot-Misinformation.pdf',
+    color: '#7c3aed',
+    preview: true
+  },
+  {
     id: 'ct-philosophy-truth-vs-consequences',
     title: {
       en: 'Truth and Falsehood: Should Truth Always Be Absolute?',
