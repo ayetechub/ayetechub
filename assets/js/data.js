@@ -1418,6 +1418,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'ai-curriculum-004-advanced-prompt-engineering',
+    title: {
+      en: 'AI-004: Advanced Prompt Engineering',
+      ti: 'AI-004: ዕቡይ ናይ Prompt Engineering',
+      am: 'AI-004: የላቀ Prompt Engineering'
+    },
+    category: 'ai-curriculum',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Prompt chaining (sequential/branching/iterative/validation chains), structured output (JSON/tables/CSV), working with long documents (chunking/RAG strategies), self-critique loops (generate/critique/revise), building a custom AI agent with a system prompt, and a 10-technique advanced quick-reference — with diagrams — by Awet G. Nway.',
+      ti: 'Prompt chaining፣ structured output (JSON/tables/CSV)፣ ናይ ነዊሕ ሰነዳት ስትራቴጂ፣ self-critique loops፣ custom AI agent ምህናጽ — ብ Awet G. Nway።',
+      am: 'Prompt chaining፣ structured output (JSON/tables/CSV)፣ ረጅም ሰነዶች ስትራቴጂ፣ self-critique loops፣ custom AI agent መገንባት — በ Awet G. Nway።'
+    },
+    file: 'pdfs/AI-004-Advanced-Prompt-Engineering.pdf',
+    color: '#8b5cf6',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'hvac',
