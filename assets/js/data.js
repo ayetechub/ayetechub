@@ -250,6 +250,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'ct-002-cognitive-biases',
+    title: {
+      en: 'CT-002: Cognitive Biases — The Errors Your Brain Makes Daily',
+      ti: 'CT-002: ናይ ሓሳብ ጌጋታት — ሎሚ ዘቅርቦ ቅምጥ ናይ ሓሳብካ',
+      am: 'CT-002: የግንዛቤ አድልዎዎች — አንዳር አእምሮህ በዕለት ዕለት የሚሰሩ ስህተቶች'
+    },
+    category: 'critical-thinking',
+    pages: 4,
+    size: '120 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: '20 cognitive biases explained with real examples, the Dunning-Kruger curve (Peak of Mount Stupid → Valley of Despair → Slope of Enlightenment), the confirmation bias echo chamber diagram, top 10 biases deep dive with counter-moves, and 6 de-biasing strategies — with diagrams — by Awet G. Nway.',
+      ti: '20 ናይ ሓሳብ ጌጋታት ምስ ኣብነታት፣ Dunning-Kruger curve፣ confirmation bias echo chamber diagram፣ top 10 biases + counter-moves — ብ Awet G. Nway።',
+      am: '20 የግንዛቤ አድልዎዎች ከምሳሌዎች ጋር፣ Dunning-Kruger curve፣ confirmation bias echo chamber diagram፣ top 10 biases + counter-moves — በ Awet G. Nway።'
+    },
+    file: 'pdfs/CT-002-Cognitive-Biases.pdf',
+    color: '#7c3aed',
+    preview: true
+  },
+  {
     id: 'industrial-plc-blueprint',
     title: {
       en: 'Industrial PLC Blueprint — From Fundamentals to Industrial Application',
