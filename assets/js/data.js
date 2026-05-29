@@ -1145,6 +1145,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'elec-curriculum-004-ac-vs-dc',
+    title: {
+      en: 'ELEC-004: AC vs DC',
+      ti: 'ELEC-004: AC vs DC',
+      am: 'ELEC-004: AC vs DC'
+    },
+    category: 'electrical',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'AC vs DC comparison (8 properties), why AC won the War of Currents, grid voltage levels, transformer turns ratio, three-phase waveform diagram with star/delta connections, single vs three-phase comparison, power triangle diagram (P/Q/S/PF), power factor correction calculations — with diagrams — by Awet G. Nway.',
+      ti: 'AC vs DC ምፍልላይ፣ transformer turns ratio፣ 3-phase waveform (star/delta)፣ power triangle (P/Q/S/PF)፣ power factor correction — ብ Awet G. Nway።',
+      am: 'AC vs DC ንጽጽር፣ transformer turns ratio፣ 3-phase waveform (star/delta)፣ power triangle (P/Q/S/PF)፣ power factor correction — በ Awet G. Nway።'
+    },
+    file: 'pdfs/ELEC-004-AC-vs-DC.pdf',
+    color: '#3b82f6',
+    preview: true
+  },
+  {
     id: 'hvac-curriculum-002-refrigeration-cycle',
     title: {
       en: 'HVAC-002: The Refrigeration Cycle',
