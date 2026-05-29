@@ -271,6 +271,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'ct-philosophy-truth-vs-consequences',
+    title: {
+      en: 'Truth and Falsehood: Should Truth Always Be Absolute?',
+      ti: 'ሓቅን ሓሶትን: ሓቂ ኩሉ ግዜ ፍጹም ክትከውን ኣለዋ?',
+      am: 'እውነት እና ሃሰት: እውነት ሁልጊዜ ፍጹም መሆን አለበት?'
+    },
+    category: 'critical-thinking',
+    pages: 10,
+    size: '2.1 MB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: 'A philosophical debate on truth and lying: Kant\'s deontology (lying is always wrong — a single lie fractures society) vs Mill\'s utilitarianism (morality is judged by consequences — a lie that saves a life is moral). Includes the famous knock-at-the-door dilemma and the anatomy of a moral choice.',
+      ti: 'ፍልስፍናዊ ክትዓት ብዛዕባ ሓቅን ሓሶትን: Kant (ሓሶት ኩሉ ግዜ ጌጋ) vs Mill (ሞራልነት ብሳዕቤን ይውሰን). ናይ ናይ ሞራል ምርጫ ትምህርቲ.',
+      am: 'ስለ እውነት እና ሃሰት ፍልስፍናዊ ክርክር: Kant (ሃሰት ሁልጊዜ ስህተት) vs Mill (ሥነ ምግባር በውጤት ይለካል). የሞራል ምርጫ ትንተና.'
+    },
+    file: 'pdfs/CT-Philosophy-Truth-vs-Consequences.pdf',
+    color: '#7c3aed',
+    preview: true
+  },
+  {
     id: 'industrial-plc-blueprint',
     title: {
       en: 'Industrial PLC Blueprint — From Fundamentals to Industrial Application',
