@@ -2118,8 +2118,12 @@ html[lang="am"] body{
       <button class="tab-btn" onclick="filterCourses('plc',this)">PLC & Automation</button>
       <button class="tab-btn" onclick="filterCourses('electrical',this)">Electrical</button>
       <button class="tab-btn" onclick="filterCourses('mechanical',this)">Mechanical</button>
+      <button class="tab-btn" onclick="filterCourses('hvac',this)">HVAC</button>
+      <button class="tab-btn" onclick="filterCourses('solar',this)">Solar Energy</button>
+      <button class="tab-btn" onclick="filterCourses('mep',this)">MEP</button>
       <button class="tab-btn" onclick="filterCourses('design',this)">CAD & Design</button>
       <button class="tab-btn" onclick="filterCourses('ai',this)">AI & Digital</button>
+      <button class="tab-btn" onclick="filterCourses('thinking',this)">Critical Thinking</button>
     </div>
 
     <div class="cards-grid" id="courses-grid">
@@ -2262,6 +2266,175 @@ html[lang="am"] body{
           </button>
         </div>
       </article>
+
+      <!-- ── HVAC ENGINEERING CURRICULUM ─────────────────────────── -->
+      <article class="course-card reveal" data-category="hvac">
+        <div class="course-thumb" style="background:linear-gradient(135deg,#001a20,#003344)">
+          <svg class="svg-icon course-thumb-ic" style="color:#00d4ff" aria-hidden="true"><use href="#i-temperature"/></svg>
+          <span class="course-thumb-label" style="color:#00d4ff">HVAC ENGINEERING</span>
+          <span class="thumb-badge badge b-beginner">Beginner</span>
+          <span class="thumb-time">30 lessons</span>
+        </div>
+        <div class="course-body">
+          <h3>HVAC Engineering — Full Curriculum</h3>
+          <p>Refrigeration cycle, HVAC components, air conditioning, heating systems, ventilation, duct design, and load calculations. 30 structured lessons with diagrams.</p>
+          <div class="progress-row">
+            <div class="progress-meta"><span>Lessons Available</span><span>5 / 30</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width:17%"></div></div>
+          </div>
+          <a class="btn btn-primary btn-full" href="pdfs.html" style="background:linear-gradient(135deg,#003344,#00d4ff);box-shadow:0 4px 20px rgba(0,212,255,0.3);display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none">
+            <svg class="svg-icon" aria-hidden="true"><use href="#i-book"/></svg> Start Learning
+          </a>
+        </div>
+      </article>
+
+      <!-- ── SOLAR ENERGY CURRICULUM ──────────────────────────────── -->
+      <article class="course-card reveal" data-category="solar">
+        <div class="course-thumb" style="background:linear-gradient(135deg,#1a1000,#332200)">
+          <svg class="svg-icon course-thumb-ic" style="color:#fbbf24" aria-hidden="true"><use href="#i-sun"/></svg>
+          <span class="course-thumb-label" style="color:#fbbf24">SOLAR ENERGY</span>
+          <span class="thumb-badge badge b-beginner">Beginner</span>
+          <span class="thumb-time">30 lessons</span>
+        </div>
+        <div class="course-body">
+          <h3>Solar Energy — Full Curriculum</h3>
+          <p>Solar radiation, system components, panels (I-V curves, shading), batteries, inverters, charge controllers, system sizing, and off-grid/grid-tied design.</p>
+          <div class="progress-row">
+            <div class="progress-meta"><span>Lessons Available</span><span>5 / 30</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width:17%"></div></div>
+          </div>
+          <a class="btn btn-primary btn-full" href="pdfs.html" style="background:linear-gradient(135deg,#332200,#fbbf24);box-shadow:0 4px 20px rgba(251,191,36,0.3);display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none">
+            <svg class="svg-icon" aria-hidden="true"><use href="#i-book"/></svg> Start Learning
+          </a>
+        </div>
+      </article>
+
+      <!-- ── MEP ENGINEERING CURRICULUM ──────────────────────────── -->
+      <article class="course-card reveal" data-category="mep">
+        <div class="course-thumb" style="background:linear-gradient(135deg,#001a1a,#003333)">
+          <svg class="svg-icon course-thumb-ic" style="color:#0d9488" aria-hidden="true"><use href="#i-building"/></svg>
+          <span class="course-thumb-label" style="color:#0d9488">MEP ENGINEERING</span>
+          <span class="thumb-badge badge b-beginner">Beginner</span>
+          <span class="thumb-time">30 lessons</span>
+        </div>
+        <div class="course-body">
+          <h3>MEP Engineering — Full Curriculum</h3>
+          <p>Mechanical, Electrical and Plumbing engineering for buildings. Coordination, BIM clash detection, MEP drawings, HVAC, electrical systems, and plumbing design.</p>
+          <div class="progress-row">
+            <div class="progress-meta"><span>Lessons Available</span><span>3 / 30</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width:10%"></div></div>
+          </div>
+          <a class="btn btn-primary btn-full" href="pdfs.html" style="background:linear-gradient(135deg,#003333,#0d9488);box-shadow:0 4px 20px rgba(13,148,136,0.3);display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none">
+            <svg class="svg-icon" aria-hidden="true"><use href="#i-book"/></svg> Start Learning
+          </a>
+        </div>
+      </article>
+
+      <!-- ── AI & PRODUCTIVITY CURRICULUM ────────────────────────── -->
+      <article class="course-card reveal" data-category="ai">
+        <div class="course-thumb" style="background:linear-gradient(135deg,#0d001a,#1a0033)">
+          <svg class="svg-icon course-thumb-ic" style="color:#8b5cf6" aria-hidden="true"><use href="#i-robot"/></svg>
+          <span class="course-thumb-label" style="color:#8b5cf6">AI & PRODUCTIVITY</span>
+          <span class="thumb-badge badge b-beginner">Beginner</span>
+          <span class="thumb-time">30 lessons</span>
+        </div>
+        <div class="course-body">
+          <h3>AI &amp; Productivity — Full Curriculum</h3>
+          <p>ChatGPT, Claude AI, prompt engineering, advanced prompting, image/video/voice AI, automation, content creation, and building AI-powered workflows from scratch.</p>
+          <div class="progress-row">
+            <div class="progress-meta"><span>Lessons Available</span><span>5 / 30</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width:17%"></div></div>
+          </div>
+          <a class="btn btn-primary btn-full" href="pdfs.html" style="background:linear-gradient(135deg,#1a0033,#8b5cf6);box-shadow:0 4px 20px rgba(139,92,246,0.3);display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none">
+            <svg class="svg-icon" aria-hidden="true"><use href="#i-book"/></svg> Start Learning
+          </a>
+        </div>
+      </article>
+
+      <!-- ── REVIT BIM CURRICULUM ─────────────────────────────────── -->
+      <article class="course-card reveal" data-category="design">
+        <div class="course-thumb" style="background:linear-gradient(135deg,#080820,#1a1a4a)">
+          <svg class="svg-icon course-thumb-ic" style="color:#4338ca" aria-hidden="true"><use href="#i-cubes"/></svg>
+          <span class="course-thumb-label" style="color:#818cf8">REVIT BIM</span>
+          <span class="thumb-badge badge b-beginner">Beginner</span>
+          <span class="thumb-time">30 lessons</span>
+        </div>
+        <div class="course-body">
+          <h3>Revit BIM — Full Curriculum</h3>
+          <p>BIM dimensions 3D–7D, Revit interface, project setup, levels and grids, walls, floors, roofs, MEP systems, documentation, sheets, and professional BIM workflows.</p>
+          <div class="progress-row">
+            <div class="progress-meta"><span>Lessons Available</span><span>2 / 30</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width:7%"></div></div>
+          </div>
+          <a class="btn btn-primary btn-full" href="pdfs.html" style="background:linear-gradient(135deg,#1a1a4a,#4338ca);box-shadow:0 4px 20px rgba(67,56,202,0.3);display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none">
+            <svg class="svg-icon" aria-hidden="true"><use href="#i-book"/></svg> Start Learning
+          </a>
+        </div>
+      </article>
+
+      <!-- ── COOHOM INTERIOR DESIGN CURRICULUM ───────────────────── -->
+      <article class="course-card reveal" data-category="design">
+        <div class="course-thumb" style="background:linear-gradient(135deg,#1a0010,#330020)">
+          <svg class="svg-icon course-thumb-ic" style="color:#f43f5e" aria-hidden="true"><use href="#i-palette"/></svg>
+          <span class="course-thumb-label" style="color:#f43f5e">INTERIOR DESIGN</span>
+          <span class="thumb-badge badge b-beginner">Beginner</span>
+          <span class="thumb-time">30 lessons</span>
+        </div>
+        <div class="course-body">
+          <h3>Coohom Interior Design — Full Curriculum</h3>
+          <p>Cloud-based 3D interior design from scratch. Floor plans, 3D modelling, 10M+ furniture library, photorealistic rendering, VR walkthroughs, and client presentation.</p>
+          <div class="progress-row">
+            <div class="progress-meta"><span>Lessons Available</span><span>2 / 30</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width:7%"></div></div>
+          </div>
+          <a class="btn btn-primary btn-full" href="pdfs.html" style="background:linear-gradient(135deg,#330020,#f43f5e);box-shadow:0 4px 20px rgba(244,63,94,0.3);display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none">
+            <svg class="svg-icon" aria-hidden="true"><use href="#i-book"/></svg> Start Learning
+          </a>
+        </div>
+      </article>
+
+      <!-- ── PROTASTRUCTURE CURRICULUM ────────────────────────────── -->
+      <article class="course-card reveal" data-category="mechanical">
+        <div class="course-thumb" style="background:linear-gradient(135deg,#001020,#002040)">
+          <svg class="svg-icon course-thumb-ic" style="color:#0369a1" aria-hidden="true"><use href="#i-industry"/></svg>
+          <span class="course-thumb-label" style="color:#38bdf8">PROTASTRUCTURE</span>
+          <span class="thumb-badge badge b-intermediate">Intermediate</span>
+          <span class="thumb-time">30 lessons</span>
+        </div>
+        <div class="course-body">
+          <h3>ProtaStructure — Full Curriculum</h3>
+          <p>Structural analysis and RC design software. Modelling beams, columns, slabs and foundations. Eurocode 2, ACI 318, seismic design, detailing, and bar schedules.</p>
+          <div class="progress-row">
+            <div class="progress-meta"><span>Lessons Available</span><span>2 / 30</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width:7%"></div></div>
+          </div>
+          <a class="btn btn-primary btn-full" href="pdfs.html" style="background:linear-gradient(135deg,#002040,#0369a1);box-shadow:0 4px 20px rgba(3,105,161,0.3);display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none">
+            <svg class="svg-icon" aria-hidden="true"><use href="#i-book"/></svg> Start Learning
+          </a>
+        </div>
+      </article>
+
+      <!-- ── CRITICAL THINKING SERIES ────────────────────────────── -->
+      <article class="course-card reveal" data-category="thinking">
+        <div class="course-thumb" style="background:linear-gradient(135deg,#0d001a,#1e0a3d)">
+          <svg class="svg-icon course-thumb-ic" style="color:#7c3aed" aria-hidden="true"><use href="#i-brain"/></svg>
+          <span class="course-thumb-label" style="color:#a78bfa">CRITICAL THINKING</span>
+          <span class="thumb-badge badge b-beginner">All Levels</span>
+          <span class="thumb-time">30 issues</span>
+        </div>
+        <div class="course-body">
+          <h3>Critical Thinking Series</h3>
+          <p>Think deeper in the AI age. Cognitive biases, misinformation, Socratic method, logical fallacies, philosophy, ethics of AI, and building your personal philosophy.</p>
+          <div class="progress-row">
+            <div class="progress-meta"><span>Issues Available</span><span>5 / 30</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width:17%"></div></div>
+          </div>
+          <a class="btn btn-primary btn-full" href="pdfs.html" style="background:linear-gradient(135deg,#1e0a3d,#7c3aed);box-shadow:0 4px 20px rgba(124,58,237,0.3);display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none">
+            <svg class="svg-icon" aria-hidden="true"><use href="#i-book"/></svg> Start Reading
+          </a>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
