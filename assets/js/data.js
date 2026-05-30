@@ -229,6 +229,27 @@ const COURSES = [
 ============================================================ */
 const PDFS = [
   {
+    id: 'revit-curriculum-001-introduction-to-revit',
+    title: {
+      en: 'REVIT-001: Introduction to Revit',
+      ti: 'REVIT-001: መእተዊ ናብ Revit',
+      am: 'REVIT-001: ወደ Revit መግቢያ'
+    },
+    category: 'revit',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: 'What BIM is and why it replaces CAD, BIM dimensions 3D–7D pyramid diagram, BIM maturity levels (ISO 19650), Revit project workflow (5 phases), three Revit disciplines diagram (Architecture/Structure/MEP), Revit vs AutoCAD comparison, system requirements, and BIM career pathways with Africa salary ranges — with diagrams — by Awet G. Nway.',
+      ti: 'BIM እንታይ ምዃኑ፣ BIM dimensions 3D-7D pyramid diagram፣ 3 Revit disciplines (Architecture/Structure/MEP)፣ Revit vs AutoCAD፣ career pathways — ብ Awet G. Nway።',
+      am: 'BIM ምን እንደሆነ፣ BIM dimensions 3D-7D pyramid diagram፣ 3 Revit disciplines (Architecture/Structure/MEP)፣ Revit vs AutoCAD፣ career pathways — በ Awet G. Nway።'
+    },
+    file: 'pdfs/REVIT-001-Introduction-to-Revit.pdf',
+    color: '#4338ca',
+    preview: true
+  },
+  {
     id: 'cohoom-curriculum-001-introduction-to-coohom',
     title: {
       en: 'COHOOM-001: Introduction to Coohom',
