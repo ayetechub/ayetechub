@@ -1334,6 +1334,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'hvac-curriculum-005-heating-systems',
+    title: {
+      en: 'HVAC-005: Heating Systems',
+      ti: 'HVAC-005: ናይ ምሙቓቕ ስርዓታት',
+      am: 'HVAC-005: የሙቀት ስርዓቶች'
+    },
+    category: 'hvac',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Boiler types (condensing gas/oil/biomass/electric) with efficiency table, heat pump cycle diagram (ASHP/GSHP/WSHP with COP values), heat pump vs gas boiler running cost comparison, heating emitter diagram (radiator/UFH/FCU with flow temps), and 6-step heat loss calculation method — with diagrams — by Awet G. Nway.',
+      ti: 'ዓይነታት boiler (condensing gas/oil/biomass/electric)፣ heat pump cycle diagram (ASHP/GSHP/WSHP)፣ heating emitter diagram (radiator/UFH/FCU)፣ heat loss calculation — ብ Awet G. Nway።',
+      am: 'የboiler ዓይነቶች (condensing gas/oil/biomass/electric)፣ heat pump cycle diagram (ASHP/GSHP/WSHP)፣ heating emitter diagram (radiator/UFH/FCU)፣ heat loss calculation — በ Awet G. Nway።'
+    },
+    file: 'pdfs/HVAC-005-Heating-Systems.pdf',
+    color: '#00d4ff',
+    preview: true
+  },
+  {
     id: 'solar-curriculum-002-radiation-basics',
     title: {
       en: 'SOLAR-002: Solar Radiation Basics',
