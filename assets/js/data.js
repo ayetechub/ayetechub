@@ -1712,6 +1712,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'ai-curriculum-005-claude-ai-for-productivity',
+    title: {
+      en: 'AI-005: Claude AI for Productivity',
+      ti: 'AI-005: Claude AI ንፈጻምነት',
+      am: 'AI-005: Claude AI ለምርታማነት'
+    },
+    category: 'ai-curriculum',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Claude vs ChatGPT/Gemini strengths diagram (context/writing/code/instructions/honesty), Constitutional AI explained, Claude Projects 4-step setup, 5 real project examples with instructions and documents, long document analysis guide (5 document types with time savings), coding workflows (debug/explain/refactor/test), and 10 high-value daily productivity workflows — with diagrams — by Awet G. Nway.',
+      ti: 'Claude vs ChatGPT/Gemini strengths diagram፣ Constitutional AI፣ Claude Projects 4-step setup፣ long document analysis guide፣ coding workflows፣ 10 productivity workflows — ብ Awet G. Nway።',
+      am: 'Claude vs ChatGPT/Gemini strengths diagram፣ Constitutional AI፣ Claude Projects 4-step setup፣ long document analysis guide፣ coding workflows፣ 10 productivity workflows — በ Awet G. Nway።'
+    },
+    file: 'pdfs/AI-005-Claude-AI-for-Productivity.pdf',
+    color: '#8b5cf6',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'hvac',
