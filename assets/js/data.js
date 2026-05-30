@@ -292,6 +292,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'cohoom-curriculum-002-interface-and-navigation',
+    title: {
+      en: 'COHOOM-002: Interface and Navigation',
+      ti: 'COHOOM-002: ናይ Coohom Interface ምዝዋር',
+      am: 'COHOOM-002: Coohom Interface እና Navigation'
+    },
+    category: 'coohom',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Coohom interface layout diagram (6 zones), left panel tools guide (8 categories), right panel properties explained, 3D navigation controls diagram (orbit/pan/zoom/walk), 4 view modes diagram (2D/3D/walkthrough/panorama), 20 keyboard shortcuts, and 5 common mistakes to avoid — with diagrams — by Awet G. Nway.',
+      ti: 'Coohom interface layout diagram (6 zones)፣ left panel tools (8 categories)፣ right panel properties፣ 3D navigation diagram፣ 4 view modes diagram፣ 20 keyboard shortcuts — ብ Awet G. Nway።',
+      am: 'Coohom interface layout diagram (6 zones)፣ left panel tools (8 categories)፣ right panel properties፣ 3D navigation diagram፣ 4 view modes diagram፣ 20 keyboard shortcuts — በ Awet G. Nway።'
+    },
+    file: 'pdfs/COHOOM-002-Interface-and-Navigation.pdf',
+    color: '#f43f5e',
+    preview: true
+  },
+  {
     id: 'ct-001-introduction-to-critical-thinking',
     title: {
       en: 'CT-001: Introduction to Critical Thinking in the AI Age',
