@@ -229,6 +229,27 @@ const COURSES = [
 ============================================================ */
 const PDFS = [
   {
+    id: 'prota-curriculum-001-introduction-to-protastructure',
+    title: {
+      en: 'PROTA-001: Introduction to ProtaStructure',
+      ti: 'PROTA-001: መእተዊ ናብ ProtaStructure',
+      am: 'PROTA-001: ወደ ProtaStructure መግቢያ'
+    },
+    category: 'prota-structure',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: 'What ProtaStructure is, 6-stage workflow diagram (Setup→Model→Loads→Analysis→Design→Detailing), RC structural system load path diagram (slab→beam→column→foundation), supported design codes (EC2/ACI/BS 8110/ASCE 7/seismic), ProtaStructure vs ETABS/SAP2000/SAFE/STAAD.Pro, and structural engineering career pathways — with diagrams — by Awet G. Nway.',
+      ti: 'ProtaStructure እንታይ ምዃኑ፣ 6-stage workflow diagram፣ RC structural system diagram፣ design codes (EC2/ACI/BS 8110)፣ ProtaStructure vs ETABS/SAP2000 — ብ Awet G. Nway።',
+      am: 'ProtaStructure ምን እንደሆነ፣ 6-stage workflow diagram፣ RC structural system diagram፣ design codes (EC2/ACI/BS 8110)፣ ProtaStructure vs ETABS/SAP2000 — በ Awet G. Nway።'
+    },
+    file: 'pdfs/PROTA-001-Introduction-to-ProtaStructure.pdf',
+    color: '#0369a1',
+    preview: true
+  },
+  {
     id: 'revit-curriculum-001-introduction-to-revit',
     title: {
       en: 'REVIT-001: Introduction to Revit',
