@@ -1418,6 +1418,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'solar-curriculum-005-solar-batteries',
+    title: {
+      en: 'SOLAR-005: Solar Batteries',
+      ti: 'SOLAR-005: ናይ ሶላር ባተሪታት',
+      am: 'SOLAR-005: የፀሐይ ኃይል ባትሪዎች'
+    },
+    category: 'solar',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Battery chemistry scorecard diagram (FLA/AGM/Gel/LFP/NMC on 6 metrics), key terms (SoC/DoD/C-rate/efficiency/calendar life), SoC vs DoD visual comparing LFP and lead-acid usable zones, 6-step battery bank sizing calculation, series vs parallel wiring diagram, and battery selection decision guide — with diagrams — by Awet G. Nway.',
+      ti: 'Battery chemistry scorecard diagram (FLA/AGM/Gel/LFP/NMC)፣ SoC/DoD/C-rate terms፣ 6-step battery sizing calculation፣ series vs parallel wiring diagram — ብ Awet G. Nway።',
+      am: 'Battery chemistry scorecard diagram (FLA/AGM/Gel/LFP/NMC)፣ SoC/DoD/C-rate terms፣ 6-step battery sizing calculation፣ series vs parallel wiring diagram — በ Awet G. Nway።'
+    },
+    file: 'pdfs/SOLAR-005-Solar-Batteries.pdf',
+    color: '#fbbf24',
+    preview: true
+  },
+  {
     id: 'ai-curriculum-002-understanding-chatgpt',
     title: {
       en: 'AI-002: Understanding ChatGPT',
