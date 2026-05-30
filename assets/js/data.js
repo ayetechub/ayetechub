@@ -1145,6 +1145,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'mep-curriculum-003-reading-mep-drawings',
+    title: {
+      en: 'MEP-003: Reading MEP Drawings and Specifications',
+      ti: 'MEP-003: ናይ MEP ስእልታትን ዝርዝራትን ምንባብ',
+      am: 'MEP-003: MEP ምስሎች እና ዝርዝሮችን ማንበብ'
+    },
+    category: 'mep',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: '5-level drawing hierarchy (concept to as-built), drawing numbering convention (discipline/level/type/revision), common MEP symbols grid (mechanical/electrical/plumbing), line weight and colour conventions, title block diagram with all key fields, and 8-step method for reading any MEP floor plan — with diagrams — by Awet G. Nway.',
+      ti: '5-level drawing hierarchy፣ drawing numbering convention፣ common MEP symbols grid፣ title block diagram፣ 8-step MEP floor plan reading method — ብ Awet G. Nway።',
+      am: '5-level drawing hierarchy፣ drawing numbering convention፣ common MEP symbols grid፣ title block diagram፣ 8-step MEP floor plan reading method — በ Awet G. Nway።'
+    },
+    file: 'pdfs/MEP-003-Reading-MEP-Drawings.pdf',
+    color: '#0d9488',
+    preview: true
+  },
+  {
     id: 'mech-curriculum-001-intro-to-mechanical',
     title: {
       en: 'MECH-001: Introduction to Mechanical Engineering',
