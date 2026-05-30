@@ -1313,6 +1313,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'elec-curriculum-005-electrical-safety',
+    title: {
+      en: 'ELEC-005: Electrical Safety',
+      ti: 'ELEC-005: ናይ ኤሌክትሪክ ድሕነት',
+      am: 'ELEC-005: የኤሌክትሪክ ደህንነት'
+    },
+    category: 'electrical',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Electric shock effects by current level diagram (1mA–10A per IEC 60479), shock severity factors, 30 mA RCD rule, protection devices diagram (Fuse/MCB/RCD/RCBO with standards), earthing systems diagram (TN-S/TN-C-S/TT), wiring regulations (IEC 60364/BS 7671/NEC/SANS 10142), 6 golden safety rules (Isolate-Lock-Tag), and PPE guide — with diagrams — by Awet G. Nway.',
+      ti: 'Electric shock effects (1mA-10A)፣ protection devices diagram (Fuse/MCB/RCD/RCBO)፣ earthing systems (TN-S/TN-C-S/TT)፣ wiring regulations፣ 6 golden safety rules — ብ Awet G. Nway።',
+      am: 'Electric shock effects (1mA-10A)፣ protection devices diagram (Fuse/MCB/RCD/RCBO)፣ earthing systems (TN-S/TN-C-S/TT)፣ wiring regulations፣ 6 golden safety rules — በ Awet G. Nway።'
+    },
+    file: 'pdfs/ELEC-005-Electrical-Safety.pdf',
+    color: '#3b82f6',
+    preview: true
+  },
+  {
     id: 'hvac-curriculum-002-refrigeration-cycle',
     title: {
       en: 'HVAC-002: The Refrigeration Cycle',
