@@ -334,6 +334,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'prota-curriculum-003-structural-design-principles',
+    title: {
+      en: 'PROTA-003: Structural Design Principles',
+      ti: 'PROTA-003: ናይ መዋቅር ዲዛይን ሞጎስ',
+      am: 'PROTA-003: የሕንፃ ዲዛይን መሰረታዊ ሞጎሶች'
+    },
+    category: 'prota-structure',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: '5 load types diagram (Dead/Live/Wind/Seismic/Snow with typical values), load types table with ProtaStructure input, tributary area floor plan diagram (corner 9m²/edge 18m²/interior 36m²), Eurocode 2 vs ACI 318 load combinations table, partial safety factors explained, load path diagram (slab→beam→column→foundation), sway vs non-sway frames, and how ProtaStructure applies all concepts — with diagrams — by Awet G. Nway.',
+      ti: '5 load types diagram፣ tributary area diagram (corner/edge/interior)፣ Eurocode 2 vs ACI 318 load combinations table፣ load path diagram (slab→beam→column→foundation)፣ sway vs non-sway — ብ Awet G. Nway።',
+      am: '5 load types diagram፣ tributary area diagram (corner/edge/interior)፣ Eurocode 2 vs ACI 318 load combinations table፣ load path diagram (slab→beam→column→foundation)፣ sway vs non-sway — በ Awet G. Nway።'
+    },
+    file: 'pdfs/PROTA-003-Structural-Design-Principles.pdf',
+    color: '#0369a1',
+    preview: true
+  },
+  {
     id: 'revit-curriculum-001-introduction-to-revit',
     title: {
       en: 'REVIT-001: Introduction to Revit',
