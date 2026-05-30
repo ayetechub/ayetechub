@@ -250,6 +250,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'robot-curriculum-002-robot-anatomy-and-components',
+    title: {
+      en: 'ROBOT-002: Robot Anatomy and Components',
+      ti: 'ROBOT-002: ናይ ሮቦት ኣካላት ምስ ኮምፖነንቶቱ',
+      am: 'ROBOT-002: የሮቦት አካሎች እና ክፍሎች'
+    },
+    category: 'robotics',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Servo motor closed-loop control diagram (controller→drive→motor→gearbox→encoder), servo system table, gearbox types diagram (harmonic drive/RV reducer/planetary), encoder types (absolute/incremental/resolver), robot controller components, teach pendant enabling device, end effector types diagram (parallel gripper/vacuum/magnetic/welding/tool changer/adaptive), and robot safety systems — with diagrams — by Awet G. Nway.',
+      ti: 'Servo motor closed-loop diagram፣ gearbox types (harmonic/RV/planetary)፣ encoder types፣ robot controller & teach pendant፣ end effector types diagram፣ robot safety systems — ብ Awet G. Nway።',
+      am: 'Servo motor closed-loop diagram፣ gearbox types (harmonic/RV/planetary)፣ encoder types፣ robot controller & teach pendant፣ end effector types diagram፣ robot safety systems — በ Awet G. Nway።'
+    },
+    file: 'pdfs/ROBOT-002-Robot-Anatomy-and-Components.pdf',
+    color: '#ec4899',
+    preview: true
+  },
+  {
     id: 'prota-curriculum-001-introduction-to-protastructure',
     title: {
       en: 'PROTA-001: Introduction to ProtaStructure',
