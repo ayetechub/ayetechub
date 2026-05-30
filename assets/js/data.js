@@ -292,6 +292,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'ct-004-the-socratic-method',
+    title: {
+      en: 'CT-004: The Socratic Method — Questioning Everything',
+      ti: 'CT-004: ናይ ሶቅራጠስ ኣገባብ — ኩሉ ነገር ምሕታት',
+      am: 'CT-004: የሶቅራጥስ ዘዴ — ሁሉን ነገር መጠየቅ'
+    },
+    category: 'critical-thinking',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Who Socrates was and why Athens killed him, the 6 types of Socratic questions (clarification/assumptions/evidence/viewpoints/implications/the question itself), the 5-stage elenchus cycle, pyramid of question depth, applying Socratic questioning to AI outputs, and a daily practice guide — with diagrams — by Awet G. Nway.',
+      ti: 'ሶቅራጠስ ናይ ጥልቅ ሕቶ 6 ዓይነታት፣ 5-stage elenchus cycle፣ pyramid of question depth፣ AI outputs ምሕታት — ብ Awet G. Nway።',
+      am: 'ሶቅራጥስ 6 ዓይነት ጥያቄዎች፣ 5-stage elenchus cycle፣ pyramid of question depth፣ AI outputs ላይ ሶቅራቲካዊ ጥያቄ — በ Awet G. Nway።'
+    },
+    file: 'pdfs/CT-004-The-Socratic-Method.pdf',
+    color: '#7c3aed',
+    preview: true
+  },
+  {
     id: 'ct-philosophy-truth-vs-consequences',
     title: {
       en: 'Truth and Falsehood: Should Truth Always Be Absolute?',
