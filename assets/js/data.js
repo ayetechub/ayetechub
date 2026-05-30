@@ -229,6 +229,27 @@ const COURSES = [
 ============================================================ */
 const PDFS = [
   {
+    id: 'cohoom-curriculum-001-introduction-to-coohom',
+    title: {
+      en: 'COHOOM-001: Introduction to Coohom',
+      ti: 'COHOOM-001: መእተዊ ናብ Coohom',
+      am: 'COHOOM-001: ወደ Coohom መግቢያ'
+    },
+    category: 'coohom',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: 'What Coohom is (15M+ users, cloud-based), 7-stage design workflow diagram (Brief→Floor Plan→3D→Materials→Lighting→Render→Present), key features grid (cloud/floor plan/furniture library/rendering/materials/VR), free vs Pro plan comparison, system requirements, Coohom vs SketchUp/AutoCAD/3ds Max, and career opportunities — with diagrams — by Awet G. Nway.',
+      ti: 'Coohom እንታይ ምዃኑ (15M+ users)፣ 7-stage workflow diagram፣ key features grid፣ free vs Pro plan፣ Coohom vs SketchUp/AutoCAD፣ career opportunities — ብ Awet G. Nway።',
+      am: 'Coohom ምን እንደሆነ (15M+ users)፣ 7-stage workflow diagram፣ key features grid፣ free vs Pro plan፣ Coohom vs SketchUp/AutoCAD፣ career opportunities — በ Awet G. Nway።'
+    },
+    file: 'pdfs/COHOOM-001-Introduction-to-Coohom.pdf',
+    color: '#f43f5e',
+    preview: true
+  },
+  {
     id: 'ct-001-introduction-to-critical-thinking',
     title: {
       en: 'CT-001: Introduction to Critical Thinking in the AI Age',
