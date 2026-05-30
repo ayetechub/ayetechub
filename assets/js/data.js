@@ -418,6 +418,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'cohoom-curriculum-003-space-planning-basics',
+    title: {
+      en: 'COHOOM-003: Space Planning Basics',
+      ti: 'COHOOM-003: መሰረታዊ ናይ ቦታ ምምቃል',
+      am: 'COHOOM-003: የቦታ ዕቅድ መሰረታዊ'
+    },
+    category: 'coohom',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: '7 space planning principles grid (function/flow/focal/balance/scale/light/flexibility), minimum clearance standards (living room diagram + 8-room table), traffic flow types (primary 900mm/secondary 600mm/tertiary 450mm), activity zoning diagram (4 zones in open-plan), 6 zoning tools, and room-by-room checklist (living/bedroom/kitchen/dining/office/bathroom) — with diagrams — by Awet G. Nway.',
+      ti: '7 space planning principles grid፣ minimum clearance standards diagram፣ traffic flow types፣ activity zoning diagram፣ room-by-room checklist — ብ Awet G. Nway።',
+      am: '7 space planning principles grid፣ minimum clearance standards diagram፣ traffic flow types፣ activity zoning diagram፣ room-by-room checklist — በ Awet G. Nway።'
+    },
+    file: 'pdfs/COHOOM-003-Space-Planning-Basics.pdf',
+    color: '#f43f5e',
+    preview: true
+  },
+  {
     id: 'ct-001-introduction-to-critical-thinking',
     title: {
       en: 'CT-001: Introduction to Critical Thinking in the AI Age',
