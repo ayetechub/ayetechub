@@ -276,6 +276,19 @@ function renderPdfs() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Read ?cat= URL parameter and pre-select that filter
+  const params = new URLSearchParams(window.location.search);
+  const catParam = params.get('cat');
+  if (catParam) {
+    _cat = catParam;
+    const matchBtn = document.querySelector(`#pdf-filters .filter-tag[data-cat="${catParam}"]`);
+    if (matchBtn) {
+      document.querySelectorAll('#pdf-filters .filter-tag').forEach(t => t.classList.remove('active'));
+      matchBtn.classList.add('active');
+      matchBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+  }
+
   renderPdfs();
 
   document.getElementById('pdf-filters').addEventListener('click', e => {
