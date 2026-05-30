@@ -271,6 +271,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'revit-curriculum-002-revit-interface-basics',
+    title: {
+      en: 'REVIT-002: Revit Interface Basics',
+      ti: 'REVIT-002: ናይ Revit Interface መሰረታዊ',
+      am: 'REVIT-002: Revit Interface መሰረታዊ'
+    },
+    category: 'revit',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Revit 2025 interface 8-zone diagram (title bar/QAT/ribbon/properties/canvas/project browser/view control/status bar), 5 ribbon tabs guide, Project Browser hierarchy diagram, Type vs Instance properties, 3D navigation methods, and 25 keyboard shortcuts (WA/DR/GR/VG/ZF and more) — with diagrams — by Awet G. Nway.',
+      ti: 'Revit 2025 interface 8-zone diagram፣ 5 ribbon tabs guide፣ Project Browser hierarchy diagram፣ Type vs Instance properties፣ 3D navigation፣ 25 keyboard shortcuts — ብ Awet G. Nway።',
+      am: 'Revit 2025 interface 8-zone diagram፣ 5 ribbon tabs guide፣ Project Browser hierarchy diagram፣ Type vs Instance properties፣ 3D navigation፣ 25 keyboard shortcuts — በ Awet G. Nway።'
+    },
+    file: 'pdfs/REVIT-002-Revit-Interface-Basics.pdf',
+    color: '#4338ca',
+    preview: true
+  },
+  {
     id: 'cohoom-curriculum-001-introduction-to-coohom',
     title: {
       en: 'COHOOM-001: Introduction to Coohom',
