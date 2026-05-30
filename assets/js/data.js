@@ -439,6 +439,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'ct-005-logical-fallacies',
+    title: {
+      en: 'CT-005: Logical Fallacies — Arguments That Sound Right But Are Wrong',
+      ti: 'CT-005: ምርጫ ሓሶት ሓሳባት — ቅኑዕ ዝመስሉ ጌጋ ሓሳባት',
+      am: 'CT-005: ሎጂካዊ ስህተቶች — ትክክል የሚሰሙ ግን ስህተት የሆኑ ክርክሮች'
+    },
+    category: 'critical-thinking',
+    pages: 4,
+    size: '120 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: '20 logical fallacies in 4 categories (relevance/weak induction/presumption/ambiguity), top 10 fallacies deep-dive (ad hominem/straw man/false dilemma/appeal to authority/slippery slope/hasty generalisation and more), straw man 4-step flow diagram, false dilemma spectrum diagram, fallacies in AI output guide — with diagrams — by Awet G. Nway.',
+      ti: '20 logical fallacies ኣብ 4 ዓይነታት፣ top 10 fallacies (ad hominem/straw man/false dilemma)፣ straw man 4-step diagram፣ false dilemma spectrum diagram፣ fallacies ኣብ AI output — ብ Awet G. Nway።',
+      am: '20 logical fallacies ለ4 ምድቦች፣ top 10 fallacies (ad hominem/straw man/false dilemma)፣ straw man 4-step diagram፣ false dilemma spectrum diagram፣ AI output ውስጥ fallacies — በ Awet G. Nway።'
+    },
+    file: 'pdfs/CT-005-Logical-Fallacies.pdf',
+    color: '#7c3aed',
+    preview: true
+  },
+  {
     id: 'ct-philosophy-truth-vs-consequences',
     title: {
       en: 'Truth and Falsehood: Should Truth Always Be Absolute?',
