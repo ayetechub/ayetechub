@@ -1208,6 +1208,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'mech-curriculum-004-thermodynamics-basics',
+    title: {
+      en: 'MECH-004: Thermodynamics Basics',
+      ti: 'MECH-004: መሰረታዊ ናይ ቴርሞዳይናሚክስ',
+      am: 'MECH-004: የቴርሞዳይናሚክስ መሰረታዊ'
+    },
+    category: 'mechanical',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'The four laws of thermodynamics (Zeroth through Third) with formulas, key concepts (T/Q/W/U/H/S/specific heat), three heat transfer modes diagram (conduction/convection/radiation with equations), Carnot P-V cycle diagram with efficiency formula, real engine efficiency comparison, and 6 thermodynamic cycles (Carnot/Otto/Diesel/Rankine/Refrigeration/Brayton) — with diagrams — by Awet G. Nway.',
+      ti: '4 ሕግታት ቴርሞዳይናሚክስ (Zeroth-Third)፣ 3 ናይ heat transfer modes diagram፣ Carnot P-V cycle diagram፣ ናይ engine efficiency comparison — ብ Awet G. Nway።',
+      am: '4 ህጎች ቴርሞዳይናሚክስ (Zeroth-Third)፣ 3 heat transfer modes diagram፣ Carnot P-V cycle diagram፣ የengine efficiency comparison — በ Awet G. Nway።'
+    },
+    file: 'pdfs/MECH-004-Thermodynamics-Basics.pdf',
+    color: '#f97316',
+    preview: true
+  },
+  {
     id: 'elec-curriculum-001-intro-to-electricity',
     title: {
       en: 'ELEC-001: Introduction to Electricity',
