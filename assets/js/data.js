@@ -229,6 +229,27 @@ const COURSES = [
 ============================================================ */
 const PDFS = [
   {
+    id: 'robot-curriculum-001-introduction-to-industrial-robotics',
+    title: {
+      en: 'ROBOT-001: Introduction to Industrial Robotics',
+      ti: 'ROBOT-001: መእተዊ ናብ ናይ ኢንዱስትሪ ሮቦቲክስ',
+      am: 'ROBOT-001: ወደ ኢንዱስትሪ ሮቦቲክስ መግቢያ'
+    },
+    category: 'robotics',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: 'What industrial robots are ($20B+ market), 6 robot types diagram (articulated/SCARA/delta/cartesian/cobot/cylindrical), robot anatomy 6-DOF diagram (J1-J6 joints), key specs (payload/reach/repeatability), top 5 brands (ABB/KUKA/Fanuc/Yaskawa/UR), industry applications, and career pathways with Africa salary ranges — with diagrams — by Awet G. Nway.',
+      ti: '6 ዓይነታት robot diagram፣ 6-DOF anatomy diagram (J1-J6)፣ top 5 brands (ABB/KUKA/Fanuc/Yaskawa/UR)፣ career pathways — ብ Awet G. Nway።',
+      am: '6 ዓይነት robot diagram፣ 6-DOF anatomy diagram (J1-J6)፣ top 5 brands (ABB/KUKA/Fanuc/Yaskawa/UR)፣ career pathways — በ Awet G. Nway።'
+    },
+    file: 'pdfs/ROBOT-001-Introduction-to-Industrial-Robotics.pdf',
+    color: '#ec4899',
+    preview: true
+  },
+  {
     id: 'prota-curriculum-001-introduction-to-protastructure',
     title: {
       en: 'PROTA-001: Introduction to ProtaStructure',
