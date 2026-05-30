@@ -956,6 +956,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'fit-hub-day13-upper-body-power',
+    title: {
+      en: 'Day 13: Upper Body Power — Push, Pull, Press',
+      ti: 'ቀን 13: ናይ ላዕሊ ሰውነት ሓይሊ — Push, Pull, Press',
+      am: 'ቀን 13: የላይ ሰውነት ኃይል — Push, Pull, Press'
+    },
+    category: 'fit-hub',
+    pages: 4,
+    size: '120 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'The push-pull-press principle, upper body muscle anatomy (chest/shoulders/back/biceps/triceps/rotator cuff), Day 13 workout (9 exercises with form cues and no-equipment alternatives), progressive overload staircase, and 6 common upper body mistakes — with diagrams — by Awet G. Nway.',
+      ti: 'Push-pull-press principle፣ ናይ ላዕሊ ሰውነት ጭዋዳ anatomy፣ 9 ናይ Day 13 ልምምዳት፣ progressive overload staircase — ብ Awet G. Nway።',
+      am: 'Push-pull-press principle፣ የላይ ሰውነት ጡንቻ anatomy፣ 9 ናይ Day 13 ልምምዶች፣ progressive overload staircase — በ Awet G. Nway።'
+    },
+    file: 'pdfs/aye-fit-hub-day13-upper-body-power.pdf',
+    color: '#22c55e',
+    preview: true
+  },
+  {
     id: 'ai-curriculum-001-intro-to-ai',
     title: {
       en: 'AI-001: Introduction to Artificial Intelligence',
