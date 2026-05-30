@@ -376,6 +376,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'revit-curriculum-003-project-setup',
+    title: {
+      en: 'REVIT-003: Project Setup',
+      ti: 'REVIT-003: ናይ ፕሮጀክት ምቕማጥ',
+      am: 'REVIT-003: የፕሮጀክት ማዋቀር'
+    },
+    category: 'revit',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: '6-step project setup workflow diagram, 4 Revit template types (Architectural/Structural/MEP/Company), project units and coordinates settings, levels diagram (basement to roof with elevations), level creation steps, storey height standards, structural grid diagram (A-E columns × 1-4 rows with bubbles), grid tasks table, and title block/sheet setup guide — with diagrams — by Awet G. Nway.',
+      ti: '6-step setup workflow diagram፣ 4 template types፣ levels diagram (basement to roof)፣ level creation steps፣ structural grid diagram (A-E × 1-4)፣ title block setup — ብ Awet G. Nway።',
+      am: '6-step setup workflow diagram፣ 4 template types፣ levels diagram (basement to roof)፣ level creation steps፣ structural grid diagram (A-E × 1-4)፣ title block setup — በ Awet G. Nway።'
+    },
+    file: 'pdfs/REVIT-003-Project-Setup.pdf',
+    color: '#4338ca',
+    preview: true
+  },
+  {
     id: 'cohoom-curriculum-001-introduction-to-coohom',
     title: {
       en: 'COHOOM-001: Introduction to Coohom',
