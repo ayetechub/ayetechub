@@ -250,6 +250,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'prota-curriculum-002-interface-and-navigation',
+    title: {
+      en: 'PROTA-002: Interface and Navigation',
+      ti: 'PROTA-002: ናይ ProtaStructure Interface ምዝዋር',
+      am: 'PROTA-002: ProtaStructure Interface እና Navigation'
+    },
+    category: 'prota-structure',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'ProtaStructure interface 7-zone diagram (menu/toolbar/building tree/viewport/properties/story selector/output bar), Building Tree hierarchy diagram (project→stories→columns/beams/slabs/foundations/loads), main toolbar icon guide, 3D/2D navigation controls diagram, 6 view modes, 20 keyboard shortcuts, and 5 common mistakes — with diagrams — by Awet G. Nway.',
+      ti: 'ProtaStructure interface 7-zone diagram፣ Building Tree hierarchy diagram፣ main toolbar icon guide፣ 3D/2D navigation controls diagram፣ 20 keyboard shortcuts — ብ Awet G. Nway።',
+      am: 'ProtaStructure interface 7-zone diagram፣ Building Tree hierarchy diagram፣ main toolbar icon guide፣ 3D/2D navigation controls diagram፣ 20 keyboard shortcuts — በ Awet G. Nway።'
+    },
+    file: 'pdfs/PROTA-002-Interface-and-Navigation.pdf',
+    color: '#0369a1',
+    preview: true
+  },
+  {
     id: 'revit-curriculum-001-introduction-to-revit',
     title: {
       en: 'REVIT-001: Introduction to Revit',
