@@ -271,6 +271,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'robot-curriculum-003-kinematics-and-coordinates',
+    title: {
+      en: 'ROBOT-003: Robot Kinematics and Coordinate Systems',
+      ti: 'ROBOT-003: ናይ ሮቦት ኪነማቲክስን ኮኦርዲኔት ስርዓታትን',
+      am: 'ROBOT-003: የሮቦት ኪነማቲክስ እና ኮኦርዲኔት ሥርዓቶች'
+    },
+    category: 'robotics',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Forward vs inverse kinematics diagram (FK/IK with input/output panels), kinematics table (FK/IK/motion planning/Jacobian), 5 coordinate frames hierarchy diagram (World/Base/Joint/TCP/User), frame comparison across ABB/KUKA/Fanuc, Joint space MoveJ vs Cartesian MoveL diagram (pros/cons), motion type table, 3 singularity types (shoulder/elbow/wrist) with prevention, TCP position notation — with diagrams — by Awet G. Nway.',
+      ti: 'FK vs IK diagram፣ 5 coordinate frames hierarchy diagram (World/Base/Joint/TCP/User)፣ MoveJ vs MoveL diagram፣ 3 singularity types፣ TCP notation — ብ Awet G. Nway።',
+      am: 'FK vs IK diagram፣ 5 coordinate frames hierarchy (World/Base/Joint/TCP/User)፣ MoveJ vs MoveL diagram፣ 3 singularity types፣ TCP notation — በ Awet G. Nway።'
+    },
+    file: 'pdfs/ROBOT-003-Robot-Kinematics-and-Coordinates.pdf',
+    color: '#ec4899',
+    preview: true
+  },
+  {
     id: 'prota-curriculum-001-introduction-to-protastructure',
     title: {
       en: 'PROTA-001: Introduction to ProtaStructure',
