@@ -1250,6 +1250,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'plc-curriculum-004-ladder-logic-fundamentals',
+    title: {
+      en: 'PLC-004: Ladder Logic Fundamentals',
+      ti: 'PLC-004: መሰረታዊ ናይ Ladder Logic',
+      am: 'PLC-004: Ladder Logic መሰረታዊ'
+    },
+    category: 'plc',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'What Ladder Logic is and why it mirrors relay circuits, 7 basic symbols diagram (XIC/XIO/OTE/OTL/OTU/OSR/NEG), symbol comparison across Siemens/Allen-Bradley/Mitsubishi, Start/Stop motor control rung diagram, Seal-in (latching) circuit diagram with explanation, series/parallel/NOT logic table, 7 best practices, and 5 practice exercises — with diagrams — by Awet G. Nway.',
+      ti: 'Ladder Logic ምዃኑ፣ 7 basic symbols diagram (XIC/XIO/OTE/OTL/OTU)፣ Start/Stop motor rung diagram፣ Seal-in circuit diagram፣ series/parallel logic table፣ 7 best practices — ብ Awet G. Nway።',
+      am: 'Ladder Logic ምን እንደሆነ፣ 7 basic symbols diagram (XIC/XIO/OTE/OTL/OTU)፣ Start/Stop motor rung diagram፣ Seal-in circuit diagram፣ series/parallel logic table፣ 7 best practices — በ Awet G. Nway።'
+    },
+    file: 'pdfs/PLC-004-Ladder-Logic-Fundamentals.pdf',
+    color: '#22c55e',
+    preview: true
+  },
+  {
     id: 'mep-curriculum-001-intro-to-mep',
     title: {
       en: 'MEP-001: Introduction to MEP Engineering',
