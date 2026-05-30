@@ -1607,6 +1607,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'electricity-decoded-ohms-law-visual-guide',
+    title: {
+      en: 'Decoding the Invisible Forces of Electricity',
+      ti: 'ናይ ኤሌክትሪሲቲ ሰሌዳ ሓይልታት ምፍታሕ',
+      am: 'የኤሌክትሪሲቲ የማይታዩ ኃይሎችን መፍታት'
+    },
+    category: 'electrical',
+    pages: 7,
+    size: '2.4 MB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: 'A stunning visual guide to Ohm\'s Law and basic circuit dynamics. Covers Voltage (V), Current (I) and Resistance (R) with the Volt-Amp-Ohm character analogy, the Electricity Trinity Blueprint table, V=I×R explained visually, and Master the Circuit summary. Perfect for beginners.',
+      ti: 'ናይ Ohm\'s Law ምስለኛ ትምህርቲ — Voltage, Current, Resistance ምስ V=I×R ሕሳብ ብምስሊ ዝተገለጸ።',
+      am: 'የOhm\'s Law ምስላዊ መመሪያ — Voltage, Current, Resistance ከ V=I×R ቀመር ጋር በምስል ተብራርቷል።'
+    },
+    file: 'pdfs/Electricity-Decoded-Ohms-Law-Visual-Guide.pdf',
+    color: '#3b82f6',
+    preview: true
+  },
+  {
     id: 'hvac-curriculum-002-refrigeration-cycle',
     title: {
       en: 'HVAC-002: The Refrigeration Cycle',
