@@ -149,7 +149,6 @@
       <div class="filter-tags" id="pdf-filters">
         <button class="filter-tag active" data-cat="all">All</button>
         <button class="filter-tag" data-cat="ai">AI</button>
-        <button class="filter-tag" data-cat="ai-curriculum">AI Curriculum</button>
         <button class="filter-tag" data-cat="fit-hub">Fit Hub</button>
         <button class="filter-tag" data-cat="plc">PLC</button>
         <button class="filter-tag" data-cat="electrical">Electrical</button>
@@ -162,7 +161,6 @@
         <button class="filter-tag" data-cat="revit">Revit BIM</button>
         <button class="filter-tag" data-cat="prota-structure">ProtaStructure</button>
         <button class="filter-tag" data-cat="coohom">Coohom</button>
-        <button class="filter-tag" data-cat="design">CAD/Design</button>
         <button class="filter-tag" data-cat="critical-thinking">Critical Thinking</button>
       </div>
       <div class="result-count" data-count-for="pdf-grid">9 results</div>
@@ -261,11 +259,13 @@
 let _cat = 'all', _q = '';
 
 function renderPdfs() {
-  const AI_CATS = ['ai', 'ai-30day', 'ai-curriculum'];
+  const AI_CATS  = ['ai', 'ai-30day', 'ai-curriculum'];
+  const CAD_CATS = ['autocad', 'design'];
   const q = _q.toLowerCase();
   const filtered = PDFS.filter(p => {
     const matchCat = _cat === 'all'
-      || (_cat === 'ai' && AI_CATS.includes(p.category))
+      || (_cat === 'ai'      && AI_CATS.includes(p.category))
+      || (_cat === 'autocad' && CAD_CATS.includes(p.category))
       || p.category === _cat;
     if (!matchCat) return false;
     if (!q) return true;
@@ -279,7 +279,10 @@ function renderPdfs() {
 document.addEventListener('DOMContentLoaded', () => {
   // Read ?cat= URL parameter and pre-select that filter
   const params = new URLSearchParams(window.location.search);
-  const catParam = params.get('cat');
+  let catParam = params.get('cat');
+  // Redirect merged categories to their combined tab
+  if (catParam === 'ai-curriculum' || catParam === 'ai-30day') catParam = 'ai';
+  if (catParam === 'design') catParam = 'autocad';
   if (catParam) {
     _cat = catParam;
     const matchBtn = document.querySelector(`#pdf-filters .filter-tag[data-cat="${catParam}"]`);

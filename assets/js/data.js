@@ -924,7 +924,7 @@ const PDFS = [
   {
     id: 'revit-mep',
     title: 'Revit MEP Complete Reference',
-    category: 'design',
+    category: 'revit',
     pages: 14,
     size: '45 KB',
     downloads: '0',
