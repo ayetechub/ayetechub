@@ -1565,6 +1565,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'mep-curriculum-004-hvac-fundamentals-for-mep',
+    title: {
+      en: 'MEP-004: HVAC Fundamentals for MEP',
+      ti: 'MEP-004: ናይ MEP HVAC መሰረታዊ',
+      am: 'MEP-004: ለMEP HVAC መሰረታዊ'
+    },
+    category: 'mep',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: '3 HVAC system types diagram (central AHU/FCU/VRF with MEP implications), MEP coordination table (ceiling void/plant room/electrical/BMS/fresh air), cooling load components bar chart (solar 32%/people 18%/lighting 14%/equipment 16%/fabric 12%/ventilation 8%), cooling load calculation table, rules of thumb by space type, zone control diagram (VAV/FCU/VRF), HVAC-electrical integration table, and HVAC equipment schedule guide — with diagrams — by Awet G. Nway.',
+      ti: '3 HVAC system types diagram (central AHU/FCU/VRF)፣ cooling load components bar chart፣ cooling load calculation table፣ zone control diagram (VAV/FCU/VRF)፣ HVAC-electrical integration table — ብ Awet G. Nway።',
+      am: '3 HVAC system types diagram (central AHU/FCU/VRF)፣ cooling load components bar chart፣ cooling load calculation table፣ zone control diagram (VAV/FCU/VRF)፣ HVAC-electrical integration table — በ Awet G. Nway።'
+    },
+    file: 'pdfs/MEP-004-HVAC-Fundamentals-for-MEP.pdf',
+    color: '#0d9488',
+    preview: true
+  },
+  {
     id: 'mech-curriculum-001-intro-to-mechanical',
     title: {
       en: 'MECH-001: Introduction to Mechanical Engineering',
