@@ -1607,6 +1607,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'mech-curriculum-005-fluid-mechanics',
+    title: {
+      en: 'MECH-005: Fluid Mechanics',
+      ti: 'MECH-005: ናይ ፍሳሽ ሜካኒክስ',
+      am: 'MECH-005: ፈሳሽ ሜካኒክስ'
+    },
+    category: 'mechanical',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Key fluid properties (density/viscosity/pressure), Bernoulli\'s equation venturi diagram (P+½ρv²+ρgh=constant), Bernoulli application table, Reynolds number laminar vs turbulent diagram, pipe flow (Darcy-Weisbach/Moody chart/minor losses), 3 pump types diagram (centrifugal/positive displacement/axial), pump selection (system curve/BEP/NPSH), and affinity laws (Q/H/P vs speed) — with diagrams — by Awet G. Nway.',
+      ti: 'Fluid properties፣ Bernoulli venturi diagram፣ Reynolds number diagram (laminar vs turbulent)፣ Darcy-Weisbach pipe flow፣ 3 pump types diagram፣ pump selection፣ affinity laws — ብ Awet G. Nway።',
+      am: 'Fluid properties፣ Bernoulli venturi diagram፣ Reynolds number diagram (laminar vs turbulent)፣ Darcy-Weisbach pipe flow፣ 3 pump types diagram፣ pump selection፣ affinity laws — በ Awet G. Nway።'
+    },
+    file: 'pdfs/MECH-005-Fluid-Mechanics.pdf',
+    color: '#f97316',
+    preview: true
+  },
+  {
     id: 'elec-curriculum-001-intro-to-electricity',
     title: {
       en: 'ELEC-001: Introduction to Electricity',
