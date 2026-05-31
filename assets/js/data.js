@@ -1922,6 +1922,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'ai-curriculum-006-google-gemini-ai',
+    title: {
+      en: 'AI-006: Google Gemini AI',
+      ti: 'AI-006: Google Gemini AI',
+      am: 'AI-006: Google Gemini AI'
+    },
+    category: 'ai-curriculum',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Gemini Flash/Pro/Ultra model tiers diagram, 1M token context window comparison (GPT-4o vs Claude vs Gemini), model feature table, Gemini in Google Workspace diagram (Gmail/Docs/Sheets/Slides/Meet), workspace features table, NotebookLM guide (source-grounded answers/Audio Overview/study guides), and 10 practical engineering workflows — with diagrams — by Awet G. Nway.',
+      ti: 'Gemini Flash/Pro/Ultra model tiers diagram፣ 1M token context comparison፣ Gemini in Google Workspace diagram፣ NotebookLM guide፣ 10 engineering workflows — ብ Awet G. Nway።',
+      am: 'Gemini Flash/Pro/Ultra model tiers diagram፣ 1M token context comparison፣ Gemini in Google Workspace diagram፣ NotebookLM guide፣ 10 engineering workflows — በ Awet G. Nway።'
+    },
+    file: 'pdfs/AI-006-Google-Gemini-AI.pdf',
+    color: '#8b5cf6',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'hvac',
