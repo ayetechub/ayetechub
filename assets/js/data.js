@@ -229,6 +229,27 @@ const COURSES = [
 ============================================================ */
 const PDFS = [
   {
+    id: 'cad-curriculum-001-introduction-to-autocad',
+    title: {
+      en: 'CAD-001: Introduction to AutoCAD',
+      ti: 'CAD-001: መእተዊ ናብ AutoCAD',
+      am: 'CAD-001: ወደ AutoCAD መግቢያ'
+    },
+    category: 'autocad',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: 'What AutoCAD is and why it matters, 5-product family diagram (AutoCAD core/Architecture/Electrical/Mechanical/Civil 3D), subscription vs AutoCAD LT comparison, 6-stage drawing workflow diagram (Template→Draw→Modify→Annotate→Layout→Print), DWG format version timeline, system requirements, career pathways with Africa salary ranges, and first-week getting-started guide — with diagrams — by Awet G. Nway.',
+      ti: '5-product family diagram (AutoCAD/Architecture/Electrical/Mechanical/Civil 3D)፣ 6-stage workflow diagram፣ DWG version timeline፣ career pathways ምስ Africa salary — ብ Awet G. Nway።',
+      am: '5-product family diagram (AutoCAD/Architecture/Electrical/Mechanical/Civil 3D)፣ 6-stage workflow diagram፣ DWG version timeline፣ career pathways ከ Africa salary ጋር — በ Awet G. Nway።'
+    },
+    file: 'pdfs/CAD-001-Introduction-to-AutoCAD.pdf',
+    color: '#dc2626',
+    preview: true
+  },
+  {
     id: 'robot-curriculum-001-introduction-to-industrial-robotics',
     title: {
       en: 'ROBOT-001: Introduction to Industrial Robotics',
