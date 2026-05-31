@@ -2048,6 +2048,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'solar-curriculum-007-charge-controllers',
+    title: {
+      en: 'SOLAR-007: Charge Controllers',
+      ti: 'SOLAR-007: ናይ Charge Controller',
+      am: 'SOLAR-007: Charge Controllers'
+    },
+    category: 'solar',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'MPPT vs PWM comparison diagram (efficiency/voltage/cost/best for), 6-property comparison table, 4 charging stages diagram (Bulk/Absorption/Float/Equalize with voltage curve), charging stages table, MPPT cold-morning I-V advantage diagram (PWM fixed vs MPPT tracking), 5-step charge controller sizing calculation, and battery chemistry settings table (LFP/AGM/FLA — absorption/float/equalize/temperature compensation) — with diagrams — by Awet G. Nway.',
+      ti: 'MPPT vs PWM comparison diagram፣ 4 charging stages diagram (Bulk/Absorption/Float/Equalize)፣ MPPT cold-morning I-V diagram፣ 5-step sizing calculation፣ battery chemistry settings table — ብ Awet G. Nway።',
+      am: 'MPPT vs PWM comparison diagram፣ 4 charging stages diagram (Bulk/Absorption/Float/Equalize)፣ MPPT cold-morning I-V diagram፣ 5-step sizing calculation፣ battery chemistry settings table — በ Awet G. Nway።'
+    },
+    file: 'pdfs/SOLAR-007-Charge-Controllers.pdf',
+    color: '#fbbf24',
+    preview: true
+  },
+  {
     id: 'ai-curriculum-002-understanding-chatgpt',
     title: {
       en: 'AI-002: Understanding ChatGPT',
