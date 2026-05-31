@@ -1922,6 +1922,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'hvac-curriculum-007-duct-design-basics',
+    title: {
+      en: 'HVAC-007: Duct Design Basics',
+      ti: 'HVAC-007: መሰረታዊ ናይ Duct ዲዛይን',
+      am: 'HVAC-007: Duct ዲዛይን መሰረታዊ'
+    },
+    category: 'hvac',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Rectangular vs circular duct comparison diagram (pros/cons/shape), 4 duct materials table (steel/spiral/flexible/phenolic), duct leakage classes, equal friction method duct sizing diagram (AHU→trunk→branches with flow labels), 6-step equal friction procedure, velocity limits by space type, 8 duct fittings pressure loss table (ζ values/formulas/notes), duct sizing schedule diagram, and 8-column schedule guide — with diagrams — by Awet G. Nway.',
+      ti: 'Rectangular vs circular duct diagram፣ 4 duct materials table፣ equal friction method diagram (AHU→trunk→branches)፣ 6-step sizing procedure፣ velocity limits table፣ 8 fittings loss table (ζ values) — ብ Awet G. Nway።',
+      am: 'Rectangular vs circular duct diagram፣ 4 duct materials table፣ equal friction method diagram (AHU→trunk→branches)፣ 6-step sizing procedure፣ velocity limits table፣ 8 fittings loss table (ζ values) — በ Awet G. Nway።'
+    },
+    file: 'pdfs/HVAC-007-Duct-Design-Basics.pdf',
+    color: '#00d4ff',
+    preview: true
+  },
+  {
     id: 'solar-curriculum-002-radiation-basics',
     title: {
       en: 'SOLAR-002: Solar Radiation Basics',
