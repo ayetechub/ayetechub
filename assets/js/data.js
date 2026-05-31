@@ -1859,6 +1859,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'solar-curriculum-006-inverters-explained',
+    title: {
+      en: 'SOLAR-006: Inverters Explained',
+      ti: 'SOLAR-006: ናይ Inverter ምርዳእ',
+      am: 'SOLAR-006: Inverter ተብራርቷል'
+    },
+    category: 'solar',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: '4 inverter types diagram (string/micro/hybrid/off-grid with pros/cons), MPPT explained, inverter internal block diagram (DC input→MPPT→DC-AC inverter→LCL filter→AC output), key specifications table (V_dc_max/MPPT range/efficiency/IP), anti-islanding explained, DC oversizing bar chart (60-130% sizing scenarios), 6-step inverter sizing calculation, and grid commissioning settings — with diagrams — by Awet G. Nway.',
+      ti: '4 inverter types diagram፣ MPPT explained፣ inverter internal block diagram፣ key specs table፣ DC oversizing bar chart፣ 6-step sizing calculation — ብ Awet G. Nway።',
+      am: '4 inverter types diagram፣ MPPT explained፣ inverter internal block diagram፣ key specs table፣ DC oversizing bar chart፣ 6-step sizing calculation — በ Awet G. Nway።'
+    },
+    file: 'pdfs/SOLAR-006-Inverters-Explained.pdf',
+    color: '#fbbf24',
+    preview: true
+  },
+  {
     id: 'ai-curriculum-002-understanding-chatgpt',
     title: {
       en: 'AI-002: Understanding ChatGPT',
