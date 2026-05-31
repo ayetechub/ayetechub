@@ -2027,6 +2027,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'hvac-curriculum-008-air-distribution-systems',
+    title: {
+      en: 'HVAC-008: Air Distribution Systems',
+      ti: 'HVAC-008: ናይ ኣየር ምዝርጋሕ ስርዓት',
+      am: 'HVAC-008: የአየር ስርጭት ሥርዓቶች'
+    },
+    category: 'hvac',
+    pages: 4,
+    size: '118 KB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: 'Air circulation loop diagram (supply/return/exhaust/fresh air with % volumes), 4 diffuser types diagram (ceiling round/linear slot/perforated/swirl — pattern, application, icon), CAV vs VAV comparison diagram, throw/drop/spread definitions, air change rate (ACH) table by space type (office/hospital/OR/lab/server room), and 4-row troubleshooting guide — with 3 diagrams — by Awet G. Nway.',
+      ti: 'Air circulation loop diagram (supply/return/exhaust/fresh air)፣ 4 diffuser types diagram (ceiling/linear slot/perforated/swirl)፣ CAV vs VAV diagram፣ ACH table by space type፣ troubleshooting guide — ብ Awet G. Nway።',
+      am: 'Air circulation loop diagram (supply/return/exhaust/fresh air)፣ 4 diffuser types diagram (ceiling/linear slot/perforated/swirl)፣ CAV vs VAV diagram፣ ACH table by space type፣ troubleshooting guide — በ Awet G. Nway።'
+    },
+    file: 'pdfs/HVAC-008-Air-Distribution-Systems.pdf',
+    color: '#00d4ff',
+    preview: true
+  },
+  {
     id: 'solar-curriculum-002-radiation-basics',
     title: {
       en: 'SOLAR-002: Solar Radiation Basics',
