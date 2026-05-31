@@ -2132,6 +2132,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'ai-curriculum-007-notebooklm-for-research',
+    title: {
+      en: 'AI-007: NotebookLM for Research',
+      ti: 'AI-007: NotebookLM ንምርምር',
+      am: 'AI-007: NotebookLM ለምርምር'
+    },
+    category: 'ai-curriculum',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'NotebookLM vs ChatGPT comparison diagram (no hallucination/inline citations), 5-step research workflow diagram, 6 source types diagram (PDF/Google Docs/Slides/websites/YouTube/audio), 6-step setup procedure, source types table (max size/best practice), citation system callout, 7 advanced features (FAQ/Study Guide/Timeline/Briefing/Multi-source/Notes/Sharing), and 10 engineering research workflows — with diagrams — by Awet G. Nway.',
+      ti: 'NotebookLM vs ChatGPT comparison diagram፣ 5-step workflow diagram፣ 6 source types diagram፣ 6-step setup procedure፣ 7 advanced features፣ 10 engineering workflows — ብ Awet G. Nway።',
+      am: 'NotebookLM vs ChatGPT comparison diagram፣ 5-step workflow diagram፣ 6 source types diagram፣ 6-step setup procedure፣ 7 advanced features፣ 10 engineering workflows — በ Awet G. Nway።'
+    },
+    file: 'pdfs/AI-007-NotebookLM-for-Research.pdf',
+    color: '#8b5cf6',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'hvac',
