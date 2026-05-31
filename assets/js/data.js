@@ -439,6 +439,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'revit-curriculum-004-levels-and-grids-in-practice',
+    title: {
+      en: 'REVIT-004: Levels and Grids in Practice',
+      ti: 'REVIT-004: Levels and Grids ኣብ ተግባር',
+      am: 'REVIT-004: Levels and Grids በተግባር'
+    },
+    category: 'revit',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: '5-storey commercial building project brief, 7-level setup diagram (Ground Floor±0 to Roof Level+18000mm with colour-coded bands), 7-step level creation procedure, 5×4 structural grid diagram (A-E columns × 1-4 rows at 6m bays with dimension annotations), 9-step grid drawing procedure, DWG import 3-step workflow diagram, coordinate concepts table (PBP/Survey Point/Shared/True North), and 8-item pre-modelling checklist — with diagrams — by Awet G. Nway.',
+      ti: '5-storey project brief፣ 7-level setup diagram (±0 to +18000mm)፣ 5×4 grid diagram (A-E × 1-4 at 6m)፣ DWG import 3-step diagram፣ coordinates table፣ 8-item pre-modelling checklist — ብ Awet G. Nway።',
+      am: '5-storey project brief፣ 7-level setup diagram (±0 to +18000mm)፣ 5×4 grid diagram (A-E × 1-4 at 6m)፣ DWG import 3-step diagram፣ coordinates table፣ 8-item pre-modelling checklist — በ Awet G. Nway።'
+    },
+    file: 'pdfs/REVIT-004-Levels-and-Grids-in-Practice.pdf',
+    color: '#4338ca',
+    preview: true
+  },
+  {
     id: 'cohoom-curriculum-001-introduction-to-coohom',
     title: {
       en: 'COHOOM-001: Introduction to Coohom',
