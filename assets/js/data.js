@@ -502,6 +502,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'cohoom-curriculum-004-floor-plan-creation',
+    title: {
+      en: 'COHOOM-004: Floor Plan Creation',
+      ti: 'COHOOM-004: ናይ ፍሎር ፕላን ምፍጣር',
+      am: 'COHOOM-004: Floor Plan መፍጠር'
+    },
+    category: 'coohom',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: '6-step floor plan workflow diagram (Start→Draw Room→Add Walls→Place Doors→Add Windows→Verify), 4 wall drawing methods (Draw Room/Draw Wall/Import DXF/Template), annotated floor plan diagram (walls/doors/windows/dimensions labelled), door settings table (width/swing/hinge/style/height), window settings table (width/height/sill height/position/style), 5 common mistakes diagram with fixes, measurement tools, and multi-floor guide — with diagrams — by Awet G. Nway.',
+      ti: '6-step floor plan workflow diagram፣ 4 wall drawing methods፣ annotated floor plan diagram፣ door & window settings tables፣ 5 common mistakes diagram with fixes — ብ Awet G. Nway።',
+      am: '6-step floor plan workflow diagram፣ 4 wall drawing methods፣ annotated floor plan diagram፣ door & window settings tables፣ 5 common mistakes diagram with fixes — በ Awet G. Nway።'
+    },
+    file: 'pdfs/COHOOM-004-Floor-Plan-Creation.pdf',
+    color: '#f43f5e',
+    preview: true
+  },
+  {
     id: 'ct-001-introduction-to-critical-thinking',
     title: {
       en: 'CT-001: Introduction to Critical Thinking in the AI Age',
