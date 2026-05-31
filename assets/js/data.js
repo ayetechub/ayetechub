@@ -376,6 +376,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'prota-curriculum-004-grid-and-level-setup',
+    title: {
+      en: 'PROTA-004: Grid and Level Setup',
+      ti: 'PROTA-004: Grid and Level Setup ኣብ ProtaStructure',
+      am: 'PROTA-004: ProtaStructure Grid እና Level Setup'
+    },
+    category: 'prota-structure',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: '5-storey RC office project brief, Building Tree story hierarchy diagram (9 stories Basement to Roof), 5-step story creation table, 4×3 structural grid diagram (A-D × 1-3 at 6m bays), 6-step grid drawing procedure, material grades diagram (concrete C25-C40/rebar B500B/cover depth), analysis model configuration table (design code/load combos/seismic/mesh), and 9-item pre-modelling checklist — with diagrams — by Awet G. Nway.',
+      ti: 'Building Tree story hierarchy diagram (9 stories)፣ 5-step story creation table፣ 4×3 grid diagram (A-D × 1-3 at 6m)፣ material grades diagram (concrete/rebar/cover)፣ analysis model config፣ 9-item checklist — ብ Awet G. Nway።',
+      am: 'Building Tree story hierarchy diagram (9 stories)፣ 5-step story creation table፣ 4×3 grid diagram (A-D × 1-3 at 6m)፣ material grades diagram (concrete/rebar/cover)፣ analysis model config፣ 9-item checklist — በ Awet G. Nway።'
+    },
+    file: 'pdfs/PROTA-004-Grid-and-Level-Setup.pdf',
+    color: '#0369a1',
+    preview: true
+  },
+  {
     id: 'revit-curriculum-001-introduction-to-revit',
     title: {
       en: 'REVIT-001: Introduction to Revit',
