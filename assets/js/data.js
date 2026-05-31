@@ -1733,6 +1733,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'elec-curriculum-006-electrical-tools',
+    title: {
+      en: 'ELEC-006: Electrical Tools',
+      ti: 'ELEC-006: ናይ ኤሌክትሪካዊ መሳርሒታት',
+      am: 'ELEC-006: የኤሌክትሪክ መሳሪያዎች'
+    },
+    category: 'electrical',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Multimeter dial modes radial diagram (6 modes: DC/AC voltage/current/resistance/continuity/diode), 5-measurement procedure table (voltage/current/resistance/continuity/current — with common mistakes), insulation resistance tester/loop impedance/earth electrode/PAT tester diagram, insulation testing 5-step procedure, loop impedance Ze/Zs table, PAT testing 5-check table, CAT ratings severity bar (I-IV), and 6 hand tools guide — with diagrams — by Awet G. Nway.',
+      ti: 'Multimeter dial modes radial diagram (6 modes)፣ 5-measurement procedure table፣ 4 test instruments diagram፣ insulation resistance procedure፣ loop impedance Ze/Zs table፣ PAT testing table፣ CAT ratings bar — ብ Awet G. Nway።',
+      am: 'Multimeter dial modes radial diagram (6 modes)፣ 5-measurement procedure table፣ 4 test instruments diagram፣ insulation resistance procedure፣ loop impedance Ze/Zs table፣ PAT testing table፣ CAT ratings bar — በ Awet G. Nway።'
+    },
+    file: 'pdfs/ELEC-006-Electrical-Tools.pdf',
+    color: '#3b82f6',
+    preview: true
+  },
+  {
     id: 'electricity-decoded-ohms-law-visual-guide',
     title: {
       en: 'Decoding the Invisible Forces of Electricity',
