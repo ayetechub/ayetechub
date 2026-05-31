@@ -439,6 +439,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'prota-curriculum-005-beam-design',
+    title: {
+      en: 'PROTA-005: Beam Design',
+      ti: 'PROTA-005: ናይ Beam ዲዛይን',
+      am: 'PROTA-005: Beam ዲዛይን'
+    },
+    category: 'prota-structure',
+    pages: 4,
+    size: '118 KB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: '4 beam types diagram (simply supported/continuous/cantilever/propped — support symbols, M formulas), BMD+SFD diagram for simply supported beam with UDL (parabolic moment, linear shear), RC beam cross-section diagram (tension bars/compression bars/links/cover/d notation), Eurocode 2 design checks table (bending/shear/deflection/crack width), 6-step ProtaStructure design workflow, and 4-row troubleshooting guide — with 3 diagrams — by Awet G. Nway.',
+      ti: '4 beam types diagram (simply supported/continuous/cantilever/propped)፣ BMD+SFD diagram (parabolic moment/linear shear)፣ RC beam cross-section diagram (bars/links/cover)፣ Eurocode 2 checks table፣ 6-step ProtaStructure workflow — ብ Awet G. Nway።',
+      am: '4 beam types diagram (simply supported/continuous/cantilever/propped)፣ BMD+SFD diagram (parabolic moment/linear shear)፣ RC beam cross-section diagram (bars/links/cover)፣ Eurocode 2 checks table፣ 6-step ProtaStructure workflow — በ Awet G. Nway።'
+    },
+    file: 'pdfs/PROTA-005-Beam-Design.pdf',
+    color: '#0369a1',
+    preview: true
+  },
+  {
     id: 'revit-curriculum-001-introduction-to-revit',
     title: {
       en: 'REVIT-001: Introduction to Revit',
