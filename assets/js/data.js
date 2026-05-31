@@ -1439,6 +1439,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'fit-hub-day15-emom-amrap',
+    title: {
+      en: 'Day 15: EMOM & AMRAP — Train Like an Athlete',
+      ti: 'መዓልቲ 15: EMOM & AMRAP — ከም ኣትሌት ተለማመዱ',
+      am: 'ቀን 15: EMOM & AMRAP — እንደ ስፖርተኛ ይለምዱ'
+    },
+    category: 'fit-hub',
+    pages: 4,
+    size: '112 KB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: 'EMOM 6-minute timing diagram (work/rest blocks per minute with movement labels), AMRAP 15-min clock + weekly scoring tracker diagram, 3-format comparison diagram (Traditional Sets vs EMOM vs AMRAP), EMOM rules table, AMRAP rules table, 20-min alternating EMOM workout (push-up shoulder tap/jump squat), 15-min AMRAP benchmark workout with 4-week score tracker, and 4-mistake guide — by Awet G. Nway.',
+      ti: 'EMOM 6-minute timing diagram (work/rest blocks)፣ AMRAP clock + weekly score tracker diagram፣ 3-format comparison diagram (Traditional/EMOM/AMRAP)፣ EMOM rules table፣ 20-min EMOM workout፣ 15-min AMRAP benchmark with score tracker — ብ Awet G. Nway።',
+      am: 'EMOM 6-minute timing diagram (work/rest blocks)፣ AMRAP clock + weekly score tracker diagram፣ 3-format comparison diagram (Traditional/EMOM/AMRAP)፣ EMOM rules table፣ 20-min EMOM workout፣ 15-min AMRAP benchmark with score tracker — በ Awet G. Nway።'
+    },
+    file: 'pdfs/aye-fit-hub-day15-emom-amrap.pdf',
+    color: '#00d4ff',
+    preview: true
+  },
+  {
     id: 'ai-curriculum-001-intro-to-ai',
     title: {
       en: 'AI-001: Introduction to Artificial Intelligence',
