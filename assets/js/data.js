@@ -1586,6 +1586,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'plc-curriculum-005-timer-and-counter-instructions',
+    title: {
+      en: 'PLC-005: Timer and Counter Instructions',
+      ti: 'PLC-005: Timer ን Counter መምርሒታት',
+      am: 'PLC-005: Timer እና Counter ትእዛዞች'
+    },
+    category: 'plc',
+    pages: 4,
+    size: '118 KB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: 'Timer waveform diagrams (TON/TOF/RTO: IN signal vs Q output with PT bracket), ladder logic diagram (TON rung with Start/Stop contacts + CTU counter rung with sensor and reset), counter types diagram (CTU/CTD/CTUD parameters), timer/counter parameter tables, 7 real-world application examples, and 5-platform timer/counter syntax comparison — with 3 diagrams — by Awet G. Nway.',
+      ti: 'TON/TOF/RTO timing waveform diagrams (IN vs Q vs PT)፣ TON timer ladder rung + CTU counter ladder rung diagrams፣ CTU/CTD/CTUD counter types diagram፣ 7 real-world applications table፣ 5-platform syntax comparison — ብ Awet G. Nway።',
+      am: 'TON/TOF/RTO timing waveform diagrams (IN vs Q vs PT)፣ TON timer ladder rung + CTU counter ladder rung diagrams፣ CTU/CTD/CTUD counter types diagram፣ 7 real-world applications table፣ 5-platform syntax comparison — በ Awet G. Nway።'
+    },
+    file: 'pdfs/PLC-005-Timer-and-Counter-Instructions.pdf',
+    color: '#22c55e',
+    preview: true
+  },
+  {
     id: 'mep-curriculum-001-intro-to-mep',
     title: {
       en: 'MEP-001: Introduction to MEP Engineering',
