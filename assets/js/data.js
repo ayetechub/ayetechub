@@ -2279,6 +2279,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'ai-curriculum-008-ai-image-generation',
+    title: {
+      en: 'AI-008: AI Image Generation',
+      ti: 'AI-008: AI ምስሊ ምፍጣር',
+      am: 'AI-008: AI ምስል ፍጠራ'
+    },
+    category: 'ai-curriculum',
+    pages: 4,
+    size: '118 KB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: 'How diffusion models work (denoising pipeline diagram), platform comparison: Midjourney v6, DALL-E 3, Stable Diffusion, Adobe Firefly, Ideogram 2.0 — strengths, pricing, and best use cases; prompt anatomy diagram (subject/lighting/camera/style/quality), Midjourney command reference, negative prompt guide, copyright and ethics in AI imagery — with 3 diagrams — by Awet G. Nway.',
+      ti: 'Diffusion model pipeline diagram፣ Midjourney/DALL-E 3/Stable Diffusion/Firefly/Ideogram comparison፣ prompt anatomy diagram፣ Midjourney commands፣ negative prompts፣ copyright & ethics — ብ Awet G. Nway።',
+      am: 'Diffusion model pipeline diagram፣ Midjourney/DALL-E 3/Stable Diffusion/Firefly/Ideogram comparison፣ prompt anatomy diagram፣ Midjourney commands፣ negative prompts፣ copyright & ethics — በ Awet G. Nway።'
+    },
+    file: 'pdfs/AI-008-AI-Image-Generation.pdf',
+    color: '#00d4ff',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'hvac',
