@@ -292,6 +292,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'robot-curriculum-004-abb-robot-systems',
+    title: {
+      en: 'ROBOT-004: ABB Robot Systems and Programming',
+      ti: 'ROBOT-004: ናይ ABB Robot ስርዓታትን ፕሮግራሚንን',
+      am: 'ROBOT-004: ABB Robot ሥርዓቶች እና ፕሮግራሚንግ'
+    },
+    category: 'robotics',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'ABB IRB robot families diagram (IRB 120 to IRB 8700 with payload/reach/applications), IRC5 controller overview, RobotStudio workflow, RAPID program code diagram (MODULE/PROC/MoveJ/MoveL/SetDO/WaitDI highlighted), 7-instruction RAPID reference, speed data vs zone data panels (v5-vmax and fine-z200), tooldata/wobjdata/speeddata/zonedata reference, and RAPID best practices — with diagrams — by Awet G. Nway.',
+      ti: 'ABB IRB families diagram (IRB 120-8700)፣ RobotStudio workflow፣ RAPID program code diagram፣ 7-instruction RAPID reference፣ speed vs zone data panels — ብ Awet G. Nway።',
+      am: 'ABB IRB families diagram (IRB 120-8700)፣ RobotStudio workflow፣ RAPID program code diagram፣ 7-instruction RAPID reference፣ speed vs zone data panels — በ Awet G. Nway።'
+    },
+    file: 'pdfs/ROBOT-004-ABB-Robot-Systems.pdf',
+    color: '#ec4899',
+    preview: true
+  },
+  {
     id: 'prota-curriculum-001-introduction-to-protastructure',
     title: {
       en: 'PROTA-001: Introduction to ProtaStructure',
