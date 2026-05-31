@@ -1691,6 +1691,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'mep-curriculum-005-heating-systems-and-boilers',
+    title: {
+      en: 'MEP-005: Heating Systems and Boilers',
+      ti: 'MEP-005: ናይ ሙቀት ስርዓት ን Boiler',
+      am: 'MEP-005: የማሞቂያ ሥርዓቶች እና Boiler'
+    },
+    category: 'mep',
+    pages: 4,
+    size: '120 KB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: '3 boiler types diagram (combi/system/heat-only — pros/cons tiles), hydronic circuit diagram (boiler→pump→expansion vessel→flow header→radiators with TRVs→return), two-pipe vs one-pipe layout diagram (temperature drop illustrated), boiler types table (incl. condensing), hydronic component table (7 components), heat emitter types table (radiator/UFH/FCU/convector), and controls table — with 3 diagrams — by Awet G. Nway.',
+      ti: '3 boiler types diagram (combi/system/heat-only)፣ hydronic circuit diagram (boiler→pump→expansion vessel→radiators with TRVs)፣ two-pipe vs one-pipe diagram፣ boiler types table፣ 7-component hydronic table፣ heat emitter types table — ብ Awet G. Nway።',
+      am: '3 boiler types diagram (combi/system/heat-only)፣ hydronic circuit diagram (boiler→pump→expansion vessel→radiators with TRVs)፣ two-pipe vs one-pipe diagram፣ boiler types table፣ 7-component hydronic table፣ heat emitter types table — በ Awet G. Nway።'
+    },
+    file: 'pdfs/MEP-005-Heating-Systems-and-Boilers.pdf',
+    color: '#0d9488',
+    preview: true
+  },
+  {
     id: 'mech-curriculum-001-intro-to-mechanical',
     title: {
       en: 'MECH-001: Introduction to Mechanical Engineering',
