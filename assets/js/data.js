@@ -250,6 +250,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'cad-curriculum-002-autocad-interface',
+    title: {
+      en: 'CAD-002: AutoCAD Interface',
+      ti: 'CAD-002: AutoCAD Interface',
+      am: 'CAD-002: AutoCAD Interface'
+    },
+    category: 'autocad',
+    pages: 4,
+    size: '120 KB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: 'The 5 interface zones explained with annotated mockup diagram (Application Menu, Ribbon, Drawing Area, Command Line, Status Bar), OSNAP modes reference (Endpoint/Midpoint/Center/Intersection/Perpendicular/Nearest/Quadrant), all F1–F12 function keys, 30 essential keyboard shortcuts, workspace types, and interface customisation — with 3 diagrams — by Awet G. Nway.',
+      ti: '5 interface zones (Application Menu, Ribbon, Drawing Area, Command Line, Status Bar), OSNAP modes, F1-F12 function keys, 30 shortcuts, workspace types — ብ Awet G. Nway።',
+      am: '5 interface zones (Application Menu, Ribbon, Drawing Area, Command Line, Status Bar)፣ OSNAP modes፣ F1-F12 function keys፣ 30 shortcuts — በ Awet G. Nway።'
+    },
+    file: 'pdfs/CAD-002-AutoCAD-Interface.pdf',
+    color: '#dc2626',
+    preview: true
+  },
+  {
     id: 'robot-curriculum-001-introduction-to-industrial-robotics',
     title: {
       en: 'ROBOT-001: Introduction to Industrial Robotics',
