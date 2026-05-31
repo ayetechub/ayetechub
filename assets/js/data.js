@@ -586,6 +586,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'ct-006-ai-and-human-intelligence',
+    title: {
+      en: 'CT-006: AI and Human Intelligence — Partners or Rivals?',
+      ti: 'CT-006: AI ምስ ናይ ሰብ ሓሳብ — ምሕዝነት ወይስ ምቅልላስ?',
+      am: 'CT-006: AI እና የሰው ዕውቀት — ጓደኞች ወይስ ተቀናቃኞች?'
+    },
+    category: 'critical-thinking',
+    pages: 4,
+    size: '120 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'What AI actually is (stochastic pattern-matching, not thinking), AI strengths vs human strengths two-column diagram, 8 things only humans can do table, Human-AI partnership 4-step cycle diagram (Define→Execute→Evaluate→Decide), 5 partnership principles, job disruption spectrum diagram (routine→creative), 6-field job risk table, and 6 positioning strategies — with diagrams — by Awet G. Nway.',
+      ti: 'AI ምንታይ ምዃኑ (stochastic pattern-matching)፣ AI vs Human strengths diagram፣ Human-AI partnership cycle diagram፣ job disruption spectrum፣ 6-field job risk table — ብ Awet G. Nway።',
+      am: 'AI ምን እንደሆነ (stochastic pattern-matching)፣ AI vs Human strengths diagram፣ Human-AI partnership cycle diagram፣ job disruption spectrum፣ 6-field job risk table — በ Awet G. Nway።'
+    },
+    file: 'pdfs/CT-006-AI-and-Human-Intelligence.pdf',
+    color: '#7c3aed',
+    preview: true
+  },
+  {
     id: 'ct-philosophy-truth-vs-consequences',
     title: {
       en: 'Truth and Falsehood: Should Truth Always Be Absolute?',
