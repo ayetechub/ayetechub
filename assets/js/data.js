@@ -1313,6 +1313,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'fit-hub-day14-week2-checkin',
+    title: {
+      en: 'Day 14: Week 2 Check-In — Celebrate Progress, Adjust Plan',
+      ti: 'ቀን 14: ናይ ሰሙን 2 ምግምጋም — ዕቱብ ምዕባለ፣ ውጥን ምምሕያሽ',
+      am: 'ቀን 14: ሳምንት 2 ምዘና — ዕቀድ ማክበር፣ ዕቅድ ማስተካከል'
+    },
+    category: 'fit-hub',
+    pages: 4,
+    size: '120 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Why celebrating small wins rewires the brain, 7-domain progress wheel (energy/strength/body composition/sleep/nutrition/recovery/mental focus), 7-domain Week 2 audit table, plateau problem and fixes diagram (6 causes with specific solutions), Week 3 performance targets diagram (5 domains current vs target), adaptive plan adjustments, and 7-day Week 3 schedule — with diagrams — by Awet G. Nway.',
+      ti: '7-domain progress wheel፣ 7-domain Week 2 audit table፣ plateau problem diagram (6 causes + fixes)፣ Week 3 targets diagram፣ 7-day Week 3 schedule — ብ Awet G. Nway።',
+      am: '7-domain progress wheel፣ 7-domain Week 2 audit table፣ plateau problem diagram (6 causes + fixes)፣ Week 3 targets diagram፣ 7-day Week 3 schedule — በ Awet G. Nway።'
+    },
+    file: 'pdfs/aye-fit-hub-day14-week2-checkin.pdf',
+    color: '#22c55e',
+    preview: true
+  },
+  {
     id: 'ai-curriculum-001-intro-to-ai',
     title: {
       en: 'AI-001: Introduction to Artificial Intelligence',
