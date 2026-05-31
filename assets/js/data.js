@@ -1754,6 +1754,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'hvac-curriculum-006-ventilation-principles',
+    title: {
+      en: 'HVAC-006: Ventilation Principles',
+      ti: 'HVAC-006: መሰረታዊ ናይ ኣቬንቲሌሽን',
+      am: 'HVAC-006: የአየር ማናፈሻ መሰረታዊ ሞጎሶች'
+    },
+    category: 'hvac',
+    pages: 4,
+    size: '115 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: '4 ventilation system types diagram (natural/MEV/AHU/MVHR), system comparison table (energy/IAQ/heat recovery), MVHR heat exchanger diagram (fresh/supply/extract/exhaust airflows), MVHR component guide, CO2 concentration IAQ scale diagram (420-2000+ ppm), ventilation rate requirements (ASHRAE 62.1/EN 13779), and 5-row ventilation calculations (ACH/flow/CO2 check) — with diagrams — by Awet G. Nway.',
+      ti: '4 ventilation types diagram (natural/MEV/AHU/MVHR)፣ MVHR heat exchanger diagram፣ CO2 IAQ scale diagram (420-2000+ ppm)፣ ventilation rate requirements፣ ventilation calculations — ብ Awet G. Nway።',
+      am: '4 ventilation types diagram (natural/MEV/AHU/MVHR)፣ MVHR heat exchanger diagram፣ CO2 IAQ scale diagram (420-2000+ ppm)፣ ventilation rate requirements፣ ventilation calculations — በ Awet G. Nway።'
+    },
+    file: 'pdfs/HVAC-006-Ventilation-Principles.pdf',
+    color: '#00d4ff',
+    preview: true
+  },
+  {
     id: 'solar-curriculum-002-radiation-basics',
     title: {
       en: 'SOLAR-002: Solar Radiation Basics',
