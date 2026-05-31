@@ -2174,6 +2174,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'solar-curriculum-008-dc-and-ac-systems',
+    title: {
+      en: 'SOLAR-008: DC and AC Solar Systems',
+      ti: 'SOLAR-008: DC ን AC ናይ ሶላር ስርዓት',
+      am: 'SOLAR-008: DC እና AC የፀሐይ ሥርዓቶች'
+    },
+    category: 'solar',
+    pages: 4,
+    size: '118 KB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: 'DC vs AC waveform comparison diagram (flat line vs sine wave, properties table), three topology comparison diagram (off-grid/on-grid/hybrid component stacks), DC coupling vs AC coupling wiring diagram (Panels→CC→Battery vs Panels→GTI→AC Bus→Battery), topology comparison table (8 factors), coupling efficiency and selection guide, component specification table — with 3 diagrams — by Awet G. Nway.',
+      ti: 'DC vs AC waveform diagram (flat vs sine, properties)፣ 3 topology diagram (off-grid/on-grid/hybrid)፣ DC coupling vs AC coupling wiring diagram፣ topology 8-factor comparison table፣ component specification table — ብ Awet G. Nway።',
+      am: 'DC vs AC waveform diagram (flat vs sine, properties)፣ 3 topology diagram (off-grid/on-grid/hybrid)፣ DC coupling vs AC coupling wiring diagram፣ topology 8-factor comparison table፣ component specification table — በ Awet G. Nway።'
+    },
+    file: 'pdfs/SOLAR-008-DC-and-AC-Systems.pdf',
+    color: '#fbbf24',
+    preview: true
+  },
+  {
     id: 'ai-curriculum-002-understanding-chatgpt',
     title: {
       en: 'AI-002: Understanding ChatGPT',
