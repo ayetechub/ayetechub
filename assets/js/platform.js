@@ -169,11 +169,13 @@ function renderPdfCard(p) {
       ? `<a href="${p.file}" class="btn btn-primary" download>${icon('download')} ${dlLabel}</a>`
       : `<button class="btn btn-primary" onclick="notify('${soonLabel}','${title}')" style="background:rgba(0,212,255,0.15);border:1px solid var(--border-strong)">${icon('download')} ${soonLabel}</button>`
     }
-    ${(p.preview && fileAvailable)
-      ? `<a href="${p.file}" class="btn btn-outline" target="_blank" rel="noopener" aria-label="Preview">${icon('eye')} Preview</a>`
-      : p.preview
-        ? `<button class="btn btn-outline" onclick="openPdfModal('${p.id}')" aria-label="Preview">${icon('eye')} Preview</button>`
-        : `<button class="btn btn-outline" onclick="notify('Info','${title}')">Info</button>`
+    ${p.flipbook
+      ? `<a href="${p.flipbook}" class="btn btn-outline" style="border-color:#c8a96e;color:#c8a96e;gap:5px" aria-label="Read as interactive flipbook">&#128214; Read Online</a>`
+      : (p.preview && fileAvailable)
+        ? `<a href="${p.file}" class="btn btn-outline" target="_blank" rel="noopener" aria-label="Preview">${icon('eye')} Preview</a>`
+        : p.preview
+          ? `<button class="btn btn-outline" onclick="openPdfModal('${p.id}')" aria-label="Preview">${icon('eye')} Preview</button>`
+          : `<button class="btn btn-outline" onclick="notify('Info','${title}')">Info</button>`
     }
   </div>
 </article>`.trim();

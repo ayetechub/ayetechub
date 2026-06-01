@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PLC Programming Complete Guide — AYE Tech Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET ─────────── */
+*{margin:0;padding:0;box-sizing:border-box}
+
+/* ─── STAGE ─────────── */
+html,body{height:100%;}
+body{
+  background:radial-gradient(ellipse at 50% 0%,#1c1208 0%,#0a0806 100%);
+  min-height:100vh;display:flex;flex-direction:column;align-items:center;
+  font-family:'Lato',sans-serif;overflow-x:hidden;
+}
+
+/* ─── TOP BAR ────────── */
+#topbar{
+  width:100%;background:#050302;border-bottom:1px solid #2a1a08;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 24px;flex-shrink:0;
+}
+#topbar a{color:#c8a96e;text-decoration:none;font-size:12.5px;font-weight:700;}
+#topbar a:hover{color:#f0d080;}
+.back-btn{
+  display:flex;align-items:center;gap:6px;
+  background:rgba(200,169,110,.1);border:1px solid rgba(200,169,110,.3);
+  padding:6px 14px;border-radius:5px;transition:.2s;
+}
+.back-btn:hover{background:rgba(200,169,110,.2);}
+#topbar .center{color:#5a4a30;font-size:11px;letter-spacing:1px;text-transform:uppercase;}
+
+/* ─── CONTROLS ───────── */
+#controls{
+  display:flex;align-items:center;gap:14px;padding:16px 0 10px;
+  flex-shrink:0;
+}
+.fbtn{
+  background:linear-gradient(135deg,#3a2408,#5a3a10);
+  border:1px solid #c8a96e;color:#f0d080;
+  padding:9px 22px;border-radius:6px;cursor:pointer;
+  font-family:'Lato',sans-serif;font-weight:700;font-size:13px;
+  letter-spacing:.5px;transition:.2s;user-select:none;
+}
+.fbtn:hover{background:linear-gradient(135deg,#5a3a10,#7a5010);color:#fff;}
+.fbtn:disabled{opacity:.4;cursor:default;}
+#pginfo{
+  color:#8a7050;font-size:12px;letter-spacing:.5px;
+  background:rgba(0,0,0,.3);padding:7px 18px;border-radius:5px;
+  border:1px solid #2a1a08;min-width:120px;text-align:center;
+}
+#sndbtn{
+  background:rgba(200,169,110,.08);border:1px solid #3a2010;
+  color:#7a6040;padding:7px 14px;border-radius:5px;cursor:pointer;
+  font-size:12px;transition:.2s;
+}
+#sndbtn.on{color:#c8a96e;border-color:#6a4010;}
+
+/* ─── BOOK STAGE ─────── */
+#stage{
+  position:relative;display:flex;justify-content:center;
+  align-items:center;padding:8px 12px 30px;flex:1;width:100%;
+}
+
+/* Desk glow */
+#stage::after{
+  content:'';position:absolute;bottom:18px;left:50%;transform:translateX(-50%);
+  width:90%;height:24px;max-width:1400px;
+  background:radial-gradient(ellipse,rgba(180,130,60,.18) 0%,transparent 70%);
+  pointer-events:none;border-radius:50%;
+}
+
+/* ─── BOOK CONTAINER ─── */
+#bookwrap{
+  position:relative;
+  width:min(98vw, 1400px);
+  height:calc(100vh - 145px);
+  min-height:440px;
+  max-height:900px;
+  perspective:2200px;
+  user-select:none;
+}
+
+/* Shadow under book */
+#bookwrap::before{
+  content:'';position:absolute;bottom:-12px;left:5%;right:5%;height:20px;
+  background:rgba(0,0,0,.6);filter:blur(12px);border-radius:50%;z-index:-1;
+}
+
+/* ─── OPEN BOOK ──────── */
+#openbook{
+  position:absolute;inset:0;
+  display:flex;
+  border-radius:3px;
+  box-shadow:
+    -8px 0 20px rgba(0,0,0,.6),
+     8px 0 20px rgba(0,0,0,.6),
+     0   0 50px rgba(0,0,0,.4);
+}
+
+/* ─── SPINE ─────────── */
+#spine{
+  width:8px;flex-shrink:0;z-index:5;
+  background:linear-gradient(180deg,#1a0e04,#3a2008,#1a0e04);
+  box-shadow:
+    -2px 0 6px rgba(0,0,0,.5),
+     2px 0 6px rgba(0,0,0,.5);
+  position:relative;
+}
+#spine::after{
+  content:'';position:absolute;top:0;bottom:0;left:50%;width:1px;
+  background:rgba(200,169,110,.2);
+}
+
+/* ─── PAGE HALVES ────── */
+.half{
+  width:calc(50% - 4px);height:100%;
+  position:relative;overflow:hidden;
+  background:#faf6ed;
+}
+.half.left{
+  border-radius:3px 0 0 3px;
+  box-shadow:inset -4px 0 12px rgba(0,0,0,.12);
+}
+.half.right{
+  border-radius:0 3px 3px 0;
+  box-shadow:inset 4px 0 12px rgba(0,0,0,.12);
+}
+/* Page edge lines for depth */
+.half.left::before{
+  content:'';position:absolute;top:0;right:0;bottom:0;width:3px;
+  background:linear-gradient(90deg,transparent,rgba(0,0,0,.08));
+  z-index:2;
+}
+.half.right::before{
+  content:'';position:absolute;top:0;left:0;bottom:0;width:3px;
+  background:linear-gradient(270deg,transparent,rgba(0,0,0,.08));
+  z-index:2;
+}
+
+/* ─── PAGE CONTENT FRAME ─ */
+.half-inner{
+  position:absolute;inset:0;overflow:hidden;
+}
+
+/* ─── FLIPPER (animating page) ─── */
+#flipper{
+  position:absolute;top:0;width:calc(50% - 4px);height:100%;
+  transform-style:preserve-3d;
+  transition:transform 0.65s cubic-bezier(.4,0,.2,1);
+  z-index:20;pointer-events:none;
+}
+#flipper.right-start{
+  right:0;
+  transform-origin:left center;
+}
+#flipper.left-start{
+  left:0;
+  transform-origin:right center;
+}
+#flipper.flipping-forward{ transform:perspective(1800px) rotateY(-180deg); }
+#flipper.flipping-backward{ transform:perspective(1800px) rotateY(180deg); }
+
+.flip-face{
+  position:absolute;inset:0;
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  overflow:hidden;
+}
+.flip-back-face{
+  transform:rotateY(180deg);
+}
+/* Shadow on fold */
+#flipper::after{
+  content:'';position:absolute;top:0;left:0;bottom:0;width:20px;
+  background:linear-gradient(90deg,rgba(0,0,0,.15),transparent);
+  pointer-events:none;z-index:30;
+  opacity:0;transition:opacity .3s;
+}
+#flipper.right-start::after{opacity:1;}
+#flipper.left-start::after{left:auto;right:0;width:20px;
+  background:linear-gradient(270deg,rgba(0,0,0,.15),transparent);}
+
+/* ─── PAGE DATA (hidden source) ─── */
+.pdata{display:none;}
+
+/* ═══════════ PAGE STYLE ═══════════ */
+.pg{
+  width:100%;height:100%;
+  background:#faf6ed;
+  background-image:repeating-linear-gradient(
+    transparent 0px,transparent 30px,
+    rgba(160,140,100,.06) 30px,rgba(160,140,100,.06) 31px);
+  padding:clamp(18px,2.5vh,36px) clamp(18px,2.5vw,40px) clamp(30px,4vh,50px);
+  font-family:'Merriweather',Georgia,serif;
+  color:#1a1208;overflow:hidden;position:relative;
+  box-sizing:border-box;
+}
+/* Running header */
+.pg .rh{
+  font-family:'Lato',sans-serif;
+  font-size:clamp(9px,0.8vw,12px);
+  color:#9a8060;text-transform:uppercase;letter-spacing:1.5px;
+  border-bottom:1px solid #d4bc90;padding-bottom:7px;margin-bottom:18px;
+  display:flex;justify-content:space-between;
+}
+/* Running footer */
+.pg .rf{
+  position:absolute;bottom:14px;left:clamp(18px,2.5vw,40px);right:clamp(18px,2.5vw,40px);
+  font-family:'Lato',sans-serif;font-size:clamp(9px,0.8vw,12px);color:#9a8060;
+  border-top:1px solid #d4bc90;padding-top:7px;
+  display:flex;justify-content:space-between;
+}
+/* Typography — large, readable */
+.pg .eye{
+  font-family:'Lato',sans-serif;font-size:clamp(10px,0.9vw,13px);font-weight:900;
+  color:#7a5a1a;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;
+}
+.pg .cnum{
+  font-family:'Lato',sans-serif;font-size:clamp(28px,3.5vw,50px);
+  font-weight:900;color:#c8a96e;line-height:1;
+}
+.pg .ctitle{
+  font-size:clamp(20px,2.5vw,34px);font-weight:700;color:#0a0e1a;
+  line-height:1.2;margin:4px 0 4px;font-family:'Lato',sans-serif;
+}
+.pg .crule{border:none;border-top:2px solid #c8a96e;margin:10px 0 10px;width:60px;}
+.pg .csub{
+  font-size:clamp(12px,1.1vw,15px);color:#7a6040;font-style:italic;
+  margin-bottom:14px;line-height:1.5;
+}
+.pg h2{
+  font-family:'Lato',sans-serif;font-size:clamp(13px,1.3vw,18px);font-weight:900;
+  color:#1a0e00;margin:16px 0 8px;text-transform:uppercase;letter-spacing:.6px;
+  border-left:4px solid #c8a96e;padding-left:10px;
+}
+.pg h3{
+  font-family:'Lato',sans-serif;font-size:clamp(12px,1.2vw,16px);font-weight:700;
+  color:#2a1800;margin:12px 0 6px;
+}
+.pg p{
+  font-size:clamp(12px,1.1vw,16px);line-height:1.85;color:#1e1408;
+  margin-bottom:10px;text-align:justify;hyphens:auto;
+}
+.pg ul,.pg ol{padding-left:20px;margin-bottom:10px;}
+.pg li{
+  font-size:clamp(11.5px,1.05vw,15px);line-height:1.75;
+  color:#1e1408;margin-bottom:4px;
+}
+.pg li b,.pg p b,.pg strong{color:#0a0800;font-family:'Lato',sans-serif;}
+.pg em{color:#5a3a10;}
+
+/* Callouts */
+.pg .note{
+  border-left:4px solid #c8a96e;background:#f0e8d0;
+  padding:clamp(8px,1vh,14px) clamp(10px,1.2vw,18px);
+  margin:12px 0;border-radius:0 5px 5px 0;
+}
+.pg .note.warn{border-color:#b8560a;background:#f5e8d8;}
+.pg .note.tip{border-color:#2a7a3a;background:#e8f0e0;}
+.pg .nlbl{
+  font-family:'Lato',sans-serif;font-size:clamp(9px,0.85vw,12px);
+  font-weight:900;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px;
+}
+.pg .note .nlbl{color:#7a5a1a;}
+.pg .note.warn .nlbl{color:#b8560a;}
+.pg .note.tip .nlbl{color:#2a7a3a;}
+.pg .note p{
+  font-size:clamp(11.5px,1vw,14px);margin:0;text-align:left;color:#2a1a00;
+}
+
+/* Tables */
+.pg table{
+  width:100%;border-collapse:collapse;
+  font-size:clamp(11px,1.05vw,14px);
+  font-family:'Lato',sans-serif;margin:10px 0;
+}
+.pg thead th{
+  background:#2a1a00;color:#f0d080;
+  padding:clamp(5px,0.7vh,9px) clamp(6px,0.8vw,12px);
+  text-align:left;font-size:clamp(9.5px,0.9vw,13px);
+  font-weight:700;text-transform:uppercase;letter-spacing:.5px;
+}
+.pg tbody tr:nth-child(odd){background:#f5efe0;}
+.pg tbody tr:nth-child(even){background:#ece6d6;}
+.pg tbody td{
+  padding:clamp(5px,0.7vh,9px) clamp(6px,0.8vw,12px);
+  color:#1a1000;border-bottom:.5px solid #d4bc90;
+  vertical-align:top;line-height:1.4;
+}
+.pg tbody td b{color:#0a0800;}
+
+/* Code */
+.pg .code{
+  background:#1a1408;color:#e8d080;font-family:'Courier New',monospace;
+  font-size:clamp(11px,1vw,14px);line-height:1.65;
+  padding:clamp(8px,1vh,14px) clamp(10px,1.2vw,18px);
+  margin:10px 0;border-radius:4px;border-left:4px solid #c8a96e;overflow:hidden;
+}
+.pg .code .cmt{color:#7a7060;}
+.pg .code .kw{color:#e0a020;font-weight:bold;}
+.pg .code .num{color:#60a8e0;}
+
+/* Diagrams */
+.pg .dia{
+  background:#f0e8d0;border:1px solid #c8b080;border-radius:4px;
+  padding:10px;margin:12px 0;text-align:center;
+}
+.pg .diacap{font-family:'Lato',sans-serif;font-size:clamp(9px,0.8vw,11px);color:#7a6040;margin-top:6px;font-style:italic;}
+.pg .orn{text-align:center;color:#c8b080;font-size:14px;margin:10px 0;letter-spacing:6px;}
+
+/* ─── COVER PAGE — PDF template colors ─────── */
+.pg.cover{
+  background:#020817;         /* PDF: BG — near-black, maximum contrast */
+  background-image:none;color:#fff;padding:0;overflow:hidden;
+  display:flex;flex-direction:column;
+}
+/* CYAN top stripe — matches PDF exactly */
+.cover-stripe{
+  height:6px;flex-shrink:0;
+  background:#00d4ff;
+}
+/* Dark panel behind title — PDF: #001a33 */
+.cover-panel{
+  background:#001a33;flex-shrink:0;
+  padding:clamp(14px,2.5vh,28px) clamp(16px,2.5vw,30px) clamp(10px,1.5vh,20px);
+  position:relative;overflow:hidden;
+}
+/* Diagonal deco lines — like PDF */
+.cover-panel::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(
+    -45deg,
+    transparent 0px,transparent 26px,
+    rgba(0,212,255,0.04) 26px,rgba(0,212,255,0.04) 27px
+  );
+  pointer-events:none;
+}
+.cover-panel-top{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  margin-bottom:clamp(10px,1.8vh,20px);position:relative;
+}
+/* AYE logo box — PDF: BG2 bg, CYAN border */
+.cover-aye{
+  background:#0a1628;border:1.5px solid #00d4ff;
+  border-radius:8px;padding:clamp(8px,1.2vh,14px) clamp(14px,2vw,22px);
+  text-align:center;
+}
+.cover-aye .aye{
+  font-size:clamp(22px,3.2vw,38px);font-weight:900;
+  color:#00d4ff;letter-spacing:3px;line-height:1;   /* PDF: CYAN */
+}
+.cover-aye .hub{
+  font-size:clamp(7px,0.8vw,11px);color:#94a3b8;   /* PDF: GR2 */
+  letter-spacing:3px;text-transform:uppercase;
+}
+/* Category tag — PDF: transparent cyan bg, CYAN border & text */
+.cover-tag{
+  background:rgba(0,212,255,.12);border:1px solid #00d4ff;
+  border-radius:6px;padding:clamp(5px,0.8vh,10px) clamp(10px,1.5vw,18px);
+  text-align:center;
+}
+.cover-tag .ct{
+  font-family:'Lato',sans-serif;font-size:clamp(9px,1vw,13px);
+  font-weight:900;color:#00d4ff;letter-spacing:1px;display:block;
+}
+.cover-tag .cs{
+  font-family:'Lato',sans-serif;font-size:clamp(7px,0.75vw,10px);
+  color:#94a3b8;letter-spacing:.5px;
+}
+/* Title — "PLC Programming" WHITE, "Complete Guide" CYAN */
+.cover-title{
+  font-size:clamp(22px,3.5vw,44px);font-weight:900;color:#ffffff;
+  line-height:1.15;font-family:'Lato',sans-serif;margin-bottom:2px;
+  position:relative;
+}
+.cover-acc{
+  color:#00d4ff;display:block;   /* PDF: CYAN for "Complete Guide" */
+}
+/* CYAN divider line — PDF: setStrokeColor(CYAN) line */
+.cover-rule{
+  border:none;border-top:1.5px solid #00d4ff;
+  margin:clamp(6px,1vh,12px) 0;width:100%;
+}
+/* Subtitle — PDF: GR1 #e2e8f0 */
+.cover-desc{
+  font-size:clamp(10px,1vw,14px);color:#e2e8f0;
+  line-height:1.75;font-family:'Lato',sans-serif;
+  position:relative;
+}
+/* Main body area */
+.cover-body{
+  flex:1;padding:clamp(10px,2vh,22px) clamp(16px,2.5vw,30px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+}
+/* Stats — PDF: CYAN numbers, GR2 labels */
+.cover-stats{
+  display:flex;gap:clamp(16px,3vw,36px);
+  margin-bottom:clamp(10px,1.8vh,20px);
+}
+.cover-stat .n{
+  font-size:clamp(20px,2.8vw,36px);font-weight:900;
+  color:#00d4ff;font-family:'Lato',sans-serif;text-align:center;  /* PDF: CYAN */
+}
+.cover-stat .l{
+  font-size:clamp(8px,0.8vw,11px);color:#94a3b8;  /* PDF: GR2 */
+  text-transform:uppercase;letter-spacing:1px;font-family:'Lato',sans-serif;text-align:center;
+}
+/* FREE badge — PDF: GRN #22c55e background, WHITE text */
+.cover-free{
+  background:#22c55e;color:#ffffff;font-weight:900;
+  font-size:clamp(11px,1.1vw,14px);padding:7px 24px;
+  border-radius:18px;letter-spacing:1px;font-family:'Lato',sans-serif;
+  margin-bottom:clamp(8px,1.5vh,16px);
+}
+/* Author — PDF: CYAN name, GR2 description, GRN FREE badge */
+.cover-auth{
+  background:#0d1f3c;border-radius:6px;  /* PDF: BG3 author bar */
+  padding:clamp(8px,1.2vh,14px) clamp(12px,2vw,20px);
+  display:flex;align-items:center;justify-content:space-between;
+  gap:10px;width:100%;
+}
+.cover-auth-name{
+  font-family:'Lato',sans-serif;font-size:clamp(11px,1.1vw,15px);
+  font-weight:700;color:#00d4ff;  /* PDF: CYAN */
+}
+.cover-auth-role{
+  font-family:'Lato',sans-serif;font-size:clamp(9px,0.85vw,12px);
+  color:#94a3b8;margin-top:2px;  /* PDF: GR2 */
+}
+/* Footer — PDF: BG2 background, CYAN text */
+.cover-foot{
+  background:#0a1628;padding:clamp(7px,1vh,12px);text-align:center;
+  font-family:'Lato',sans-serif;flex-shrink:0;
+}
+.cover-foot-main{
+  font-size:clamp(9px,0.9vw,12px);color:#00d4ff;font-weight:700;
+}
+.cover-foot-sub{
+  font-size:clamp(7.5px,0.7vw,10px);color:#475569;margin-top:2px;
+}
+
+/* ─── BACK COVER ─────── */
+.pg.backcover{
+  background:linear-gradient(160deg,#0a0e2a 0%,#001a44 100%);
+  background-image:none;color:#fff;
+  display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:clamp(8px,1.5vh,16px);
+  padding:clamp(20px,3vh,36px) clamp(20px,3vw,36px);
+}
+.bc-logo{color:#f0d080;font-size:clamp(18px,2.5vw,30px);font-weight:900;font-family:'Lato',sans-serif;letter-spacing:2px;}
+.bc-rule{width:80px;height:1px;background:#c8a96e;}
+.bc-tag{color:#8a8090;font-size:clamp(11px,1vw,14px);font-style:italic;text-align:center;line-height:1.7;font-family:'Merriweather',serif;}
+.bc-item{
+  background:rgba(200,169,110,.08);border:1px solid rgba(200,169,110,.2);
+  padding:clamp(7px,1vh,12px) clamp(10px,1.2vw,16px);
+  border-radius:4px;font-size:clamp(11px,1vw,14px);
+  color:#c8a96e;font-family:'Lato',sans-serif;width:100%;
+}
+.bc-item span{color:#6a6050;font-size:clamp(9px,0.8vw,12px);}
+.bc-copy{font-size:clamp(9px,0.8vw,11px);color:#3a3040;text-align:center;font-family:'Lato',sans-serif;margin-top:4px;}
+
+/* ─── TOC ROWS ───────── */
+.pg .trow{
+  display:flex;align-items:baseline;
+  padding:clamp(5px,0.8vh,9px) 0;
+  border-bottom:.5px dotted #c8b080;
+}
+.pg .tnum{font-family:'Lato',sans-serif;font-weight:700;color:#c8a96e;font-size:clamp(11px,1.1vw,15px);width:30px;flex-shrink:0;}
+.pg .tname{font-family:'Merriweather',serif;font-size:clamp(11px,1.1vw,15px);color:#1a1208;flex:1;}
+.pg .tsub{font-size:clamp(9.5px,0.9vw,12px);color:#8a7060;display:block;font-style:italic;}
+.pg .tpg{font-family:'Lato',sans-serif;font-size:clamp(10px,0.9vw,13px);color:#9a8060;width:22px;text-align:right;flex-shrink:0;}
+
+/* ─── BLANK HALF ─────── */
+.blank{
+  background:linear-gradient(180deg,#ede8d8,#e8e0c8);
+  display:flex;align-items:center;justify-content:center;
+  width:100%;height:100%;
+}
+.blank-inner{text-align:center;color:#b0a080;font-family:'Lato',sans-serif;}
+.blank-inner .b-logo{font-size:clamp(18px,2.5vw,32px);font-weight:900;letter-spacing:2px;margin-bottom:6px;}
+.blank-inner .b-sub{font-size:clamp(9px,0.8vw,11px);letter-spacing:1px;text-transform:uppercase;}
+
+/* ─── MOBILE (single page, swipe) ─── */
+@media (max-width:700px){
+  body{overflow-y:auto;}
+
+  #topbar .center{display:none;}
+
+  #controls{gap:8px;padding:10px 0 6px;flex-wrap:wrap;justify-content:center;}
+  .fbtn{padding:10px 18px;font-size:15px;}
+  #pginfo{font-size:13px;min-width:100px;}
+  #sndbtn{font-size:13px;padding:10px 14px;}
+
+  #stage{padding:6px 8px 20px;}
+
+  #bookwrap{
+    width:calc(100vw - 16px);
+    height:calc(100vh - 160px);
+    min-height:380px;
+  }
+
+  /* Hide left page and spine on mobile — single page view */
+  .half.left,#spine{ display:none; }
+  .half.right{
+    width:100% !important;
+    border-radius:4px;
+    box-shadow:inset 0 0 16px rgba(0,0,0,.1);
+  }
+
+  /* Fix specificity: override right:0 from #flipper.right-start desktop rule */
+  #flipper,
+  #flipper.right-start,
+  #flipper.left-start{
+    width:100% !important;
+    left:0 !important;
+    right:auto !important;
+    transform-origin:center center !important;
+  }
+
+  /* Mobile page-turn: fade + slight scale (no 3D flip needed on small screen) */
+  #flipper.flipping-forward{
+    transform:scale(0.92) !important;
+    opacity:0;
+    transition:transform 0.35s ease,opacity 0.35s ease !important;
+  }
+  #flipper.flipping-backward{
+    transform:scale(0.92) !important;
+    opacity:0;
+    transition:transform 0.35s ease,opacity 0.35s ease !important;
+  }
+
+  /* Tables: allow horizontal scroll on small screens */
+  .pg .tbl-wrap, .pg table{ overflow-x:auto; display:block; }
+  .pg thead, .pg tbody, .pg tr{ display:table; width:100%; table-layout:fixed; }
+  .pg table{ min-width:380px; }
+
+  /* Larger fonts on mobile */
+  .pg{ padding:18px 16px 42px; }
+  .pg p{ font-size:15px; line-height:1.9; }
+  .pg h2{ font-size:16px; }
+  .pg h3{ font-size:15px; }
+  .pg .ctitle{ font-size:22px; }
+  .pg .cnum{ font-size:32px; }
+  .pg table{ font-size:13px; }
+  .pg thead th{ font-size:12px; }
+  .pg .code{ font-size:12px; }
+  .pg .note p{ font-size:13px; }
+  .pg .tname,.pg .tnum,.pg .tpg{ font-size:13px; }
+  .pg .rh,.pg .rf{ font-size:10px; }
+  .cover-title{ font-size:24px; }
+  .cover-aye .aye{ font-size:32px; }
+  .cover-stat .n{ font-size:24px; }
+  .cover-tag .ct{ font-size:11px; }
+  .cover-auth-name{ font-size:13px; }
+  .cover-auth-role{ font-size:10px; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div id="topbar">
+  <a href="pdfs.html" class="back-btn">&#8592; Back to PDF Library</a>
+  <span class="center">AYE TECH HUB &mdash; INTERACTIVE READER</span>
+  <a href="https://t.me/ayetechub" target="_blank" rel="noopener">Join Telegram</a>
+</div>
+
+<!-- CONTROLS -->
+<div id="controls">
+  <button class="fbtn" id="btnprev" disabled>&#8592; Previous</button>
+  <span id="pginfo">Cover</span>
+  <button class="fbtn" id="btnnext">Next &#8594;</button>
+  <button id="sndbtn" class="on">&#128266; Sound ON</button>
+</div>
+
+<!-- BOOK STAGE -->
+<div id="stage">
+<div id="bookwrap">
+  <div id="openbook">
+    <!-- Left half of open book -->
+    <div class="half left" id="lefthalf">
+      <div class="half-inner" id="leftinner">
+        <!-- filled by JS -->
+      </div>
+    </div>
+    <!-- Spine -->
+    <div id="spine"></div>
+    <!-- Right half of open book -->
+    <div class="half right" id="righthalf">
+      <div class="half-inner" id="rightinner">
+        <!-- filled by JS -->
+      </div>
+    </div>
+    <!-- Flipper (animated, filled by JS) -->
+    <div id="flipper" class="right-start"></div>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════ PAGE DATA (hidden) ═══════════════ -->
+
+<div class="pdata" id="pd-cover">
+<div class="pg cover">
+
+  <!-- CYAN top stripe — PDF brand bar -->
+  <div class="cover-stripe"></div>
+
+  <!-- Dark top panel — PDF: #001a33, white title on dark bg -->
+  <div class="cover-panel">
+    <div class="cover-panel-top">
+      <!-- AYE logo box — PDF: BG2 + CYAN border -->
+      <div class="cover-aye">
+        <div class="aye">AYE</div>
+        <div class="hub">TECH HUB</div>
+      </div>
+      <!-- Category tag — PDF: CYAN transparent + CYAN border -->
+      <div class="cover-tag">
+        <span class="ct">PLC &amp; AUTOMATION</span>
+        <span class="cs">ENGINEERING GUIDE</span>
+      </div>
+    </div>
+
+    <!-- Main title: WHITE "PLC Programming" + CYAN "Complete Guide" -->
+    <div class="cover-title">
+      PLC Programming<span class="cover-acc">Complete Guide</span>
+    </div>
+
+    <!-- CYAN divider line -->
+    <div class="cover-rule"></div>
+
+    <!-- Subtitle — PDF: GR1 #e2e8f0 light gray -->
+    <div class="cover-desc">
+      Siemens S7 &nbsp;&bull;&nbsp; Ladder Logic &nbsp;&bull;&nbsp; FBD &nbsp;&bull;&nbsp; Structured Text<br>
+      HMI &nbsp;&bull;&nbsp; PROFINET &nbsp;&bull;&nbsp; Safety Standards &nbsp;&bull;&nbsp; Career Pathways
+    </div>
+  </div>
+
+  <!-- Stats + FREE badge -->
+  <div class="cover-body">
+    <div class="cover-stats">
+      <div class="cover-stat"><div class="n">12</div><div class="l">Chapters</div></div>
+      <div class="cover-stat"><div class="n">150+</div><div class="l">Concepts</div></div>
+      <div class="cover-stat"><div class="n">20+</div><div class="l">Diagrams</div></div>
+      <div class="cover-stat"><div class="n">FREE</div><div class="l">Access</div></div>
+    </div>
+
+    <!-- FREE badge — PDF: GRN #22c55e -->
+    <div class="cover-free">&#10003; FREE OPEN ACCESS</div>
+
+    <!-- Author bar — PDF: BG3 box, CYAN name, GR2 description -->
+    <div class="cover-auth">
+      <div>
+        <div class="cover-auth-name">Awet G. Nway</div>
+        <div class="cover-auth-role">Founder, AYE Tech Hub &nbsp;&bull;&nbsp; Industrial Automation &amp; PLC Expert</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer — PDF: BG2 bar, CYAN text -->
+  <div class="cover-foot">
+    <div class="cover-foot-main">AYE Tech Hub &mdash; Engineering the Future</div>
+    <div class="cover-foot-sub">ayetechub.com &nbsp;&bull;&nbsp; &#169; 2026 AYE Tech Hub. All Rights Reserved.</div>
+  </div>
+
+</div>
+</div>
+
+<div class="pdata" id="pd-toc">
+<div class="pg">
+  <div class="rh"><span>AYE Tech Hub</span><span>PLC Programming Complete Guide</span></div>
+  <div class="eye">Contents</div>
+  <div class="ctitle" style="font-size:17px;margin-bottom:4px;">Table of Contents</div>
+  <hr class="crule">
+  <div class="trow"><span class="tnum">01</span><span class="tname">PLC Architecture &amp; Hardware<span class="tsub">CPU &bull; I/O Modules &bull; Memory &bull; Scan Cycle</span></span><span class="tpg">3</span></div>
+  <div class="trow"><span class="tnum">02</span><span class="tname">Ladder Logic Programming<span class="tsub">Contacts &bull; Coils &bull; Instructions &bull; Addressing</span></span><span class="tpg">5</span></div>
+  <div class="trow"><span class="tnum">03</span><span class="tname">Function Block Diagram (FBD)<span class="tsub">Blocks &bull; Data Flow &bull; IEC Standard Blocks</span></span><span class="tpg">7</span></div>
+  <div class="trow"><span class="tnum">04</span><span class="tname">Structured Text (ST / SCL)<span class="tsub">Syntax &bull; Data Types &bull; Control Structures</span></span><span class="tpg">8</span></div>
+  <div class="trow"><span class="tnum">05</span><span class="tname">Timers &amp; Counters<span class="tsub">TON &bull; TOF &bull; TP &bull; CTU &bull; CTD</span></span><span class="tpg">9</span></div>
+  <div class="trow"><span class="tnum">06</span><span class="tname">Data Blocks &amp; Memory<span class="tsub">Global DB &bull; Instance DB &bull; UDT &bull; ARRAY</span></span><span class="tpg">10</span></div>
+  <div class="trow"><span class="tnum">07</span><span class="tname">HMI &amp; SCADA Integration<span class="tsub">Panels &bull; WinCC &bull; Tags &bull; Alarms</span></span><span class="tpg">11</span></div>
+  <div class="trow"><span class="tnum">08</span><span class="tname">Industrial Networks<span class="tsub">PROFINET &bull; PROFIBUS &bull; Modbus &bull; OPC-UA</span></span><span class="tpg">12</span></div>
+  <div class="trow"><span class="tnum">09</span><span class="tname">PID Control &amp; Analog Processing<span class="tsub">Theory &bull; Tuning &bull; Scaling &bull; TIA Portal</span></span><span class="tpg">12</span></div>
+  <div class="trow"><span class="tnum">10</span><span class="tname">Safety PLCs &amp; Functional Safety<span class="tsub">SIL &bull; IEC 62061 &bull; Safety Circuits</span></span><span class="tpg">13</span></div>
+  <div class="trow"><span class="tnum">11</span><span class="tname">TIA Portal Workflow &amp; Simulation<span class="tsub">Project Setup &bull; PLCSIM &bull; Diagnostics</span></span><span class="tpg">13</span></div>
+  <div class="trow"><span class="tnum">12</span><span class="tname">Career Pathways &amp; Certifications<span class="tsub">Roles &bull; Salaries &bull; Certifications</span></span><span class="tpg">14</span></div>
+  <div class="orn" style="margin-top:12px;">&bull; &diams; &bull;</div>
+  <div class="note tip" style="margin-top:10px;">
+    <div class="nlbl">&#128214; How to Navigate</div>
+    <p>Use the <b>Next / Previous</b> buttons above, or press <b>&#8592; &#8594;</b> arrow keys. Click the page edges to flip. Each chapter builds on the previous.</p>
+  </div>
+  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>2</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch1a">
+<div class="pg">
+  <div class="rh"><span>Chapter 1</span><span>PLC Architecture &amp; Hardware</span></div>
+  <div class="eye">Chapter 01</div>
+  <div class="cnum">I</div>
+  <div class="ctitle">PLC Architecture<br>&amp; Hardware</div>
+  <hr class="crule">
+  <div class="csub">CPU &bull; I/O Modules &bull; Memory &bull; Scan Cycle &bull; Families</div>
+  <p>A <b>Programmable Logic Controller (PLC)</b> is an industrial digital computer designed for real-time control of manufacturing processes and automated systems. Invented in 1968 by Dick Morley for General Motors, PLCs replaced relay-based control panels. They withstand &minus;20 to +70&deg;C, 95% humidity, 3.5g vibration, and severe electromagnetic interference.</p>
+  <p>PLCs execute a <b>deterministic scan cycle</b> — reading inputs, running logic, updating outputs — with guaranteed 1–100ms timing, essential for safety-critical control.</p>
+  <h2>Where PLCs Are Used</h2>
+  <table>
+    <thead><tr><th>Industry</th><th>Application</th><th>Key Requirement</th></tr></thead>
+    <tbody>
+      <tr><td><b>Automotive</b></td><td>Welding robots, assembly lines</td><td>&lt;5ms scan, high I/O</td></tr>
+      <tr><td><b>Oil &amp; Gas</b></td><td>Pipeline, compressor control</td><td>SIL 2/3, ATEX rated</td></tr>
+      <tr><td><b>Water Treatment</b></td><td>Pump control, filtration</td><td>SCADA, remote I/O</td></tr>
+      <tr><td><b>Food &amp; Beverage</b></td><td>Filling, packaging, CIP</td><td>IP69K, washdown</td></tr>
+      <tr><td><b>Building Automation</b></td><td>HVAC, lighting, access</td><td>BACnet/Modbus</td></tr>
+    </tbody>
+  </table>
+  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>3</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch1b">
+<div class="pg">
+  <div class="rh"><span>Chapter 1</span><span>PLC Architecture &amp; Hardware</span></div>
+  <h2>PLC Hardware Architecture</h2>
+  <div class="dia">
+    <svg width="390" height="105" viewBox="0 0 390 105">
+      <rect x="4" y="50" width="382" height="6" fill="#8a6a30" rx="1"/>
+      <text x="195" y="55" text-anchor="middle" fill="#f5e8b0" font-size="5.5" font-family="Lato" font-weight="700">BACKPLANE BUS</text>
+      <rect x="6" y="8" width="40" height="42" rx="2" fill="#e8e0cc" stroke="#6a5a30" stroke-width="1"/><rect x="6" y="8" width="40" height="6" rx="1" fill="#4a3a20"/><text x="26" y="30" text-anchor="middle" fill="#5a4a30" font-size="6.5" font-family="Lato" font-weight="700">PSU</text><text x="26" y="40" text-anchor="middle" fill="#8a7050" font-size="5.5" font-family="Lato">24VDC</text>
+      <rect x="52" y="4" width="52" height="46" rx="2" fill="#e8e0cc" stroke="#1a3a8a" stroke-width="1.5"/><rect x="52" y="4" width="52" height="6" rx="1" fill="#1a2a7a"/><text x="78" y="26" text-anchor="middle" fill="#1a2a7a" font-size="7" font-family="Lato" font-weight="700">CPU</text><text x="78" y="37" text-anchor="middle" fill="#6a5a40" font-size="5.5" font-family="Lato">S7-1516</text><circle cx="78" cy="44" r="3" fill="#22aa44"/>
+      <rect x="110" y="8" width="40" height="42" rx="2" fill="#e8e0cc" stroke="#1a6a3a" stroke-width="1"/><rect x="110" y="8" width="40" height="6" rx="1" fill="#1a6a3a"/><text x="130" y="30" text-anchor="middle" fill="#1a5a2a" font-size="6.5" font-family="Lato" font-weight="700">DI 16x</text><text x="130" y="40" text-anchor="middle" fill="#8a7050" font-size="5.5" font-family="Lato">24VDC</text>
+      <rect x="156" y="8" width="40" height="42" rx="2" fill="#e8e0cc" stroke="#8a3a10" stroke-width="1"/><rect x="156" y="8" width="40" height="6" rx="1" fill="#8a3a10"/><text x="176" y="30" text-anchor="middle" fill="#7a2a00" font-size="6.5" font-family="Lato" font-weight="700">DO 16x</text><text x="176" y="40" text-anchor="middle" fill="#8a7050" font-size="5.5" font-family="Lato">24VDC</text>
+      <rect x="202" y="8" width="40" height="42" rx="2" fill="#e8e0cc" stroke="#1a4a8a" stroke-width="1"/><rect x="202" y="8" width="40" height="6" rx="1" fill="#1a4a8a"/><text x="222" y="30" text-anchor="middle" fill="#1a3a7a" font-size="6.5" font-family="Lato" font-weight="700">AI 8x</text><text x="222" y="40" text-anchor="middle" fill="#8a7050" font-size="5.5" font-family="Lato">4-20mA</text>
+      <rect x="248" y="8" width="40" height="42" rx="2" fill="#e8e0cc" stroke="#7a6a10" stroke-width="1"/><rect x="248" y="8" width="40" height="6" rx="1" fill="#7a6a10"/><text x="268" y="30" text-anchor="middle" fill="#5a4a00" font-size="6.5" font-family="Lato" font-weight="700">AO 4x</text><text x="268" y="40" text-anchor="middle" fill="#8a7050" font-size="5.5" font-family="Lato">0-10V</text>
+      <rect x="294" y="8" width="58" height="42" rx="2" fill="#e8e0cc" stroke="#6a1a8a" stroke-width="1"/><rect x="294" y="8" width="58" height="6" rx="1" fill="#6a1a8a"/><text x="323" y="30" text-anchor="middle" fill="#5a0a7a" font-size="6" font-family="Lato" font-weight="700">CM PROFINET</text><text x="323" y="40" text-anchor="middle" fill="#8a7050" font-size="5" font-family="Lato">100 Mbps</text>
+      <line x1="130" y1="56" x2="130" y2="68" stroke="#1a6a3a" stroke-width=".7"/><text x="130" y="76" text-anchor="middle" fill="#1a5a2a" font-size="5.5" font-family="Lato">SENSORS</text>
+      <line x1="176" y1="56" x2="176" y2="68" stroke="#8a3a10" stroke-width=".7"/><text x="176" y="76" text-anchor="middle" fill="#7a2a00" font-size="5.5" font-family="Lato">ACTUATORS</text>
+      <line x1="222" y1="56" x2="222" y2="68" stroke="#1a4a8a" stroke-width=".7"/><text x="222" y="76" text-anchor="middle" fill="#1a3a7a" font-size="5.5" font-family="Lato">TRANSMITTERS</text>
+      <line x1="323" y1="56" x2="323" y2="68" stroke="#6a1a8a" stroke-width=".7"/><text x="323" y="76" text-anchor="middle" fill="#5a0a7a" font-size="5.5" font-family="Lato">NETWORK</text>
+      <text x="195" y="98" text-anchor="middle" fill="#7a6a50" font-size="6" font-family="Lato" font-style="italic">Fig 1.1 — Siemens S7-1500 backplane: PSU + CPU + DI + DO + AI + AO + CM</text>
+    </svg>
+  </div>
+  <h2>Core Hardware Modules</h2>
+  <table>
+    <thead><tr><th>Module</th><th>Function</th><th>Spec</th></tr></thead>
+    <tbody>
+      <tr><td><b>CPU</b></td><td>Program execution, memory, comms</td><td>300MHz, 1–4MB RAM</td></tr>
+      <tr><td><b>Power Supply</b></td><td>120/240VAC to 24VDC</td><td>24VDC / 5–20A</td></tr>
+      <tr><td><b>Digital Input</b></td><td>Read ON/OFF from sensors</td><td>16–64 ch, 3ms filter</td></tr>
+      <tr><td><b>Digital Output</b></td><td>Drive contactors, solenoids</td><td>16–32 ch, 0.5A/ch</td></tr>
+      <tr><td><b>Analog Input</b></td><td>Read 4-20mA or 0-10V</td><td>8 ch, 16-bit ±0.1%</td></tr>
+      <tr><td><b>Analog Output</b></td><td>Control VFDs, valves</td><td>4–8 ch, 12–16 bit</td></tr>
+      <tr><td><b>Comm Module</b></td><td>PROFINET, PROFIBUS, Modbus</td><td>100Mbps, dual-port</td></tr>
+    </tbody>
+  </table>
+  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>4</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch2a">
+<div class="pg">
+  <div class="rh"><span>Chapter 2</span><span>Ladder Logic Programming</span></div>
+  <div class="eye">Chapter 02</div>
+  <div class="cnum">II</div>
+  <div class="ctitle">Ladder Logic<br>Programming</div>
+  <hr class="crule">
+  <div class="csub">Contacts &bull; Coils &bull; Instructions &bull; Addressing &bull; Examples</div>
+  <p>Ladder Logic (LD) is the most-used PLC language, standardized in <b>IEC 61131-3</b>. It looks like relay circuits — contacts are input conditions, coils are outputs, evaluated left-to-right on each rung. Electrical engineers find it immediately familiar.</p>
+  <h2>Core Instructions</h2>
+  <table>
+    <thead><tr><th>Instruction</th><th>Symbol</th><th>Function</th></tr></thead>
+    <tbody>
+      <tr><td><b>Normally Open</b></td><td>--| |--</td><td>TRUE when bit=1 (closed)</td></tr>
+      <tr><td><b>Normally Closed</b></td><td>--|/|--</td><td>TRUE when bit=0 (open)</td></tr>
+      <tr><td><b>Output Coil</b></td><td>--( )--</td><td>Sets bit TRUE when rung TRUE</td></tr>
+      <tr><td><b>Latch Coil</b></td><td>--(L)--</td><td>Set and hold until unlatched</td></tr>
+      <tr><td><b>Unlatch Coil</b></td><td>--(U)--</td><td>Reset a latched bit</td></tr>
+      <tr><td><b>Rising Edge</b></td><td>--(P)--</td><td>One scan pulse on 0&#8594;1</td></tr>
+    </tbody>
+  </table>
+  <div class="dia">
+    <svg width="385" height="120" viewBox="0 0 385 120">
+      <line x1="14" y1="8" x2="14" y2="115" stroke="#6a5a30" stroke-width="2.5"/>
+      <line x1="371" y1="8" x2="371" y2="115" stroke="#6a5a30" stroke-width="2.5"/>
+      <text x="14" y="7" fill="#9a8a60" font-size="6" font-family="Lato">Rung 1: Motor Start/Stop with Seal-In Contact</text>
+      <line x1="14" y1="25" x2="50" y2="25" stroke="#2a3a8a" stroke-width="1.4"/>
+      <line x1="50" y1="17" x2="50" y2="33" stroke="#2a3a8a" stroke-width="1.4"/><line x1="62" y1="17" x2="62" y2="33" stroke="#2a3a8a" stroke-width="1.4"/>
+      <text x="56" y="14" text-anchor="middle" fill="#1a7a3a" font-size="6" font-family="Lato" font-weight="700">I0.0</text><text x="56" y="41" text-anchor="middle" fill="#8a7060" font-size="5.5" font-family="Lato">START</text>
+      <line x1="62" y1="25" x2="104" y2="25" stroke="#2a3a8a" stroke-width="1.4"/>
+      <line x1="104" y1="17" x2="104" y2="33" stroke="#2a3a8a" stroke-width="1.4"/><line x1="116" y1="17" x2="116" y2="33" stroke="#2a3a8a" stroke-width="1.4"/>
+      <line x1="101" y1="17" x2="119" y2="33" stroke="#aa3010" stroke-width="1"/>
+      <text x="110" y="14" text-anchor="middle" fill="#aa3010" font-size="6" font-family="Lato" font-weight="700">I0.1</text><text x="110" y="41" text-anchor="middle" fill="#8a7060" font-size="5.5" font-family="Lato">E-STOP</text>
+      <line x1="116" y1="25" x2="158" y2="25" stroke="#2a3a8a" stroke-width="1.4"/>
+      <line x1="158" y1="17" x2="158" y2="33" stroke="#2a3a8a" stroke-width="1.4"/><line x1="170" y1="17" x2="170" y2="33" stroke="#2a3a8a" stroke-width="1.4"/>
+      <line x1="155" y1="17" x2="173" y2="33" stroke="#aa3010" stroke-width="1"/>
+      <text x="164" y="14" text-anchor="middle" fill="#aa3010" font-size="6" font-family="Lato" font-weight="700">I0.2</text><text x="164" y="41" text-anchor="middle" fill="#8a7060" font-size="5.5" font-family="Lato">OL</text>
+      <line x1="170" y1="25" x2="330" y2="25" stroke="#2a3a8a" stroke-width="1.4"/>
+      <circle cx="341" cy="25" r="11" fill="none" stroke="#8a3a10" stroke-width="1.4"/>
+      <text x="341" y="21" text-anchor="middle" fill="#8a3a10" font-size="5.5" font-family="Lato" font-weight="700">Q0.0</text><text x="341" y="30" text-anchor="middle" fill="#6a5040" font-size="5" font-family="Lato">MOTOR</text>
+      <line x1="352" y1="25" x2="371" y2="25" stroke="#2a3a8a" stroke-width="1.4"/>
+      <!-- Seal -->
+      <line x1="62" y1="25" x2="62" y2="52" stroke="#1a4a8a" stroke-width="1"/>
+      <line x1="62" y1="52" x2="84" y2="52" stroke="#1a4a8a" stroke-width="1"/>
+      <line x1="84" y1="44" x2="84" y2="60" stroke="#1a7a3a" stroke-width="1.2"/><line x1="96" y1="44" x2="96" y2="60" stroke="#1a7a3a" stroke-width="1.2"/>
+      <text x="90" y="40" text-anchor="middle" fill="#1a6a3a" font-size="5.5" font-family="Lato">Q0.0 SEAL</text>
+      <line x1="96" y1="52" x2="104" y2="52" stroke="#1a4a8a" stroke-width="1"/><line x1="104" y1="52" x2="104" y2="25" stroke="#1a4a8a" stroke-width="1"/>
+      <!-- Rung 2 -->
+      <text x="14" y="72" fill="#9a8a60" font-size="6" font-family="Lato">Rung 2: TON delay timer (5 seconds)</text>
+      <line x1="14" y1="88" x2="50" y2="88" stroke="#1a4a8a" stroke-width="1.4"/>
+      <line x1="50" y1="80" x2="50" y2="96" stroke="#1a4a8a" stroke-width="1.4"/><line x1="62" y1="80" x2="62" y2="96" stroke="#1a4a8a" stroke-width="1.4"/>
+      <text x="56" y="77" text-anchor="middle" fill="#1a6a3a" font-size="5.5" font-family="Lato" font-weight="700">Q0.0</text>
+      <line x1="62" y1="88" x2="92" y2="88" stroke="#1a4a8a" stroke-width="1.4"/>
+      <rect x="92" y="78" width="76" height="22" rx="2" fill="#e8f0e0" stroke="#1a4a8a" stroke-width="1"/>
+      <text x="130" y="90" text-anchor="middle" fill="#1a2a7a" font-size="7.5" font-family="Lato" font-weight="700">TON</text>
+      <text x="130" y="97" text-anchor="middle" fill="#7a6050" font-size="5.5" font-family="Lato">PT: T#5S</text>
+      <line x1="168" y1="88" x2="200" y2="88" stroke="#1a4a8a" stroke-width="1.4"/>
+      <circle cx="211" cy="88" r="11" fill="none" stroke="#6a3a10" stroke-width="1.4"/>
+      <text x="211" y="84" text-anchor="middle" fill="#6a3a10" font-size="5" font-family="Lato" font-weight="700">Q0.1</text><text x="211" y="93" text-anchor="middle" fill="#6a5040" font-size="5" font-family="Lato">DONE</text>
+      <line x1="222" y1="88" x2="371" y2="88" stroke="#1a4a8a" stroke-width="1.4"/>
+      <text x="192" y="113" text-anchor="middle" fill="#8a7060" font-size="6" font-family="Lato" font-style="italic">Fig 2.1 — Motor Start/Stop with seal contact (R1) and TON timer (R2)</text>
+    </svg>
+  </div>
+  <div class="note warn"><div class="nlbl">&#9888; Double Coil Warning</div><p>Never assign the same output (Q0.0) to two Output Coils. The last rung evaluated wins — earlier assignments are silently overwritten. Use M-bits for intermediate logic.</p></div>
+  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>5</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch3">
+<div class="pg">
+  <div class="rh"><span>Chapters 3–4</span><span>FBD &amp; Structured Text</span></div>
+  <div class="eye">Chapter 03</div>
+  <div class="cnum">III</div>
+  <div class="ctitle">Function Block Diagram &amp; Structured Text</div>
+  <hr class="crule">
+  <p>FBD shows data flowing left-to-right through connected function blocks — ideal for analog processing, PID loops, and signal chains. ST (SCL in TIA Portal) is a high-level Pascal-like language ideal for complex math, state machines, and algorithms.</p>
+  <h2>FBD: Sensor → PID → Valve Chain</h2>
+  <div class="dia">
+    <svg width="380" height="58" viewBox="0 0 380 58">
+      <rect x="4" y="10" width="58" height="30" rx="2" fill="#e8eed8" stroke="#1a7a3a" stroke-width="1"/><text x="33" y="23" text-anchor="middle" fill="#1a5a2a" font-size="7" font-family="Lato" font-weight="700">SENSOR</text><text x="33" y="34" text-anchor="middle" fill="#7a6050" font-size="6" font-family="Lato">IW64</text>
+      <line x1="62" y1="25" x2="78" y2="25" stroke="#3a3a3a" stroke-width="1"/>
+      <rect x="78" y="10" width="64" height="30" rx="2" fill="#e8f0e0" stroke="#1a4a8a" stroke-width="1"/><text x="110" y="23" text-anchor="middle" fill="#1a2a7a" font-size="7" font-family="Lato" font-weight="700">SCALE_X</text><text x="110" y="34" text-anchor="middle" fill="#7a6050" font-size="6" font-family="Lato">0–100%</text>
+      <line x1="142" y1="25" x2="158" y2="25" stroke="#3a3a3a" stroke-width="1"/>
+      <rect x="158" y="6" width="78" height="38" rx="2" fill="#ead8f0" stroke="#6a2a8a" stroke-width="1.5"/><text x="197" y="22" text-anchor="middle" fill="#5a1a7a" font-size="7" font-family="Lato" font-weight="700">PID_Compact</text><text x="197" y="32" text-anchor="middle" fill="#7a6050" font-size="5.5" font-family="Lato">SP → PV → Out</text>
+      <line x1="236" y1="25" x2="252" y2="25" stroke="#3a3a3a" stroke-width="1"/>
+      <rect x="252" y="10" width="64" height="30" rx="2" fill="#f0e8d8" stroke="#8a4a1a" stroke-width="1"/><text x="284" y="23" text-anchor="middle" fill="#7a3a10" font-size="7" font-family="Lato" font-weight="700">VALVE</text><text x="284" y="34" text-anchor="middle" fill="#7a6050" font-size="6" font-family="Lato">QW80</text>
+      <text x="190" y="53" text-anchor="middle" fill="#8a7060" font-size="6" font-family="Lato" font-style="italic">Fig 3.1 — FBD: Sensor → Scale → PID Controller → Control Valve</text>
+    </svg>
+  </div>
+  <div class="eye" style="margin-top:10px;">Chapter 04</div>
+  <div class="cnum" style="font-size:20px;">IV</div>
+  <div class="ctitle" style="font-size:16px;">Structured Text (ST / SCL)</div>
+  <hr class="crule">
+  <h2>ST Control Structures</h2>
+  <div class="code">
+<span class="cmt">// Scale raw AI to engineering units (°C)</span>
+Temp_C := (DINT_TO_REAL(IW64) / <span class="num">27648.0</span>) * <span class="num">150.0</span>;
+
+<span class="kw">IF</span> Temp_C &gt; <span class="num">80.0</span> <span class="kw">THEN</span>
+    Cooling := <span class="kw">TRUE</span>; Alarm := <span class="kw">TRUE</span>;
+<span class="kw">ELSIF</span> Temp_C &gt; <span class="num">60.0</span> <span class="kw">THEN</span>
+    Cooling := <span class="kw">TRUE</span>; Alarm := <span class="kw">FALSE</span>;
+<span class="kw">ELSE</span>
+    Cooling := <span class="kw">FALSE</span>;
+<span class="kw">END_IF</span>;
+  </div>
+  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>7</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch5">
+<div class="pg">
+  <div class="rh"><span>Chapters 5–6</span><span>Timers, Counters &amp; Data Blocks</span></div>
+  <div class="eye">Chapter 05</div>
+  <div class="cnum">V</div>
+  <div class="ctitle">Timers &amp; Counters</div>
+  <hr class="crule">
+  <table>
+    <thead><tr><th>Block</th><th>Name</th><th>Behaviour</th><th>Use Case</th></tr></thead>
+    <tbody>
+      <tr><td><b>TON</b></td><td>On-Delay</td><td>Q TRUE after IN=TRUE for PT</td><td>Motor start delay</td></tr>
+      <tr><td><b>TOF</b></td><td>Off-Delay</td><td>Q stays TRUE for PT after IN=FALSE</td><td>Fan run-on</td></tr>
+      <tr><td><b>TP</b></td><td>Pulse</td><td>Q TRUE for exactly PT on rising edge</td><td>Fixed pulses</td></tr>
+      <tr><td><b>CTU</b></td><td>Count Up</td><td>CV++ on CU pulse; Q when CV≥PV</td><td>Part counting</td></tr>
+      <tr><td><b>CTD</b></td><td>Count Down</td><td>CV-- on CD pulse; Q when CV≤0</td><td>Batch quantity</td></tr>
+    </tbody>
+  </table>
+  <div class="dia">
+    <svg width="360" height="70" viewBox="0 0 360 70">
+      <text x="6" y="14" fill="#6a5a30" font-size="7" font-family="Lato" font-weight="700">IN</text><polyline points="25,20 25,8 115,8 115,20 345,20" fill="none" stroke="#1a7a3a" stroke-width="1.4"/>
+      <text x="6" y="38" fill="#6a5a30" font-size="7" font-family="Lato" font-weight="700">Q</text><polyline points="25,44 115,44 115,44 170,44 170,32 295,32 295,44 345,44" fill="none" stroke="#8a3a10" stroke-width="1.4"/>
+      <text x="6" y="60" fill="#6a5a30" font-size="7" font-family="Lato" font-weight="700">ET</text><polyline points="25,64 115,64 170,52 170,64 345,64" fill="none" stroke="#1a4a8a" stroke-width="1.1" stroke-dasharray="3,2"/>
+      <line x1="115" y1="4" x2="170" y2="4" stroke="#7a6a30" stroke-width=".8"/><text x="142" y="3" text-anchor="middle" fill="#7a6a30" font-size="5.5" font-family="Lato" font-style="italic">PT (e.g. T#5S)</text>
+      <line x1="115" y1="2" x2="115" y2="68" stroke="#aaa090" stroke-width=".5" stroke-dasharray="2,2"/>
+      <line x1="170" y1="2" x2="170" y2="68" stroke="#aaa090" stroke-width=".5" stroke-dasharray="2,2"/>
+      <text x="115" y="69" text-anchor="middle" fill="#9a8a60" font-size="5" font-family="Lato">IN rises</text>
+      <text x="170" y="69" text-anchor="middle" fill="#9a8a60" font-size="5" font-family="Lato">Q ON</text>
+      <text x="250" y="69" text-anchor="middle" fill="#8a7060" font-size="5.5" font-family="Lato" font-style="italic">Fig 5.1 — TON On-Delay timing</text>
+    </svg>
+  </div>
+  <div class="eye" style="margin-top:8px;">Chapter 06</div>
+  <div class="ctitle" style="font-size:16px;">Data Blocks &amp; Memory</div>
+  <hr class="crule">
+  <div class="code">
+<span class="cmt">// UDT: reusable motor data structure</span>
+<span class="kw">TYPE</span> Motor_Type
+  STRUCT
+    Running   : BOOL;
+    Fault     : BOOL;
+    Speed_rpm : REAL;
+    Run_Hours : DINT;
+  END_STRUCT;
+<span class="kw">END_TYPE</span>
+<span class="cmt">// Use for every motor in the plant</span>
+Motor_Feed : Motor_Type;
+Pumps : ARRAY[1..8] OF Motor_Type;
+  </div>
+  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>9</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch7">
+<div class="pg">
+  <div class="rh"><span>Chapters 7–8</span><span>HMI, SCADA &amp; Networks</span></div>
+  <div class="eye">Chapter 07</div>
+  <div class="cnum">VII</div>
+  <div class="ctitle">HMI, SCADA &amp; Networks</div>
+  <hr class="crule">
+  <h2>Siemens HMI Panel Range</h2>
+  <table>
+    <thead><tr><th>Panel</th><th>Screen</th><th>Tags</th><th>Best For</th></tr></thead>
+    <tbody>
+      <tr><td><b>KTP700 Basic</b></td><td>7" touch</td><td>500</td><td>Small machines</td></tr>
+      <tr><td><b>KTP900 Basic</b></td><td>9" touch</td><td>800</td><td>Mid machines</td></tr>
+      <tr><td><b>TP1200 Comfort</b></td><td>12" touch</td><td>2048</td><td>Complex, recipes</td></tr>
+      <tr><td><b>WinCC Runtime PC</b></td><td>PC</td><td>512K+</td><td>Full plant SCADA</td></tr>
+    </tbody>
+  </table>
+  <h2>Industrial Network Protocols</h2>
+  <table>
+    <thead><tr><th>Protocol</th><th>Speed</th><th>Cycle</th><th>Best Application</th></tr></thead>
+    <tbody>
+      <tr><td><b>PROFINET IRT</b></td><td>100Mbps</td><td>&lt;1ms</td><td>Motion control, high-speed sync</td></tr>
+      <tr><td><b>PROFINET RT</b></td><td>100Mbps</td><td>1–10ms</td><td>Standard automation</td></tr>
+      <tr><td><b>PROFIBUS-DP</b></td><td>1.5Mbps</td><td>2–10ms</td><td>Legacy field devices</td></tr>
+      <tr><td><b>Modbus TCP</b></td><td>100Mbps</td><td>10–100ms</td><td>Third-party, energy meters</td></tr>
+      <tr><td><b>OPC-UA</b></td><td>1Gbps</td><td>100ms+</td><td>MES / ERP / Cloud / IIoT</td></tr>
+    </tbody>
+  </table>
+  <div class="note"><div class="nlbl">&#8505; HMI Tag Performance</div><p>Only poll at 500ms or faster what operators genuinely need live. Excessive fast polling significantly increases PLC scan time. Audit your HMI tag list regularly.</p></div>
+  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>11</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch9">
+<div class="pg">
+  <div class="rh"><span>Chapters 9–11</span><span>PID Control, Safety &amp; TIA Portal</span></div>
+  <div class="eye">Chapter 09</div>
+  <div class="ctitle" style="font-size:17px;">PID, Safety &amp; TIA Portal</div>
+  <hr class="crule">
+  <h2>PID Control Formula</h2>
+  <div class="code">
+Output = Kp × e(t)  +  Ki × ∫e(t)dt  +  Kd × de(t)/dt
+  e(t) = SP − PV   (error: setpoint minus process variable)
+  Kp = Proportional  Ki = Integral  Kd = Derivative
+
+<span class="cmt">// Scale 4-20mA to bar in SCL</span>
+Pressure := (DINT_TO_REAL(IW64) / <span class="num">27648.0</span>) * <span class="num">100.0</span>;
+  </div>
+  <h2>Safety Integrity Levels (SIL)</h2>
+  <table>
+    <thead><tr><th>SIL</th><th>PFD</th><th>Applications</th></tr></thead>
+    <tbody>
+      <tr><td><b>SIL 1</b></td><td>10⁻¹–10⁻²</td><td>General machinery, light curtains</td></tr>
+      <tr><td><b>SIL 2</b></td><td>10⁻²–10⁻³</td><td>Industrial automation, chemical</td></tr>
+      <tr><td><b>SIL 3</b></td><td>10⁻³–10⁻⁴</td><td>Oil &amp; gas, nuclear, railway</td></tr>
+    </tbody>
+  </table>
+  <div class="note warn"><div class="nlbl">&#9888; Safety CPU Required</div><p>SIL 2+ <b>requires a certified safety CPU</b> (e.g. S7-1500F). Standard PLCs cannot fulfil SIL 2 regardless of software approach.</p></div>
+  <h2>TIA Portal V18 Key Steps</h2>
+  <table>
+    <thead><tr><th>Step</th><th>Action</th></tr></thead>
+    <tbody>
+      <tr><td><b>1 — Hardware</b></td><td>Devices &amp; Networks → add CPU, assign IP</td></tr>
+      <tr><td><b>2 — Program</b></td><td>OB1 → write Ladder / FBD / SCL</td></tr>
+      <tr><td><b>3 — Simulate</b></td><td>PLCSIM → force I/O, test HMI</td></tr>
+      <tr><td><b>4 — Download</b></td><td>Online → Download → Run mode</td></tr>
+    </tbody>
+  </table>
+  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>12</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch12">
+<div class="pg">
+  <div class="rh"><span>Chapter 12</span><span>Career Pathways &amp; Certifications</span></div>
+  <div class="eye">Chapter 12</div>
+  <div class="cnum">XII</div>
+  <div class="ctitle">Career Pathways &amp;<br>Certifications</div>
+  <hr class="crule">
+  <div class="csub">Roles &bull; Salaries &bull; Certifications &bull; 90-Day Learning Path</div>
+  <p>PLC programming is one of the highest-demand skills in industrial automation. A global shortage of certified automation engineers means strong salaries and rapid promotion for those who invest in proper training.</p>
+  <h2>Career Roles &amp; Salaries (2025)</h2>
+  <table>
+    <thead><tr><th>Role</th><th>Experience</th><th>Salary (USD/yr)</th></tr></thead>
+    <tbody>
+      <tr><td><b>PLC Technician</b></td><td>0–2 yrs</td><td>$42,000 – $62,000</td></tr>
+      <tr><td><b>PLC Programmer</b></td><td>2–5 yrs</td><td>$62,000 – $90,000</td></tr>
+      <tr><td><b>Automation Engineer</b></td><td>5–10 yrs</td><td>$85,000 – $120,000</td></tr>
+      <tr><td><b>Senior Controls Engr.</b></td><td>10–15 yrs</td><td>$110,000 – $150,000</td></tr>
+      <tr><td><b>Automation Consultant</b></td><td>15+ yrs</td><td>$130,000 – $200,000+</td></tr>
+    </tbody>
+  </table>
+  <h2>Key Certifications</h2>
+  <table>
+    <thead><tr><th>Certification</th><th>Provider</th><th>Focus</th></tr></thead>
+    <tbody>
+      <tr><td><b>Siemens SCCM</b></td><td>Siemens</td><td>TIA Portal, S7-1200/1500</td></tr>
+      <tr><td><b>CAP</b></td><td>ISA International</td><td>Vendor-neutral automation</td></tr>
+      <tr><td><b>TÜV FS Engineer</b></td><td>TÜV Rheinland</td><td>Functional Safety SIL 2/3</td></tr>
+    </tbody>
+  </table>
+  <div class="note tip"><div class="nlbl">&#127891; 90-Day Path</div><p>Days 1–30: Ladder Logic basics, TIA Portal setup. Days 31–60: FBD, ST, HMI, timers. Days 61–90: PROFINET, PID, safety overview, first project. Start at <b>ayetechub.com/courses</b></p></div>
+  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>14</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-backcover">
+<div class="pg backcover">
+  <div class="bc-logo">AYE Tech Hub</div>
+  <div class="bc-rule"></div>
+  <div class="bc-tag">"Engineering the Future — one engineer at a time."<br><br>Part of AYE Tech Hub's free engineering education initiative, serving engineers across Africa and beyond.</div>
+  <div class="bc-item">&#128218; <b>PDF Library</b> — Free &amp; premium guides <span>&nbsp;ayetechub.com/pdfs.html</span></div>
+  <div class="bc-item">&#127979; <b>Courses</b> — PLC, HMI, SCADA, CAD, AI Tools <span>&nbsp;ayetechub.com/courses.html</span></div>
+  <div class="bc-item">&#128172; <b>Telegram Community</b> — Live support <span>&nbsp;t.me/ayetechub</span></div>
+  <div style="color:#c8a96e;font-size:18px;">&#10022;</div>
+  <div class="bc-copy">&#169; 2026 AYE Tech Hub. Published by Awet G. Nway.<br>Free for personal and educational use.</div>
+</div>
+</div>
+
+<!-- ═══════════ SCRIPT ═══════════ -->
+<script>
+// ─── Page data IDs in order ──────────────────────────────────
+const PAGE_IDS = [
+  'pd-cover','pd-toc','pd-ch1a','pd-ch1b',
+  'pd-ch2a','pd-ch3','pd-ch5','pd-ch7',
+  'pd-ch9','pd-ch12','pd-backcover'
+];
+
+// ─── Audio ───────────────────────────────────────────────────
+let actx = null, soundOn = true;
+
+function initAudio() {
+  if (!actx) actx = new (window.AudioContext || window.webkitAudioContext)();
+}
+
+function playFlip() {
+  if (!soundOn) return;
+  try {
+    initAudio();
+    const sr = actx.sampleRate, dur = 0.2, frames = (sr * dur)|0;
+    const buf = actx.createBuffer(1, frames, sr);
+    const d = buf.getChannelData(0);
+    for (let i = 0; i < frames; i++) {
+      const t = i / sr;
+      const env = Math.pow(1 - t/dur, 2) * Math.exp(-t * 20);
+      d[i] = ((Math.random()*2-1)*0.7 + Math.sin(6.28*100*t)*0.3*Math.exp(-t*30)) * env * 0.5;
+    }
+    const src = actx.createBufferSource();
+    const flt = actx.createBiquadFilter();
+    flt.type='bandpass'; flt.frequency.value=2000; flt.Q.value=0.8;
+    src.buffer = buf; src.connect(flt); flt.connect(actx.destination); src.start();
+  } catch(e){}
+}
+
+// ─── State ───────────────────────────────────────────────────
+const pages = PAGE_IDS;
+let cur = 0; // index of page showing on RIGHT (0=cover)
+// Spread:
+//   cur=0 → blank left, cover right
+//   cur=1 → cover left, toc right
+//   cur=2 → toc left, ch1a right
+//   ...
+//   cur=pages.length-1 → last page right, blank after
+
+function getPageHTML(idx) {
+  if (idx < 0 || idx >= pages.length) return '<div class="blank"><div class="blank-inner"><div class="b-logo">AYE</div><div class="b-sub">Tech Hub</div></div></div>';
+  return document.getElementById(pages[idx]).innerHTML;
+}
+
+function setContent(el, html) { el.innerHTML = html; }
+
+const leftEl  = document.getElementById('leftinner');
+const rightEl = document.getElementById('rightinner');
+const flipEl  = document.getElementById('flipper');
+const btnPrev = document.getElementById('btnprev');
+const btnNext = document.getElementById('btnnext');
+const pgInfo  = document.getElementById('pginfo');
+
+let animating = false;
+
+function updateButtons() {
+  btnPrev.disabled = (cur <= 0);
+  btnNext.disabled = (cur >= pages.length - 1);
+  const total = pages.length;
+  pgInfo.textContent = 'Page ' + (cur+1) + ' of ' + total;
+}
+
+function showSpread(idx) {
+  cur = idx;
+  setContent(leftEl,  getPageHTML(idx - 1)); // left = page before current
+  setContent(rightEl, getPageHTML(idx));      // right = current
+  updateButtons();
+}
+
+// ─── Flip Forward ────────────────────────────────────────────
+function flipNext() {
+  if (animating || cur >= pages.length - 1) return;
+  animating = true;
+  initAudio();
+
+  const nextIdx = cur + 1;
+
+  // Set flipper front = current right page, back = next left page (which is current right)
+  // After flip: left shows current right (back of flipper), right shows nextIdx+1
+  flipEl.innerHTML =
+    '<div class="flip-face">'      + getPageHTML(cur)     + '</div>' +
+    '<div class="flip-face flip-back-face">' + getPageHTML(cur) + '</div>';
+
+  // Position flipper over right half
+  flipEl.className = 'right-start';
+  flipEl.style.transform = '';
+
+  // Pre-load the new right page underneath
+  setContent(rightEl, getPageHTML(nextIdx));
+
+  // Trigger flip
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      flipEl.className = 'right-start flipping-forward';
+      playFlip();
+    });
+  });
+
+  const flipDur = window.innerWidth <= 700 ? 380 : 680;
+  setTimeout(() => {
+    setContent(leftEl, getPageHTML(cur));
+    flipEl.innerHTML = '';
+    flipEl.className = 'right-start';
+    cur = nextIdx;
+    setContent(rightEl, getPageHTML(cur));
+    updateButtons();
+    animating = false;
+  }, flipDur);
+}
+
+// ─── Flip Backward ───────────────────────────────────────────
+function flipPrev() {
+  if (animating || cur <= 0) return;
+  animating = true;
+  initAudio();
+
+  const prevIdx = cur - 1;
+
+  // Flipper over LEFT half, front = current left page, flips backward
+  flipEl.innerHTML =
+    '<div class="flip-face">'      + getPageHTML(cur-1)  + '</div>' +
+    '<div class="flip-face flip-back-face">' + getPageHTML(cur-1) + '</div>';
+
+  flipEl.className = 'left-start';
+  flipEl.style.transform = '';
+
+  setContent(leftEl, getPageHTML(prevIdx - 1));
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      flipEl.className = 'left-start flipping-backward';
+      playFlip();
+    });
+  });
+
+  const flipDur = window.innerWidth <= 700 ? 380 : 680;
+  setTimeout(() => {
+    cur = prevIdx;
+    setContent(leftEl, getPageHTML(cur - 1));
+    setContent(rightEl, getPageHTML(cur));
+    flipEl.innerHTML = '';
+    flipEl.className = 'right-start';
+    updateButtons();
+    animating = false;
+  }, flipDur);
+}
+
+// ─── Buttons ─────────────────────────────────────────────────
+btnNext.addEventListener('click', () => { initAudio(); flipNext(); });
+btnPrev.addEventListener('click', () => { initAudio(); flipPrev(); });
+
+document.addEventListener('keydown', e => {
+  if (e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' ') { initAudio(); flipNext(); e.preventDefault(); }
+  else if (e.key==='ArrowLeft'||e.key==='ArrowUp') { initAudio(); flipPrev(); e.preventDefault(); }
+});
+
+// Sound toggle
+document.getElementById('sndbtn').addEventListener('click', function(){
+  soundOn = !soundOn;
+  this.textContent = soundOn ? '🔊 Sound ON' : '🔇 Sound OFF';
+  this.classList.toggle('on', soundOn);
+});
+
+// Click on book edges to flip
+document.getElementById('righthalf').addEventListener('click', () => { initAudio(); flipNext(); });
+document.getElementById('lefthalf').addEventListener('click',  () => { initAudio(); flipPrev(); });
+
+// ─── Touch / Swipe support ───────────────────────────────────
+let tsX = 0, tsY = 0;
+const bookEl = document.getElementById('openbook');
+bookEl.addEventListener('touchstart', e => {
+  tsX = e.changedTouches[0].clientX;
+  tsY = e.changedTouches[0].clientY;
+}, {passive:true});
+bookEl.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - tsX;
+  const dy = e.changedTouches[0].clientY - tsY;
+  if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)*1.2) {
+    initAudio();
+    if (dx < 0) flipNext(); else flipPrev();
+  }
+}, {passive:true});
+
+// ─── Init ────────────────────────────────────────────────────
+showSpread(0);
+</script>
+</body>
+</html>

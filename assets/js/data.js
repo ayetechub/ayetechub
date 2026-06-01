@@ -834,6 +834,7 @@ const PDFS = [
       am: 'ሙሉ Siemens S7 PLC መምሪያ Ladder Logic, FBD, እና ኢንዱስትሪ ፕሮግራሚንግ የሚሸፍን።'
     },
     file: 'pdfs/plc-programming-guide.pdf',
+    flipbook: 'plc-flipbook.html',
     color: '#00d4ff',
     preview: true
   },
@@ -1457,6 +1458,27 @@ const PDFS = [
     },
     file: 'pdfs/aye-fit-hub-day15-emom-amrap.pdf',
     color: '#00d4ff',
+    preview: true
+  },
+  {
+    id: 'fit-hub-day16-lower-body-flexibility',
+    title: {
+      en: 'Day 16: Lower Body Flexibility — Hips, Hamstrings, IT Band',
+      ti: 'መዓልቲ 16: ታሕተዋይ ሰውነት ምስፋሕ — ሂፕ፣ ሃምስትሪንግ፣ IT Band',
+      am: 'ቀን 16: የታችኛው አካል ተጣጣፊነት — ዳሌ፣ ሃምስትሪንግ፣ IT ባንድ'
+    },
+    category: 'fit-hub',
+    pages: 8,
+    size: '39 KB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: 'Anatomy of 5 lower body muscle groups (hip flexors, hamstrings, IT band, adductors, piriformis), hip flexor 6-stretch protocol with holds and cues, progressive hamstring protocol (beginner to PNF), IT band foam-roll approach with evidence table, adductor and piriformis stretches, complete 30-minute routine timeline diagram, stretch-type effectiveness bar chart, 6-week progression plan, flexibility benchmarks, and the neuroscience of flexibility (GTO, spindle reflex, PNF) — by Awet G. Nway.',
+      ti: 'ናይ 5 ታሕተዋይ ሰውነት ጭዋዳ ሃናጺ፣ ሂፕ ፍሌክሰር 6 ዓይነት ምስፋሕ፣ ሃምስትሪንግ ፕሮቶኮል (ምጅማሪ ክሳብ PNF)፣ IT Band ፎም-ሮል ሜቶድ፣ 30-ደቒቕ ሩቲን diagram፣ 6-ሰሙን ፕሮግረሽን — ብ Awet G. Nway።',
+      am: 'የ5 የታችኛው አካል ጡንቻ ቅርፅ፣ ዳሌ ፍሌክሰር 6 ዓይነት ዘዴ፣ ሃምስትሪንግ ፕሮቶኮል (ጀማሪ እስከ PNF)፣ IT Band ፎም-ሮል አቀራረብ፣ 30-ደቂቃ ሩቲን diagram፣ 6-ሳምንት ፕሮግረሽን — በ Awet G. Nway።'
+    },
+    file: 'pdfs/aye-fit-hub-day16-lower-body-flexibility.pdf',
+    color: '#14b8a6',
     preview: true
   },
   {
