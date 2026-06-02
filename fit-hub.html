@@ -705,6 +705,30 @@
   </div>
 </section>
 
+<!-- ── FIT HUB BLOG ── -->
+<section id="fh-blog" style="padding:60px 0 80px;background:linear-gradient(180deg,transparent,rgba(124,58,237,.05),transparent)">
+  <div class="container">
+    <div class="section-head reveal" style="margin-bottom:40px">
+      <div class="section-tag" style="color:#a78bfa;border-color:rgba(167,139,250,.3)">
+        &#128221; Fit Hub Blog
+      </div>
+      <h2 class="section-title" style="background:linear-gradient(135deg,#a78bfa,#f43f5e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">
+        Train Smart. Read More.
+      </h2>
+      <p class="section-subtitle">Expert fitness articles — training science, nutrition, recovery, and mindset from the AYE Fit Hub team.</p>
+    </div>
+
+    <!-- Blog grid — populated by JS from BLOG_POSTS where category === 'fit-hub' -->
+    <div class="blog-grid-v2" id="fh-blog-grid"></div>
+
+    <div style="text-align:center;margin-top:40px">
+      <a href="blog.html?cat=fit-hub" class="btn btn-outline" style="border-color:#a78bfa;color:#a78bfa;padding:12px 32px;font-size:.95rem;font-weight:700">
+        &#128221; View All Fit Hub Articles &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ── FOOTER ── -->
 <footer>
   <div class="container">
@@ -784,14 +808,21 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Fitness PDFs
   const fitnessPdfs = (typeof PDFS !== 'undefined')
     ? PDFS.filter(p => p.category === 'fitness' || p.category === 'fit-hub')
     : [];
-
   if (fitnessPdfs.length > 0) {
     renderGrid('fh-pdf-grid', fitnessPdfs, p => renderPdfCard(p, ''), 'No fitness PDFs yet');
   } else {
-    document.getElementById('fh-pdf-placeholder').style.display = '';
+    const ph = document.getElementById('fh-pdf-placeholder');
+    if (ph) ph.style.display = '';
+  }
+
+  // Fit Hub Blog — show latest 4 articles
+  if (typeof BLOG_POSTS !== 'undefined') {
+    const fitPosts = BLOG_POSTS.filter(b => b.category === 'fit-hub').slice(0, 4);
+    renderGrid('fh-blog-grid', fitPosts, b => renderBlogCard(b, ''), 'No fitness articles yet. Check back soon!');
   }
 });
 </script>

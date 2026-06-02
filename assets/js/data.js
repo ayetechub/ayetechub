@@ -3550,6 +3550,54 @@ const BLOG_POSTS = [
     featured: false
   },
   {
+    id: 'progressive-overload',
+    title: 'Progressive Overload: The Science of Never Plateauing',
+    category: 'fit-hub',
+    date: '2026-06-02',
+    author: 'Awet G. Nway',
+    readTime: '7 min read',
+    excerpt: 'Progressive overload is the single most important principle in strength training. Learn the 7 methods to apply it — weight, reps, sets, rest, range of motion — so you never plateau again.',
+    image: 'assets/images/og-cover.png',
+    url: 'blog/progressive-overload.html',
+    featured: true
+  },
+  {
+    id: 'hiit-vs-cardio',
+    title: 'HIIT vs Steady-State Cardio: Which Burns More Fat?',
+    category: 'fit-hub',
+    date: '2026-06-02',
+    author: 'Awet G. Nway',
+    readTime: '6 min read',
+    excerpt: 'HIIT burns more calories per minute. Steady-state builds your aerobic base. The answer to which burns more fat is nuanced — and the optimal approach uses both strategically.',
+    image: 'assets/images/og-cover.png',
+    url: 'blog/hiit-vs-cardio.html',
+    featured: false
+  },
+  {
+    id: 'nutrition-busy-engineers',
+    title: 'Nutrition Basics for Busy Engineers: Macros Made Simple',
+    category: 'fit-hub',
+    date: '2026-06-02',
+    author: 'Awet G. Nway',
+    readTime: '8 min read',
+    excerpt: 'Training is 20–30% of your results. Nutrition is 70–80%. Master protein targets, carb timing, hydration, and the 5 simple rules that work for people with demanding schedules.',
+    image: 'assets/images/og-cover.png',
+    url: 'blog/nutrition-busy-engineers.html',
+    featured: false
+  },
+  {
+    id: 'sleep-and-recovery',
+    title: 'Sleep & Recovery: The Overlooked Performance Tool',
+    category: 'fit-hub',
+    date: '2026-06-02',
+    author: 'Awet G. Nway',
+    readTime: '7 min read',
+    excerpt: 'Sleep is when your body builds muscle, burns fat hormones, and repairs tissue. Learn the science of growth hormone, cortisol, hunger hormones, and the 5 sleep improvements to start tonight.',
+    image: 'assets/images/og-cover.png',
+    url: 'blog/sleep-and-recovery.html',
+    featured: false
+  },
+  {
     id: 'critical-thinking-engineers',
     title: 'Critical Thinking for Engineers: The Skill That Separates Good from Great',
     category: 'critical-thinking',
