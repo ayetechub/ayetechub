@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>PLC Ladder Logic Simulator — AYE Tech Hub</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#020817;color:#e2e8f0;font-family:'Segoe UI',Arial,sans-serif;min-height:100vh}
+#topbar{background:#0a1628;border-bottom:2px solid #00d4ff;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+#topbar .brand{color:#00d4ff;font-weight:900;font-size:1.1rem}
+#topbar .sub{color:#94a3b8;font-size:.82rem}
+.run-btn{background:#22c55e;color:#020817;border:none;padding:9px 22px;border-radius:6px;font-weight:800;font-size:.9rem;cursor:pointer;transition:.2s;letter-spacing:.5px}
+.run-btn.running{background:#ef4444}
+.run-btn:hover{filter:brightness(1.1)}
+#main{display:grid;grid-template-columns:220px 1fr;gap:0;min-height:calc(100vh - 56px)}
+#panel{background:#0d1f3c;border-right:1px solid #1e293b;padding:20px 16px}
+#panel h3{font-size:.8rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:#64748b;margin-bottom:14px}
+.bit-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid #1e293b}
+.bit-name{font-family:'Courier New',monospace;font-size:.85rem;color:#e2e8f0;font-weight:700}
+.bit-val{font-family:'Courier New',monospace;font-size:.82rem;padding:2px 10px;border-radius:4px;font-weight:700;min-width:44px;text-align:center}
+.bit-val.hi{background:rgba(34,197,94,.2);color:#22c55e;border:1px solid #22c55e}
+.bit-val.lo{background:rgba(71,85,105,.2);color:#64748b;border:1px solid #334155}
+.toggle-btn{background:transparent;border:1px solid #334155;color:#94a3b8;padding:3px 8px;border-radius:4px;cursor:pointer;font-size:.75rem;transition:.2s}
+.toggle-btn:hover{border-color:#00d4ff;color:#00d4ff}
+#ladder{padding:24px;overflow-x:auto}
+#ladder h2{font-size:1rem;font-weight:800;color:#00d4ff;margin-bottom:6px}
+#ladder .sub-h{font-size:.8rem;color:#475569;margin-bottom:22px}
+.rung{display:flex;align-items:center;gap:0;margin-bottom:18px;position:relative}
+.rung-label{font-family:'Courier New',monospace;font-size:.72rem;color:#64748b;width:44px;flex-shrink:0;text-align:right;padding-right:8px}
+.rail{width:6px;background:#475569;align-self:stretch;flex-shrink:0;border-radius:3px}
+.wire{height:3px;flex:1;min-width:14px;transition:background .15s}
+.wire.hot{background:#22c55e;box-shadow:0 0 6px #22c55e88}
+.wire.cold{background:#334155}
+.contact{display:flex;flex-direction:column;align-items:center;cursor:pointer;position:relative;padding:0 4px}
+.contact-body{position:relative;display:flex;align-items:center;height:40px;gap:0}
+.contact-line{width:3px;height:28px;border-radius:2px;transition:background .15s}
+.contact-bar{width:18px;height:3px;border-radius:2px;transition:background .15s}
+.nc-slash{position:absolute;top:4px;left:50%;transform:translateX(-50%);font-size:12px;font-weight:900;color:#ef4444;pointer-events:none;line-height:1}
+.contact-tag{font-family:'Courier New',monospace;font-size:.7rem;text-align:center;margin-top:2px;font-weight:700}
+.contact-lbl{font-family:'Courier New',monospace;font-size:.65rem;text-align:center;color:#64748b;margin-top:1px}
+.coil{display:flex;flex-direction:column;align-items:center;padding:0 6px}
+.coil-body{width:28px;height:28px;border-radius:50%;border:3px solid;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.coil-tag{font-family:'Courier New',monospace;font-size:.7rem;text-align:center;margin-top:3px;font-weight:700}
+.coil-lbl{font-family:'Courier New',monospace;font-size:.65rem;text-align:center;color:#64748b;margin-top:1px}
+.timer-block{display:flex;flex-direction:column;align-items:center;padding:0 6px}
+.timer-box{border:2px solid;border-radius:4px;padding:4px 10px;min-width:72px;text-align:center;transition:all .15s}
+.timer-box .t-name{font-size:.75rem;font-weight:900;letter-spacing:.5px}
+.timer-box .t-val{font-family:'Courier New',monospace;font-size:.7rem;margin-top:2px}
+.timer-lbl{font-family:'Courier New',monospace;font-size:.65rem;color:#64748b;margin-top:3px}
+.rung-rail-r{width:6px;background:#475569;align-self:stretch;flex-shrink:0;border-radius:3px}
+.legend{background:#0d1f3c;border:1px solid #1e293b;border-radius:8px;padding:14px 16px;margin-top:24px;font-size:.78rem;color:#64748b;line-height:1.8}
+.legend strong{color:#e2e8f0}
+.status-bar{background:#0a1628;border-top:1px solid #1e293b;padding:8px 24px;font-size:.78rem;color:#475569;display:flex;gap:24px;flex-wrap:wrap}
+.status-bar span{display:flex;align-items:center;gap:5px}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.dot.green{background:#22c55e} .dot.red{background:#ef4444} .dot.grey{background:#475569}
+</style>
+</head>
+<body>
+<div id="topbar">
+  <div>
+    <div class="brand">&#128187; PLC Ladder Logic Simulator</div>
+    <div class="sub">AYE Tech Hub &mdash; Siemens S7 Style &mdash; Toggle inputs below to simulate</div>
+  </div>
+  <div style="display:flex;gap:10px;align-items:center">
+    <span id="cycle-display" style="font-family:'Courier New',monospace;font-size:.8rem;color:#475569">Scan: 0</span>
+    <button class="run-btn" id="runBtn" onclick="toggleRun()">&#9654; RUN</button>
+    <a href="../downloads.html" style="color:#64748b;font-size:.8rem;text-decoration:none">&#8592; Back</a>
+  </div>
+</div>
+
+<div id="main">
+  <!-- LEFT: I/O Panel -->
+  <div id="panel">
+    <h3>&#128205; Digital Inputs (I)</h3>
+    <div id="input-panel"></div>
+    <h3 style="margin-top:18px">&#128308; Digital Outputs (Q)</h3>
+    <div id="output-panel"></div>
+    <h3 style="margin-top:18px">&#128203; Memory Bits (M)</h3>
+    <div id="memory-panel"></div>
+    <div class="legend" style="margin-top:18px">
+      <strong>How to Use:</strong><br>
+      1. Click <strong>RUN</strong> to start simulation<br>
+      2. Click <strong>Toggle</strong> on inputs to change state<br>
+      3. Watch outputs react in real time<br>
+      4. Green wire = powered (TRUE)<br>
+      5. Grey wire = no power (FALSE)<br>
+      <br>
+      <strong>Rung 1:</strong> Motor start/stop with seal<br>
+      <strong>Rung 2:</strong> E-stop interlock<br>
+      <strong>Rung 3:</strong> TON delay timer<br>
+      <strong>Rung 4:</strong> Conveyor after timer<br>
+      <strong>Rung 5:</strong> Alarm on fault<br>
+      <strong>Rung 6:</strong> Counter status
+    </div>
+  </div>
+
+  <!-- RIGHT: Ladder -->
+  <div id="ladder">
+    <h2>&#9130; Ladder Logic Diagram &mdash; Motor Control System</h2>
+    <p class="sub-h">Siemens S7 Style &bull; 6 Rungs &bull; Click RUN then toggle inputs</p>
+    <svg id="svg-ladder" width="100%" height="520" style="min-width:600px;max-width:900px;display:block"></svg>
+    <div class="legend">
+      <strong>Contacts:</strong> &#9135;| |&#9135; = Normally Open (NO) &nbsp;|&nbsp; &#9135;|/|&#9135; = Normally Closed (NC) &nbsp;|&nbsp;
+      <strong>Coils:</strong> &#9135;( )&#9135; = Output Coil &nbsp;|&nbsp;
+      <strong>Hot wire</strong> = <span style="color:#22c55e">&#9632;</span> GREEN &bull; <strong>Cold wire</strong> = <span style="color:#475569">&#9632;</span> GREY
+    </div>
+  </div>
+</div>
+
+<div class="status-bar">
+  <span><span class="dot" id="d-run"></span> <span id="s-run">STOP</span></span>
+  <span>Scan cycle: <strong id="s-scan">0 ms</strong></span>
+  <span>Motor: <strong id="s-motor" style="color:#64748b">OFF</strong></span>
+  <span>Conveyor: <strong id="s-conv" style="color:#64748b">OFF</strong></span>
+  <span>Alarm: <strong id="s-alarm" style="color:#64748b">CLEAR</strong></span>
+</div>
+
+<script>
+// ── State ───────────────────────────────────────────────────────────────
+const bits = {
+  'I0.0': 0,  // START PB
+  'I0.1': 1,  // E-STOP (NC = normally 1)
+  'I0.2': 1,  // OL RELAY (NC = normally 1)
+  'I0.3': 0,  // FAULT INPUT
+  'Q0.0': 0,  // MOTOR RUN
+  'Q0.1': 0,  // CONVEYOR
+  'Q0.2': 0,  // ALARM
+  'M0.0': 0,  // TIMER DONE
+  'M0.1': 0,  // INTERNAL
+};
+
+let running = false;
+let scanCount = 0;
+let scanInterval = null;
+let timerET = 0;
+const TIMER_PT = 50; // 50 scan cycles = ~5s at 100ms/scan
+
+// ── Rung definitions ────────────────────────────────────────────────────
+// Each rung: array of elements evaluated left-to-right
+// Types: {type:'no',bit}, {type:'nc',bit}, {type:'coil',bit}, {type:'timer',done:'M0.0'}
+const rungs = [
+  {
+    label: 'Rung 1',
+    desc: 'Motor Start/Stop with Seal-in Contact',
+    contacts: [
+      [{type:'no',bit:'I0.0',lbl:'START'}, {type:'no',bit:'Q0.0',lbl:'SEAL'}],  // parallel branch
+      [{type:'nc',bit:'I0.1',lbl:'E-STOP'}],
+      [{type:'nc',bit:'I0.2',lbl:'OL'}],
+    ],
+    coil: {type:'coil',bit:'Q0.0',lbl:'MOTOR'}
+  },
+  {
+    label: 'Rung 2',
+    desc: 'E-Stop Status Indicator',
+    contacts: [[{type:'nc',bit:'I0.1',lbl:'E-STOP'}]],
+    coil: {type:'coil',bit:'M0.1',lbl:'SAFE'}
+  },
+  {
+    label: 'Rung 3',
+    desc: 'TON Delay Timer (5 s) — starts when motor runs',
+    contacts: [[{type:'no',bit:'Q0.0',lbl:'MOTOR'}]],
+    coil: {type:'timer',bit:'M0.0',lbl:'TON T1\nPT:5s'}
+  },
+  {
+    label: 'Rung 4',
+    desc: 'Conveyor starts after timer done',
+    contacts: [[{type:'no',bit:'M0.0',lbl:'T1.Q'}],
+               [{type:'nc',bit:'I0.3',lbl:'FAULT'}]],
+    coil: {type:'coil',bit:'Q0.1',lbl:'CONVEYOR'}
+  },
+  {
+    label: 'Rung 5',
+    desc: 'Alarm on fault input',
+    contacts: [[{type:'no',bit:'I0.3',lbl:'FAULT'}]],
+    coil: {type:'coil',bit:'Q0.2',lbl:'ALARM'}
+  },
+  {
+    label: 'Rung 6',
+    desc: 'Alarm also when E-STOP active and motor was running',
+    contacts: [[{type:'no',bit:'Q0.0',lbl:'MOTOR'}],
+               [{type:'nc',bit:'I0.1',lbl:'E-STOP'}]],
+    coil: {type:'coil',bit:'Q0.2',lbl:'ALARM'}
+  },
+];
+
+// ── Evaluate rungs ──────────────────────────────────────────────────────
+function evalRung(rung) {
+  // Each element of contacts is a parallel group; all groups AND together
+  let power = true;
+  for (const group of rung.contacts) {
+    // OR all contacts within a group
+    const groupPower = group.some(c => {
+      if (c.type === 'no') return bits[c.bit] === 1;
+      if (c.type === 'nc') return bits[c.bit] === 0;
+      return false;
+    });
+    if (!groupPower) { power = false; break; }
+  }
+  return power;
+}
+
+function scanCycle() {
+  scanCount++;
+  const newBits = { ...bits };
+
+  // Reset outputs
+  newBits['Q0.0'] = 0;
+  newBits['Q0.1'] = 0;
+  newBits['Q0.2'] = 0;
+  newBits['M0.1'] = 0;
+
+  // Rung 1: Motor (preserve Q0.0 in contacts via current bits for seal logic)
+  const r1 = (bits['I0.0'] || bits['Q0.0']) && bits['I0.1'] === 0 ? 0 : // if estop active
+              (bits['I0.0'] || bits['Q0.0']) && (bits['I0.1'] === 1) && (bits['I0.2'] === 1) ? 1 : 0;
+  // Simpler direct eval:
+  const startOrSeal = (bits['I0.0'] === 1 || bits['Q0.0'] === 1);
+  const estopOK     = (bits['I0.1'] === 1);
+  const olOK        = (bits['I0.2'] === 1);
+  newBits['Q0.0']   = (startOrSeal && estopOK && olOK) ? 1 : 0;
+
+  // Rung 2: Safe indicator
+  newBits['M0.1'] = (bits['I0.1'] === 0) ? 1 : 0; // NC contact of E-stop
+
+  // Rung 3: Timer — increment ET when motor is running
+  if (newBits['Q0.0'] === 1) {
+    timerET = Math.min(timerET + 1, TIMER_PT);
+  } else {
+    timerET = 0;
+  }
+  newBits['M0.0'] = (timerET >= TIMER_PT) ? 1 : 0;
+
+  // Rung 4: Conveyor = timer done AND no fault
+  newBits['Q0.1'] = (newBits['M0.0'] === 1 && bits['I0.3'] === 0) ? 1 : 0;
+
+  // Rung 5+6: Alarm
+  const alarm5 = (bits['I0.3'] === 1) ? 1 : 0;
+  const alarm6 = (bits['Q0.0'] === 1 && bits['I0.1'] === 0) ? 1 : 0;
+  newBits['Q0.2'] = (alarm5 || alarm6) ? 1 : 0;
+
+  // Commit
+  Object.assign(bits, newBits);
+  renderAll();
+}
+
+// ── Render ───────────────────────────────────────────────────────────────
+function renderAll() {
+  renderPanel();
+  renderSVG();
+  updateStatus();
+}
+
+function renderPanel() {
+  const inputs  = ['I0.0','I0.1','I0.2','I0.3'];
+  const outputs = ['Q0.0','Q0.1','Q0.2'];
+  const memory  = ['M0.0','M0.1'];
+  const names   = {'I0.0':'START PB','I0.1':'E-STOP','I0.2':'OL RELAY','I0.3':'FAULT',
+                   'Q0.0':'MOTOR RUN','Q0.1':'CONVEYOR','Q0.2':'ALARM',
+                   'M0.0':'T1 DONE','M0.1':'SAFE'};
+
+  function row(addr, canToggle) {
+    const v = bits[addr];
+    const isHi = v === 1;
+    return `<div class="bit-row">
+      <span class="bit-name">${addr}</span>
+      <span class="bit-val ${isHi?'hi':'lo'}">${isHi?'1':'0'}</span>
+      ${canToggle ? `<button class="toggle-btn" onclick="toggle('${addr}')">Toggle</button>` : '<span style="font-size:.7rem;color:#334155">AUTO</span>'}
+    </div>`;
+  }
+
+  document.getElementById('input-panel').innerHTML  = inputs.map(a => row(a, true)).join('');
+  document.getElementById('output-panel').innerHTML = outputs.map(a => row(a, false)).join('');
+  document.getElementById('memory-panel').innerHTML = memory.map(a => row(a, false)).join('');
+}
+
+// ── SVG Ladder drawing ───────────────────────────────────────────────────
+function renderSVG() {
+  const svg = document.getElementById('svg-ladder');
+  const W = svg.clientWidth || 800;
+  const railX = 32, railRX = W - 32;
+  const rungY = [50, 130, 210, 290, 370, 450];
+  const railH = rungY[rungY.length-1] + 40;
+  svg.setAttribute('height', railH + 20);
+
+  let html = '';
+
+  // Left and right rails
+  html += `<line x1="${railX}" y1="10" x2="${railX}" y2="${railH}" stroke="#475569" stroke-width="5" stroke-linecap="round"/>`;
+  html += `<line x1="${railRX}" y1="10" x2="${railRX}" y2="${railH}" stroke="#475569" stroke-width="5" stroke-linecap="round"/>`;
+
+  const HOT = '#22c55e', COLD = '#334155';
+
+  const rungDescriptions = [
+    'Motor Start/Stop + Seal', 'E-Stop Indicator', 'TON Timer (5s)',
+    'Conveyor after timer', 'Fault Alarm', 'E-Stop Alarm'
+  ];
+
+  // Rung power states (simplified for SVG)
+  const rungPowered = [
+    bits['Q0.0'] === 1,     // R1: motor output
+    bits['M0.1'] === 1,     // R2: safe
+    bits['Q0.0'] === 1,     // R3: timer input
+    bits['Q0.1'] === 1,     // R4: conveyor
+    bits['Q0.2'] === 1 && bits['I0.3'] === 1, // R5: fault alarm
+    bits['Q0.2'] === 1 && bits['Q0.0'] === 1 && bits['I0.1'] === 0, // R6
+  ];
+
+  for (let ri = 0; ri < rungDescriptions.length; ri++) {
+    const y = rungY[ri];
+    const powered = rungPowered[ri];
+    const wc = powered ? HOT : COLD;
+    const glow = powered ? ' filter="url(#glow)"' : '';
+
+    // Rung label
+    html += `<text x="${railX - 4}" y="${y + 5}" text-anchor="end" fill="#475569" font-size="10" font-family="Courier New">R${ri+1}</text>`;
+
+    // Entry wire from left rail
+    html += `<line x1="${railX}" y1="${y}" x2="${railX+30}" y2="${y}" stroke="${wc}" stroke-width="2.5"/>`;
+
+    // Specific rung contact shapes
+    if (ri === 0) {
+      // Rung 1: (I0.0 || Q0.0) & I0.1_NC & I0.2_NC → Q0.0
+      const s = bits['I0.0'] || bits['Q0.0'];
+      const c1 = bits['I0.1'] === 0 ? COLD : wc; // E-STOP NC — hot when I0.1=1
+      const c2 = bits['I0.2'] === 0 ? COLD : wc; // OL NC — hot when I0.2=1
+
+      // I0.0 NO contact
+      html += contact(railX+30, y, bits['I0.0'], false, 'I0.0', 'START', wc);
+      // Seal contact below (Q0.0 NO parallel with I0.0)
+      html += `<line x1="${railX+30}" y1="${y}" x2="${railX+30}" y2="${y+22}" stroke="${wc}" stroke-width="2"/>`;
+      html += `<line x1="${railX+30+32}" y1="${y}" x2="${railX+30+32}" y2="${y+22}" stroke="${s?HOT:COLD}" stroke-width="2"/>`;
+      html += contact(railX+30, y+22, bits['Q0.0'], false, 'Q0.0', 'SEAL', s?HOT:COLD);
+      // Wire after parallel
+      html += `<line x1="${railX+62}" y1="${y}" x2="${railX+110}" y2="${y}" stroke="${wc}" stroke-width="2.5"/>`;
+      // I0.1 NC
+      html += contact(railX+110, y, bits['I0.1'], true, 'I0.1', 'E-STOP', c1);
+      html += `<line x1="${railX+142}" y1="${y}" x2="${railX+190}" y2="${y}" stroke="${c1}" stroke-width="2.5"/>`;
+      // I0.2 NC
+      html += contact(railX+190, y, bits['I0.2'], true, 'I0.2', 'OL', c2);
+      html += `<line x1="${railX+222}" y1="${y}" x2="${railRX-60}" y2="${y}" stroke="${c2}" stroke-width="2.5"/>`;
+      // Q0.0 coil
+      html += coil(railRX-60, y, bits['Q0.0'], 'Q0.0', 'MOTOR');
+      html += `<line x1="${railRX-32}" y1="${y}" x2="${railRX}" y2="${y}" stroke="${powered?HOT:COLD}" stroke-width="2.5"/>`;
+
+    } else if (ri === 1) {
+      // Rung 2: I0.1 NC → M0.1
+      const c = bits['I0.1'] === 0 ? HOT : COLD;
+      html += contact(railX+30, y, bits['I0.1'], true, 'I0.1', 'E-STOP', c);
+      html += `<line x1="${railX+62}" y1="${y}" x2="${railRX-60}" y2="${y}" stroke="${c}" stroke-width="2.5"/>`;
+      html += coil(railRX-60, y, bits['M0.1'], 'M0.1', 'SAFE');
+      html += `<line x1="${railRX-32}" y1="${y}" x2="${railRX}" y2="${y}" stroke="${c}" stroke-width="2.5"/>`;
+
+    } else if (ri === 2) {
+      // Rung 3: Q0.0 NO → Timer
+      const c = bits['Q0.0'] ? HOT : COLD;
+      html += contact(railX+30, y, bits['Q0.0'], false, 'Q0.0', 'MOTOR', c);
+      html += `<line x1="${railX+62}" y1="${y}" x2="${railRX-120}" y2="${y}" stroke="${c}" stroke-width="2.5"/>`;
+      // Timer block
+      const et = Math.round((timerET/TIMER_PT)*100);
+      const tc = bits['M0.0'] ? HOT : (bits['Q0.0'] ? '#fbbf24' : COLD);
+      html += `<rect x="${railRX-120}" y="${y-18}" width="88" height="36" rx="4" fill="#0d1f3c" stroke="${tc}" stroke-width="2"/>`;
+      html += `<text x="${railRX-76}" y="${y-5}" text-anchor="middle" fill="${tc}" font-size="9" font-weight="bold" font-family="Courier New">TON T1</text>`;
+      html += `<text x="${railRX-76}" y="${y+7}" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="Courier New">PT:5s ET:${et}%</text>`;
+      html += `<text x="${railRX-76}" y="${y+19}" text-anchor="middle" fill="${bits['M0.0']?HOT:'#475569'}" font-size="8" font-family="Courier New">Q:${bits['M0.0']}</text>`;
+      html += `<line x1="${railRX-32}" y1="${y}" x2="${railRX}" y2="${y}" stroke="${c}" stroke-width="2.5"/>`;
+
+    } else if (ri === 3) {
+      // Rung 4: M0.0 NO & I0.3 NC → Q0.1
+      const c1 = bits['M0.0'] ? HOT : COLD;
+      const c2 = bits['I0.3'] === 0 ? c1 : COLD;
+      html += contact(railX+30, y, bits['M0.0'], false, 'M0.0', 'T1.Q', c1);
+      html += `<line x1="${railX+62}" y1="${y}" x2="${railX+110}" y2="${y}" stroke="${c1}" stroke-width="2.5"/>`;
+      html += contact(railX+110, y, bits['I0.3'], true, 'I0.3', 'FAULT', c2);
+      html += `<line x1="${railX+142}" y1="${y}" x2="${railRX-60}" y2="${y}" stroke="${c2}" stroke-width="2.5"/>`;
+      html += coil(railRX-60, y, bits['Q0.1'], 'Q0.1', 'CONVEYOR');
+      html += `<line x1="${railRX-32}" y1="${y}" x2="${railRX}" y2="${y}" stroke="${c2}" stroke-width="2.5"/>`;
+
+    } else if (ri === 4) {
+      // Rung 5: I0.3 NO → Q0.2
+      const c = bits['I0.3'] ? HOT : COLD;
+      html += contact(railX+30, y, bits['I0.3'], false, 'I0.3', 'FAULT', c);
+      html += `<line x1="${railX+62}" y1="${y}" x2="${railRX-60}" y2="${y}" stroke="${c}" stroke-width="2.5"/>`;
+      html += coil(railRX-60, y, bits['Q0.2'], 'Q0.2', 'ALARM');
+      html += `<line x1="${railRX-32}" y1="${y}" x2="${railRX}" y2="${y}" stroke="${c}" stroke-width="2.5"/>`;
+
+    } else if (ri === 5) {
+      // Rung 6: Q0.0 NO & I0.1 NC → Q0.2
+      const c1 = bits['Q0.0'] ? HOT : COLD;
+      const c2 = bits['I0.1'] === 0 ? c1 : COLD;
+      html += contact(railX+30, y, bits['Q0.0'], false, 'Q0.0', 'MOTOR', c1);
+      html += `<line x1="${railX+62}" y1="${y}" x2="${railX+110}" y2="${y}" stroke="${c1}" stroke-width="2.5"/>`;
+      html += contact(railX+110, y, bits['I0.1'], true, 'I0.1', 'E-STOP', c2);
+      html += `<line x1="${railX+142}" y1="${y}" x2="${railRX-60}" y2="${y}" stroke="${c2}" stroke-width="2.5"/>`;
+      html += coil(railRX-60, y, bits['Q0.2'], 'Q0.2', 'ALARM');
+      html += `<line x1="${railRX-32}" y1="${y}" x2="${railRX}" y2="${y}" stroke="${c2}" stroke-width="2.5"/>`;
+    }
+
+    // Rung description
+    html += `<text x="${railX+8}" y="${y-22}" fill="#334155" font-size="9" font-family="Segoe UI">${rungDescriptions[ri]}</text>`;
+  }
+
+  // Glow filter
+  html = `<defs><filter id="glow"><feGaussianBlur stdDeviation="2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>` + html;
+
+  svg.innerHTML = html;
+}
+
+function contact(x, y, val, isNC, addr, lbl, wireColor) {
+  const cw = wireColor;
+  return `
+    <line x1="${x}" y1="${y}" x2="${x+10}" y2="${y}" stroke="${cw}" stroke-width="2.5"/>
+    <line x1="${x+10}" y1="${y-12}" x2="${x+10}" y2="${y+12}" stroke="${cw}" stroke-width="2.5"/>
+    <line x1="${x+10}" y1="${y}" x2="${x+22}" y2="${y}" stroke="${cw}" stroke-width="1"/>
+    <line x1="${x+22}" y1="${y-12}" x2="${x+22}" y2="${y+12}" stroke="${cw}" stroke-width="2.5"/>
+    ${isNC ? `<line x1="${x+8}" y1="${y-12}" x2="${x+24}" y2="${y+12}" stroke="#ef4444" stroke-width="1.5"/>` : ''}
+    <line x1="${x+22}" y1="${y}" x2="${x+32}" y2="${y}" stroke="${cw}" stroke-width="2.5"/>
+    <text x="${x+16}" y="${y-16}" text-anchor="middle" fill="${cw}" font-size="9" font-weight="bold" font-family="Courier New">${addr}</text>
+    <text x="${x+16}" y="${y+22}" text-anchor="middle" fill="#64748b" font-size="8" font-family="Courier New">${lbl}</text>
+  `;
+}
+
+function coil(x, y, val, addr, lbl) {
+  const c = val ? '#22c55e' : '#475569';
+  const fill = val ? 'rgba(34,197,94,0.1)' : 'transparent';
+  return `
+    <circle cx="${x+14}" cy="${y}" r="13" fill="${fill}" stroke="${c}" stroke-width="2.5"/>
+    <text x="${x+14}" y="${y+4}" text-anchor="middle" fill="${c}" font-size="8" font-weight="bold" font-family="Courier New">${val}</text>
+    <text x="${x+14}" y="${y-18}" text-anchor="middle" fill="${c}" font-size="9" font-weight="bold" font-family="Courier New">${addr}</text>
+    <text x="${x+14}" y="${y+24}" text-anchor="middle" fill="#64748b" font-size="8" font-family="Courier New">${lbl}</text>
+  `;
+}
+
+function updateStatus() {
+  document.getElementById('cycle-display').textContent = `Scan: ${scanCount}`;
+  document.getElementById('s-scan').textContent = running ? '100 ms' : '—';
+  document.getElementById('s-motor').textContent = bits['Q0.0'] ? 'RUNNING' : 'OFF';
+  document.getElementById('s-motor').style.color = bits['Q0.0'] ? '#22c55e' : '#64748b';
+  document.getElementById('s-conv').textContent = bits['Q0.1'] ? 'RUNNING' : 'OFF';
+  document.getElementById('s-conv').style.color = bits['Q0.1'] ? '#22c55e' : '#64748b';
+  document.getElementById('s-alarm').textContent = bits['Q0.2'] ? 'ACTIVE!' : 'CLEAR';
+  document.getElementById('s-alarm').style.color = bits['Q0.2'] ? '#ef4444' : '#22c55e';
+  document.getElementById('d-run').className = 'dot ' + (running ? 'green' : 'grey');
+  document.getElementById('s-run').textContent = running ? 'RUNNING' : 'STOPPED';
+}
+
+function toggle(addr) {
+  bits[addr] = bits[addr] ? 0 : 1;
+  if (!running) renderAll(); // single-shot update when stopped
+}
+
+function toggleRun() {
+  running = !running;
+  const btn = document.getElementById('runBtn');
+  if (running) {
+    btn.textContent = '⬛ STOP';
+    btn.classList.add('running');
+    scanInterval = setInterval(() => { scanCycle(); }, 100);
+  } else {
+    btn.textContent = '▶ RUN';
+    btn.classList.remove('running');
+    clearInterval(scanInterval);
+  }
+  updateStatus();
+}
+
+// Init
+renderAll();
+</script>
+</body>
+</html>

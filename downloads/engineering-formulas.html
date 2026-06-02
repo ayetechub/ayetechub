@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Engineering Formulas Reference Card — AYE Tech Hub</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#020817;color:#e2e8f0;font-family:'Segoe UI',Arial,sans-serif}
+#topbar{background:#0a1628;border-bottom:2px solid #a78bfa;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;position:sticky;top:0;z-index:10}
+.brand{color:#a78bfa;font-weight:900;font-size:1.1rem}.sub{color:#94a3b8;font-size:.8rem}
+.search-bar{background:#020817;border:1px solid #334155;color:#e2e8f0;padding:8px 14px;border-radius:6px;font-size:.88rem;width:260px;outline:none}
+.search-bar:focus{border-color:#a78bfa}
+.tabs{display:flex;gap:6px;padding:14px 24px;border-bottom:1px solid #1e293b;overflow-x:auto;flex-wrap:nowrap;background:#0a1628}
+.tab{background:transparent;border:1px solid #334155;color:#94a3b8;padding:7px 16px;border-radius:20px;cursor:pointer;font-size:.8rem;font-weight:700;white-space:nowrap;transition:.2s;flex-shrink:0}
+.tab.active,.tab:hover{border-color:var(--tc);color:var(--tc)}
+.tab.active{background:rgba(167,139,250,.1)}
+.content{max-width:1100px;margin:0 auto;padding:24px 20px}
+.section{display:none}
+.section.active{display:block}
+.section-title{font-size:1.1rem;font-weight:900;color:#e2e8f0;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid}
+.formula-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.formula-card{background:#0d1f3c;border:1px solid #1e293b;border-radius:10px;padding:18px;border-left:3px solid}
+.formula-card .f-name{font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px}
+.formula-card .f-eq{font-family:'Courier New',monospace;font-size:1rem;font-weight:700;color:#e2e8f0;margin-bottom:8px;padding:8px 10px;background:#020817;border-radius:4px;letter-spacing:.5px}
+.formula-card .f-desc{font-size:.8rem;color:#94a3b8;line-height:1.65}
+.formula-card .f-vars{font-size:.75rem;color:#64748b;margin-top:6px;font-family:'Courier New',monospace;line-height:1.7}
+.formula-card .f-unit{display:inline-block;background:rgba(167,139,250,.1);color:#a78bfa;font-size:.68rem;padding:2px 7px;border-radius:10px;font-weight:700;margin-top:5px}
+.formula-card:hover{border-color:rgba(167,139,250,.4);box-shadow:0 4px 20px rgba(0,0,0,.2)}
+</style>
+</head>
+<body>
+<div id="topbar">
+  <div><div class="brand">&#128218; Engineering Formulas Reference Card</div><div class="sub">AYE Tech Hub &mdash; Electrical &bull; Mechanical &bull; HVAC &bull; Civil &bull; PLC &bull; Math</div></div>
+  <div style="display:flex;gap:10px;align-items:center">
+    <input type="text" class="search-bar" placeholder="&#128269; Search formulas..." oninput="searchFormulas(this.value)"/>
+    <a href="../downloads.html" style="color:#64748b;font-size:.8rem;text-decoration:none">&#8592; Back</a>
+  </div>
+</div>
+
+<div class="tabs">
+  <button class="tab active" style="--tc:#f59e0b" onclick="showSection('electrical',this)">&#9889; Electrical</button>
+  <button class="tab" style="--tc:#22c55e" onclick="showSection('mechanical',this)">&#9881; Mechanical</button>
+  <button class="tab" style="--tc:#06b6d4" onclick="showSection('hvac',this)">&#10052; HVAC</button>
+  <button class="tab" style="--tc:#f97316" onclick="showSection('civil',this)">&#127959; Civil/Structural</button>
+  <button class="tab" style="--tc:#00d4ff" onclick="showSection('plc',this)">&#128187; PLC/Control</button>
+  <button class="tab" style="--tc:#a78bfa" onclick="showSection('math',this)">&#128220; Mathematics</button>
+</div>
+
+<div class="content">
+
+<!-- ELECTRICAL -->
+<div class="section active" id="sec-electrical">
+  <div class="section-title" style="border-color:#f59e0b;color:#f59e0b">&#9889; Electrical Engineering Formulas</div>
+  <div class="formula-grid">
+
+    <div class="formula-card" style="border-color:#f59e0b">
+      <div class="f-name" style="color:#f59e0b">Ohm's Law</div>
+      <div class="f-eq">V = I × R</div>
+      <div class="f-desc">Voltage equals current multiplied by resistance. The foundation of all circuit analysis.</div>
+      <div class="f-vars">V = Voltage (V) &nbsp;|&nbsp; I = Current (A) &nbsp;|&nbsp; R = Resistance (Ω)</div>
+      <span class="f-unit">DC &amp; AC circuits</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#f59e0b">
+      <div class="f-name" style="color:#f59e0b">Electrical Power</div>
+      <div class="f-eq">P = V × I = I²R = V²/R</div>
+      <div class="f-desc">Power in watts. Three equivalent forms depending on known quantities.</div>
+      <div class="f-vars">P = Power (W) &nbsp;|&nbsp; V = Voltage (V) &nbsp;|&nbsp; I = Current (A)</div>
+      <span class="f-unit">DC circuits</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#f59e0b">
+      <div class="f-name" style="color:#f59e0b">3-Phase Active Power</div>
+      <div class="f-eq">P = √3 × VL × IL × cos φ</div>
+      <div class="f-desc">Real power consumed in a balanced 3-phase system. Used for motor and load sizing.</div>
+      <div class="f-vars">VL = Line voltage (V) &nbsp;|&nbsp; IL = Line current (A) &nbsp;|&nbsp; cos φ = power factor (0–1)</div>
+      <span class="f-unit">3-phase AC</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#f59e0b">
+      <div class="f-name" style="color:#f59e0b">3-Phase Apparent Power</div>
+      <div class="f-eq">S = √3 × VL × IL</div>
+      <div class="f-desc">Apparent power (VA) — what the supply must provide including reactive power.</div>
+      <div class="f-vars">S = Apparent power (VA or kVA)</div>
+      <span class="f-unit">3-phase AC</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#f59e0b">
+      <div class="f-name" style="color:#f59e0b">Power Factor</div>
+      <div class="f-eq">PF = P / S = cos φ</div>
+      <div class="f-desc">Ratio of real to apparent power. PF=1 is ideal. Low PF increases current and losses.</div>
+      <div class="f-vars">P = Real power (W) &nbsp;|&nbsp; S = Apparent power (VA)</div>
+      <span class="f-unit">Dimensionless (0–1)</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#f59e0b">
+      <div class="f-name" style="color:#f59e0b">Capacitive Reactance</div>
+      <div class="f-eq">Xc = 1 / (2π × f × C)</div>
+      <div class="f-desc">Impedance of a capacitor at frequency f. Decreases as frequency increases.</div>
+      <div class="f-vars">f = Frequency (Hz) &nbsp;|&nbsp; C = Capacitance (F)</div>
+      <span class="f-unit">Ohms (Ω)</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#f59e0b">
+      <div class="f-name" style="color:#f59e0b">Inductive Reactance</div>
+      <div class="f-eq">XL = 2π × f × L</div>
+      <div class="f-desc">Impedance of an inductor at frequency f. Increases as frequency increases.</div>
+      <div class="f-vars">L = Inductance (H) &nbsp;|&nbsp; f = Frequency (Hz)</div>
+      <span class="f-unit">Ohms (Ω)</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#f59e0b">
+      <div class="f-name" style="color:#f59e0b">Cable Voltage Drop</div>
+      <div class="f-eq">ΔV = (2 × L × I × ρ) / A</div>
+      <div class="f-desc">Voltage drop in a single-phase cable. Limit: 3% for final circuits, 5% overall.</div>
+      <div class="f-vars">L = Cable length (m) &nbsp;|&nbsp; I = Current (A) &nbsp;|&nbsp; ρ = 0.0172 (Cu) &nbsp;|&nbsp; A = Cross-section (mm²)</div>
+      <span class="f-unit">Volts (V)</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#f59e0b">
+      <div class="f-name" style="color:#f59e0b">Transformer Turns Ratio</div>
+      <div class="f-eq">N₁/N₂ = V₁/V₂ = I₂/I₁</div>
+      <div class="f-desc">Relationship between primary and secondary voltages, currents, and turns in a transformer.</div>
+      <div class="f-vars">N = Turns &nbsp;|&nbsp; V = Voltage &nbsp;|&nbsp; I = Current (subscripts 1=primary, 2=secondary)</div>
+      <span class="f-unit">AC transformers</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#f59e0b">
+      <div class="f-name" style="color:#f59e0b">Short Circuit Current (3-phase)</div>
+      <div class="f-eq">Isc = V_LL / (√3 × Ztotal)</div>
+      <div class="f-desc">Fault current at a bus. Used to select circuit breaker interrupting ratings.</div>
+      <div class="f-vars">V_LL = Line-to-line voltage &nbsp;|&nbsp; Z = Total impedance of source + cables (Ω)</div>
+      <span class="f-unit">Amperes (A)</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#f59e0b">
+      <div class="f-name" style="color:#f59e0b">Motor Full Load Current (3φ)</div>
+      <div class="f-eq">I_FLC = P / (√3 × V × η × PF)</div>
+      <div class="f-desc">Full load current of a 3-phase motor. Used for cable sizing and protective device selection.</div>
+      <div class="f-vars">P = Rated power (W) &nbsp;|&nbsp; η = Motor efficiency &nbsp;|&nbsp; PF = Power factor</div>
+      <span class="f-unit">Amperes (A)</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#f59e0b">
+      <div class="f-name" style="color:#f59e0b">Energy Consumption</div>
+      <div class="f-eq">E = P × t / 1000</div>
+      <div class="f-desc">Electrical energy consumed. Multiply by tariff rate to get cost.</div>
+      <div class="f-vars">P = Power (W) &nbsp;|&nbsp; t = Time (hours) &nbsp;|&nbsp; E = Energy (kWh)</div>
+      <span class="f-unit">kWh</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- MECHANICAL -->
+<div class="section" id="sec-mechanical">
+  <div class="section-title" style="border-color:#22c55e;color:#22c55e">&#9881; Mechanical Engineering Formulas</div>
+  <div class="formula-grid">
+
+    <div class="formula-card" style="border-color:#22c55e">
+      <div class="f-name" style="color:#22c55e">Force &amp; Newton's 2nd Law</div>
+      <div class="f-eq">F = m × a</div>
+      <div class="f-desc">Force equals mass times acceleration. Foundation of dynamics.</div>
+      <div class="f-vars">F = Force (N) &nbsp;|&nbsp; m = Mass (kg) &nbsp;|&nbsp; a = Acceleration (m/s²)</div>
+      <span class="f-unit">Newtons (N)</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#22c55e">
+      <div class="f-name" style="color:#22c55e">Mechanical Power</div>
+      <div class="f-eq">P = F × v = T × ω</div>
+      <div class="f-desc">Power from force and velocity, or torque and angular velocity.</div>
+      <div class="f-vars">T = Torque (Nm) &nbsp;|&nbsp; ω = Angular velocity (rad/s) &nbsp;|&nbsp; v = velocity (m/s)</div>
+      <span class="f-unit">Watts (W)</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#22c55e">
+      <div class="f-name" style="color:#22c55e">Shaft Torque from Motor</div>
+      <div class="f-eq">T = (P × 9550) / n</div>
+      <div class="f-desc">Torque at shaft for a motor of power P running at speed n.</div>
+      <div class="f-vars">P = Power (kW) &nbsp;|&nbsp; n = Speed (RPM) &nbsp;|&nbsp; T = Torque (Nm)</div>
+      <span class="f-unit">Newton-metres (Nm)</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#22c55e">
+      <div class="f-name" style="color:#22c55e">Stress (Direct)</div>
+      <div class="f-eq">σ = F / A</div>
+      <div class="f-desc">Normal stress in a member under axial load. Must be below yield strength.</div>
+      <div class="f-vars">σ = Stress (Pa) &nbsp;|&nbsp; F = Force (N) &nbsp;|&nbsp; A = Cross-sectional area (m²)</div>
+      <span class="f-unit">Pascals (Pa) or N/mm²</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#22c55e">
+      <div class="f-name" style="color:#22c55e">Strain &amp; Young's Modulus</div>
+      <div class="f-eq">E = σ / ε &nbsp;&nbsp; ε = ΔL / L</div>
+      <div class="f-desc">Stiffness ratio of stress to strain. Steel: E=200 GPa. Aluminium: E=70 GPa.</div>
+      <div class="f-vars">ε = Strain (dimensionless) &nbsp;|&nbsp; ΔL = elongation &nbsp;|&nbsp; L = original length</div>
+      <span class="f-unit">GPa or N/mm²</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#22c55e">
+      <div class="f-name" style="color:#22c55e">Fluid Flow Rate</div>
+      <div class="f-eq">Q = A × v</div>
+      <div class="f-desc">Volume flow rate equals cross-sectional area times fluid velocity.</div>
+      <div class="f-vars">Q = Flow (m³/s) &nbsp;|&nbsp; A = Area (m²) &nbsp;|&nbsp; v = Velocity (m/s)</div>
+      <span class="f-unit">m³/s or L/s</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#22c55e">
+      <div class="f-name" style="color:#22c55e">Bernoulli Equation</div>
+      <div class="f-eq">P + ½ρv² + ρgh = constant</div>
+      <div class="f-desc">Energy conservation in fluid flow. Used for pump sizing and pipe design.</div>
+      <div class="f-vars">P = Pressure (Pa) &nbsp;|&nbsp; ρ = Fluid density (kg/m³) &nbsp;|&nbsp; h = Height (m)</div>
+      <span class="f-unit">Pa (pressure)</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#22c55e">
+      <div class="f-name" style="color:#22c55e">Heat Transfer (Conduction)</div>
+      <div class="f-eq">Q = k × A × ΔT / d</div>
+      <div class="f-desc">Heat conducted through a material of thickness d.</div>
+      <div class="f-vars">k = Thermal conductivity (W/mK) &nbsp;|&nbsp; A = Area (m²) &nbsp;|&nbsp; d = Thickness (m)</div>
+      <span class="f-unit">Watts (W)</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#22c55e">
+      <div class="f-name" style="color:#22c55e">Pump Power</div>
+      <div class="f-eq">P = (ρ × g × Q × H) / η</div>
+      <div class="f-desc">Shaft power required by a pump to deliver flow Q against head H.</div>
+      <div class="f-vars">ρ = 1000 kg/m³ (water) &nbsp;|&nbsp; g = 9.81 m/s² &nbsp;|&nbsp; H = Head (m) &nbsp;|&nbsp; η = efficiency</div>
+      <span class="f-unit">Watts (W)</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#22c55e">
+      <div class="f-name" style="color:#22c55e">Factor of Safety</div>
+      <div class="f-eq">FoS = Ultimate strength / Working load</div>
+      <div class="f-desc">Minimum safe ratio. Structural steel: FoS ≥ 1.67. Lifting equipment: FoS ≥ 4.0.</div>
+      <div class="f-vars">Ultimate strength from material datasheets &nbsp;|&nbsp; Working load = design load</div>
+      <span class="f-unit">Dimensionless (≥1.5)</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- HVAC -->
+<div class="section" id="sec-hvac">
+  <div class="section-title" style="border-color:#06b6d4;color:#06b6d4">&#10052; HVAC &amp; Building Services Formulas</div>
+  <div class="formula-grid">
+
+    <div class="formula-card" style="border-color:#06b6d4">
+      <div class="f-name" style="color:#06b6d4">Sensible Heat Formula</div>
+      <div class="f-eq">Q = ṁ × Cp × ΔT</div>
+      <div class="f-desc">Heat to change temperature of air (no phase change). Used for AHU sizing.</div>
+      <div class="f-vars">ṁ = Mass flow rate (kg/s) &nbsp;|&nbsp; Cp = 1,005 J/kgK (air) &nbsp;|&nbsp; ΔT = temp rise (°C)</div>
+      <span class="f-unit">Watts (W)</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#06b6d4">
+      <div class="f-name" style="color:#06b6d4">Latent Heat (Dehumidification)</div>
+      <div class="f-eq">Q_lat = ṁ × hfg × Δω</div>
+      <div class="f-desc">Cooling energy to remove moisture from air.</div>
+      <div class="f-vars">hfg ≈ 2,501 kJ/kg &nbsp;|&nbsp; Δω = humidity ratio difference (kg/kg dry air)</div>
+      <span class="f-unit">Watts (W)</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#06b6d4">
+      <div class="f-name" style="color:#06b6d4">Air Flow from Cooling Load</div>
+      <div class="f-eq">Q̇ = Q_sensible / (1.2 × ΔT × Cp)</div>
+      <div class="f-desc">Volume flow rate of supply air needed. ΔT = supply-to-room temp difference.</div>
+      <div class="f-vars">Supply air temp typically 12–14°C &nbsp;|&nbsp; Room temp 24°C → ΔT ≈ 10°C</div>
+      <span class="f-unit">m³/s or L/s</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#06b6d4">
+      <div class="f-name" style="color:#06b6d4">COP (Coefficient of Performance)</div>
+      <div class="f-eq">COP = Q_useful / W_input</div>
+      <div class="f-desc">Efficiency of cooling or heating. Modern chillers: COP 5–8. Heat pumps: COP 3–5.</div>
+      <div class="f-vars">Q_useful = Cooling output (W) &nbsp;|&nbsp; W_input = Compressor power (W)</div>
+      <span class="f-unit">Dimensionless (&gt;1)</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#06b6d4">
+      <div class="f-name" style="color:#06b6d4">EER to COP Conversion</div>
+      <div class="f-eq">COP = EER / 3.412</div>
+      <div class="f-desc">Convert Energy Efficiency Ratio (BTU/Wh) to COP. SEER × 0.875 ≈ EER.</div>
+      <div class="f-vars">EER = BTU/Wh &nbsp;|&nbsp; SEER = Seasonal EER (BTU/Wh)</div>
+      <span class="f-unit">Dimensionless</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#06b6d4">
+      <div class="f-name" style="color:#06b6d4">U-value (Overall Heat Transfer)</div>
+      <div class="f-eq">U = 1 / (Rsi + ΣR + Rso)</div>
+      <div class="f-desc">Overall thermal transmittance. Lower U = better insulation. Wall target: U &lt; 0.3 W/m²K.</div>
+      <div class="f-vars">Rsi = inside surface resistance (0.13) &nbsp;|&nbsp; R = layer resistance d/k &nbsp;|&nbsp; Rso = outside (0.04)</div>
+      <span class="f-unit">W/m²K</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#06b6d4">
+      <div class="f-name" style="color:#06b6d4">Duct Pressure Drop</div>
+      <div class="f-eq">ΔP = f × (L/D) × (ρv²/2)</div>
+      <div class="f-desc">Darcy-Weisbach equation for duct friction loss. Typical: 1–1.5 Pa/m.</div>
+      <div class="f-vars">f = Friction factor &nbsp;|&nbsp; L = Length (m) &nbsp;|&nbsp; D = Diameter (m) &nbsp;|&nbsp; v = velocity (m/s)</div>
+      <span class="f-unit">Pascals (Pa)</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#06b6d4">
+      <div class="f-name" style="color:#06b6d4">Refrigerant Mass Flow Rate</div>
+      <div class="f-eq">ṁ = Q_evap / (h1 - h4)</div>
+      <div class="f-desc">Refrigerant flow needed for a given evaporator capacity.</div>
+      <div class="f-vars">h1 = Enthalpy at evaporator outlet &nbsp;|&nbsp; h4 = Enthalpy at evaporator inlet (kJ/kg)</div>
+      <span class="f-unit">kg/s</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- CIVIL -->
+<div class="section" id="sec-civil">
+  <div class="section-title" style="border-color:#f97316;color:#f97316">&#127959; Civil &amp; Structural Engineering Formulas</div>
+  <div class="formula-grid">
+
+    <div class="formula-card" style="border-color:#f97316">
+      <div class="f-name" style="color:#f97316">Bending Stress</div>
+      <div class="f-eq">σ = M × y / I</div>
+      <div class="f-desc">Maximum stress in a beam under bending moment M.</div>
+      <div class="f-vars">M = Bending moment (Nm) &nbsp;|&nbsp; y = Distance from neutral axis (m) &nbsp;|&nbsp; I = Second moment of area (m⁴)</div>
+      <span class="f-unit">Pa (N/m²)</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#f97316">
+      <div class="f-name" style="color:#f97316">Simply Supported Beam Deflection</div>
+      <div class="f-eq">δ_max = 5 × w × L⁴ / (384 × E × I)</div>
+      <div class="f-desc">Maximum midspan deflection under UDL. Limit: L/360 for live load.</div>
+      <div class="f-vars">w = UDL (N/m) &nbsp;|&nbsp; L = Span (m) &nbsp;|&nbsp; E = Young's modulus &nbsp;|&nbsp; I = Inertia (m⁴)</div>
+      <span class="f-unit">Metres (m)</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#f97316">
+      <div class="f-name" style="color:#f97316">Column Buckling (Euler)</div>
+      <div class="f-eq">P_cr = π² × E × I / (K × L)²</div>
+      <div class="f-desc">Critical buckling load for a slender column. K = effective length factor.</div>
+      <div class="f-vars">K = 1.0 (pinned-pinned), 0.5 (fixed-fixed), 0.7 (pinned-fixed)</div>
+      <span class="f-unit">Newtons (N)</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#f97316">
+      <div class="f-name" style="color:#f97316">Concrete Mix Design (Water-Cement Ratio)</div>
+      <div class="f-eq">f'c ↑ as w/c ↓ &nbsp;&nbsp; w/c ≤ 0.45 (aggressive exposure)</div>
+      <div class="f-desc">Lower w/c ratio = stronger, more durable concrete. Target: ≤ 0.5 for structural work.</div>
+      <div class="f-vars">w/c = water mass / cement mass &nbsp;|&nbsp; f'c = compressive strength (MPa)</div>
+      <span class="f-unit">Dimensionless ratio</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#f97316">
+      <div class="f-name" style="color:#f97316">Settlement (Terzaghi)</div>
+      <div class="f-eq">S = Cc/(1+e₀) × H × log(σ'f/σ'i)</div>
+      <div class="f-desc">Consolidation settlement of a clay layer under increased effective stress.</div>
+      <div class="f-vars">Cc = Compression index &nbsp;|&nbsp; e₀ = initial void ratio &nbsp;|&nbsp; H = layer thickness &nbsp;|&nbsp; σ = effective stress</div>
+      <span class="f-unit">Metres (m)</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#f97316">
+      <div class="f-name" style="color:#f97316">Manning's Flow Equation (Open Channel)</div>
+      <div class="f-eq">Q = (1/n) × A × R^(2/3) × S^(1/2)</div>
+      <div class="f-desc">Discharge in open channels. n = Manning roughness (0.013 for concrete).</div>
+      <div class="f-vars">A = Flow area (m²) &nbsp;|&nbsp; R = Hydraulic radius (m) &nbsp;|&nbsp; S = Channel slope (m/m)</div>
+      <span class="f-unit">m³/s</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- PLC -->
+<div class="section" id="sec-plc">
+  <div class="section-title" style="border-color:#00d4ff;color:#00d4ff">&#128187; PLC &amp; Control Systems Formulas</div>
+  <div class="formula-grid">
+
+    <div class="formula-card" style="border-color:#00d4ff">
+      <div class="f-name" style="color:#00d4ff">PID Control Output</div>
+      <div class="f-eq">u(t) = Kp×e + Ki×∫e dt + Kd×de/dt</div>
+      <div class="f-desc">PID controller output. e = error = Setpoint − Process Variable.</div>
+      <div class="f-vars">Kp = Proportional gain &nbsp;|&nbsp; Ki = Integral gain &nbsp;|&nbsp; Kd = Derivative gain</div>
+      <span class="f-unit">Output (0–100%)</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#00d4ff">
+      <div class="f-name" style="color:#00d4ff">Analog Scaling (4–20mA)</div>
+      <div class="f-eq">EU = (Raw - 0) / 27648 × (EU_max - EU_min) + EU_min</div>
+      <div class="f-desc">Convert S7 raw AI value (0–27648) to engineering units. 4mA=0, 20mA=27648.</div>
+      <div class="f-vars">Raw = PLC register value &nbsp;|&nbsp; EU = Engineering unit (e.g. bar, °C)</div>
+      <span class="f-unit">Engineering units</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#00d4ff">
+      <div class="f-name" style="color:#00d4ff">Ziegler-Nichols PID Tuning</div>
+      <div class="f-eq">Kp = 0.6×Ku &nbsp;|&nbsp; Ti = Tu/2 &nbsp;|&nbsp; Td = Tu/8</div>
+      <div class="f-desc">Starting point for PID tuning using ultimate gain Ku and oscillation period Tu.</div>
+      <div class="f-vars">Ku = Gain at sustained oscillation &nbsp;|&nbsp; Tu = Oscillation period (s) at Ku</div>
+      <span class="f-unit">Dimensionless / seconds</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#00d4ff">
+      <div class="f-name" style="color:#00d4ff">Scan Cycle Time</div>
+      <div class="f-eq">T_scan = T_input + T_program + T_output + T_comm</div>
+      <div class="f-desc">Total PLC scan time. Must be ≪ process time constant for stable control.</div>
+      <div class="f-vars">T_input ≈ 0.1–2ms &nbsp;|&nbsp; T_program = logic exec &nbsp;|&nbsp; T_output ≈ 0.1–2ms</div>
+      <span class="f-unit">Milliseconds (ms)</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#00d4ff">
+      <div class="f-name" style="color:#00d4ff">Motor Starting Current</div>
+      <div class="f-eq">I_start ≈ 6–8 × I_FLC (DOL) &nbsp;|&nbsp; 2–3 × I_FLC (Star-Delta)</div>
+      <div class="f-desc">Inrush current on motor start. Star-delta reduces starting current to 1/3 of DOL.</div>
+      <div class="f-vars">I_FLC = Full load current &nbsp;|&nbsp; DOL = Direct Online &nbsp;|&nbsp; VFD = soft start, adjustable</div>
+      <span class="f-unit">Amperes (A)</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#00d4ff">
+      <div class="f-name" style="color:#00d4ff">VFD Speed Control</div>
+      <div class="f-eq">n = (120 × f) / p &nbsp;&nbsp; f_out = n_desired × p / 120</div>
+      <div class="f-desc">Motor speed from frequency. VFD varies f to control speed. p = number of poles.</div>
+      <div class="f-vars">n = Speed (RPM) &nbsp;|&nbsp; f = Frequency (Hz) &nbsp;|&nbsp; p = Number of poles (2, 4, 6, 8)</div>
+      <span class="f-unit">RPM</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- MATH -->
+<div class="section" id="sec-math">
+  <div class="section-title" style="border-color:#a78bfa;color:#a78bfa">&#128220; Mathematics for Engineers</div>
+  <div class="formula-grid">
+
+    <div class="formula-card" style="border-color:#a78bfa">
+      <div class="f-name" style="color:#a78bfa">Quadratic Formula</div>
+      <div class="f-eq">x = (-b ± √(b²-4ac)) / 2a</div>
+      <div class="f-desc">Roots of ax² + bx + c = 0. Discriminant b²-4ac &gt; 0: two real roots; = 0: one root; &lt; 0: complex.</div>
+      <div class="f-vars">a, b, c = coefficients of the quadratic equation</div>
+      <span class="f-unit">Real or complex</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#a78bfa">
+      <div class="f-name" style="color:#a78bfa">Pythagoras Theorem</div>
+      <div class="f-eq">c² = a² + b² &nbsp;&nbsp; c = √(a² + b²)</div>
+      <div class="f-desc">Hypotenuse of a right triangle. Used constantly in vector resolution, impedance triangles.</div>
+      <div class="f-vars">a, b = legs of right triangle &nbsp;|&nbsp; c = hypotenuse</div>
+      <span class="f-unit">Same as input units</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#a78bfa">
+      <div class="f-name" style="color:#a78bfa">Trigonometry (SOHCAHTOA)</div>
+      <div class="f-eq">sin θ = O/H &nbsp; cos θ = A/H &nbsp; tan θ = O/A</div>
+      <div class="f-desc">Opposite (O), Adjacent (A), Hypotenuse (H) in a right triangle angle θ.</div>
+      <div class="f-vars">sin²θ + cos²θ = 1 &nbsp;|&nbsp; tan θ = sin θ / cos θ</div>
+      <span class="f-unit">Dimensionless (ratio)</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#a78bfa">
+      <div class="f-name" style="color:#a78bfa">Laws of Logarithms</div>
+      <div class="f-eq">log(ab) = log a + log b &nbsp;|&nbsp; log(a/b) = log a - log b &nbsp;|&nbsp; log(aⁿ) = n log a</div>
+      <div class="f-desc">Used in decibel calculations, growth rates, and filter design.</div>
+      <div class="f-vars">log = log base 10 &nbsp;|&nbsp; ln = natural log (base e = 2.718)</div>
+      <span class="f-unit">Dimensionless</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#a78bfa">
+      <div class="f-name" style="color:#a78bfa">Circle Area &amp; Circumference</div>
+      <div class="f-eq">A = π r² &nbsp;&nbsp; C = 2πr = πd</div>
+      <div class="f-desc">Area and perimeter of a circle. Used for pipe flow area, cable cross-sections.</div>
+      <div class="f-vars">r = radius &nbsp;|&nbsp; d = diameter &nbsp;|&nbsp; π ≈ 3.14159</div>
+      <span class="f-unit">Area: m² &nbsp;|&nbsp; Circumference: m</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#a78bfa">
+      <div class="f-name" style="color:#a78bfa">Unit Conversions (Key)</div>
+      <div class="f-eq">1 kW = 1.341 HP &nbsp;|&nbsp; 1 bar = 100 kPa &nbsp;|&nbsp; 1 TR = 3.517 kW &nbsp;|&nbsp; 1 kWh = 3.6 MJ</div>
+      <div class="f-desc">Essential unit conversions in daily engineering practice.</div>
+      <div class="f-vars">1 BTU = 0.293 Wh &nbsp;|&nbsp; 1 psi = 6.895 kPa &nbsp;|&nbsp; 1 lbf = 4.448 N</div>
+      <span class="f-unit">Various</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#a78bfa">
+      <div class="f-name" style="color:#a78bfa">Statistics — Mean &amp; Standard Deviation</div>
+      <div class="f-eq">x̄ = Σx/n &nbsp;&nbsp; σ = √(Σ(x-x̄)²/n)</div>
+      <div class="f-desc">Mean (average) and standard deviation. Used in quality control and data analysis.</div>
+      <div class="f-vars">x = data values &nbsp;|&nbsp; n = number of data points &nbsp;|&nbsp; σ = population standard deviation</div>
+      <span class="f-unit">Same as data units</span>
+    </div>
+
+    <div class="formula-card" style="border-color:#a78bfa">
+      <div class="f-name" style="color:#a78bfa">Derivative (Instantaneous Rate)</div>
+      <div class="f-eq">d(xⁿ)/dx = n×xⁿ⁻¹ &nbsp;&nbsp; d(sin x)/dx = cos x</div>
+      <div class="f-desc">Used in control systems (derivative action), stress analysis, and optimization.</div>
+      <div class="f-vars">d(eˣ)/dx = eˣ &nbsp;|&nbsp; d(ln x)/dx = 1/x &nbsp;|&nbsp; d(cos x)/dx = -sin x</div>
+      <span class="f-unit">Rate of change</span>
+    </div>
+
+  </div>
+</div>
+
+</div><!-- .content -->
+
+<script>
+function showSection(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('sec-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+
+function searchFormulas(q) {
+  const term = q.toLowerCase().trim();
+  document.querySelectorAll('.formula-card').forEach(card => {
+    const text = card.textContent.toLowerCase();
+    card.style.display = (!term || text.includes(term)) ? '' : 'none';
+  });
+  if (term) {
+    // Show all sections so search results appear
+    document.querySelectorAll('.section').forEach(s => s.classList.add('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  } else {
+    // Restore default active
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.getElementById('sec-electrical').classList.add('active');
+    document.querySelector('.tab').classList.add('active');
+  }
+}
+</script>
+</body>
+</html>

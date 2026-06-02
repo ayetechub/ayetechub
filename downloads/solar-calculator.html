@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Solar PV Sizing Calculator — AYE Tech Hub</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#020817;color:#e2e8f0;font-family:'Segoe UI',Arial,sans-serif;min-height:100vh}
+#topbar{background:#0a1628;border-bottom:2px solid #fbbf24;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.brand{color:#fbbf24;font-weight:900;font-size:1.1rem}.sub{color:#94a3b8;font-size:.8rem}
+.wrap{max-width:1100px;margin:0 auto;padding:24px 20px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:700px){.wrap{grid-template-columns:1fr}}
+.card{background:#0d1f3c;border:1px solid #1e293b;border-radius:12px;padding:22px;margin-bottom:0}
+.card h2{font-size:.9rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:#fbbf24;margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid #1e293b}
+.field{margin-bottom:13px}
+.field label{display:block;font-size:.8rem;color:#94a3b8;margin-bottom:5px;font-weight:600}
+.field input,.field select{width:100%;background:#020817;border:1px solid #334155;color:#e2e8f0;padding:9px 12px;border-radius:6px;font-size:.9rem;outline:none;transition:border .2s}
+.field input:focus,.field select:focus{border-color:#fbbf24}
+.field .unit{font-size:.72rem;color:#475569;margin-top:3px}
+.load-item{display:grid;grid-template-columns:1fr 80px 60px 80px 60px;gap:6px;align-items:center;font-size:.8rem;margin-bottom:8px;background:#020817;padding:8px 10px;border-radius:6px;border:1px solid #1e293b}
+.load-item input{background:#0d1f3c;border:1px solid #334155;color:#e2e8f0;padding:5px 8px;border-radius:4px;font-size:.8rem;width:100%}
+.load-item .lbl{color:#94a3b8;font-size:.78rem;font-weight:600}
+.add-btn{background:rgba(251,191,36,.1);border:1px solid #fbbf24;color:#fbbf24;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:.8rem;font-weight:700;width:100%;margin-top:6px;transition:.2s}
+.add-btn:hover{background:rgba(251,191,36,.2)}
+.calc-btn{width:100%;background:linear-gradient(135deg,#d97706,#fbbf24);color:#020817;border:none;padding:12px;border-radius:8px;font-weight:900;font-size:1rem;cursor:pointer;margin-top:8px;letter-spacing:.5px;transition:.2s}
+.calc-btn:hover{filter:brightness(1.1)}
+.result-box{background:#020817;border:1px solid #1e293b;border-radius:8px;padding:16px;margin-top:14px}
+.r-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #0a1628;font-size:.87rem}
+.r-row:last-child{border-bottom:none}
+.r-lbl{color:#94a3b8}
+.r-val{font-weight:700;font-family:'Courier New',monospace;color:#fbbf24}
+.r-total{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.2);border-radius:6px;padding:12px 16px;margin-top:12px;display:flex;justify-content:space-between;align-items:center}
+.r-total .label{color:#e2e8f0;font-weight:700}
+.r-total .value{font-size:1.3rem;font-weight:900;color:#fbbf24;font-family:'Courier New',monospace}
+.cost-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.cost-card{background:#020817;border:1px solid #1e293b;border-radius:8px;padding:12px;text-align:center}
+.cost-card .cv{font-size:1.1rem;font-weight:900;color:#22c55e;font-family:'Courier New',monospace}
+.cost-card .cl{font-size:.72rem;color:#64748b;margin-top:3px}
+.note{font-size:.76rem;color:#475569;line-height:1.7;padding:10px;background:#020817;border-radius:6px;border:1px solid #0f172a;margin-top:10px}
+</style>
+</head>
+<body>
+<div id="topbar">
+  <div><div class="brand">&#9728; Solar PV Sizing Calculator</div><div class="sub">AYE Tech Hub &mdash; Off-grid &amp; hybrid system sizing per IEC 62548</div></div>
+  <a href="../downloads.html" style="color:#64748b;font-size:.8rem;text-decoration:none">&#8592; Back to Downloads</a>
+</div>
+
+<div class="wrap">
+  <div>
+    <div class="card">
+      <h2>&#128161; Electrical Load Schedule</h2>
+      <div style="display:grid;grid-template-columns:1fr 80px 60px 80px;gap:6px;font-size:.72rem;color:#475569;font-weight:700;margin-bottom:6px;padding:0 10px">
+        <span>Appliance</span><span>Power (W)</span><span>Qty</span><span>Hours/day</span>
+      </div>
+      <div id="load-list"></div>
+      <button class="add-btn" onclick="addLoad()">+ Add Appliance</button>
+    </div>
+
+    <div class="card" style="margin-top:20px">
+      <h2>&#127757; Site &amp; System Parameters</h2>
+      <div class="field">
+        <label>Location / Climate</label>
+        <select id="location">
+          <option value="6.0">Tigray, Ethiopia (PSH: 6.0 h/day)</option>
+          <option value="5.5">Addis Ababa, Ethiopia (PSH: 5.5 h/day)</option>
+          <option value="5.0">Kampala, Uganda (PSH: 5.0 h/day)</option>
+          <option value="5.5">Nairobi, Kenya (PSH: 5.5 h/day)</option>
+          <option value="5.8">Lagos, Nigeria (PSH: 5.8 h/day)</option>
+          <option value="6.2">Dubai, UAE (PSH: 6.2 h/day)</option>
+          <option value="4.0">London, UK (PSH: 4.0 h/day)</option>
+          <option value="custom">Custom (enter below)</option>
+        </select>
+      </div>
+      <div class="field"><label>Custom Peak Sun Hours (h/day)</label><input type="number" id="psh" value="6.0" min="2" max="8" step="0.1"/><div class="unit">Override if selecting Custom above</div></div>
+      <div class="field"><label>Autonomy Days (days of battery backup)</label><input type="number" id="autonomy" value="2" min="1" max="7"/><div class="unit">Recommended: 2–3 days for critical loads</div></div>
+      <div class="field">
+        <label>Battery Technology</label>
+        <select id="bat-type">
+          <option value="0.5">Lead Acid — DoD 50%, Efficiency 80%</option>
+          <option value="0.8" selected>Lithium LiFePO4 — DoD 80%, Efficiency 95%</option>
+          <option value="0.6">AGM — DoD 60%, Efficiency 85%</option>
+        </select>
+      </div>
+      <div class="field"><label>Panel Watt-peak per panel (Wp)</label><input type="number" id="panel-wp" value="400" min="100" max="600" step="10"/></div>
+      <div class="field"><label>Panel Efficiency Derating (%)</label><input type="number" id="derating" value="80" min="60" max="95"/><div class="unit">Accounts for temperature, wiring losses, soiling (typically 75–85%)</div></div>
+      <div class="field">
+        <label>System Voltage (V DC)</label>
+        <select id="sys-v">
+          <option value="12">12V (small household &lt;1kWp)</option>
+          <option value="24">24V (medium 1–3kWp)</option>
+          <option value="48" selected>48V (recommended for 3kWp+)</option>
+        </select>
+      </div>
+      <div class="field"><label>Panel Cost (USD per panel)</label><input type="number" id="panel-cost" value="120" min="50"/></div>
+      <div class="field"><label>Battery Cost (USD per kWh)</label><input type="number" id="bat-cost" value="200" min="50"/></div>
+      <div class="field"><label>Inverter Cost (USD)</label><input type="number" id="inv-cost" value="400" min="100"/></div>
+    </div>
+  </div>
+
+  <div>
+    <div class="card">
+      <h2>&#128200; Sizing Results</h2>
+      <button class="calc-btn" onclick="calculate()">&#9881; Calculate System Size</button>
+      <div id="results" style="display:none">
+        <div class="result-box" style="margin-top:16px">
+          <div style="font-weight:800;color:#fbbf24;font-size:.85rem;margin-bottom:8px">&#9889; ENERGY ANALYSIS</div>
+          <div class="r-row"><span class="r-lbl">Total Daily Load</span><span class="r-val" id="v-load">—</span></div>
+          <div class="r-row"><span class="r-lbl">Load + 20% safety margin</span><span class="r-val" id="v-load-safe">—</span></div>
+          <div class="r-row"><span class="r-lbl">Peak Sun Hours (PSH)</span><span class="r-val" id="v-psh">—</span></div>
+        </div>
+
+        <div class="r-total" style="margin-top:12px">
+          <span class="label">&#9728; Solar Array Size Required</span>
+          <span class="value" id="v-panels">—</span>
+        </div>
+        <div class="r-total" style="margin-top:8px;border-color:rgba(34,197,94,.2);background:rgba(34,197,94,.05)">
+          <span class="label">&#128267; Battery Bank Required</span>
+          <span class="value" id="v-battery" style="color:#22c55e">—</span>
+        </div>
+        <div class="r-total" style="margin-top:8px;border-color:rgba(167,139,250,.2);background:rgba(167,139,250,.05)">
+          <span class="label">&#9889; Inverter/Charger Size</span>
+          <span class="value" id="v-inverter" style="color:#a78bfa">—</span>
+        </div>
+
+        <div class="result-box" style="margin-top:14px">
+          <div style="font-weight:800;color:#22c55e;font-size:.85rem;margin-bottom:8px">&#128295; SYSTEM SPECIFICATION</div>
+          <div class="r-row"><span class="r-lbl">Number of panels (×<span id="sp-wp">—</span>Wp)</span><span class="r-val" id="v-npanels">—</span></div>
+          <div class="r-row"><span class="r-lbl">Panels in series × parallel</span><span class="r-val" id="v-string">—</span></div>
+          <div class="r-row"><span class="r-lbl">MPPT charge controller</span><span class="r-val" id="v-mppt">—</span></div>
+          <div class="r-row"><span class="r-lbl">Battery capacity (kWh)</span><span class="r-val" id="v-bat-kwh">—</span></div>
+          <div class="r-row"><span class="r-lbl">Battery bank (V × Ah)</span><span class="r-val" id="v-bat-spec">—</span></div>
+          <div class="r-row"><span class="r-lbl">Expected daily generation</span><span class="r-val" id="v-gen">—</span></div>
+        </div>
+
+        <div style="font-weight:700;color:#e2e8f0;font-size:.85rem;margin:16px 0 8px">&#128176; Estimated System Cost (USD)</div>
+        <div class="cost-grid">
+          <div class="cost-card"><div class="cv" id="c-panels">—</div><div class="cl">Solar Panels</div></div>
+          <div class="cost-card"><div class="cv" id="c-bat">—</div><div class="cl">Battery Bank</div></div>
+          <div class="cost-card"><div class="cv" id="c-inv">—</div><div class="cl">Inverter/Charger</div></div>
+          <div class="cost-card"><div class="cv" id="c-total" style="color:#fbbf24">—</div><div class="cl">Total Estimate</div></div>
+        </div>
+        <div class="note" id="design-note"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Default load schedule
+const loads = [
+  {name:'LED Lights (×10)',  w:100, qty:1, h:6},
+  {name:'Laptop',             w:60,  qty:1, h:8},
+  {name:'Phone Charger',      w:20,  qty:2, h:4},
+  {name:'Refrigerator',       w:150, qty:1, h:24},
+  {name:'Fan',                w:60,  qty:2, h:8},
+  {name:'TV (LED)',           w:80,  qty:1, h:4},
+];
+
+function renderLoads() {
+  const el = document.getElementById('load-list');
+  el.innerHTML = loads.map((l,i) => `
+    <div class="load-item">
+      <input type="text"   value="${l.name}" onchange="loads[${i}].name=this.value"  placeholder="Appliance name"/>
+      <input type="number" value="${l.w}"    onchange="loads[${i}].w=+this.value"     min="0" style="text-align:center"/>
+      <input type="number" value="${l.qty}"  onchange="loads[${i}].qty=+this.value"   min="1" style="text-align:center"/>
+      <input type="number" value="${l.h}"    onchange="loads[${i}].h=+this.value"     min="0.1" max="24" step="0.5" style="text-align:center"/>
+      <button onclick="loads.splice(${i},1);renderLoads()" style="background:rgba(239,68,68,.15);border:1px solid #ef4444;color:#ef4444;padding:4px 8px;border-radius:4px;cursor:pointer;font-size:.8rem">✕</button>
+    </div>`).join('');
+}
+
+function addLoad() {
+  loads.push({name:'New Appliance', w:0, qty:1, h:1});
+  renderLoads();
+}
+
+function calculate() {
+  const totalWh = loads.reduce((s,l) => s + l.w * l.qty * l.h, 0);
+  const safeWh  = totalWh * 1.20; // 20% margin
+
+  const locEl = document.getElementById('location');
+  const psh   = locEl.value === 'custom' ? +document.getElementById('psh').value : +locEl.value;
+  document.getElementById('psh').value = psh;
+
+  const autonomy  = +document.getElementById('autonomy').value;
+  const batFactor = +document.getElementById('bat-type').value; // DoD efficiency combined
+  const panelWp   = +document.getElementById('panel-wp').value;
+  const derating  = +document.getElementById('derating').value / 100;
+  const sysV      = +document.getElementById('sys-v').value;
+
+  // Panel array
+  const kWpNeeded   = safeWh / (psh * 1000 * derating);
+  const nPanels     = Math.ceil(kWpNeeded * 1000 / panelWp);
+  const actualKWp   = nPanels * panelWp / 1000;
+
+  // Battery
+  const batKWh = (safeWh/1000 * autonomy) / batFactor;
+  const batAh  = Math.ceil(batKWh * 1000 / sysV);
+
+  // Inverter: size to peak load + 25% surge
+  const peakW   = loads.reduce((s,l) => s + l.w * l.qty, 0);
+  const invKW   = Math.ceil(peakW * 1.25 / 100) * 0.1; // round up to nearest 100W → kW
+  const invKW2  = Math.max(invKW, actualKWp * 1.1); // at least match array size
+
+  // MPPT
+  const panelVoc = 42; // typical for 400Wp
+  const mpptA    = Math.ceil((actualKWp * 1000 / sysV) * 1.25);
+
+  // String config
+  const vmpPanel = 36; // typical Vmp
+  const panPerStr = Math.max(1, Math.floor(48 / vmpPanel));
+  const nStrings  = Math.ceil(nPanels / panPerStr);
+
+  // Daily generation
+  const genKWh = actualKWp * psh * derating;
+
+  // Costs
+  const pc = +document.getElementById('panel-cost').value;
+  const bc = +document.getElementById('bat-cost').value;
+  const ic = +document.getElementById('inv-cost').value;
+  const costPanels = nPanels * pc;
+  const costBat    = batKWh * bc;
+  const costInv    = ic;
+  const costInstall= (costPanels + costBat + costInv) * 0.20;
+  const totalCost  = costPanels + costBat + costInv + costInstall;
+
+  // Display
+  document.getElementById('v-load').textContent      = `${(totalWh/1000).toFixed(2)} kWh/day`;
+  document.getElementById('v-load-safe').textContent = `${(safeWh/1000).toFixed(2)} kWh/day`;
+  document.getElementById('v-psh').textContent       = `${psh} h/day`;
+  document.getElementById('v-panels').textContent    = `${actualKWp.toFixed(2)} kWp`;
+  document.getElementById('v-battery').textContent   = `${batKWh.toFixed(1)} kWh`;
+  document.getElementById('v-inverter').textContent  = `${(invKW2).toFixed(1)} kW`;
+  document.getElementById('sp-wp').textContent       = panelWp;
+  document.getElementById('v-npanels').textContent   = `${nPanels} panels`;
+  document.getElementById('v-string').textContent    = `${panPerStr}S × ${nStrings}P`;
+  document.getElementById('v-mppt').textContent      = `${sysV}V / ${mpptA}A MPPT`;
+  document.getElementById('v-bat-kwh').textContent   = `${batKWh.toFixed(1)} kWh`;
+  document.getElementById('v-bat-spec').textContent  = `${sysV}V / ${batAh}Ah`;
+  document.getElementById('v-gen').textContent       = `${genKWh.toFixed(2)} kWh/day`;
+  document.getElementById('c-panels').textContent   = `$${Math.round(costPanels).toLocaleString()}`;
+  document.getElementById('c-bat').textContent      = `$${Math.round(costBat).toLocaleString()}`;
+  document.getElementById('c-inv').textContent      = `$${Math.round(costInv + costInstall).toLocaleString()}`;
+  document.getElementById('c-total').textContent    = `$${Math.round(totalCost).toLocaleString()}`;
+  document.getElementById('design-note').innerHTML  =
+    `<strong style="color:#e2e8f0">Design Summary:</strong> ${nPanels} × ${panelWp}Wp panels (${actualKWp.toFixed(2)} kWp array) + ${batKWh.toFixed(1)} kWh battery providing ${autonomy} days autonomy. Daily generation ${genKWh.toFixed(1)} kWh vs load ${(totalWh/1000).toFixed(1)} kWh. Payback vs diesel: approximately ${Math.round(totalCost / (genKWh * 365 * 0.35))} years.`;
+  document.getElementById('results').style.display = 'block';
+}
+
+renderLoads();
+calculate();
+</script>
+</body>
+</html>

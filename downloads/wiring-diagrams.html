@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Industrial Wiring Diagrams — AYE Tech Hub</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#020817;color:#e2e8f0;font-family:'Segoe UI',Arial,sans-serif;min-height:100vh}
+#topbar{background:#0a1628;border-bottom:2px solid #f97316;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;position:sticky;top:0;z-index:10}
+.brand{color:#f97316;font-weight:900;font-size:1.1rem}.sub{color:#94a3b8;font-size:.8rem}
+.sidebar{width:220px;background:#0a1628;border-right:1px solid #1e293b;padding:16px;position:fixed;top:56px;bottom:0;overflow-y:auto}
+.sidebar h3{font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:#64748b;margin-bottom:12px}
+.diag-btn{display:block;width:100%;text-align:left;background:transparent;border:1px solid #1e293b;color:#94a3b8;padding:9px 12px;border-radius:6px;cursor:pointer;font-size:.82rem;margin-bottom:6px;transition:.2s}
+.diag-btn:hover,.diag-btn.active{border-color:#f97316;color:#f97316;background:rgba(249,115,22,.08)}
+.diag-btn .d-cat{font-size:.65rem;color:#64748b;text-transform:uppercase;letter-spacing:.5px}
+.content{margin-left:220px;padding:24px;min-height:calc(100vh - 56px)}
+.diagram-area{background:#0d1f3c;border:1px solid #1e293b;border-radius:12px;padding:24px;max-width:960px}
+.diagram-header{margin-bottom:20px}
+.diagram-header h2{font-size:1.2rem;font-weight:800;color:#f97316;margin-bottom:4px}
+.diagram-header p{font-size:.85rem;color:#94a3b8;line-height:1.6}
+.diagram-legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;font-size:.75rem}
+.legend-item{display:flex;align-items:center;gap:6px;color:#94a3b8}
+.legend-swatch{width:24px;height:3px;border-radius:2px;flex-shrink:0}
+.diagram-svg{width:100%;border:1px solid #1e293b;border-radius:8px;background:#020817;display:block;margin-top:16px}
+.notes-box{background:#020817;border:1px solid #1e293b;border-radius:8px;padding:16px;margin-top:18px}
+.notes-box h4{font-size:.82rem;font-weight:800;color:#f97316;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px}
+.notes-box ul{padding-left:18px}
+.notes-box li{font-size:.82rem;color:#94a3b8;line-height:1.75;margin-bottom:4px}
+.notes-box li strong{color:#e2e8f0}
+@media(max-width:680px){.sidebar{display:none}.content{margin-left:0}}
+</style>
+</head>
+<body>
+<div id="topbar">
+  <div><div class="brand">&#9889; Industrial Wiring Diagrams</div><div class="sub">AYE Tech Hub &mdash; Motors &bull; Starters &bull; VFD &bull; PLC &bull; Control Panels</div></div>
+  <a href="../downloads.html" style="color:#64748b;font-size:.8rem;text-decoration:none">&#8592; Back to Downloads</a>
+</div>
+
+<div class="sidebar">
+  <h3>&#128443; Diagram Library</h3>
+  <button class="diag-btn active" onclick="show('dol')"><span class="d-cat">Motor Starter</span><br>DOL Direct Online Starter</button>
+  <button class="diag-btn" onclick="show('sd')"><span class="d-cat">Motor Starter</span><br>Star-Delta Starter</button>
+  <button class="diag-btn" onclick="show('vfd')"><span class="d-cat">Motor Drive</span><br>VFD Drive Wiring</button>
+  <button class="diag-btn" onclick="show('plc-io')"><span class="d-cat">PLC Wiring</span><br>PLC I/O Connections</button>
+  <button class="diag-btn" onclick="show('loto')"><span class="d-cat">Safety Circuit</span><br>LOTO &amp; E-Stop Circuit</button>
+</div>
+
+<div class="content">
+
+<!-- DOL -->
+<div id="d-dol" class="diagram-area">
+  <div class="diagram-header">
+    <h2>Direct Online (DOL) Motor Starter — Control &amp; Power Circuit</h2>
+    <p>The simplest and most common motor starting method. The main contactor connects the motor directly to the supply voltage on pressing START. A normally-closed E-STOP button and overload relay contact provide protection. The holding contact maintains power to the contactor coil after START is released.</p>
+    <div class="diagram-legend">
+      <span class="legend-item"><span class="legend-swatch" style="background:#ef4444"></span>Live / Phase (L)</span>
+      <span class="legend-item"><span class="legend-swatch" style="background:#1e90ff"></span>Neutral (N)</span>
+      <span class="legend-item"><span class="legend-swatch" style="background:#fbbf24"></span>Control circuit</span>
+      <span class="legend-item"><span class="legend-swatch" style="background:#22c55e"></span>Earth (PE)</span>
+    </div>
+  </div>
+
+  <svg class="diagram-svg" viewBox="0 0 880 480" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background zones -->
+    <rect x="10" y="10" width="420" height="460" rx="8" fill="#040d1a" stroke="#1e293b" stroke-width="1"/>
+    <rect x="450" y="10" width="420" height="460" rx="8" fill="#040d1a" stroke="#1e293b" stroke-width="1"/>
+    <text x="220" y="32" text-anchor="middle" fill="#f97316" font-size="11" font-weight="bold" font-family="Segoe UI">POWER CIRCUIT (3-Phase)</text>
+    <text x="660" y="32" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="bold" font-family="Segoe UI">CONTROL CIRCUIT (24V AC/DC)</text>
+
+    <!-- POWER CIRCUIT -->
+    <!-- 3-phase supply buses -->
+    <line x1="80" y1="50" x2="80" y2="80" stroke="#ef4444" stroke-width="4"/>
+    <line x1="160" y1="50" x2="160" y2="80" stroke="#fbbf24" stroke-width="4"/>
+    <line x1="240" y1="50" x2="240" y2="80" stroke="#94a3b8" stroke-width="4"/>
+    <text x="80" y="48" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="bold">L1</text>
+    <text x="160" y="48" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="bold">L2</text>
+    <text x="240" y="48" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="bold">L3</text>
+    <text x="160" y="68" text-anchor="middle" fill="#64748b" font-size="9">3-Phase Supply 400V/50Hz</text>
+
+    <!-- MCCB / Fuses -->
+    <rect x="55" y="80" width="50" height="30" rx="4" fill="#0d1f3c" stroke="#f97316" stroke-width="1.5"/>
+    <rect x="135" y="80" width="50" height="30" rx="4" fill="#0d1f3c" stroke="#f97316" stroke-width="1.5"/>
+    <rect x="215" y="80" width="50" height="30" rx="4" fill="#0d1f3c" stroke="#f97316" stroke-width="1.5"/>
+    <text x="80" y="99" text-anchor="middle" fill="#f97316" font-size="9" font-weight="bold">MCCB</text>
+    <text x="160" y="99" text-anchor="middle" fill="#f97316" font-size="9" font-weight="bold">MCCB</text>
+    <text x="240" y="99" text-anchor="middle" fill="#f97316" font-size="9" font-weight="bold">MCCB</text>
+    <text x="160" y="122" text-anchor="middle" fill="#64748b" font-size="9">Main Circuit Breaker</text>
+
+    <!-- Wires to contactor -->
+    <line x1="80" y1="110" x2="80" y2="160" stroke="#ef4444" stroke-width="3"/>
+    <line x1="160" y1="110" x2="160" y2="160" stroke="#fbbf24" stroke-width="3"/>
+    <line x1="240" y1="110" x2="240" y2="160" stroke="#94a3b8" stroke-width="3"/>
+
+    <!-- Main Contactor KM1 -->
+    <rect x="50" y="160" width="220" height="60" rx="6" fill="#0d1f3c" stroke="#00d4ff" stroke-width="2"/>
+    <text x="160" y="183" text-anchor="middle" fill="#00d4ff" font-size="11" font-weight="bold">CONTACTOR KM1</text>
+    <text x="160" y="200" text-anchor="middle" fill="#64748b" font-size="9">Main Power Contacts (3-pole)</text>
+    <!-- Contact symbols -->
+    <line x1="80" y1="160" x2="80" y2="175" stroke="#ef4444" stroke-width="3"/>
+    <circle cx="80" cy="185" r="4" fill="none" stroke="#ef4444" stroke-width="2"/>
+    <line x1="80" y1="195" x2="80" y2="220" stroke="#ef4444" stroke-width="3"/>
+    <line x1="160" y1="160" x2="160" y2="175" stroke="#fbbf24" stroke-width="3"/>
+    <circle cx="160" cy="185" r="4" fill="none" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="160" y1="195" x2="160" y2="220" stroke="#fbbf24" stroke-width="3"/>
+    <line x1="240" y1="160" x2="240" y2="175" stroke="#94a3b8" stroke-width="3"/>
+    <circle cx="240" cy="185" r="4" fill="none" stroke="#94a3b8" stroke-width="2"/>
+    <line x1="240" y1="195" x2="240" y2="220" stroke="#94a3b8" stroke-width="3"/>
+
+    <!-- Overload Relay -->
+    <rect x="50" y="260" width="220" height="50" rx="6" fill="#0d1f3c" stroke="#f97316" stroke-width="2"/>
+    <text x="160" y="282" text-anchor="middle" fill="#f97316" font-size="11" font-weight="bold">OVERLOAD RELAY</text>
+    <text x="160" y="298" text-anchor="middle" fill="#64748b" font-size="9">Thermal overload protection (set to I_FLC × 1.05–1.15)</text>
+    <line x1="80" y1="220" x2="80" y2="260" stroke="#ef4444" stroke-width="3"/>
+    <line x1="160" y1="220" x2="160" y2="260" stroke="#fbbf24" stroke-width="3"/>
+    <line x1="240" y1="220" x2="240" y2="260" stroke="#94a3b8" stroke-width="3"/>
+    <line x1="80" y1="310" x2="80" y2="350" stroke="#ef4444" stroke-width="3"/>
+    <line x1="160" y1="310" x2="160" y2="350" stroke="#fbbf24" stroke-width="3"/>
+    <line x1="240" y1="310" x2="240" y2="350" stroke="#94a3b8" stroke-width="3"/>
+
+    <!-- Motor -->
+    <circle cx="160" cy="400" r="45" fill="#0d1f3c" stroke="#a78bfa" stroke-width="2.5"/>
+    <text x="160" y="396" text-anchor="middle" fill="#a78bfa" font-size="14" font-weight="bold">M</text>
+    <text x="160" y="411" text-anchor="middle" fill="#94a3b8" font-size="9">3~ Motor</text>
+    <line x1="80" y1="350" x2="115" y2="355" stroke="#ef4444" stroke-width="3"/>
+    <line x1="160" y1="350" x2="160" y2="355" stroke="#fbbf24" stroke-width="3"/>
+    <line x1="240" y1="350" x2="205" y2="355" stroke="#94a3b8" stroke-width="3"/>
+    <!-- Earth -->
+    <line x1="205" y1="420" x2="270" y2="420" stroke="#22c55e" stroke-width="2"/>
+    <line x1="270" y1="420" x2="270" y2="450" stroke="#22c55e" stroke-width="2"/>
+    <line x1="255" y1="450" x2="285" y2="450" stroke="#22c55e" stroke-width="3"/>
+    <line x1="260" y1="456" x2="280" y2="456" stroke="#22c55e" stroke-width="2"/>
+    <line x1="264" y1="462" x2="276" y2="462" stroke="#22c55e" stroke-width="1"/>
+    <text x="300" y="453" fill="#22c55e" font-size="9">PE</text>
+
+    <!-- CONTROL CIRCUIT -->
+    <!-- Supply -->
+    <line x1="480" y1="50" x2="480" y2="80" stroke="#ef4444" stroke-width="3"/>
+    <line x1="840" y1="50" x2="840" y2="80" stroke="#1e90ff" stroke-width="3"/>
+    <text x="480" y="48" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="bold">L</text>
+    <text x="840" y="48" text-anchor="middle" fill="#1e90ff" font-size="10" font-weight="bold">N</text>
+    <text x="660" y="68" text-anchor="middle" fill="#64748b" font-size="9">Control Supply 24V AC (or 230V from transformer)</text>
+
+    <!-- Control rails -->
+    <line x1="480" y1="80" x2="480" y2="440" stroke="#ef4444" stroke-width="3"/>
+    <line x1="840" y1="80" x2="840" y2="440" stroke="#1e90ff" stroke-width="3"/>
+
+    <!-- Rung 1: E-STOP (NC) + START (NO) series → KM1 coil -->
+    <!-- Wire from L rail -->
+    <line x1="480" y1="130" x2="520" y2="130" stroke="#fbbf24" stroke-width="2"/>
+    <!-- E-STOP NC -->
+    <line x1="520" y1="120" x2="520" y2="140" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="532" y1="120" x2="532" y2="140" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="518" y1="120" x2="534" y2="140" stroke="#ef4444" stroke-width="1.5"/>
+    <text x="526" y="112" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="bold">E-STOP</text>
+    <text x="526" y="150" text-anchor="middle" fill="#64748b" font-size="8">NC</text>
+    <line x1="532" y1="130" x2="570" y2="130" stroke="#fbbf24" stroke-width="2"/>
+    <!-- START NO -->
+    <line x1="570" y1="120" x2="570" y2="140" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="582" y1="120" x2="582" y2="140" stroke="#fbbf24" stroke-width="2"/>
+    <text x="576" y="112" text-anchor="middle" fill="#22c55e" font-size="9" font-weight="bold">START</text>
+    <text x="576" y="150" text-anchor="middle" fill="#64748b" font-size="8">NO</text>
+    <line x1="582" y1="130" x2="620" y2="130" stroke="#fbbf24" stroke-width="2"/>
+    <!-- OL NC -->
+    <line x1="620" y1="120" x2="620" y2="140" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="632" y1="120" x2="632" y2="140" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="618" y1="120" x2="634" y2="140" stroke="#f97316" stroke-width="1.5"/>
+    <text x="626" y="112" text-anchor="middle" fill="#f97316" font-size="9" font-weight="bold">OL</text>
+    <text x="626" y="150" text-anchor="middle" fill="#64748b" font-size="8">NC</text>
+    <line x1="632" y1="130" x2="670" y2="130" stroke="#fbbf24" stroke-width="2"/>
+    <!-- KM1 Coil -->
+    <circle cx="702" cy="130" r="16" fill="#0d1f3c" stroke="#00d4ff" stroke-width="2"/>
+    <text x="702" y="128" text-anchor="middle" fill="#00d4ff" font-size="9" font-weight="bold">KM1</text>
+    <text x="702" y="139" text-anchor="middle" fill="#64748b" font-size="7">COIL</text>
+    <line x1="718" y1="130" x2="840" y2="130" stroke="#fbbf24" stroke-width="2"/>
+    <text x="760" y="122" fill="#64748b" font-size="8">to N rail</text>
+
+    <!-- Rung 2: Holding contact KM1 parallel with START -->
+    <line x1="532" y1="130" x2="532" y2="180" stroke="#fbbf24" stroke-width="1.5"/>
+    <line x1="532" y1="180" x2="552" y2="180" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="552" y1="170" x2="552" y2="190" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="564" y1="170" x2="564" y2="190" stroke="#fbbf24" stroke-width="2"/>
+    <text x="558" y="163" text-anchor="middle" fill="#00d4ff" font-size="9" font-weight="bold">KM1</text>
+    <text x="558" y="198" text-anchor="middle" fill="#64748b" font-size="8">Seal NO</text>
+    <line x1="564" y1="180" x2="582" y2="180" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="582" y1="180" x2="582" y2="130" stroke="#fbbf24" stroke-width="1.5"/>
+
+    <!-- Rung 3: Indicator lamp MOTOR RUNNING -->
+    <line x1="480" y1="240" x2="540" y2="240" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="540" y1="230" x2="540" y2="250" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="552" y1="230" x2="552" y2="250" stroke="#fbbf24" stroke-width="2"/>
+    <text x="546" y="222" text-anchor="middle" fill="#00d4ff" font-size="9" font-weight="bold">KM1</text>
+    <text x="546" y="260" text-anchor="middle" fill="#64748b" font-size="8">NO</text>
+    <line x1="552" y1="240" x2="640" y2="240" stroke="#fbbf24" stroke-width="2"/>
+    <circle cx="660" cy="240" r="14" fill="#0d1f3c" stroke="#22c55e" stroke-width="2"/>
+    <text x="660" y="238" text-anchor="middle" fill="#22c55e" font-size="8" font-weight="bold">HL</text>
+    <text x="660" y="248" text-anchor="middle" fill="#22c55e" font-size="7">RUN</text>
+    <line x1="674" y1="240" x2="840" y2="240" stroke="#fbbf24" stroke-width="2"/>
+    <text x="660" y="268" text-anchor="middle" fill="#64748b" font-size="8">Green lamp</text>
+
+    <!-- Rung 4: STOP button (NC) cuts power -->
+    <line x1="480" y1="320" x2="540" y2="320" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="540" y1="310" x2="540" y2="330" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="552" y1="310" x2="552" y2="330" stroke="#fbbf24" stroke-width="2"/>
+    <text x="546" y="302" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="bold">STOP</text>
+    <text x="546" y="338" text-anchor="middle" fill="#64748b" font-size="8">NC (breaks circuit)</text>
+    <line x1="552" y1="320" x2="660" y2="320" stroke="#fbbf24" stroke-width="2"/>
+    <text x="660" y="308" text-anchor="middle" fill="#64748b" font-size="8">→ interrupts coil power when pressed</text>
+
+    <!-- Labels -->
+    <text x="160" y="464" text-anchor="middle" fill="#475569" font-size="9" font-style="italic">Figure 1 — DOL Motor Starter: Power and Control Circuit (IEC Standard)</text>
+    <text x="660" y="464" text-anchor="middle" fill="#475569" font-size="9" font-style="italic">Note: E-STOP wired NC for fail-safe operation per NFPA 70E</text>
+  </svg>
+
+  <div class="notes-box">
+    <h4>&#128221; Engineering Notes — DOL Starter</h4>
+    <ul>
+      <li><strong>Application:</strong> DOL suitable for motors up to 5.5 kW on 400V systems (starting current = 6–8× FLC). Larger motors require star-delta or VFD.</li>
+      <li><strong>Overload relay setting:</strong> Set to motor FLC × 1.05–1.15. Thermal overload trips in ~10 seconds at 150% overload, ~2 hours at 105%.</li>
+      <li><strong>E-STOP wiring:</strong> Always wire Emergency Stop button as Normally Closed (NC) — so a broken wire or disconnected terminal is a safe failure (contactor drops out).</li>
+      <li><strong>Holding contact:</strong> The KM1 auxiliary NO contact in parallel with START button maintains the control circuit after the START button is released (seal-in or latching contact).</li>
+      <li><strong>Cable sizing:</strong> Power cable rated at minimum 1.25 × I_FLC per NEC/IEC standards. Control cable minimum 1.5 mm² for 24V circuits.</li>
+      <li><strong>Standards:</strong> IEC 60947-4-1 (contactors &amp; starters), IEC 60947-5-1 (control devices), NFPA 79 (industrial machinery electrical).</li>
+    </ul>
+  </div>
+</div>
+
+<!-- STAR-DELTA -->
+<div id="d-sd" class="diagram-area" style="display:none">
+  <div class="diagram-header">
+    <h2>Star-Delta (Y-Δ) Motor Starter — Reduced Voltage Starting</h2>
+    <p>Star-delta starting reduces starting current to approximately 33% of DOL starting current (1/3 of line voltage applied to each winding in star connection). Used for motors above 5.5 kW where DOL starting current would cause supply disturbance. Requires a 6-terminal motor.</p>
+  </div>
+  <svg class="diagram-svg" viewBox="0 0 880 460" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect x="10" y="10" width="860" height="440" rx="8" fill="#040d1a" stroke="#1e293b" stroke-width="1"/>
+    <text x="440" y="32" text-anchor="middle" fill="#f97316" font-size="12" font-weight="bold" font-family="Segoe UI">STAR-DELTA STARTER — Sequence: KM1+KM_Star (3s) → KM1+KM_Delta</text>
+
+    <!-- Sequence boxes -->
+    <!-- Step 1 box -->
+    <rect x="40" y="50" width="240" height="120" rx="8" fill="#0d1f3c" stroke="#22c55e" stroke-width="2"/>
+    <text x="160" y="72" text-anchor="middle" fill="#22c55e" font-size="11" font-weight="bold">STEP 1: STAR (Y)</text>
+    <text x="160" y="90" text-anchor="middle" fill="#94a3b8" font-size="9">Duration: 3–10 seconds (adjustable timer)</text>
+    <text x="160" y="108" text-anchor="middle" fill="#e2e8f0" font-size="9">KM_Main: CLOSED</text>
+    <text x="160" y="123" text-anchor="middle" fill="#e2e8f0" font-size="9">KM_Star: CLOSED (windings in Y)</text>
+    <text x="160" y="138" text-anchor="middle" fill="#e2e8f0" font-size="9">KM_Delta: OPEN</text>
+    <text x="160" y="155" text-anchor="middle" fill="#22c55e" font-size="9" font-style="italic">Starting current ≈ 2×I_FLC (vs 6–8× DOL)</text>
+
+    <!-- Arrow -->
+    <text x="300" y="115" text-anchor="middle" fill="#fbbf24" font-size="22" font-weight="bold">→</text>
+    <text x="300" y="135" text-anchor="middle" fill="#fbbf24" font-size="9">Timer</text>
+    <text x="300" y="148" text-anchor="middle" fill="#fbbf24" font-size="9">done</text>
+
+    <!-- Step 2 box -->
+    <rect x="330" y="50" width="240" height="120" rx="8" fill="#0d1f3c" stroke="#f97316" stroke-width="2"/>
+    <text x="450" y="72" text-anchor="middle" fill="#f97316" font-size="11" font-weight="bold">STEP 2: DELTA (Δ)</text>
+    <text x="450" y="90" text-anchor="middle" fill="#94a3b8" font-size="9">Normal running — full voltage</text>
+    <text x="450" y="108" text-anchor="middle" fill="#e2e8f0" font-size="9">KM_Main: CLOSED</text>
+    <text x="450" y="123" text-anchor="middle" fill="#e2e8f0" font-size="9">KM_Star: OPEN</text>
+    <text x="450" y="138" text-anchor="middle" fill="#e2e8f0" font-size="9">KM_Delta: CLOSED (windings in Δ)</text>
+    <text x="450" y="155" text-anchor="middle" fill="#f97316" font-size="9" font-style="italic">Full torque available — normal operation</text>
+
+    <!-- Interlock warning -->
+    <rect x="600" y="50" width="240" height="120" rx="8" fill="#1a0800" stroke="#ef4444" stroke-width="2"/>
+    <text x="720" y="72" text-anchor="middle" fill="#ef4444" font-size="11" font-weight="bold">&#9888; CRITICAL INTERLOCK</text>
+    <text x="720" y="92" text-anchor="middle" fill="#94a3b8" font-size="9" font-style="italic">STAR and DELTA contactors must NEVER</text>
+    <text x="720" y="107" text-anchor="middle" fill="#94a3b8" font-size="9" font-style="italic">be energised simultaneously!</text>
+    <text x="720" y="125" text-anchor="middle" fill="#e2e8f0" font-size="9">Wire NC auxiliary contact of KM_Star</text>
+    <text x="720" y="140" text-anchor="middle" fill="#e2e8f0" font-size="9">in series with KM_Delta coil and vice versa.</text>
+    <text x="720" y="158" text-anchor="middle" fill="#ef4444" font-size="9">Simultaneous = 3-phase short circuit!</text>
+
+    <!-- Winding diagram - STAR configuration -->
+    <text x="120" y="205" text-anchor="middle" fill="#22c55e" font-size="10" font-weight="bold">STAR (Y) Connection</text>
+    <!-- U1, V1, W1 supply -->
+    <line x1="60" y1="220" x2="80" y2="220" stroke="#ef4444" stroke-width="2"/>
+    <line x1="60" y1="245" x2="80" y2="245" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="60" y1="270" x2="80" y2="270" stroke="#94a3b8" stroke-width="2"/>
+    <text x="50" y="223" text-anchor="middle" fill="#ef4444" font-size="9">U1</text>
+    <text x="50" y="248" text-anchor="middle" fill="#fbbf24" font-size="9">V1</text>
+    <text x="50" y="273" text-anchor="middle" fill="#94a3b8" font-size="9">W1</text>
+    <!-- Windings -->
+    <rect x="80" y="215" width="40" height="15" rx="3" fill="#0d1f3c" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="100" y="226" text-anchor="middle" fill="#22c55e" font-size="8">W_U</text>
+    <rect x="80" y="240" width="40" height="15" rx="3" fill="#0d1f3c" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="100" y="251" text-anchor="middle" fill="#22c55e" font-size="8">W_V</text>
+    <rect x="80" y="265" width="40" height="15" rx="3" fill="#0d1f3c" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="100" y="276" text-anchor="middle" fill="#22c55e" font-size="8">W_W</text>
+    <!-- Star point -->
+    <line x1="120" y1="222" x2="145" y2="245" stroke="#22c55e" stroke-width="2"/>
+    <line x1="120" y1="247" x2="145" y2="245" stroke="#22c55e" stroke-width="2"/>
+    <line x1="120" y1="272" x2="145" y2="245" stroke="#22c55e" stroke-width="2"/>
+    <circle cx="145" cy="245" r="5" fill="#22c55e"/>
+    <text x="158" y="248" fill="#22c55e" font-size="9">Star point (neutral)</text>
+    <text x="100" y="310" text-anchor="middle" fill="#64748b" font-size="9">Each winding sees: VL/√3 = 230V (on 400V system)</text>
+    <text x="100" y="325" text-anchor="middle" fill="#64748b" font-size="9">Torque = 1/3 of full-voltage torque</text>
+
+    <!-- Delta configuration -->
+    <text x="450" y="205" text-anchor="middle" fill="#f97316" font-size="10" font-weight="bold">DELTA (Δ) Connection</text>
+    <line x1="360" y1="220" x2="380" y2="220" stroke="#ef4444" stroke-width="2"/>
+    <line x1="360" y1="265" x2="380" y2="265" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="360" y1="310" x2="380" y2="310" stroke="#94a3b8" stroke-width="2"/>
+    <text x="350" y="223" text-anchor="middle" fill="#ef4444" font-size="9">U1</text>
+    <text x="350" y="268" text-anchor="middle" fill="#fbbf24" font-size="9">V1</text>
+    <text x="350" y="313" text-anchor="middle" fill="#94a3b8" font-size="9">W1</text>
+    <!-- Delta loop -->
+    <rect x="380" y="215" width="40" height="15" rx="3" fill="#0d1f3c" stroke="#f97316" stroke-width="1.5"/>
+    <text x="400" y="226" text-anchor="middle" fill="#f97316" font-size="8">W_U</text>
+    <rect x="380" y="260" width="40" height="15" rx="3" fill="#0d1f3c" stroke="#f97316" stroke-width="1.5"/>
+    <text x="400" y="271" text-anchor="middle" fill="#f97316" font-size="8">W_V</text>
+    <rect x="380" y="305" width="40" height="15" rx="3" fill="#0d1f3c" stroke="#f97316" stroke-width="1.5"/>
+    <text x="400" y="316" text-anchor="middle" fill="#f97316" font-size="8">W_W</text>
+    <!-- Close delta loop -->
+    <line x1="420" y1="222" x2="440" y2="222" stroke="#f97316" stroke-width="2"/>
+    <line x1="420" y1="267" x2="440" y2="267" stroke="#f97316" stroke-width="2"/>
+    <line x1="420" y1="312" x2="440" y2="312" stroke="#f97316" stroke-width="2"/>
+    <line x1="440" y1="222" x2="440" y2="267" stroke="#f97316" stroke-width="2"/>
+    <line x1="440" y1="267" x2="440" y2="312" stroke="#f97316" stroke-width="2"/>
+    <line x1="380" y1="222" x2="365" y2="267" stroke="#f97316" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <line x1="380" y1="267" x2="365" y2="312" stroke="#f97316" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <text x="400" y="350" text-anchor="middle" fill="#64748b" font-size="9">Each winding sees full line voltage: 400V</text>
+    <text x="400" y="365" text-anchor="middle" fill="#64748b" font-size="9">Full torque available for running</text>
+
+    <!-- Timing diagram -->
+    <text x="700" y="215" text-anchor="middle" fill="#a78bfa" font-size="10" font-weight="bold">Transition Timing</text>
+    <text x="580" y="240" fill="#64748b" font-size="9">KM_Main</text>
+    <line x1="640" y1="235" x2="640" y2="225" stroke="#22c55e" stroke-width="2"/>
+    <line x1="640" y1="225" x2="820" y2="225" stroke="#22c55e" stroke-width="2"/>
+    <text x="580" y="270" fill="#64748b" font-size="9">KM_Star</text>
+    <line x1="640" y1="265" x2="640" y2="255" stroke="#22c55e" stroke-width="2"/>
+    <line x1="640" y1="255" x2="730" y2="255" stroke="#22c55e" stroke-width="2"/>
+    <line x1="730" y1="255" x2="730" y2="265" stroke="#22c55e" stroke-width="2"/>
+    <line x1="730" y1="265" x2="820" y2="265" stroke="#334155" stroke-width="2" stroke-dasharray="4,2"/>
+    <text x="580" y="300" fill="#64748b" font-size="9">KM_Delta</text>
+    <line x1="640" y1="295" x2="740" y2="295" stroke="#334155" stroke-width="2" stroke-dasharray="4,2"/>
+    <line x1="740" y1="295" x2="740" y2="285" stroke="#f97316" stroke-width="2"/>
+    <line x1="740" y1="285" x2="820" y2="285" stroke="#f97316" stroke-width="2"/>
+    <text x="680" y="320" text-anchor="middle" fill="#fbbf24" font-size="9">←— STAR (3s) —→</text>
+    <text x="785" y="320" text-anchor="middle" fill="#fbbf24" font-size="9">←— DELTA —→</text>
+    <line x1="730" y1="215" x2="730" y2="305" stroke="#fbbf24" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="730" y="340" text-anchor="middle" fill="#fbbf24" font-size="8">Switch-over</text>
+
+    <text x="440" y="430" text-anchor="middle" fill="#475569" font-size="9" font-style="italic">Figure 2 — Star-Delta Starter: Y connection (starting) and Δ connection (running). 10ms dead-band required between KM_Star opening and KM_Delta closing.</text>
+  </svg>
+  <div class="notes-box">
+    <h4>&#128221; Engineering Notes — Star-Delta Starter</h4>
+    <ul>
+      <li><strong>Requirement:</strong> Motor must have 6 accessible terminals (U1, V1, W1, U2, V2, W2). Standard cage motors with only 3 terminals cannot be connected star-delta.</li>
+      <li><strong>Timer setting:</strong> Transition timer set to 5–10 seconds typically. Motor must reach ~80% of full speed in star before switching to delta. Too fast = current spike on transition; too slow = excessive heating in star.</li>
+      <li><strong>Transition current spike:</strong> At the moment of transition from star to delta, a current spike of 4–6× FLC can occur. An autotransformer starter provides smoother transition.</li>
+      <li><strong>Dead-band:</strong> The KM_Star contactor must open and fully extinguish the arc before KM_Delta closes — minimum 50–100ms gap. Most modern time relays include this dead-band.</li>
+      <li><strong>Limitation:</strong> Not suitable for high-inertia loads (fans, centrifuges) where the motor may not reach sufficient speed in star before delta transition.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- VFD -->
+<div id="d-vfd" class="diagram-area" style="display:none">
+  <div class="diagram-header">
+    <h2>Variable Frequency Drive (VFD) Wiring — Power, Control &amp; Safety</h2>
+    <p>A VFD converts fixed AC supply to variable frequency AC output, controlling motor speed precisely. Provides soft start, overload protection, energy savings (affinity law: power ∝ speed³), and integrated motor protection. Most common for pumps, fans, compressors, and conveyors.</p>
+  </div>
+  <svg class="diagram-svg" viewBox="0 0 880 500" xmlns="http://www.w3.org/2000/svg">
+    <rect x="10" y="10" width="860" height="480" rx="8" fill="#040d1a" stroke="#1e293b" stroke-width="1"/>
+    <!-- VFD block -->
+    <rect x="300" y="150" width="280" height="200" rx="10" fill="#0a1628" stroke="#00d4ff" stroke-width="2.5"/>
+    <text x="440" y="175" text-anchor="middle" fill="#00d4ff" font-size="13" font-weight="bold">VFD</text>
+    <text x="440" y="193" text-anchor="middle" fill="#64748b" font-size="9">Variable Frequency Drive</text>
+    <text x="440" y="208" text-anchor="middle" fill="#64748b" font-size="8">Rectifier → DC Bus → Inverter</text>
+    <!-- Internal blocks -->
+    <rect x="315" y="215" width="70" height="30" rx="4" fill="#0d1f3c" stroke="#f97316" stroke-width="1"/>
+    <text x="350" y="233" text-anchor="middle" fill="#f97316" font-size="8" font-weight="bold">RECTIFIER</text>
+    <rect x="395" y="215" width="70" height="30" rx="4" fill="#0d1f3c" stroke="#fbbf24" stroke-width="1"/>
+    <text x="430" y="233" text-anchor="middle" fill="#fbbf24" font-size="8" font-weight="bold">DC BUS</text>
+    <rect x="475" y="215" width="70" height="30" rx="4" fill="#0d1f3c" stroke="#22c55e" stroke-width="1"/>
+    <text x="510" y="233" text-anchor="middle" fill="#22c55e" font-size="8" font-weight="bold">INVERTER</text>
+    <line x1="385" y1="230" x2="395" y2="230" stroke="#fbbf24" stroke-width="1.5"/>
+    <line x1="465" y1="230" x2="475" y2="230" stroke="#fbbf24" stroke-width="1.5"/>
+
+    <!-- Power supply (3-phase input) -->
+    <text x="80" y="50" fill="#e2e8f0" font-size="10" font-weight="bold">3-PHASE SUPPLY</text>
+    <line x1="60" y1="65" x2="60" y2="120" stroke="#ef4444" stroke-width="3"/>
+    <line x1="100" y1="65" x2="100" y2="120" stroke="#fbbf24" stroke-width="3"/>
+    <line x1="140" y1="65" x2="140" y2="120" stroke="#94a3b8" stroke-width="3"/>
+    <text x="60" y="62" text-anchor="middle" fill="#ef4444" font-size="9">L1</text>
+    <text x="100" y="62" text-anchor="middle" fill="#fbbf24" font-size="9">L2</text>
+    <text x="140" y="62" text-anchor="middle" fill="#94a3b8" font-size="9">L3</text>
+    <!-- MCCB -->
+    <rect x="40" y="100" width="120" height="25" rx="4" fill="#0d1f3c" stroke="#f97316" stroke-width="1.5"/>
+    <text x="100" y="116" text-anchor="middle" fill="#f97316" font-size="9" font-weight="bold">MCCB (no fuse)</text>
+    <!-- Line reactor (recommended) -->
+    <rect x="40" y="140" width="120" height="25" rx="4" fill="#0d1f3c" stroke="#a78bfa" stroke-width="1"/>
+    <text x="100" y="156" text-anchor="middle" fill="#a78bfa" font-size="8">Line Reactor (opt)</text>
+    <!-- Wires to VFD R/S/T -->
+    <line x1="60" y1="165" x2="60" y2="230" stroke="#ef4444" stroke-width="2.5"/>
+    <line x1="100" y1="165" x2="100" y2="230" stroke="#fbbf24" stroke-width="2.5"/>
+    <line x1="140" y1="165" x2="140" y2="230" stroke="#94a3b8" stroke-width="2.5"/>
+    <line x1="60" y1="230" x2="300" y2="230" stroke="#ef4444" stroke-width="2.5"/>
+    <line x1="100" y1="230" x2="300" y2="240" stroke="#fbbf24" stroke-width="2.5"/>
+    <line x1="140" y1="230" x2="300" y2="250" stroke="#94a3b8" stroke-width="2.5"/>
+    <text x="200" y="222" fill="#64748b" font-size="8">R S T (input)</text>
+
+    <!-- VFD Output to motor -->
+    <line x1="580" y1="230" x2="720" y2="220" stroke="#22c55e" stroke-width="2.5"/>
+    <line x1="580" y1="240" x2="720" y2="240" stroke="#22c55e" stroke-width="2.5"/>
+    <line x1="580" y1="250" x2="720" y2="260" stroke="#22c55e" stroke-width="2.5"/>
+    <text x="650" y="215" fill="#64748b" font-size="8">U V W (output)</text>
+    <!-- Output reactor -->
+    <rect x="715" y="215" width="100" height="55" rx="4" fill="#0d1f3c" stroke="#22c55e" stroke-width="1"/>
+    <text x="765" y="235" text-anchor="middle" fill="#22c55e" font-size="8" font-weight="bold">dU/dt Filter</text>
+    <text x="765" y="248" text-anchor="middle" fill="#64748b" font-size="7">or Output Reactor</text>
+    <text x="765" y="261" text-anchor="middle" fill="#64748b" font-size="7">(for cables &gt;50m)</text>
+    <!-- Motor -->
+    <circle cx="820" cy="380" r="40" fill="#0d1f3c" stroke="#a78bfa" stroke-width="2.5"/>
+    <text x="820" y="376" text-anchor="middle" fill="#a78bfa" font-size="14" font-weight="bold">M</text>
+    <text x="820" y="391" text-anchor="middle" fill="#94a3b8" font-size="9">3~ Inv. Duty</text>
+    <line x1="765" y1="270" x2="800" y2="340" stroke="#22c55e" stroke-width="2"/>
+    <line x1="820" y1="270" x2="820" y2="340" stroke="#22c55e" stroke-width="2"/>
+    <line x1="875" y1="270" x2="840" y2="340" stroke="#22c55e" stroke-width="2"/>
+    <!-- Earth to motor -->
+    <line x1="780" y1="420" x2="780" y2="450" stroke="#22c55e" stroke-width="2"/>
+    <text x="800" y="445" fill="#22c55e" font-size="9">PE</text>
+
+    <!-- Control terminals -->
+    <rect x="300" y="360" width="280" height="110" rx="6" fill="#0a1628" stroke="#fbbf24" stroke-width="1.5"/>
+    <text x="440" y="378" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="bold">CONTROL TERMINALS</text>
+    <text x="320" y="398" fill="#94a3b8" font-size="8">AI1 (0–10V / 4–20mA)</text>
+    <text x="320" y="413" fill="#94a3b8" font-size="8">DI1 = RUN/STOP (digital)</text>
+    <text x="320" y="428" fill="#94a3b8" font-size="8">DI2 = Forward/Reverse</text>
+    <text x="320" y="443" fill="#94a3b8" font-size="8">DI3 = External fault (E-STOP)</text>
+    <text x="500" y="398" fill="#94a3b8" font-size="8">AO1 = Speed output (0–10V)</text>
+    <text x="500" y="413" fill="#94a3b8" font-size="8">DO1 = Running relay output</text>
+    <text x="500" y="428" fill="#94a3b8" font-size="8">DO2 = Fault relay output</text>
+    <text x="500" y="443" fill="#94a3b8" font-size="8">COM = Common (0V)</text>
+
+    <!-- Control wires from PLC -->
+    <text x="100" y="365" text-anchor="middle" fill="#00d4ff" font-size="9" font-weight="bold">FROM PLC / HMI</text>
+    <line x1="60" y1="375" x2="300" y2="398" stroke="#00d4ff" stroke-width="1.5" stroke-dasharray="5,2"/>
+    <text x="170" y="395" fill="#475569" font-size="8" transform="rotate(-8,170,395)">4–20mA speed ref</text>
+    <line x1="60" y1="390" x2="300" y2="413" stroke="#00d4ff" stroke-width="1.5" stroke-dasharray="5,2"/>
+    <text x="170" y="410" fill="#475569" font-size="8" transform="rotate(-6,170,410)">RUN command</text>
+
+    <text x="440" y="490" text-anchor="middle" fill="#475569" font-size="9" font-style="italic">Figure 3 — VFD Wiring: Power (3-phase R/S/T in → U/V/W out to motor) + Control terminals (PLC/manual)</text>
+  </svg>
+  <div class="notes-box">
+    <h4>&#128221; Engineering Notes — VFD Wiring</h4>
+    <ul>
+      <li><strong>No isolation contactor needed:</strong> The VFD provides full motor protection. A main MCCB (no fuses on output) is sufficient. Never install a contactor between VFD output and motor that opens during running — this destroys IGBT modules.</li>
+      <li><strong>Cable screening:</strong> Use screened (shielded) cable between VFD and motor, especially for cables over 10m. Ground screen at both ends. Separate power and control cables by minimum 300mm.</li>
+      <li><strong>Output reactor:</strong> Required for cable runs over 50m to prevent capacitive charging currents from damaging motor insulation. Use dU/dt filter for standard motors not rated for VFD duty.</li>
+      <li><strong>Motor suitability:</strong> Motors connected to VFDs should be "inverter duty" rated — class F insulation minimum. Older motors on VFDs may require dU/dt filters to protect insulation.</li>
+      <li><strong>Energy saving — affinity law:</strong> Pump/fan power ∝ speed³. Reducing speed to 80% reduces power to 51%. Reducing to 50% reduces power to 12.5%.</li>
+      <li><strong>EMC compliance:</strong> Install EMC filter on VFD input per EN 61800-3. Required in most countries for CE marking.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- PLC I/O -->
+<div id="d-plc-io" class="diagram-area" style="display:none">
+  <div class="diagram-header">
+    <h2>PLC I/O Wiring — Digital Inputs, Digital Outputs &amp; Analog Signals</h2>
+    <p>Correct PLC I/O wiring is fundamental to system reliability. Digital inputs read field device states (sensors, switches). Digital outputs drive actuators (contactors, solenoids, lamps). Analog I/O handles continuous signals (4–20mA, 0–10V). All field devices must be properly sourced, sunk, or shielded.</p>
+  </div>
+  <svg class="diagram-svg" viewBox="0 0 880 520" xmlns="http://www.w3.org/2000/svg">
+    <rect x="10" y="10" width="860" height="500" rx="8" fill="#040d1a" stroke="#1e293b" stroke-width="1"/>
+    <!-- PLC block -->
+    <rect x="310" y="40" width="260" height="440" rx="10" fill="#0a1628" stroke="#00d4ff" stroke-width="2.5"/>
+    <text x="440" y="62" text-anchor="middle" fill="#00d4ff" font-size="12" font-weight="bold">SIEMENS S7-1200</text>
+    <text x="440" y="76" text-anchor="middle" fill="#64748b" font-size="8">CPU 1214C DC/DC/DC</text>
+
+    <!-- DI section in PLC -->
+    <rect x="320" y="90" width="100" height="170" rx="5" fill="#0d1f3c" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="370" y="106" text-anchor="middle" fill="#22c55e" font-size="9" font-weight="bold">DIGITAL IN</text>
+    <text x="370" y="116" text-anchor="middle" fill="#64748b" font-size="7">14 × DI 24VDC</text>
+    <!-- DI terminals -->
+    <line x1="320" y1="130" x2="308" y2="130" stroke="#22c55e" stroke-width="2"/>
+    <text x="304" y="133" text-anchor="end" fill="#22c55e" font-size="8">I0.0</text>
+    <line x1="320" y1="148" x2="308" y2="148" stroke="#22c55e" stroke-width="2"/>
+    <text x="304" y="151" text-anchor="end" fill="#22c55e" font-size="8">I0.1</text>
+    <line x1="320" y1="166" x2="308" y2="166" stroke="#22c55e" stroke-width="2"/>
+    <text x="304" y="169" text-anchor="end" fill="#22c55e" font-size="8">I0.2</text>
+    <line x1="320" y1="184" x2="308" y2="184" stroke="#22c55e" stroke-width="2"/>
+    <text x="304" y="187" text-anchor="end" fill="#22c55e" font-size="8">I0.3</text>
+    <line x1="320" y1="202" x2="308" y2="202" stroke="#22c55e" stroke-width="2"/>
+    <text x="304" y="205" text-anchor="end" fill="#22c55e" font-size="8">I1M (−)</text>
+    <line x1="320" y1="242" x2="308" y2="242" stroke="#22c55e" stroke-width="2"/>
+    <text x="304" y="245" text-anchor="end" fill="#22c55e" font-size="8">1M (COM)</text>
+
+    <!-- DO section in PLC -->
+    <rect x="460" y="90" width="100" height="170" rx="5" fill="#0d1f3c" stroke="#f97316" stroke-width="1.5"/>
+    <text x="510" y="106" text-anchor="middle" fill="#f97316" font-size="9" font-weight="bold">DIGITAL OUT</text>
+    <text x="510" y="116" text-anchor="middle" fill="#64748b" font-size="7">10 × DO 24VDC</text>
+    <line x1="560" y1="130" x2="572" y2="130" stroke="#f97316" stroke-width="2"/>
+    <text x="576" y="133" fill="#f97316" font-size="8">Q0.0</text>
+    <line x1="560" y1="148" x2="572" y2="148" stroke="#f97316" stroke-width="2"/>
+    <text x="576" y="151" fill="#f97316" font-size="8">Q0.1</text>
+    <line x1="560" y1="166" x2="572" y2="166" stroke="#f97316" stroke-width="2"/>
+    <text x="576" y="169" fill="#f97316" font-size="8">Q0.2</text>
+    <line x1="560" y1="184" x2="572" y2="184" stroke="#f97316" stroke-width="2"/>
+    <text x="576" y="187" fill="#f97316" font-size="8">Q0.3</text>
+    <line x1="560" y1="202" x2="572" y2="202" stroke="#f97316" stroke-width="2"/>
+    <text x="576" y="205" fill="#f97316" font-size="8">2M (+24V)</text>
+    <line x1="560" y1="242" x2="572" y2="242" stroke="#f97316" stroke-width="2"/>
+    <text x="576" y="245" fill="#f97316" font-size="8">2L (0V)</text>
+
+    <!-- AI section -->
+    <rect x="320" y="290" width="100" height="100" rx="5" fill="#0d1f3c" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="370" y="306" text-anchor="middle" fill="#a78bfa" font-size="9" font-weight="bold">ANALOG IN</text>
+    <text x="370" y="318" text-anchor="middle" fill="#64748b" font-size="7">2 × AI (on CPU)</text>
+    <line x1="320" y1="332" x2="308" y2="332" stroke="#a78bfa" stroke-width="2"/>
+    <text x="304" y="335" text-anchor="end" fill="#a78bfa" font-size="8">AI0+ (IW64)</text>
+    <line x1="320" y1="348" x2="308" y2="348" stroke="#a78bfa" stroke-width="2"/>
+    <text x="304" y="351" text-anchor="end" fill="#a78bfa" font-size="8">AI0− (COM)</text>
+    <line x1="320" y1="364" x2="308" y2="364" stroke="#a78bfa" stroke-width="2"/>
+    <text x="304" y="367" text-anchor="end" fill="#a78bfa" font-size="8">AI1+ (IW66)</text>
+
+    <!-- Power supply section -->
+    <rect x="320" y="420" width="240" height="50" rx="5" fill="#0d1f3c" stroke="#fbbf24" stroke-width="1.5"/>
+    <text x="440" y="438" text-anchor="middle" fill="#fbbf24" font-size="9" font-weight="bold">POWER SUPPLY</text>
+    <text x="440" y="455" text-anchor="middle" fill="#64748b" font-size="8">24VDC L+ and M (CPU power)</text>
+
+    <!-- FIELD DEVICES — LEFT SIDE (DI) -->
+    <text x="140" y="100" text-anchor="middle" fill="#22c55e" font-size="10" font-weight="bold">FIELD DEVICES</text>
+    <text x="140" y="112" text-anchor="middle" fill="#64748b" font-size="8">(Sensors / Inputs)</text>
+
+    <!-- PB Start (NO) → I0.0 -->
+    <rect x="30" y="120" width="90" height="25" rx="4" fill="#0d1f3c" stroke="#22c55e" stroke-width="1"/>
+    <text x="75" y="136" text-anchor="middle" fill="#22c55e" font-size="9">START PB (NO)</text>
+    <line x1="120" y1="130" x2="308" y2="130" stroke="#22c55e" stroke-width="1.5"/>
+    <line x1="75" y1="145" x2="75" y2="202" stroke="#64748b" stroke-width="1" stroke-dasharray="3,2"/>
+    <line x1="75" y1="202" x2="308" y2="202" stroke="#64748b" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="190" y="127" fill="#475569" font-size="7">24VDC signal wire</text>
+
+    <!-- E-STOP (NC) → I0.1 -->
+    <rect x="30" y="138" width="90" height="25" rx="4" fill="#1a0000" stroke="#ef4444" stroke-width="1"/>
+    <text x="75" y="154" text-anchor="middle" fill="#ef4444" font-size="9">E-STOP (NC)</text>
+    <line x1="120" y1="148" x2="308" y2="148" stroke="#ef4444" stroke-width="1.5"/>
+
+    <!-- Prox sensor → I0.2 -->
+    <rect x="30" y="156" width="90" height="25" rx="4" fill="#0d1f3c" stroke="#00d4ff" stroke-width="1"/>
+    <text x="75" y="172" text-anchor="middle" fill="#00d4ff" font-size="9">Prox Sensor 3W</text>
+    <line x1="120" y1="166" x2="308" y2="166" stroke="#00d4ff" stroke-width="1.5"/>
+
+    <!-- LS (limit switch) → I0.3 -->
+    <rect x="30" y="174" width="90" height="25" rx="4" fill="#0d1f3c" stroke="#22c55e" stroke-width="1"/>
+    <text x="75" y="190" text-anchor="middle" fill="#22c55e" font-size="9">Limit Switch</text>
+    <line x1="120" y1="184" x2="308" y2="184" stroke="#22c55e" stroke-width="1.5"/>
+
+    <!-- FIELD DEVICES — RIGHT SIDE (DO) -->
+    <text x="730" y="100" text-anchor="middle" fill="#f97316" font-size="10" font-weight="bold">ACTUATORS</text>
+    <text x="730" y="112" text-anchor="middle" fill="#64748b" font-size="8">(Outputs)</text>
+
+    <!-- Contactor coil Q0.0 -->
+    <rect x="650" y="120" width="110" height="25" rx="4" fill="#0d1f3c" stroke="#f97316" stroke-width="1"/>
+    <text x="705" y="136" text-anchor="middle" fill="#f97316" font-size="9">Contactor KM1 Coil</text>
+    <line x1="572" y1="130" x2="650" y2="130" stroke="#f97316" stroke-width="1.5"/>
+
+    <!-- Motor Run Lamp Q0.1 -->
+    <rect x="650" y="138" width="110" height="25" rx="4" fill="#0d1f3c" stroke="#22c55e" stroke-width="1"/>
+    <text x="705" y="154" text-anchor="middle" fill="#22c55e" font-size="9">Run Indicator (Green)</text>
+    <line x1="572" y1="148" x2="650" y2="148" stroke="#22c55e" stroke-width="1.5"/>
+
+    <!-- Solenoid Q0.2 -->
+    <rect x="650" y="156" width="110" height="25" rx="4" fill="#0d1f3c" stroke="#a78bfa" stroke-width="1"/>
+    <text x="705" y="172" text-anchor="middle" fill="#a78bfa" font-size="9">Solenoid Valve 24VDC</text>
+    <line x1="572" y1="166" x2="650" y2="166" stroke="#a78bfa" stroke-width="1.5"/>
+
+    <!-- Alarm Q0.3 -->
+    <rect x="650" y="174" width="110" height="25" rx="4" fill="#1a0000" stroke="#ef4444" stroke-width="1"/>
+    <text x="705" y="190" text-anchor="middle" fill="#ef4444" font-size="9">Alarm Horn 24VDC</text>
+    <line x1="572" y1="184" x2="650" y2="184" stroke="#ef4444" stroke-width="1.5"/>
+
+    <!-- COM return lines -->
+    <text x="705" y="218" text-anchor="middle" fill="#64748b" font-size="8">All outputs share 0V COM</text>
+    <line x1="572" y1="242" x2="760" y2="242" stroke="#64748b" stroke-width="1.5" stroke-dasharray="5,2"/>
+    <text x="695" y="255" text-anchor="middle" fill="#64748b" font-size="7">0V common (all actuators)</text>
+
+    <!-- AI wiring — pressure transmitter -->
+    <rect x="30" y="322" width="110" height="40" rx="4" fill="#0d1f3c" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="85" y="338" text-anchor="middle" fill="#a78bfa" font-size="9" font-weight="bold">Pressure Tx</text>
+    <text x="85" y="350" text-anchor="middle" fill="#64748b" font-size="8">4–20mA, 2-wire, 24V loop</text>
+    <line x1="140" y1="330" x2="308" y2="332" stroke="#a78bfa" stroke-width="1.5"/>
+    <line x1="140" y1="342" x2="308" y2="348" stroke="#64748b" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="220" y="325" fill="#a78bfa" font-size="7">AI+ (signal)</text>
+    <text x="220" y="345" fill="#64748b" font-size="7">AI− (0V)</text>
+
+    <!-- 24V power supply box -->
+    <rect x="30" y="400" width="110" height="50" rx="6" fill="#0d1f3c" stroke="#fbbf24" stroke-width="2"/>
+    <text x="85" y="420" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="bold">24VDC PSU</text>
+    <text x="85" y="435" text-anchor="middle" fill="#64748b" font-size="8">Siemens LOGO / SITOP</text>
+    <text x="85" y="447" text-anchor="middle" fill="#64748b" font-size="7">Input: 100–240V AC</text>
+    <line x1="140" y1="415" x2="308" y2="437" stroke="#fbbf24" stroke-width="1.5"/>
+    <line x1="140" y1="430" x2="308" y2="452" stroke="#64748b" stroke-width="1.5" stroke-dasharray="3,2"/>
+
+    <text x="440" y="490" text-anchor="middle" fill="#475569" font-size="9" font-style="italic">Figure 4 — PLC I/O Wiring: Sink/Source inputs, DO transistor outputs, 4–20mA analog input, 24VDC power supply</text>
+  </svg>
+  <div class="notes-box">
+    <h4>&#128221; Engineering Notes — PLC I/O Wiring</h4>
+    <ul>
+      <li><strong>Sink vs Source (DI):</strong> S7-1200 DI inputs are sourcing (PNP) by default. Connect sensor (+) to DI terminal, sensor (−) to M (common). For NPN sensors, use sourcing input in "sink" mode — check CPU wiring diagram.</li>
+      <li><strong>DO load current:</strong> S7-1200 transistor outputs rated 0.5A per point, 4A per group. For contactor coils above 0.5A, use an intermediate relay (24VDC coil, contacts to drive the contactor).</li>
+      <li><strong>Analog wiring:</strong> Use twisted-pair shielded cable for all analog signals. Ground shield at PLC end only (one-end grounding prevents ground loops). Keep analog cables away from power cables by minimum 300mm.</li>
+      <li><strong>Power supply sizing:</strong> Calculate total current: CPU + all I/O modules + field devices powered from PLC. Add 30% margin. Use separate PSU for I/O vs sensors for noise isolation.</li>
+      <li><strong>Protection:</strong> Install 1A fuse per group of DI inputs on the +24V feed. Protects against wiring faults in field without shutting down entire PLC power supply.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- LOTO -->
+<div id="d-loto" class="diagram-area" style="display:none">
+  <div class="diagram-header">
+    <h2>Safety Circuit — E-Stop Category 0 &amp; LOTO Isolation Points</h2>
+    <p>Emergency stop and lockout/tagout circuits are the most safety-critical wiring in any industrial panel. Designed and wired incorrectly, they create a false sense of security. All safety circuits must be fail-safe: a broken wire, open connection, or component failure must result in the safe state (power removed from actuators).</p>
+  </div>
+  <svg class="diagram-svg" viewBox="0 0 880 440" xmlns="http://www.w3.org/2000/svg">
+    <rect x="10" y="10" width="860" height="420" rx="8" fill="#040d1a" stroke="#1e293b" stroke-width="1"/>
+    <text x="440" y="32" text-anchor="middle" fill="#ef4444" font-size="12" font-weight="bold">&#9888; SAFETY CIRCUIT — E-STOP CATEGORY 0 (POWER REMOVAL)</text>
+
+    <!-- Supply rail -->
+    <line x1="40" y1="60" x2="840" y2="60" stroke="#ef4444" stroke-width="3"/>
+    <text x="30" y="63" text-anchor="end" fill="#ef4444" font-size="9">+24V</text>
+
+    <!-- E-STOP chain (series) -->
+    <!-- E-stop 1 -->
+    <rect x="50" y="80" width="80" height="40" rx="5" fill="#1a0000" stroke="#ef4444" stroke-width="2"/>
+    <text x="90" y="97" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="bold">E-STOP 1</text>
+    <text x="90" y="110" text-anchor="middle" fill="#94a3b8" font-size="8">Panel door (NC)</text>
+
+    <!-- E-stop 2 -->
+    <rect x="160" y="80" width="80" height="40" rx="5" fill="#1a0000" stroke="#ef4444" stroke-width="2"/>
+    <text x="200" y="97" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="bold">E-STOP 2</text>
+    <text x="200" y="110" text-anchor="middle" fill="#94a3b8" font-size="8">Machine (NC)</text>
+
+    <!-- E-stop 3 -->
+    <rect x="270" y="80" width="80" height="40" rx="5" fill="#1a0000" stroke="#ef4444" stroke-width="2"/>
+    <text x="310" y="97" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="bold">E-STOP 3</text>
+    <text x="310" y="110" text-anchor="middle" fill="#94a3b8" font-size="8">Remote (NC)</text>
+
+    <!-- Gate interlock -->
+    <rect x="380" y="80" width="80" height="40" rx="5" fill="#1a0000" stroke="#fbbf24" stroke-width="2"/>
+    <text x="420" y="97" text-anchor="middle" fill="#fbbf24" font-size="9" font-weight="bold">GATE LOCK</text>
+    <text x="420" y="110" text-anchor="middle" fill="#94a3b8" font-size="8">Door switch (NC)</text>
+
+    <!-- Safety relay -->
+    <rect x="490" y="70" width="120" height="60" rx="6" fill="#0d1f3c" stroke="#22c55e" stroke-width="2"/>
+    <text x="550" y="92" text-anchor="middle" fill="#22c55e" font-size="10" font-weight="bold">SAFETY RELAY</text>
+    <text x="550" y="106" text-anchor="middle" fill="#64748b" font-size="8">Pilz PNOZ / Siemens 3SK1</text>
+    <text x="550" y="118" text-anchor="middle" fill="#94a3b8" font-size="8">Monitoring + Force-guided contacts</text>
+
+    <!-- Connecting wires -->
+    <line x1="40" y1="100" x2="50" y2="100" stroke="#ef4444" stroke-width="2"/>
+    <line x1="130" y1="100" x2="160" y2="100" stroke="#ef4444" stroke-width="2"/>
+    <line x1="240" y1="100" x2="270" y2="100" stroke="#ef4444" stroke-width="2"/>
+    <line x1="350" y1="100" x2="380" y2="100" stroke="#ef4444" stroke-width="2"/>
+    <line x1="460" y1="100" x2="490" y2="100" stroke="#ef4444" stroke-width="2"/>
+
+    <!-- Safety relay outputs -->
+    <text x="640" y="78" fill="#22c55e" font-size="9" font-weight="bold">Safety Output Contacts</text>
+    <text x="640" y="92" fill="#94a3b8" font-size="8">(Force-guided, monitored)</text>
+    <line x1="610" y1="90" x2="640" y2="90" stroke="#22c55e" stroke-width="2"/>
+    <line x1="610" y1="105" x2="640" y2="105" stroke="#22c55e" stroke-width="2"/>
+    <!-- Output 1: KM1 coil cutout -->
+    <line x1="640" y1="90" x2="720" y2="90" stroke="#22c55e" stroke-width="2"/>
+    <rect x="720" y="80" width="100" height="20" rx="3" fill="#0d1f3c" stroke="#f97316" stroke-width="1"/>
+    <text x="770" y="93" text-anchor="middle" fill="#f97316" font-size="8">KM1 Coil (Main)</text>
+    <!-- Output 2 -->
+    <line x1="640" y1="105" x2="720" y2="115" stroke="#22c55e" stroke-width="2"/>
+    <rect x="720" y="105" width="100" height="20" rx="3" fill="#0d1f3c" stroke="#f97316" stroke-width="1"/>
+    <text x="770" y="118" text-anchor="middle" fill="#f97316" font-size="8">KM2 Coil (Feed)</text>
+
+    <!-- RESTART section -->
+    <text x="200" y="155" text-anchor="middle" fill="#22c55e" font-size="10" font-weight="bold">RESTART BUTTON (required for Cat 0)</text>
+    <rect x="80" y="165" width="90" height="30" rx="4" fill="#0d1f3c" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="125" y="183" text-anchor="middle" fill="#22c55e" font-size="9">RESET (NO)</text>
+    <line x1="170" y1="180" x2="490" y2="110" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="5,2"/>
+    <text x="300" y="175" fill="#64748b" font-size="8" transform="rotate(-12,300,175)">Manual reset to safety relay</text>
+
+    <!-- LOTO Isolation Points -->
+    <text x="440" y="220" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="bold">LOTO ENERGY ISOLATION POINTS</text>
+    <!-- Isolator switch -->
+    <rect x="50" y="240" width="130" height="50" rx="6" fill="#0d1f3c" stroke="#fbbf24" stroke-width="2"/>
+    <text x="115" y="260" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="bold">MAIN ISOLATOR</text>
+    <text x="115" y="275" text-anchor="middle" fill="#94a3b8" font-size="8">Lockable rotary switch</text>
+    <text x="115" y="287" text-anchor="middle" fill="#94a3b8" font-size="8">IP65, padlockable (IEC 60204)</text>
+
+    <rect x="210" y="240" width="130" height="50" rx="6" fill="#0d1f3c" stroke="#fbbf24" stroke-width="2"/>
+    <text x="275" y="260" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="bold">PNEUMATIC ISO.</text>
+    <text x="275" y="275" text-anchor="middle" fill="#94a3b8" font-size="8">Manual lockable valve</text>
+    <text x="275" y="287" text-anchor="middle" fill="#94a3b8" font-size="8">With pressure exhaust</text>
+
+    <rect x="370" y="240" width="130" height="50" rx="6" fill="#0d1f3c" stroke="#fbbf24" stroke-width="2"/>
+    <text x="435" y="260" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="bold">HYDRAULIC ISO.</text>
+    <text x="435" y="275" text-anchor="middle" fill="#94a3b8" font-size="8">Lockable ball valve</text>
+    <text x="435" y="287" text-anchor="middle" fill="#94a3b8" font-size="8">With pressure gauge</text>
+
+    <rect x="530" y="240" width="130" height="50" rx="6" fill="#0d1f3c" stroke="#fbbf24" stroke-width="2"/>
+    <text x="595" y="260" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="bold">LOTO HASP</text>
+    <text x="595" y="275" text-anchor="middle" fill="#94a3b8" font-size="8">Multi-lock device</text>
+    <text x="595" y="287" text-anchor="middle" fill="#94a3b8" font-size="8">Up to 12 personal locks</text>
+
+    <rect x="690" y="240" width="140" height="50" rx="6" fill="#1a0800" stroke="#ef4444" stroke-width="2"/>
+    <text x="760" y="258" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="bold">DANGER TAG</text>
+    <text x="760" y="273" text-anchor="middle" fill="#94a3b8" font-size="8">"DO NOT OPERATE"</text>
+    <text x="760" y="285" text-anchor="middle" fill="#94a3b8" font-size="8">Name + Date + Lock number</text>
+
+    <!-- LOTO procedure steps -->
+    <text x="440" y="320" text-anchor="middle" fill="#00d4ff" font-size="10" font-weight="bold">6-STEP LOTO SEQUENCE</text>
+    <rect x="40" y="330" width="780" height="40" rx="6" fill="#0a1628" stroke="#00d4ff" stroke-width="1"/>
+    <text x="440" y="352" text-anchor="middle" fill="#e2e8f0" font-size="9">
+      1.NOTIFY  →  2.IDENTIFY ALL ENERGY  →  3.SHUT DOWN  →  4.ISOLATE ALL SOURCES  →  5.LOCK + TAG  →  6.VERIFY ZERO ENERGY (test meter!)
+    </text>
+
+    <text x="440" y="405" text-anchor="middle" fill="#475569" font-size="9" font-style="italic">Figure 5 — E-Stop Safety Circuit (Category 0) with Safety Relay + LOTO Isolation Points per OSHA 29 CFR 1910.147</text>
+    <text x="440" y="420" text-anchor="middle" fill="#ef4444" font-size="8" font-weight="bold">&#9888; All E-stop contacts wired NC. Broken wire = safe state. Never bypass or bridge E-stop contacts.</text>
+  </svg>
+  <div class="notes-box">
+    <h4>&#128221; Engineering Notes — Safety Circuits</h4>
+    <ul>
+      <li><strong>E-Stop Category 0 vs Category 1:</strong> Cat 0 = immediate removal of power (most common). Cat 1 = controlled stop, then power removed. Cat 2 = controlled stop, power maintained for monitoring. Select per ISO 13849/IEC 62061 risk assessment.</li>
+      <li><strong>Force-guided contacts:</strong> Safety relays use force-guided (mechanically linked) contacts — if one contact welds closed, all linked contacts are mechanically prevented from opening. This allows the safety relay to detect contact welding on the next reset cycle.</li>
+      <li><strong>Dual-channel wiring (SIL 2):</strong> For SIL 2, wire E-stop button through two independent NC contacts (two separate circuits) — the safety relay monitors both channels. If they disagree, the relay detects a fault and prevents restart.</li>
+      <li><strong>Manual reset:</strong> After an E-stop activation, a deliberate manual RESET action (separate button) must be required before the machine can restart. This prevents automatic restart after power restoration — a major cause of accidents.</li>
+      <li><strong>LOTO verification:</strong> After applying all locks, always press the machine START button to verify the machine cannot start. Test all terminals with a calibrated CAT III meter to confirm zero voltage. This step is non-negotiable.</li>
+    </ul>
+  </div>
+</div>
+
+</div><!-- .content -->
+
+<script>
+function show(id) {
+  document.querySelectorAll('.diagram-area').forEach(d => d.style.display='none');
+  document.querySelectorAll('.diag-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('d-'+id).style.display='block';
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>HVAC Load Calculator — AYE Tech Hub</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#020817;color:#e2e8f0;font-family:'Segoe UI',Arial,sans-serif;min-height:100vh}
+#topbar{background:#0a1628;border-bottom:2px solid #22c55e;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.brand{color:#22c55e;font-weight:900;font-size:1.1rem}.sub{color:#94a3b8;font-size:.8rem}
+.container{max-width:1100px;margin:0 auto;padding:24px 20px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:700px){.container{grid-template-columns:1fr}}
+.card{background:#0d1f3c;border:1px solid #1e293b;border-radius:12px;padding:22px}
+.card h2{font-size:.9rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:#22c55e;margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid #1e293b}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:.8rem;color:#94a3b8;margin-bottom:5px;font-weight:600}
+.field input,.field select{width:100%;background:#020817;border:1px solid #334155;color:#e2e8f0;padding:9px 12px;border-radius:6px;font-size:.9rem;outline:none;transition:border .2s}
+.field input:focus,.field select:focus{border-color:#22c55e}
+.field .unit{font-size:.72rem;color:#475569;margin-top:3px}
+.calc-btn{width:100%;background:linear-gradient(135deg,#16a34a,#22c55e);color:#020817;border:none;padding:12px;border-radius:8px;font-weight:900;font-size:1rem;cursor:pointer;margin-top:8px;letter-spacing:.5px;transition:.2s}
+.calc-btn:hover{filter:brightness(1.1)}
+.results{background:#020817;border:1px solid #1e293b;border-radius:8px;padding:16px;margin-top:16px}
+.result-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #0a1628;font-size:.88rem}
+.result-row:last-child{border-bottom:none}
+.result-label{color:#94a3b8}
+.result-value{font-weight:700;font-family:'Courier New',monospace;color:#22c55e}
+.result-total{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:6px;padding:10px 14px;margin-top:12px;display:flex;justify-content:space-between;align-items:center}
+.result-total .label{color:#e2e8f0;font-weight:700}
+.result-total .value{font-size:1.3rem;font-weight:900;color:#22c55e;font-family:'Courier New',monospace}
+.note{font-size:.75rem;color:#475569;margin-top:12px;line-height:1.6;padding:10px;background:#020817;border-radius:6px;border:1px solid #0f172a}
+.breakdown-bar{height:12px;border-radius:6px;margin-top:4px;transition:width .5s}
+.bar-wrap{background:#1e293b;border-radius:6px;height:12px;margin-top:4px;overflow:hidden}
+.bar-fill{height:100%;border-radius:6px;transition:width .6s ease}
+.section-title{font-size:.75rem;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.8px;margin:14px 0 8px;padding-top:10px;border-top:1px solid #1e293b}
+</style>
+</head>
+<body>
+<div id="topbar">
+  <div><div class="brand">&#10052; HVAC Load Calculator</div><div class="sub">AYE Tech Hub &mdash; Heating &amp; Cooling Load Analysis per ASHRAE methods</div></div>
+  <a href="../downloads.html" style="color:#64748b;font-size:.8rem;text-decoration:none">&#8592; Back to Downloads</a>
+</div>
+
+<div class="container">
+  <!-- Inputs -->
+  <div>
+    <div class="card">
+      <h2>&#127968; Room / Building Parameters</h2>
+      <div class="field"><label>Room Length (m)</label><input type="number" id="length" value="10" min="1" step="0.1"/></div>
+      <div class="field"><label>Room Width (m)</label><input type="number" id="width" value="8" min="1" step="0.1"/></div>
+      <div class="field"><label>Ceiling Height (m)</label><input type="number" id="height" value="3" min="2" step="0.1"/></div>
+      <div class="field">
+        <label>Climate Zone</label>
+        <select id="climate">
+          <option value="hot-dry">Hot &amp; Dry (Tigray/Addis/Desert)</option>
+          <option value="hot-humid">Hot &amp; Humid (Coastal)</option>
+          <option value="temperate">Temperate (Mild)</option>
+          <option value="cold">Cold (Highland / Mountain)</option>
+        </select>
+      </div>
+      <div class="field"><label>Outdoor Design Temperature (°C)</label><input type="number" id="t-out" value="38" min="-20" max="50"/></div>
+      <div class="field"><label>Indoor Setpoint Temperature (°C)</label><input type="number" id="t-in" value="24" min="18" max="28"/></div>
+
+      <div class="section-title">&#127744; Envelope Properties</div>
+      <div class="field">
+        <label>Wall Insulation</label>
+        <select id="wall-u">
+          <option value="0.8">Poor — Uninsulated block/brick (U=0.80 W/m²K)</option>
+          <option value="0.5" selected>Average — Plastered block (U=0.50 W/m²K)</option>
+          <option value="0.3">Good — Insulated cavity wall (U=0.30 W/m²K)</option>
+          <option value="0.15">Excellent — Heavy insulation (U=0.15 W/m²K)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Roof/Ceiling Insulation</label>
+        <select id="roof-u">
+          <option value="0.9">Poor — Bare concrete roof (U=0.90 W/m²K)</option>
+          <option value="0.5" selected>Average — Insulated slab (U=0.50 W/m²K)</option>
+          <option value="0.25">Good — Insulated + ceiling void (U=0.25 W/m²K)</option>
+          <option value="0.15">Excellent — High insulation (U=0.15 W/m²K)</option>
+        </select>
+      </div>
+      <div class="field"><label>Window Area (m² total glazing)</label><input type="number" id="window-area" value="8" min="0" step="0.5"/></div>
+      <div class="field">
+        <label>Window Type</label>
+        <select id="window-u">
+          <option value="5.8">Single clear glass (U=5.8, SHGC=0.86)</option>
+          <option value="2.8" selected>Double glazed (U=2.8, SHGC=0.60)</option>
+          <option value="1.6">Double Low-E (U=1.6, SHGC=0.35)</option>
+          <option value="1.1">Triple Low-E (U=1.1, SHGC=0.25)</option>
+        </select>
+      </div>
+
+      <div class="section-title">&#128100; Internal Gains</div>
+      <div class="field"><label>Number of Occupants</label><input type="number" id="occupants" value="10" min="0"/></div>
+      <div class="field">
+        <label>Occupant Activity Level</label>
+        <select id="activity">
+          <option value="120">Seated at rest — office (120W sensible + 65W latent)</option>
+          <option value="150">Light work — laboratory (150W sensible + 100W latent)</option>
+          <option value="200">Medium work — light industry (200W sensible + 175W latent)</option>
+        </select>
+      </div>
+      <div class="field"><label>Lighting Load (W/m²)</label><input type="number" id="lighting" value="12" min="0" step="1"/></div>
+      <div class="field"><label>Equipment Load (W total)</label><input type="number" id="equipment" value="2000" min="0" step="100"/></div>
+      <div class="field"><label>Ventilation Rate (L/s per person)</label><input type="number" id="vent-rate" value="10" min="5" max="25" step="1"/><div class="unit">ASHRAE 62.1 minimum: 7.5 L/s/person for offices</div></div>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div>
+    <div class="card">
+      <h2>&#128200; Calculated Loads</h2>
+      <button class="calc-btn" onclick="calculate()">&#9881; Calculate HVAC Loads</button>
+      <div id="results" style="display:none;margin-top:18px">
+        <div class="results" id="cooling-breakdown">
+          <div style="font-weight:800;color:#22c55e;font-size:.85rem;margin-bottom:8px">&#10052; COOLING LOAD BREAKDOWN</div>
+        </div>
+        <div class="result-total" id="cooling-total" style="margin-top:12px">
+          <span class="label">&#10052; Total Cooling Load</span>
+          <span class="value" id="v-cooling">—</span>
+        </div>
+        <div class="results" id="heating-breakdown" style="margin-top:14px">
+          <div style="font-weight:800;color:#f97316;font-size:.85rem;margin-bottom:8px">&#128293; HEATING LOAD BREAKDOWN</div>
+        </div>
+        <div class="result-total" id="heating-total" style="margin-top:12px;border-color:rgba(249,115,22,.2);background:rgba(249,115,22,.05)">
+          <span class="label">&#128293; Total Heating Load</span>
+          <span class="value" id="v-heating" style="color:#f97316">—</span>
+        </div>
+
+        <div class="section-title" style="margin-top:16px">&#128295; Equipment Recommendations</div>
+        <div class="results" id="equipment-recs" style="margin-top:8px"></div>
+
+        <div class="note" id="design-notes" style="margin-top:12px"></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:0">
+      <h2>&#128218; Engineering Notes</h2>
+      <p style="font-size:.82rem;color:#94a3b8;line-height:1.7">
+        <strong style="color:#e2e8f0">Method:</strong> Simplified ASHRAE CLTD/CLF method for commercial buildings.<br><br>
+        <strong style="color:#e2e8f0">Solar gains:</strong> Calculated using orientation average Solar Heat Gain Coefficient (SHGC) × peak irradiance (900 W/m² for hot climates).<br><br>
+        <strong style="color:#e2e8f0">Ventilation load:</strong> Outdoor air enthalpy difference × ventilation airflow rate (psychrometric calculation).<br><br>
+        <strong style="color:#e2e8f0">Safety factors:</strong> 10% added to cooling, 20% to heating for duct losses and supply air temperature variation.<br><br>
+        <strong style="color:#e2e8f0">Standards:</strong> ASHRAE 62.1 (ventilation), ASHRAE 90.1 (energy efficiency), ASHRAE Handbook of Fundamentals.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+function calculate() {
+  // Inputs
+  const L = +document.getElementById('length').value;
+  const W = +document.getElementById('width').value;
+  const H = +document.getElementById('height').value;
+  const Tout = +document.getElementById('t-out').value;
+  const Tin  = +document.getElementById('t-in').value;
+  const dT   = Math.abs(Tout - Tin);
+  const isCooling = Tout > Tin;
+
+  const floorArea = L * W;
+  const wallArea  = 2*(L+W)*H - (+document.getElementById('window-area').value);
+  const roofArea  = floorArea;
+  const winArea   = +document.getElementById('window-area').value;
+
+  const Uwall = +document.getElementById('wall-u').value;
+  const Uroof = +document.getElementById('roof-u').value;
+  const Uwin  = +document.getElementById('window-u').value;
+
+  // Window SHGC by type
+  const shgcMap = {5.8:0.86, 2.8:0.60, 1.6:0.35, 1.1:0.25};
+  const SHGC = shgcMap[Uwin] || 0.6;
+
+  const occupants = +document.getElementById('occupants').value;
+  const actSens   = +document.getElementById('activity').value;
+  const actLat    = actSens === 120 ? 65 : actSens === 150 ? 100 : 175;
+
+  const lightWpm2 = +document.getElementById('lighting').value;
+  const equipW    = +document.getElementById('equipment').value;
+  const ventRate  = +document.getElementById('vent-rate').value; // L/s/person
+  const ventLs    = ventRate * occupants;
+
+  // Climate factors
+  const climateMap = {
+    'hot-dry':  {solarMult:1.0, ventLoad:1.2, heatOut:-5},
+    'hot-humid':{solarMult:0.85, ventLoad:1.6, heatOut:10},
+    'temperate':{solarMult:0.7, ventLoad:1.0, heatOut:5},
+    'cold':     {solarMult:0.6, ventLoad:0.8, heatOut:-15}
+  };
+  const climate = document.getElementById('climate').value;
+  const cf = climateMap[climate];
+
+  // ── COOLING LOADS (W) ──────────────────────────────────────────────
+  const Q_wall_cool   = Uwall * wallArea * dT;
+  const Q_roof_cool   = Uroof * roofArea * (dT * 1.3); // 30% solar-air temp penalty
+  const Q_win_cond    = Uwin  * winArea  * dT;
+  const Q_solar       = SHGC  * winArea  * 900 * cf.solarMult * 0.5; // avg orientation factor 0.5
+  const Q_people_sens = occupants * actSens;
+  const Q_people_lat  = occupants * actLat;
+  const Q_lighting    = lightWpm2 * floorArea;
+  const Q_equip       = equipW;
+  // Ventilation sensible: Q = ṁ × Cp × ΔT; ṁ = ρ×Q̇; ρ≈1.2 kg/m³, Cp=1005 J/kgK
+  const Q_vent_sens   = 1.2 * (ventLs/1000) * 1005 * dT * cf.ventLoad;
+  const Q_vent_lat    = 1.2 * (ventLs/1000) * 2501000 * 0.008 * cf.ventLoad; // 8 g/kg humidity diff
+
+  const Q_cool_sub = Q_wall_cool + Q_roof_cool + Q_win_cond + Q_solar +
+                     Q_people_sens + Q_people_lat + Q_lighting + Q_equip +
+                     Q_vent_sens + Q_vent_lat;
+  const Q_cool_total = Q_cool_sub * 1.10; // 10% duct/safety
+
+  // ── HEATING LOADS (W) ──────────────────────────────────────────────
+  const heatDT = Math.abs(Tin - cf.heatOut);
+  const Q_wall_heat = Uwall * wallArea * heatDT;
+  const Q_roof_heat = Uroof * roofArea * heatDT;
+  const Q_win_heat  = Uwin  * winArea  * heatDT;
+  // Infiltration: 0.5 ACH assumed
+  const Q_infil_heat = 0.5 * (floorArea * H / 3600) * 1.2 * 1005 * heatDT;
+  const Q_vent_heat  = 1.2 * (ventLs/1000) * 1005 * heatDT;
+  const Q_heat_sub   = Q_wall_heat + Q_roof_heat + Q_win_heat + Q_infil_heat + Q_vent_heat;
+  const Q_heat_total = Q_heat_sub * 1.20; // 20% safety
+
+  // Render cooling breakdown
+  const cbreaks = [
+    ['Wall conduction', Q_wall_cool],
+    ['Roof conduction (with solar air temp)', Q_roof_cool],
+    ['Window conduction', Q_win_cond],
+    ['Solar heat gain through glass', Q_solar],
+    ['People — sensible', Q_people_sens],
+    ['People — latent (moisture)', Q_people_lat],
+    ['Lighting', Q_lighting],
+    ['Equipment', Q_equip],
+    ['Ventilation — sensible', Q_vent_sens],
+    ['Ventilation — latent', Q_vent_lat],
+  ];
+
+  let coolHTML = '<div style="font-weight:800;color:#22c55e;font-size:.85rem;margin-bottom:8px">&#10052; COOLING LOAD BREAKDOWN</div>';
+  cbreaks.forEach(([lbl, val]) => {
+    const pct = Math.round((val/Q_cool_sub)*100);
+    coolHTML += `<div class="result-row">
+      <span class="result-label" style="font-size:.8rem">${lbl}</span>
+      <span class="result-value" style="font-size:.82rem">${Math.round(val).toLocaleString()} W</span>
+    </div>
+    <div class="bar-wrap"><div class="bar-fill" style="width:${pct}%;background:#22c55e44"></div></div>`;
+  });
+  document.getElementById('cooling-breakdown').innerHTML = coolHTML;
+
+  let heatHTML = '<div style="font-weight:800;color:#f97316;font-size:.85rem;margin-bottom:8px">&#128293; HEATING LOAD BREAKDOWN</div>';
+  [
+    ['Wall transmission', Q_wall_heat],
+    ['Roof transmission', Q_roof_heat],
+    ['Window transmission', Q_win_heat],
+    ['Infiltration (0.5 ACH)', Q_infil_heat],
+    ['Ventilation (outdoor air)', Q_vent_heat],
+  ].forEach(([lbl, val]) => {
+    heatHTML += `<div class="result-row">
+      <span class="result-label" style="font-size:.8rem">${lbl}</span>
+      <span class="result-value" style="color:#f97316;font-size:.82rem">${Math.round(val).toLocaleString()} W</span>
+    </div>`;
+  });
+  document.getElementById('heating-breakdown').innerHTML = heatHTML;
+
+  // Totals
+  const kW_cool = Q_cool_total/1000;
+  const tons    = kW_cool / 3.517;
+  const kW_heat = Q_heat_total/1000;
+  document.getElementById('v-cooling').textContent = `${kW_cool.toFixed(1)} kW (${tons.toFixed(1)} TR)`;
+  document.getElementById('v-heating').textContent = `${kW_heat.toFixed(1)} kW`;
+
+  // Equipment recommendations
+  let recHTML = '';
+  if (tons <= 1.5) recHTML = `<div class="result-row"><span class="result-label">&#10003; Recommended system</span><span class="result-value" style="font-size:.82rem">1.5 TR Split AC unit (18,000 BTU/h)</span></div>`;
+  else if (tons <= 2.5) recHTML = `<div class="result-row"><span class="result-label">&#10003; Recommended system</span><span class="result-value" style="font-size:.82rem">2.5 TR Split AC (30,000 BTU/h)</span></div>`;
+  else if (tons <= 5) recHTML = `<div class="result-row"><span class="result-label">&#10003; Recommended system</span><span class="result-value" style="font-size:.82rem">Cassette/ducted system ${tons.toFixed(1)} TR</span></div>`;
+  else if (tons <= 20) recHTML = `<div class="result-row"><span class="result-label">&#10003; Recommended system</span><span class="result-value" style="font-size:.82rem">VRF or AHU + chiller system ${kW_cool.toFixed(0)} kW</span></div>`;
+  else recHTML = `<div class="result-row"><span class="result-label">&#10003; Recommended system</span><span class="result-value" style="font-size:.82rem">Central chilled water plant — ${Math.ceil(tons/10)*10} TR chiller</span></div>`;
+
+  recHTML += `<div class="result-row"><span class="result-label">Airflow required</span><span class="result-value" style="font-size:.82rem">${Math.round(Q_cool_total/60).toLocaleString()} L/s</span></div>`;
+  recHTML += `<div class="result-row"><span class="result-label">Floor area</span><span class="result-value" style="font-size:.82rem">${floorArea.toFixed(0)} m²</span></div>`;
+  recHTML += `<div class="result-row"><span class="result-label">Cooling load density</span><span class="result-value" style="font-size:.82rem">${(kW_cool*1000/floorArea).toFixed(0)} W/m²</span></div>`;
+
+  document.getElementById('equipment-recs').innerHTML = recHTML;
+  document.getElementById('design-notes').innerHTML = `<strong style="color:#e2e8f0">Design Summary:</strong> ${floorArea.toFixed(0)} m² space, ${occupants} occupants, ${ventLs.toFixed(0)} L/s ventilation. Dominant cooling load: ${cbreaks.sort((a,b)=>b[1]-a[1])[0][0].toLowerCase()} (${Math.round(cbreaks.sort((a,b)=>b[1]-a[1])[0][1])} W). All results include safety factors per ASHRAE methods.`;
+
+  document.getElementById('results').style.display = 'block';
+}
+
+calculate(); // initial calculation
+</script>
+</body>
+</html>
