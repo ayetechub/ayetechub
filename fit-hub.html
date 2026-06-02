@@ -148,31 +148,41 @@
   }
   .program-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; color: #fff; }
   .program-desc  { font-size: .82rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px; }
-  /* Program PDF list */
-  .program-pdfs { margin-top: 10px; display: flex; flex-direction: column; gap: 6px; }
+  /* Program guide toggle button */
+  .prog-toggle-btn {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: rgba(167,139,250,.12); border: 1px solid rgba(167,139,250,.35);
+    color: #a78bfa; padding: 8px 16px; border-radius: 20px;
+    font-size: .8rem; font-weight: 800; cursor: pointer;
+    transition: all .2s; margin-top: 10px; width: 100%; justify-content: center;
+    letter-spacing: .4px;
+  }
+  .prog-toggle-btn:hover { background: rgba(167,139,250,.22); border-color: #a78bfa; }
+  .prog-toggle-btn .arrow { transition: transform .25s; font-style: normal; }
+  .prog-toggle-btn.open .arrow { transform: rotate(180deg); }
+  .prog-toggle-btn.coming { color: rgba(167,139,250,.45); border-color: rgba(167,139,250,.15); cursor: default; background: transparent; }
+
+  /* Collapsible PDF list */
+  .program-pdfs {
+    max-height: 0; overflow: hidden;
+    transition: max-height .35s ease, opacity .25s ease;
+    opacity: 0;
+  }
+  .program-pdfs.open { max-height: 600px; opacity: 1; }
+  .prog-pdf-inner { padding-top: 10px; display: flex; flex-direction: column; gap: 7px; }
   .prog-pdf-item {
     display: flex; align-items: center; justify-content: space-between;
-    background: rgba(0,0,0,.25); border: 1px solid rgba(167,139,250,.15);
-    border-radius: 7px; padding: 7px 10px; gap: 8px;
-    font-size: .78rem; color: var(--text-soft);
+    background: rgba(0,0,0,.3); border: 1px solid rgba(167,139,250,.12);
+    border-radius: 8px; padding: 8px 12px; gap: 8px;
+    font-size: .8rem; color: var(--text-soft); line-height: 1.35;
   }
-  .prog-pdf-item span { flex: 1; line-height: 1.35; }
+  .prog-pdf-item span { flex: 1; }
   .prog-pdf-item a {
-    background: rgba(167,139,250,.15); border: 1px solid rgba(167,139,250,.4);
-    color: #a78bfa; padding: 3px 10px; border-radius: 5px; font-size: .72rem;
-    font-weight: 700; text-decoration: none; white-space: nowrap; transition: .2s;
+    background: rgba(167,139,250,.18); border: 1px solid rgba(167,139,250,.4);
+    color: #a78bfa; padding: 4px 12px; border-radius: 6px; font-size: .74rem;
+    font-weight: 700; text-decoration: none; white-space: nowrap; transition: .2s; flex-shrink: 0;
   }
-  .prog-pdf-item a:hover { background: rgba(167,139,250,.3); }
-  .prog-coming {
-    font-size: .75rem; color: rgba(167,139,250,.5); font-style: italic;
-    padding: 4px 0; text-align: center;
-  }
-  .prog-count {
-    font-size: .7rem; font-weight: 800; color: #a78bfa;
-    text-transform: uppercase; letter-spacing: .8px;
-    margin-bottom: 6px; display: flex; align-items: center; gap: 5px;
-  }
-  .prog-count::before { content: ''; width: 20px; height: 2px; background: #a78bfa; border-radius: 2px; }
+  .prog-pdf-item a:hover { background: rgba(167,139,250,.32); color: #fff; }
 
   .coming-badge  {
     display: inline-block;
@@ -455,42 +465,66 @@
         <div class="program-icon" style="background:rgba(167,139,250,.12)">&#128170;</div>
         <div class="program-title">30-Day Strength Program</div>
         <div class="program-desc">Progressive overload training plan across 30 days. Build raw strength from foundation to full power.</div>
-        <div class="program-pdfs" id="prog-strength"></div>
+        <button class="prog-toggle-btn" onclick="toggleProgram(this)">
+          <span class="count-label">Loading guides…</span>
+          <span class="arrow">&#9660;</span>
+        </button>
+        <div class="program-pdfs"><div class="prog-pdf-inner"></div></div>
       </div>
 
       <div class="program-card reveal" data-program="hiit">
         <div class="program-icon" style="background:rgba(244,63,94,.1)">&#128293;</div>
         <div class="program-title">HIIT Cardio Blast</div>
         <div class="program-desc">High-intensity interval sessions designed to burn fat fast and boost cardiovascular endurance.</div>
-        <div class="program-pdfs" id="prog-hiit"></div>
+        <button class="prog-toggle-btn" onclick="toggleProgram(this)">
+          <span class="count-label">Loading guides…</span>
+          <span class="arrow">&#9660;</span>
+        </button>
+        <div class="program-pdfs"><div class="prog-pdf-inner"></div></div>
       </div>
 
       <div class="program-card reveal" data-program="core">
         <div class="program-icon" style="background:rgba(16,185,129,.1)">&#129346;</div>
         <div class="program-title">Core &amp; Flexibility</div>
         <div class="program-desc">Daily core work and mobility routines that improve posture, reduce injury risk, and build balance.</div>
-        <div class="program-pdfs" id="prog-core"></div>
+        <button class="prog-toggle-btn" onclick="toggleProgram(this)">
+          <span class="count-label">Loading guides…</span>
+          <span class="arrow">&#9660;</span>
+        </button>
+        <div class="program-pdfs"><div class="prog-pdf-inner"></div></div>
       </div>
 
       <div class="program-card reveal" data-program="home">
         <div class="program-icon" style="background:rgba(249,115,22,.1)">&#127968;</div>
         <div class="program-title">Home Workout Series</div>
         <div class="program-desc">Zero-equipment workouts you can do anywhere. Consistent gains without a gym membership.</div>
-        <div class="program-pdfs" id="prog-home"></div>
+        <button class="prog-toggle-btn" onclick="toggleProgram(this)">
+          <span class="count-label">Loading guides…</span>
+          <span class="arrow">&#9660;</span>
+        </button>
+        <div class="program-pdfs"><div class="prog-pdf-inner"></div></div>
       </div>
 
       <div class="program-card reveal" data-program="nutrition">
         <div class="program-icon" style="background:rgba(20,184,166,.1)">&#129367;</div>
         <div class="program-title">Nutrition Guide</div>
         <div class="program-desc">Simple, practical nutrition principles for fueling performance, recovery, and everyday energy.</div>
-        <div class="program-pdfs" id="prog-nutrition"></div>
+        <button class="prog-toggle-btn" onclick="toggleProgram(this)">
+          <span class="count-label">Loading guides…</span>
+          <span class="arrow">&#9660;</span>
+        </button>
+        <div class="program-pdfs"><div class="prog-pdf-inner"></div></div>
       </div>
 
       <div class="program-card reveal" data-program="mindset">
         <div class="program-icon" style="background:rgba(99,102,241,.1)">&#129504;</div>
         <div class="program-title">Mindset &amp; Recovery</div>
         <div class="program-desc">Mental toughness strategies, sleep optimization, and active recovery protocols for sustainable progress.</div>
-        <div class="program-pdfs" id="prog-mindset"></div>
+        <button class="prog-toggle-btn" onclick="toggleProgram(this)">
+          <span class="count-label">Loading guides…</span>
+          <span class="arrow">&#9660;</span>
+        </button>
+        <div class="program-pdfs"><div class="prog-pdf-inner"></div></div>
       </div>
 
     </div>
@@ -834,47 +868,53 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ── Program PDF auto-population ──────────────────────────────
-  // Keywords matched against the PDF file path — add more keywords as new PDFs are uploaded
+  // ── Program PDF auto-population (toggle/hidden, clean cards) ─
   const PROGRAM_MAP = {
-    'strength': ['day01','day08','day13','day18','day23','day28','strength','overload','upper-body','lower-body','power','squat','deadlift','bench','push-pull'],
-    'hiit':     ['day02','day09','day15','day20','day24','day29','hiit','tabata','emom','amrap','cardio','fat-burn','interval'],
-    'core':     ['day03','day10','day16','day21','day25','core','flex','yoga','stretch','mobility','posture','pillar'],
-    'home':     ['day04','home','no-equip','bodyweight','dumbbell','resistance'],
-    'nutrition':['day05','day11','day17','day22','day26','nutrition','macro','meal','protein','diet','hydrat','food','cutting','bulking'],
-    'mindset':  ['day06','day07','day12','day14','day19','day27','day30','mindset','recovery','sleep','check-in','setback','mental','identity','gratitude']
+    'strength': ['day01','day08','day13','day18','day23','day28','strength','overload','upper-body','lower-body','power','push-pull'],
+    'hiit':     ['day02','day09','day15','day20','day24','day29','hiit','tabata','emom','amrap','fat-burn'],
+    'core':     ['day03','day10','day16','day21','day25','core','flex','yoga','stretch','mobility'],
+    'home':     ['day04','home','no-equip','bodyweight'],
+    'nutrition':['day05','day11','day17','day22','day26','nutrition','macro','meal','protein','hydrat','cutting','bulking'],
+    'mindset':  ['day06','day07','day12','day14','day19','day27','day30','mindset','recovery','sleep','check-in','setback','mental','identity']
   };
 
   if (typeof PDFS !== 'undefined') {
     const fitPdfs = PDFS.filter(p => p.category === 'fit-hub' && p.file && p.file !== '#coming-soon');
 
-    Object.entries(PROGRAM_MAP).forEach(([prog, keywords]) => {
-      const el = document.getElementById('prog-' + prog);
-      if (!el) return;
+    document.querySelectorAll('.program-card[data-program]').forEach(card => {
+      const prog  = card.dataset.program;
+      const kws   = PROGRAM_MAP[prog] || [];
+      const btn   = card.querySelector('.prog-toggle-btn');
+      const inner = card.querySelector('.prog-pdf-inner');
+      if (!btn || !inner) return;
 
-      // Match PDFs whose file path contains any keyword for this program
       const matched = fitPdfs.filter(p => {
-        const path = (p.file + ' ' + (p.id || '')).toLowerCase();
-        return keywords.some(kw => path.includes(kw));
-      });
+        const key = (p.file + ' ' + (p.id || '')).toLowerCase();
+        return kws.some(kw => key.includes(kw));
+      }).sort((a, b) => a.file.localeCompare(b.file));
 
       if (matched.length === 0) {
-        el.innerHTML = '<div class="prog-coming">&#128203; PDFs coming soon — check back after next upload!</div>';
+        btn.classList.add('coming');
+        btn.querySelector('.count-label').textContent = 'Guides coming soon';
+        btn.querySelector('.arrow').style.display = 'none';
+        btn.onclick = null;
         return;
       }
 
-      // Sort by file name (day order)
-      matched.sort((a, b) => a.file.localeCompare(b.file));
+      // Update button label
+      btn.querySelector('.count-label').textContent =
+        `&#128203; ${matched.length} Guide${matched.length > 1 ? 's' : ''} Available`;
+      btn.innerHTML = btn.innerHTML; // trigger re-parse for entity
 
-      el.innerHTML = `<div class="prog-count">${matched.length} guide${matched.length > 1 ? 's' : ''} available</div>` +
-        matched.map(p => {
-          const title = typeof p.title === 'object' ? (p.title.en || Object.values(p.title)[0]) : p.title;
-          const short = title.length > 42 ? title.slice(0, 40) + '…' : title;
-          return `<div class="prog-pdf-item">
-            <span>${short}</span>
-            <a href="${p.file}" download>&#8595; PDF</a>
-          </div>`;
-        }).join('');
+      // Build hidden PDF list
+      inner.innerHTML = matched.map(p => {
+        const title = typeof p.title === 'object' ? (p.title.en || Object.values(p.title)[0]) : (p.title || '');
+        const short = title.length > 46 ? title.slice(0, 44) + '…' : title;
+        return `<div class="prog-pdf-item">
+          <span>${short}</span>
+          <a href="${p.file}" download title="Download PDF">&#8595; PDF</a>
+        </div>`;
+      }).join('');
     });
   }
 
@@ -895,6 +935,25 @@ document.addEventListener('DOMContentLoaded', () => {
     renderGrid('fh-blog-grid', fitPosts, b => renderBlogCard(b, ''), 'No fitness articles yet. Check back soon!');
   }
 });
+
+// ── Toggle program guide panel ──────────────────────────────────
+function toggleProgram(btn) {
+  if (btn.classList.contains('coming')) return;
+  const panel = btn.nextElementSibling; // .program-pdfs div
+  const isOpen = panel.classList.contains('open');
+  // Close all others first
+  document.querySelectorAll('.program-pdfs.open').forEach(p => {
+    p.classList.remove('open');
+    const b = p.previousElementSibling;
+    if (b) b.classList.remove('open');
+  });
+  // Toggle this one
+  if (!isOpen) {
+    panel.classList.add('open');
+    btn.classList.add('open');
+    panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+}
 </script>
 <div id="i18n-draft-notice" hidden role="status" aria-live="polite"></div>
 <script src="js/i18n.js" defer></script>
