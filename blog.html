@@ -214,9 +214,17 @@ function renderBlog() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  /* Auto-apply ?q= search from tag links in blog articles */
+  /* Auto-apply ?cat= or ?q= from tag/category links in blog articles */
   const params = new URLSearchParams(window.location.search);
-  const preQ = params.get('q');
+  const preCat = params.get('cat');
+  const preQ   = params.get('q');
+  if (preCat) {
+    _cat = preCat;
+    /* Activate the matching filter button */
+    document.querySelectorAll('#blog-filters .filter-tag').forEach(t => {
+      t.classList.toggle('active', t.dataset.cat === preCat);
+    });
+  }
   if (preQ) {
     _q = preQ;
     const searchInput = document.getElementById('blog-search');
