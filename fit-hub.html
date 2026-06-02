@@ -148,6 +148,32 @@
   }
   .program-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; color: #fff; }
   .program-desc  { font-size: .82rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px; }
+  /* Program PDF list */
+  .program-pdfs { margin-top: 10px; display: flex; flex-direction: column; gap: 6px; }
+  .prog-pdf-item {
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(0,0,0,.25); border: 1px solid rgba(167,139,250,.15);
+    border-radius: 7px; padding: 7px 10px; gap: 8px;
+    font-size: .78rem; color: var(--text-soft);
+  }
+  .prog-pdf-item span { flex: 1; line-height: 1.35; }
+  .prog-pdf-item a {
+    background: rgba(167,139,250,.15); border: 1px solid rgba(167,139,250,.4);
+    color: #a78bfa; padding: 3px 10px; border-radius: 5px; font-size: .72rem;
+    font-weight: 700; text-decoration: none; white-space: nowrap; transition: .2s;
+  }
+  .prog-pdf-item a:hover { background: rgba(167,139,250,.3); }
+  .prog-coming {
+    font-size: .75rem; color: rgba(167,139,250,.5); font-style: italic;
+    padding: 4px 0; text-align: center;
+  }
+  .prog-count {
+    font-size: .7rem; font-weight: 800; color: #a78bfa;
+    text-transform: uppercase; letter-spacing: .8px;
+    margin-bottom: 6px; display: flex; align-items: center; gap: 5px;
+  }
+  .prog-count::before { content: ''; width: 20px; height: 2px; background: #a78bfa; border-radius: 2px; }
+
   .coming-badge  {
     display: inline-block;
     background: rgba(167,139,250,.12);
@@ -425,47 +451,46 @@
 
     <div class="programs-grid">
 
-      <div class="program-card reveal">
-        <div class="program-icon" style="background:rgba(167,139,250,.12)">💪</div>
+      <div class="program-card reveal" data-program="strength">
+        <div class="program-icon" style="background:rgba(167,139,250,.12)">&#128170;</div>
         <div class="program-title">30-Day Strength Program</div>
         <div class="program-desc">Progressive overload training plan across 30 days. Build raw strength from foundation to full power.</div>
-        <span class="coming-badge">Coming Soon</span>
-        <div class="program-card" style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#7c3aed,#a78bfa);border-radius:16px 16px 0 0;padding:0;border:none"></div>
+        <div class="program-pdfs" id="prog-strength"></div>
       </div>
 
-      <div class="program-card reveal">
-        <div class="program-icon" style="background:rgba(244,63,94,.1)">🔥</div>
+      <div class="program-card reveal" data-program="hiit">
+        <div class="program-icon" style="background:rgba(244,63,94,.1)">&#128293;</div>
         <div class="program-title">HIIT Cardio Blast</div>
         <div class="program-desc">High-intensity interval sessions designed to burn fat fast and boost cardiovascular endurance.</div>
-        <span class="coming-badge">Coming Soon</span>
+        <div class="program-pdfs" id="prog-hiit"></div>
       </div>
 
-      <div class="program-card reveal">
-        <div class="program-icon" style="background:rgba(16,185,129,.1)">🧘</div>
-        <div class="program-title">Core & Flexibility</div>
+      <div class="program-card reveal" data-program="core">
+        <div class="program-icon" style="background:rgba(16,185,129,.1)">&#129346;</div>
+        <div class="program-title">Core &amp; Flexibility</div>
         <div class="program-desc">Daily core work and mobility routines that improve posture, reduce injury risk, and build balance.</div>
-        <span class="coming-badge">Coming Soon</span>
+        <div class="program-pdfs" id="prog-core"></div>
       </div>
 
-      <div class="program-card reveal">
-        <div class="program-icon" style="background:rgba(249,115,22,.1)">🏠</div>
+      <div class="program-card reveal" data-program="home">
+        <div class="program-icon" style="background:rgba(249,115,22,.1)">&#127968;</div>
         <div class="program-title">Home Workout Series</div>
         <div class="program-desc">Zero-equipment workouts you can do anywhere. Consistent gains without a gym membership.</div>
-        <span class="coming-badge">Coming Soon</span>
+        <div class="program-pdfs" id="prog-home"></div>
       </div>
 
-      <div class="program-card reveal">
-        <div class="program-icon" style="background:rgba(20,184,166,.1)">🥗</div>
+      <div class="program-card reveal" data-program="nutrition">
+        <div class="program-icon" style="background:rgba(20,184,166,.1)">&#129367;</div>
         <div class="program-title">Nutrition Guide</div>
         <div class="program-desc">Simple, practical nutrition principles for fueling performance, recovery, and everyday energy.</div>
-        <span class="coming-badge">Coming Soon</span>
+        <div class="program-pdfs" id="prog-nutrition"></div>
       </div>
 
-      <div class="program-card reveal">
-        <div class="program-icon" style="background:rgba(99,102,241,.1)">🧠</div>
-        <div class="program-title">Mindset & Recovery</div>
+      <div class="program-card reveal" data-program="mindset">
+        <div class="program-icon" style="background:rgba(99,102,241,.1)">&#129504;</div>
+        <div class="program-title">Mindset &amp; Recovery</div>
         <div class="program-desc">Mental toughness strategies, sleep optimization, and active recovery protocols for sustainable progress.</div>
-        <span class="coming-badge">Coming Soon</span>
+        <div class="program-pdfs" id="prog-mindset"></div>
       </div>
 
     </div>
@@ -808,9 +833,54 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Fitness PDFs
+
+  // ── Program PDF auto-population ──────────────────────────────
+  // Keywords matched against the PDF file path — add more keywords as new PDFs are uploaded
+  const PROGRAM_MAP = {
+    'strength': ['day01','day08','day13','day18','day23','day28','strength','overload','upper-body','lower-body','power','squat','deadlift','bench','push-pull'],
+    'hiit':     ['day02','day09','day15','day20','day24','day29','hiit','tabata','emom','amrap','cardio','fat-burn','interval'],
+    'core':     ['day03','day10','day16','day21','day25','core','flex','yoga','stretch','mobility','posture','pillar'],
+    'home':     ['day04','home','no-equip','bodyweight','dumbbell','resistance'],
+    'nutrition':['day05','day11','day17','day22','day26','nutrition','macro','meal','protein','diet','hydrat','food','cutting','bulking'],
+    'mindset':  ['day06','day07','day12','day14','day19','day27','day30','mindset','recovery','sleep','check-in','setback','mental','identity','gratitude']
+  };
+
+  if (typeof PDFS !== 'undefined') {
+    const fitPdfs = PDFS.filter(p => p.category === 'fit-hub' && p.file && p.file !== '#coming-soon');
+
+    Object.entries(PROGRAM_MAP).forEach(([prog, keywords]) => {
+      const el = document.getElementById('prog-' + prog);
+      if (!el) return;
+
+      // Match PDFs whose file path contains any keyword for this program
+      const matched = fitPdfs.filter(p => {
+        const path = (p.file + ' ' + (p.id || '')).toLowerCase();
+        return keywords.some(kw => path.includes(kw));
+      });
+
+      if (matched.length === 0) {
+        el.innerHTML = '<div class="prog-coming">&#128203; PDFs coming soon — check back after next upload!</div>';
+        return;
+      }
+
+      // Sort by file name (day order)
+      matched.sort((a, b) => a.file.localeCompare(b.file));
+
+      el.innerHTML = `<div class="prog-count">${matched.length} guide${matched.length > 1 ? 's' : ''} available</div>` +
+        matched.map(p => {
+          const title = typeof p.title === 'object' ? (p.title.en || Object.values(p.title)[0]) : p.title;
+          const short = title.length > 42 ? title.slice(0, 40) + '…' : title;
+          return `<div class="prog-pdf-item">
+            <span>${short}</span>
+            <a href="${p.file}" download>&#8595; PDF</a>
+          </div>`;
+        }).join('');
+    });
+  }
+
+  // ── Fitness PDF library grid ─────────────────────────────────
   const fitnessPdfs = (typeof PDFS !== 'undefined')
-    ? PDFS.filter(p => p.category === 'fitness' || p.category === 'fit-hub')
+    ? PDFS.filter(p => p.category === 'fit-hub' && p.file && p.file !== '#coming-soon')
     : [];
   if (fitnessPdfs.length > 0) {
     renderGrid('fh-pdf-grid', fitnessPdfs, p => renderPdfCard(p, ''), 'No fitness PDFs yet');
@@ -819,7 +889,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (ph) ph.style.display = '';
   }
 
-  // Fit Hub Blog — show latest 4 articles
+  // ── Fit Hub Blog ─────────────────────────────────────────────
   if (typeof BLOG_POSTS !== 'undefined') {
     const fitPosts = BLOG_POSTS.filter(b => b.category === 'fit-hub').slice(0, 4);
     renderGrid('fh-blog-grid', fitPosts, b => renderBlogCard(b, ''), 'No fitness articles yet. Check back soon!');
