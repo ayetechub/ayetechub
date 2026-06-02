@@ -903,7 +903,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Update button label
       btn.querySelector('.count-label').textContent =
-        `&#128203; ${matched.length} Guide${matched.length > 1 ? 's' : ''} Available`;
+        `${matched.length} Guide${matched.length > 1 ? 's' : ''} Available`;
       btn.innerHTML = btn.innerHTML; // trigger re-parse for entity
 
       // Build hidden PDF list
