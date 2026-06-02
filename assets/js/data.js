@@ -3486,7 +3486,7 @@ const BLOG_POSTS = [
     readTime: '6 min read',
     excerpt: 'Artificial intelligence is rapidly changing how engineers design, simulate, and optimize systems. Here\'s how African engineers can leverage these tools today.',
     image: 'assets/images/og-cover.png',
-    url: '#',
+    url: 'blog/ai-future-engineering.html',
     featured: true
   },
   {
@@ -3498,7 +3498,7 @@ const BLOG_POSTS = [
     readTime: '8 min read',
     excerpt: 'Write clean, maintainable PLC code that stands the test of time. These best practices come from real industrial project experience.',
     image: 'assets/images/og-cover.png',
-    url: '#',
+    url: 'blog/plc-programming-tips.html',
     featured: true
   },
   {
@@ -3510,7 +3510,7 @@ const BLOG_POSTS = [
     readTime: '10 min read',
     excerpt: 'Tigray has one of the highest solar irradiance levels in Ethiopia. This article explores the technical and economic case for solar deployment.',
     image: 'assets/images/og-cover.png',
-    url: '#',
+    url: 'blog/solar-tigray.html',
     featured: false
   },
   {
@@ -3522,7 +3522,7 @@ const BLOG_POSTS = [
     readTime: '5 min read',
     excerpt: 'Comparing the two most popular design tools in engineering. The answer depends on your specialization and career goals.',
     image: 'assets/images/og-cover.png',
-    url: '#',
+    url: 'blog/revit-vs-autocad.html',
     featured: false
   },
   {
@@ -3534,7 +3534,7 @@ const BLOG_POSTS = [
     readTime: '7 min read',
     excerpt: 'A curated list of free, high-quality engineering reference books, manuals, and study guides available for download.',
     image: 'assets/images/og-cover.png',
-    url: '#',
+    url: 'blog/free-engineering-pdfs.html',
     featured: false
   },
   {
@@ -3546,7 +3546,7 @@ const BLOG_POSTS = [
     readTime: '12 min read',
     excerpt: 'Understanding heating and cooling loads, duct design, and equipment selection without the textbook complexity.',
     image: 'assets/images/og-cover.png',
-    url: '#',
+    url: 'blog/hvac-fundamentals.html',
     featured: false
   }
 ];

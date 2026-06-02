@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>HVAC System Design: A Practical Beginner's Guide – AYE Tech Hub</title>
+<meta name="description" content="Understand heating and cooling loads, duct design, and equipment selection without the textbook complexity. A plain-language HVAC guide for engineers."/>
+<link rel="canonical" href="https://ayetechub.com/blog/hvac-fundamentals.html"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23020817'/%3E%3Crect x='3' y='3' width='94' height='94' rx='20' fill='none' stroke='%2300d4ff' stroke-width='3'/%3E%3Ctext x='50' y='62' font-family='Arial Black,sans-serif' font-size='30' font-weight='900' fill='%2300d4ff' text-anchor='middle'%3EAYE%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;700&display=swap"/>
+<link rel="stylesheet" href="../assets/css/main.css"/>
+<link rel="stylesheet" href="../assets/css/pages.css"/>
+<style>
+.article-wrap{max-width:780px;margin:0 auto;padding:0 20px 80px}
+.article-header{padding:48px 0 36px;border-bottom:1px solid var(--border);margin-bottom:36px}
+.article-cat{display:inline-block;background:rgba(6,182,212,.12);color:#06b6d4;border:1px solid rgba(6,182,212,.3);font-size:.72rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:16px}
+.article-header h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;line-height:1.2;margin-bottom:16px}
+.article-meta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;color:var(--text-muted);font-size:.82rem}
+.article-body{font-size:1.02rem;line-height:1.85;color:var(--text-soft)}
+.article-body h2{font-size:1.3rem;font-weight:800;color:var(--text);margin:40px 0 14px;padding-left:14px;border-left:3px solid #06b6d4}
+.article-body h3{font-size:1.05rem;font-weight:700;color:#06b6d4;margin:28px 0 10px}
+.article-body p{margin-bottom:18px}
+.article-body ul,.article-body ol{padding-left:22px;margin-bottom:18px}
+.article-body li{margin-bottom:8px;line-height:1.75}
+.article-body strong{color:var(--text)}
+.article-body blockquote{border-left:4px solid #06b6d4;background:var(--bg-card);padding:16px 20px;margin:24px 0;border-radius:0 8px 8px 0;font-style:italic;color:var(--text)}
+.formula-box{background:#020817;border:1px solid var(--border);border-left:3px solid #06b6d4;border-radius:4px;padding:16px 20px;margin:18px 0;font-family:'Courier New',monospace;font-size:.92rem;color:#e2e8f0;line-height:1.8}
+.formula-box .var{color:#06b6d4}.formula-box .eq{color:#fbbf24}
+.equipment-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:20px 0}
+.equipment-card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center}
+.equipment-card .icon{font-size:2rem;margin-bottom:8px}
+.equipment-card h4{font-size:.9rem;font-weight:700;color:var(--text);margin-bottom:6px}
+.equipment-card p{font-size:.8rem;color:var(--text-muted);margin:0;line-height:1.5}
+.callout{background:var(--bg-card);border:1px solid #06b6d4;border-radius:10px;padding:18px 20px;margin:24px 0}
+.callout-title{font-weight:800;font-size:.85rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;color:#06b6d4}
+.callout p{margin:0;font-size:.9rem;color:var(--text-soft)}
+.tag-row{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}
+.tag{font-size:.72rem;padding:4px 12px;background:var(--bg-card);border:1px solid var(--border);border-radius:20px;color:var(--text-muted)}
+.article-footer{margin-top:48px;padding-top:32px;border-top:1px solid var(--border);display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+</style>
+</head>
+<body>
+<div id="loading-screen"><div class="loading-logo">AYE</div><div class="loading-bar-wrap"><div class="loading-bar"></div></div><div class="loading-text">LOADING ARTICLE</div></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-menu" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path fill="currentColor" d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.39 5.39 0 0 1-4.4 2.26 5.5 5.5 0 0 1-3.14-10A9.32 9.32 0 0 0 12 3z"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><path fill="currentColor" d="M6.76 4.84 4.96 3.05 3.55 4.46l1.79 1.79zM4 10.5H1v2h3zm9-9.95h-2V3.5h2zm7.45 3.91-1.41-1.41-1.79 1.79 1.41 1.41zM17.24 18.16l1.79 1.8 1.41-1.41-1.8-1.79zM20 10.5v2h3v-2zM12 5.5a6 6 0 0 0-6 6c0 3.31 2.69 6 6 6s6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2zM4.96 19.95l1.41 1.41 1.79-1.8-1.41-1.41z"/></symbol>
+<symbol id="i-telegram" viewBox="0 0 24 24"><path fill="currentColor" d="M22 3 2 11l6 2 2 7 4-5 6 5 2-17zm-5 5L10 14l-1 4-1-3 9-7z"/></symbol>
+</defs></svg>
+<header id="navbar">
+  <div class="container nav-inner">
+    <a href="../index.html" class="brand"><img src="../assets/images/logo.png" alt="AYE Tech Hub" style="width:42px;height:42px;border-radius:10px;object-fit:cover;"/><div><div class="brand-name">AYE Tech Hub</div><div class="brand-tag">Engineering the Future</div></div></a>
+    <nav class="nav-menu">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../courses.html" class="nav-link">Courses</a>
+      <a href="../pdfs.html" class="nav-link">PDF Library</a>
+      <a href="../blog.html" class="nav-link active">Blog</a>
+      <a href="../contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="nav-controls">
+      <button class="icon-btn" onclick="toggleTheme()" aria-label="Toggle theme"><svg class="svg-icon"><use id="theme-use" href="#i-moon"/></svg></button>
+      <a href="https://t.me/ayetechub" target="_blank" rel="noopener" class="btn btn-primary btn-sm hide-mobile"><svg class="svg-icon" aria-hidden="true"><use href="#i-telegram"/></svg> Telegram</a>
+      <button class="icon-btn hamburger" onclick="toggleMobileMenu()" aria-label="Open menu"><svg class="svg-icon"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="container">
+    <a href="../index.html" class="mobile-link">Home</a>
+    <a href="../blog.html" class="mobile-link" style="color:var(--neon)">Blog</a>
+    <a href="../contact.html" class="mobile-link">Contact</a>
+  </div>
+</header>
+
+<div class="article-wrap">
+  <div class="article-header reveal">
+    <span class="article-cat">&#10052; Mechanical Engineering</span>
+    <h1>HVAC System Design: A Practical Beginner's Guide</h1>
+    <div class="article-meta">
+      <span>&#128197; March 5, 2026</span>
+      <span>&#9997; Awet G. Nway</span>
+      <span>&#128337; 12 min read</span>
+    </div>
+  </div>
+
+  <div class="article-body reveal">
+
+    <p>Walk into any modern building — an office, a hospital, a factory, a shopping mall — and you are experiencing HVAC engineering. The temperature feels comfortable. The air is fresh. You are not aware of it, which means it is working perfectly. HVAC (Heating, Ventilation, and Air Conditioning) is one of the most consequential engineering disciplines because it directly affects human health, comfort, productivity, and energy consumption.</p>
+
+    <p>Yet HVAC is often poorly understood, even by engineers from adjacent disciplines. This guide strips away the textbook complexity and explains HVAC from first principles — what each system does, how to size it, and what decisions matter most in design.</p>
+
+    <h2>The Three Functions of HVAC</h2>
+
+    <h3>1. Heating</h3>
+    <p>Heating raises the space temperature to the desired setpoint when outside conditions are cold. Heat sources include combustion (natural gas, LPG, diesel boilers), electrical resistance heaters, heat pumps, and district heating. The engineering challenge in heating is calculating the heat loss through the building envelope (walls, roof, windows, and floor) and selecting equipment with sufficient output to overcome that loss at the design outdoor temperature.</p>
+
+    <h3>2. Ventilation</h3>
+    <p>Ventilation replaces stale indoor air with fresh outdoor air. Without ventilation, CO₂ from human respiration accumulates to levels (above 1,000 ppm) that cause drowsiness, reduced concentration, and headaches. Ventilation also dilutes volatile organic compounds (VOCs) from furniture and finishes, controls humidity, and removes odours. The minimum fresh air requirement is defined by ASHRAE Standard 62.1 — typically 7.5–10 L/s per person plus 0.3–1.0 L/s·m² of floor area.</p>
+
+    <h3>3. Air Conditioning (Cooling)</h3>
+    <p>Cooling removes heat from the space when outdoor conditions are hot, or when internal heat gains (from people, lighting, and equipment) raise the temperature above the setpoint. All mechanical cooling systems work on the vapour compression refrigeration cycle: a refrigerant absorbs heat at a low-pressure evaporator (inside the building) and rejects heat at a high-pressure condenser (outside). This is why your split air conditioner blows hot air from its outdoor unit.</p>
+
+    <h2>The Core Design Process: Load Calculation</h2>
+
+    <p>Before selecting any HVAC equipment, an engineer must calculate the <strong>peak cooling load</strong> (maximum heat that must be removed) and <strong>peak heating load</strong> (maximum heat that must be added) for the space. Undersizing means the space will not reach setpoint. Oversizing wastes energy, increases capital cost, and causes comfort problems (short-cycling in cooling systems causes humidity issues).</p>
+
+    <h3>Cooling Load Sources</h3>
+    <p>The total cooling load is the sum of all heat gains entering the space. The main sources are:</p>
+    <ul>
+      <li><strong>Solar heat gain through glass:</strong> The most variable and often largest component. South-facing glass in a hot climate can contribute 300–600 W/m² of peak solar load. Shading (overhangs, films, external blinds) dramatically reduces this.</li>
+      <li><strong>Conduction through walls, roof, and floor:</strong> Calculated as <em>Q = U × A × ΔT</em>, where U is the overall heat transfer coefficient (W/m²K), A is area (m²), and ΔT is the temperature difference between inside and outside (°C).</li>
+      <li><strong>Internal gains from people:</strong> Each person contributes approximately 115–130W of sensible heat and 55–75W of latent heat (moisture) depending on activity level. A crowded conference room can have a very high occupancy load.</li>
+      <li><strong>Internal gains from lighting:</strong> LED lighting contributes approximately 10–15 W/m², compared to 25–40 W/m² for older fluorescent systems.</li>
+      <li><strong>Internal gains from equipment:</strong> Computers, servers, kitchen equipment, and industrial machinery can dominate the load in commercial and industrial spaces.</li>
+      <li><strong>Ventilation load:</strong> Bringing in hot, humid outdoor air requires energy to cool and dehumidify it. In hot climates, ventilation can represent 30–50% of the total cooling load.</li>
+    </ul>
+
+    <h3>The Basic Cooling Load Formula</h3>
+    <div class="formula-box">
+<span class="var">Q_total</span> <span class="eq">=</span> Q_solar + Q_conduction + Q_people + Q_lighting + Q_equipment + Q_ventilation
+
+<span class="var">Q_conduction</span> <span class="eq">=</span> U × A × ΔT          [watts]
+<span class="var">Q_sensible</span> <span class="eq">=</span> ṁ × Cp × ΔT          [watts, for air]
+<span class="var">Q_latent</span>  <span class="eq">=</span> ṁ × hfg × Δω         [watts, for dehumidification]
+
+Where:
+  U   = Overall heat transfer coefficient (W/m²K)
+  A   = Surface area (m²)
+  ΔT  = Temperature difference (K)
+  ṁ   = Mass flow rate of air (kg/s)
+  Cp  = Specific heat of air ≈ 1,005 J/kg·K
+  hfg = Latent heat of vaporisation ≈ 2,500 kJ/kg
+  Δω  = Humidity ratio difference (kg water / kg dry air)</div>
+
+    <h2>HVAC Equipment — What Each Component Does</h2>
+
+    <div class="equipment-grid">
+      <div class="equipment-card">
+        <div class="icon">&#10052;</div>
+        <h4>Chiller</h4>
+        <p>Central cooling plant producing chilled water (6–12°C). Water is pumped to Air Handling Units throughout the building.</p>
+      </div>
+      <div class="equipment-card">
+        <div class="icon">&#128168;</div>
+        <h4>Air Handling Unit (AHU)</h4>
+        <p>Central air handler with fan, cooling/heating coil, filters, and humidifier. Conditions and distributes air to multiple rooms via ductwork.</p>
+      </div>
+      <div class="equipment-card">
+        <div class="icon">&#127754;</div>
+        <h4>Fan Coil Unit (FCU)</h4>
+        <p>Room-level unit with fan and water coil. Receives chilled/hot water from the central plant. Used in hotels, offices, hospitals.</p>
+      </div>
+      <div class="equipment-card">
+        <div class="icon">&#127974;</div>
+        <h4>Split AC Unit</h4>
+        <p>Self-contained refrigerant system: indoor evaporator + outdoor condenser. Used for single rooms or small commercial spaces.</p>
+      </div>
+      <div class="equipment-card">
+        <div class="icon">&#128160;</div>
+        <h4>Boiler</h4>
+        <p>Produces hot water (60–80°C) or steam for heating coils, radiators, or underfloor heating. Gas-fired or electric.</p>
+      </div>
+      <div class="equipment-card">
+        <div class="icon">&#128488;</div>
+        <h4>Cooling Tower</h4>
+        <p>Rejects heat from the chiller condenser to the outdoor air using evaporative cooling. Requires water treatment to prevent Legionella.</p>
+      </div>
+    </div>
+
+    <h2>Duct Design — Getting Air Where It Needs to Go</h2>
+
+    <p>Ductwork distributes conditioned air from the AHU to supply diffusers throughout the building, and returns air back to the AHU. Good duct design minimises energy waste (pressure losses), controls noise, and fits within structural constraints.</p>
+
+    <h3>Key Duct Design Parameters</h3>
+    <ul>
+      <li><strong>Air velocity:</strong> Main ducts: 5–10 m/s (commercial), 3–5 m/s (low-noise areas like bedrooms). Branch ducts: 3–6 m/s. Higher velocity = smaller ducts but more noise and higher fan energy.</li>
+      <li><strong>Pressure drop:</strong> Target 1–1.5 Pa/m for main ducts. High pressure drop across long duct runs forces larger fan motors and higher energy costs.</li>
+      <li><strong>Aspect ratio:</strong> Rectangular duct aspect ratio should be kept below 4:1 where possible. High aspect ratios increase material usage and pressure drop.</li>
+      <li><strong>Leakage:</strong> Poorly sealed ductwork can leak 15–30% of the conditioned air before it reaches the space. All duct joints should be sealed with mastic or foil tape and pressure tested.</li>
+    </ul>
+
+    <h2>Energy Efficiency — Why It Matters and How to Measure It</h2>
+
+    <p>HVAC systems are the single largest energy consumer in most buildings — typically 40–60% of total building electricity. Engineers have a professional responsibility to design efficient systems. Key efficiency metrics:</p>
+
+    <ul>
+      <li><strong>COP (Coefficient of Performance):</strong> For chillers and heat pumps. COP = useful cooling or heating energy output ÷ electrical energy input. A chiller with COP 5.0 delivers 5 kW of cooling per 1 kW of electricity. Modern high-efficiency chillers achieve COP 6–8 at full load.</li>
+      <li><strong>SEER (Seasonal Energy Efficiency Ratio):</strong> For split AC units. Measures cooling output (BTU) over an entire season divided by electrical input (Wh). Higher SEER = more efficient. Minimum SEER in most markets: 14. High-efficiency units: SEER 20+.</li>
+      <li><strong>EER (Energy Efficiency Ratio):</strong> Instantaneous efficiency at a specific test condition. EER = cooling output (BTU/h) ÷ power input (W). Quick check: EER = SEER × 0.875 approximately.</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout-title">&#128161; The Most Common HVAC Mistake</div>
+      <p>Oversizing. Engineers often add large safety factors to cooling loads "just to be safe," resulting in equipment that is 30–50% too large. An oversized chiller or AC unit short-cycles — it reaches setpoint quickly, shuts off, restarts frequently, and never runs long enough to properly dehumidify the air. The result: a cold, humid space that feels uncomfortable, higher energy bills, and reduced equipment life from constant start-stop cycles. <strong>Size to the load, not beyond it.</strong></p>
+    </div>
+
+    <h2>Getting Started as an HVAC Engineer</h2>
+
+    <p>If you are a mechanical engineer who wants to specialise in HVAC, here is a clear starting path:</p>
+    <ol>
+      <li>Study <strong>ASHRAE Fundamentals Handbook</strong> — specifically the chapters on psychrometrics, heat transfer, and comfort. Available free via ASHRAE online reading room.</li>
+      <li>Learn <strong>Manual J</strong> (residential load calculation) as your first practical skill. Multiple free calculators exist online.</li>
+      <li>Learn one HVAC software tool: <strong>Carrier HAP</strong> (free for students), <strong>Trane TRACE</strong>, or <strong>EnergyPlus</strong> (free, open source).</li>
+      <li>Study <strong>ASHRAE 62.1</strong> (ventilation) and <strong>ASHRAE 90.1</strong> (energy efficiency) — both fundamental to any professional HVAC design.</li>
+      <li>Visit real HVAC plants and equipment rooms. Reading about a chiller is useful. Seeing one operating, tracing the refrigerant circuit, and understanding the controls is transformative.</li>
+    </ol>
+
+    <blockquote>"Good HVAC design is invisible. You only notice bad HVAC — the office that is always too hot, the hospital that smells stale, the data centre that runs hot in summer. Excellence in HVAC means creating environments where people thrive without ever thinking about the air they breathe."</blockquote>
+
+    <div class="tag-row">
+      <span class="tag">HVAC</span>
+      <span class="tag">Mechanical Engineering</span>
+      <span class="tag">Cooling Load</span>
+      <span class="tag">Air Conditioning</span>
+      <span class="tag">Building Services</span>
+      <span class="tag">Energy Efficiency</span>
+    </div>
+
+    <div class="article-footer">
+      <a href="../blog.html" class="btn btn-outline">&#8592; Back to Blog</a>
+      <a href="../courses/solar-hvac.html" class="btn btn-primary">Solar &amp; HVAC Course &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<div id="notif" class="notif-bar" role="alert"><div class="notif-icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8z"/></svg></div><div class="notif-text"><strong class="notif-title"></strong><span class="notif-msg"></span></div><div class="notif-close" onclick="document.getElementById('notif').classList.remove('show')"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></div></div>
+<button id="btt-btn" onclick="scrollToTop()" aria-label="Back to top"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M4 12 5.41 13.41 11 7.83V20H13V7.83l5.58 5.59L20 12l-8-8z"/></svg></button>
+<script src="../assets/js/data.js"></script>
+<script src="../assets/js/platform.js"></script>
+<script src="../js/i18n.js" defer></script>
+</body>
+</html>
