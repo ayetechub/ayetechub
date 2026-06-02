@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electrical Safety Handbook — AYE Tech Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;}
+body{background:radial-gradient(ellipse at 50% 0%,#1c1208 0%,#0a0806 100%);min-height:100vh;display:flex;flex-direction:column;align-items:center;font-family:'Lato',sans-serif;overflow-x:hidden;}
+#topbar{width:100%;background:#050302;border-bottom:1px solid #2a1a08;display:flex;align-items:center;justify-content:space-between;padding:10px 24px;flex-shrink:0;}
+#topbar a{color:#fbbf24;text-decoration:none;font-size:12.5px;font-weight:700;}
+#topbar a:hover{color:#fde68a;}
+.back-btn{display:flex;align-items:center;gap:6px;background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.3);padding:6px 14px;border-radius:5px;transition:.2s;}
+.back-btn:hover{background:rgba(251,191,36,.2);}
+#topbar .center{color:#5a4a30;font-size:11px;letter-spacing:1px;text-transform:uppercase;}
+#controls{display:flex;align-items:center;gap:14px;padding:16px 0 10px;flex-shrink:0;}
+.fbtn{background:linear-gradient(135deg,#3a2408,#5a3a10);border:1px solid #fbbf24;color:#fde68a;padding:9px 22px;border-radius:6px;cursor:pointer;font-family:'Lato',sans-serif;font-weight:700;font-size:13px;letter-spacing:.5px;transition:.2s;user-select:none;}
+.fbtn:hover{background:linear-gradient(135deg,#5a3a10,#7a5010);color:#fff;}
+.fbtn:disabled{opacity:.4;cursor:default;}
+#pginfo{color:#8a7050;font-size:12px;letter-spacing:.5px;background:rgba(0,0,0,.3);padding:7px 18px;border-radius:5px;border:1px solid #2a1a08;min-width:120px;text-align:center;}
+#sndbtn{background:rgba(251,191,36,.08);border:1px solid #3a2010;color:#7a6040;padding:7px 14px;border-radius:5px;cursor:pointer;font-size:12px;transition:.2s;}
+#sndbtn.on{color:#fbbf24;border-color:#6a4010;}
+#stage{position:relative;display:flex;justify-content:center;align-items:center;padding:8px 12px 30px;flex:1;width:100%;}
+#stage::after{content:'';position:absolute;bottom:18px;left:50%;transform:translateX(-50%);width:90%;height:24px;max-width:1400px;background:radial-gradient(ellipse,rgba(251,191,36,.12) 0%,transparent 70%);pointer-events:none;border-radius:50%;}
+#bookwrap{position:relative;width:min(98vw,1400px);height:calc(100vh - 145px);min-height:440px;max-height:900px;perspective:2200px;user-select:none;}
+#bookwrap::before{content:'';position:absolute;bottom:-12px;left:5%;right:5%;height:20px;background:rgba(0,0,0,.6);filter:blur(12px);border-radius:50%;z-index:-1;}
+#openbook{position:absolute;inset:0;display:flex;border-radius:3px;box-shadow:-8px 0 20px rgba(0,0,0,.6),8px 0 20px rgba(0,0,0,.6),0 0 50px rgba(0,0,0,.4);}
+#spine{width:8px;flex-shrink:0;z-index:5;background:linear-gradient(180deg,#1a0e04,#3a2008,#1a0e04);box-shadow:-2px 0 6px rgba(0,0,0,.5),2px 0 6px rgba(0,0,0,.5);}
+.half{width:calc(50% - 4px);height:100%;position:relative;overflow:hidden;background:#faf6ed;}
+.half.left{border-radius:3px 0 0 3px;box-shadow:inset -4px 0 12px rgba(0,0,0,.12);}
+.half.right{border-radius:0 3px 3px 0;box-shadow:inset 4px 0 12px rgba(0,0,0,.12);}
+.half.left::before{content:'';position:absolute;top:0;right:0;bottom:0;width:3px;background:linear-gradient(90deg,transparent,rgba(0,0,0,.08));z-index:2;}
+.half.right::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:linear-gradient(270deg,transparent,rgba(0,0,0,.08));z-index:2;}
+.half-inner{position:absolute;inset:0;overflow:hidden;}
+#flipper{position:absolute;top:0;width:calc(50% - 4px);transform-style:preserve-3d;transition:transform 0.65s cubic-bezier(.4,0,.2,1);z-index:20;pointer-events:none;}
+#flipper.right-start{right:0;transform-origin:left center;}
+#flipper.left-start{left:0;transform-origin:right center;}
+#flipper.flipping-forward{transform:perspective(1800px) rotateY(-180deg);}
+#flipper.flipping-backward{transform:perspective(1800px) rotateY(180deg);}
+.flip-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;}
+.flip-back-face{transform:rotateY(180deg);}
+.pdata{display:none;}
+/* PAGE STYLES */
+.pg{width:100%;height:100%;background:#faf6ed;background-image:repeating-linear-gradient(transparent 0px,transparent 30px,rgba(160,140,100,.06) 30px,rgba(160,140,100,.06) 31px);padding:clamp(18px,2.5vh,36px) clamp(18px,2.5vw,40px) clamp(30px,4vh,50px);font-family:'Merriweather',Georgia,serif;color:#1a1208;overflow:hidden;position:relative;box-sizing:border-box;}
+.pg .rh{font-family:'Lato',sans-serif;font-size:clamp(9px,0.8vw,12px);color:#9a8060;text-transform:uppercase;letter-spacing:1.5px;border-bottom:1px solid #d4bc90;padding-bottom:7px;margin-bottom:18px;display:flex;justify-content:space-between;}
+.pg .rf{position:absolute;bottom:14px;left:clamp(18px,2.5vw,40px);right:clamp(18px,2.5vw,40px);font-family:'Lato',sans-serif;font-size:clamp(9px,0.8vw,12px);color:#9a8060;border-top:1px solid #d4bc90;padding-top:7px;display:flex;justify-content:space-between;}
+.pg .eye{font-family:'Lato',sans-serif;font-size:clamp(10px,0.9vw,13px);font-weight:900;color:#b45309;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
+.pg .cnum{font-family:'Lato',sans-serif;font-size:clamp(28px,3.5vw,50px);font-weight:900;color:#fbbf24;line-height:1;}
+.pg .ctitle{font-size:clamp(20px,2.5vw,34px);font-weight:700;color:#0a0e1a;line-height:1.2;margin:4px 0;font-family:'Lato',sans-serif;}
+.pg .crule{border:none;border-top:2px solid #f97316;margin:10px 0;width:60px;}
+.pg .csub{font-size:clamp(12px,1.1vw,15px);color:#7a6040;font-style:italic;margin-bottom:14px;line-height:1.5;}
+.pg h2{font-family:'Lato',sans-serif;font-size:clamp(13px,1.3vw,18px);font-weight:900;color:#1a0e00;margin:16px 0 8px;text-transform:uppercase;letter-spacing:.6px;border-left:4px solid #f97316;padding-left:10px;}
+.pg h3{font-family:'Lato',sans-serif;font-size:clamp(12px,1.2vw,16px);font-weight:700;color:#2a1800;margin:12px 0 6px;}
+.pg p{font-size:clamp(12px,1.1vw,16px);line-height:1.85;color:#1e1408;margin-bottom:10px;text-align:justify;hyphens:auto;}
+.pg ul,.pg ol{padding-left:20px;margin-bottom:10px;}
+.pg li{font-size:clamp(11.5px,1.05vw,15px);line-height:1.75;color:#1e1408;margin-bottom:4px;}
+.pg li b,.pg p b,.pg strong{color:#0a0800;font-family:'Lato',sans-serif;}
+/* Callouts */
+.pg .note{border-left:4px solid #fbbf24;background:#fefce8;padding:clamp(8px,1vh,14px) clamp(10px,1.2vw,18px);margin:12px 0;border-radius:0 5px 5px 0;}
+.pg .note.danger{border-color:#dc2626;background:#fff1f2;}
+.pg .note.warn{border-color:#f97316;background:#fff7ed;}
+.pg .note.tip{border-color:#16a34a;background:#f0fdf4;}
+.pg .nlbl{font-family:'Lato',sans-serif;font-size:clamp(9px,0.85vw,12px);font-weight:900;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px;}
+.pg .note .nlbl{color:#92400e;}
+.pg .note.danger .nlbl{color:#dc2626;}
+.pg .note.warn .nlbl{color:#c2410c;}
+.pg .note.tip .nlbl{color:#15803d;}
+.pg .note p{font-size:clamp(11.5px,1vw,14px);margin:0;text-align:left;color:#1a0e00;}
+/* Tables */
+.pg table{width:100%;border-collapse:collapse;font-size:clamp(11px,1.05vw,14px);font-family:'Lato',sans-serif;margin:10px 0;}
+.pg thead th{background:#1c1209;color:#fde68a;padding:clamp(5px,0.7vh,9px) clamp(6px,0.8vw,12px);text-align:left;font-size:clamp(9.5px,0.9vw,13px);font-weight:700;text-transform:uppercase;letter-spacing:.5px;}
+.pg tbody tr:nth-child(odd){background:#f5efe0;}
+.pg tbody tr:nth-child(even){background:#ece6d6;}
+.pg tbody td{padding:clamp(5px,0.7vh,9px) clamp(6px,0.8vw,12px);color:#1a1000;border-bottom:.5px solid #d4bc90;vertical-align:top;line-height:1.4;}
+.pg tbody td b{color:#0a0800;}
+/* Code */
+.pg .code{background:#1a1408;color:#fde68a;font-family:'Courier New',monospace;font-size:clamp(11px,1vw,14px);line-height:1.65;padding:clamp(8px,1vh,14px) clamp(10px,1.2vw,18px);margin:10px 0;border-radius:4px;border-left:4px solid #f97316;overflow:hidden;}
+/* Diagrams */
+.pg .dia{background:#f0e8d0;border:1px solid #c8b080;border-radius:4px;padding:10px;margin:12px 0;text-align:center;}
+.pg .orn{text-align:center;color:#c8b080;font-size:14px;margin:10px 0;letter-spacing:6px;}
+/* Cover */
+.pg.cover{background:#020817;background-image:none;color:#fff;padding:0;overflow:hidden;display:flex;flex-direction:column;}
+.cover-stripe{height:6px;flex-shrink:0;background:#f97316;}
+.cover-panel{background:#1a0800;flex-shrink:0;padding:clamp(14px,2.5vh,28px) clamp(16px,2.5vw,30px) clamp(10px,1.5vh,20px);position:relative;overflow:hidden;}
+.cover-panel::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent 0px,transparent 26px,rgba(249,115,22,.04) 26px,rgba(249,115,22,.04) 27px);pointer-events:none;}
+.cover-panel-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:clamp(10px,1.8vh,20px);position:relative;}
+.cover-aye{background:#0a1628;border:1.5px solid #f97316;border-radius:8px;padding:clamp(8px,1.2vh,14px) clamp(14px,2vw,22px);text-align:center;}
+.cover-aye .aye{font-size:clamp(22px,3.2vw,38px);font-weight:900;color:#00d4ff;letter-spacing:3px;line-height:1;}
+.cover-aye .hub{font-size:clamp(7px,0.8vw,11px);color:#94a3b8;letter-spacing:3px;text-transform:uppercase;}
+.cover-tag{background:rgba(249,115,22,.12);border:1px solid #f97316;border-radius:6px;padding:clamp(5px,0.8vh,10px) clamp(10px,1.5vw,18px);text-align:center;}
+.cover-tag .ct{font-family:'Lato',sans-serif;font-size:clamp(9px,1vw,13px);font-weight:900;color:#f97316;letter-spacing:1px;display:block;}
+.cover-tag .cs{font-family:'Lato',sans-serif;font-size:clamp(7px,0.75vw,10px);color:#94a3b8;letter-spacing:.5px;}
+.cover-title{font-size:clamp(22px,3.5vw,44px);font-weight:900;color:#ffffff;line-height:1.15;font-family:'Lato',sans-serif;margin-bottom:2px;position:relative;}
+.cover-acc{color:#f97316;display:block;}
+.cover-rule{border:none;border-top:1.5px solid #f97316;margin:clamp(6px,1vh,12px) 0;width:100%;}
+.cover-desc{font-size:clamp(10px,1vw,14px);color:#e2e8f0;line-height:1.75;font-family:'Lato',sans-serif;position:relative;}
+.cover-body{flex:1;padding:clamp(10px,2vh,22px) clamp(16px,2.5vw,30px);display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.cover-stats{display:flex;gap:clamp(16px,3vw,36px);margin-bottom:clamp(10px,1.8vh,20px);}
+.cover-stat .n{font-size:clamp(20px,2.8vw,36px);font-weight:900;color:#fbbf24;font-family:'Lato',sans-serif;text-align:center;}
+.cover-stat .l{font-size:clamp(8px,0.8vw,11px);color:#94a3b8;text-transform:uppercase;letter-spacing:1px;font-family:'Lato',sans-serif;text-align:center;}
+.cover-free{background:#dc2626;color:#ffffff;font-weight:900;font-size:clamp(11px,1.1vw,14px);padding:7px 24px;border-radius:18px;letter-spacing:1px;font-family:'Lato',sans-serif;margin-bottom:clamp(8px,1.5vh,16px);}
+.cover-auth{background:#0d1f3c;border-radius:6px;padding:clamp(8px,1.2vh,14px) clamp(12px,2vw,20px);display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;}
+.cover-auth-name{font-family:'Lato',sans-serif;font-size:clamp(11px,1.1vw,15px);font-weight:700;color:#00d4ff;}
+.cover-auth-role{font-family:'Lato',sans-serif;font-size:clamp(9px,0.85vw,12px);color:#94a3b8;margin-top:2px;}
+.cover-foot{background:#0a1628;padding:clamp(7px,1vh,12px);text-align:center;font-family:'Lato',sans-serif;flex-shrink:0;}
+.cover-foot-main{font-size:clamp(9px,0.9vw,12px);color:#f97316;font-weight:700;}
+.cover-foot-sub{font-size:clamp(7.5px,0.7vw,10px);color:#475569;margin-top:2px;}
+/* Back cover */
+.pg.backcover{background:linear-gradient(160deg,#0a0e2a 0%,#1a0800 100%);background-image:none;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(8px,1.5vh,16px);padding:clamp(20px,3vh,36px) clamp(20px,3vw,36px);}
+.bc-logo{color:#fbbf24;font-size:clamp(18px,2.5vw,30px);font-weight:900;font-family:'Lato',sans-serif;letter-spacing:2px;}
+.bc-rule{width:80px;height:1px;background:#f97316;}
+.bc-tag{color:#8a8090;font-size:clamp(11px,1vw,14px);font-style:italic;text-align:center;line-height:1.7;font-family:'Merriweather',serif;}
+.bc-item{background:rgba(249,115,22,.08);border:1px solid rgba(249,115,22,.2);padding:clamp(7px,1vh,12px) clamp(10px,1.2vw,16px);border-radius:4px;font-size:clamp(11px,1vw,14px);color:#fbbf24;font-family:'Lato',sans-serif;width:100%;}
+.bc-item span{color:#6a6050;font-size:clamp(9px,0.8vw,12px);}
+.bc-copy{font-size:clamp(9px,0.8vw,11px);color:#3a3040;text-align:center;font-family:'Lato',sans-serif;margin-top:4px;}
+/* TOC */
+.pg .trow{display:flex;align-items:baseline;padding:clamp(5px,0.8vh,9px) 0;border-bottom:.5px dotted #c8b080;}
+.pg .tnum{font-family:'Lato',sans-serif;font-weight:700;color:#f97316;font-size:clamp(11px,1.1vw,15px);width:30px;flex-shrink:0;}
+.pg .tname{font-family:'Merriweather',serif;font-size:clamp(11px,1.1vw,15px);color:#1a1208;flex:1;}
+.pg .tsub{font-size:clamp(9.5px,0.9vw,12px);color:#8a7060;display:block;font-style:italic;}
+.pg .tpg{font-family:'Lato',sans-serif;font-size:clamp(10px,0.9vw,13px);color:#9a8060;width:22px;text-align:right;flex-shrink:0;}
+/* Blank half */
+.blank{background:linear-gradient(180deg,#ede8d8,#e8e0c8);display:flex;align-items:center;justify-content:center;width:100%;height:100%;}
+.blank-inner{text-align:center;color:#b0a080;font-family:'Lato',sans-serif;}
+.blank-inner .b-logo{font-size:clamp(18px,2.5vw,32px);font-weight:900;letter-spacing:2px;margin-bottom:6px;}
+.blank-inner .b-sub{font-size:clamp(9px,0.8vw,11px);letter-spacing:1px;text-transform:uppercase;}
+/* Mobile */
+@media(max-width:700px){
+  body{overflow-y:auto;}
+  #topbar .center{display:none;}
+  #controls{gap:8px;padding:10px 0 6px;flex-wrap:wrap;justify-content:center;}
+  .fbtn{padding:10px 18px;font-size:15px;}
+  #pginfo{font-size:13px;min-width:100px;}
+  #stage{padding:6px 8px 20px;}
+  #bookwrap{width:calc(100vw - 16px);height:calc(100vh - 160px);min-height:380px;}
+  .half.left,#spine{display:none;}
+  .half.right{width:100% !important;border-radius:4px;}
+  #flipper,#flipper.right-start,#flipper.left-start{width:100% !important;left:0 !important;right:auto !important;transform-origin:center center !important;}
+  #flipper.flipping-forward{transform:scale(0.92) !important;opacity:0;transition:transform 0.35s ease,opacity 0.35s ease !important;}
+  #flipper.flipping-backward{transform:scale(0.92) !important;opacity:0;transition:transform 0.35s ease,opacity 0.35s ease !important;}
+  .pg{padding:18px 16px 42px;}
+  .pg p{font-size:15px;line-height:1.9;}
+  .pg h2{font-size:16px;}
+  .pg table{font-size:13px;display:block;overflow-x:auto;}
+}
+</style>
+</head>
+<body>
+<div id="topbar">
+  <a href="pdfs.html" class="back-btn">&#8592; Back to PDF Library</a>
+  <span class="center">AYE TECH HUB &mdash; INTERACTIVE READER</span>
+  <a href="https://t.me/ayetechub" target="_blank" rel="noopener">Join Telegram</a>
+</div>
+<div id="controls">
+  <button class="fbtn" id="btnprev" disabled>&#8592; Previous</button>
+  <span id="pginfo">Cover</span>
+  <button class="fbtn" id="btnnext">Next &#8594;</button>
+  <button id="sndbtn" class="on">&#128266; Sound ON</button>
+</div>
+<div id="stage">
+<div id="bookwrap">
+  <div id="openbook">
+    <div class="half left" id="lefthalf"><div class="half-inner" id="leftinner"></div></div>
+    <div id="spine"></div>
+    <div class="half right" id="righthalf"><div class="half-inner" id="rightinner"></div></div>
+    <div id="flipper" class="right-start"></div>
+  </div>
+</div>
+</div>
+
+<!-- PAGE DATA -->
+
+<div class="pdata" id="pd-cover">
+<div class="pg cover">
+  <div class="cover-stripe"></div>
+  <div class="cover-panel">
+    <div class="cover-panel-top">
+      <div class="cover-aye"><div class="aye">AYE</div><div class="hub">TECH HUB</div></div>
+      <div class="cover-tag"><span class="ct">ELECTRICAL SAFETY</span><span class="cs">ENGINEERING HANDBOOK</span></div>
+    </div>
+    <div class="cover-title">Electrical Safety<span class="cover-acc">Handbook</span></div>
+    <div class="cover-rule"></div>
+    <div class="cover-desc">NFPA 70E &bull; Arc Flash &bull; LOTO Procedures &bull; PPE Selection &bull; Safe Work Practices &bull; Emergency Response</div>
+  </div>
+  <div class="cover-body">
+    <div class="cover-stats">
+      <div class="cover-stat"><div class="n">11</div><div class="l">Chapters</div></div>
+      <div class="cover-stat"><div class="n">30</div><div class="l">Pages</div></div>
+      <div class="cover-stat"><div class="n">NFPA</div><div class="l">70E 2024</div></div>
+      <div class="cover-stat"><div class="n">OSHA</div><div class="l">Compliant</div></div>
+    </div>
+    <div class="cover-free">&#9889; FREE OPEN ACCESS</div>
+    <div class="cover-auth">
+      <div>
+        <div class="cover-auth-name">Awet G. Nway</div>
+        <div class="cover-auth-role">Founder, AYE Tech Hub &nbsp;&bull;&nbsp; Electrical &amp; Automation Engineering Expert</div>
+      </div>
+    </div>
+  </div>
+  <div class="cover-foot">
+    <div class="cover-foot-main">AYE Tech Hub &mdash; Engineering the Future</div>
+    <div class="cover-foot-sub">ayetechub.com &nbsp;&bull;&nbsp; &#169; 2026 AYE Tech Hub. All Rights Reserved.</div>
+  </div>
+</div>
+</div>
+
+<div class="pdata" id="pd-toc">
+<div class="pg">
+  <div class="rh"><span>AYE Tech Hub</span><span>Electrical Safety Handbook</span></div>
+  <div class="eye">Contents</div>
+  <div class="ctitle" style="font-size:17px;margin-bottom:4px;">Table of Contents</div>
+  <hr class="crule">
+  <div class="trow"><span class="tnum">01</span><span class="tname">Introduction to Electrical Hazards<span class="tsub">Types of hazards &bull; Statistics &bull; Who is at risk &bull; Regulatory framework</span></span><span class="tpg">3</span></div>
+  <div class="trow"><span class="tnum">02</span><span class="tname">Electrical Shock — Physics &amp; Body Effects<span class="tsub">Ohm's law in context &bull; Body resistance &bull; Current effects chart &bull; VF threshold</span></span><span class="tpg">5</span></div>
+  <div class="trow"><span class="tnum">03</span><span class="tname">Arc Flash — Fundamentals &amp; Causes<span class="tsub">What causes arc flash &bull; Energy release &bull; Temperature &bull; Arc vs blast</span></span><span class="tpg">7</span></div>
+  <div class="trow"><span class="tnum">04</span><span class="tname">NFPA 70E — Standard Overview<span class="tsub">What NFPA 70E is &bull; 2024 updates &bull; Hierarchy of risk controls &bull; Work permit</span></span><span class="tpg">9</span></div>
+  <div class="trow"><span class="tnum">05</span><span class="tname">Arc Flash Hazard Analysis<span class="tsub">Incident energy &bull; Flash boundaries &bull; Arc flash labels &bull; IEEE 1584</span></span><span class="tpg">11</span></div>
+  <div class="trow"><span class="tnum">06</span><span class="tname">PPE Selection — NFPA 70E Categories<span class="tsub">Category 1–4 &bull; Required equipment per category &bull; Arc rating explained</span></span><span class="tpg">13</span></div>
+  <div class="trow"><span class="tnum">07</span><span class="tname">Lockout / Tagout (LOTO) Procedures<span class="tsub">OSHA 1910.147 &bull; 6-step procedure &bull; Energy types &bull; Group LOTO &bull; Verification</span></span><span class="tpg">15</span></div>
+  <div class="trow"><span class="tnum">08</span><span class="tname">Safe Work Practices<span class="tsub">One-hand rule &bull; Approach boundaries &bull; Insulated tools &bull; Panel work</span></span><span class="tpg">19</span></div>
+  <div class="trow"><span class="tnum">09</span><span class="tname">Electrical Testing Safety<span class="tsub">CAT ratings &bull; Multimeter safety &bull; Insulation resistance &bull; Thermography</span></span><span class="tpg">21</span></div>
+  <div class="trow"><span class="tnum">10</span><span class="tname">Emergency Response<span class="tsub">Shock rescue &bull; Burns first aid &bull; CPR for electrical victims &bull; Fire response</span></span><span class="tpg">23</span></div>
+  <div class="trow"><span class="tnum">11</span><span class="tname">Training, Compliance &amp; Safety Program<span class="tsub">Qualified person &bull; Training requirements &bull; Electrical safety program &bull; Audit</span></span><span class="tpg">25</span></div>
+  <div class="trow" style="border:none;margin-top:4px;"><span class="tnum" style="color:#94a3b8;">&mdash;</span><span class="tname" style="color:#94a3b8;">Quick Reference Card &amp; Standards Index<span class="tsub" style="color:#94a3b8;">Pocket guide &bull; NFPA 70E table &bull; Key standards</span></span><span class="tpg" style="color:#94a3b8;">28</span></div>
+  <div class="note tip" style="margin-top:16px;">
+    <div class="nlbl">&#128273; How to Use This Handbook</div>
+    <p>This handbook follows <strong>NFPA 70E-2024</strong> and <strong>OSHA 29 CFR 1910</strong> standards. Use it as both a learning guide and a field reference. Chapters build logically — beginners should start at Chapter 1. Experienced engineers can jump directly using the page numbers above.</p>
+  </div>
+  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>2</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch1a">
+<div class="pg">
+  <div class="rh"><span>Chapter 1</span><span>Introduction to Electrical Hazards</span></div>
+  <div class="eye">Chapter 01</div>
+  <div class="cnum">I</div>
+  <div class="ctitle">Introduction to<br>Electrical Hazards</div>
+  <hr class="crule">
+  <div class="csub">Types of Hazards &bull; Global Statistics &bull; Who Is at Risk &bull; Regulatory Framework</div>
+  <p>Electricity is the most universally present energy source in modern industry — and one of the most lethal. Unlike other hazards, electrical dangers are invisible, silent, and instant. A worker does not see voltage, cannot smell it, and receives no warning before a fatal shock or arc flash event occurs. According to the <strong>U.S. Bureau of Labor Statistics</strong>, electrical hazards cause approximately <strong>400 fatalities and 4,000 disabling injuries per year</strong> in the United States alone. Globally, the International Labour Organization estimates over <strong>1,000 electrical fatalities annually</strong> in workplace settings.</p>
+  <p>The tragedy of electrical accidents is that virtually all of them are preventable. Root cause analysis of electrical fatalities consistently reveals the same failures: inadequate training, absence of PPE, improper LOTO, working on energized equipment without authorization, and lack of arc flash hazard analysis. This handbook addresses every one of those failure modes systematically.</p>
+  <h2>The Four Primary Electrical Hazards</h2>
+  <table>
+    <thead><tr><th>Hazard</th><th>Mechanism</th><th>Immediate Danger</th><th>Voltage Range of Concern</th></tr></thead>
+    <tbody>
+      <tr><td><b>Electrical Shock</b></td><td>Current passes through human body between two points of different potential</td><td>Cardiac fibrillation, respiratory arrest, nerve/muscle damage</td><td>As low as 50V AC can be lethal</td></tr>
+      <tr><td><b>Arc Flash</b></td><td>Ionised plasma arc between conductors releases explosive energy</td><td>3rd-degree burns, blindness, pressure wave injury</td><td>Any voltage &gt;50V with sufficient fault current</td></tr>
+      <tr><td><b>Arc Blast</b></td><td>Rapid vaporisation of copper conductors creates pressure wave</td><td>Ruptured eardrums, blunt trauma, structural damage</td><td>High-energy systems (&gt;600V or high fault current)</td></tr>
+      <tr><td><b>Electrical Fire</b></td><td>Overcurrent, arcing, or insulation failure ignites surrounding materials</td><td>Burns, smoke inhalation, structural fire spread</td><td>Any voltage with sufficient energy</td></tr>
+    </tbody>
+  </table>
+  <h2>Who Is Most at Risk</h2>
+  <table>
+    <thead><tr><th>Worker Category</th><th>Primary Exposure</th><th>Most Common Incident</th></tr></thead>
+    <tbody>
+      <tr><td><b>Electricians</b></td><td>Panel work, wiring, terminations</td><td>Arc flash during live panel work, shock from exposed terminals</td></tr>
+      <tr><td><b>Maintenance Technicians</b></td><td>Troubleshooting energised equipment</td><td>Shock from test probes, arc flash during fault finding</td></tr>
+      <tr><td><b>Machine Operators</b></td><td>Proximity to electrical cabinets</td><td>Inadvertent contact, improper LOTO bypasses</td></tr>
+      <tr><td><b>Utility Workers</b></td><td>Overhead and underground power systems</td><td>Contact with energised conductors, step potential injuries</td></tr>
+      <tr><td><b>Construction Workers</b></td><td>Temporary wiring, tool use near power</td><td>Damaged extension cord shock, overhead line contact</td></tr>
+    </tbody>
+  </table>
+  <div class="note danger">
+    <div class="nlbl">&#9889; Critical Statistic</div>
+    <p><strong>Over 80% of electrical injuries occur on equipment that workers believed was de-energised.</strong> Assumption without verification is the single greatest contributor to electrical fatalities. Always verify — never assume.</p>
+  </div>
+  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>3</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch1b">
+<div class="pg">
+  <div class="rh"><span>Chapter 1</span><span>Introduction to Electrical Hazards</span></div>
+  <h2>Global Regulatory Framework</h2>
+  <p>Electrical safety is governed by a hierarchy of regulations and standards. Understanding which standard applies to your work is the first step in compliance. The key frameworks are:</p>
+  <table>
+    <thead><tr><th>Standard / Regulation</th><th>Issuing Body</th><th>Scope</th><th>Mandatory?</th></tr></thead>
+    <tbody>
+      <tr><td><b>NFPA 70E-2024</b></td><td>NFPA (USA)</td><td>Electrical safety in the workplace — PPE, LOTO, arc flash</td><td>Referenced by OSHA — effectively mandatory in USA</td></tr>
+      <tr><td><b>OSHA 29 CFR 1910 Subpart S</b></td><td>OSHA (USA)</td><td>General industry electrical standards — design and safety</td><td>Legally mandatory for US employers</td></tr>
+      <tr><td><b>OSHA 29 CFR 1910.147</b></td><td>OSHA (USA)</td><td>Control of Hazardous Energy (LOTO)</td><td>Legally mandatory for US employers</td></tr>
+      <tr><td><b>IEEE 1584-2018</b></td><td>IEEE (USA)</td><td>Arc flash hazard calculations — incident energy analysis</td><td>Industry standard for arc flash studies</td></tr>
+      <tr><td><b>IEC 60364</b></td><td>IEC (International)</td><td>Low voltage electrical installations — design and safety</td><td>Adopted by 60+ countries</td></tr>
+      <tr><td><b>EN 50110</b></td><td>CENELEC (Europe)</td><td>Operation of electrical installations in Europe</td><td>Mandatory in EU member states</td></tr>
+      <tr><td><b>AS/NZS 3000</b></td><td>Standards Australia</td><td>Electrical installations (Wiring Rules)</td><td>Mandatory in Australia &amp; New Zealand</td></tr>
+    </tbody>
+  </table>
+  <h2>Hierarchy of Electrical Safety Controls</h2>
+  <p>NFPA 70E and OSHA both follow the established hierarchy of controls — a prioritised framework for eliminating or reducing hazards. Each level must be considered in order before moving to the next:</p>
+  <table>
+    <thead><tr><th>Level</th><th>Control Method</th><th>Example</th><th>Effectiveness</th></tr></thead>
+    <tbody>
+      <tr><td><b>1 — Elimination</b></td><td>Remove the hazard entirely</td><td>De-energise completely before work; design out live work requirements</td><td>Highest — hazard no longer exists</td></tr>
+      <tr><td><b>2 — Substitution</b></td><td>Replace with lower risk</td><td>Replace 480V equipment with 24V DC controls where possible</td><td>Very high — reduces exposure severity</td></tr>
+      <tr><td><b>3 — Engineering Controls</b></td><td>Physically isolate the hazard</td><td>Arc-resistant switchgear, remote racking devices, insulated barriers</td><td>High — reduces exposure without PPE</td></tr>
+      <tr><td><b>4 — Administrative Controls</b></td><td>Change how work is done</td><td>Energised work permits, written procedures, qualified person requirements</td><td>Moderate — relies on human compliance</td></tr>
+      <tr><td><b>5 — PPE</b></td><td>Protect the worker's body</td><td>Arc flash suit, insulating gloves, face shield, flame-resistant clothing</td><td>Last resort — does not eliminate hazard</td></tr>
+    </tbody>
+  </table>
+  <div class="note warn">
+    <div class="nlbl">&#9888; Critical Principle</div>
+    <p><strong>PPE is the last line of defence, not the first.</strong> NFPA 70E 2024 requires that all higher-level controls be considered and documented before relying on PPE alone. Choosing PPE without exploring elimination or engineering controls violates the standard.</p>
+  </div>
+  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>4</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch2a">
+<div class="pg">
+  <div class="rh"><span>Chapter 2</span><span>Electrical Shock — Physics &amp; Body Effects</span></div>
+  <div class="eye">Chapter 02</div>
+  <div class="cnum">II</div>
+  <div class="ctitle">Electrical Shock<br>Physics &amp; Body Effects</div>
+  <hr class="crule">
+  <div class="csub">Ohm's Law in Context &bull; Body Resistance &bull; Current Effects &bull; VF Threshold &bull; Severity Factors</div>
+  <p>Electrical shock occurs when current flows through the human body between two points at different electrical potential. The body becomes part of the circuit. The critical insight from physics is that <strong>it is the current — not the voltage — that kills</strong>. However, voltage drives the current through the body's resistance, so both matter. Ohm's Law governs the relationship: <strong>I = V ÷ R</strong>, where I is current (amperes), V is voltage, and R is body resistance (ohms).</p>
+  <p>Body resistance varies enormously depending on skin condition, contact area, and whether the current path passes through vital organs. Dry skin resistance ranges from <strong>100,000 to 600,000 ohms</strong>. Wet skin drops to as low as <strong>1,000 ohms</strong>. This is why water and electricity are so dangerous together: at 120V AC, dry skin limits current to approximately 0.2 mA (safe), while wet skin allows up to 120 mA — well into the lethal range.</p>
+  <h2>Body Resistance at Common Voltages</h2>
+  <table>
+    <thead><tr><th>Voltage</th><th>Dry Skin Current</th><th>Wet Skin Current</th><th>Risk Level</th></tr></thead>
+    <tbody>
+      <tr><td><b>12V DC</b></td><td>~0.02 mA</td><td>~0.12 mA</td><td>Negligible — threshold of perception only</td></tr>
+      <tr><td><b>50V AC</b></td><td>~0.1 mA</td><td>~5 mA</td><td>Low–moderate — OSHA threshold for safety</td></tr>
+      <tr><td><b>120V AC</b></td><td>~0.2 mA</td><td>~120 mA</td><td>High — wet conditions potentially lethal</td></tr>
+      <tr><td><b>240V AC</b></td><td>~0.4 mA</td><td>~240 mA</td><td>Very high — lethal under most conditions</td></tr>
+      <tr><td><b>480V AC</b></td><td>~0.8 mA</td><td>~480 mA</td><td>Extreme — cardiac arrest almost certain</td></tr>
+      <tr><td><b>1000V AC</b></td><td>~1.7 mA</td><td>&gt;1000 mA</td><td>Fatal — internal burns, cardiac arrest</td></tr>
+    </tbody>
+  </table>
+  <h2>Effects of Current on the Human Body</h2>
+  <table>
+    <thead><tr><th>Current Level</th><th>Effect on Body</th><th>Duration Relevance</th></tr></thead>
+    <tbody>
+      <tr><td><b>0.5–2 mA</b></td><td>Threshold of perception — tingling sensation</td><td>No injury at any duration</td></tr>
+      <tr><td><b>2–10 mA</b></td><td>Painful sensation, muscle twitching</td><td>Involuntary muscle contraction possible</td></tr>
+      <tr><td><b>10–20 mA</b></td><td><b>"Can't let go" threshold</b> — muscle tetanus, victim cannot release grip</td><td>Prolonged exposure causes burns and fatigue</td></tr>
+      <tr><td><b>20–75 mA</b></td><td>Severe pain, difficulty breathing, strong muscle contractions</td><td>Respiratory arrest possible beyond 30 seconds</td></tr>
+      <tr><td><b>75–100 mA</b></td><td><b>Ventricular fibrillation threshold</b> — heart loses coordinated rhythm</td><td>VF can occur after &lt;1 second exposure</td></tr>
+      <tr><td><b>100–300 mA</b></td><td>Certain ventricular fibrillation, severe respiratory arrest</td><td>Fatal without immediate defibrillation</td></tr>
+      <tr><td><b>&gt;1 A</b></td><td>Heart clamps (may actually defibrillate if brief), severe internal burns</td><td>Tissue destruction, organ damage, charring</td></tr>
+    </tbody>
+  </table>
+  <div class="note danger">
+    <div class="nlbl">&#9889; "Can't Let Go" Hazard</div>
+    <p>At just <strong>10–20 mA</strong>, forearm flexor muscles contract tetanically — the victim physically cannot release their grip on the energised conductor. This converts a momentary contact into a sustained lethal exposure. This is why 50V AC is considered the safety threshold — below it, the "can't let go" current is unlikely to be reached through normal skin resistance.</p>
+  </div>
+  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>5</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch2b">
+<div class="pg">
+  <div class="rh"><span>Chapter 2</span><span>Electrical Shock — Physics &amp; Body Effects</span></div>
+  <h2>Factors That Determine Shock Severity</h2>
+  <table>
+    <thead><tr><th>Factor</th><th>Effect on Severity</th><th>Engineering/Safety Implication</th></tr></thead>
+    <tbody>
+      <tr><td><b>Current magnitude</b></td><td>Higher current = more severe injury</td><td>Limited by circuit resistance and body resistance</td></tr>
+      <tr><td><b>Duration of exposure</b></td><td>Longer contact = more energy delivered</td><td>Fast circuit breakers reduce severity — GFCI trips in &lt;25ms</td></tr>
+      <tr><td><b>Current path through body</b></td><td>Hand-to-hand crosses heart — most dangerous; hand-to-foot also crosses heart; foot-to-foot rarely fatal</td><td>One-hand rule reduces risk of heart involvement</td></tr>
+      <tr><td><b>AC vs DC</b></td><td>AC at 50/60 Hz is 3–5× more dangerous than DC — AC frequency matches heart's fibrillation frequency</td><td>DC systems still lethal but less likely to cause VF at same voltage</td></tr>
+      <tr><td><b>Frequency (AC)</b></td><td>50–60 Hz most dangerous (aligns with cardiac rhythm); very high frequency less dangerous</td><td>Radio frequency currents cause burns but not VF</td></tr>
+      <tr><td><b>Skin condition</b></td><td>Wet skin = 100× lower resistance = 100× more current</td><td>Wet work environments require lower safe voltage thresholds</td></tr>
+      <tr><td><b>Contact area</b></td><td>Larger contact area = lower resistance = more current</td><td>Full palm contact far more dangerous than fingertip contact</td></tr>
+    </tbody>
+  </table>
+  <h2>Step and Touch Potential — Hidden Shock Hazards</h2>
+  <p><strong>Step potential</strong> occurs when a fault current spreads through the ground from a fault point. The ground voltage gradient between where one foot is placed and where the other foot is can be large enough to drive a lethal current through the legs. Workers have been killed standing 5–10 metres from a downed power line without touching it. <strong>Always shuffle walk (feet together, never lift) away from a downed line.</strong></p>
+  <p><strong>Touch potential</strong> occurs when a person contacts a grounded structure (a metal pole or fence post) while standing on ground with an elevated voltage gradient. The path goes from hand to feet. Both hazards are common in utility and substation work.</p>
+  <table>
+    <thead><tr><th>Shock Scenario</th><th>Current Path</th><th>Safe Distance / Mitigation</th></tr></thead>
+    <tbody>
+      <tr><td><b>Direct contact — live conductor</b></td><td>Entry point → through body → exit through ground or other conductor</td><td>De-energise; use insulated gloves; rubber matting</td></tr>
+      <tr><td><b>Step potential</b></td><td>One foot to other foot through ground potential gradient</td><td>Stay &gt;10m from fault point; shuffle walk to exit</td></tr>
+      <tr><td><b>Touch potential</b></td><td>Hand on metal structure → feet on energised ground</td><td>Equipotential bonding; do not touch structures near fault</td></tr>
+      <tr><td><b>Transferred potential</b></td><td>Conducting path (cable, pipe) carries remote fault potential to worker</td><td>Bond all metalwork; verify isolation before work</td></tr>
+    </tbody>
+  </table>
+  <div class="note tip">
+    <div class="nlbl">&#128161; One-Hand Rule</div>
+    <p>When probing live circuits unavoidably, keep one hand in your pocket or behind your back. This prevents the most dangerous current path — hand-to-hand through the heart. Use only the dominant hand for probing. It is a simple discipline that has saved countless lives.</p>
+  </div>
+  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>6</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch3a">
+<div class="pg">
+  <div class="rh"><span>Chapter 3</span><span>Arc Flash — Fundamentals &amp; Causes</span></div>
+  <div class="eye">Chapter 03</div>
+  <div class="cnum">III</div>
+  <div class="ctitle">Arc Flash<br>Fundamentals &amp; Causes</div>
+  <hr class="crule">
+  <div class="csub">What Causes Arc Flash &bull; Energy Release &bull; Temperature &bull; Arc vs Blast &bull; Common Causes</div>
+  <p>An <strong>arc flash</strong> is an electrical explosion caused by a rapid discharge of energy through ionised air between two energised conductors, or between a conductor and ground. The plasma arc channel can reach temperatures of <strong>19,400°C (35,000°F) — approximately four times the temperature of the surface of the sun</strong>. At these temperatures, copper conductors vaporise and expand to 67,000 times their solid volume in microseconds, creating a pressure wave and a fireball of superheated plasma that expands outward at near-supersonic speed.</p>
+  <p>The critical measure of arc flash severity is <strong>incident energy</strong>, measured in calories per square centimetre (cal/cm²). An incident energy of just <strong>1.2 cal/cm²</strong> will cause a second-degree burn — the threshold at which skin begins to permanently scar. An event producing <strong>40 cal/cm²</strong> is survivable only with Category 4 PPE. Many industrial switchgear faults produce hundreds of cal/cm².</p>
+  <h2>Common Causes of Arc Flash Incidents</h2>
+  <table>
+    <thead><tr><th>Cause</th><th>How It Initiates the Arc</th><th>Prevention</th></tr></thead>
+    <tbody>
+      <tr><td><b>Dropped tools</b></td><td>Tool bridges phase-to-phase or phase-to-ground in energised panel</td><td>Use insulated tools; work in de-energised state</td></tr>
+      <tr><td><b>Improperly rated equipment</b></td><td>Overcurrent beyond equipment's interrupting capacity initiates sustained arc</td><td>Match interrupting rating to available fault current</td></tr>
+      <tr><td><b>Accidental contact</b></td><td>Test probe, conductor, or body part touches energised terminal</td><td>NFPA 70E work procedures; proper PPE; boundaries</td></tr>
+      <tr><td><b>Contamination</b></td><td>Conductive dust, moisture, or tracking on insulation creates low-resistance path</td><td>Regular inspection; sealed enclosures; cleaning programme</td></tr>
+      <tr><td><b>Corrosion / deterioration</b></td><td>Degraded insulation fails under normal operating voltage</td><td>Predictive maintenance; thermal imaging; insulation testing</td></tr>
+      <tr><td><b>Overvoltage / transients</b></td><td>Lightning or switching transients exceed insulation withstand</td><td>Surge protection devices; proper grounding and bonding</td></tr>
+      <tr><td><b>Rodents / foreign objects</b></td><td>Animal or debris creates fault in enclosure</td><td>Sealed enclosures; regular inspection; pest control</td></tr>
+      <tr><td><b>Racking operations</b></td><td>Inserting/withdrawing draw-out breakers in energised switchgear</td><td>Remote racking devices; arc-resistant switchgear; face shields</td></tr>
+    </tbody>
+  </table>
+  <div class="note danger">
+    <div class="nlbl">&#9889; Temperature Reference</div>
+    <p>Arc flash plasma: <strong>19,400°C</strong> &nbsp;|&nbsp; Sun surface: 5,500°C &nbsp;|&nbsp; Steel melts: 1,370°C &nbsp;|&nbsp; Aluminium melts: 660°C &nbsp;|&nbsp; Paper ignites: 233°C. The arc flash fireball vaporises metals, ignites nearby combustibles, and destroys standard work clothing in milliseconds.</p>
+  </div>
+  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>7</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch3b">
+<div class="pg">
+  <div class="rh"><span>Chapter 3</span><span>Arc Flash — Fundamentals &amp; Causes</span></div>
+  <h2>Arc Flash vs Arc Blast — Two Separate Dangers</h2>
+  <p>Every arc flash event also produces an <strong>arc blast</strong> — the pressure wave created by the instantaneous vaporisation of copper and aluminium conductors. Understanding both hazards is essential for proper PPE selection and equipment design:</p>
+  <table>
+    <thead><tr><th>Phenomenon</th><th>Mechanism</th><th>Primary Injury</th><th>PPE Protection</th></tr></thead>
+    <tbody>
+      <tr><td><b>Arc Flash (thermal)</b></td><td>Superheated plasma radiates and convects heat outward from the arc channel</td><td>3rd-degree burns to exposed skin and airways; eye damage; ignition of clothing</td><td>Arc-rated FR clothing; face shield/hood; gloves</td></tr>
+      <tr><td><b>Arc Blast (pressure)</b></td><td>Metal vapour expansion creates pressure wave — up to 2,000 lbf/ft² (100 kPa) in high-energy events</td><td>Ruptured eardrums, blunt trauma, broken bones, structural damage</td><td>Arc-resistant enclosure design; distance; escape routes</td></tr>
+      <tr><td><b>Shrapnel</b></td><td>Enclosure parts, bus bars, and hardware propelled at high velocity by pressure wave</td><td>Penetration injuries, lacerations</td><td>Arc flash face shield minimum; keep doors closed during racking</td></tr>
+      <tr><td><b>Toxic gases</b></td><td>Vaporised copper, aluminium, insulation materials produce toxic fumes</td><td>Chemical burns to airways; toxic inhalation</td><td>Adequate ventilation; do not breathe post-event air</td></tr>
+    </tbody>
+  </table>
+  <h2>Incident Energy — Understanding the Scale</h2>
+  <table>
+    <thead><tr><th>Incident Energy</th><th>Effect on Unprotected Skin</th><th>PPE Category Required</th></tr></thead>
+    <tbody>
+      <tr><td><b>1.2 cal/cm²</b></td><td>Onset of second-degree burn — threshold for permanent scarring</td><td>Category 1 minimum (4 cal/cm² arc rating)</td></tr>
+      <tr><td><b>4–8 cal/cm²</b></td><td>Severe second-degree burns; risk of third-degree burns</td><td>Category 1 (4 cal) to Category 2 (8 cal)</td></tr>
+      <tr><td><b>8–25 cal/cm²</b></td><td>Third-degree burns — full-thickness skin destruction</td><td>Category 2 (8 cal) to Category 3 (25 cal)</td></tr>
+      <tr><td><b>25–40 cal/cm²</b></td><td>Catastrophic burns; life-threatening without immediate burn centre care</td><td>Category 4 (40 cal/cm²)</td></tr>
+      <tr><td><b>&gt;40 cal/cm²</b></td><td>Fatal without immediate intervention even with PPE</td><td>Work must be de-energised — no PPE category is adequate</td></tr>
+    </tbody>
+  </table>
+  <p>The <strong>arc flash boundary</strong> is the distance from the arc source at which the incident energy equals 1.2 cal/cm² — the onset of a curable second-degree burn. Anyone inside this boundary must wear appropriate arc flash PPE. This distance can range from less than a metre for small panels to over 5 metres for large MV switchgear.</p>
+  <div class="note warn">
+    <div class="nlbl">&#9888; System Voltage Is Not the Whole Story</div>
+    <p>A 480V switchgear panel with high available fault current can produce more incident energy than a 15kV panel with well-designed protection. Incident energy is determined by <strong>available fault current × clearing time</strong>. Always use a proper arc flash study — never assume low voltage means low hazard.</p>
+  </div>
+  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>8</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch4a">
+<div class="pg">
+  <div class="rh"><span>Chapter 4</span><span>NFPA 70E — Standard Overview</span></div>
+  <div class="eye">Chapter 04</div>
+  <div class="cnum">IV</div>
+  <div class="ctitle">NFPA 70E<br>Standard Overview</div>
+  <hr class="crule">
+  <div class="csub">What NFPA 70E Is &bull; 2024 Key Requirements &bull; Energised Work Permit &bull; Risk Assessment</div>
+  <p><strong>NFPA 70E, Standard for Electrical Safety in the Workplace</strong>, is the primary standard governing electrical safety practices in the United States. Published by the National Fire Protection Association and updated every three years, it is referenced by OSHA under 29 CFR 1910.303 — making it effectively mandatory for US employers. The 2024 edition reflects the latest understanding of arc flash physics, PPE testing, and risk-based approaches.</p>
+  <p>NFPA 70E applies to all work performed on or near electrical equipment operating at <strong>50 volts or more</strong> — from standard 120V outlets to high-voltage transmission equipment. It establishes requirements for training, PPE, work procedures, arc flash hazard analysis, and the Energised Electrical Work Permit process.</p>
+  <h2>NFPA 70E 2024 — Key Requirements</h2>
+  <table>
+    <thead><tr><th>Requirement</th><th>Standard Reference</th><th>What It Requires</th></tr></thead>
+    <tbody>
+      <tr><td><b>Electrical Safety Programme</b></td><td>Article 110.3</td><td>Written programme documented; reviewed and updated annually</td></tr>
+      <tr><td><b>Risk Assessment Procedure</b></td><td>Article 110.5</td><td>Identify hazards, estimate likelihood &amp; severity, determine controls before work begins</td></tr>
+      <tr><td><b>Arc Flash Hazard Analysis</b></td><td>Article 130.5</td><td>Determine incident energy or PPE category for all work tasks; label all equipment</td></tr>
+      <tr><td><b>Energised Work Justification</b></td><td>Article 130.2</td><td>Work on energised equipment only when de-energising creates greater hazard or is infeasible</td></tr>
+      <tr><td><b>Energised Work Permit</b></td><td>Article 130.2(B)</td><td>Written permit signed by responsible manager for all justified energised work</td></tr>
+      <tr><td><b>Qualified Person Training</b></td><td>Article 110.6</td><td>Training specific to hazards of electrical work — not just general safety</td></tr>
+      <tr><td><b>PPE Selection</b></td><td>Table 130.7(C)(15)</td><td>PPE based on incident energy analysis or PPE category method</td></tr>
+      <tr><td><b>Approach Boundaries</b></td><td>Table 130.4(E)</td><td>Limited, Restricted, and Prohibited approach distances established and enforced</td></tr>
+    </tbody>
+  </table>
+  <h2>The Energised Electrical Work Permit</h2>
+  <p>NFPA 70E 130.2(B) requires a written Energised Electrical Work Permit for any justified work on energised equipment. The permit must document:</p>
+  <ul>
+    <li>Description of the circuit or equipment and justification for energised work</li>
+    <li>Description of the work to be performed and the safe work practices to be used</li>
+    <li>Results of the shock and arc flash risk assessment (incident energy, boundaries, PPE)</li>
+    <li>Means to restrict access of unqualified persons to the work area</li>
+    <li>Evidence of completion of a job briefing including discussion of any job-specific hazards</li>
+    <li>Signature of the authorising manager or supervisor — not the worker performing the task</li>
+  </ul>
+  <div class="note danger">
+    <div class="nlbl">&#9889; Default Position: De-Energise First</div>
+    <p>NFPA 70E 130.1 states that <strong>all electrical conductors and circuit parts shall be considered energised until proven otherwise.</strong> The default requirement is always to de-energise before work. Energised work is the exception — and requires documented justification and a work permit.</p>
+  </div>
+  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>9</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch5a">
+<div class="pg">
+  <div class="rh"><span>Chapter 5</span><span>Arc Flash Hazard Analysis</span></div>
+  <div class="eye">Chapter 05</div>
+  <div class="cnum">V</div>
+  <div class="ctitle">Arc Flash Hazard Analysis</div>
+  <hr class="crule">
+  <div class="csub">Incident Energy Method &bull; PPE Category Method &bull; Arc Flash Labels &bull; IEEE 1584-2018</div>
+  <p>An arc flash hazard analysis determines the arc flash incident energy at each piece of electrical equipment in a facility, establishes flash protection boundaries, and defines the PPE required for specific work tasks. NFPA 70E provides two methods for complying with this requirement: the <strong>Incident Energy Analysis Method</strong> (engineering calculation) and the <strong>PPE Category Method</strong> (table-based lookup). The incident energy method is more precise; the PPE category method is conservative and simpler to apply.</p>
+  <h2>Method 1: Incident Energy Analysis</h2>
+  <p>Performed using power system analysis software (ETAP, SKM PowerTools, EasyPower, or CYME). Based on <strong>IEEE 1584-2018</strong> equations. Requires:</p>
+  <ul>
+    <li><b>Available fault current (AFC)</b> at each bus — from short circuit study</li>
+    <li><b>Arcing fault current</b> — calculated by IEEE 1584 equations (lower than bolted fault)</li>
+    <li><b>Protective device clearing time</b> — from time-current characteristic (TCC) curves</li>
+    <li><b>Working distance</b> — standardised per equipment type (e.g., 455mm for LV panels)</li>
+    <li><b>Incident energy (E)</b> — calculated in cal/cm² at the working distance</li>
+  </ul>
+  <h2>Standard Working Distances (IEEE 1584)</h2>
+  <table>
+    <thead><tr><th>Equipment Type</th><th>Working Distance</th><th>Typical Voltage</th></tr></thead>
+    <tbody>
+      <tr><td><b>LV panelboards &lt;240V</b></td><td>455 mm (18 in)</td><td>120–240V</td></tr>
+      <tr><td><b>LV panelboards 240–600V</b></td><td>455 mm (18 in)</td><td>208–600V</td></tr>
+      <tr><td><b>LV switchgear &lt;1kV</b></td><td>610 mm (24 in)</td><td>480–600V</td></tr>
+      <tr><td><b>MV switchgear 1–15kV</b></td><td>910 mm (36 in)</td><td>1–15kV</td></tr>
+      <tr><td><b>MV switchgear 15–36kV</b></td><td>910 mm (36 in)</td><td>15–36kV</td></tr>
+      <tr><td><b>Open MV equipment</b></td><td>1820 mm (72 in)</td><td>Varies</td></tr>
+    </tbody>
+  </table>
+  <h2>Reading an Arc Flash Label</h2>
+  <p>NFPA 70E and NEC 110.16 require arc flash warning labels on all electrical equipment. A compliant label must include:</p>
+  <table>
+    <thead><tr><th>Label Field</th><th>Example Value</th><th>What It Means</th></tr></thead>
+    <tbody>
+      <tr><td><b>Nominal voltage</b></td><td>480V</td><td>Operating voltage of the equipment</td></tr>
+      <tr><td><b>Incident energy</b></td><td>8.4 cal/cm²</td><td>Energy at working distance — determines PPE category minimum</td></tr>
+      <tr><td><b>Working distance</b></td><td>18 in (455 mm)</td><td>Distance at which incident energy was calculated</td></tr>
+      <tr><td><b>Arc flash boundary</b></td><td>60 in (1.5 m)</td><td>Distance at which IE = 1.2 cal/cm² — PPE required inside this</td></tr>
+      <tr><td><b>Limited approach</b></td><td>42 in (1.1 m)</td><td>Minimum distance for unqualified persons</td></tr>
+      <tr><td><b>Restricted approach</b></td><td>12 in (305 mm)</td><td>Requires insulating PPE and a written plan</td></tr>
+    </tbody>
+  </table>
+  <div class="note tip">
+    <div class="nlbl">&#128161; Update Your Labels</div>
+    <p>Arc flash labels are only valid when the system configuration matches the study. Any change to protective device settings, transformer size, utility supply, or conductor routing requires the arc flash study to be updated — and new labels installed. Labels become dangerously misleading if the system changes after the study date.</p>
+  </div>
+  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>10</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch6a">
+<div class="pg">
+  <div class="rh"><span>Chapter 6</span><span>PPE Selection — NFPA 70E Categories</span></div>
+  <div class="eye">Chapter 06</div>
+  <div class="cnum">VI</div>
+  <div class="ctitle">PPE Selection<br>NFPA 70E Categories</div>
+  <hr class="crule">
+  <div class="csub">Categories 1–4 &bull; Arc Rating Explained &bull; Required Equipment &bull; Glove Classes</div>
+  <p>Personal Protective Equipment (PPE) for electrical work is selected based on the <strong>incident energy</strong> determined by the arc flash hazard analysis, or by using the <strong>PPE Category Method</strong> from NFPA 70E Table 130.7(C)(15). The arc rating of a garment (measured in cal/cm²) represents the energy at which the fabric has a 50% probability of preventing a second-degree burn. PPE must be selected with an arc rating <strong>equal to or greater than</strong> the incident energy at the working location.</p>
+  <h2>NFPA 70E PPE Categories — Full Requirements</h2>
+  <table>
+    <thead><tr><th>Category</th><th>Min. Arc Rating</th><th>Required PPE</th><th>Typical Application</th></tr></thead>
+    <tbody>
+      <tr><td><b>PPE Cat 1</b></td><td>4 cal/cm²</td><td>Arc-rated FR shirt + pants (or coverall) 4 cal minimum; arc-rated face shield 4 cal; hard hat; leather gloves; safety glasses; leather work boots</td><td>LV panelboards &lt;240V, simple metering tasks, visual inspection</td></tr>
+      <tr><td><b>PPE Cat 2</b></td><td>8 cal/cm²</td><td>Arc-rated FR shirt + pants (or coverall) 8 cal; arc-rated balaclava or arc-rated face shield 8 cal; hard hat; Class 00 rubber insulating gloves; leather over-gloves; safety glasses; leather boots</td><td>480V panelboards, MCC buckets, LV switchgear, 120V work</td></tr>
+      <tr><td><b>PPE Cat 3</b></td><td>25 cal/cm²</td><td>Arc flash suit 25 cal (jacket + bib overalls or coverall); arc-rated balaclava; arc flash hood 25 cal; hard hat inside hood; Class 0 rubber insulating gloves; leather over-gloves; leather boots</td><td>600V switchgear, MV panels, draw-out breaker work</td></tr>
+      <tr><td><b>PPE Cat 4</b></td><td>40 cal/cm²</td><td>Arc flash suit 40 cal (jacket + bib or coverall); arc-rated balaclava; arc flash hood 40 cal; hard hat inside hood; Class 00 rubber insulating gloves up to 500V; leather over-gloves; leather boots</td><td>High-energy MV equipment, large transformers, utility switchgear</td></tr>
+    </tbody>
+  </table>
+  <h2>Rubber Insulating Glove Classes</h2>
+  <table>
+    <thead><tr><th>Class</th><th>Max Use Voltage (AC)</th><th>Test Voltage (AC)</th><th>Color Code</th></tr></thead>
+    <tbody>
+      <tr><td><b>Class 00</b></td><td>500 V AC</td><td>2,500 V</td><td>Beige</td></tr>
+      <tr><td><b>Class 0</b></td><td>1,000 V AC</td><td>5,000 V</td><td>Red</td></tr>
+      <tr><td><b>Class 1</b></td><td>7,500 V AC</td><td>10,000 V</td><td>White</td></tr>
+      <tr><td><b>Class 2</b></td><td>17,000 V AC</td><td>20,000 V</td><td>Yellow</td></tr>
+      <tr><td><b>Class 3</b></td><td>26,500 V AC</td><td>30,000 V</td><td>Green</td></tr>
+      <tr><td><b>Class 4</b></td><td>36,000 V AC</td><td>40,000 V</td><td>Orange</td></tr>
+    </tbody>
+  </table>
+  <div class="note warn">
+    <div class="nlbl">&#9888; Regular Inspection &amp; Testing Required</div>
+    <p>Rubber insulating gloves must be <strong>electrically tested every 6 months</strong> per ASTM D120. Before each use: visually inspect for cuts, cracks, or punctures; air-test by rolling the cuff. A damaged glove provides <strong>zero protection</strong>. Always wear leather over-gloves to protect rubber gloves from mechanical damage.</p>
+  </div>
+  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>11</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch7a">
+<div class="pg">
+  <div class="rh"><span>Chapter 7</span><span>Lockout / Tagout (LOTO) Procedures</span></div>
+  <div class="eye">Chapter 07</div>
+  <div class="cnum">VII</div>
+  <div class="ctitle">Lockout / Tagout<br>LOTO Procedures</div>
+  <hr class="crule">
+  <div class="csub">OSHA 1910.147 &bull; The 6 Steps &bull; Energy Types &bull; Group LOTO &bull; Verification</div>
+  <p>Lockout/Tagout (LOTO) is the single most important electrical safety procedure in industrial environments. Governed by <strong>OSHA 29 CFR 1910.147</strong> (Control of Hazardous Energy), it requires that all energy sources feeding a machine or system be <strong>isolated, locked, and verified at zero energy</strong> before maintenance or service work begins. OSHA estimates LOTO prevents <strong>120 fatalities and 50,000 injuries per year</strong> in the United States when properly implemented.</p>
+  <p>The word <strong>lockout</strong> means applying a physical lock to an energy isolation device so the machine cannot be re-energised while the lock is in place. <strong>Tagout</strong> means applying a warning tag to the device when a lock cannot be applied — acceptable only when locking is physically impossible, and carries less protection. Always prefer lockout over tagout.</p>
+  <h2>The 6 Steps of LOTO — OSHA 1910.147</h2>
+  <table>
+    <thead><tr><th>Step</th><th>Action</th><th>Who Performs It</th><th>Details</th></tr></thead>
+    <tbody>
+      <tr><td><b>1. Notify</b></td><td>Inform all affected employees that a LOTO is being applied and why</td><td>Authorised employee</td><td>Verbal and/or written notification to all workers in the area who could be affected by the shutdown</td></tr>
+      <tr><td><b>2. Identify Energy Sources</b></td><td>Identify ALL energy sources feeding the equipment from the written machine-specific LOTO procedure</td><td>Authorised employee</td><td>Electrical, pneumatic, hydraulic, mechanical (gravity, spring), thermal, chemical — ALL must be identified</td></tr>
+      <tr><td><b>3. Shut Down</b></td><td>Follow normal stopping procedure to bring equipment to a safe stop</td><td>Authorised employee</td><td>Use the normal OFF switch or stopping device — do not isolate under load where possible</td></tr>
+      <tr><td><b>4. Isolate All Energy Sources</b></td><td>Open, close, block, or restrain every energy isolating device identified in Step 2</td><td>Authorised employee</td><td>Electrical: open disconnect switch. Pneumatic: close isolation valve. Hydraulic: block ram. Gravity: block suspended loads.</td></tr>
+      <tr><td><b>5. Apply LOTO Devices</b></td><td>Apply personal lock and tag to every energy isolation device</td><td>Each authorised employee applies their OWN lock</td><td>One person = one lock = one key kept only by that person. Tag states name, date, reason for lockout.</td></tr>
+      <tr><td><b>6. Verify Zero Energy</b></td><td>Attempt to start the machine (press start button). Test all electrical terminals with a calibrated meter. Release or restrain stored energy.</td><td>Authorised employee</td><td>MUST verify — do not assume. Try start buttons. Use CAT-rated meter to confirm 0V at all terminals. Bleed pneumatics. Block gravity loads.</td></tr>
+    </tbody>
+  </table>
+  <div class="note danger">
+    <div class="nlbl">&#9889; Step 6 Is Non-Negotiable</div>
+    <p>More workers are killed because they <strong>completed Steps 1–5 but skipped Step 6 verification</strong> than for any other LOTO failure. Isolation devices fail. Procedures have errors. Circuits are mislabelled. <strong>Always verify with a calibrated meter that voltage is zero at the point of work — every single time.</strong></p>
+  </div>
+  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>12</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch7b">
+<div class="pg">
+  <div class="rh"><span>Chapter 7</span><span>Lockout / Tagout (LOTO) Procedures</span></div>
+  <h2>Types of Hazardous Energy Requiring LOTO</h2>
+  <table>
+    <thead><tr><th>Energy Type</th><th>Source Example</th><th>Isolation Method</th><th>Verification Method</th></tr></thead>
+    <tbody>
+      <tr><td><b>Electrical</b></td><td>Motor feeder, panel circuit, transformer</td><td>Open and lock disconnect switch, circuit breaker, or fusible switch</td><td>Test with CAT-rated voltmeter at all terminals — confirm 0V phase-to-phase and phase-to-ground</td></tr>
+      <tr><td><b>Pneumatic</b></td><td>Compressed air cylinders, pneumatic tools, actuators</td><td>Close and lock isolation valve; bleed downstream pressure to atmosphere</td><td>Check pressure gauge reads zero; actuate cylinder manually to confirm no movement</td></tr>
+      <tr><td><b>Hydraulic</b></td><td>Hydraulic cylinders, press rams, clamping systems</td><td>Close and lock hydraulic isolation valve; release stored pressure</td><td>Pressure gauge reads zero; physically block or support any suspended loads before releasing</td></tr>
+      <tr><td><b>Gravitational</b></td><td>Suspended loads, counterweights, raised platens</td><td>Block, chock, or chain suspended components in the lowered/secured position</td><td>Physically verify blocks are in place; attempt to raise the load to confirm it is restrained</td></tr>
+      <tr><td><b>Thermal</b></td><td>Steam pipes, heated platens, ovens</td><td>Close and lock steam isolation valve; allow system to cool to safe temperature</td><td>Temperature reading below safe threshold; open drain valve to confirm no residual steam pressure</td></tr>
+      <tr><td><b>Mechanical/Spring</b></td><td>Coiled springs, tensioned cables, compressed springs in machinery</td><td>Release or block spring energy before disconnecting components</td><td>Visually confirm spring is in fully relaxed/blocked position before working</td></tr>
+      <tr><td><b>Chemical</b></td><td>Pressurised chemical lines, reactive process streams</td><td>Close and lock isolation valves; drain and purge the line segment</td><td>Pressure gauge reads zero; sample or test for absence of hazardous material</td></tr>
+    </tbody>
+  </table>
+  <h2>Group LOTO — Multiple Workers</h2>
+  <p>When more than one person works on equipment simultaneously, <strong>Group Lockout</strong> procedures apply. Each worker in the group must have a personal lock on every energy isolation point — either directly or via a Group Lockout Hasp:</p>
+  <ul>
+    <li>A <strong>Group Lockout Hasp</strong> is a multi-hole device that allows multiple personal locks to be applied to a single isolation point simultaneously</li>
+    <li>Each worker applies their own personal lock to the hasp — the equipment cannot be re-energised until every worker's lock has been removed</li>
+    <li>A <strong>Group Lockout Box</strong> is used when there are more workers than isolation points — keys to all isolation locks are placed in the box, each worker adds their personal lock to the box, and the box is the control point</li>
+    <li>A <strong>Lead Authorised Employee</strong> coordinates the process and ensures all workers have applied locks before work begins and removed them safely after completion</li>
+  </ul>
+  <h2>LOTO Removal Procedure</h2>
+  <table>
+    <thead><tr><th>Step</th><th>Action Required</th></tr></thead>
+    <tbody>
+      <tr><td><b>1. Clear work area</b></td><td>All tools, materials, and personnel removed from equipment and machine area</td></tr>
+      <tr><td><b>2. Verify personnel clear</b></td><td>Confirm every worker who applied a lock has removed it themselves — no proxy removal</td></tr>
+      <tr><td><b>3. Remove LOTO devices</b></td><td>Each authorised employee removes their own lock and tag only</td></tr>
+      <tr><td><b>4. Notify affected employees</b></td><td>Inform all affected workers that LOTO has been removed and equipment is being re-energised</td></tr>
+      <tr><td><b>5. Restore energy</b></td><td>Re-energise according to normal start-up procedure</td></tr>
+    </tbody>
+  </table>
+  <div class="note warn">
+    <div class="nlbl">&#9888; Never Remove Another Person's Lock</div>
+    <p>Only the person who applied a LOTO lock may remove it. If a worker has left without removing their lock, the employer's written programme must define an emergency removal procedure — which requires at minimum verifying the worker is NOT in the danger zone and notifying them before removal.</p>
+  </div>
+  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>13</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch8a">
+<div class="pg">
+  <div class="rh"><span>Chapter 8</span><span>Safe Work Practices &amp; Approach Boundaries</span></div>
+  <div class="eye">Chapter 08</div>
+  <div class="cnum">VIII</div>
+  <div class="ctitle">Safe Work Practices<br>&amp; Approach Boundaries</div>
+  <hr class="crule">
+  <div class="csub">Approach Boundaries &bull; One-Hand Rule &bull; Panel Work &bull; Insulated Tools &bull; Safe Methods</div>
+  <p>Safe work practices for electrical work extend beyond PPE selection. They encompass the physical methods used to perform tasks, the boundaries maintained around energised conductors, the tools used, and the discipline to follow procedures consistently. <strong>Most electrical injuries occur not from unknown hazards but from ignoring known procedures.</strong></p>
+  <h2>NFPA 70E Approach Boundaries (Shock Protection)</h2>
+  <p>NFPA 70E Table 130.4(E) establishes three approach boundaries around exposed energised conductors. The boundaries are voltage-dependent and define who may approach and what protection is required:</p>
+  <table>
+    <thead><tr><th>Boundary</th><th>Definition</th><th>Who May Cross</th><th>Example Distance at 480V</th></tr></thead>
+    <tbody>
+      <tr><td><b>Limited Approach</b></td><td>Outer boundary — unqualified persons must stop here. Qualified persons may approach with proper PPE.</td><td>Qualified persons only (with PPE); unqualified only with qualified escort and PPE</td><td>42 in (1.07 m) from 301–600V exposed conductor</td></tr>
+      <tr><td><b>Restricted Approach</b></td><td>Inner boundary — increased shock risk from inadvertent movement. Requires insulating PPE and written work plan.</td><td>Qualified persons with appropriate rubber insulating PPE and documented work plan</td><td>12 in (305 mm) from 301–600V exposed conductor</td></tr>
+      <tr><td><b>Prohibited Approach</b></td><td>Same as direct contact — requires same protection as if touching the conductor</td><td>Qualified persons with maximum insulating PPE; treat as live contact</td><td>1 in (25 mm) from 301–600V exposed conductor</td></tr>
+    </tbody>
+  </table>
+  <h2>Safe Electrical Panel Work Practices</h2>
+  <table>
+    <thead><tr><th>Practice</th><th>Requirement</th><th>Why It Matters</th></tr></thead>
+    <tbody>
+      <tr><td><b>Stand to the side</b></td><td>Open panel doors standing to the hinged side — never directly in front of the bus</td><td>If an arc flash occurs when opening the door, standing to the side reduces direct exposure</td></tr>
+      <tr><td><b>One-hand rule</b></td><td>Keep one hand in pocket or behind back when probing energised circuits</td><td>Prevents hand-to-hand current path through the heart</td></tr>
+      <tr><td><b>Insulated tools only</b></td><td>Use IEC 60900 rated insulated tools for all work on or near energised conductors</td><td>Prevents short circuit and direct contact through tool handles</td></tr>
+      <tr><td><b>Remove jewellery</b></td><td>No rings, watches, bracelets, or metal necklaces during electrical work</td><td>Metal jewellery is highly conductive — rings have caused severe degloving arc burns at low voltages</td></tr>
+      <tr><td><b>Secure loose clothing</b></td><td>Tuck in shirts; roll up or remove loose sleeves; no dangling lanyards or ties</td><td>Loose clothing can contact terminals or become entangled in rotating equipment</td></tr>
+      <tr><td><b>Verify meter before use</b></td><td>Test meter on known live source before and after testing suspected dead circuit</td><td>Confirms meter is functional — a malfunctioning meter has caused fatalities when workers trusted a false "zero" reading</td></tr>
+      <tr><td><b>No alone working</b></td><td>Energised work above Category 1 should never be performed alone</td><td>If shock or arc flash occurs, a second person can initiate emergency response immediately</td></tr>
+    </tbody>
+  </table>
+  <div class="note tip">
+    <div class="nlbl">&#128161; Test–Verify–Test Procedure</div>
+    <p>Before declaring any circuit de-energised and removing PPE: <strong>(1)</strong> test meter on known live source — confirm it reads correctly. <strong>(2)</strong> test the circuit — confirm 0V. <strong>(3)</strong> test meter on known live source again — confirm it still works. This three-step verification is standard practice in professional electrical safety programmes.</p>
+  </div>
+  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>14</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch9a">
+<div class="pg">
+  <div class="rh"><span>Chapter 9</span><span>Electrical Testing Safety</span></div>
+  <div class="eye">Chapter 09</div>
+  <div class="cnum">IX</div>
+  <div class="ctitle">Electrical Testing Safety</div>
+  <hr class="crule">
+  <div class="csub">CAT Ratings &bull; Multimeter Safety &bull; Insulation Testing &bull; Thermal Imaging &bull; Phase Rotation</div>
+  <p>Test instruments are a primary cause of arc flash incidents — not because the equipment itself is dangerous, but because using test equipment requires working in close proximity to energised conductors. Selecting a test instrument with the correct <strong>Measurement Category (CAT)</strong> rating for the application is a fundamental safety requirement that many workers overlook. A low-category meter used in a high-energy environment can fail catastrophically, producing an explosive arc through the meter itself.</p>
+  <h2>Measurement Category (CAT) Ratings — IEC 61010</h2>
+  <table>
+    <thead><tr><th>Category</th><th>Application</th><th>Energy Level</th><th>Examples</th></tr></thead>
+    <tbody>
+      <tr><td><b>CAT I</b></td><td>Electronic equipment — protected circuits</td><td>Lowest transient energy</td><td>Secondary side of small signal transformers; consumer electronics boards</td></tr>
+      <tr><td><b>CAT II</b></td><td>Single-phase loads connected to outlet</td><td>Moderate transients</td><td>Appliances plugged into wall outlet; portable tools; residential branch circuits at outlet</td></tr>
+      <tr><td><b>CAT III</b></td><td>Three-phase distribution; building wiring</td><td>Higher transient energy</td><td>Distribution panels, feeders, motor control, bus bars in buildings</td></tr>
+      <tr><td><b>CAT IV</b></td><td>Three-phase at utility connection; outdoor supplies</td><td>Highest transient energy</td><td>Utility service entrance, meter bases, overhead lines, outdoor distribution</td></tr>
+    </tbody>
+  </table>
+  <p>The CAT number must also be accompanied by a voltage rating (e.g., CAT III 600V, CAT IV 1000V). <strong>Always use the highest CAT rating appropriate for the location</strong> — a CAT IV 600V meter is safer than a CAT II 1000V meter for industrial panel work because it handles higher energy transients at the measurement point.</p>
+  <h2>Safe Multimeter Usage Procedure</h2>
+  <ul>
+    <li>Inspect test leads for damaged insulation, cracked plugs, or exposed conductors before every use</li>
+    <li>Select correct function and range before applying probes — never change function with probes connected</li>
+    <li>Insert the black (common) probe first; remove it last — this ensures the energised probe is only live while making contact</li>
+    <li>Use CAT-rated probes with shrouded banana plugs and finger guards — never bare-metal probes</li>
+    <li>Keep fingers behind the probe finger guards at all times when probing energised circuits</li>
+    <li>Never use current clamp in CAT I or II ratings on CAT III/IV circuits</li>
+  </ul>
+  <h2>Insulation Resistance Testing (Megger / Hipot)</h2>
+  <table>
+    <thead><tr><th>Test Voltage</th><th>Application</th><th>Minimum Acceptable Reading</th></tr></thead>
+    <tbody>
+      <tr><td><b>500V DC</b></td><td>Low voltage cable insulation (&lt;1kV systems)</td><td>&gt;100 M&Omega; (new); &gt;1 M&Omega; (minimum in service)</td></tr>
+      <tr><td><b>1000V DC</b></td><td>Low voltage motor windings, switchboard wiring</td><td>&gt;1 M&Omega;; ideal &gt;100 M&Omega;</td></tr>
+      <tr><td><b>2500V DC</b></td><td>Medium voltage cables (1–15kV rated)</td><td>&gt;1000 M&Omega; (new); &gt;100 M&Omega; (in service)</td></tr>
+      <tr><td><b>5000V DC</b></td><td>HV transformer windings, MV cables</td><td>&gt;1000 M&Omega; for high-voltage equipment</td></tr>
+    </tbody>
+  </table>
+  <div class="note danger">
+    <div class="nlbl">&#9889; Safety Warning — Insulation Testing</div>
+    <p>Always confirm equipment is <strong>completely de-energised and LOTO applied</strong> before connecting an insulation tester. Post-test, always discharge the cable or winding using the instrument's discharge function — cables can retain dangerous stored charge for minutes after testing.</p>
+  </div>
+  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>15</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch10a">
+<div class="pg">
+  <div class="rh"><span>Chapter 10</span><span>Emergency Response</span></div>
+  <div class="eye">Chapter 10</div>
+  <div class="cnum">X</div>
+  <div class="ctitle">Emergency Response</div>
+  <hr class="crule">
+  <div class="csub">Shock Rescue &bull; Burns First Aid &bull; CPR for Electrical Victims &bull; Fire Response</div>
+  <p>An electrical emergency response must be <strong>fast, methodical, and safe for the rescuer</strong>. The most dangerous instinct when seeing a colleague receiving an electrical shock is to grab them — a reflex that can kill the rescuer instantly. Every worker who enters an electrical environment must know the correct sequence of actions before an emergency occurs. Muscle memory from training saves lives; panic kills.</p>
+  <h2>Responding to Electrical Shock — Correct Sequence</h2>
+  <table>
+    <thead><tr><th>Step</th><th>Action</th><th>Critical Reason</th></tr></thead>
+    <tbody>
+      <tr><td><b>1. Do NOT touch</b></td><td>Never grab or touch the victim while they are in contact with the energy source</td><td>You will become the next victim — completing a second current path through the rescuer</td></tr>
+      <tr><td><b>2. Disconnect power</b></td><td>Use nearest disconnect, circuit breaker, or emergency stop to remove energy from the source immediately</td><td>Removes the hazard — the only way to safely free the victim</td></tr>
+      <tr><td><b>3. If cannot disconnect</b></td><td>Use a dry wooden plank, plastic chair, or non-conductive object to push the victim away from the source</td><td>Breaks contact without creating a conductive path through the rescuer</td></tr>
+      <tr><td><b>4. Call emergency services</b></td><td>Call 911 (or local emergency number) immediately — even if victim appears conscious</td><td>Internal injuries and delayed cardiac arrest are common after electrical shock</td></tr>
+      <tr><td><b>5. Assess and begin CPR</b></td><td>If victim is unresponsive and not breathing normally, begin CPR immediately</td><td>Cardiac arrest from ventricular fibrillation — every minute without CPR reduces survival by 7–10%</td></tr>
+      <tr><td><b>6. Do not leave victim</b></td><td>Stay with victim until emergency services arrive — monitor breathing and pulse</td><td>Secondary cardiac arrest can occur minutes after the initial shock</td></tr>
+    </tbody>
+  </table>
+  <h2>Electrical Burns — First Aid</h2>
+  <p>Electrical burns are classified as <strong>entry burns</strong> (where current enters the body), <strong>exit burns</strong> (where it exits, often the foot), and <strong>arc burns</strong> (from the surface heat of an arc flash). Entry and exit burns may appear small but involve deep tissue damage along the current path. Never judge severity by the external wound.</p>
+  <table>
+    <thead><tr><th>Burn Type</th><th>Appearance</th><th>First Aid Action</th></tr></thead>
+    <tbody>
+      <tr><td><b>First-degree (superficial)</b></td><td>Red, dry, no blisters — only outer skin</td><td>Cool with running water 10–20 min; cover with clean cloth; no ice</td></tr>
+      <tr><td><b>Second-degree (partial thickness)</b></td><td>Blisters, moist, intensely painful</td><td>Cool with water; do NOT burst blisters; loose non-stick dressing; seek medical care</td></tr>
+      <tr><td><b>Third-degree (full thickness)</b></td><td>White, black, or leathery; painless (nerve damage)</td><td>Cover loosely; do NOT cool extensively (risk of shock); immediate emergency medical care</td></tr>
+      <tr><td><b>Internal arc blast burns</b></td><td>External wound minimal but internal tissue path destroyed</td><td>Always seek immediate emergency care — internal damage far exceeds external appearance</td></tr>
+    </tbody>
+  </table>
+  <div class="note danger">
+    <div class="nlbl">&#9889; Always Seek Medical Care After Shock</div>
+    <p>Any person who receives an electrical shock — even if they feel fine — must be evaluated by a medical professional. Cardiac arrhythmias, internal burns along the current path, and neurological damage can present hours after the incident. Never dismiss a shock as "minor."</p>
+  </div>
+  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>16</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch11a">
+<div class="pg">
+  <div class="rh"><span>Chapter 11</span><span>Training, Compliance &amp; Safety Programme</span></div>
+  <div class="eye">Chapter 11</div>
+  <div class="cnum">XI</div>
+  <div class="ctitle">Training, Compliance<br>&amp; Safety Programme</div>
+  <hr class="crule">
+  <div class="csub">Qualified vs Unqualified &bull; Training Requirements &bull; Safety Programme Elements &bull; Audit Checklist</div>
+  <p>An effective electrical safety programme goes far beyond issuing PPE and posting warning signs. <strong>NFPA 70E Article 110.3</strong> requires a documented, maintained, and regularly audited electrical safety programme. The programme must define responsibilities, establish procedures, specify training requirements, and include a continuous improvement mechanism. Many facilities have PPE without procedures and procedures without training — this is a compliance failure that creates liability and, more importantly, gets people injured.</p>
+  <h2>Qualified vs Unqualified Person — Definitions</h2>
+  <table>
+    <thead><tr><th>Category</th><th>OSHA/NFPA 70E Definition</th><th>What They May Do</th></tr></thead>
+    <tbody>
+      <tr><td><b>Qualified Person</b></td><td>One who has demonstrated skills and knowledge related to the construction and operation of electrical equipment and has received safety training to identify and avoid electrical hazards (NFPA 70E Art 100)</td><td>Cross Limited and Restricted boundaries with PPE; perform energised work with permit; apply LOTO; perform arc flash analysis</td></tr>
+      <tr><td><b>Unqualified Person</b></td><td>A person who has NOT received the training required by NFPA 70E for the work being performed — regardless of job title or experience</td><td>Work only outside Limited Approach Boundary; enter with escort of Qualified Person; cannot perform electrical work</td></tr>
+    </tbody>
+  </table>
+  <p>Being a licensed electrician does not automatically make someone a Qualified Person under NFPA 70E — qualification is specific to the <strong>type of equipment and voltage level</strong> being worked on. A qualified electrician for residential work may be unqualified for industrial medium-voltage switchgear.</p>
+  <h2>Electrical Safety Programme — Required Elements</h2>
+  <table>
+    <thead><tr><th>Element</th><th>Description</th><th>NFPA 70E Reference</th></tr></thead>
+    <tbody>
+      <tr><td><b>Written Safety Programme</b></td><td>Documented programme defining scope, responsibilities, procedures, and processes</td><td>Art 110.3</td></tr>
+      <tr><td><b>Risk Assessment Procedure</b></td><td>Documented process for identifying and evaluating electrical hazards before work begins</td><td>Art 110.5</td></tr>
+      <tr><td><b>Arc Flash Hazard Analysis</b></td><td>System-wide analysis with incident energy calculations; updated when system changes</td><td>Art 130.5</td></tr>
+      <tr><td><b>Equipment Labelling</b></td><td>Arc flash warning labels on all equipment with incident energy &gt;1.2 cal/cm²</td><td>NEC 110.16 / Art 130.5(H)</td></tr>
+      <tr><td><b>LOTO Procedures</b></td><td>Machine-specific written LOTO procedures for every piece of equipment serviced</td><td>OSHA 1910.147(c)(4)</td></tr>
+      <tr><td><b>Training &amp; Retraining</b></td><td>Initial training + retraining when procedures change, when inspection reveals deficiencies, or at least every 3 years</td><td>Art 110.6</td></tr>
+      <tr><td><b>PPE Programme</b></td><td>PPE selection criteria, inspection requirements, maintenance, replacement schedule</td><td>Art 130.7</td></tr>
+      <tr><td><b>Programme Auditing</b></td><td>Regular audits of work practices — not just documents. Observe work being performed.</td><td>Art 110.3(B)</td></tr>
+    </tbody>
+  </table>
+  <div class="note tip">
+    <div class="nlbl">&#128221; Annual Audit Minimum Checklist</div>
+    <p>Verify: &#9745; Arc flash study is current (no system changes since last study) &nbsp; &#9745; Labels are legible and correct &nbsp; &#9745; All LOTO locks and tags are available and assigned &nbsp; &#9745; PPE is in serviceable condition and within test date &nbsp; &#9745; Workers can demonstrate correct LOTO procedure &nbsp; &#9745; Training records are current (within 3 years)</p>
+  </div>
+  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>17</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-qref1">
+<div class="pg">
+  <div class="rh"><span>Quick Reference</span><span>Electrical Safety Cheat Sheet</span></div>
+  <div class="eye">Quick Reference</div>
+  <div class="ctitle" style="font-size:18px;margin-bottom:4px;">Electrical Safety Quick Reference</div>
+  <hr class="crule">
+  <h2>NFPA 70E PPE Category Summary</h2>
+  <table>
+    <thead><tr><th>Cat.</th><th>Min Arc Rating</th><th>Minimum PPE</th><th>Typical Work</th></tr></thead>
+    <tbody>
+      <tr><td><b>1</b></td><td>4 cal/cm²</td><td>FR shirt+pants, face shield 4cal, hard hat, safety glasses, leather gloves</td><td>LV panel visual work, metering &lt;240V</td></tr>
+      <tr><td><b>2</b></td><td>8 cal/cm²</td><td>FR shirt+pants 8cal, balaclava, arc shield 8cal, hard hat, Class 00 rubber gloves + leather over-gloves</td><td>480V panels, MCC, LV switchgear</td></tr>
+      <tr><td><b>3</b></td><td>25 cal/cm²</td><td>Arc suit 25cal, balaclava, arc hood 25cal, hard hat, Class 0 rubber gloves + leather</td><td>600V switchgear, MV panels</td></tr>
+      <tr><td><b>4</b></td><td>40 cal/cm²</td><td>Arc suit 40cal, balaclava, arc hood 40cal, hard hat, Class 00 rubber gloves + leather</td><td>High-energy MV, utility switchgear</td></tr>
+    </tbody>
+  </table>
+  <h2>Current Effects on Body — At a Glance</h2>
+  <table>
+    <thead><tr><th>Current</th><th>Effect</th></tr></thead>
+    <tbody>
+      <tr><td><b>0.5–2 mA</b></td><td>Perception threshold — tingling, no injury</td></tr>
+      <tr><td><b>10–20 mA</b></td><td>&#9889; "Can't let go" — tetanic muscle contraction</td></tr>
+      <tr><td><b>75–100 mA</b></td><td>&#9889; Ventricular fibrillation — potentially fatal</td></tr>
+      <tr><td><b>&gt;1 A</b></td><td>&#9889; Internal burns, organ damage, likely fatal</td></tr>
+    </tbody>
+  </table>
+  <h2>6-Step LOTO Summary</h2>
+  <table>
+    <thead><tr><th>Step</th><th>Action</th></tr></thead>
+    <tbody>
+      <tr><td><b>1</b></td><td>Notify all affected employees</td></tr>
+      <tr><td><b>2</b></td><td>Identify ALL energy sources from written procedure</td></tr>
+      <tr><td><b>3</b></td><td>Shut down equipment using normal stop procedure</td></tr>
+      <tr><td><b>4</b></td><td>Isolate all energy isolation devices</td></tr>
+      <tr><td><b>5</b></td><td>Apply personal lock AND tag to every device</td></tr>
+      <tr><td><b>6</b></td><td>&#9889; VERIFY zero energy — test meter + press start + bleed pressure</td></tr>
+    </tbody>
+  </table>
+  <h2>Key Standards Reference</h2>
+  <table>
+    <thead><tr><th>Standard</th><th>Covers</th></tr></thead>
+    <tbody>
+      <tr><td><b>NFPA 70E-2024</b></td><td>Electrical safety in workplace — PPE, arc flash, LOTO, boundaries</td></tr>
+      <tr><td><b>OSHA 29 CFR 1910.147</b></td><td>Control of Hazardous Energy (LOTO)</td></tr>
+      <tr><td><b>IEEE 1584-2018</b></td><td>Arc flash incident energy calculations</td></tr>
+      <tr><td><b>IEC 61010</b></td><td>Test instrument safety (CAT ratings)</td></tr>
+      <tr><td><b>ASTM D120</b></td><td>Rubber insulating glove testing (6-month interval)</td></tr>
+      <tr><td><b>IEC 60900</b></td><td>Insulated hand tools (1000V rated)</td></tr>
+    </tbody>
+  </table>
+  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>18</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-back">
+<div class="pg backcover">
+  <div class="bc-logo">AYE Tech Hub</div>
+  <div class="bc-rule"></div>
+  <div class="bc-tag">"Engineering the Future — one engineer at a time."<br><br>This handbook is part of AYE Tech Hub's free engineering education initiative, serving engineers across Africa and beyond. Built on NFPA 70E-2024 and OSHA standards.</div>
+  <div class="bc-item">&#128218; <b>PDF Library</b> — Free &amp; premium engineering guides <span>&nbsp;ayetechub.com/pdfs.html</span></div>
+  <div class="bc-item">&#127979; <b>Courses</b> — PLC, HMI, SCADA, Electrical, AI Tools <span>&nbsp;ayetechub.com/courses.html</span></div>
+  <div class="bc-item">&#128172; <b>Telegram Community</b> — Live engineering support <span>&nbsp;t.me/ayetechub</span></div>
+  <div style="color:#f97316;font-size:22px;margin:6px 0;">&#10022;</div>
+  <div class="bc-copy">&#169; 2026 AYE Tech Hub. Published by Awet G. Nway.<br>Free for personal and educational use. Commercial reproduction requires written permission.</div>
+</div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+const PAGE_IDS = [
+  'pd-cover','pd-toc',
+  'pd-ch1a','pd-ch1b',
+  'pd-ch2a','pd-ch2b',
+  'pd-ch3a','pd-ch3b',
+  'pd-ch4a',
+  'pd-ch5a',
+  'pd-ch6a',
+  'pd-ch7a','pd-ch7b',
+  'pd-ch8a',
+  'pd-ch9a',
+  'pd-ch10a',
+  'pd-ch11a',
+  'pd-qref1',
+  'pd-back'
+];
+
+let actx = null, soundOn = true;
+function initAudio(){ if(!actx) actx=new(window.AudioContext||window.webkitAudioContext)(); }
+function playFlip(){
+  if(!soundOn) return;
+  try{
+    initAudio();
+    const sr=actx.sampleRate,dur=0.2,frames=(sr*dur)|0;
+    const buf=actx.createBuffer(1,frames,sr),d=buf.getChannelData(0);
+    for(let i=0;i<frames;i++){const t=i/sr,env=Math.pow(1-t/dur,2)*Math.exp(-t*20);d[i]=((Math.random()*2-1)*0.7+Math.sin(6.28*100*t)*0.3*Math.exp(-t*30))*env*0.5;}
+    const src=actx.createBufferSource(),flt=actx.createBiquadFilter();
+    flt.type='bandpass';flt.frequency.value=2000;flt.Q.value=0.8;
+    src.buffer=buf;src.connect(flt);flt.connect(actx.destination);src.start();
+  }catch(e){}
+}
+
+const pages=PAGE_IDS;
+let cur=0,animating=false;
+function getHTML(idx){ return idx<0||idx>=pages.length?'<div class="blank"><div class="blank-inner"><div class="b-logo">AYE</div><div class="b-sub">Tech Hub</div></div></div>':document.getElementById(pages[idx]).innerHTML; }
+const leftEl=document.getElementById('leftinner'),rightEl=document.getElementById('rightinner'),flipEl=document.getElementById('flipper');
+const btnP=document.getElementById('btnprev'),btnN=document.getElementById('btnnext'),info=document.getElementById('pginfo');
+function updBtns(){btnP.disabled=(cur<=0);btnN.disabled=(cur>=pages.length-1);info.textContent='Page '+(cur+1)+' of '+pages.length;}
+function showSpread(idx){cur=idx;leftEl.innerHTML=getHTML(idx-1);rightEl.innerHTML=getHTML(idx);updBtns();}
+function flipNext(){
+  if(animating||cur>=pages.length-1)return;animating=true;initAudio();
+  const ni=cur+1;
+  flipEl.innerHTML='<div class="flip-face">'+getHTML(cur)+'</div><div class="flip-face flip-back-face">'+getHTML(cur)+'</div>';
+  flipEl.className='right-start';flipEl.style.transform='';
+  rightEl.innerHTML=getHTML(ni);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{flipEl.className='right-start flipping-forward';playFlip();}));
+  const d=window.innerWidth<=700?380:680;
+  setTimeout(()=>{leftEl.innerHTML=getHTML(cur);flipEl.innerHTML='';flipEl.className='right-start';cur=ni;rightEl.innerHTML=getHTML(cur);updBtns();animating=false;},d);
+}
+function flipPrev(){
+  if(animating||cur<=0)return;animating=true;initAudio();
+  const pi=cur-1;
+  flipEl.innerHTML='<div class="flip-face">'+getHTML(cur-1)+'</div><div class="flip-face flip-back-face">'+getHTML(cur-1)+'</div>';
+  flipEl.className='left-start';flipEl.style.transform='';
+  leftEl.innerHTML=getHTML(pi-1);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{flipEl.className='left-start flipping-backward';playFlip();}));
+  const d=window.innerWidth<=700?380:680;
+  setTimeout(()=>{cur=pi;leftEl.innerHTML=getHTML(cur-1);rightEl.innerHTML=getHTML(cur);flipEl.innerHTML='';flipEl.className='right-start';updBtns();animating=false;},d);
+}
+btnN.addEventListener('click',()=>{initAudio();flipNext();});
+btnP.addEventListener('click',()=>{initAudio();flipPrev();});
+document.addEventListener('keydown',e=>{
+  if(['ArrowRight','ArrowDown',' '].includes(e.key)){initAudio();flipNext();e.preventDefault();}
+  else if(['ArrowLeft','ArrowUp'].includes(e.key)){initAudio();flipPrev();e.preventDefault();}
+});
+document.getElementById('sndbtn').addEventListener('click',function(){soundOn=!soundOn;this.textContent=soundOn?'🔊 Sound ON':'🔇 Sound OFF';this.classList.toggle('on',soundOn);});
+document.getElementById('righthalf').addEventListener('click',()=>{initAudio();flipNext();});
+document.getElementById('lefthalf').addEventListener('click',()=>{initAudio();flipPrev();});
+let tsX=0,tsY=0;
+document.getElementById('openbook').addEventListener('touchstart',e=>{tsX=e.changedTouches[0].clientX;tsY=e.changedTouches[0].clientY;},{passive:true});
+document.getElementById('openbook').addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tsX,dy=e.changedTouches[0].clientY-tsY;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.2){initAudio();if(dx<0)flipNext();else flipPrev();}},{passive:true});
+showSpread(0);
+</script>
+</body>
+</html>

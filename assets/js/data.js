@@ -898,6 +898,7 @@ const PDFS = [
       am: 'ሙሉ ኤሌክትሪካዊ ደህንነት ደረጃዎች፣ LOTO ሂደቶች፣ እና Arc Flash ጥበቃ መምሪያ።'
     },
     file: 'pdfs/electrical-safety-handbook.pdf',
+    flipbook: 'electrical-safety-flipbook.html',
     color: '#eab308',
     preview: true
   },
