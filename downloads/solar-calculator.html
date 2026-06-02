@@ -92,9 +92,29 @@ body{background:#020817;color:#e2e8f0;font-family:'Segoe UI',Arial,sans-serif;mi
           <option value="48" selected>48V (recommended for 3kWp+)</option>
         </select>
       </div>
-      <div class="field"><label>Panel Cost (USD per panel)</label><input type="number" id="panel-cost" value="120" min="50"/></div>
-      <div class="field"><label>Battery Cost (USD per kWh)</label><input type="number" id="bat-cost" value="200" min="50"/></div>
-      <div class="field"><label>Inverter Cost (USD)</label><input type="number" id="inv-cost" value="400" min="100"/></div>
+      <!-- Currency selector -->
+      <div style="background:#020817;border:1px solid #334155;border-radius:8px;padding:14px 14px 10px;margin-bottom:14px">
+        <div style="font-size:.8rem;font-weight:900;color:#fbbf24;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">&#128180; Currency &amp; Exchange Rate</div>
+        <div class="field" style="margin-bottom:8px">
+          <label>Currency</label>
+          <select id="currency" onchange="updateCurrencyRate()">
+            <option value="ETB" data-rate="125" data-sym="Birr">Ethiopian Birr (Birr)</option>
+            <option value="USD" data-rate="1"   data-sym="$" selected>US Dollar ($)</option>
+            <option value="EUR" data-rate="0.92" data-sym="€">Euro (€)</option>
+            <option value="KES" data-rate="130"  data-sym="KSh">Kenyan Shilling (KSh)</option>
+            <option value="GBP" data-rate="0.79" data-sym="£">British Pound (£)</option>
+            <option value="AED" data-rate="3.67" data-sym="AED">UAE Dirham (AED)</option>
+          </select>
+        </div>
+        <div class="field" style="margin-bottom:0">
+          <label>Exchange Rate (1 USD = ?)</label>
+          <input type="number" id="exrate" value="1" min="0.01" step="0.01"/>
+          <div class="unit">&#9998; Update this to today's rate — check Google for current USD/Birr</div>
+        </div>
+      </div>
+      <div class="field"><label>Panel Cost (per panel, in selected currency)</label><input type="number" id="panel-cost" value="120" min="1"/></div>
+      <div class="field"><label>Battery Cost (per kWh, in selected currency)</label><input type="number" id="bat-cost" value="200" min="1"/></div>
+      <div class="field"><label>Inverter / Charger Cost (in selected currency)</label><input type="number" id="inv-cost" value="400" min="1"/></div>
     </div>
   </div>
 
@@ -133,7 +153,7 @@ body{background:#020817;color:#e2e8f0;font-family:'Segoe UI',Arial,sans-serif;mi
           <div class="r-row"><span class="r-lbl">Expected daily generation</span><span class="r-val" id="v-gen">—</span></div>
         </div>
 
-        <div style="font-weight:700;color:#e2e8f0;font-size:.85rem;margin:16px 0 8px">&#128176; Estimated System Cost (USD)</div>
+        <div style="font-weight:700;color:#e2e8f0;font-size:.85rem;margin:16px 0 8px">&#128176; Estimated System Cost (<span id="cost-currency-label">USD</span>)</div>
         <div class="cost-grid">
           <div class="cost-card"><div class="cv" id="c-panels">—</div><div class="cl">Solar Panels</div></div>
           <div class="cost-card"><div class="cv" id="c-bat">—</div><div class="cl">Battery Bank</div></div>
@@ -214,7 +234,7 @@ function calculate() {
   // Daily generation
   const genKWh = actualKWp * psh * derating;
 
-  // Costs
+  // Costs — all in selected currency (costs already entered in that currency)
   const pc = +document.getElementById('panel-cost').value;
   const bc = +document.getElementById('bat-cost').value;
   const ic = +document.getElementById('inv-cost').value;
@@ -223,6 +243,14 @@ function calculate() {
   const costInv    = ic;
   const costInstall= (costPanels + costBat + costInv) * 0.20;
   const totalCost  = costPanels + costBat + costInv + costInstall;
+
+  // Currency symbol
+  const sym = getCurrencySym();
+
+  function fmt(n) {
+    // Format number with thousand separators, no decimals for large amounts
+    return n >= 1000 ? Math.round(n).toLocaleString() : n.toFixed(2);
+  }
 
   // Display
   document.getElementById('v-load').textContent      = `${(totalWh/1000).toFixed(2)} kWh/day`;
@@ -238,14 +266,49 @@ function calculate() {
   document.getElementById('v-bat-kwh').textContent   = `${batKWh.toFixed(1)} kWh`;
   document.getElementById('v-bat-spec').textContent  = `${sysV}V / ${batAh}Ah`;
   document.getElementById('v-gen').textContent       = `${genKWh.toFixed(2)} kWh/day`;
-  document.getElementById('c-panels').textContent   = `$${Math.round(costPanels).toLocaleString()}`;
-  document.getElementById('c-bat').textContent      = `$${Math.round(costBat).toLocaleString()}`;
-  document.getElementById('c-inv').textContent      = `$${Math.round(costInv + costInstall).toLocaleString()}`;
-  document.getElementById('c-total').textContent    = `$${Math.round(totalCost).toLocaleString()}`;
+  document.getElementById('c-panels').textContent    = `${sym} ${fmt(costPanels)}`;
+  document.getElementById('c-bat').textContent       = `${sym} ${fmt(costBat)}`;
+  document.getElementById('c-inv').textContent       = `${sym} ${fmt(costInv + costInstall)}`;
+  document.getElementById('c-total').textContent     = `${sym} ${fmt(totalCost)}`;
+
+  // Payback — convert total cost to USD equivalent for diesel comparison
+  const exrate = +document.getElementById('exrate').value || 1;
+  const totalUSD = totalCost / exrate;
   document.getElementById('design-note').innerHTML  =
-    `<strong style="color:#e2e8f0">Design Summary:</strong> ${nPanels} × ${panelWp}Wp panels (${actualKWp.toFixed(2)} kWp array) + ${batKWh.toFixed(1)} kWh battery providing ${autonomy} days autonomy. Daily generation ${genKWh.toFixed(1)} kWh vs load ${(totalWh/1000).toFixed(1)} kWh. Payback vs diesel: approximately ${Math.round(totalCost / (genKWh * 365 * 0.35))} years.`;
+    `<strong style="color:#e2e8f0">Design Summary:</strong> ${nPanels} × ${panelWp}Wp panels (${actualKWp.toFixed(2)} kWp array) + ${batKWh.toFixed(1)} kWh battery providing ${autonomy} days autonomy. Daily generation ${genKWh.toFixed(1)} kWh vs load ${(totalWh/1000).toFixed(1)} kWh. Estimated total cost: <strong style="color:#fbbf24">${sym} ${fmt(totalCost)}</strong>. Payback vs diesel: approximately ${Math.round(totalUSD / (genKWh * 365 * 0.35))} years.`;
   document.getElementById('results').style.display = 'block';
 }
+
+// ── Currency helpers ──────────────────────────────────────────
+function getCurrencySym() {
+  const sel = document.getElementById('currency');
+  return sel.options[sel.selectedIndex].dataset.sym || '$';
+}
+
+function updateCurrencyRate() {
+  const sel = document.getElementById('currency');
+  const opt = sel.options[sel.selectedIndex];
+  const rate = parseFloat(opt.dataset.rate) || 1;
+  const sym  = opt.dataset.sym || '$';
+  const code = sel.value;
+
+  // Update the exchange rate field
+  document.getElementById('exrate').value = rate;
+
+  // Update the cost heading label
+  document.getElementById('cost-currency-label').textContent = code;
+
+  // Convert the cost inputs from USD defaults to new currency
+  const defaults = { 'panel-cost': 120, 'bat-cost': 200, 'inv-cost': 400 };
+  Object.entries(defaults).forEach(([id, usdDefault]) => {
+    document.getElementById(id).value = Math.round(usdDefault * rate);
+  });
+
+  calculate();
+}
+
+// Set default label
+document.getElementById('cost-currency-label').textContent = 'USD';
 
 renderLoads();
 calculate();
