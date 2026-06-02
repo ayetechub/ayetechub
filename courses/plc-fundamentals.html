@@ -150,6 +150,12 @@
       </div>
     </div>
 
+    <!-- Course Resources from PDF Library -->
+    <div style="margin-top:32px;padding-top:24px;border-top:1px solid var(--border)">
+      <h3 style="font-size:1rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--neon);margin-bottom:16px">&#128218; Course Resources — PDF Library</h3>
+      <div id="course-resources" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px"></div>
+    </div>
+
     <!-- Lesson Navigation -->
     <div class="lesson-nav-btns">
       <button class="btn btn-outline" id="prev-btn" onclick="prevLesson()" disabled>← Previous</button>
@@ -234,6 +240,7 @@ function prevLesson() { if (currentLesson > 0) goToLesson(currentLesson - 1); }
 
 document.addEventListener('DOMContentLoaded', () => {
   renderSidebar();
+  renderCourseResources('course-resources', ['plc'], '../');
   notify('Welcome!', 'PLC Programming Fundamentals – 24 lessons');
 });
 </script>

@@ -463,6 +463,52 @@ function handleNewsletter(e) {
 }
 window.handleNewsletter = handleNewsletter;
 
+/* ==============================================================
+   COURSE RESOURCES — renders related PDFs into a course page
+   Call: renderCourseResources(containerId, categories, rootPath)
+   categories: array of PDF category strings, e.g. ['plc']
+   rootPath:   path back to site root from course folder, e.g. '../'
+============================================================== */
+function renderCourseResources(containerId, categories, rootPath) {
+  const container = document.getElementById(containerId);
+  if (!container || typeof PDFS === 'undefined') return;
+
+  const matched = PDFS.filter(p =>
+    categories.some(cat => p.category === cat) &&
+    p.file && p.file !== '#coming-soon'
+  );
+
+  if (matched.length === 0) {
+    container.innerHTML = '<p style="color:var(--text-muted);font-size:.85rem">No resources found for this course yet.</p>';
+    return;
+  }
+
+  container.innerHTML = matched.map(p => {
+    const title = getLocalizedText(p.title);
+    const desc  = getLocalizedText(p.description);
+    const color = p.color || 'var(--neon)';
+    const flipLink = p.flipbook
+      ? `<a href="${rootPath}${p.flipbook}" class="btn btn-outline" style="border-color:#c8a96e;color:#c8a96e;font-size:0.8rem;padding:8px 12px;text-decoration:none">&#128214; Read Online</a>`
+      : '';
+    return `
+<div class="resource-card" style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:10px">
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px">
+    <div>
+      <div style="font-size:0.7rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:${color};margin-bottom:4px">${(p.category||'').toUpperCase()} &bull; ${p.pages||'?'} pages</div>
+      <h4 style="font-size:0.95rem;font-weight:700;color:var(--text);line-height:1.35;margin:0">${title}</h4>
+    </div>
+    <span class="${p.badge==='FREE'?'badge-free':'badge-premium'}" style="font-size:0.65rem;padding:3px 8px;border-radius:10px;font-weight:800;white-space:nowrap">${p.badge}</span>
+  </div>
+  <p style="font-size:0.82rem;color:var(--text-soft);line-height:1.55;margin:0">${desc}</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap">
+    <a href="${rootPath}${p.file}" class="btn btn-primary" style="font-size:0.8rem;padding:8px 14px;text-decoration:none" download>&#8595; Download PDF</a>
+    ${flipLink}
+  </div>
+</div>`;
+  }).join('');
+}
+window.renderCourseResources = renderCourseResources;
+
 /* Init on load */
 document.addEventListener('DOMContentLoaded', () => {
   initReveal();

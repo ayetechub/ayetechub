@@ -85,24 +85,41 @@
 
 <section style="padding:20px 0 80px">
   <div class="container">
-    <div class="featured-banner reveal">
-      <div class="featured-banner-icon" style="background:linear-gradient(135deg,#1a0a00,#3a1a00);color:#eab308">
-        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M5 13.18v4L12 21l7-3.82v-4L12 17zM12 3 1 9l11 6 9-4.91V17h2V9z"/></svg>
+
+    <!-- Course Resources from PDF Library -->
+    <div class="reveal" style="margin-bottom:32px">
+      <h2 style="font-size:1.1rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#eab308;margin-bottom:6px">&#128218; Course Resources — PDF Library</h2>
+      <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:20px">Download or read online the guides and handbooks for this course. More content added regularly.</p>
+      <div id="course-resources" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px"></div>
+    </div>
+
+    <!-- YouTube + Telegram CTAs -->
+    <div class="featured-banner reveal" style="margin-top:0">
+      <div class="featured-banner-icon" style="background:linear-gradient(135deg,#c4302b,#ff4444);color:#fff">
+        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>
       </div>
       <div class="featured-banner-text">
-        <h2 class="gradient-text">Course Coming to Platform Soon</h2>
-        <p>Full interactive course content is being prepared. Subscribe on YouTube for immediate access to all lessons. Join Telegram for course announcements and free PDFs.</p>
+        <h2 class="gradient-text">Full Video Lessons on YouTube</h2>
+        <p>All course video lessons are available free on the AYE Tech Hub YouTube channel. Subscribe to get notified when new lessons are published.</p>
       </div>
       <div class="featured-banner-actions">
-        <a href="https://www.youtube.com/@ayetechub" target="_blank" rel="noopener" class="btn btn-primary">Subscribe Free</a>
+        <a href="https://www.youtube.com/@ayetechub" target="_blank" rel="noopener" class="btn btn-primary" style="background:linear-gradient(135deg,#c4302b,#ff0000)">
+          &#9654; Watch Free on YouTube
+        </a>
+        <a href="https://t.me/ayetechub" target="_blank" rel="noopener" class="btn btn-outline">Join Telegram</a>
       </div>
     </div>
 
-    <div style="text-align:center;margin-top:40px">
+    <div style="text-align:center;margin-top:32px">
       <a href="../courses.html" class="btn btn-outline">← Back to All Courses</a>
     </div>
   </div>
 </section>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  renderCourseResources('course-resources', ['electrical'], '../');
+});
+</script>
 
 <button id="btt-btn" onclick="scrollToTop()" aria-label="Back to top"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M4 12 5.41 13.41 11 7.83V20H13V7.83l5.58 5.59L20 12l-8-8z"/></svg></button>
 <div id="notif" class="notif-bar" role="alert">
@@ -117,3 +134,4 @@
 <script src="../js/i18n.js" defer></script>
 </body>
 </html>
+
