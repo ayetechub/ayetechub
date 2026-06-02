@@ -824,7 +824,7 @@ const PDFS = [
       am: 'PLC ፕሮግራሚንግ ሙሉ መምሪያ'
     },
     category: 'plc',
-    pages: 23,
+    pages: 11,
     size: '68 KB',
     downloads: '0',
     badge: 'FREE',
@@ -888,7 +888,7 @@ const PDFS = [
       am: 'የኤሌክትሪካዊ ደህንነት ማኑዋል'
     },
     category: 'electrical',
-    pages: 21,
+    pages: 19,
     size: '56 KB',
     downloads: '0',
     badge: 'FREE',
