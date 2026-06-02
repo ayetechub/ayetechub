@@ -3548,5 +3548,17 @@ const BLOG_POSTS = [
     image: 'assets/images/og-cover.png',
     url: 'blog/hvac-fundamentals.html',
     featured: false
+  },
+  {
+    id: 'critical-thinking-engineers',
+    title: 'Critical Thinking for Engineers: The Skill That Separates Good from Great',
+    category: 'study',
+    date: '2026-06-02',
+    author: 'Awet G. Nway',
+    readTime: '10 min read',
+    excerpt: 'Critical thinking is the most underrated engineering skill. Learn the 6 intellectual standards, 5 cognitive biases engineers fall into, real disaster case studies, and a practical daily framework to sharpen your reasoning.',
+    image: 'assets/images/og-cover.png',
+    url: 'blog/critical-thinking-engineers.html',
+    featured: true
   }
 ];
