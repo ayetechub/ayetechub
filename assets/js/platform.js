@@ -81,7 +81,7 @@ const CAT_LABELS = {
   general: 'General AI', coding: 'Coding', research: 'Research',
   productivity: 'Productivity', calculations: 'Calculations',
   study: 'Study Materials', software: 'Software', tools: 'Tools',
-  certifications: 'Certifications'
+  certifications: 'Certifications', 'critical-thinking': 'Critical Thinking'
 };
 
 /* ---- Level colors ---- */
