@@ -3552,7 +3552,7 @@ const BLOG_POSTS = [
   {
     id: 'critical-thinking-engineers',
     title: 'Critical Thinking for Engineers: The Skill That Separates Good from Great',
-    category: 'study',
+    category: 'critical-thinking',
     date: '2026-06-02',
     author: 'Awet G. Nway',
     readTime: '10 min read',
