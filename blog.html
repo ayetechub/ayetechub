@@ -214,7 +214,17 @@ function renderBlog() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  /* Auto-apply ?q= search from tag links in blog articles */
+  const params = new URLSearchParams(window.location.search);
+  const preQ = params.get('q');
+  if (preQ) {
+    _q = preQ;
+    const searchInput = document.getElementById('blog-search');
+    if (searchInput) searchInput.value = preQ;
+  }
+
   renderBlog();
+
   document.getElementById('blog-filters').addEventListener('click', e => {
     const tag = e.target.closest('.filter-tag');
     if (!tag) return;

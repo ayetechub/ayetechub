@@ -36,7 +36,7 @@
 .callout-title{font-weight:800;font-size:.85rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;color:#06b6d4}
 .callout p{margin:0;font-size:.9rem;color:var(--text-soft)}
 .tag-row{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}
-.tag{font-size:.72rem;padding:4px 12px;background:var(--bg-card);border:1px solid var(--border);border-radius:20px;color:var(--text-muted)}
+.tag{font-size:.72rem;padding:4px 12px;background:var(--bg-card);border:1px solid var(--border);border-radius:20px;color:var(--text-muted)} a.tag{color:var(--text-muted);text-decoration:none;transition:color .2s,border-color .2s} a.tag:hover{color:var(--neon);border-color:var(--neon)}
 .article-footer{margin-top:48px;padding-top:32px;border-top:1px solid var(--border);display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between}
 </style>
 </head>
@@ -208,12 +208,12 @@ Where:
     <blockquote>"Good HVAC design is invisible. You only notice bad HVAC — the office that is always too hot, the hospital that smells stale, the data centre that runs hot in summer. Excellence in HVAC means creating environments where people thrive without ever thinking about the air they breathe."</blockquote>
 
     <div class="tag-row">
-      <span class="tag">HVAC</span>
-      <span class="tag">Mechanical Engineering</span>
-      <span class="tag">Cooling Load</span>
-      <span class="tag">Air Conditioning</span>
-      <span class="tag">Building Services</span>
-      <span class="tag">Energy Efficiency</span>
+      <a class="tag" href="../blog.html?q=HVAC">HVAC</a>
+      <a class="tag" href="../blog.html?q=Mechanical%20Engineering">Mechanical Engineering</a>
+      <a class="tag" href="../blog.html?q=Cooling%20Load">Cooling Load</a>
+      <a class="tag" href="../blog.html?q=Air%20Conditioning">Air Conditioning</a>
+      <a class="tag" href="../blog.html?q=Building%20Services">Building Services</a>
+      <a class="tag" href="../blog.html?q=Energy%20Efficiency">Energy Efficiency</a>
     </div>
 
     <div class="article-footer">
@@ -230,4 +230,5 @@ Where:
 <script src="../js/i18n.js" defer></script>
 </body>
 </html>
+
 

@@ -72,7 +72,7 @@
 .fs-body p{margin:0;font-size:.87rem;color:var(--text-muted);line-height:1.6}
 
 .tag-row{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0}
-.tag{font-size:.72rem;padding:4px 12px;background:var(--bg-card);border:1px solid var(--border);border-radius:20px;color:var(--text-muted)}
+.tag{font-size:.72rem;padding:4px 12px;background:var(--bg-card);border:1px solid var(--border);border-radius:20px;color:var(--text-muted)} a.tag{color:var(--text-muted);text-decoration:none;transition:color .2s,border-color .2s} a.tag:hover{color:var(--neon);border-color:var(--neon)}
 .article-footer{margin-top:48px;padding-top:32px;border-top:1px solid var(--border);display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between}
 </style>
 </head>
@@ -368,12 +368,12 @@
     </div>
 
     <div class="tag-row">
-      <span class="tag">Critical Thinking</span>
-      <span class="tag">Engineering Mindset</span>
-      <span class="tag">Cognitive Biases</span>
-      <span class="tag">Professional Skills</span>
-      <span class="tag">Engineering Failures</span>
-      <span class="tag">Problem Solving</span>
+      <a class="tag" href="../blog.html?q=Critical%20Thinking">Critical Thinking</a>
+      <a class="tag" href="../blog.html?q=Engineering%20Mindset">Engineering Mindset</a>
+      <a class="tag" href="../blog.html?q=Cognitive%20Biases">Cognitive Biases</a>
+      <a class="tag" href="../blog.html?q=Professional%20Skills">Professional Skills</a>
+      <a class="tag" href="../blog.html?q=Engineering%20Failures">Engineering Failures</a>
+      <a class="tag" href="../blog.html?q=Problem%20Solving">Problem Solving</a>
     </div>
 
     <div class="article-footer">
@@ -401,4 +401,5 @@
 <script src="../js/i18n.js" defer></script>
 </body>
 </html>
+
 

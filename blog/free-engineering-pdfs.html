@@ -32,7 +32,7 @@
 .callout{background:var(--bg-card);border:1px solid #22c55e;border-radius:10px;padding:18px 20px;margin:24px 0}
 .callout-title{font-weight:800;font-size:.85rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;color:#22c55e}
 .tag-row{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}
-.tag{font-size:.72rem;padding:4px 12px;background:var(--bg-card);border:1px solid var(--border);border-radius:20px;color:var(--text-muted)}
+.tag{font-size:.72rem;padding:4px 12px;background:var(--bg-card);border:1px solid var(--border);border-radius:20px;color:var(--text-muted)} a.tag{color:var(--text-muted);text-decoration:none;transition:color .2s,border-color .2s} a.tag:hover{color:var(--neon);border-color:var(--neon)}
 .article-footer{margin-top:48px;padding-top:32px;border-top:1px solid var(--border);display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between}
 </style>
 </head>
@@ -199,11 +199,11 @@
     </div>
 
     <div class="tag-row">
-      <span class="tag">Free Resources</span>
-      <span class="tag">Engineering PDFs</span>
-      <span class="tag">Study Guide</span>
-      <span class="tag">Technical Books</span>
-      <span class="tag">Learning</span>
+      <a class="tag" href="../blog.html?q=Free%20Resources">Free Resources</a>
+      <a class="tag" href="../blog.html?q=Engineering%20PDFs">Engineering PDFs</a>
+      <a class="tag" href="../blog.html?q=Study%20Guide">Study Guide</a>
+      <a class="tag" href="../blog.html?q=Technical%20Books">Technical Books</a>
+      <a class="tag" href="../blog.html?q=Learning">Learning</a>
     </div>
 
     <div class="article-footer">
@@ -220,4 +220,5 @@
 <script src="../js/i18n.js" defer></script>
 </body>
 </html>
+
 
