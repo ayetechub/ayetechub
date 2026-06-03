@@ -2155,6 +2155,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'elec-curriculum-007-electrical-wiring-basics',
+    title: {
+      en: 'ELEC-007: Electrical Wiring Basics',
+      ti: 'ELEC-007: ናይ ኤሌክትሪካዊ ዋይሪን መሰረታት',
+      am: 'ELEC-007: የኤሌክትሪክ ሽቦ መሰረቶች'
+    },
+    category: 'electrical',
+    pages: 7,
+    size: '148 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Cable types cross-section diagram (T&E/SWA/Flexible/Screened), voltage drop diagram with formula (VD=2ρLI/A), installation methods diagram (surface/conduit/trunking/underground), connection types diagram (terminal/ferrule/crimp lug/butt), cable selection 3-criteria table, thermal conductivity de-rating factors, IEC installation method reference letters, wire colour codes (IEC/old UK/USA NEC), 7 common mistakes table, 5 practice exercises — 4 diagrams — by Awet G. Nway.',
+      ti: 'Cable types cross-section diagram፣ voltage drop diagram (VD=2ρLI/A)፣ installation methods diagram (surface/conduit/trunking/underground)፣ connection types diagram፣ cable sizing 3-criteria፣ de-rating factors፣ wire colour codes (IEC/old UK/USA) — ብ Awet G. Nway።',
+      am: 'Cable types cross-section diagram፣ voltage drop diagram (VD=2ρLI/A)፣ installation methods diagram፣ connection types diagram፣ cable sizing 3-criteria፣ de-rating factors፣ wire colour codes (IEC/old UK/USA) — በ Awet G. Nway።'
+    },
+    file: 'pdfs/ELEC-007-Electrical-Wiring-Basics.pdf',
+    color: '#fbbf24',
+    preview: true
+  },
+  {
     id: 'electricity-decoded-ohms-law-visual-guide',
     title: {
       en: 'Decoding the Invisible Forces of Electricity',
