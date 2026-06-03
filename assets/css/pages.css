@@ -2,6 +2,41 @@
    Supplements main.css for multi-page platform features.
 */
 
+/* ============ BLOG LANGUAGE SWITCHER ============ */
+.blog-lang-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+.blog-lang-bar .bl-label {
+  font-size: .72rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-right: 4px;
+}
+.bl-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 5px 13px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: .78rem;
+  font-weight: 700;
+  transition: all 0.2s;
+  font-family: 'Noto Sans Ethiopic', 'Segoe UI', sans-serif;
+}
+.bl-btn:hover { border-color: var(--neon); color: var(--neon); }
+.bl-btn.active {
+  background: var(--neon);
+  border-color: var(--neon);
+  color: #020817;
+}
+
 /* ============ PAGE HERO ============ */
 .page-hero {
   padding: 120px 0 60px;
