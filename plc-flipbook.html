@@ -64,6 +64,7 @@ body{
 #stage{
   position:relative;display:flex;justify-content:center;
   align-items:center;padding:8px 12px 30px;flex:1;width:100%;
+  perspective:3200px;perspective-origin:50% 42%;
 }
 
 /* Desk glow */
@@ -81,14 +82,26 @@ body{
   height:calc(100vh - 145px);
   min-height:440px;
   max-height:900px;
-  perspective:2200px;
   user-select:none;
+  transform-style:preserve-3d;
+  animation:bookOpen 1.5s cubic-bezier(.22,1.15,.36,1) 0.05s both;
+}
+@keyframes bookOpen{
+  0%{transform:rotateX(32deg) rotateY(-24deg) rotateZ(-2.5deg) translateY(70px) scale(0.72);opacity:0;filter:drop-shadow(-35px 55px 100px rgba(0,0,0,1));}
+  50%{opacity:1;}
+  80%{transform:rotateX(5deg) rotateY(-2deg) rotateZ(0deg) translateY(5px) scale(1.006);}
+  100%{transform:rotateX(2deg) rotateY(0) rotateZ(0) translateY(0) scale(1);filter:none;}
+}
+@keyframes shadowOpen{
+  0%{transform:translateX(60px) scaleX(0.5);opacity:0;}
+  100%{transform:translateX(0) scaleX(1);opacity:1;}
 }
 
 /* Shadow under book */
 #bookwrap::before{
-  content:'';position:absolute;bottom:-12px;left:5%;right:5%;height:20px;
-  background:rgba(0,0,0,.6);filter:blur(12px);border-radius:50%;z-index:-1;
+  content:'';position:absolute;bottom:-20px;left:4%;right:4%;height:30px;
+  background:rgba(0,0,0,.8);filter:blur(20px);border-radius:50%;z-index:-1;
+  animation:shadowOpen 1.5s cubic-bezier(.22,1.15,.36,1) 0.05s both;
 }
 
 /* ─── OPEN BOOK ──────── */
@@ -97,28 +110,23 @@ body{
   display:flex;
   border-radius:3px;
   box-shadow:
-    -8px 0 20px rgba(0,0,0,.6),
-     8px 0 20px rgba(0,0,0,.6),
-     0   0 50px rgba(0,0,0,.4);
+    -14px 8px 40px rgba(0,0,0,.85),
+     14px 8px 40px rgba(0,0,0,.85),
+     0 16px 80px rgba(0,0,0,.6),
+     0 2px 0 1px rgba(200,169,110,.06);
 }
 
 /* ─── SPINE ─────────── */
 #spine{
-  width:8px;flex-shrink:0;z-index:5;
-  background:linear-gradient(180deg,#1a0e04,#3a2008,#1a0e04);
-  box-shadow:
-    -2px 0 6px rgba(0,0,0,.5),
-     2px 0 6px rgba(0,0,0,.5);
+  width:14px;flex-shrink:0;z-index:5;
+  background:linear-gradient(90deg,#060402 0%,#1c0e04 20%,#4a2208 50%,#1c0e04 80%,#060402 100%);
+  box-shadow:inset -4px 0 10px rgba(0,0,0,.7),inset 4px 0 10px rgba(0,0,0,.7),0 0 18px rgba(200,169,110,.1);
   position:relative;
-}
-#spine::after{
-  content:'';position:absolute;top:0;bottom:0;left:50%;width:1px;
-  background:rgba(200,169,110,.2);
 }
 
 /* ─── PAGE HALVES ────── */
 .half{
-  width:calc(50% - 4px);height:100%;
+  width:calc(50% - 7px);height:100%;
   position:relative;overflow:hidden;
   background:#faf6ed;
 }
@@ -162,8 +170,8 @@ body{
   left:0;
   transform-origin:right center;
 }
-#flipper.flipping-forward{ transform:perspective(1800px) rotateY(-180deg); }
-#flipper.flipping-backward{ transform:perspective(1800px) rotateY(180deg); }
+#flipper.flipping-forward{ transform:rotateY(-180deg); }
+#flipper.flipping-backward{ transform:rotateY(180deg); }
 
 .flip-face{
   position:absolute;inset:0;
@@ -1095,6 +1103,14 @@ function getPageHTML(idx) {
 }
 
 function setContent(el, html) { el.innerHTML = html; }
+function scaleToFit(el){
+  const pg=el.querySelector('.pg');
+  if(!pg||pg.classList.contains('cover')||pg.classList.contains('backcover'))return;
+  pg.style.transform='';
+  const avail=pg.clientHeight,total=pg.scrollHeight;
+  if(total>avail*0.98){const s=Math.max(0.62,avail/total);pg.style.transform='scale('+s+')';pg.style.transformOrigin='top left';pg.style.width=(100/s)+'%';}
+  else{pg.style.width='';}
+}
 
 const leftEl  = document.getElementById('leftinner');
 const rightEl = document.getElementById('rightinner');
@@ -1114,9 +1130,10 @@ function updateButtons() {
 
 function showSpread(idx) {
   cur = idx;
-  setContent(leftEl,  getPageHTML(idx - 1)); // left = page before current
-  setContent(rightEl, getPageHTML(idx));      // right = current
+  setContent(leftEl,  getPageHTML(idx - 1));
+  setContent(rightEl, getPageHTML(idx));
   updateButtons();
+  requestAnimationFrame(()=>{scaleToFit(leftEl);scaleToFit(rightEl);});
 }
 
 // ─── Flip Forward ────────────────────────────────────────────
@@ -1157,6 +1174,7 @@ function flipNext() {
     setContent(rightEl, getPageHTML(cur));
     updateButtons();
     animating = false;
+    requestAnimationFrame(()=>{scaleToFit(leftEl);scaleToFit(rightEl);});
   }, flipDur);
 }
 
@@ -1194,6 +1212,7 @@ function flipPrev() {
     flipEl.className = 'right-start';
     updateButtons();
     animating = false;
+    requestAnimationFrame(()=>{scaleToFit(leftEl);scaleToFit(rightEl);});
   }, flipDur);
 }
 
@@ -1235,6 +1254,7 @@ bookEl.addEventListener('touchend', e => {
 
 // ─── Init ────────────────────────────────────────────────────
 showSpread(0);
+window.addEventListener('resize',()=>{requestAnimationFrame(()=>{scaleToFit(leftEl);scaleToFit(rightEl);});});
 </script>
 </body>
 </html>
