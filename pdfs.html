@@ -170,7 +170,8 @@
         <button class="filter-sub active" data-subcat="mep-all">All MEP</button>
         <button class="filter-sub" data-subcat="hvac">&#10052; HVAC</button>
         <button class="filter-sub" data-subcat="solar">&#9728; Solar</button>
-        <button class="filter-sub" data-subcat="mep">&#127968; Plumbing &amp; MEP</button>
+        <button class="filter-sub" data-subcat="plumbing">&#128167; Plumbing</button>
+        <button class="filter-sub" data-subcat="mep">&#127959; MEP Engineering</button>
       </div>
 
       <div class="result-count" data-count-for="pdf-grid">9 results</div>
@@ -269,7 +270,7 @@
 let _cat = 'all', _q = '';
 
 // MEP group: all sub-categories that live under the MEP umbrella
-const MEP_CATS = ['mep', 'hvac', 'solar'];
+const MEP_CATS = ['mep', 'hvac', 'solar', 'plumbing'];
 
 function renderPdfs() {
   const AI_CATS  = ['ai', 'ai-30day', 'ai-curriculum'];

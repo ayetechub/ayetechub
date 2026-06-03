@@ -1798,6 +1798,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'plumb-001-introduction-to-plumbing-systems',
+    title: {
+      en: 'PLUMB-001: Introduction to Plumbing Systems',
+      ti: 'PLUMB-001: መእተዊ ናብ ናይ ቧንቧ ስርዓት',
+      am: 'PLUMB-001: ወደ የቧምቧ ሥርዓቶች መግቢያ'
+    },
+    category: 'plumbing',
+    pages: 7,
+    size: '29 KB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: 'Building plumbing cross-section diagram (cold supply/hot supply/drainage/vent), DWV system diagram (Drain-Waste-Vent explained), pipe sizes visual comparison diagram, two main systems table (supply vs drainage vs hot water), water supply components table (7 components), DWV component table (6 components), drainage gradient table by pipe size, pipe materials comparison (8 materials — PEX/copper/uPVC/CPVC/HDPE), plumbing codes table (IPC/UPC/BS EN/EBCS), career pathways table, 30-lesson curriculum roadmap — by Awet G. Nway.',
+      ti: 'Building plumbing cross-section diagram፣ DWV system diagram (Drain-Waste-Vent)፣ pipe sizes visual diagram፣ supply vs drainage table፣ water supply components (7)፣ DWV components (6)፣ drainage gradient table፣ 8 pipe materials comparison (PEX/copper/uPVC)፣ plumbing codes table፣ career pathways — ብ Awet G. Nway።',
+      am: 'Building plumbing cross-section diagram፣ DWV system diagram (Drain-Waste-Vent)፣ pipe sizes visual diagram፣ supply vs drainage table፣ water supply components (7)፣ DWV components (6)፣ drainage gradient table፣ 8 pipe materials comparison (PEX/copper/uPVC)፣ plumbing codes table፣ career pathways — በ Awet G. Nway።'
+    },
+    file: 'pdfs/PLUMB-001-Introduction-to-Plumbing-Systems.pdf',
+    color: '#0369a1',
+    preview: true
+  },
+  {
     id: 'mech-curriculum-001-intro-to-mechanical',
     title: {
       en: 'MECH-001: Introduction to Mechanical Engineering',
