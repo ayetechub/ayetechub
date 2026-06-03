@@ -1658,7 +1658,7 @@ html[lang="am"] body{
           </div>
           <div class="feature-card">
             <svg class="svg-icon ic" style="color:#ef4444" aria-hidden="true"><use href="#i-pdf"/></svg>
-            <div class="ti" data-i18n="about.feature_pdf_title">26+ Free PDFs</div>
+            <div class="ti" data-i18n="about.feature_pdf_title" id="idx-pdf-count">26+ Free PDFs</div>
             <div class="de" data-i18n="about.feature_pdf_desc">Engineering & fitness guides</div>
           </div>
           <a href="fit-hub.html" class="feature-card" style="text-decoration:none;border-color:rgba(167,139,250,0.25);background:rgba(124,58,237,0.06)">
@@ -1715,7 +1715,7 @@ html[lang="am"] body{
           </div>
           <div class="spec-item">
             <svg class="svg-icon spec-ic" aria-hidden="true"><use href="#i-download"/></svg>
-            <div class="spec-text"><strong>26+ PDFs</strong><span>Free Downloads</span></div>
+            <div class="spec-text"><strong id="idx-pdf-count2">26+ PDFs</strong><span>Free Downloads</span></div>
           </div>
         </div>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
@@ -3498,6 +3498,13 @@ console.log('Site loaded. Replace .logo-box elements with <img src="assets/image
     if (fill) fill.style.width = pct + '%';
     if (label) label.textContent = 'Lessons Available';
   });
+
+  // Auto-update PDF count badges to match actual PDFS array length
+  var total = PDFS.filter(function(p){ return p.file && p.file !== '#coming-soon'; }).length;
+  var el1 = document.getElementById('idx-pdf-count');
+  var el2 = document.getElementById('idx-pdf-count2');
+  if (el1) el1.textContent = total + '+ Free PDFs';
+  if (el2) el2.innerHTML = total + '+ PDFs';
 })();
 </script>
 
