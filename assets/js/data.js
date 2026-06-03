@@ -3672,7 +3672,7 @@ const BLOG_POSTS = [
   {
     id: 'solar-tigray',
     title: 'Solar Energy Opportunities in Tigray, Ethiopia',
-    category: 'electrical',
+    category: 'solar',
     date: '2026-04-15',
     author: 'Awet G. Nway',
     readTime: '10 min read',
@@ -3708,7 +3708,7 @@ const BLOG_POSTS = [
   {
     id: 'hvac-fundamentals',
     title: 'HVAC System Design: A Practical Beginner\'s Guide',
-    category: 'mechanical',
+    category: 'hvac',
     date: '2026-03-05',
     author: 'Awet G. Nway',
     readTime: '12 min read',
