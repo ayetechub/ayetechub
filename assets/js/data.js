@@ -2008,6 +2008,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'mech-curriculum-006-heat-transfer',
+    title: {
+      en: 'MECH-006: Heat Transfer',
+      ti: 'MECH-006: ሙቀት ምስክርነት',
+      am: 'MECH-006: ሙቀት ሽግግር'
+    },
+    category: 'mechanical',
+    pages: 7,
+    size: '142 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Three modes of heat transfer diagram (conduction/convection/radiation side-by-side), Fourier\'s Law flat wall diagram, thermal resistance circuit analogy diagram, heat exchanger parallel vs counter-flow LMTD diagram, thermal conductivity table (copper to foam), convection coefficient types, Stefan-Boltzmann radiation, composite wall worked example (5-layer thermal circuit), LMTD method steps, and 5 practice problems — 4 diagrams — by Awet G. Nway.',
+      ti: 'Three modes diagram (conduction/convection/radiation)፣ Fourier\'s Law flat wall diagram፣ thermal resistance circuit diagram፣ heat exchanger LMTD diagram፣ k values table፣ convection types፣ Stefan-Boltzmann፣ composite wall example — ብ Awet G. Nway።',
+      am: 'Three modes diagram (conduction/convection/radiation)፣ Fourier\'s Law flat wall diagram፣ thermal resistance circuit diagram፣ heat exchanger LMTD diagram፣ k values table፣ convection types፣ Stefan-Boltzmann፣ composite wall example — በ Awet G. Nway።'
+    },
+    file: 'pdfs/MECH-006-Heat-Transfer.pdf',
+    color: '#0891b2',
+    preview: true
+  },
+  {
     id: 'elec-curriculum-001-intro-to-electricity',
     title: {
       en: 'ELEC-001: Introduction to Electricity',
