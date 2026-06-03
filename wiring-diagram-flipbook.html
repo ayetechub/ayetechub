@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wiring Diagram Mastery — AYE Tech Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{background:radial-gradient(ellipse at 50% 0%,#1c1000 0%,#080500 100%);min-height:100vh;display:flex;flex-direction:column;align-items:center;font-family:'Lato',sans-serif;overflow-x:hidden}
+#topbar{width:100%;background:#060300;border-bottom:1px solid #3a1a00;display:flex;align-items:center;justify-content:space-between;padding:10px 24px;flex-shrink:0}
+#topbar a{color:#f97316;text-decoration:none;font-size:12.5px;font-weight:700}
+.back-btn{display:flex;align-items:center;gap:6px;background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.3);padding:6px 14px;border-radius:5px;transition:.2s}
+.back-btn:hover{background:rgba(249,115,22,.2)}
+#topbar .center{color:#5a3000;font-size:11px;letter-spacing:1px;text-transform:uppercase}
+#controls{display:flex;align-items:center;gap:14px;padding:16px 0 10px;flex-shrink:0}
+.fbtn{background:linear-gradient(135deg,#3a1800,#6a3000);border:1px solid #f97316;color:#fed7aa;padding:9px 22px;border-radius:6px;cursor:pointer;font-family:'Lato',sans-serif;font-weight:700;font-size:13px;letter-spacing:.5px;transition:.2s;user-select:none}
+.fbtn:hover{background:linear-gradient(135deg,#6a3000,#8a4000);color:#fff}
+.fbtn:disabled{opacity:.4;cursor:default}
+#pginfo{color:#8a5020;font-size:12px;letter-spacing:.5px;background:rgba(0,0,0,.3);padding:7px 18px;border-radius:5px;border:1px solid #2a1000;min-width:120px;text-align:center}
+#sndbtn{background:rgba(249,115,22,.08);border:1px solid #3a1800;color:#7a4020;padding:7px 14px;border-radius:5px;cursor:pointer;font-size:12px;transition:.2s}
+#sndbtn.on{color:#f97316;border-color:#7a3000}
+#stage{position:relative;display:flex;justify-content:center;align-items:center;padding:8px 12px 30px;flex:1;width:100%;perspective:3200px;perspective-origin:50% 42%}
+#stage::after{content:'';position:absolute;bottom:18px;left:50%;transform:translateX(-50%);width:90%;height:24px;max-width:1400px;background:radial-gradient(ellipse,rgba(249,115,22,.12) 0%,transparent 70%);pointer-events:none;border-radius:50%}
+#bookwrap{position:relative;width:min(98vw,1400px);height:calc(100vh - 145px);min-height:440px;max-height:900px;user-select:none;transform-style:preserve-3d;animation:bookOpen 1.5s cubic-bezier(.22,1.15,.36,1) 0.05s both}
+#bookwrap::before{content:'';position:absolute;bottom:-20px;left:4%;right:4%;height:30px;background:rgba(0,0,0,.8);filter:blur(20px);border-radius:50%;z-index:-1;animation:shadowOpen 1.5s cubic-bezier(.22,1.15,.36,1) 0.05s both}
+#openbook{position:absolute;inset:0;display:flex;border-radius:3px;box-shadow:-14px 8px 40px rgba(0,0,0,.85),14px 8px 40px rgba(0,0,0,.85),0 16px 80px rgba(0,0,0,.6),0 2px 0 1px rgba(249,115,22,.06)}
+#spine{width:14px;flex-shrink:0;z-index:5;background:linear-gradient(90deg,#060200 0%,#1c0800 20%,#4a1800 50%,#1c0800 80%,#060200 100%);box-shadow:inset -4px 0 10px rgba(0,0,0,.7),inset 4px 0 10px rgba(0,0,0,.7),0 0 18px rgba(249,115,22,.08)}
+@keyframes bookOpen{0%{transform:rotateX(32deg) rotateY(-24deg) rotateZ(-2.5deg) translateY(70px) scale(0.72);opacity:0;filter:drop-shadow(-35px 55px 100px rgba(0,0,0,1));}50%{opacity:1;}80%{transform:rotateX(5deg) rotateY(-2deg) rotateZ(0deg) translateY(5px) scale(1.006);}100%{transform:rotateX(2deg) rotateY(0) rotateZ(0) translateY(0) scale(1);filter:none;}}
+@keyframes shadowOpen{0%{transform:translateX(60px) scaleX(0.5);opacity:0;}100%{transform:translateX(0) scaleX(1);opacity:1;}}
+.half{width:calc(50% - 7px);height:100%;position:relative;overflow:hidden;background:#faf6ed}
+.half.left{border-radius:3px 0 0 3px;box-shadow:inset -4px 0 12px rgba(0,0,0,.12)}
+.half.right{border-radius:0 3px 3px 0;box-shadow:inset 4px 0 12px rgba(0,0,0,.12)}
+.half.left::before{content:'';position:absolute;top:0;right:0;bottom:0;width:3px;background:linear-gradient(90deg,transparent,rgba(0,0,0,.08));z-index:2}
+.half.right::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:linear-gradient(270deg,transparent,rgba(0,0,0,.08));z-index:2}
+.half-inner{position:absolute;inset:0;overflow:hidden}
+#flipper{position:absolute;top:0;width:calc(50% - 4px);height:100%;transform-style:preserve-3d;transition:transform 0.65s cubic-bezier(.4,0,.2,1);z-index:20;pointer-events:none}
+#flipper.right-start{right:0;transform-origin:left center}
+#flipper.left-start{left:0;transform-origin:right center}
+#flipper.flipping-forward{transform:rotateY(-180deg)}
+#flipper.flipping-backward{transform:rotateY(180deg)}
+.flip-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden}
+.flip-back-face{transform:rotateY(180deg)}
+.pdata{display:none}
+
+/* ══ PAGE LAYOUT ══ */
+.pg{width:100%;min-height:100%;height:auto;background:#faf6ed;background-image:repeating-linear-gradient(transparent 0px,transparent 32px,rgba(160,140,100,.05) 32px,rgba(160,140,100,.05) 33px);padding:clamp(16px,2.2vh,32px) clamp(16px,2.2vw,36px) clamp(14px,2vh,24px);font-family:'Merriweather',Georgia,serif;color:#1a1208;overflow:hidden;position:relative;box-sizing:border-box;display:flex;flex-direction:column}
+.pg .rh{order:-2;font-family:'Lato',sans-serif;font-size:clamp(9.5px,0.85vw,12px);color:#9a6040;text-transform:uppercase;letter-spacing:1.5px;border-bottom:none;padding-bottom:3px;margin-bottom:0;display:flex;justify-content:space-between;flex-shrink:0}
+.pg .rf{order:-1;position:static;font-family:'Lato',sans-serif;font-size:clamp(9.5px,0.85vw,12px);color:#9a6040;border-top:none;border-bottom:1px solid #d4bc90;padding-top:0;padding-bottom:6px;margin-bottom:10px;display:flex;justify-content:space-between;flex-shrink:0}
+
+/* ══ TYPOGRAPHY ══ */
+.pg .eye{font-family:'Lato',sans-serif;font-size:clamp(10px,0.9vw,12.5px);font-weight:900;color:#b45309;letter-spacing:2px;text-transform:uppercase;margin-bottom:2px}
+.pg .cnum{font-family:'Lato',sans-serif;font-size:clamp(30px,3.8vw,56px);font-weight:900;color:#f97316;line-height:1}
+.pg .ctitle{font-size:clamp(22px,2.8vw,40px);font-weight:700;color:#0a0e1a;line-height:1.15;margin:4px 0;font-family:'Lato',sans-serif}
+.pg .crule{border:none;border-top:2.5px solid #f97316;margin:8px 0 6px;width:60px}
+.pg .csub{font-size:clamp(12px,1.05vw,15px);color:#7a5030;font-style:italic;margin-bottom:10px;line-height:1.55}
+.pg h2{font-family:'Lato',sans-serif;font-size:clamp(11.5px,1.05vw,14.5px);font-weight:900;color:#1a0e00;margin:11px 0 5px;text-transform:uppercase;letter-spacing:.6px;border-left:4px solid #f97316;padding-left:8px}
+.pg h3{font-family:'Lato',sans-serif;font-size:clamp(12px,1.05vw,15px);font-weight:700;color:#2a1800;margin:8px 0 4px}
+.pg p{font-size:clamp(13px,1.1vw,15.5px);line-height:1.78;color:#1e1408;margin-bottom:7px;text-align:justify;hyphens:auto}
+.pg ul,.pg ol{padding-left:20px;margin-bottom:7px}
+.pg li{font-size:clamp(12.5px,1.05vw,15px);line-height:1.72;color:#1e1408;margin-bottom:4px}
+.pg li b,.pg p b,.pg strong{color:#0a0800;font-family:'Lato',sans-serif}
+
+/* ══ CALLOUT NOTES ══ */
+.pg .note{border-left:4px solid #f97316;background:#fff7ed;padding:clamp(7px,1vh,12px) clamp(9px,1.1vw,16px);margin:9px 0;border-radius:0 5px 5px 0}
+.pg .note.tip{border-color:#0ea5e9;background:#f0f9ff}
+.pg .note.warn{border-color:#dc2626;background:#fef2f2}
+.pg .note.green{border-color:#16a34a;background:#f0fdf4}
+.pg .nlbl{font-family:'Lato',sans-serif;font-size:clamp(9px,0.82vw,11.5px);font-weight:900;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;color:#b45309}
+.pg .note.tip .nlbl{color:#0369a1}
+.pg .note.warn .nlbl{color:#b91c1c}
+.pg .note.green .nlbl{color:#15803d}
+.pg .note p{font-size:clamp(12px,1vw,14.5px);margin:0;text-align:left;color:#1a0e00;line-height:1.65}
+
+/* ══ TABLES ══ */
+.pg table{width:100%;border-collapse:collapse;font-size:clamp(12.5px,1vw,14px);font-family:'Lato',sans-serif;margin:7px 0}
+.pg thead th{background:#92400e;color:#fef3c7;padding:clamp(5px,0.7vh,9px) clamp(6px,0.8vw,11px);text-align:left;font-size:clamp(9.5px,0.85vw,12px);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.pg tbody tr:nth-child(odd){background:#fdf8f0}
+.pg tbody tr:nth-child(even){background:#f5ede0}
+.pg tbody td{padding:clamp(5px,0.7vh,9px) clamp(6px,0.8vw,11px);color:#1a1000;border-bottom:.5px solid #d4bc90;vertical-align:top;line-height:1.55;font-size:clamp(12.5px,1vw,14px)}
+
+/* ══ INFO CARDS ══ */
+.etool{background:#fff7ed;border:1px solid #fcd9a0;border-left:3px solid #f97316;border-radius:7px;margin:8px 0;overflow:hidden}
+.et-head{background:rgba(249,115,22,.07);padding:7px 12px;display:flex;align-items:baseline;justify-content:space-between;gap:8px;border-bottom:1px solid #fcd9a0}
+.et-name{font-family:'Lato',sans-serif;font-weight:900;font-size:clamp(12.5px,1.05vw,14.5px);color:#92400e}
+.et-url{font-family:'Lato',sans-serif;font-size:clamp(9.5px,0.82vw,11.5px);color:#b45309}
+.et-body{padding:7px 12px;display:grid;grid-template-columns:60px 1fr;gap:1px 8px}
+.et-k{font-family:'Lato',sans-serif;font-size:clamp(8.5px,0.76vw,10.5px);font-weight:900;color:#b45309;text-transform:uppercase;letter-spacing:.6px;padding:4px 0;align-self:start}
+.et-v{font-family:'Lato',sans-serif;font-size:clamp(13px,1vw,14px);color:#1a0e00;line-height:1.6;padding:4px 0;border-bottom:.5px solid #fcd9a0}
+.et-v:last-child{border-bottom:none}
+.et-std{font-family:'Lato',sans-serif;font-size:clamp(9px,0.8vw,11px);color:#92400e;font-weight:700;margin-left:6px}
+
+/* ══ COMPACT DIAGRAM CARDS ══ */
+.dcard-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+.dcard{background:#fff7ed;border:1px solid #fcd9a0;border-left:3px solid #f97316;border-radius:6px;padding:8px 10px}
+.dcard .dt{font-family:'Lato',sans-serif;font-size:clamp(12px,1vw,13.5px);font-weight:900;color:#92400e;margin-bottom:3px}
+.dcard .dd{font-size:clamp(12px,0.95vw,13.5px);color:#2d1a08;line-height:1.5}
+.dcard .ds{font-size:clamp(9px,0.78vw,11px);color:#b45309;font-weight:700;margin-top:3px}
+
+/* ══ SYMBOL GRID ══ */
+.sym-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:8px 0}
+.sym-cell{background:#fff7ed;border:1px solid #fcd9a0;border-radius:5px;padding:7px 8px;text-align:center}
+.sym-cell .sn{font-family:'Lato',sans-serif;font-size:clamp(10px,0.9vw,12px);font-weight:700;color:#92400e;margin-bottom:3px}
+.sym-cell .si{font-size:clamp(18px,2vw,28px);display:block;margin-bottom:2px;line-height:1}
+.sym-cell .sd{font-size:clamp(9px,0.78vw,11px);color:#5a3010;line-height:1.3}
+
+/* ══ TOC ══ */
+.pg .trow{display:flex;align-items:baseline;padding:clamp(4px,0.7vh,8px) 0;border-bottom:.5px dotted #c8a060}
+.pg .tnum{font-family:'Lato',sans-serif;font-weight:700;color:#f97316;font-size:clamp(12px,1vw,14px);width:30px;flex-shrink:0}
+.pg .tname{font-family:'Merriweather',serif;font-size:clamp(12px,1vw,14px);color:#1a1208;flex:1}
+.pg .tsub{font-size:clamp(10px,0.85vw,12px);color:#8a6040;display:block;font-style:italic}
+.pg .tpg{font-family:'Lato',sans-serif;font-size:clamp(11px,0.9vw,13px);color:#9a7050;width:22px;text-align:right;flex-shrink:0}
+
+/* ══ COVER & BACK ══ */
+.pg.cover{background:#07040a;background-image:none;color:#fff;padding:0;overflow:hidden;display:flex;flex-direction:column}
+.cover-stripe{height:5px;flex-shrink:0;background:linear-gradient(90deg,#f97316,#fbbf24,#f97316)}
+.cover-panel{background:#0f0800;flex-shrink:0;padding:clamp(12px,2vh,24px) clamp(14px,2.2vw,26px) clamp(8px,1.2vh,16px);position:relative;overflow:hidden}
+.cover-panel::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent 0px,transparent 26px,rgba(249,115,22,.04) 26px,rgba(249,115,22,.04) 27px);pointer-events:none}
+.cover-panel-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:clamp(8px,1.5vh,18px);position:relative}
+.cover-aye{background:#0a0800;border:1.5px solid #f97316;border-radius:8px;padding:clamp(6px,1vh,12px) clamp(12px,1.8vw,20px);text-align:center}
+.cover-aye .aye{font-size:clamp(20px,2.8vw,34px);font-weight:900;color:#fbbf24;letter-spacing:3px;line-height:1}
+.cover-aye .hub{font-size:clamp(6.5px,0.75vw,10px);color:#92400e;letter-spacing:3px;text-transform:uppercase}
+.cover-tag{background:rgba(249,115,22,.12);border:1px solid #f97316;border-radius:6px;padding:clamp(4px,0.7vh,8px) clamp(8px,1.2vw,16px);text-align:center}
+.cover-tag .ct{font-family:'Lato',sans-serif;font-size:clamp(8px,0.9vw,12px);font-weight:900;color:#f97316;letter-spacing:1px;display:block}
+.cover-tag .cs{font-family:'Lato',sans-serif;font-size:clamp(6.5px,0.7vw,9px);color:#78350f;letter-spacing:.5px}
+.cover-title{font-size:clamp(20px,3vw,40px);font-weight:900;color:#ffffff;line-height:1.15;font-family:'Lato',sans-serif;margin-bottom:2px;position:relative}
+.cover-acc{color:#f97316;display:block}
+.cover-rule{border:none;border-top:1.5px solid #f97316;margin:clamp(5px,0.8vh,10px) 0;width:100%}
+.cover-desc{font-size:clamp(9.5px,0.95vw,13px);color:#e2e8f0;line-height:1.75;font-family:'Lato',sans-serif;position:relative}
+.cover-body{flex:1;padding:clamp(8px,1.5vh,18px) clamp(14px,2.2vw,26px);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.cover-stats{display:flex;gap:clamp(14px,2.5vw,32px);margin-bottom:clamp(8px,1.5vh,18px)}
+.cover-stat .n{font-size:clamp(18px,2.5vw,32px);font-weight:900;color:#fed7aa;font-family:'Lato',sans-serif;text-align:center}
+.cover-stat .l{font-size:clamp(7.5px,0.75vw,10px);color:#78350f;text-transform:uppercase;letter-spacing:1px;font-family:'Lato',sans-serif;text-align:center}
+.cover-free{background:#22c55e;color:#ffffff;font-weight:900;font-size:clamp(10px,1vw,13px);padding:6px 20px;border-radius:16px;letter-spacing:1px;font-family:'Lato',sans-serif;margin-bottom:clamp(6px,1.2vh,14px)}
+.cover-auth{background:#1a0800;border-radius:6px;padding:clamp(7px,1vh,12px) clamp(10px,1.5vw,18px);display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%}
+.cover-auth-name{font-family:'Lato',sans-serif;font-size:clamp(10px,1vw,14px);font-weight:700;color:#f97316}
+.cover-auth-role{font-family:'Lato',sans-serif;font-size:clamp(8.5px,0.8vw,11px);color:#78350f;margin-top:2px}
+.cover-foot{background:#0a0500;padding:clamp(6px,0.9vh,10px);text-align:center;font-family:'Lato',sans-serif;flex-shrink:0}
+.cover-foot-main{font-size:clamp(8.5px,0.85vw,11px);color:#f97316;font-weight:700}
+.cover-foot-sub{font-size:clamp(7px,0.65vw,9px);color:#3a1800;margin-top:2px}
+.pg.backcover{background:linear-gradient(160deg,#07040a 0%,#0f0800 100%);background-image:none;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(7px,1.3vh,14px);padding:clamp(18px,3vh,32px) clamp(18px,2.8vw,32px)}
+.bc-logo{color:#fed7aa;font-size:clamp(16px,2.2vw,26px);font-weight:900;font-family:'Lato',sans-serif;letter-spacing:2px}
+.bc-rule{width:80px;height:1px;background:#f97316}
+.bc-tag{color:#78350f;font-size:clamp(10px,0.95vw,13px);font-style:italic;text-align:center;line-height:1.7;font-family:'Merriweather',serif}
+.bc-item{background:rgba(249,115,22,.08);border:1px solid rgba(249,115,22,.2);padding:clamp(6px,0.9vh,10px) clamp(9px,1.1vw,14px);border-radius:4px;font-size:clamp(10px,0.95vw,13px);color:#fed7aa;font-family:'Lato',sans-serif;width:100%}
+.bc-item span{color:#5a2800;font-size:clamp(8.5px,0.78vw,11px)}
+.bc-copy{font-size:clamp(8.5px,0.78vw,10px);color:#2a1000;text-align:center;font-family:'Lato',sans-serif;margin-top:2px}
+.blank{background:linear-gradient(180deg,#fff8ec,#fef3e0);display:flex;align-items:center;justify-content:center;width:100%;height:100%}
+.blank-inner{text-align:center;color:#c08040;font-family:'Lato',sans-serif}
+.blank-inner .b-logo{font-size:clamp(16px,2.2vw,28px);font-weight:900;letter-spacing:2px;margin-bottom:5px}
+.blank-inner .b-sub{font-size:clamp(8.5px,0.78vw,10px);letter-spacing:1px;text-transform:uppercase}
+
+@media(max-width:700px){
+  body{overflow-y:auto}
+  #topbar .center{display:none}
+  #controls{gap:8px;padding:10px 0 6px;flex-wrap:wrap;justify-content:center}
+  .fbtn{padding:10px 18px;font-size:15px}
+  #pginfo{font-size:13px;min-width:100px}
+  #stage{padding:6px 8px 20px;perspective:none}
+  #bookwrap{width:calc(100vw - 16px);height:calc(100vh - 160px);min-height:380px;animation:bookOpenM 0.7s ease-out 0.05s both !important}
+  @keyframes bookOpenM{from{opacity:0;transform:translateY(24px) scale(0.88);}to{opacity:1;transform:none;}}
+  .half.left,#spine{display:none}
+  .half.right{width:100% !important;border-radius:4px}
+  #flipper,#flipper.right-start,#flipper.left-start{width:100% !important;left:0 !important;right:auto !important;transform-origin:center center !important}
+  #flipper.flipping-forward{transform:scale(0.92) !important;opacity:0;transition:transform 0.35s ease,opacity 0.35s ease !important}
+  #flipper.flipping-backward{transform:scale(0.92) !important;opacity:0;transition:transform 0.35s ease,opacity 0.35s ease !important}
+  .pg{padding:16px 14px 30px}
+  .pg p{font-size:14px;line-height:1.85}
+  .pg h2{font-size:14px}
+  .pg table,.dcard-grid,.sym-grid{font-size:13px}
+  .dcard-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div id="topbar">
+  <a href="pdfs.html" class="back-btn">&#8592; Back to PDF Library</a>
+  <span class="center">AYE TECH HUB &mdash; INTERACTIVE READER</span>
+  <a href="https://t.me/ayetechub" target="_blank" rel="noopener">Join Telegram</a>
+</div>
+<div id="controls">
+  <button class="fbtn" id="btnprev" disabled>&#8592; Previous</button>
+  <span id="pginfo">Cover</span>
+  <button class="fbtn" id="btnnext">Next &#8594;</button>
+  <button id="sndbtn" class="on">&#128266; Sound ON</button>
+</div>
+<div id="stage">
+<div id="bookwrap">
+  <div id="openbook">
+    <div class="half left" id="lefthalf"><div class="half-inner" id="leftinner"></div></div>
+    <div id="spine"></div>
+    <div class="half right" id="righthalf"><div class="half-inner" id="rightinner"></div></div>
+    <div id="flipper" class="right-start"></div>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════ PAGE DATA ═══════════ -->
+
+<div class="pdata" id="pd-cover">
+<div class="pg cover">
+  <div class="cover-stripe"></div>
+  <div class="cover-panel">
+    <div class="cover-panel-top">
+      <div class="cover-aye"><div class="aye">AYE</div><div class="hub">TECH HUB</div></div>
+      <div class="cover-tag"><span class="ct">ELECTRICAL ENGINEERING</span><span class="cs">TECHNICAL DRAWING GUIDE</span></div>
+    </div>
+    <div class="cover-title">Wiring Diagram<span class="cover-acc">Mastery</span></div>
+    <div class="cover-rule"></div>
+    <div class="cover-desc">Single-Line &bull; Schematic &bull; Ladder Logic &bull; Panel Layout<br>Motor Control &bull; IEC Symbols &bull; AutoCAD Electrical &bull; Standards</div>
+  </div>
+  <div class="cover-body">
+    <div class="cover-stats">
+      <div class="cover-stat"><div class="n">7</div><div class="l">Drawing Types</div></div>
+      <div class="cover-stat"><div class="n">22</div><div class="l">Pages</div></div>
+      <div class="cover-stat"><div class="n">14</div><div class="l">Chapters</div></div>
+      <div class="cover-stat"><div class="n">IEC</div><div class="l">Standard</div></div>
+    </div>
+    <div class="cover-free">&#10003; FREE OPEN ACCESS</div>
+    <div class="cover-auth">
+      <div><div class="cover-auth-name">Awet G. Nway</div><div class="cover-auth-role">Founder, AYE Tech Hub &bull; Electrical &amp; Controls Engineer</div></div>
+    </div>
+  </div>
+  <div class="cover-foot">
+    <div class="cover-foot-main">AYE Tech Hub &mdash; Engineering the Future</div>
+    <div class="cover-foot-sub">&#169; 2026 AYE Tech Hub &bull; ayetechub.com</div>
+  </div>
+</div>
+</div>
+
+<div class="pdata" id="pd-toc">
+<div class="pg">
+  <div class="rh"><span>AYE Tech Hub</span><span>Wiring Diagram Mastery</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span></span></div>
+  <div class="eye">Contents</div>
+  <div class="ctitle" style="font-size:clamp(15px,1.8vw,22px);margin-bottom:4px;">Table of Contents</div><hr class="crule">
+  <div class="trow"><span class="tnum">01</span><span class="tname">The 7 Types of Electrical Drawings<span class="tsub">What each drawing shows and when to use it</span></span><span class="tpg">3</span></div>
+  <div class="trow"><span class="tnum">02</span><span class="tname">Electrical Symbols — IEC &amp; ANSI<span class="tsub">International vs American standards, common components</span></span><span class="tpg">4</span></div>
+  <div class="trow"><span class="tnum">03</span><span class="tname">Single-Line (One-Line) Diagrams<span class="tsub">Power system overview, reading guide</span></span><span class="tpg">6</span></div>
+  <div class="trow"><span class="tnum">04</span><span class="tname">Three-Line Diagrams<span class="tsub">Three-phase protection systems, fault analysis</span></span><span class="tpg">7</span></div>
+  <div class="trow"><span class="tnum">05</span><span class="tname">Schematic (Circuit) Diagrams<span class="tsub">Component-level detail, reading left to right</span></span><span class="tpg">8</span></div>
+  <div class="trow"><span class="tnum">06</span><span class="tname">Ladder Diagrams &amp; Control Logic<span class="tsub">Relay logic, PLC programming, rung structure</span></span><span class="tpg">9</span></div>
+  <div class="trow"><span class="tnum">07</span><span class="tname">Wiring &amp; Interconnection Diagrams<span class="tsub">Terminal numbers, wire labels, point-to-point</span></span><span class="tpg">10</span></div>
+  <div class="trow"><span class="tnum">08</span><span class="tname">Panel Layout Drawings<span class="tsub">Physical mounting, DIN rails, cable ducts</span></span><span class="tpg">11</span></div>
+  <div class="trow"><span class="tnum">09</span><span class="tname">Motor Control Circuits<span class="tsub">DOL starter, Star-Delta, VFD wiring</span></span><span class="tpg">12</span></div>
+  <div class="trow"><span class="tnum">10</span><span class="tname">Control Panel Wiring Standards<span class="tsub">Ferruling, cable routing, terminal sizing</span></span><span class="tpg">14</span></div>
+  <div class="trow"><span class="tnum">11</span><span class="tname">Protection &amp; Safety Circuits<span class="tsub">E-stop, safety relays, LOTO, earth fault</span></span><span class="tpg">15</span></div>
+  <div class="trow"><span class="tnum">12</span><span class="tname">Cable Schedules &amp; Terminal Lists<span class="tsub">How to create, what to include, IDs</span></span><span class="tpg">16</span></div>
+  <div class="trow"><span class="tnum">13</span><span class="tname">AutoCAD Electrical<span class="tsub">Project setup, symbols, wire numbers, reports</span></span><span class="tpg">17</span></div>
+  <div class="trow"><span class="tnum">14</span><span class="tname">Drawing Standards &amp; Conventions<span class="tsub">IEC 61082, title blocks, revision control</span></span><span class="tpg">19</span></div>
+  <div class="trow"><span class="tnum">&#9670;</span><span class="tname">Symbol Reference &amp; Reading Checklist<span class="tsub">Quick reference for any wiring diagram</span></span><span class="tpg">21</span></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch1">
+<div class="pg">
+  <div class="rh"><span>Chapter 1</span><span>The 7 Types of Electrical Drawings</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>3</span></div>
+  <div class="eye">Chapter 01</div><div class="cnum">I</div>
+  <div class="ctitle">The 7 Types of<br>Electrical Drawings</div><hr class="crule">
+  <div class="csub">What Each Drawing Shows &bull; When to Use Each Type</div>
+  <p>Electrical projects require multiple drawing types. Each type communicates different information to a different audience — from the system designer to the panel builder to the site electrician. Understanding which drawing to use, and how to read each type, is a foundational professional skill.</p>
+  <div class="dcard-grid">
+    <div class="dcard"><div class="dt">&#9547; Single-Line (One-Line)</div><div class="dd">Shows power system overview using one line per circuit. Used for system design, power distribution, HV/MV networks.</div><div class="ds">Audience: Engineers, utilities</div></div>
+    <div class="dcard"><div class="dt">&#10141; Three-Line Diagram</div><div class="dd">Shows each phase of a 3-phase system separately. Used for protection relay design and fault current analysis.</div><div class="ds">Audience: Protection engineers</div></div>
+    <div class="dcard"><div class="dt">&#9107; Schematic Diagram</div><div class="dd">Every component and connection at circuit level. Shows function, not physical layout. For design and troubleshooting.</div><div class="ds">Audience: Design engineers</div></div>
+    <div class="dcard"><div class="dt">&#9776; Ladder Diagram</div><div class="dd">Control circuit in "rungs" between power rails. Relay logic and PLC programs. Read left-to-right, top-to-bottom.</div><div class="ds">Audience: Controls engineers</div></div>
+    <div class="dcard"><div class="dt">&#9113; Wiring/Interconnection</div><div class="dd">Physical terminal-to-terminal connections. Wire numbers, terminal IDs, cable routing. For panel build and commissioning.</div><div class="ds">Audience: Electricians, panel builders</div></div>
+    <div class="dcard"><div class="dt">&#9632; Panel Layout</div><div class="dd">Top and front views showing physical component positions, DIN rails, cable ducts, clearances. For panel fabrication.</div><div class="ds">Audience: Panel fabricators</div></div>
+  </div>
+  <div class="note"><div class="nlbl">&#128161; Which Drawing When?</div><p>Design phase: single-line + schematic. Build phase: panel layout + wiring diagram. Commissioning: ladder diagram + terminal list. Maintenance: all types together. Most projects need all seven.</p></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch2a">
+<div class="pg">
+  <div class="rh"><span>Chapter 2</span><span>Electrical Symbols — IEC &amp; ANSI</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>4</span></div>
+  <div class="eye">Chapter 02</div><div class="cnum">II</div>
+  <div class="ctitle">Electrical Symbols</div><hr class="crule">
+  <div class="csub">IEC 60617 (International) vs ANSI/IEEE (American) — Know Both</div>
+  <p>Two major symbol standards are in use worldwide. <b>IEC 60617</b> is the international standard used across Europe, Africa, the Middle East, and most of the world. <b>ANSI/IEEE</b> (also called JIC) is used in the United States. Engineers working on imported equipment or international projects must recognise both.</p>
+  <h2>Key Component Symbols — IEC vs ANSI/IEEE</h2>
+  <table>
+    <thead><tr><th>Component</th><th>IEC 60617 Symbol Description</th><th>ANSI/IEEE Description</th><th>Ref. Designator</th></tr></thead>
+    <tbody>
+      <tr><td><b>Normally Open Contact</b></td><td>Horizontal line with gap, angled actuator line</td><td>Two vertical lines with gap</td><td>S, K-NO</td></tr>
+      <tr><td><b>Normally Closed Contact</b></td><td>Like NO but with diagonal line through actuator</td><td>Two vertical lines with diagonal slash</td><td>S, K-NC</td></tr>
+      <tr><td><b>Relay/Contactor Coil</b></td><td>Rectangle with label inside</td><td>Circle with label</td><td>K, KM</td></tr>
+      <tr><td><b>Fuse</b></td><td>Rectangle with line through centre</td><td>Wavy line or S-shape in rectangle</td><td>F, FU</td></tr>
+      <tr><td><b>Circuit Breaker</b></td><td>Rectangle with actuator symbol</td><td>Box with switch symbol</td><td>Q, CB</td></tr>
+      <tr><td><b>Motor (3-phase)</b></td><td>Circle with M3~ inside</td><td>Circle with M inside</td><td>M</td></tr>
+      <tr><td><b>Transformer</b></td><td>Two interlocked circles</td><td>Two interlocked circles</td><td>T, TR</td></tr>
+      <tr><td><b>Pushbutton NO</b></td><td>Contact symbol with manual actuator arrow</td><td>Same as ANSI contact with arrow</td><td>S, SB</td></tr>
+      <tr><td><b>Pilot Light / Indicator</b></td><td>Circle with X inside</td><td>Circle with cross-hatch</td><td>H, HL</td></tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch2b">
+<div class="pg">
+  <div class="rh"><span>Chapter 2 continued</span><span>Reference Designators &amp; Wire Colours</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>5</span></div>
+  <h2>IEC Reference Designators (IEC 81346)</h2>
+  <table>
+    <thead><tr><th>Designator</th><th>Component Type</th><th>Examples</th></tr></thead>
+    <tbody>
+      <tr><td><b>Q</b></td><td>Switching devices (power)</td><td>Q1 = main isolator, QB = circuit breaker</td></tr>
+      <tr><td><b>K</b></td><td>Relays &amp; contactors</td><td>KM1 = main contactor, KA1 = auxiliary relay</td></tr>
+      <tr><td><b>F</b></td><td>Fuses &amp; protection devices</td><td>F1 = fuse, FA = overload relay</td></tr>
+      <tr><td><b>M</b></td><td>Motors &amp; actuators</td><td>M1 = drive motor, MV = valve actuator</td></tr>
+      <tr><td><b>S</b></td><td>Sensors &amp; switching elements</td><td>S1 = start pushbutton, SF = flow switch</td></tr>
+      <tr><td><b>H</b></td><td>Signal &amp; indicating devices</td><td>H1 = green run lamp, HR = red fault lamp</td></tr>
+      <tr><td><b>T</b></td><td>Transformers</td><td>T1 = control transformer, TE = earth transformer</td></tr>
+      <tr><td><b>X</b></td><td>Terminals &amp; connectors</td><td>X1 = terminal strip, XP = plug connector</td></tr>
+    </tbody>
+  </table>
+  <h2>Wire Colour Standards</h2>
+  <table>
+    <thead><tr><th>Conductor</th><th>IEC 60446 / BS 7671</th><th>Old UK (pre-2004)</th><th>USA (NEC)</th></tr></thead>
+    <tbody>
+      <tr><td><b>Phase L1</b></td><td>Brown</td><td>Red</td><td>Black</td></tr>
+      <tr><td><b>Phase L2</b></td><td>Black</td><td>Yellow</td><td>Red</td></tr>
+      <tr><td><b>Phase L3</b></td><td>Grey</td><td>Blue</td><td>Blue</td></tr>
+      <tr><td><b>Neutral (N)</b></td><td>Blue</td><td>Black</td><td>White/Grey</td></tr>
+      <tr><td><b>Earth (PE)</b></td><td>Green/Yellow</td><td>Green/Yellow</td><td>Green/Yellow</td></tr>
+      <tr><td><b>Control (DC+)</b></td><td>Red</td><td>Red</td><td>Red</td></tr>
+      <tr><td><b>Control (DC−)</b></td><td>Blue</td><td>Black</td><td>Black</td></tr>
+    </tbody>
+  </table>
+  <div class="note warn"><div class="nlbl">&#9888; Standard Change Warning</div><p>UK wiring changed from old colours to IEC harmonised colours in 2004. Equipment wired before 2004 uses the old colours. Always check the drawing date and verify colour coding before working on existing installations.</p></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch3">
+<div class="pg">
+  <div class="rh"><span>Chapter 3</span><span>Single-Line (One-Line) Diagrams</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>6</span></div>
+  <div class="eye">Chapter 03</div><div class="cnum">III</div>
+  <div class="ctitle">Single-Line<br>(One-Line) Diagrams</div><hr class="crule">
+  <p>The single-line diagram (SLD or one-line diagram) represents a complete electrical power system using a single line to represent all conductors. It is the primary design document for power distribution systems and the first drawing an engineer creates for any project.</p>
+  <div class="etool">
+    <div class="et-head"><span class="et-name">What It Shows</span></div>
+    <div class="et-body">
+      <span class="et-k">Purpose</span><span class="et-v">System-level overview of how electrical power flows from source to loads. Shows capacity, protection, and switching at each point.</span>
+      <span class="et-k">Shows</span><span class="et-v">Power sources (generators, transformers, utility supply), busbars, protection devices (MCCBs, fuses, relays), switching devices, and major loads (motors, sub-panels, equipment).</span>
+      <span class="et-k">Does NOT show</span><span class="et-v">Number of individual conductors, wire sizes, terminal numbers, physical layout, or low-voltage control wiring. These appear in other drawing types.</span>
+    </div>
+  </div>
+  <div class="etool">
+    <div class="et-head"><span class="et-name">How to Read a Single-Line Diagram</span></div>
+    <div class="et-body">
+      <span class="et-k">Top-down</span><span class="et-v">Power flows from top (source) to bottom (loads). Generators and transformers appear at top; distribution boards and final loads at bottom.</span>
+      <span class="et-k">Ratings</span><span class="et-v">Each component is labelled with its rated values: transformer MVA and kV ratio, CB breaking capacity (kA), busbar rating (A), cable size (mm²).</span>
+      <span class="et-k">Switchgear</span><span class="et-v">Normally Closed (NC) path = current flowing. Normally Open (NO) = open circuit / backup supply. Tie switches shown as dashed lines or open symbols.</span>
+    </div>
+  </div>
+  <div class="note"><div class="nlbl">&#9888; Key SLD Applications</div><p>SLDs are mandatory for: building power distribution design, grid connection applications, arc flash studies, protection coordination studies, and equipment procurement specifications.</p></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch4">
+<div class="pg">
+  <div class="rh"><span>Chapters 4–5</span><span>Three-Line Diagrams &amp; Schematic Diagrams</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>7</span></div>
+  <div class="eye">Chapter 04</div><div class="cnum">IV</div>
+  <div class="ctitle">Three-Line &amp;<br>Schematic Diagrams</div><hr class="crule">
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Three-Line Diagrams (Chapter 4)</span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">A three-line diagram shows each phase of a three-phase system on a separate line. While the SLD uses one line for the three phases combined, the three-line separates them for detailed analysis.</span>
+      <span class="et-k">How</span><span class="et-v">Three parallel horizontal lines represent phases L1, L2, L3. Protection relays, current transformers (CTs), and voltage transformers (VTs) are shown connected to individual phases. Enables protection engineers to verify that trip logic and intertripping is correct per phase.</span>
+      <span class="et-k">Who</span><span class="et-v">Protection engineers designing relay settings, fault level engineers performing short-circuit calculations, utility engineers reviewing grid connection protection schemes.</span>
+    </div>
+  </div>
+  <div class="eye" style="margin-top:12px;">Chapter 05</div>
+  <div class="ctitle" style="font-size:clamp(18px,2.2vw,28px);">Schematic (Circuit) Diagrams</div><hr class="crule">
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Schematic Diagrams — The Component-Level Drawing</span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">Shows every component in a circuit and exactly how they connect — at individual pin or terminal level. No regard for physical location. Pure functional representation.</span>
+      <span class="et-k">How to read</span><span class="et-v">Power supply rails run left and right (or top and bottom). Components connect between rails. Trace signal flow: input (left) → processing (middle) → output (right). Each component has reference designator (K1, Q2) and cross-references to other drawings where related contacts appear.</span>
+      <span class="et-k">Who</span><span class="et-v">Design engineers for circuit design and verification. Commissioning engineers for testing. Maintenance engineers for fault-finding — trace the circuit logic to identify where a fault breaks the expected sequence.</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch6">
+<div class="pg">
+  <div class="rh"><span>Chapter 6</span><span>Ladder Diagrams &amp; Control Logic</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>8</span></div>
+  <div class="eye">Chapter 06</div><div class="cnum">VI</div>
+  <div class="ctitle">Ladder Diagrams<br>&amp; Control Logic</div><hr class="crule">
+  <div class="csub">Relay Logic &bull; PLC Programming &bull; Reading Rungs</div>
+  <p>The ladder diagram is the standard format for representing control logic — both for hardwired relay circuits and PLC programs. The name comes from its appearance: two vertical power rails (like a ladder's sides) with horizontal rungs between them, each rung being one control logic statement.</p>
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Anatomy of a Ladder Rung</span></div>
+    <div class="et-body">
+      <span class="et-k">Left rail</span><span class="et-v">Positive supply (L1 or +24VDC). All rungs start here. Current flows left to right when logic conditions are met.</span>
+      <span class="et-k">Right rail</span><span class="et-v">Neutral (N or 0VDC). The coil or output connects here. If a complete path exists from left to right, the output energises.</span>
+      <span class="et-k">Contacts</span><span class="et-v">Normally Open (NO) contacts: current only passes when coil is energised. Normally Closed (NC): current passes UNTIL coil is energised. Placed in series (AND logic) or parallel (OR logic).</span>
+      <span class="et-k">Coil (output)</span><span class="et-v">The rightmost element. When a complete path exists from left rail through all contacts to the coil, the coil energises (relay picks up / PLC output turns ON).</span>
+    </div>
+  </div>
+  <h2>Reading a Motor Start/Stop Circuit</h2>
+  <table>
+    <thead><tr><th>Rung</th><th>Elements (left → right)</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td><b>Rung 1</b></td><td>E-stop NC → Stop NC → Start NO | KM1-seal NO → KM1 coil</td><td>Start: press Start, KM1 energises and seals in. Stop: press Stop or E-stop, KM1 drops out.</td></tr>
+      <tr><td><b>Rung 2</b></td><td>KM1 auxiliary NO → Run lamp (H1)</td><td>Green run lamp illuminates when contactor KM1 is energised.</td></tr>
+      <tr><td><b>Rung 3</b></td><td>Overload relay trip NC contact → Fault lamp (H2)</td><td>Red fault lamp illuminates if overload relay has tripped — motor overcurrent condition.</td></tr>
+    </tbody>
+  </table>
+  <div class="note tip"><div class="nlbl">&#128161; PLC Ladder vs Relay Ladder</div><p>The logic is identical — PLC ladder diagrams use the same symbol language as hardwired relay circuits. The difference: in a relay circuit, the contacts are physical. In a PLC, they are software bits in memory. Troubleshooting technique is the same: force contacts in simulation, monitor bit status.</p></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch7">
+<div class="pg">
+  <div class="rh"><span>Chapter 7</span><span>Wiring &amp; Interconnection Diagrams</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>9</span></div>
+  <div class="eye">Chapter 07</div><div class="cnum">VII</div>
+  <div class="ctitle">Wiring &amp; Interconnection<br>Diagrams</div><hr class="crule">
+  <div class="csub">Terminal Numbers &bull; Wire Labels &bull; Point-to-Point Connections</div>
+  <p>Where schematic diagrams show HOW a circuit works, wiring diagrams show WHERE each wire connects physically. This is the drawing used to build panels and wire equipment on site. Every connection is identified by terminal number and wire number.</p>
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Point-to-Point Wiring Diagrams</span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">Explicitly states every wire: its start point (component, terminal number), its end point (component, terminal number), and its wire number. Nothing is implied — every connection is documented.</span>
+      <span class="et-k">Wire numbers</span><span class="et-v">IEC convention: wire numbers are applied at each termination end. A wire from Q1 terminal 2 to KM1 terminal A1 carries a number that identifies the circuit — e.g. "101" for control circuit wire 1. Both ends carry the same number.</span>
+      <span class="et-k">Who uses it</span><span class="et-v">Panel fabricators build the panel from wiring diagrams. Commissioning engineers verify every connection. Maintenance teams trace faults by following wire numbers to find unexpected opens or shorts.</span>
+    </div>
+  </div>
+  <h2>Wiring Diagram Elements</h2>
+  <table>
+    <thead><tr><th>Element</th><th>What It Shows</th></tr></thead>
+    <tbody>
+      <tr><td><b>Component block</b></td><td>Each device (contactor, relay, terminal block) shown as a rectangle with its terminals numbered around the outside</td></tr>
+      <tr><td><b>Wire number</b></td><td>Unique number on every wire — written at both ends. Usually alphanumeric: 1–99 power, 100–199 control, 200–299 signal/instruments</td></tr>
+      <tr><td><b>Terminal number</b></td><td>The physical terminal on a device (A1, A2 for coil; 1, 3, 5 main power in; 2, 4, 6 main power out for IEC contactors)</td></tr>
+      <tr><td><b>Cable number</b></td><td>Identifies the multi-core cable containing the wire — e.g. C001 = cable 001, used where a harness or cable contains multiple wires going the same route</td></tr>
+      <tr><td><b>Cross-reference</b></td><td>Links to the schematic sheet number where the circuit logic for this connection is shown</td></tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch8">
+<div class="pg">
+  <div class="rh"><span>Chapter 8</span><span>Panel Layout Drawings</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>10</span></div>
+  <div class="eye">Chapter 08</div><div class="cnum">VIII</div>
+  <div class="ctitle">Panel Layout<br>Drawings</div><hr class="crule">
+  <div class="csub">Physical Mounting &bull; DIN Rails &bull; Cable Ducts &bull; Clearances</div>
+  <p>Panel layout drawings define the physical arrangement of components inside an electrical enclosure. While schematic and wiring diagrams show the electrical connections, the panel layout shows where each component is physically located and how the enclosure is organised for safe access and maintenance.</p>
+  <div class="etool">
+    <div class="et-head"><span class="et-name">What a Panel Layout Must Show</span></div>
+    <div class="et-body">
+      <span class="et-k">Views</span><span class="et-v">Front view (component face as seen when door is open), internal top view (cable entry), sometimes side views. Large panels include isometric or 3D view.</span>
+      <span class="et-k">Components</span><span class="et-v">Every device drawn to scale at its actual mounting position. Each labelled with reference designator (KM1, Q1, F1) matching the schematic. Dimensions from panel edges given for components without DIN rail mounting.</span>
+      <span class="et-k">DIN rails</span><span class="et-v">35mm DIN rail positions shown with start and end coordinates. Component spacing on each rail calculated to allow 10mm minimum gap between devices for airflow and removal.</span>
+      <span class="et-k">Cable ducts</span><span class="et-v">Wiring duct (cable trunking) routes shown — horizontal and vertical. Minimum 40% spare capacity required by IEC 60439. Separate ducts for power (≥6mm²) and control (≤2.5mm²) wiring.</span>
+      <span class="et-k">Clearances</span><span class="et-v">Minimum working clearances: 600mm in front of MCC, 300mm at sides. Earth busbar position. Cable gland plate layout at bottom with knockouts for incoming cables.</span>
+    </div>
+  </div>
+  <div class="note green"><div class="nlbl">&#9745; Panel Layout Checklist</div><p>&#10003; All components at least 50mm from enclosure edges &nbsp; &#10003; Power and control components on separate DIN rails &nbsp; &#10003; Circuit breakers at eye-level (1.0–1.8m AFF) &nbsp; &#10003; Heaviest items (transformers, contactors) at bottom &nbsp; &#10003; Earth busbar accessible without removing other components</p></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch9a">
+<div class="pg">
+  <div class="rh"><span>Chapter 9</span><span>Motor Control Circuits</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>11</span></div>
+  <div class="eye">Chapter 09</div><div class="cnum">IX</div>
+  <div class="ctitle">Motor Control<br>Circuits</div><hr class="crule">
+  <div class="csub">DOL Starter &bull; Star-Delta &bull; VFD Wiring</div>
+  <h2>Direct On-Line (DOL) Starter — Most Common Motor Circuit</h2>
+  <p>The DOL starter connects the motor directly across the full supply voltage. It is the simplest motor starting method: one main contactor (KM1) connects L1-L2-L3 to the motor terminals U-V-W. It is used for motors up to ~7.5 kW (subject to supply authority requirements).</p>
+  <div class="etool">
+    <div class="et-head"><span class="et-name">DOL Power Circuit (L1/L2/L3 → Motor)</span></div>
+    <div class="et-body">
+      <span class="et-k">Path</span><span class="et-v">3-phase supply → Isolator (Q1) → MCB/Fuse (F1) → Main contactor KM1 (terminals 1/3/5 in, 2/4/6 out) → Overload relay (terminals 1/3/5 in, 2/4/6 out) → Motor terminal box U/V/W.</span>
+      <span class="et-k">Earth</span><span class="et-v">Green/yellow PE conductor runs from panel earth busbar → motor frame earth terminal. Separate from power conductors — never switched.</span>
+      <span class="et-k">Overload</span><span class="et-v">Thermal overload relay (bimetal) or electronic overload set to 100–115% of motor FLA. Trips the contactor coil circuit via NC auxiliary contact when motor draws excess current for a sustained period.</span>
+    </div>
+  </div>
+  <div class="etool">
+    <div class="et-head"><span class="et-name">DOL Control Circuit (24VAC or 24VDC)</span></div>
+    <div class="et-body">
+      <span class="et-k">Stop</span><span class="et-v">E-stop pushbutton (S0) NC in series → Stop pushbutton (S1) NC in series → these are "break" contacts in the coil circuit — pressing either breaks the circuit and drops the contactor.</span>
+      <span class="et-k">Start</span><span class="et-v">Start pushbutton (S2) NO in parallel with KM1 auxiliary contact (seal-in contact). Pressing S2 provides a momentary path to energise KM1 coil. KM1 aux contact then seals in, holding KM1 energised after S2 is released.</span>
+      <span class="et-k">Output</span><span class="et-v">KM1 coil (A1-A2). When energised, KM1 main contacts close (motor runs), KM1 aux NO contact closes (run lamp, seal-in), KM1 aux NC contact opens (interlocks).</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch9b">
+<div class="pg">
+  <div class="rh"><span>Chapter 9 continued</span><span>Star-Delta Starter &amp; VFD Wiring</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>12</span></div>
+  <h2>Star-Delta (Y-Δ) Starter</h2>
+  <p>Star-delta reduces motor starting current to 1/3 of DOL by starting in star (Y) configuration then switching to delta (Δ) after the motor accelerates. Used for motors 7.5 kW and above where reduced starting current is required by the supply authority.</p>
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Star-Delta — Three Contactors + Timer</span></div>
+    <div class="et-body">
+      <span class="et-k">KM1</span><span class="et-v">Main contactor — always closed during run. Connects supply (L1-L2-L3) to motor terminals U1-V1-W1. Energises first and remains on for the full run.</span>
+      <span class="et-k">KM2 (Y)</span><span class="et-v">Star contactor — closes at start, shorting motor terminals U2-V2-W2 together. Motor runs in star: lower voltage across each winding, current = 1/3 of DOL. Energises with KM1 at start.</span>
+      <span class="et-k">KM3 (Δ)</span><span class="et-v">Delta contactor — closes after timer elapses (typically 5–15 seconds). Connects U2→W1, V2→U1, W2→V1 to form a closed delta. KM2 must be interlocked with KM3 — NEVER both closed simultaneously (short circuit).</span>
+      <span class="et-k">Timer</span><span class="et-v">On-delay timer KT (typically 5–15 s) de-energises KM2 and energises KM3 after the set time. There is a brief opening period between KM2 drop-out and KM3 pick-up to prevent simultaneous closure.</span>
+    </div>
+  </div>
+  <h2>Variable Frequency Drive (VFD) Wiring</h2>
+  <div class="etool">
+    <div class="et-head"><span class="et-name">VFD — Three Wiring Sections</span></div>
+    <div class="et-body">
+      <span class="et-k">Power input</span><span class="et-v">3-phase supply → Isolator → Line reactor (optional, for harmonic reduction) → VFD input terminals L1/L2/L3 (R/S/T). Fusing per VFD manufacturer specification — never use standard motor fuses.</span>
+      <span class="et-k">Power output</span><span class="et-v">VFD output terminals U/V/W → Motor only. NEVER connect any switching device (contactor, isolator) between VFD output and motor while VFD is running — output stage IGBT damage. Use output reactor for cables &gt;50m.</span>
+      <span class="et-k">Control</span><span class="et-v">Digital inputs: Enable (DI1), Forward run (DI2), Fault reset (DI3). Analogue input: speed reference 4–20mA or 0–10V from PLC/controller. Digital output: Run status relay, Fault relay. Ground: shield of all control cables to PE at VFD end only.</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch10">
+<div class="pg">
+  <div class="rh"><span>Chapter 10</span><span>Control Panel Wiring Standards</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>13</span></div>
+  <div class="eye">Chapter 10</div><div class="cnum">X</div>
+  <div class="ctitle">Control Panel<br>Wiring Standards</div><hr class="crule">
+  <div class="csub">Ferruling &bull; Cable Routing &bull; Terminal Sizing &bull; IEC 60439</div>
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Ferruling — Wire End Identification</span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">Ferruling (cable end-marking) means fitting a labelled sleeve (ferrule) onto each wire end showing the wire's destination. Every wire end in a professional panel carries a ferrule — this is non-negotiable for professional quality.</span>
+      <span class="et-k">Convention</span><span class="et-v">Two common conventions: (1) Wire number — each wire carries the same number at both ends matching the wiring diagram. (2) Destination marking — each end shows where it GOES TO (e.g. "KM1:A1" on the wire at the terminal block end, "X1:3" on the wire at the contactor end).</span>
+      <span class="et-k">Why</span><span class="et-v">Unlabelled wiring makes fault-finding dangerous and time-consuming. A panel with proper ferruling can be traced in minutes; an unlabelled panel may take hours and risks live-working accidents.</span>
+    </div>
+  </div>
+  <h2>Cable Routing &amp; Separation Rules</h2>
+  <table>
+    <thead><tr><th>Cable Type</th><th>Min Separation from Power</th><th>Reason</th></tr></thead>
+    <tbody>
+      <tr><td><b>Power cables (&gt;6mm²)</b></td><td>—</td><td>Run in their own duct or cable tray, segregated from all others</td></tr>
+      <tr><td><b>Control cables (2.5mm²)</b></td><td>50mm from power</td><td>Prevents magnetic coupling causing false relay trips</td></tr>
+      <tr><td><b>Instrument/signal cables</b></td><td>150mm from power</td><td>High-impedance signals susceptible to induced noise from power conductors</td></tr>
+      <tr><td><b>Network/data cables</b></td><td>200mm from power</td><td>Data integrity — power-induced noise causes communication errors</td></tr>
+      <tr><td><b>VFD output cables</b></td><td>300mm from all others</td><td>High-frequency switching generates severe EMI — treat as its own route</td></tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch11">
+<div class="pg">
+  <div class="rh"><span>Chapter 11</span><span>Protection &amp; Safety Circuits</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>14</span></div>
+  <div class="eye">Chapter 11</div><div class="cnum">XI</div>
+  <div class="ctitle">Protection &amp;<br>Safety Circuits</div><hr class="crule">
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Emergency Stop (E-Stop) Circuits — ISO 13850 / IEC 60204</span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">Emergency stop is a safety function that removes power from hazardous motion or energy when activated. E-stop pushbuttons are red/yellow, twist-to-release, with forced-opening (positive-break) NC contacts.</span>
+      <span class="et-k">Categories</span><span class="et-v"><b>Category 0:</b> Immediate removal of power — contactor drops instantly (uncontrolled stop). <b>Category 1:</b> Controlled stop, then power removed after standstill. <b>Category 2:</b> Controlled stop, power maintained (for process equipment that must not lose position).</span>
+      <span class="et-k">Circuit rule</span><span class="et-v">E-stop NC contacts must be wired in SERIES in the safety circuit — never in parallel. Series wiring means ANY one e-stop button in a chain stops the machine. Parallel wiring would require ALL buttons to be pressed simultaneously.</span>
+    </div>
+  </div>
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Safety Relay Modules (Pilz, Siemens, ABB)</span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">Dedicated monitoring modules that verify the integrity of E-stop circuits and safety interlocks. They detect faults (welded contacts, broken wires) that would prevent a safety function from operating. Required for PLr c–e (Performance Level) and SIL 1–3 applications.</span>
+      <span class="et-k">Key outputs</span><span class="et-v">Two NC output contacts (K1, K2) wired in series to the final switching element (contactor coil or motor power). If either contact is welded shut, the module will not reset — preventing restart after a single-fault failure.</span>
+    </div>
+  </div>
+  <div class="note warn"><div class="nlbl">&#9888; Never Override Safety Circuits</div><p>Bypassing E-stop or safety relay circuits — even temporarily — is a violation of IEC 60204, potentially a criminal offence under occupational safety legislation, and a direct cause of fatalities. Any defeat must be via a formal risk-assessed permit-to-work procedure.</p></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch12">
+<div class="pg">
+  <div class="rh"><span>Chapter 12</span><span>Cable Schedules &amp; Terminal Lists</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>15</span></div>
+  <div class="eye">Chapter 12</div><div class="cnum">XII</div>
+  <div class="ctitle">Cable Schedules<br>&amp; Terminal Lists</div><hr class="crule">
+  <p>Cable schedules and terminal lists are the administrative backbone of an electrical installation. Without them, construction, inspection, testing, and maintenance all take significantly longer. On well-run projects these documents are generated automatically from the CAD system.</p>
+  <h2>Cable Schedule — One Row Per Cable</h2>
+  <table>
+    <thead><tr><th>Cable No.</th><th>From (Origin)</th><th>To (Destination)</th><th>Type</th><th>Size</th><th>Cores</th><th>Length (m)</th></tr></thead>
+    <tbody>
+      <tr><td>C001</td><td>MCC Panel CP-01, X1:1–3</td><td>Motor M1 junction box, X1:1–3</td><td>NYY</td><td>4mm²</td><td>3C+E</td><td>28</td></tr>
+      <tr><td>C002</td><td>MCC Panel CP-01, X2:1–4</td><td>Motor M1 junction box, X1:4–7</td><td>LIYCY</td><td>0.75mm²</td><td>4C screened</td><td>28</td></tr>
+      <tr><td>C003</td><td>Distribution DB-01, MCB-F3</td><td>MCC Panel CP-01 incoming X3:1–3</td><td>NYY</td><td>16mm²</td><td>3C+E</td><td>14</td></tr>
+    </tbody>
+  </table>
+  <h2>Terminal List — One Row Per Terminal Connection</h2>
+  <table>
+    <thead><tr><th>Terminal No.</th><th>Wire From</th><th>Wire To</th><th>Function</th><th>Wire No.</th><th>Size</th></tr></thead>
+    <tbody>
+      <tr><td>X1:1</td><td>MCB Q1, terminal 2</td><td>Contactor KM1, terminal 1</td><td>L1 power feed</td><td>101</td><td>4mm²</td></tr>
+      <tr><td>X1:2</td><td>Overload FA1, terminal 96</td><td>KM1 coil, A2</td><td>Overload NC trip</td><td>201</td><td>1.5mm²</td></tr>
+      <tr><td>X1:3</td><td>Stop PB S1, terminal 2</td><td>Start PB S2, terminal 1</td><td>Stop contact</td><td>202</td><td>1.5mm²</td></tr>
+    </tbody>
+  </table>
+  <div class="note tip"><div class="nlbl">&#128161; Use AutoCAD Electrical</div><p>Cable schedules and terminal lists should NEVER be manually created in Excel for real projects — errors are inevitable. Use AutoCAD Electrical, EPLAN, or SEE Electrical to auto-generate both documents from the wiring diagrams. Any change to a wire number updates the schedule automatically.</p></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch13a">
+<div class="pg">
+  <div class="rh"><span>Chapter 13</span><span>AutoCAD Electrical</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>16</span></div>
+  <div class="eye">Chapter 13</div><div class="cnum">XIII</div>
+  <div class="ctitle">AutoCAD Electrical</div><hr class="crule">
+  <div class="csub">The Industry-Standard Tool for Professional Electrical Drawing</div>
+  <p>AutoCAD Electrical is the electrical engineering extension of AutoCAD. It adds intelligent wiring, automatic wire numbering, component tagging, cross-referencing, and report generation to the standard AutoCAD platform. It is used worldwide for panel drawings, machine wiring, and building electrical systems.</p>
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Project Setup — Getting Started Right</span></div>
+    <div class="et-body">
+      <span class="et-k">Project</span><span class="et-v">All drawings for one project are grouped in a Project. Project properties define: drawing templates, symbol library path (IEC or JIC/ANSI), wire number format, tag format (KM, Q, F prefix rules), and ladder reference style (sheet/rung or sequential).</span>
+      <span class="et-k">Drawing template</span><span class="et-v">Start from an ACE-supplied IEC or JIC template that has correct title block, layer names, and wire layer settings. Never draw directly on layer 0 — ACE uses specific layers: SYMS (symbols), WIRES, XREF, BUSBAR, TERM.</span>
+      <span class="et-k">Symbol library</span><span class="et-v"><b>IEC library:</b> IEC 60617 symbols — use for international projects. <b>JIC library:</b> ANSI/IEEE symbols — use for USA/Canada projects. Both are included. Set once in Project Properties; all inserted symbols use the chosen standard.</span>
+    </div>
+  </div>
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Drawing a Ladder Schematic in ACE</span></div>
+    <div class="et-body">
+      <span class="et-k">Ladder</span><span class="et-v">Insert → Ladder: Define power rails (L1/N or +24/-24VDC) with rung spacing. ACE creates the rails and blank rungs with the correct rung reference numbers (sheet 03, rung 1 = 0301, 0302, etc.).</span>
+      <span class="et-k">Symbols</span><span class="et-v">Schematic → Insert Component: browse the symbol library by category. Click insertion point on a wire — symbol snaps to wire and the wire breaks automatically. Dialog box opens for component tag (KM1), catalog number, and description.</span>
+      <span class="et-k">Wiring</span><span class="et-v">Draw wire in any direction — ACE automatically assigns the correct wire number from the project wire-numbering scheme. Where wires cross (no connection), ACE adds a loop junction marker automatically.</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch13b">
+<div class="pg">
+  <div class="rh"><span>Chapter 13 continued</span><span>AutoCAD Electrical — Reports &amp; Advanced Features</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>17</span></div>
+  <h2>Cross-References — The Core ACE Feature</h2>
+  <p>When KM1 is inserted as a coil on drawing 03/rung 02, AutoCAD Electrical automatically finds and labels every KM1 contact throughout the project drawings, showing the sheet and rung number where each contact is located. This cross-reference is rebuilt every time the drawing is updated — no manual tracking of contacts.</p>
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Key ACE Reports (Project → Reports)</span></div>
+    <div class="et-body">
+      <span class="et-k">Bill of Materials</span><span class="et-v">Lists every component in the project by catalog number, description, quantity, and tag. Exportable to Excel for purchasing. Filters by project, panel, or drawing sheet.</span>
+      <span class="et-k">Wire From/To list</span><span class="et-v">Complete point-to-point wiring table — source terminal, destination terminal, wire number, wire size/colour. This IS the wiring diagram in tabular form — directly used for panel fabrication.</span>
+      <span class="et-k">Terminal list</span><span class="et-v">All terminal blocks in project, with every connection at each terminal: from, to, wire number, function. One row per terminal connection. Can be exported to produce ferrule label sheets.</span>
+      <span class="et-k">Cable schedule</span><span class="et-v">All cables defined in the project: cable number, from panel/device, to panel/device, type, cores, length. Auto-generated from cable markers inserted on wiring diagrams.</span>
+    </div>
+  </div>
+  <h2>ACE vs EPLAN — Which to Learn?</h2>
+  <table>
+    <thead><tr><th>Feature</th><th>AutoCAD Electrical</th><th>EPLAN Electric P8</th></tr></thead>
+    <tbody>
+      <tr><td>Market position</td><td>Most widely used globally, especially in Asia, Africa, Middle East</td><td>Dominant in Germany/Europe for machine builders</td></tr>
+      <tr><td>Learning curve</td><td>Moderate — familiar to AutoCAD users</td><td>Steeper — different drawing paradigm (object-based)</td></tr>
+      <tr><td>Symbol library</td><td>IEC + JIC/ANSI included, extensible</td><td>Vast built-in library, manufacturer-supplied content</td></tr>
+      <tr><td>Licence cost</td><td>Included in AutoCAD suite / AEC Collection</td><td>Separate purchase — significant cost</td></tr>
+      <tr><td>Best for</td><td>General electrical design, buildings, MCC panels</td><td>Complex machine wiring, PLC integration, machinery directive</td></tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch14">
+<div class="pg">
+  <div class="rh"><span>Chapter 14</span><span>Drawing Standards &amp; Conventions</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>18</span></div>
+  <div class="eye">Chapter 14</div><div class="cnum">XIV</div>
+  <div class="ctitle">Drawing Standards<br>&amp; Conventions</div><hr class="crule">
+  <div class="csub">IEC 61082 &bull; Title Blocks &bull; Revision Control &bull; Drawing Numbers</div>
+  <div class="etool">
+    <div class="et-head"><span class="et-name">IEC 61082 — Preparation of Documents for Electrical Installation</span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">IEC 61082 is the international standard defining rules for how electrical technical documents (drawings, diagrams, tables) must be prepared. Part 1 covers general requirements; Part 3 covers connection diagrams; Part 4 covers location and installation documents.</span>
+      <span class="et-k">Sheet sizes</span><span class="et-v">A4 (210×297mm) for simple drawings and reports. A3 (297×420mm) for panel layouts and schematics. A1/A0 for large system diagrams. All drawings in a project should use the same sheet size.</span>
+      <span class="et-k">Title block</span><span class="et-v">Required fields: Project name, client name, drawing title, drawing number, sheet number / total sheets, revision letter and date, drawn by, checked by, approved by, company name, scale, units. Position: bottom-right corner of every sheet.</span>
+    </div>
+  </div>
+  <h2>Revision Control</h2>
+  <table>
+    <thead><tr><th>Stage</th><th>Revision Mark</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td><b>First issue</b></td><td>Rev A or Rev 0</td><td>First released version — not yet construction issue</td></tr>
+      <tr><td><b>Construction issue</b></td><td>Rev B / Rev 1</td><td>Issued for construction — contractor may build from this</td></tr>
+      <tr><td><b>As-built</b></td><td>Rev C / Rev 2 + "AB" suffix</td><td>Updated to reflect what was actually installed (field changes incorporated)</td></tr>
+    </tbody>
+  </table>
+  <h2>Drawing Number System</h2>
+  <p>A professional drawing number uniquely identifies each drawing. Common format: <b>[Project Code] – [Discipline] – [System] – [Sheet Type] – [Sheet Number]</b>. Example: <b>AYT-E-MCC01-SCH-003</b> = AYE Tech project, Electrical, MCC panel 01, Schematic, sheet 3. Every drawing in the project is traceable from the title block.</p>
+  <div class="note tip"><div class="nlbl">&#128161; Cloud Change Markers</div><p>When revising a drawing, the changed area is enclosed in a "cloud" (revision cloud symbol — a series of arcs forming a bubble). The revision letter (B, C…) is placed in a delta (triangle) tag near the cloud. This allows anyone comparing revisions to see exactly what changed at a glance.</p></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ref1">
+<div class="pg">
+  <div class="rh"><span>Reference</span><span>Common Symbols &amp; Reading Checklist</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>19</span></div>
+  <div class="eye">Reference Guide</div>
+  <div class="ctitle" style="font-size:clamp(16px,1.9vw,24px);margin-bottom:4px;">Common Symbols &amp; IEC Designators</div><hr class="crule">
+  <h2>Quick Symbol Reference</h2>
+  <table>
+    <thead><tr><th>Symbol / Function</th><th>IEC Ref. Desig.</th><th>Key Drawing Rule</th></tr></thead>
+    <tbody>
+      <tr><td><b>Main isolator / disconnector</b></td><td>Q1, QS</td><td>Always shown in the power circuit SLD. Must be operable with the panel door closed (operating handle).</td></tr>
+      <tr><td><b>Fuse</b></td><td>F, FU</td><td>Rectangle with line through. Always shown upstream of the protected circuit. Rating must be stated (16A, 32A, etc.).</td></tr>
+      <tr><td><b>Motor protection CB (MPCB)</b></td><td>Q, QM</td><td>Combines overload protection and short-circuit protection in one device. Replaces MCB + overload relay for motors.</td></tr>
+      <tr><td><b>Contactor (main)</b></td><td>KM1, KM2</td><td>3 NO main contacts shown in power circuit. Aux contacts shown in control circuit on separate rung with cross-ref to coil sheet.</td></tr>
+      <tr><td><b>Auxiliary relay</b></td><td>KA1, K1</td><td>Relay coil on one rung; each contact shown on a separate rung with cross-reference to the coil location.</td></tr>
+      <tr><td><b>Timer relay</b></td><td>KT, KTA</td><td>Coil with timing function symbol. Contact shows on-delay (▷) or off-delay (◁) marker on the contact symbol.</td></tr>
+      <tr><td><b>Pushbutton NO (start)</b></td><td>S, SB</td><td>Green, labelled START or I. Normal: open. Active: closed (momentary). Must have seal-in contact (KM aux) in parallel.</td></tr>
+      <tr><td><b>Pushbutton NC (stop)</b></td><td>S, SB</td><td>Black or red, labelled STOP or O. Normal: closed. Active: open (momentary). Must be in series in coil circuit.</td></tr>
+      <tr><td><b>Emergency stop</b></td><td>S0, SE</td><td>Red/yellow mushroom, twist-to-release. NC contact. Series wired. Latching — stays off until physically released.</td></tr>
+      <tr><td><b>Pilot lamp / indicator</b></td><td>H, HL</td><td>Green = Running. Red = Fault/Stop. Amber = Warning. Connected directly across coil or via N/O aux contact.</td></tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<div class="pdata" id="pd-qref">
+<div class="pg">
+  <div class="rh"><span>Quick Reference</span><span>How to Read Any Wiring Diagram — Checklist</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>20</span></div>
+  <div class="eye">Quick Reference</div>
+  <div class="ctitle" style="font-size:clamp(14px,1.7vw,20px);margin-bottom:4px;">8-Step Process: Reading Any Wiring Diagram</div><hr class="crule">
+  <ol>
+    <li><b>Identify the drawing type</b> — Single-line, schematic, ladder, wiring, or panel layout? Each requires a different reading approach. Check the title block.</li>
+    <li><b>Read the title block</b> — Project, system, revision, date. Ensures you have the correct, current issue. Never work from an outdated drawing.</li>
+    <li><b>Find the legend and symbol list</b> — Usually on sheet 1 or as a separate legend drawing. Confirms which symbol standard is used (IEC or ANSI/JIC).</li>
+    <li><b>Identify power supply</b> — Where does the power come from? Voltage level, AC or DC, earth system (TN-S, TN-C-S, IT). Find the incoming supply on the SLD or top of the schematic.</li>
+    <li><b>Trace the power circuit first</b> — Follow the main conductors from supply through protection (fuses, CBs) to the final load. Note all protective devices and their ratings.</li>
+    <li><b>Then read the control circuit</b> — Find the control supply (often 24VDC or 110VAC from a transformer). Read each ladder rung left to right. Identify start conditions, interlocks, and outputs.</li>
+    <li><b>Use cross-references</b> — When you see a contact (K1-NO), the cross-reference shows the sheet/rung where K1's coil is. When you see a coil, cross-references show where all its contacts are. Follow the chain.</li>
+    <li><b>Verify earthing</b> — Every panel drawing should show: protective earth (PE) busbar, earth connections from all metalwork, and isolation points. Absence of clear earth paths is a safety issue — raise it immediately.</li>
+  </ol>
+  <div class="note green"><div class="nlbl">&#128218; Further Study at AYE Tech Hub</div><p>Download free wiring diagram practice PDFs and the Industrial Wiring Diagrams Library at <b>ayetechub.com/pdfs.html</b> &bull; Interactive PLC Ladder Logic Simulator at <b>ayetechub.com/downloads</b></p></div>
+  <div style="text-align:center;font-size:clamp(10px,0.9vw,13px);color:#9a6040;font-style:italic;margin-top:8px;">&#169; 2026 AYE Tech Hub — ayetechub.com</div>
+</div>
+</div>
+
+<div class="pdata" id="pd-back">
+<div class="pg backcover">
+  <div class="bc-logo">AYE Tech Hub</div>
+  <div class="bc-rule"></div>
+  <div class="bc-tag">"Engineering the Future — one engineer at a time."<br><br>Equipping engineers across Africa and beyond with professional technical skills.</div>
+  <div class="bc-item">&#9889; <b>Wiring Diagrams Library</b> — Free practical diagrams (DOL, Star-Delta, VFD, E-Stop) <span>&bull; ayetechub.com/pdfs.html</span></div>
+  <div class="bc-item">&#128187; <b>PLC Simulator</b> — Interactive ladder logic practice tool <span>&bull; ayetechub.com/downloads</span></div>
+  <div class="bc-item">&#127979; <b>Courses</b> — PLC, HMI, HVAC, Solar, AI Tools, Electrical <span>&bull; ayetechub.com/courses.html</span></div>
+  <div class="bc-item">&#128172; <b>Telegram Community</b> — Questions, sharing, live support <span>&bull; t.me/ayetechub</span></div>
+  <div style="color:#f97316;font-size:16px;">&#10022;</div>
+  <div class="bc-copy">&#169; 2026 AYE Tech Hub. Published by Awet G. Nway.<br>Free for personal and educational use.</div>
+</div>
+</div>
+
+<!-- ═══════════ SCRIPT ═══════════ -->
+<script>
+const PAGE_IDS=[
+  'pd-cover','pd-toc',
+  'pd-ch1',
+  'pd-ch2a','pd-ch2b',
+  'pd-ch3','pd-ch4',
+  'pd-ch6','pd-ch7',
+  'pd-ch8',
+  'pd-ch9a','pd-ch9b',
+  'pd-ch10','pd-ch11',
+  'pd-ch12',
+  'pd-ch13a','pd-ch13b',
+  'pd-ch14',
+  'pd-ref1','pd-qref',
+  'pd-back'
+];
+let actx=null,soundOn=true;
+function initAudio(){if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)()}
+function playFlip(){
+  if(!soundOn)return;
+  try{
+    initAudio();
+    const sr=actx.sampleRate,dur=0.2,frames=(sr*dur)|0;
+    const buf=actx.createBuffer(1,frames,sr),d=buf.getChannelData(0);
+    for(let i=0;i<frames;i++){const t=i/sr,env=Math.pow(1-t/dur,2)*Math.exp(-t*20);d[i]=((Math.random()*2-1)*0.7+Math.sin(6.28*100*t)*0.3*Math.exp(-t*30))*env*0.5;}
+    const src=actx.createBufferSource(),flt=actx.createBiquadFilter();
+    flt.type='bandpass';flt.frequency.value=2000;flt.Q.value=0.8;
+    src.buffer=buf;src.connect(flt);flt.connect(actx.destination);src.start();
+  }catch(e){}
+}
+const pages=PAGE_IDS;
+let cur=0,animating=false;
+function getHTML(idx){return idx<0||idx>=pages.length?'<div class="blank"><div class="blank-inner"><div class="b-logo">AYE</div><div class="b-sub">Tech Hub</div></div></div>':document.getElementById(pages[idx]).innerHTML;}
+const leftEl=document.getElementById('leftinner'),rightEl=document.getElementById('rightinner'),flipEl=document.getElementById('flipper');
+const btnP=document.getElementById('btnprev'),btnN=document.getElementById('btnnext'),info=document.getElementById('pginfo');
+function updBtns(){btnP.disabled=(cur<=0);btnN.disabled=(cur>=pages.length-1);info.textContent='Page '+(cur+1)+' of '+pages.length;}
+function scaleToFit(el){
+  const pg=el.querySelector('.pg');
+  if(!pg||pg.classList.contains('cover')||pg.classList.contains('backcover'))return;
+  pg.style.transform='';pg.style.width='';
+  const avail=el.clientHeight,total=pg.scrollHeight;
+  if(total>avail*0.98){
+    const s=Math.max(0.80,(avail*0.99)/total);
+    pg.style.transform='scale('+s+')';
+    pg.style.transformOrigin='top left';
+    pg.style.width=(100/s)+'%';
+  }
+}
+function showSpread(idx){cur=idx;leftEl.innerHTML=getHTML(idx-1);rightEl.innerHTML=getHTML(idx);updBtns();requestAnimationFrame(()=>{scaleToFit(leftEl);scaleToFit(rightEl);});}
+function flipNext(){
+  if(animating||cur>=pages.length-1)return;animating=true;initAudio();
+  const ni=cur+1;
+  flipEl.innerHTML='<div class="flip-face">'+getHTML(cur)+'</div><div class="flip-face flip-back-face">'+getHTML(cur)+'</div>';
+  flipEl.className='right-start';flipEl.style.transform='';
+  rightEl.innerHTML=getHTML(ni);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{flipEl.className='right-start flipping-forward';playFlip();}));
+  const d=window.innerWidth<=700?380:680;
+  setTimeout(()=>{leftEl.innerHTML=getHTML(cur);flipEl.innerHTML='';flipEl.className='right-start';cur=ni;rightEl.innerHTML=getHTML(cur);updBtns();animating=false;requestAnimationFrame(()=>{scaleToFit(leftEl);scaleToFit(rightEl);});},d);
+}
+function flipPrev(){
+  if(animating||cur<=0)return;animating=true;initAudio();
+  const pi=cur-1;
+  flipEl.innerHTML='<div class="flip-face">'+getHTML(cur-1)+'</div><div class="flip-face flip-back-face">'+getHTML(cur-1)+'</div>';
+  flipEl.className='left-start';flipEl.style.transform='';
+  leftEl.innerHTML=getHTML(pi-1);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{flipEl.className='left-start flipping-backward';playFlip();}));
+  const d=window.innerWidth<=700?380:680;
+  setTimeout(()=>{cur=pi;leftEl.innerHTML=getHTML(cur-1);rightEl.innerHTML=getHTML(cur);flipEl.innerHTML='';flipEl.className='right-start';updBtns();animating=false;requestAnimationFrame(()=>{scaleToFit(leftEl);scaleToFit(rightEl);});},d);
+}
+btnN.addEventListener('click',()=>{initAudio();flipNext();});
+btnP.addEventListener('click',()=>{initAudio();flipPrev();});
+document.addEventListener('keydown',e=>{
+  if(['ArrowRight','ArrowDown',' '].includes(e.key)){initAudio();flipNext();e.preventDefault();}
+  else if(['ArrowLeft','ArrowUp'].includes(e.key)){initAudio();flipPrev();e.preventDefault();}
+});
+document.getElementById('sndbtn').addEventListener('click',function(){soundOn=!soundOn;this.textContent=soundOn?'🔊 Sound ON':'🔇 Sound OFF';this.classList.toggle('on',soundOn);});
+document.getElementById('righthalf').addEventListener('click',()=>{initAudio();flipNext();});
+document.getElementById('lefthalf').addEventListener('click',()=>{initAudio();flipPrev();});
+let tsX=0,tsY=0;
+document.getElementById('openbook').addEventListener('touchstart',e=>{tsX=e.changedTouches[0].clientX;tsY=e.changedTouches[0].clientY;},{passive:true});
+document.getElementById('openbook').addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tsX,dy=e.changedTouches[0].clientY-tsY;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.2){initAudio();if(dx<0)flipNext();else flipPrev();}},{passive:true});
+showSpread(0);
+window.addEventListener('resize',()=>{requestAnimationFrame(()=>{scaleToFit(leftEl);scaleToFit(rightEl);});});
+</script>
+</body>
+</html>
