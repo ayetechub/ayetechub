@@ -2512,6 +2512,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'ai-curriculum-009-ai-video-generation',
+    title: {
+      en: 'AI-009: AI Video Generation — Create Professional Videos with AI',
+      ti: 'AI-009: AI ቪዲዮ ፍጥረት — ሙያዊ ቪዲዮ ብ AI ፍጠር',
+      am: 'AI-009: AI ቪዲዮ ፍጥረት — ሙያዊ ቪዲዮዎችን በ AI ፍጠር'
+    },
+    category: 'ai',
+    pages: 8,
+    size: '35 KB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: 'AI video workflow diagram (text/image/video-to-video), tool comparison chart (Runway/Kling/Sora/Pika/Hailuo/Luma), 6-component prompt anatomy diagram, camera movement vocabulary table, style keywords table, prompt before/after table, AI avatar tools (HeyGen/Synthesia/D-ID), HeyGen 7-step workflow table, AI editing features table, practical use cases table, 30-minute starter workflow — by Awet G. Nway.',
+      ti: 'AI video workflow diagram (text/image/video-to-video)፣ tool comparison (Runway/Kling/Sora/Pika)፣ 6-component prompt anatomy diagram፣ camera movement table፣ AI avatar tools (HeyGen/Synthesia/D-ID)፣ HeyGen 7-step workflow፣ AI editing features table፣ practical use cases — ብ Awet G. Nway።',
+      am: 'AI video workflow diagram (text/image/video-to-video)፣ tool comparison (Runway/Kling/Sora/Pika)፣ 6-component prompt anatomy diagram፣ camera movement table፣ AI avatar tools (HeyGen/Synthesia/D-ID)፣ HeyGen 7-step workflow፣ AI editing features table፣ practical use cases — በ Awet G. Nway።'
+    },
+    file: 'pdfs/AI-009-AI-Video-Generation.pdf',
+    color: '#ec4899',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'hvac',
