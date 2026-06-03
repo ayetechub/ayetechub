@@ -3742,6 +3742,18 @@ const BLOG_POSTS = [
     featured: true
   },
   {
+    id: 'industrial-automation-trends-2026',
+    title: 'Industrial Automation Trends 2026: What Every Engineer Must Know',
+    category: 'plc',
+    date: '2026-06-03',
+    author: 'Awet G. Nway',
+    readTime: '8 min read',
+    excerpt: 'Explore how AI integration, collaborative robotics, IIoT platforms and edge computing are reshaping industrial automation. A comprehensive breakdown of the 8 major trends — AI in PLCs, cobots, digital twins, AMRs, 5G, OT cybersecurity — and what they mean for engineering careers in 2026.',
+    image: 'assets/images/og-cover.png',
+    url: 'blog/industrial-automation-trends-2026.html',
+    featured: true
+  },
+  {
     id: 'mechanical-maintenance-guide-industrial',
     title: 'Mechanical Maintenance Guide for Industrial Equipment',
     category: 'mechanical',
