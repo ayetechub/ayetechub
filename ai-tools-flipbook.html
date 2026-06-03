@@ -8,132 +8,160 @@
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{height:100%;}
-body{background:radial-gradient(ellipse at 50% 0%,#1a0820 0%,#06040a 100%);min-height:100vh;display:flex;flex-direction:column;align-items:center;font-family:'Lato',sans-serif;overflow-x:hidden;}
-#topbar{width:100%;background:#080410;border-bottom:1px solid #2a1040;display:flex;align-items:center;justify-content:space-between;padding:10px 24px;flex-shrink:0;}
-#topbar a{color:#ec4899;text-decoration:none;font-size:12.5px;font-weight:700;}
-#topbar a:hover{color:#f9a8d4;}
-.back-btn{display:flex;align-items:center;gap:6px;background:rgba(236,72,153,.1);border:1px solid rgba(236,72,153,.3);padding:6px 14px;border-radius:5px;transition:.2s;}
-.back-btn:hover{background:rgba(236,72,153,.2);}
-#topbar .center{color:#4a2060;font-size:11px;letter-spacing:1px;text-transform:uppercase;}
-#controls{display:flex;align-items:center;gap:14px;padding:16px 0 10px;flex-shrink:0;}
-.fbtn{background:linear-gradient(135deg,#3a0830,#601050);border:1px solid #ec4899;color:#f9a8d4;padding:9px 22px;border-radius:6px;cursor:pointer;font-family:'Lato',sans-serif;font-weight:700;font-size:13px;letter-spacing:.5px;transition:.2s;user-select:none;}
-.fbtn:hover{background:linear-gradient(135deg,#601050,#801870);color:#fff;}
-.fbtn:disabled{opacity:.4;cursor:default;}
-#pginfo{color:#8a5080;font-size:12px;letter-spacing:.5px;background:rgba(0,0,0,.3);padding:7px 18px;border-radius:5px;border:1px solid #2a1040;min-width:120px;text-align:center;}
-#sndbtn{background:rgba(236,72,153,.08);border:1px solid #4a1040;color:#7a4060;padding:7px 14px;border-radius:5px;cursor:pointer;font-size:12px;transition:.2s;}
-#sndbtn.on{color:#ec4899;border-color:#7a2060;}
-#stage{position:relative;display:flex;justify-content:center;align-items:center;padding:8px 12px 30px;flex:1;width:100%;}
-#stage::after{content:'';position:absolute;bottom:18px;left:50%;transform:translateX(-50%);width:90%;height:24px;max-width:1400px;background:radial-gradient(ellipse,rgba(236,72,153,.12) 0%,transparent 70%);pointer-events:none;border-radius:50%;}
-#bookwrap{position:relative;width:min(98vw,1400px);height:calc(100vh - 145px);min-height:440px;max-height:900px;perspective:2200px;user-select:none;}
-#bookwrap::before{content:'';position:absolute;bottom:-12px;left:5%;right:5%;height:20px;background:rgba(0,0,0,.6);filter:blur(12px);border-radius:50%;z-index:-1;}
-#openbook{position:absolute;inset:0;display:flex;border-radius:3px;box-shadow:-8px 0 20px rgba(0,0,0,.6),8px 0 20px rgba(0,0,0,.6),0 0 50px rgba(0,0,0,.4);}
-#spine{width:8px;flex-shrink:0;z-index:5;background:linear-gradient(180deg,#1a0410,#4a0830,#1a0410);box-shadow:-2px 0 6px rgba(0,0,0,.5),2px 0 6px rgba(0,0,0,.5);}
-.half{width:calc(50% - 4px);height:100%;position:relative;overflow:hidden;background:#faf6ed;}
-.half.left{border-radius:3px 0 0 3px;box-shadow:inset -4px 0 12px rgba(0,0,0,.12);}
-.half.right{border-radius:0 3px 3px 0;box-shadow:inset 4px 0 12px rgba(0,0,0,.12);}
-.half.left::before{content:'';position:absolute;top:0;right:0;bottom:0;width:3px;background:linear-gradient(90deg,transparent,rgba(0,0,0,.08));z-index:2;}
-.half.right::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:linear-gradient(270deg,transparent,rgba(0,0,0,.08));z-index:2;}
-.half-inner{position:absolute;inset:0;overflow:hidden;}
-#flipper{position:absolute;top:0;width:calc(50% - 4px);height:100%;transform-style:preserve-3d;transition:transform 0.65s cubic-bezier(.4,0,.2,1);z-index:20;pointer-events:none;}
-#flipper.right-start{right:0;transform-origin:left center;}
-#flipper.left-start{left:0;transform-origin:right center;}
-#flipper.flipping-forward{transform:perspective(1800px) rotateY(-180deg);}
-#flipper.flipping-backward{transform:perspective(1800px) rotateY(180deg);}
-.flip-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;}
-.flip-back-face{transform:rotateY(180deg);}
-.pdata{display:none;}
+html,body{height:100%}
+body{background:radial-gradient(ellipse at 50% 0%,#1a0820 0%,#06040a 100%);min-height:100vh;display:flex;flex-direction:column;align-items:center;font-family:'Lato',sans-serif;overflow-x:hidden}
+#topbar{width:100%;background:#080410;border-bottom:1px solid #2a1040;display:flex;align-items:center;justify-content:space-between;padding:10px 24px;flex-shrink:0}
+#topbar a{color:#ec4899;text-decoration:none;font-size:12.5px;font-weight:700}
+.back-btn{display:flex;align-items:center;gap:6px;background:rgba(236,72,153,.1);border:1px solid rgba(236,72,153,.3);padding:6px 14px;border-radius:5px;transition:.2s}
+.back-btn:hover{background:rgba(236,72,153,.2)}
+#topbar .center{color:#4a2060;font-size:11px;letter-spacing:1px;text-transform:uppercase}
+#controls{display:flex;align-items:center;gap:14px;padding:16px 0 10px;flex-shrink:0}
+.fbtn{background:linear-gradient(135deg,#3a0830,#601050);border:1px solid #ec4899;color:#f9a8d4;padding:9px 22px;border-radius:6px;cursor:pointer;font-family:'Lato',sans-serif;font-weight:700;font-size:13px;letter-spacing:.5px;transition:.2s;user-select:none}
+.fbtn:hover{background:linear-gradient(135deg,#601050,#801870);color:#fff}
+.fbtn:disabled{opacity:.4;cursor:default}
+#pginfo{color:#8a5080;font-size:12px;letter-spacing:.5px;background:rgba(0,0,0,.3);padding:7px 18px;border-radius:5px;border:1px solid #2a1040;min-width:120px;text-align:center}
+#sndbtn{background:rgba(236,72,153,.08);border:1px solid #4a1040;color:#7a4060;padding:7px 14px;border-radius:5px;cursor:pointer;font-size:12px;transition:.2s}
+#sndbtn.on{color:#ec4899;border-color:#7a2060}
+#stage{position:relative;display:flex;justify-content:center;align-items:center;padding:8px 12px 30px;flex:1;width:100%}
+#stage::after{content:'';position:absolute;bottom:18px;left:50%;transform:translateX(-50%);width:90%;height:24px;max-width:1400px;background:radial-gradient(ellipse,rgba(236,72,153,.12) 0%,transparent 70%);pointer-events:none;border-radius:50%}
+#bookwrap{position:relative;width:min(98vw,1400px);height:calc(100vh - 145px);min-height:440px;max-height:900px;perspective:2200px;user-select:none}
+#bookwrap::before{content:'';position:absolute;bottom:-12px;left:5%;right:5%;height:20px;background:rgba(0,0,0,.6);filter:blur(12px);border-radius:50%;z-index:-1}
+#openbook{position:absolute;inset:0;display:flex;border-radius:3px;box-shadow:-8px 0 20px rgba(0,0,0,.6),8px 0 20px rgba(0,0,0,.6),0 0 50px rgba(0,0,0,.4)}
+#spine{width:8px;flex-shrink:0;z-index:5;background:linear-gradient(180deg,#1a0410,#4a0830,#1a0410);box-shadow:-2px 0 6px rgba(0,0,0,.5),2px 0 6px rgba(0,0,0,.5)}
+.half{width:calc(50% - 4px);height:100%;position:relative;overflow:hidden;background:#faf6ed}
+.half.left{border-radius:3px 0 0 3px;box-shadow:inset -4px 0 12px rgba(0,0,0,.12)}
+.half.right{border-radius:0 3px 3px 0;box-shadow:inset 4px 0 12px rgba(0,0,0,.12)}
+.half.left::before{content:'';position:absolute;top:0;right:0;bottom:0;width:3px;background:linear-gradient(90deg,transparent,rgba(0,0,0,.08));z-index:2}
+.half.right::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:linear-gradient(270deg,transparent,rgba(0,0,0,.08));z-index:2}
+.half-inner{position:absolute;inset:0;overflow:hidden}
+#flipper{position:absolute;top:0;width:calc(50% - 4px);height:100%;transform-style:preserve-3d;transition:transform 0.65s cubic-bezier(.4,0,.2,1);z-index:20;pointer-events:none}
+#flipper.right-start{right:0;transform-origin:left center}
+#flipper.left-start{left:0;transform-origin:right center}
+#flipper.flipping-forward{transform:perspective(1800px) rotateY(-180deg)}
+#flipper.flipping-backward{transform:perspective(1800px) rotateY(180deg)}
+.flip-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden}
+.flip-back-face{transform:rotateY(180deg)}
+.pdata{display:none}
 
-/* ══ PAGE STYLES ══ */
-.pg{width:100%;height:100%;background:#faf6ed;background-image:repeating-linear-gradient(transparent 0px,transparent 30px,rgba(160,140,100,.06) 30px,rgba(160,140,100,.06) 31px);padding:clamp(18px,2.5vh,36px) clamp(18px,2.5vw,40px) clamp(18px,2.5vh,28px);font-family:'Merriweather',Georgia,serif;color:#1a1208;overflow:hidden;position:relative;box-sizing:border-box;display:flex;flex-direction:column;}
-.pg .rh{order:-2;font-family:'Lato',sans-serif;font-size:clamp(9px,0.8vw,12px);color:#9a8060;text-transform:uppercase;letter-spacing:1.5px;border-bottom:none;padding-bottom:3px;margin-bottom:0;display:flex;justify-content:space-between;flex-shrink:0;}
-.pg .rf{order:-1;position:static;font-family:'Lato',sans-serif;font-size:clamp(9px,0.8vw,12px);color:#9a8060;border-top:none;border-bottom:1px solid #d4bc90;padding-top:0;padding-bottom:7px;margin-bottom:14px;display:flex;justify-content:space-between;flex-shrink:0;}
-.pg .eye{font-family:'Lato',sans-serif;font-size:clamp(10px,0.9vw,13px);font-weight:900;color:#9d174d;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
-.pg .cnum{font-family:'Lato',sans-serif;font-size:clamp(28px,3.5vw,50px);font-weight:900;color:#ec4899;line-height:1;}
-.pg .ctitle{font-size:clamp(20px,2.5vw,34px);font-weight:700;color:#0a0e1a;line-height:1.2;margin:4px 0;font-family:'Lato',sans-serif;}
-.pg .crule{border:none;border-top:2px solid #ec4899;margin:10px 0;width:60px;}
-.pg .csub{font-size:clamp(12px,1.1vw,15px);color:#7a6040;font-style:italic;margin-bottom:14px;line-height:1.5;}
-.pg h2{font-family:'Lato',sans-serif;font-size:clamp(13px,1.3vw,18px);font-weight:900;color:#1a0e00;margin:16px 0 8px;text-transform:uppercase;letter-spacing:.6px;border-left:4px solid #ec4899;padding-left:10px;}
-.pg h3{font-family:'Lato',sans-serif;font-size:clamp(12px,1.2vw,16px);font-weight:700;color:#2a1800;margin:12px 0 6px;}
-.pg p{font-size:clamp(12px,1.1vw,16px);line-height:1.85;color:#1e1408;margin-bottom:10px;text-align:justify;hyphens:auto;}
-.pg ul,.pg ol{padding-left:20px;margin-bottom:10px;}
-.pg li{font-size:clamp(11.5px,1.05vw,15px);line-height:1.75;color:#1e1408;margin-bottom:4px;}
-.pg li b,.pg p b,.pg strong{color:#0a0800;font-family:'Lato',sans-serif;}
-.pg .note{border-left:4px solid #ec4899;background:#fdf2f8;padding:clamp(8px,1vh,14px) clamp(10px,1.2vw,18px);margin:12px 0;border-radius:0 5px 5px 0;}
-.pg .note.tip{border-color:#7c3aed;background:#f5f3ff;}
-.pg .note.warn{border-color:#f97316;background:#fff7ed;}
-.pg .nlbl{font-family:'Lato',sans-serif;font-size:clamp(9px,0.85vw,12px);font-weight:900;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px;color:#9d174d;}
-.pg .note.tip .nlbl{color:#7c3aed;}
-.pg .note.warn .nlbl{color:#c2410c;}
-.pg .note p{font-size:clamp(11.5px,1vw,14px);margin:0;text-align:left;color:#1a0e00;}
-.pg table{width:100%;border-collapse:collapse;font-size:clamp(10.5px,1vw,13.5px);font-family:'Lato',sans-serif;margin:10px 0;}
-.pg thead th{background:#1a0828;color:#f9a8d4;padding:clamp(5px,0.7vh,9px) clamp(6px,0.8vw,12px);text-align:left;font-size:clamp(9px,0.85vw,12px);font-weight:700;text-transform:uppercase;letter-spacing:.5px;}
-.pg tbody tr:nth-child(odd){background:#f5efe0;}
-.pg tbody tr:nth-child(even){background:#ece6d6;}
-.pg tbody td{padding:clamp(5px,0.7vh,9px) clamp(6px,0.8vw,12px);color:#1a1000;border-bottom:.5px solid #d4bc90;vertical-align:top;line-height:1.4;}
-.pg .orn{text-align:center;color:#c8b080;font-size:14px;margin:10px 0;letter-spacing:6px;}
-/* TOOL CARDS */
-.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0;}
-.tool-card{background:#1a0828;border:1px solid rgba(236,72,153,.25);border-radius:6px;padding:8px 10px;}
-.tool-card .tn{font-family:'Lato',sans-serif;font-size:clamp(10px,1vw,13px);font-weight:900;color:#f9a8d4;margin-bottom:3px;}
-.tool-card .tc{font-size:clamp(9px,0.85vw,12px);color:#94a3b8;line-height:1.4;}
-.tool-card .tf{font-size:clamp(8px,0.75vw,10px);color:#ec4899;font-weight:700;margin-top:3px;}
-/* COVER */
-.pg.cover{background:#06040a;background-image:none;color:#fff;padding:0;overflow:hidden;display:flex;flex-direction:column;}
-.cover-stripe{height:6px;flex-shrink:0;background:linear-gradient(90deg,#ec4899,#a78bfa,#ec4899);}
-.cover-panel{background:#120820;flex-shrink:0;padding:clamp(14px,2.5vh,28px) clamp(16px,2.5vw,30px) clamp(10px,1.5vh,20px);position:relative;overflow:hidden;}
-.cover-panel::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent 0px,transparent 26px,rgba(236,72,153,.04) 26px,rgba(236,72,153,.04) 27px);pointer-events:none;}
-.cover-panel-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:clamp(10px,1.8vh,20px);position:relative;}
-.cover-aye{background:#0a1628;border:1.5px solid #ec4899;border-radius:8px;padding:clamp(8px,1.2vh,14px) clamp(14px,2vw,22px);text-align:center;}
-.cover-aye .aye{font-size:clamp(22px,3.2vw,38px);font-weight:900;color:#00d4ff;letter-spacing:3px;line-height:1;}
-.cover-aye .hub{font-size:clamp(7px,0.8vw,11px);color:#94a3b8;letter-spacing:3px;text-transform:uppercase;}
-.cover-tag{background:rgba(236,72,153,.12);border:1px solid #ec4899;border-radius:6px;padding:clamp(5px,0.8vh,10px) clamp(10px,1.5vw,18px);text-align:center;}
-.cover-tag .ct{font-family:'Lato',sans-serif;font-size:clamp(9px,1vw,13px);font-weight:900;color:#ec4899;letter-spacing:1px;display:block;}
-.cover-tag .cs{font-family:'Lato',sans-serif;font-size:clamp(7px,0.75vw,10px);color:#94a3b8;letter-spacing:.5px;}
-.cover-title{font-size:clamp(22px,3.5vw,44px);font-weight:900;color:#ffffff;line-height:1.15;font-family:'Lato',sans-serif;margin-bottom:2px;position:relative;}
-.cover-acc{color:#ec4899;display:block;}
-.cover-rule{border:none;border-top:1.5px solid #ec4899;margin:clamp(6px,1vh,12px) 0;width:100%;}
-.cover-desc{font-size:clamp(10px,1vw,14px);color:#e2e8f0;line-height:1.75;font-family:'Lato',sans-serif;position:relative;}
-.cover-body{flex:1;padding:clamp(10px,2vh,22px) clamp(16px,2.5vw,30px);display:flex;flex-direction:column;align-items:center;justify-content:center;}
-.cover-stats{display:flex;gap:clamp(16px,3vw,36px);margin-bottom:clamp(10px,1.8vh,20px);}
-.cover-stat .n{font-size:clamp(20px,2.8vw,36px);font-weight:900;color:#f9a8d4;font-family:'Lato',sans-serif;text-align:center;}
-.cover-stat .l{font-size:clamp(8px,0.8vw,11px);color:#94a3b8;text-transform:uppercase;letter-spacing:1px;font-family:'Lato',sans-serif;text-align:center;}
-.cover-free{background:#22c55e;color:#ffffff;font-weight:900;font-size:clamp(11px,1.1vw,14px);padding:7px 24px;border-radius:18px;letter-spacing:1px;font-family:'Lato',sans-serif;margin-bottom:clamp(8px,1.5vh,16px);}
-.cover-auth{background:#1a0828;border-radius:6px;padding:clamp(8px,1.2vh,14px) clamp(12px,2vw,20px);display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;}
-.cover-auth-name{font-family:'Lato',sans-serif;font-size:clamp(11px,1.1vw,15px);font-weight:700;color:#ec4899;}
-.cover-auth-role{font-family:'Lato',sans-serif;font-size:clamp(9px,0.85vw,12px);color:#94a3b8;margin-top:2px;}
-.cover-foot{background:#0a1628;padding:clamp(7px,1vh,12px);text-align:center;font-family:'Lato',sans-serif;flex-shrink:0;}
-.cover-foot-main{font-size:clamp(9px,0.9vw,12px);color:#ec4899;font-weight:700;}
-.cover-foot-sub{font-size:clamp(7.5px,0.7vw,10px);color:#475569;margin-top:2px;}
-.pg.backcover{background:linear-gradient(160deg,#06040a 0%,#120820 100%);background-image:none;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(8px,1.5vh,16px);padding:clamp(20px,3vh,36px) clamp(20px,3vw,36px);}
-.bc-logo{color:#f9a8d4;font-size:clamp(18px,2.5vw,30px);font-weight:900;font-family:'Lato',sans-serif;letter-spacing:2px;}
-.bc-rule{width:80px;height:1px;background:#ec4899;}
-.bc-tag{color:#8a8090;font-size:clamp(11px,1vw,14px);font-style:italic;text-align:center;line-height:1.7;font-family:'Merriweather',serif;}
-.bc-item{background:rgba(236,72,153,.08);border:1px solid rgba(236,72,153,.2);padding:clamp(7px,1vh,12px) clamp(10px,1.2vw,16px);border-radius:4px;font-size:clamp(11px,1vw,14px);color:#f9a8d4;font-family:'Lato',sans-serif;width:100%;}
-.bc-item span{color:#6a4060;font-size:clamp(9px,0.8vw,12px);}
-.bc-copy{font-size:clamp(9px,0.8vw,11px);color:#3a2040;text-align:center;font-family:'Lato',sans-serif;margin-top:4px;}
-.pg .trow{display:flex;align-items:baseline;padding:clamp(5px,0.8vh,9px) 0;border-bottom:.5px dotted #c8b080;}
-.pg .tnum{font-family:'Lato',sans-serif;font-weight:700;color:#ec4899;font-size:clamp(11px,1.1vw,15px);width:30px;flex-shrink:0;}
-.pg .tname{font-family:'Merriweather',serif;font-size:clamp(11px,1.1vw,15px);color:#1a1208;flex:1;}
-.pg .tsub{font-size:clamp(9.5px,0.9vw,12px);color:#8a7060;display:block;font-style:italic;}
-.pg .tpg{font-family:'Lato',sans-serif;font-size:clamp(10px,0.9vw,13px);color:#9a8060;width:22px;text-align:right;flex-shrink:0;}
-.blank{background:linear-gradient(180deg,#f0e8f8,#e8d8f0);display:flex;align-items:center;justify-content:center;width:100%;height:100%;}
-.blank-inner{text-align:center;color:#b080c0;font-family:'Lato',sans-serif;}
-.blank-inner .b-logo{font-size:clamp(18px,2.5vw,32px);font-weight:900;letter-spacing:2px;margin-bottom:6px;}
-.blank-inner .b-sub{font-size:clamp(9px,0.8vw,11px);letter-spacing:1px;text-transform:uppercase;}
+/* ══ PAGE LAYOUT ══ */
+.pg{width:100%;height:100%;background:#faf6ed;background-image:repeating-linear-gradient(transparent 0px,transparent 30px,rgba(160,140,100,.06) 30px,rgba(160,140,100,.06) 31px);padding:clamp(18px,2.5vh,36px) clamp(18px,2.5vw,40px) clamp(18px,2.5vh,28px);font-family:'Merriweather',Georgia,serif;color:#1a1208;overflow:hidden;position:relative;box-sizing:border-box;display:flex;flex-direction:column}
+.pg .rh{order:-2;font-family:'Lato',sans-serif;font-size:clamp(9px,0.8vw,12px);color:#9a8060;text-transform:uppercase;letter-spacing:1.5px;border-bottom:none;padding-bottom:3px;margin-bottom:0;display:flex;justify-content:space-between;flex-shrink:0}
+.pg .rf{order:-1;position:static;font-family:'Lato',sans-serif;font-size:clamp(9px,0.8vw,12px);color:#9a8060;border-top:none;border-bottom:1px solid #d4bc90;padding-top:0;padding-bottom:7px;margin-bottom:12px;display:flex;justify-content:space-between;flex-shrink:0}
+
+/* ══ TYPOGRAPHY ══ */
+.pg .eye{font-family:'Lato',sans-serif;font-size:clamp(9px,0.9vw,12px);font-weight:900;color:#9d174d;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px}
+.pg .cnum{font-family:'Lato',sans-serif;font-size:clamp(24px,3vw,44px);font-weight:900;color:#ec4899;line-height:1}
+.pg .ctitle{font-size:clamp(18px,2.2vw,30px);font-weight:700;color:#0a0e1a;line-height:1.2;margin:3px 0;font-family:'Lato',sans-serif}
+.pg .crule{border:none;border-top:2px solid #ec4899;margin:8px 0;width:60px}
+.pg .csub{font-size:clamp(11px,1vw,14px);color:#7a6040;font-style:italic;margin-bottom:10px;line-height:1.5}
+.pg h2{font-family:'Lato',sans-serif;font-size:clamp(11px,1.1vw,15px);font-weight:900;color:#1a0e00;margin:12px 0 6px;text-transform:uppercase;letter-spacing:.6px;border-left:4px solid #ec4899;padding-left:8px}
+.pg h3{font-family:'Lato',sans-serif;font-size:clamp(11px,1.1vw,14px);font-weight:700;color:#2a1800;margin:8px 0 4px}
+.pg p{font-size:clamp(11.5px,1vw,14.5px);line-height:1.8;color:#1e1408;margin-bottom:8px;text-align:justify;hyphens:auto}
+.pg ul,.pg ol{padding-left:18px;margin-bottom:8px}
+.pg li{font-size:clamp(11px,1vw,14px);line-height:1.7;color:#1e1408;margin-bottom:3px}
+.pg li b,.pg p b,.pg strong{color:#0a0800;font-family:'Lato',sans-serif}
+
+/* ══ CALLOUT NOTES ══ */
+.pg .note{border-left:4px solid #ec4899;background:#fdf2f8;padding:clamp(7px,1vh,12px) clamp(9px,1.1vw,16px);margin:10px 0;border-radius:0 5px 5px 0}
+.pg .note.tip{border-color:#7c3aed;background:#f5f3ff}
+.pg .note.warn{border-color:#f97316;background:#fff7ed}
+.pg .nlbl{font-family:'Lato',sans-serif;font-size:clamp(8px,0.8vw,11px);font-weight:900;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;color:#9d174d}
+.pg .note.tip .nlbl{color:#7c3aed}
+.pg .note.warn .nlbl{color:#c2410c}
+.pg .note p{font-size:clamp(10.5px,0.95vw,13.5px);margin:0;text-align:left;color:#1a0e00}
+
+/* ══ TABLES ══ */
+.pg table{width:100%;border-collapse:collapse;font-size:clamp(10px,0.95vw,13px);font-family:'Lato',sans-serif;margin:8px 0}
+.pg thead th{background:#1a0828;color:#f9a8d4;padding:clamp(4px,0.6vh,8px) clamp(5px,0.7vw,10px);text-align:left;font-size:clamp(8.5px,0.8vw,11px);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.pg tbody tr:nth-child(odd){background:#f5efe0}
+.pg tbody tr:nth-child(even){background:#ece6d6}
+.pg tbody td{padding:clamp(4px,0.6vh,8px) clamp(5px,0.7vw,10px);color:#1a1000;border-bottom:.5px solid #d4bc90;vertical-align:top;line-height:1.4}
+
+/* ══ EXPANDED TOOL CARDS ══ */
+.etool{background:#1a0828;border:1px solid rgba(236,72,153,.25);border-radius:6px;margin:8px 0;overflow:hidden}
+.et-head{background:rgba(236,72,153,.12);padding:6px 10px;display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.et-name{font-family:'Lato',sans-serif;font-weight:900;font-size:clamp(10.5px,1vw,13.5px);color:#f9a8d4}
+.et-url{font-family:'Lato',sans-serif;font-size:clamp(8px,0.75vw,10px);color:#ec4899}
+.et-body{padding:6px 10px;display:grid;grid-template-columns:52px 1fr;gap:1px 8px}
+.et-k{font-family:'Lato',sans-serif;font-size:clamp(7.5px,0.72vw,9.5px);font-weight:700;color:#ec4899;text-transform:uppercase;letter-spacing:.5px;padding:3px 0;align-self:start;padding-top:4px}
+.et-v{font-family:'Lato',sans-serif;font-size:clamp(10px,0.9vw,12.5px);color:#cbd5e1;line-height:1.45;padding:3px 0;border-bottom:.5px solid rgba(236,72,153,.08)}
+.et-v:last-child{border-bottom:none}
+.et-free{font-family:'Lato',sans-serif;font-size:clamp(8px,0.75vw,10px);color:#22c55e;font-weight:700;margin-left:6px}
+
+/* ══ COMPACT TOOL GRID ══ */
+.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+.tool-card{background:#1a0828;border:1px solid rgba(236,72,153,.25);border-radius:6px;padding:8px 10px}
+.tool-card .tn{font-family:'Lato',sans-serif;font-size:clamp(10px,1vw,13px);font-weight:900;color:#f9a8d4;margin-bottom:2px}
+.tool-card .tc{font-size:clamp(9px,0.85vw,11.5px);color:#94a3b8;line-height:1.4}
+.tool-card .tf{font-size:clamp(7.5px,0.72vw,10px);color:#22c55e;font-weight:700;margin-top:3px}
+.tool-card .tw{font-size:clamp(8.5px,0.8vw,11px);color:#a78bfa;margin-top:2px;font-style:italic}
+.tool-card .tu{font-size:clamp(8.5px,0.8vw,11px);color:#f9a8d4;margin-top:2px}
+
+/* ══ TOC ══ */
+.pg .trow{display:flex;align-items:baseline;padding:clamp(4px,0.7vh,8px) 0;border-bottom:.5px dotted #c8b080}
+.pg .tnum{font-family:'Lato',sans-serif;font-weight:700;color:#ec4899;font-size:clamp(10px,1vw,13px);width:28px;flex-shrink:0}
+.pg .tname{font-family:'Merriweather',serif;font-size:clamp(10px,1vw,13px);color:#1a1208;flex:1}
+.pg .tsub{font-size:clamp(8.5px,0.8vw,11px);color:#8a7060;display:block;font-style:italic}
+.pg .tpg{font-family:'Lato',sans-serif;font-size:clamp(9px,0.85vw,12px);color:#9a8060;width:20px;text-align:right;flex-shrink:0}
+.pg .orn{text-align:center;color:#c8b080;font-size:12px;margin:8px 0;letter-spacing:4px}
+
+/* ══ COVER & BACK ══ */
+.pg.cover{background:#06040a;background-image:none;color:#fff;padding:0;overflow:hidden;display:flex;flex-direction:column}
+.cover-stripe{height:5px;flex-shrink:0;background:linear-gradient(90deg,#ec4899,#a78bfa,#ec4899)}
+.cover-panel{background:#120820;flex-shrink:0;padding:clamp(12px,2vh,24px) clamp(14px,2.2vw,26px) clamp(8px,1.2vh,16px);position:relative;overflow:hidden}
+.cover-panel::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent 0px,transparent 26px,rgba(236,72,153,.04) 26px,rgba(236,72,153,.04) 27px);pointer-events:none}
+.cover-panel-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:clamp(8px,1.5vh,18px);position:relative}
+.cover-aye{background:#0a1628;border:1.5px solid #ec4899;border-radius:8px;padding:clamp(6px,1vh,12px) clamp(12px,1.8vw,20px);text-align:center}
+.cover-aye .aye{font-size:clamp(20px,2.8vw,34px);font-weight:900;color:#00d4ff;letter-spacing:3px;line-height:1}
+.cover-aye .hub{font-size:clamp(6.5px,0.75vw,10px);color:#94a3b8;letter-spacing:3px;text-transform:uppercase}
+.cover-tag{background:rgba(236,72,153,.12);border:1px solid #ec4899;border-radius:6px;padding:clamp(4px,0.7vh,8px) clamp(8px,1.2vw,16px);text-align:center}
+.cover-tag .ct{font-family:'Lato',sans-serif;font-size:clamp(8px,0.9vw,12px);font-weight:900;color:#ec4899;letter-spacing:1px;display:block}
+.cover-tag .cs{font-family:'Lato',sans-serif;font-size:clamp(6.5px,0.7vw,9px);color:#94a3b8;letter-spacing:.5px}
+.cover-title{font-size:clamp(20px,3vw,40px);font-weight:900;color:#ffffff;line-height:1.15;font-family:'Lato',sans-serif;margin-bottom:2px;position:relative}
+.cover-acc{color:#ec4899;display:block}
+.cover-rule{border:none;border-top:1.5px solid #ec4899;margin:clamp(5px,0.8vh,10px) 0;width:100%}
+.cover-desc{font-size:clamp(9.5px,0.95vw,13px);color:#e2e8f0;line-height:1.75;font-family:'Lato',sans-serif;position:relative}
+.cover-body{flex:1;padding:clamp(8px,1.5vh,18px) clamp(14px,2.2vw,26px);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.cover-stats{display:flex;gap:clamp(14px,2.5vw,32px);margin-bottom:clamp(8px,1.5vh,18px)}
+.cover-stat .n{font-size:clamp(18px,2.5vw,32px);font-weight:900;color:#f9a8d4;font-family:'Lato',sans-serif;text-align:center}
+.cover-stat .l{font-size:clamp(7.5px,0.75vw,10px);color:#94a3b8;text-transform:uppercase;letter-spacing:1px;font-family:'Lato',sans-serif;text-align:center}
+.cover-free{background:#22c55e;color:#ffffff;font-weight:900;font-size:clamp(10px,1vw,13px);padding:6px 20px;border-radius:16px;letter-spacing:1px;font-family:'Lato',sans-serif;margin-bottom:clamp(6px,1.2vh,14px)}
+.cover-auth{background:#1a0828;border-radius:6px;padding:clamp(7px,1vh,12px) clamp(10px,1.5vw,18px);display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%}
+.cover-auth-name{font-family:'Lato',sans-serif;font-size:clamp(10px,1vw,14px);font-weight:700;color:#ec4899}
+.cover-auth-role{font-family:'Lato',sans-serif;font-size:clamp(8.5px,0.8vw,11px);color:#94a3b8;margin-top:2px}
+.cover-foot{background:#0a1628;padding:clamp(6px,0.9vh,10px);text-align:center;font-family:'Lato',sans-serif;flex-shrink:0}
+.cover-foot-main{font-size:clamp(8.5px,0.85vw,11px);color:#ec4899;font-weight:700}
+.cover-foot-sub{font-size:clamp(7px,0.65vw,9px);color:#475569;margin-top:2px}
+.pg.backcover{background:linear-gradient(160deg,#06040a 0%,#120820 100%);background-image:none;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(7px,1.3vh,14px);padding:clamp(18px,3vh,32px) clamp(18px,2.8vw,32px)}
+.bc-logo{color:#f9a8d4;font-size:clamp(16px,2.2vw,26px);font-weight:900;font-family:'Lato',sans-serif;letter-spacing:2px}
+.bc-rule{width:80px;height:1px;background:#ec4899}
+.bc-tag{color:#8a8090;font-size:clamp(10px,0.95vw,13px);font-style:italic;text-align:center;line-height:1.7;font-family:'Merriweather',serif}
+.bc-item{background:rgba(236,72,153,.08);border:1px solid rgba(236,72,153,.2);padding:clamp(6px,0.9vh,10px) clamp(9px,1.1vw,14px);border-radius:4px;font-size:clamp(10px,0.95vw,13px);color:#f9a8d4;font-family:'Lato',sans-serif;width:100%}
+.bc-item span{color:#6a4060;font-size:clamp(8.5px,0.78vw,11px)}
+.bc-copy{font-size:clamp(8.5px,0.78vw,10px);color:#3a2040;text-align:center;font-family:'Lato',sans-serif;margin-top:2px}
+.blank{background:linear-gradient(180deg,#f0e8f8,#e8d8f0);display:flex;align-items:center;justify-content:center;width:100%;height:100%}
+.blank-inner{text-align:center;color:#b080c0;font-family:'Lato',sans-serif}
+.blank-inner .b-logo{font-size:clamp(16px,2.2vw,28px);font-weight:900;letter-spacing:2px;margin-bottom:5px}
+.blank-inner .b-sub{font-size:clamp(8.5px,0.78vw,10px);letter-spacing:1px;text-transform:uppercase}
+
 @media(max-width:700px){
-  body{overflow-y:auto;}#topbar .center{display:none;}
-  #controls{gap:8px;padding:10px 0 6px;flex-wrap:wrap;justify-content:center;}
-  .fbtn{padding:10px 18px;font-size:15px;}#pginfo{font-size:13px;min-width:100px;}
-  #stage{padding:6px 8px 20px;}
-  #bookwrap{width:calc(100vw - 16px);height:calc(100vh - 160px);min-height:380px;}
-  .half.left,#spine{display:none;}.half.right{width:100% !important;border-radius:4px;}
-  #flipper,#flipper.right-start,#flipper.left-start{width:100% !important;left:0 !important;right:auto !important;transform-origin:center center !important;}
-  #flipper.flipping-forward{transform:scale(0.92) !important;opacity:0;transition:transform 0.35s ease,opacity 0.35s ease !important;}
-  #flipper.flipping-backward{transform:scale(0.92) !important;opacity:0;transition:transform 0.35s ease,opacity 0.35s ease !important;}
-  .pg{padding:18px 16px 42px;}.pg p{font-size:15px;line-height:1.9;}.pg h2{font-size:16px;}
-  .pg table,.pg .tool-grid{font-size:13px;}
-  .tool-grid{grid-template-columns:1fr;}
+  body{overflow-y:auto}
+  #topbar .center{display:none}
+  #controls{gap:8px;padding:10px 0 6px;flex-wrap:wrap;justify-content:center}
+  .fbtn{padding:10px 18px;font-size:15px}
+  #pginfo{font-size:13px;min-width:100px}
+  #stage{padding:6px 8px 20px}
+  #bookwrap{width:calc(100vw - 16px);height:calc(100vh - 160px);min-height:380px}
+  .half.left,#spine{display:none}
+  .half.right{width:100% !important;border-radius:4px}
+  #flipper,#flipper.right-start,#flipper.left-start{width:100% !important;left:0 !important;right:auto !important;transform-origin:center center !important}
+  #flipper.flipping-forward{transform:scale(0.92) !important;opacity:0;transition:transform 0.35s ease,opacity 0.35s ease !important}
+  #flipper.flipping-backward{transform:scale(0.92) !important;opacity:0;transition:transform 0.35s ease,opacity 0.35s ease !important}
+  .pg{padding:16px 14px 30px}
+  .pg p{font-size:14px;line-height:1.85}
+  .pg h2{font-size:14px}
+  .pg table{font-size:12px}
+  .tool-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -160,7 +188,7 @@ body{background:radial-gradient(ellipse at 50% 0%,#1a0820 0%,#06040a 100%);min-h
 </div>
 </div>
 
-<!-- ═══════════════════════════════════ PAGE DATA ═══ -->
+<!-- ═══════════ PAGE DATA ═══════════ -->
 
 <div class="pdata" id="pd-cover">
 <div class="pg cover">
@@ -172,12 +200,12 @@ body{background:radial-gradient(ellipse at 50% 0%,#1a0820 0%,#06040a 100%);min-h
     </div>
     <div class="cover-title">AI Tools for<span class="cover-acc">Engineers</span></div>
     <div class="cover-rule"></div>
-    <div class="cover-desc">ChatGPT &bull; Claude &bull; Gemini &bull; GitHub Copilot &bull; Midjourney<br>Runway &bull; Perplexity &bull; NotebookLM &bull; HeyGen &bull; 50+ Tools</div>
+    <div class="cover-desc">ChatGPT &bull; Claude &bull; Gemini &bull; Copilot &bull; Midjourney &bull; Runway<br>ElevenLabs &bull; HeyGen &bull; NotebookLM &bull; Perplexity &bull; 50+ Tools</div>
   </div>
   <div class="cover-body">
     <div class="cover-stats">
       <div class="cover-stat"><div class="n">50+</div><div class="l">AI Tools</div></div>
-      <div class="cover-stat"><div class="n">30</div><div class="l">Pages</div></div>
+      <div class="cover-stat"><div class="n">23</div><div class="l">Pages</div></div>
       <div class="cover-stat"><div class="n">12</div><div class="l">Chapters</div></div>
       <div class="cover-stat"><div class="n">2026</div><div class="l">Edition</div></div>
     </div>
@@ -196,453 +224,651 @@ body{background:radial-gradient(ellipse at 50% 0%,#1a0820 0%,#06040a 100%);min-h
 <div class="pdata" id="pd-toc">
 <div class="pg">
   <div class="rh"><span>AYE Tech Hub</span><span>AI Tools for Engineers</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span></span></div>
   <div class="eye">Contents</div>
-  <div class="ctitle" style="font-size:clamp(17px,2vw,26px);margin-bottom:6px;">Table of Contents</div>
-  <hr class="crule">
-  <div class="trow"><span class="tnum">01</span><span class="tname">The AI Revolution in Engineering<span class="tsub">Why 2026 is the pivot year for engineering productivity</span></span><span class="tpg">3</span></div>
-  <div class="trow"><span class="tnum">02</span><span class="tname">AI Assistants — Your Knowledge Partner<span class="tsub">ChatGPT, Claude, Gemini, Copilot compared</span></span><span class="tpg">5</span></div>
-  <div class="trow"><span class="tnum">03</span><span class="tname">AI for Design, Modeling &amp; CAD<span class="tsub">Autodesk AI, Fusion Generative, Midjourney for engineering</span></span><span class="tpg">9</span></div>
-  <div class="trow"><span class="tnum">04</span><span class="tname">AI for Calculations &amp; Analysis<span class="tsub">GPT o1, Wolfram, ANSYS AI — solving engineering problems</span></span><span class="tpg">11</span></div>
-  <div class="trow"><span class="tnum">05</span><span class="tname">AI for Writing &amp; Documentation<span class="tsub">Technical reports, proposals, standards compliance</span></span><span class="tpg">13</span></div>
-  <div class="trow"><span class="tnum">06</span><span class="tname">AI for Code &amp; Automation<span class="tsub">GitHub Copilot, Cursor, Claude — coding for non-programmers</span></span><span class="tpg">15</span></div>
-  <div class="trow"><span class="tnum">07</span><span class="tname">AI for Research &amp; Learning<span class="tsub">Perplexity, NotebookLM, Consensus — knowledge tools</span></span><span class="tpg">17</span></div>
-  <div class="trow"><span class="tnum">08</span><span class="tname">AI for Images, Video &amp; Presentation<span class="tsub">Midjourney, Runway, Gamma, Canva AI</span></span><span class="tpg">19</span></div>
-  <div class="trow"><span class="tnum">09</span><span class="tname">AI for Voice &amp; Communication<span class="tsub">ElevenLabs, HeyGen, Adobe Podcast, Otter.ai</span></span><span class="tpg">21</span></div>
-  <div class="trow"><span class="tnum">10</span><span class="tname">Prompt Engineering Masterclass<span class="tsub">The 4-part framework that changes everything</span></span><span class="tpg">23</span></div>
-  <div class="trow"><span class="tnum">11</span><span class="tname">Building Your Engineering AI Workflow<span class="tsub">Daily system: which tool for which task</span></span><span class="tpg">25</span></div>
-  <div class="trow"><span class="tnum">12</span><span class="tname">50+ AI Tools Directory<span class="tsub">Complete reference: category, URL, free tier, best use</span></span><span class="tpg">27</span></div>
-  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>2</span></div>
+  <div class="ctitle" style="font-size:clamp(15px,1.8vw,22px);margin-bottom:4px;">Table of Contents</div><hr class="crule">
+  <div class="trow"><span class="tnum">01</span><span class="tname">The AI Revolution in Engineering<span class="tsub">Milestones, statistics, and why every engineer needs AI now</span></span><span class="tpg">3</span></div>
+  <div class="trow"><span class="tnum">02</span><span class="tname">AI Assistants — The Big Five<span class="tsub">ChatGPT, Claude, Gemini, Copilot, Perplexity — deep comparison</span></span><span class="tpg">5</span></div>
+  <div class="trow"><span class="tnum">03</span><span class="tname">AI for Design &amp; CAD<span class="tsub">Generative design, built-in AI, concept visualisation</span></span><span class="tpg">7</span></div>
+  <div class="trow"><span class="tnum">04</span><span class="tname">AI for Calculations &amp; Analysis<span class="tsub">GPT o3, Wolfram Alpha, MATLAB — accuracy guide</span></span><span class="tpg">8</span></div>
+  <div class="trow"><span class="tnum">05</span><span class="tname">AI for Technical Writing<span class="tsub">Claude, Copilot, Grammarly — documents and reports</span></span><span class="tpg">9</span></div>
+  <div class="trow"><span class="tnum">06</span><span class="tname">AI for Code &amp; Automation<span class="tsub">GitHub Copilot, Cursor, Replit — coding for non-programmers</span></span><span class="tpg">10</span></div>
+  <div class="trow"><span class="tnum">07</span><span class="tname">AI for Research &amp; Learning<span class="tsub">Perplexity, NotebookLM, Consensus, Elicit</span></span><span class="tpg">11</span></div>
+  <div class="trow"><span class="tnum">08</span><span class="tname">AI for Images, Video &amp; Presentations<span class="tsub">Midjourney, Runway, Gamma, Canva AI</span></span><span class="tpg">12</span></div>
+  <div class="trow"><span class="tnum">09</span><span class="tname">AI for Voice &amp; Audio<span class="tsub">ElevenLabs, HeyGen, Otter.ai, Fireflies, Krisp</span></span><span class="tpg">13</span></div>
+  <div class="trow"><span class="tnum">10</span><span class="tname">Prompt Engineering Masterclass<span class="tsub">4-part framework + advanced techniques with real examples</span></span><span class="tpg">15</span></div>
+  <div class="trow"><span class="tnum">11</span><span class="tname">Your Daily AI Workflow<span class="tsub">Free starter stack, paid upgrades, 30-min daily habit</span></span><span class="tpg">17</span></div>
+  <div class="trow"><span class="tnum">12</span><span class="tname">50+ AI Tools Directory<span class="tsub">Complete reference: category, URL, free tier, best use</span></span><span class="tpg">18</span></div>
 </div>
 </div>
 
 <div class="pdata" id="pd-ch1a">
 <div class="pg">
   <div class="rh"><span>Chapter 1</span><span>The AI Revolution in Engineering</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>3</span></div>
   <div class="eye">Chapter 01</div><div class="cnum">I</div>
   <div class="ctitle">The AI Revolution<br>in Engineering</div><hr class="crule">
-  <div class="csub">Why 2026 Is the Pivot Year for Engineering Productivity</div>
-  <p>In 2022, a single AI model — ChatGPT — demonstrated that language models could hold expert-level conversations, write code, explain complex engineering concepts, and draft professional documents. In three years, this technology has evolved from a novelty to a professional necessity. Engineers who have not integrated AI into their workflow are now measurably less productive than those who have.</p>
-  <p>The numbers are striking. A 2024 study by McKinsey found that knowledge workers using AI assistants complete tasks 25–40% faster. GitHub data shows developers using Copilot write code 55% faster. A 2025 survey of 3,000 engineers found that 67% now use at least one AI tool daily. The question is no longer whether engineers should use AI. It is which tools, for which tasks, and how.</p>
-  <h2>What Has Actually Changed Since 2022</h2>
+  <div class="csub">Why Every Engineer Needs AI in 2026</div>
+  <p>In three years, AI moved from a novelty to a professional necessity. Engineers using AI assistants complete tasks 25–40% faster (McKinsey, 2024). GitHub reports developers with Copilot write code 55% faster. A 2025 survey of 3,000 engineers found 67% use at least one AI tool daily. The question is no longer <em>whether</em> to use AI — it is which tools, for which tasks, and how well.</p>
+  <h2>Key Milestones 2022 – 2026</h2>
   <table>
-    <thead><tr><th>Year</th><th>Milestone</th><th>Impact on Engineering</th></tr></thead>
+    <thead><tr><th>Year</th><th>What Happened</th><th>Impact for Engineers</th></tr></thead>
     <tbody>
-      <tr><td><b>2022</b></td><td>ChatGPT released — 100M users in 2 months</td><td>First proof that AI could explain, write, and analyse at professional level</td></tr>
-      <tr><td><b>2023</b></td><td>GPT-4, Claude 2, Gemini Ultra launched</td><td>Long context windows allow pasting full engineering documents for analysis</td></tr>
-      <tr><td><b>2024</b></td><td>GPT-o1 reasoning model, Claude 3 Opus</td><td>Multi-step engineering calculations now accurate enough for professional use</td></tr>
-      <tr><td><b>2025</b></td><td>AI agents, computer use, autonomous workflows</td><td>AI can operate software, browse web, and execute multi-step engineering tasks without human intervention per step</td></tr>
-      <tr><td><b>2026</b></td><td>Multimodal, real-time, integrated into all major software</td><td>AI built into AutoCAD, Revit, MATLAB, SAP — no separate tool needed for many tasks</td></tr>
+      <tr><td><b>2022</b></td><td>ChatGPT reaches 100M users in 60 days</td><td>First proof AI could explain, write, and analyse at professional level</td></tr>
+      <tr><td><b>2023</b></td><td>GPT-4, Claude 2, Gemini Ultra launch; long context windows</td><td>Paste full engineering documents for analysis — 100K+ tokens</td></tr>
+      <tr><td><b>2024</b></td><td>GPT-o1 reasoning model, multimodal AI, image analysis</td><td>Multi-step engineering calculations reliable enough for professional use</td></tr>
+      <tr><td><b>2025</b></td><td>AI agents, computer use, real-time voice, autonomous workflows</td><td>AI operates software, browses web, and executes multi-step tasks unsupervised</td></tr>
+      <tr><td><b>2026</b></td><td>AI native in AutoCAD, Revit, MATLAB, SAP, all major software</td><td>No separate tool needed — AI built into your existing engineering software</td></tr>
     </tbody>
   </table>
-  <div class="note"><div class="nlbl">&#129302; The Engineer's AI Opportunity</div><p>The global shortage of qualified engineers is a structural problem that will not be solved by training alone. AI does not replace engineers — it multiplies what one engineer can accomplish. An engineer using AI effectively produces the output of 2–3 engineers working without it. This is the most powerful productivity tool in engineering history.</p></div>
-  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>3</span></div>
+  <div class="note"><div class="nlbl">&#129302; The Core Opportunity</div><p>AI does not replace engineers — it multiplies output. One AI-augmented engineer produces the work of 2–3 without it. In an industry with a global skill shortage, this is transformative. Engineers who adopt AI early build a career advantage that compounds every year.</p></div>
 </div>
 </div>
 
 <div class="pdata" id="pd-ch1b">
 <div class="pg">
-  <div class="rh"><span>Chapter 1</span><span>The AI Revolution in Engineering</span></div>
+  <div class="rh"><span>Chapter 1 continued</span><span>The AI Revolution in Engineering</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>4</span></div>
   <h2>The Three Types of AI Engineers Use</h2>
-  <p>Not all AI tools do the same thing. Understanding the three main categories helps you choose the right tool for each task — instead of trying to make one tool do everything.</p>
   <div class="tool-grid">
-    <div class="tool-card"><div class="tn">&#129504; Generative AI</div><div class="tc">Produces new content from text prompts — answers, reports, code, images, videos. ChatGPT, Claude, Gemini, Midjourney, Runway.</div><div class="tf">Best for: writing, analysis, design, calculation</div></div>
-    <div class="tool-card"><div class="tn">&#128200; Predictive AI</div><div class="tc">Analyses data patterns to predict outcomes. Used in maintenance (predict failures), quality control (detect defects), simulation (predict behaviour).</div><div class="tf">Best for: maintenance, quality, simulation</div></div>
-    <div class="tool-card"><div class="tn">&#129302; Agentic AI</div><div class="tc">Takes actions autonomously — operates software, browses web, executes multi-step workflows without step-by-step instruction. Claude Computer Use, Devin, AutoGPT.</div><div class="tf">Best for: automation, repetitive multi-step tasks</div></div>
-    <div class="tool-card"><div class="tn">&#127891; Specialised AI</div><div class="tc">AI built specifically for one domain — legal contracts, medical imaging, structural analysis, electrical simulation. Increasingly built into engineering software.</div><div class="tf">Best for: domain-specific expert tasks</div></div>
+    <div class="tool-card"><div class="tn">&#129504; Generative AI</div><div class="tc">Produces new content from text prompts — answers, reports, code, images, videos. The most-used category today.</div><div class="tw">Examples: ChatGPT, Claude, Gemini, Midjourney, Runway</div><div class="tu">&#127919; Best for: writing, analysis, design, calculation, code</div></div>
+    <div class="tool-card"><div class="tn">&#128200; Predictive AI</div><div class="tc">Analyses historical data patterns to predict future outcomes. Used in predictive maintenance, quality control, and simulation.</div><div class="tw">Examples: MATLAB AI, ANSYS Simulation, industrial SCADA analytics</div><div class="tu">&#127919; Best for: maintenance, quality, failure prediction</div></div>
+    <div class="tool-card"><div class="tn">&#129302; Agentic AI</div><div class="tc">Takes autonomous actions — operates software, browses web, executes multi-step workflows without per-step instruction.</div><div class="tw">Examples: Claude Computer Use, OpenAI Operator, AutoGPT, Devin</div><div class="tu">&#127919; Best for: automation, repetitive multi-step tasks</div></div>
+    <div class="tool-card"><div class="tn">&#127891; Specialised AI</div><div class="tc">Built for one domain — legal contracts, medical imaging, structural analysis, electrical simulation. Increasingly embedded in engineering software.</div><div class="tw">Examples: ANSYS AI, Autodesk Forma, Grammarly, Wolfram</div><div class="tu">&#127919; Best for: domain-specific expert tasks</div></div>
   </div>
-  <h2>What AI Cannot Do — Yet</h2>
+  <h2>What AI Cannot Do — Permanent Limits</h2>
   <ul>
-    <li><b>Take professional responsibility:</b> You sign the drawings. AI does not hold an engineering licence or professional indemnity insurance.</li>
-    <li><b>Access real physical reality:</b> AI has no sensors, no site visits, no equipment to touch. It cannot measure or observe — only reason from what you provide.</li>
-    <li><b>Guarantee accuracy on specific data:</b> AI can hallucinate specific numbers, standards references, and product specs. Always verify critical values against primary sources.</li>
-    <li><b>Replace engineering judgement:</b> Knowing <em>when</em> a calculation is wrong, <em>when</em> a design is unsafe, and <em>when</em> a solution is impractical requires experience AI cannot replicate.</li>
-    <li><b>Build relationships:</b> Client trust, team collaboration, site supervision, and stakeholder management remain irreducibly human.</li>
+    <li><b>Take professional responsibility:</b> You sign the drawings. AI holds no engineering licence.</li>
+    <li><b>Access physical reality:</b> AI cannot measure, observe, or visit a site. It reasons from what you provide.</li>
+    <li><b>Guarantee specific data accuracy:</b> AI can confidently hallucinate standards clause numbers, product specs, and prices. Always verify critical values against primary sources.</li>
+    <li><b>Replace engineering judgement:</b> Knowing <em>when</em> a design is unsafe or impractical requires hard-won experience.</li>
+    <li><b>Build relationships:</b> Client trust, team management, and site supervision are irreducibly human.</li>
   </ul>
-  <div class="note tip"><div class="nlbl">&#128161; The Right Mental Model</div><p>Think of AI as a brilliant junior colleague who has read every textbook, speaks 100 languages, works 24 hours per day, never gets tired, and makes confident mistakes. Your job is to direct, review, and validate — not to do everything yourself.</p></div>
-  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>4</span></div>
+  <div class="note tip"><div class="nlbl">&#128161; The Right Mental Model</div><p>AI is a brilliant junior who has read every textbook, works 24/7, and makes confident mistakes. Your job is to direct, review, and validate — not to do everything yourself.</p></div>
 </div>
 </div>
 
 <div class="pdata" id="pd-ch2a">
 <div class="pg">
-  <div class="rh"><span>Chapter 2</span><span>AI Assistants — Your Knowledge Partner</span></div>
+  <div class="rh"><span>Chapter 2</span><span>AI Assistants — The Big Five</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>5</span></div>
   <div class="eye">Chapter 02</div><div class="cnum">II</div>
   <div class="ctitle">AI Assistants</div><hr class="crule">
-  <div class="csub">ChatGPT &bull; Claude &bull; Gemini &bull; Copilot — The Four You Must Know</div>
-  <p>AI assistants are conversational tools that can explain, calculate, write, analyse, and reason across any engineering topic. They are the foundation of every AI-augmented engineering workflow. Each has distinct strengths — knowing which to use when is a professional skill.</p>
-  <table>
-    <thead><tr><th>Tool</th><th>Best For</th><th>Unique Strength</th><th>Free Tier</th></tr></thead>
-    <tbody>
-      <tr><td><b>ChatGPT</b><br><small style="color:#666">OpenAI</small></td><td>Engineering calculations (o1/o3), code writing, broad analysis</td><td>GPT o1/o3 reasoning models — multi-step engineering maths significantly more accurate than standard LLMs</td><td>Yes — GPT-4o mini</td></tr>
-      <tr><td><b>Claude</b><br><small style="color:#666">Anthropic</small></td><td>Long document analysis, technical writing, nuanced reasoning</td><td>200,000 token context — paste entire engineering specs, contracts, or reports for analysis</td><td>Yes — Claude Sonnet</td></tr>
-      <tr><td><b>Gemini</b><br><small style="color:#666">Google</small></td><td>Real-time research, current standards, Google Workspace integration</td><td>Live web search by default — finds today's material prices, latest standards revisions, recent research</td><td>Yes — generous</td></tr>
-      <tr><td><b>Copilot</b><br><small style="color:#666">Microsoft</small></td><td>Office 365 documents, Teams summaries, Excel analysis</td><td>Reads your own emails, files, and Teams messages — "summarise last month of project emails"</td><td>Yes — copilot.microsoft.com</td></tr>
-      <tr><td><b>Perplexity</b><br><small style="color:#666">Perplexity AI</small></td><td>Cited research answers, finding current information</td><td>Every answer includes source citations — critical for verifying engineering information</td><td>Yes — free tier generous</td></tr>
-    </tbody>
-  </table>
-  <div class="note warn"><div class="nlbl">&#9888; Verification is Non-Negotiable</div><p>Every AI assistant will occasionally state incorrect information with complete confidence. Never use AI-generated values for specific standards clause numbers, structural calculations, material specifications, or regulatory requirements without verifying against the original source document.</p></div>
-  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>5</span></div>
+  <div class="csub">The Five Tools Every Engineer Must Know</div>
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">ChatGPT</span><span class="et-url">chat.openai.com<span class="et-free"> · Free (GPT-4o mini) · Plus $20/mo</span></span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">OpenAI's flagship conversational AI. The most widely used AI assistant in the world, with general and specialised models.</span>
+      <span class="et-k">How</span><span class="et-v">Large language model (LLM) trained on vast internet text. The o1/o3 "reasoning" models think step by step before answering — dramatically more accurate on multi-step engineering problems.</span>
+      <span class="et-k">Who</span><span class="et-v">Every engineer. Especially valuable for calculations (use o1/o3 model), writing Python scripts, and generating structured technical tables.</span>
+    </div>
+  </div>
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Claude</span><span class="et-url">claude.ai<span class="et-free"> · Free (Sonnet) · Pro $20/mo</span></span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">Anthropic's AI assistant, widely considered the best for long-form writing, nuanced reasoning, and safe outputs.</span>
+      <span class="et-k">How</span><span class="et-v">Trained with constitutional AI methods emphasising safety and accuracy. Offers a 200,000-token context window — enough to paste an entire project specification, contract, or set of drawings for analysis.</span>
+      <span class="et-k">Who</span><span class="et-v">Engineers who write technical reports, analyse long documents (specs, contracts, RFPs), or need consistently professional writing quality.</span>
+    </div>
+  </div>
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Gemini</span><span class="et-url">gemini.google.com<span class="et-free"> · Free (generous) · Advanced $20/mo</span></span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">Google's AI assistant, natively integrated with Search, Gmail, Docs, Sheets, and Meet. Unique feature: searches the live web by default.</span>
+      <span class="et-k">How</span><span class="et-v">Multimodal model (reads text, images, PDFs, audio). Real-time web access means answers reflect today's information — current material prices, latest standard revisions, recent product specs.</span>
+      <span class="et-k">Who</span><span class="et-v">Engineers who need current information (standards updates, equipment prices, market data) and those working in Google Workspace environments.</span>
+    </div>
+  </div>
 </div>
 </div>
 
 <div class="pdata" id="pd-ch2b">
 <div class="pg">
-  <div class="rh"><span>Chapter 2</span><span>AI Assistants — Your Knowledge Partner</span></div>
-  <h2>How to Get Expert-Level Answers from Any AI</h2>
-  <p>The quality of AI output is directly proportional to the quality of the prompt. These five principles consistently produce professional-quality responses from any AI assistant:</p>
+  <div class="rh"><span>Chapter 2 continued</span><span>AI Assistants — The Big Five</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>6</span></div>
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Microsoft Copilot</span><span class="et-url">copilot.microsoft.com<span class="et-free"> · Free · Pro $30/mo</span></span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">Microsoft's AI built into Word, Excel, PowerPoint, Teams, and Outlook. The only AI that reads your own emails, files, and meeting transcripts by default.</span>
+      <span class="et-k">How</span><span class="et-v">Uses GPT-4 with access to your Microsoft 365 data (with your permission). Can summarise a month of Teams conversations, draft a report from your own project files, or analyse your own Excel data.</span>
+      <span class="et-k">Who</span><span class="et-v">Engineers in organisations using Office 365. Essential for project managers and anyone producing frequent reports, meeting summaries, and client correspondence in Word/Teams.</span>
+    </div>
+  </div>
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Perplexity AI</span><span class="et-url">perplexity.ai<span class="et-free"> · Free (generous) · Pro $20/mo</span></span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">An AI-powered search engine that gives cited answers instead of a list of links. Every response includes numbered source citations.</span>
+      <span class="et-k">How</span><span class="et-v">Searches the web in real time, reads multiple sources, synthesises them into a direct answer with inline citations. Unlike ChatGPT, it does not have a training data cutoff for factual questions.</span>
+      <span class="et-k">Who</span><span class="et-v">Engineers researching standards, specifications, product data, and technical papers. Use it whenever you need a cited, verifiable answer rather than an AI opinion.</span>
+    </div>
+  </div>
+
+  <h2>Which Tool to Use When</h2>
   <table>
-    <thead><tr><th>Principle</th><th>How to Apply It</th><th>Example</th></tr></thead>
+    <thead><tr><th>Task</th><th>Best Tool</th><th>Why</th></tr></thead>
     <tbody>
-      <tr><td><b>Assign a role</b></td><td>Start with "You are a senior [discipline] engineer with 15 years of experience in [specific context]"</td><td>"You are a senior MEP engineer specialising in hot climates and off-grid systems…"</td></tr>
-      <tr><td><b>State the task precisely</b></td><td>Be specific about what output you need — not "explain PLC" but "explain the difference between FC and FB in Siemens TIA Portal with an example"</td><td>"Calculate the chilled water pipe sizes for the following system configuration…"</td></tr>
-      <tr><td><b>Provide full context</b></td><td>Give all relevant constraints: location, standards applicable, budget limits, client requirements, existing conditions</td><td>"Building in Addis Ababa, Ethiopia. ASHRAE climate zone 1B. Cooling load 280 kW. Primary-secondary system…"</td></tr>
-      <tr><td><b>Specify the format</b></td><td>Tell AI exactly what format you want: table, numbered list, code, paragraph, executive summary</td><td>"Present your answer as a table with columns: Component, Size, Design Flow, Velocity, Pressure Drop"</td></tr>
-      <tr><td><b>Ask for reasoning</b></td><td>Add "Show your reasoning step by step and flag any assumptions" for calculations and technical decisions</td><td>"Explain your calculation step by step and flag any assumptions you make about soil conditions"</td></tr>
+      <tr><td>Engineering calculation</td><td>ChatGPT o3</td><td>Reasoning model — step-by-step maths</td></tr>
+      <tr><td>Write / edit a technical report</td><td>Claude</td><td>Best long-form writing quality</td></tr>
+      <tr><td>Research current standards</td><td>Perplexity</td><td>Cited, live-web answers</td></tr>
+      <tr><td>Analyse a large document</td><td>Claude (200K context)</td><td>Paste full document, ask questions</td></tr>
+      <tr><td>Office 365 document tasks</td><td>Copilot</td><td>Reads your own files and emails</td></tr>
     </tbody>
   </table>
-  <h2>Real Engineering Prompt Examples</h2>
-  <div class="note"><div class="nlbl">&#128203; Solar sizing (for ChatGPT o1)</div><p>"You are a solar engineer. I need an off-grid system for a clinic in Tigray, Ethiopia: 8 kWh/day load, 6.0 PSH, LiFePO4 batteries, 2-day autonomy, 48V system. Calculate panel kWp, battery bank Ah, MPPT size, and cable size for battery-to-inverter. Show all steps."</p></div>
-  <div class="note tip"><div class="nlbl">&#128203; Document analysis (for Claude)</div><p>"I am pasting a 40-page MEP specification. Extract: (1) all hot water system requirements, (2) any contradictions between sections, (3) items that differ from BS EN 806. [paste document]"</p></div>
-  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>6</span></div>
 </div>
 </div>
 
 <div class="pdata" id="pd-ch3">
 <div class="pg">
-  <div class="rh"><span>Chapter 3</span><span>AI for Design, Modeling &amp; CAD</span></div>
+  <div class="rh"><span>Chapter 3</span><span>AI for Design &amp; CAD</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>7</span></div>
   <div class="eye">Chapter 03</div><div class="cnum">III</div>
   <div class="ctitle">AI for Design<br>&amp; CAD</div><hr class="crule">
-  <div class="csub">Generative Design &bull; AI-Assisted Drafting &bull; Concept Visualisation</div>
-  <p>AI is now embedded directly in the most-used engineering design software — Autodesk products, SOLIDWORKS, Revit, and ANSYS all include AI features in their 2025–2026 versions. Engineers no longer need to learn separate AI tools for design work.</p>
-  <h2>AI Built Into Engineering Design Software</h2>
-  <table>
-    <thead><tr><th>Software</th><th>AI Feature</th><th>What It Does</th></tr></thead>
-    <tbody>
-      <tr><td><b>Autodesk Fusion</b></td><td>Generative Design</td><td>Input constraints (loads, materials, manufacturing method, cost limit) → AI generates dozens of optimised design alternatives. Routinely produces lighter, stronger designs than traditional methods.</td></tr>
-      <tr><td><b>AutoCAD 2026</b></td><td>AI-assisted drafting</td><td>Smart Block recommendations, automatic layer detection, drawing completion suggestions based on context</td></tr>
-      <tr><td><b>Revit 2026</b></td><td>Forma AI integration</td><td>Analyses building orientation, wind patterns, and solar exposure to suggest optimal building form and orientation in early design stage</td></tr>
-      <tr><td><b>ANSYS</b></td><td>AI surrogate models</td><td>Trains on simulation results to create fast approximation models — early-design CFD/FEA in minutes instead of hours</td></tr>
-      <tr><td><b>SOLIDWORKS</b></td><td>Topology optimisation + AI</td><td>AI-guided material removal to reduce weight while maintaining structural requirements</td></tr>
-    </tbody>
-  </table>
-  <h2>Using Midjourney for Engineering Concept Visualisation</h2>
-  <p>Midjourney (midjourney.com) generates photorealistic concept images from text descriptions. Engineers use it for client presentations, architectural renders, facility visualisations, and early concept exploration — producing professional-quality images in seconds without a graphic designer.</p>
-  <div class="note"><div class="nlbl">&#127775; Example Midjourney Prompt for Engineering</div><p>"Photorealistic architectural render of a modern industrial solar power plant in highland Ethiopia, 5,000 kWp panel array, equipment building, control room, access road, golden hour lighting, aerial perspective, 4K, cinematic"</p></div>
-  <p>For engineering diagrams, system schematics, and technical illustrations, <b>ChatGPT with DALL-E 3</b> or <b>Adobe Firefly</b> produces cleaner, more technically accurate results than Midjourney's photorealistic style.</p>
-  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>7</span></div>
+  <div class="csub">Generative Design &bull; AI-Assisted Drafting &bull; Concept Renders</div>
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Autodesk Fusion — Generative Design</span><span class="et-url">autodesk.com/fusion<span class="et-free"> · Free for students/startups</span></span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">AI design tool embedded in Autodesk Fusion that generates dozens of optimised design alternatives from a set of engineering constraints.</span>
+      <span class="et-k">How</span><span class="et-v">You define design space, loads, constraints (forces, materials, manufacturing method, mass target, cost limit). The AI explores thousands of configurations and presents the best-performing options. Results are routinely lighter and stronger than traditionally designed parts.</span>
+      <span class="et-k">Who</span><span class="et-v">Mechanical and structural engineers designing brackets, frames, and components where weight reduction or material optimisation matters. Production engineers selecting manufacturing methods.</span>
+    </div>
+  </div>
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Autodesk Forma (Revit + BIM)</span><span class="et-url">autodesk.com/forma<span class="et-free"> · Included with Revit subscription</span></span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">AI-driven early-stage building analysis tool. Analyses wind, solar exposure, noise, and daylight in minutes instead of days.</span>
+      <span class="et-k">How</span><span class="et-v">Upload a basic building massing model. Forma runs environmental analysis using AI surrogate models trained on physics simulation data. Results guide building orientation, massing, and facade decisions in pre-design stage.</span>
+      <span class="et-k">Who</span><span class="et-v">Architects and MEP engineers in early design. Allows performance-based decisions at concept stage — before design is locked in and changes are expensive.</span>
+    </div>
+  </div>
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Midjourney</span><span class="et-url">midjourney.com<span class="et-free"> · From $10/month (no free tier)</span></span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">The industry-leading AI image generator for photorealistic and artistic images from text descriptions.</span>
+      <span class="et-k">How</span><span class="et-v">Type a description (prompt) in the Discord-based or web interface. The AI generates 4 image options in 30–60 seconds. Iterate by selecting and refining. No design skills required.</span>
+      <span class="et-k">Who</span><span class="et-v">Engineers creating client presentation renders, facility concept visualisations, proposal cover images, and marketing materials — without hiring a graphic designer or renderer.</span>
+    </div>
+  </div>
 </div>
 </div>
 
 <div class="pdata" id="pd-ch4">
 <div class="pg">
   <div class="rh"><span>Chapter 4</span><span>AI for Calculations &amp; Analysis</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>8</span></div>
   <div class="eye">Chapter 04</div><div class="cnum">IV</div>
-  <div class="ctitle">AI for Calculations<br>&amp; Technical Analysis</div><hr class="crule">
-  <div class="csub">GPT o3 &bull; Wolfram Alpha &bull; MATLAB AI &bull; Structured Text AI</div>
-  <p>Engineering calculations require accuracy, not just plausibility. Not all AI models are equally suited to mathematical reasoning. The GPT o-series (o1, o3) and specialised tools like Wolfram Alpha consistently outperform standard language models on multi-step technical calculations.</p>
-  <h2>AI Calculation Tools Compared</h2>
-  <table>
-    <thead><tr><th>Tool</th><th>Accuracy Level</th><th>Best Calculation Type</th><th>How to Access</th></tr></thead>
-    <tbody>
-      <tr><td><b>ChatGPT o3</b></td><td>High — multi-step reasoning model specifically designed for complex problems</td><td>Structural, HVAC, electrical, solar sizing — any multi-step engineering calculation</td><td>ChatGPT Plus subscription or API</td></tr>
-      <tr><td><b>Wolfram Alpha</b></td><td>Exact — computational knowledge engine, not LLM</td><td>Exact mathematics, unit conversion, physics formulas, equation solving</td><td>wolframalpha.com — free for simple queries</td></tr>
-      <tr><td><b>Claude Sonnet 4</b></td><td>Good — strong at structured reasoning with step-by-step prompting</td><td>Load analysis, load schedules, table-based calculations, multi-variable problems</td><td>claude.ai — free tier available</td></tr>
-      <tr><td><b>MATLAB with AI</b></td><td>Exact — AI assists with code, not calculation itself</td><td>Numerical analysis, simulation, data processing — AI writes and debugs MATLAB code</td><td>MATLAB R2025a with AI assistant</td></tr>
-    </tbody>
-  </table>
-  <h2>Getting Reliable Calculations from AI</h2>
+  <div class="ctitle">AI for Calculations<br>&amp; Analysis</div><hr class="crule">
+  <div class="csub">Getting Reliable Numbers from AI — Which Model, How to Verify</div>
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">ChatGPT o1 / o3 (Reasoning Models)</span><span class="et-url">chat.openai.com — select "o1" or "o3" model<span class="et-free"> · o1: ChatGPT Plus</span></span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">OpenAI's reasoning-focused models. Unlike standard LLMs, they think through problems step by step before answering — producing significantly more accurate multi-step calculations.</span>
+      <span class="et-k">How</span><span class="et-v">The model internally explores calculation paths, checks intermediate results, and backtracks if it detects errors. This "chain of thought" reasoning is done automatically; you just ask the question clearly.</span>
+      <span class="et-k">Who</span><span class="et-v">Any engineer performing load calculations, sizing equipment, or solving multi-variable engineering problems. Default choice for any calculation that matters.</span>
+    </div>
+  </div>
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Wolfram Alpha</span><span class="et-url">wolframalpha.com<span class="et-free"> · Free for simple queries</span></span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">A computational knowledge engine — it performs exact mathematical calculations rather than generating text about them. Cannot hallucinate maths.</span>
+      <span class="et-k">How</span><span class="et-v">Uses curated mathematical algorithms and databases. Type an equation, unit conversion, or formula — it solves it exactly with steps shown. Not an LLM; it does not generate text or opinions.</span>
+      <span class="et-k">Who</span><span class="et-v">Engineers who need exact formula results, unit conversions, equation solving, and physics computations. Use alongside ChatGPT: ChatGPT for problem setup and reasoning, Wolfram for exact calculation verification.</span>
+    </div>
+  </div>
+
+  <h2>The Golden Rules for AI Calculations</h2>
   <ul>
-    <li><b>Use the o1 or o3 model specifically</b> for any calculation that matters — they think step by step before answering, dramatically reducing errors versus GPT-4o</li>
-    <li><b>Always provide units</b> — "300 kPa" not "300 pressure". Ambiguous units are the most common source of AI calculation errors</li>
-    <li><b>Ask for intermediate steps</b> — "show each step and the value at each step" allows you to verify the logic, not just the final answer</li>
-    <li><b>Cross-check the order of magnitude</b> — do a rough mental estimate first. If AI says a house needs 2,000 kW of cooling, that is obviously wrong — your estimate catches it before you use the number</li>
-    <li><b>Specify the standard method</b> — "using ASHRAE CLTD method" or "per IEC 62548" tells the AI which calculation approach to use, preventing it from inventing its own method</li>
+    <li><b>Always specify units:</b> "300 kPa" not "300 pressure" — ambiguous units cause the most calculation errors</li>
+    <li><b>Ask for step-by-step:</b> "Show each intermediate value" lets you verify the logic, not just the answer</li>
+    <li><b>State the calculation method:</b> "Using ASHRAE CLTD method" or "per IEC 62548" prevents AI from inventing its own approach</li>
+    <li><b>Cross-check the order of magnitude:</b> Do a rough mental estimate first — AI will occasionally produce results that are 10× off</li>
+    <li><b>Verify safety-critical values:</b> Never use AI-generated values for structural loads, protection settings, or safety margins without independent verification</li>
   </ul>
-  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>8</span></div>
 </div>
 </div>
 
 <div class="pdata" id="pd-ch5">
 <div class="pg">
-  <div class="rh"><span>Chapter 5</span><span>AI for Writing &amp; Documentation</span></div>
+  <div class="rh"><span>Chapter 5</span><span>AI for Technical Writing &amp; Documentation</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>9</span></div>
   <div class="eye">Chapter 05</div><div class="cnum">V</div>
   <div class="ctitle">AI for Writing<br>&amp; Documentation</div><hr class="crule">
-  <div class="csub">Technical Reports &bull; Proposals &bull; Specifications &bull; Standards Compliance</div>
-  <p>Technical writing is one of the highest-value AI applications for engineers because it is genuinely time-consuming, it doesn't require physical presence, and the quality improvement from AI assistance is immediately measurable. Engineers who previously spent 3 hours writing a project report can now produce the same quality document in 45 minutes using Claude or Copilot.</p>
-  <h2>AI Writing Tools for Engineers</h2>
-  <div class="tool-grid">
-    <div class="tool-card"><div class="tn">&#128203; Claude (Anthropic)</div><div class="tc">Best for long technical reports, specifications, and tender documents. Most consistent writing quality. 200K context — paste previous drafts for revision.</div><div class="tf">Use for: reports, specs, proposals</div></div>
-    <div class="tool-card"><div class="tn">&#128187; Microsoft Copilot</div><div class="tc">Best for engineers in Office 365. Writes reports from your own project files, emails, and meeting notes. "Write a status report based on last month's Teams discussions."</div><div class="tf">Use for: Office-based reports, emails</div></div>
-    <div class="tool-card"><div class="tn">&#128221; Notion AI</div><div class="tc">Integrated into Notion workspace. Drafts documents, meeting notes, project plans, and SOPs. Best for ongoing documentation rather than one-off reports.</div><div class="tf">Use for: knowledge base, SOPs, wikis</div></div>
-    <div class="tool-card"><div class="tn">&#127775; Grammarly</div><div class="tc">Checks grammar, tone, clarity, and professional appropriateness of English text. Particularly useful for engineers whose first language is not English.</div><div class="tf">Use for: review and polish of drafts</div></div>
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Claude (Best for Technical Writing)</span><span class="et-url">claude.ai<span class="et-free"> · Free Sonnet tier · Pro $20/mo</span></span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">AI assistant widely considered the best for producing long, professional, technically accurate written documents.</span>
+      <span class="et-k">How</span><span class="et-v">200,000 token context window means you can paste previous draft + project brief + client requirements all at once and ask for a coherent document. Maintains consistent technical tone and professional structure throughout long outputs.</span>
+      <span class="et-k">Who</span><span class="et-v">Engineers who write technical reports, method statements, O&amp;M manuals, design specifications, tender documents, or client proposals. Reduces a 3-hour writing task to 45 minutes.</span>
+    </div>
   </div>
-  <h2>The AI Technical Writing Process</h2>
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Grammarly</span><span class="et-url">grammarly.com<span class="et-free"> · Free tier available · Premium $12/mo</span></span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">AI-powered writing assistant that checks grammar, spelling, tone, clarity, and professional appropriateness of English text in real time.</span>
+      <span class="et-k">How</span><span class="et-v">Browser extension and desktop app that analyses your writing as you type. Uses AI to detect not just grammar errors but also passive voice, unclear sentences, inappropriate tone, and wordiness.</span>
+      <span class="et-k">Who</span><span class="et-v">Essential for engineers whose first language is not English. Also valuable for any engineer who writes client-facing documents — catches errors that make technical writing appear unprofessional.</span>
+    </div>
+  </div>
+
+  <h2>The 4-Step AI Writing Process</h2>
   <ol>
-    <li><b>Draft outline first</b> — ask AI to create a structured outline based on your project brief. Review and modify before writing begins.</li>
-    <li><b>Write sections with AI</b> — paste the outline section heading and your notes/data, ask AI to write the section. Add your professional judgement and specific project details.</li>
-    <li><b>Review for hallucinations</b> — AI will sometimes add plausible-sounding but incorrect details. Check all specific claims, numbers, and references against your project data.</li>
-    <li><b>Polish with Grammarly or Copilot</b> — final review for grammar, tone, and consistency.</li>
+    <li><b>Outline first:</b> Ask Claude or ChatGPT to create a structured outline from your project brief. Review before writing.</li>
+    <li><b>Write sections with AI:</b> Paste the section heading + your notes/data. Ask AI to write the section in a professional engineering report style.</li>
+    <li><b>Review for hallucinations:</b> AI will sometimes add plausible-sounding but incorrect details. Check all specific claims, numbers, and references against your project data.</li>
+    <li><b>Polish with Grammarly:</b> Final pass for grammar, tone consistency, and professional presentation.</li>
   </ol>
-  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>9</span></div>
+  <div class="note tip"><div class="nlbl">&#128161; Prompt That Works</div><p>"Write the executive summary section of a technical report. Tone: formal engineering. Length: 3 paragraphs. Include: project scope, key design decisions, and performance outcomes. Data: [paste your project summary]"</p></div>
 </div>
 </div>
 
 <div class="pdata" id="pd-ch6">
 <div class="pg">
   <div class="rh"><span>Chapter 6</span><span>AI for Code &amp; Automation</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>10</span></div>
   <div class="eye">Chapter 06</div><div class="cnum">VI</div>
   <div class="ctitle">AI for Code<br>&amp; Automation</div><hr class="crule">
-  <div class="csub">GitHub Copilot &bull; Cursor &bull; Claude &bull; Coding for Non-Programmers</div>
-  <p>You do not need to be a programmer to benefit from AI coding tools. Engineers use AI to write Python scripts for data analysis, Excel VBA macros, AutoCAD LISP routines, PLC Structured Text, and web-based calculators — without prior programming experience. AI has democratised coding.</p>
-  <h2>AI Coding Tools</h2>
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">GitHub Copilot</span><span class="et-url">github.com/copilot<span class="et-free"> · Free for students · $10/mo Pro</span></span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">AI code assistant embedded in VS Code, JetBrains, Visual Studio. Completes entire functions and suggests code as you type — like autocomplete for programming.</span>
+      <span class="et-k">How</span><span class="et-v">Trained on billions of lines of public code. Reads your current file and project context, then predicts what code you intend to write next. Press Tab to accept suggestions.</span>
+      <span class="et-k">Who</span><span class="et-v">Engineers who write code regularly — Python scripts for data analysis, automation tools, MATLAB, web calculators. Dramatically reduces time spent writing boilerplate code.</span>
+    </div>
+  </div>
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Cursor AI Editor</span><span class="et-url">cursor.sh<span class="et-free"> · Free tier · Pro $20/mo</span></span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">AI-first code editor (based on VS Code). The AI can read your entire codebase, explain what code does, find bugs, and rewrite sections — all through a chat interface.</span>
+      <span class="et-k">How</span><span class="et-v">Press Ctrl+K to edit selected code with AI. Press Ctrl+L to open a chat with your full codebase as context. Ask "what does this function do?" or "add error handling to this script" and the AI edits your files directly.</span>
+      <span class="et-k">Who</span><span class="et-v">Engineers who need to understand existing code written by others, or who want to build tools without strong programming backgrounds. Perfect for "non-programmer coders."</span>
+    </div>
+  </div>
+
+  <h2>What AI Can Write for Engineers (No Coding Experience Needed)</h2>
   <table>
-    <thead><tr><th>Tool</th><th>Best Use</th><th>Access</th></tr></thead>
+    <thead><tr><th>What You Need</th><th>Prompt Approach</th></tr></thead>
     <tbody>
-      <tr><td><b>GitHub Copilot</b></td><td>Real-time code completion in VS Code, JetBrains, Visual Studio. Suggests entire functions as you type. Best for engineers who write code regularly.</td><td>$10/month, free for students</td></tr>
-      <tr><td><b>Cursor AI</b></td><td>AI-first code editor. Chat with your entire codebase — "what does this function do?" or "fix this bug". Best for understanding existing code.</td><td>Free tier, $20/month Pro</td></tr>
-      <tr><td><b>Claude / ChatGPT</b></td><td>Write complete scripts from plain English descriptions. Best for non-programmers who need a one-off tool. "Write a Python script that reads Excel data and calculates…"</td><td>Free tiers available</td></tr>
-      <tr><td><b>Replit AI</b></td><td>Browser-based coding environment with AI. Run code immediately without installing anything. Best for quick tools and sharing scripts with others.</td><td>Free tier available</td></tr>
+      <tr><td><b>Excel VBA macro</b></td><td>"Write a VBA macro that reads load schedule data from Sheet1 columns A–D, sums daily Wh per item, and outputs total kWh with 20% safety margin in cell F2"</td></tr>
+      <tr><td><b>Python data analysis</b></td><td>"Write Python to read a CSV of sensor temperatures, calculate daily avg/max/min per sensor, and plot a line graph with matplotlib"</td></tr>
+      <tr><td><b>PLC Structured Text</b></td><td>"Write Siemens SCL code for a motor control FB with inputs: Start, Stop, Fault_Reset; outputs: Run, Fault, RunHours accumulated"</td></tr>
+      <tr><td><b>Web calculator</b></td><td>"Write an HTML+JavaScript page with a solar sizing calculator — inputs: load kWh/day, PSH, battery days; output: panel kWp, battery kWh, inverter kW"</td></tr>
     </tbody>
   </table>
-  <h2>Practical Engineering Scripts AI Can Write for You</h2>
-  <ul>
-    <li><b>Excel VBA macro:</b> "Write a VBA macro that reads my load schedule sheet, calculates daily Wh for each load, and outputs a total daily load with 20% safety margin"</li>
-    <li><b>Python data processor:</b> "Write Python code to read a CSV of sensor temperature readings, calculate the daily average, max, and min, and plot a graph"</li>
-    <li><b>PLC Structured Text:</b> "Write Siemens SCL code for a motor control function block with Run, Stop, Fault, and RunHours outputs"</li>
-    <li><b>AutoCAD LISP:</b> "Write a LISP routine that automatically labels all blocks in a drawing with their insert coordinates"</li>
-  </ul>
-  <div class="note tip"><div class="nlbl">&#128161; Non-Programmer Tip</div><p>When asking AI to write code, always add: "Include comments explaining each section, and add error handling." This makes the code readable and maintainable even if you cannot write code yourself.</p></div>
-  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>10</span></div>
 </div>
 </div>
 
 <div class="pdata" id="pd-ch7">
 <div class="pg">
-  <div class="rh"><span>Chapters 7–8</span><span>Research, Learning &amp; Visual Content</span></div>
+  <div class="rh"><span>Chapter 7</span><span>AI for Research &amp; Learning</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>11</span></div>
   <div class="eye">Chapter 07</div><div class="cnum">VII</div>
-  <div class="ctitle">AI for Research,<br>Learning &amp; Images</div><hr class="crule">
-  <h2>AI Research Tools</h2>
-  <div class="tool-grid">
-    <div class="tool-card"><div class="tn">&#128269; Perplexity AI</div><div class="tc">Search engine powered by AI — every answer includes source citations. Ask technical questions and get cited answers from current web sources. perplexity.ai</div><div class="tf">Best: cited research, standards searches</div></div>
-    <div class="tool-card"><div class="tn">&#128218; NotebookLM (Google)</div><div class="tc">Upload your own documents (PDFs, notes) and ask questions about them. AI reads only YOUR documents — no hallucinations from outside. notebooklm.google.com</div><div class="tf">Best: analysing your own project documents</div></div>
-    <div class="tool-card"><div class="tn">&#128203; Consensus</div><div class="tc">AI-powered academic research search. Searches only peer-reviewed papers. Get evidence-based answers with citations from actual studies. consensus.app</div><div class="tf">Best: finding research evidence</div></div>
-    <div class="tool-card"><div class="tn">&#127891; Khanmigo (Khan Academy)</div><div class="tc">AI tutor that explains concepts step-by-step, asks guiding questions rather than giving answers. Excellent for learning engineering fundamentals.</div><div class="tf">Best: self-learning, understanding concepts</div></div>
+  <div class="ctitle">AI for Research<br>&amp; Learning</div><hr class="crule">
+  <div class="csub">Find It, Verify It, Learn It Faster</div>
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Perplexity AI</span><span class="et-url">perplexity.ai<span class="et-free"> · Free (generous daily limit)</span></span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">An AI research assistant that answers questions with numbered citations from real web sources — not from training data alone.</span>
+      <span class="et-k">How</span><span class="et-v">For every question, Perplexity searches the web in real time, reads 5–10 sources, synthesises them, and provides an answer with inline citations. You can click each citation to read the source.</span>
+      <span class="et-k">Who</span><span class="et-v">Engineers researching standards versions, equipment specifications, local regulations, material prices, and technical papers. Use whenever the answer needs to be verifiable and current — not from a 2024 training dataset.</span>
+    </div>
   </div>
-  <div class="eye" style="margin-top:14px;">Chapter 08</div>
-  <div class="cnum" style="font-size:clamp(20px,2.5vw,30px);">VIII</div>
-  <div class="ctitle" style="font-size:clamp(18px,2vw,26px);">AI for Images, Video &amp; Presentations</div><hr class="crule">
-  <div class="tool-grid">
-    <div class="tool-card"><div class="tn">&#127775; Midjourney</div><div class="tc">Best-in-class photorealistic image generation. Concept renders, facility visualisations, client presentation images. midjourney.com</div><div class="tf">Paid: $10–$60/month</div></div>
-    <div class="tool-card"><div class="tn">&#127916; Runway Gen-3</div><div class="tc">Professional AI video generation. Text-to-video, image-to-video. Cinematic quality clips for engineering videos and presentations. runwayml.com</div><div class="tf">Free tier + $12–76/month</div></div>
-    <div class="tool-card"><div class="tn">&#127974; Gamma AI</div><div class="tc">Creates complete presentations from a text prompt or document. Better design quality than standard PowerPoint auto-design. gamma.app</div><div class="tf">Free tier available</div></div>
-    <div class="tool-card"><div class="tn">&#127912; Canva AI</div><div class="tc">Magic Design, text-to-image, AI video editing built into Canva. Best for non-designers who need professional graphics quickly. canva.com</div><div class="tf">Free tier + $13/month</div></div>
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Google NotebookLM</span><span class="et-url">notebooklm.google.com<span class="et-free"> · Completely free</span></span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">Google's AI research tool that reads only the documents YOU upload — it has no general internet knowledge. Every answer cites the exact source and page number from your own files.</span>
+      <span class="et-k">How</span><span class="et-v">Upload up to 50 sources: PDFs, Google Docs, websites, YouTube videos. NotebookLM creates a private AI that is grounded only in those sources. Ask questions, get summaries, create study guides, or generate an Audio Overview podcast from your documents.</span>
+      <span class="et-k">Who</span><span class="et-v">Engineers analysing project specifications, tender documents, standards, and client requirements. Upload 300 pages of specs and ask "what are all the hot water system requirements?" in seconds.</span>
+    </div>
   </div>
-  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>11</span></div>
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Consensus</span><span class="et-url">consensus.app<span class="et-free"> · Free (10 searches/day)</span></span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">AI-powered academic search engine — searches only peer-reviewed research papers, not general web content.</span>
+      <span class="et-k">How</span><span class="et-v">Type a question and Consensus searches millions of research papers, extracts the key findings, and tells you the consensus of the scientific evidence with citations to the actual papers.</span>
+      <span class="et-k">Who</span><span class="et-v">Engineers and researchers who need evidence-based answers with academic citations. Useful when making technical decisions that should be grounded in published research.</span>
+    </div>
+  </div>
 </div>
 </div>
 
-<div class="pdata" id="pd-ch9">
+<div class="pdata" id="pd-ch8">
 <div class="pg">
-  <div class="rh"><span>Chapters 9–10</span><span>Voice, Communication &amp; Prompt Engineering</span></div>
-  <div class="eye">Chapter 09</div><div class="cnum">IX</div>
-  <div class="ctitle">AI for Voice<br>&amp; Communication</div><hr class="crule">
-  <div class="tool-grid">
-    <div class="tool-card"><div class="tn">&#127908; ElevenLabs</div><div class="tc">Clone your voice from 1 minute of audio. Generate narration in your voice for any text. 29+ languages including Amharic and Tigrinya support. elevenlabs.io</div><div class="tf">Free: 10,000 chars/month</div></div>
-    <div class="tool-card"><div class="tn">&#128100; HeyGen</div><div class="tc">AI video avatar — clone your face and voice from a 2-min video, generate unlimited talking-head videos from text scripts. heygen.com</div><div class="tf">Free: 1 video/month</div></div>
-    <div class="tool-card"><div class="tn">&#127897; Adobe Podcast AI</div><div class="tc">Remove background noise, echo, and room reverb from any recorded audio — free online tool. podcast.adobe.com</div><div class="tf">Free — no login needed</div></div>
-    <div class="tool-card"><div class="tn">&#128221; Otter.ai</div><div class="tc">Transcribes meetings and interviews in real time. Generates summaries, action items, and searchable transcripts. otter.ai</div><div class="tf">Free: 300 min/month</div></div>
+  <div class="rh"><span>Chapter 8</span><span>AI for Images, Video &amp; Presentations</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>12</span></div>
+  <div class="eye">Chapter 08</div><div class="cnum">VIII</div>
+  <div class="ctitle">AI for Images,<br>Video &amp; Presentations</div><hr class="crule">
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Midjourney</span><span class="et-url">midjourney.com<span class="et-free"> · From $10/month — no free tier</span></span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">The industry-leading AI image generator, producing photorealistic renders and artistic visuals from text prompts. Best image quality of any AI generator.</span>
+      <span class="et-k">How</span><span class="et-v">Access via Discord or the web app. Describe your image in detail (subject, style, lighting, angle, quality). AI generates 4 options in 30–60 seconds. Iterate with U (upscale) and V (variations) buttons.</span>
+      <span class="et-k">Who</span><span class="et-v">Engineers producing client presentation renders, facility concepts, project proposals, and marketing materials. Eliminates the need for professional renderers for early-stage visuals.</span>
+    </div>
   </div>
-  <div class="eye" style="margin-top:14px;">Chapter 10</div>
-  <div class="cnum" style="font-size:clamp(20px,2.5vw,30px);">X</div>
-  <div class="ctitle" style="font-size:clamp(18px,2vw,26px);">Prompt Engineering Masterclass</div><hr class="crule">
-  <p>Prompt engineering is the skill of communicating with AI to get consistently excellent results. The difference between a vague prompt and a structured prompt is the difference between a generic response and expert-level output.</p>
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Runway Gen-3</span><span class="et-url">runwayml.com<span class="et-free"> · Free: limited credits · Pro $12/mo</span></span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">Professional AI video generation platform — creates cinematic video clips from text descriptions or from images.</span>
+      <span class="et-k">How</span><span class="et-v">Type a description or upload an image. Runway generates 5–10 second video clips with realistic motion, camera movement, and lighting. Multiple clips can be assembled into longer videos.</span>
+      <span class="et-k">Who</span><span class="et-v">Engineers creating project overview videos, facility walkthroughs, training content, or YouTube channel footage. Produces professional-quality video without a camera, crew, or editing skills.</span>
+    </div>
+  </div>
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Gamma AI</span><span class="et-url">gamma.app<span class="et-free"> · Free tier available</span></span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">AI presentation builder that creates complete, professionally designed slide decks from a text prompt or document — in under 2 minutes.</span>
+      <span class="et-k">How</span><span class="et-v">Describe your presentation topic or paste an outline. Gamma generates a complete presentation with layout, styling, icons, and content. Edit any slide with AI chat: "make this slide more visual" or "add a data table here."</span>
+      <span class="et-k">Who</span><span class="et-v">Engineers who need to create client briefings, technical presentations, and training materials quickly. Dramatically faster than building slides from scratch in PowerPoint.</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch9a">
+<div class="pg">
+  <div class="rh"><span>Chapter 9</span><span>AI for Voice &amp; Audio</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>13</span></div>
+  <div class="eye">Chapter 09</div><div class="cnum">IX</div>
+  <div class="ctitle">AI for Voice<br>&amp; Audio</div><hr class="crule">
+  <div class="csub">Create, Clone, Clean, and Transcribe — Without a Recording Studio</div>
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">ElevenLabs</span><span class="et-url">elevenlabs.io<span class="et-free"> · Free: 10,000 characters/month · Starter $5/mo</span></span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">The world's most advanced AI text-to-speech and voice cloning platform. Converts any written text into natural-sounding speech in 29 languages — including Amharic and Tigrinya.</span>
+      <span class="et-k">How</span><span class="et-v">Choose from 3,000+ pre-built voices or clone your own voice using just 1 minute of recorded audio. Type or paste your script, select the voice and language, click Generate. Output is an MP3 or WAV file ready to use in any video or audio project.</span>
+      <span class="et-k">Who</span><span class="et-v">Engineers who create YouTube training videos, e-learning courses, webinar content, project explainer videos, or client briefing narrations — without spending hours recording, re-recording, and editing audio in a studio environment.</span>
+    </div>
+  </div>
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">HeyGen</span><span class="et-url">heygen.com<span class="et-free"> · Free: 1 video/month (watermarked) · Creator $29/mo</span></span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">AI avatar video platform — creates professional talking-head videos of a digital clone of you, speaking any script you type, without you ever appearing on camera again.</span>
+      <span class="et-k">How</span><span class="et-v">Record a 2-minute "consent video" of yourself speaking clearly (plain background, good lighting, no movement). HeyGen clones your facial appearance, lip movements, and voice. From then on: type any script → receive a video of "you" delivering it, in any language, in minutes.</span>
+      <span class="et-k">Who</span><span class="et-free"></span><span class="et-v">Engineers who deliver regular training sessions, YouTube tutorials, onboarding content, and client briefings. After the initial setup, create unlimited videos from a typed script — no camera, no editing, no re-recording.</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch9b">
+<div class="pg">
+  <div class="rh"><span>Chapter 9 continued</span><span>AI for Voice, Meetings &amp; Communication</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>14</span></div>
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Otter.ai</span><span class="et-url">otter.ai<span class="et-free"> · Free: 300 minutes/month · Pro $10/mo</span></span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">AI meeting assistant that joins Zoom, Teams, or Google Meet automatically, transcribes the conversation in real time, and produces a searchable transcript with AI summary and action items.</span>
+      <span class="et-k">How</span><span class="et-v">Connect Otter to your calendar. It auto-joins meetings, displays live captions, and after the meeting sends a summary with: key topics discussed, decisions made, and action items with assigned names.</span>
+      <span class="et-k">Who</span><span class="et-v">Project managers, site engineers, and anyone in frequent client and team meetings who spends time writing up meeting notes. Saves 30–45 minutes per meeting in note-taking and follow-up drafting.</span>
+    </div>
+  </div>
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Adobe Podcast AI (Enhance)</span><span class="et-url">podcast.adobe.com<span class="et-free"> · Completely free — no login needed</span></span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">A free online AI audio enhancement tool that removes background noise, echo, reverb, and room sound from any recording — in one click.</span>
+      <span class="et-k">How</span><span class="et-v">Upload an audio or video file (MP3, MP4, WAV). The AI analyses and separates speech from background noise using machine learning trained on thousands of audio samples. Processing takes 1–3 minutes. Download the cleaned file.</span>
+      <span class="et-k">Who</span><span class="et-free"></span><span class="et-v">Any engineer recording lectures, training videos, or client presentations in non-studio environments — site offices, home offices, meeting rooms. Makes any recording sound professional instantly.</span>
+    </div>
+  </div>
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Krisp</span><span class="et-url">krisp.ai<span class="et-free"> · Free: 60 min noise cancellation/day · Pro $8/mo</span></span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">Real-time AI noise cancellation for live calls and meetings. Removes background noise from both your microphone and the speakers in your headphones — while the call is happening.</span>
+      <span class="et-k">How</span><span class="et-v">Install Krisp as a virtual audio device. Select "Krisp Microphone" in Zoom/Teams. The AI processes your audio stream in real time on your device (no cloud), removing all non-speech sounds before your voice reaches the call.</span>
+      <span class="et-k">Who</span><span class="et-v">Engineers on client calls from noisy environments — open offices, site locations, home offices. Essential for anyone whose call quality affects professional credibility.</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch10a">
+<div class="pg">
+  <div class="rh"><span>Chapter 10</span><span>Prompt Engineering Masterclass</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>15</span></div>
+  <div class="eye">Chapter 10</div><div class="cnum">X</div>
+  <div class="ctitle">Prompt Engineering<br>Masterclass</div><hr class="crule">
+  <div class="csub">The Skill That Separates Good AI Users from Great Ones</div>
+  <p>The quality of AI output is directly proportional to the quality of the prompt. A vague question gets a generic answer. A structured engineering prompt gets expert-level output. The 4-Part Framework below works with any AI tool.</p>
   <h2>The 4-Part Engineering Prompt Framework</h2>
   <table>
-    <thead><tr><th>Part</th><th>What to Include</th><th>Example</th></tr></thead>
+    <thead><tr><th>Part</th><th>What to Write</th><th>Example</th></tr></thead>
     <tbody>
-      <tr><td><b>1. Role</b></td><td>Assign the AI a specific expert identity with experience level and context</td><td>"You are a senior MEP engineer with 15 years specialising in commercial buildings in hot climates…"</td></tr>
-      <tr><td><b>2. Task</b></td><td>State exactly what you need — specific, not general</td><td>"…size the chilled water distribution pipes for a 4-storey office building…"</td></tr>
-      <tr><td><b>3. Context</b></td><td>All constraints, standards, location, existing conditions, client requirements</td><td>"…in Addis Ababa, 620 kW total load, primary-secondary system, max velocity 1.5 m/s, design temp 6/14°C…"</td></tr>
-      <tr><td><b>4. Format</b></td><td>Exact output format required: table columns, code language, word limit, structure</td><td>"…output as a table: Pipe section | Flow (L/s) | Velocity (m/s) | Pipe size (mm) | Pressure drop (Pa/m)"</td></tr>
+      <tr><td><b>1. Role</b></td><td>Assign a specific expert identity with experience level and domain</td><td>"You are a senior MEP engineer with 15 years designing commercial buildings in hot climates…"</td></tr>
+      <tr><td><b>2. Task</b></td><td>State exactly what output you need — specific, not general</td><td>"…size the chilled water distribution pipes for a 4-storey office building…"</td></tr>
+      <tr><td><b>3. Context</b></td><td>All constraints: location, standards, existing conditions, budget, client requirements</td><td>"…in Addis Ababa, 620 kW load, primary-secondary system, max velocity 1.5 m/s, design temp 6/14°C chilled water…"</td></tr>
+      <tr><td><b>4. Format</b></td><td>Exact output format — table columns, code language, word limit, structure</td><td>"…output as a table: Pipe section | Flow L/s | Velocity m/s | Size mm | Pressure drop Pa/m"</td></tr>
     </tbody>
   </table>
-  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>12</span></div>
+  <h2>Good Prompt vs Bad Prompt</h2>
+  <div class="note warn"><div class="nlbl">&#10060; Weak Prompt</div><p>"How do I size a chilled water pipe?" → Gets a generic textbook answer. No project data, no useful output.</p></div>
+  <div class="note"><div class="nlbl">&#10003; Strong Prompt</div><p>"You are a senior MEP engineer. Size the chilled water supply pipe for a 280 kW cooling load, 6°C/14°C ΔT, max velocity 1.5 m/s, using the Darcy-Weisbach method. Show flow rate, velocity, selected size, and pressure drop per metre in a table."</p></div>
+</div>
+</div>
+
+<div class="pdata" id="pd-ch10b">
+<div class="pg">
+  <div class="rh"><span>Chapter 10 continued</span><span>Prompt Engineering — Advanced Techniques</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>16</span></div>
+  <h2>Advanced Prompting Techniques</h2>
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Chain of Thought Prompting</span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">Instructing AI to show its reasoning step by step before giving the final answer. Dramatically improves accuracy for calculations and multi-step problems.</span>
+      <span class="et-k">How to use</span><span class="et-v">Add "Think through this step by step and show each intermediate calculation" or "Reason through the problem before giving your final answer."</span>
+      <span class="et-k">Example</span><span class="et-v">"Calculate the battery bank for this solar system. Think through each step: (1) daily energy, (2) autonomy requirement, (3) DOD factor, (4) temperature derating, (5) final Ah. Show each value."</span>
+    </div>
+  </div>
+
+  <div class="etool">
+    <div class="et-head"><span class="et-name">Few-Shot Prompting</span></div>
+    <div class="et-body">
+      <span class="et-k">What</span><span class="et-v">Giving AI one or two examples of the exact format or style you want, then asking it to produce more in the same style.</span>
+      <span class="et-k">How to use</span><span class="et-v">Show a before/after example of what you want, then say "Now do the same for these five items: [list]"</span>
+      <span class="et-k">Example</span><span class="et-v">"Here is one equipment tag format: 'P-101 — Chilled Water Pump, 22 kW, 1450 rpm'. Create the same format for: [list of equipment]"</span>
+    </div>
+  </div>
+
+  <h2>5 Prompt Mistakes Engineers Make</h2>
+  <table>
+    <thead><tr><th>Mistake</th><th>Fix</th></tr></thead>
+    <tbody>
+      <tr><td>Too vague — "explain HVAC"</td><td>Specify topic, depth, audience: "Explain chilled water primary-secondary system for a site engineer with no prior HVAC experience"</td></tr>
+      <tr><td>No units — "pressure is 300"</td><td>Always include units: "300 kPa static pressure"</td></tr>
+      <tr><td>No standard specified</td><td>Add "per ASHRAE 90.1" or "following BS EN 806" to anchor AI to the right method</td></tr>
+      <tr><td>Accepting first answer</td><td>Follow up: "Is there a more conservative approach?" or "What assumptions did you make?"</td></tr>
+      <tr><td>No verification</td><td>Always cross-check AI calculations against a manual estimate or reference table</td></tr>
+    </tbody>
+  </table>
 </div>
 </div>
 
 <div class="pdata" id="pd-ch11">
 <div class="pg">
-  <div class="rh"><span>Chapter 11</span><span>Building Your Engineering AI Workflow</span></div>
+  <div class="rh"><span>Chapter 11</span><span>Your Daily AI Workflow</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>17</span></div>
   <div class="eye">Chapter 11</div><div class="cnum">XI</div>
-  <div class="ctitle">Your Engineering<br>AI Workflow</div><hr class="crule">
-  <div class="csub">Daily System — Which Tool for Which Task, Every Day</div>
-  <p>The engineers who benefit most from AI are not those with the most subscriptions — they are those with a clear system for which tool to use for which task. Here is a proven daily workflow:</p>
-  <h2>The Engineering AI Stack — Free Starter Version</h2>
+  <div class="ctitle">Your Daily<br>AI Workflow</div><hr class="crule">
+  <div class="csub">Free Starter Stack &bull; Paid Upgrades &bull; 30-Minute Daily Habit</div>
+  <h2>The Free Engineering AI Stack — Zero Cost</h2>
   <table>
-    <thead><tr><th>Task Category</th><th>Best Free Tool</th><th>Why This Tool</th></tr></thead>
+    <thead><tr><th>Task</th><th>Free Tool</th><th>Why This One</th></tr></thead>
     <tbody>
-      <tr><td><b>Engineering calculations</b></td><td>ChatGPT (o1 reasoning)</td><td>Most accurate for multi-step calculations. Free through ChatGPT account.</td></tr>
-      <tr><td><b>Technical writing &amp; reports</b></td><td>Claude (free tier)</td><td>Best writing quality, largest context window for long documents.</td></tr>
-      <tr><td><b>Current research &amp; standards</b></td><td>Gemini or Perplexity</td><td>Real-time web search with citations. Free and generous.</td></tr>
-      <tr><td><b>Office documents (Word/Excel)</b></td><td>Microsoft Copilot</td><td>Free at copilot.microsoft.com, reads web, good for office tasks.</td></tr>
-      <tr><td><b>Document analysis</b></td><td>NotebookLM (Google)</td><td>Free. Upload your PDFs and ask questions about them specifically.</td></tr>
-      <tr><td><b>Code writing</b></td><td>Claude or ChatGPT</td><td>Both write excellent code with explanation in free tiers.</td></tr>
-      <tr><td><b>Image generation</b></td><td>Canva AI or Gemini</td><td>Both have free image generation. Canva for designed graphics, Gemini for photorealistic.</td></tr>
-      <tr><td><b>Meeting notes</b></td><td>Otter.ai</td><td>300 free minutes/month. Transcribes and summarises meetings.</td></tr>
+      <tr><td>Engineering calculations</td><td>ChatGPT (o1 model)</td><td>Best reasoning accuracy — free via standard account</td></tr>
+      <tr><td>Technical writing</td><td>Claude (free Sonnet)</td><td>Best writing quality, 200K context window</td></tr>
+      <tr><td>Research + standards</td><td>Perplexity</td><td>Cited answers, real-time web, generous free tier</td></tr>
+      <tr><td>Document analysis</td><td>NotebookLM</td><td>Free, reads only your own documents, no hallucinations</td></tr>
+      <tr><td>Office documents</td><td>Copilot (copilot.microsoft.com)</td><td>Free web version, reads web, good for Word/Excel tasks</td></tr>
+      <tr><td>Code writing</td><td>Claude or ChatGPT</td><td>Both write excellent commented code in free tiers</td></tr>
+      <tr><td>Presentation slides</td><td>Gamma AI</td><td>Free tier generates complete professional decks</td></tr>
+      <tr><td>Audio cleanup</td><td>Adobe Podcast AI</td><td>Completely free, no login, professional noise removal</td></tr>
     </tbody>
   </table>
-  <h2>The Paid Upgrade That Pays for Itself</h2>
-  <p>If you use AI for engineering work more than 2 hours per day: subscribe to <b>Claude Pro ($20/month)</b> first. The 200K context window (for document analysis) and the writing quality consistently deliver time savings worth far more than the subscription cost. Most engineers recoup the cost in the first week.</p>
-  <div class="note"><div class="nlbl">&#128161; The 30-Minute Daily AI Habit</div><p>Identify ONE recurring task in your daily work that takes 30+ minutes and could be AI-assisted. Spend one week using AI for that task only. Measure the time saving. Then expand to the next task. This gradual adoption prevents overwhelm and builds confident, effective AI use.</p></div>
-  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>13</span></div>
+  <h2>The First Paid Upgrade Worth Every Cent</h2>
+  <p>If you use AI for engineering work more than 2 hours per day: subscribe to <b>Claude Pro ($20/month)</b> first. The 200K context window for document analysis and the consistently professional writing quality deliver time savings worth far more. Most engineers recover the cost in the first working week.</p>
+  <div class="note tip"><div class="nlbl">&#128161; The 30-Minute Daily AI Habit</div><p>Identify ONE task in your workday that takes 30+ minutes and could be AI-assisted. Use AI for that task only for one week. Measure the time saved. Then add the next task. Gradual adoption builds confident, effective AI use without overwhelm.</p></div>
 </div>
 </div>
 
 <div class="pdata" id="pd-dir1">
 <div class="pg">
   <div class="rh"><span>Chapter 12</span><span>50+ AI Tools Directory</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>18</span></div>
   <div class="eye">Chapter 12</div><div class="cnum">XII</div>
   <div class="ctitle">50+ AI Tools<br>Directory</div><hr class="crule">
-  <div class="csub">Complete Reference: Category &bull; URL &bull; Free Tier &bull; Best Engineering Use</div>
   <h2>AI Assistants &amp; Chat</h2>
   <table>
     <thead><tr><th>Tool</th><th>URL</th><th>Free?</th><th>Best Engineering Use</th></tr></thead>
     <tbody>
-      <tr><td><b>ChatGPT</b></td><td>chat.openai.com</td><td>Yes</td><td>Calculations (o1 model), code, general analysis</td></tr>
+      <tr><td><b>ChatGPT</b></td><td>chat.openai.com</td><td>Yes</td><td>Calculations (o1/o3 model), code, general analysis</td></tr>
       <tr><td><b>Claude</b></td><td>claude.ai</td><td>Yes</td><td>Document analysis, technical writing, long context</td></tr>
       <tr><td><b>Gemini</b></td><td>gemini.google.com</td><td>Yes</td><td>Real-time research, Google Workspace integration</td></tr>
       <tr><td><b>Copilot</b></td><td>copilot.microsoft.com</td><td>Yes</td><td>Office 365, Teams, Excel, report writing</td></tr>
-      <tr><td><b>Perplexity</b></td><td>perplexity.ai</td><td>Yes</td><td>Cited research answers, standards searches</td></tr>
-      <tr><td><b>Poe</b></td><td>poe.com</td><td>Yes</td><td>Access multiple AI models in one interface</td></tr>
+      <tr><td><b>Perplexity</b></td><td>perplexity.ai</td><td>Yes</td><td>Cited research, standards searches, live web</td></tr>
+      <tr><td><b>Poe</b></td><td>poe.com</td><td>Yes</td><td>Access GPT-4, Claude, Gemini in one interface</td></tr>
     </tbody>
   </table>
   <h2>AI for Design &amp; CAD</h2>
   <table>
-    <thead><tr><th>Tool</th><th>URL</th><th>Free?</th><th>Best Engineering Use</th></tr></thead>
+    <thead><tr><th>Tool</th><th>URL</th><th>Free?</th><th>Best Use</th></tr></thead>
     <tbody>
       <tr><td><b>Autodesk Fusion AI</b></td><td>autodesk.com/fusion</td><td>Freemium</td><td>Generative design, topology optimisation</td></tr>
+      <tr><td><b>Autodesk Forma</b></td><td>autodesk.com/forma</td><td>With Revit</td><td>Early-stage BIM performance analysis</td></tr>
       <tr><td><b>Midjourney</b></td><td>midjourney.com</td><td>No ($10+)</td><td>Concept renders, facility visualisation</td></tr>
-      <tr><td><b>DALL-E 3 (in ChatGPT)</b></td><td>chat.openai.com</td><td>Limited</td><td>Technical diagrams, schematic illustrations</td></tr>
+      <tr><td><b>DALL-E 3</b></td><td>chat.openai.com</td><td>Limited</td><td>Technical diagrams, schematic illustrations</td></tr>
       <tr><td><b>Adobe Firefly</b></td><td>firefly.adobe.com</td><td>Limited</td><td>Professional images, background generation</td></tr>
-      <tr><td><b>Stable Diffusion</b></td><td>stability.ai</td><td>Yes (local)</td><td>Free, open-source image generation for any use</td></tr>
+      <tr><td><b>Stable Diffusion</b></td><td>stability.ai</td><td>Yes (local)</td><td>Open-source, run locally, no cost, full control</td></tr>
     </tbody>
   </table>
-  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>14</span></div>
 </div>
 </div>
 
 <div class="pdata" id="pd-dir2">
 <div class="pg">
   <div class="rh"><span>Chapter 12 continued</span><span>50+ AI Tools Directory</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>19</span></div>
   <h2>AI for Code &amp; Development</h2>
   <table>
     <thead><tr><th>Tool</th><th>URL</th><th>Free?</th><th>Best Use</th></tr></thead>
     <tbody>
-      <tr><td><b>GitHub Copilot</b></td><td>github.com/copilot</td><td>Students only</td><td>Real-time code completion in any IDE</td></tr>
-      <tr><td><b>Cursor</b></td><td>cursor.sh</td><td>Yes (limited)</td><td>AI-first code editor, chat with codebase</td></tr>
-      <tr><td><b>Replit AI</b></td><td>replit.com</td><td>Yes</td><td>Browser-based coding, instant execution, sharing</td></tr>
-      <tr><td><b>Blackbox AI</b></td><td>blackbox.ai</td><td>Yes</td><td>Code generation from images and screenshots of code</td></tr>
+      <tr><td><b>GitHub Copilot</b></td><td>github.com/copilot</td><td>Students free</td><td>Real-time code completion in any IDE</td></tr>
+      <tr><td><b>Cursor</b></td><td>cursor.sh</td><td>Limited</td><td>AI code editor, chat with your codebase</td></tr>
+      <tr><td><b>Replit AI</b></td><td>replit.com</td><td>Yes</td><td>Browser-based coding, instant run, shareable</td></tr>
+      <tr><td><b>Blackbox AI</b></td><td>blackbox.ai</td><td>Yes</td><td>Generate code from screenshots of code</td></tr>
+      <tr><td><b>Claude / ChatGPT</b></td><td>claude.ai / openai.com</td><td>Yes</td><td>Write complete scripts from plain English description</td></tr>
     </tbody>
   </table>
-  <h2>AI for Research &amp; Knowledge</h2>
+  <h2>AI for Research &amp; Learning</h2>
   <table>
     <thead><tr><th>Tool</th><th>URL</th><th>Free?</th><th>Best Use</th></tr></thead>
     <tbody>
-      <tr><td><b>NotebookLM</b></td><td>notebooklm.google.com</td><td>Yes</td><td>Ask questions about YOUR uploaded documents</td></tr>
-      <tr><td><b>Consensus</b></td><td>consensus.app</td><td>Yes (limited)</td><td>Academic research search with AI summaries</td></tr>
-      <tr><td><b>Elicit</b></td><td>elicit.com</td><td>Yes (limited)</td><td>Literature review, systematic research analysis</td></tr>
-      <tr><td><b>Semantic Scholar</b></td><td>semanticscholar.org</td><td>Yes</td><td>AI-powered academic paper search, citation tracking</td></tr>
-      <tr><td><b>scite.ai</b></td><td>scite.ai</td><td>Freemium</td><td>Shows whether papers support or contradict a claim</td></tr>
+      <tr><td><b>NotebookLM</b></td><td>notebooklm.google.com</td><td>Yes</td><td>Ask questions about your own uploaded documents</td></tr>
+      <tr><td><b>Consensus</b></td><td>consensus.app</td><td>Limited</td><td>Academic research with AI summaries</td></tr>
+      <tr><td><b>Elicit</b></td><td>elicit.com</td><td>Limited</td><td>Systematic literature reviews</td></tr>
+      <tr><td><b>Semantic Scholar</b></td><td>semanticscholar.org</td><td>Yes</td><td>AI-powered academic paper search</td></tr>
+      <tr><td><b>Wolfram Alpha</b></td><td>wolframalpha.com</td><td>Yes</td><td>Exact calculations, unit conversion, equations</td></tr>
+      <tr><td><b>Khanmigo</b></td><td>khanacademy.org</td><td>Yes</td><td>Step-by-step AI tutoring for engineering concepts</td></tr>
     </tbody>
   </table>
-  <h2>AI for Video &amp; Media</h2>
-  <table>
-    <thead><tr><th>Tool</th><th>URL</th><th>Free?</th><th>Best Use</th></tr></thead>
-    <tbody>
-      <tr><td><b>Runway Gen-3</b></td><td>runwayml.com</td><td>Limited</td><td>Cinematic AI video generation</td></tr>
-      <tr><td><b>Pika</b></td><td>pika.art</td><td>Yes</td><td>Quick social media video generation</td></tr>
-      <tr><td><b>HeyGen</b></td><td>heygen.com</td><td>Limited</td><td>AI avatar presenter videos</td></tr>
-      <tr><td><b>Synthesia</b></td><td>synthesia.io</td><td>Limited</td><td>Corporate training and e-learning videos</td></tr>
-      <tr><td><b>CapCut AI</b></td><td>capcut.com</td><td>Yes</td><td>Auto-captions, AI editing, social video</td></tr>
-      <tr><td><b>OpusClip</b></td><td>opus.pro</td><td>Limited</td><td>Turn long videos into short clips automatically</td></tr>
-    </tbody>
-  </table>
-  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>15</span></div>
 </div>
 </div>
 
 <div class="pdata" id="pd-dir3">
 <div class="pg">
   <div class="rh"><span>Chapter 12 continued</span><span>50+ AI Tools Directory</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>20</span></div>
+  <h2>AI for Video &amp; Media</h2>
+  <table>
+    <thead><tr><th>Tool</th><th>URL</th><th>Free?</th><th>Best Use</th></tr></thead>
+    <tbody>
+      <tr><td><b>Runway Gen-3</b></td><td>runwayml.com</td><td>Limited</td><td>Cinematic AI video generation, text-to-video</td></tr>
+      <tr><td><b>Pika</b></td><td>pika.art</td><td>Yes</td><td>Quick social media video clips</td></tr>
+      <tr><td><b>HeyGen</b></td><td>heygen.com</td><td>1 video/mo</td><td>AI avatar presenter videos, voice cloning</td></tr>
+      <tr><td><b>Synthesia</b></td><td>synthesia.io</td><td>Limited</td><td>Corporate training and e-learning videos</td></tr>
+      <tr><td><b>CapCut AI</b></td><td>capcut.com</td><td>Yes</td><td>Auto-captions, AI video editing, social video</td></tr>
+      <tr><td><b>OpusClip</b></td><td>opus.pro</td><td>Limited</td><td>Turn long videos into short highlight clips automatically</td></tr>
+    </tbody>
+  </table>
   <h2>AI for Audio &amp; Voice</h2>
   <table>
     <thead><tr><th>Tool</th><th>URL</th><th>Free?</th><th>Best Use</th></tr></thead>
     <tbody>
-      <tr><td><b>ElevenLabs</b></td><td>elevenlabs.io</td><td>Yes (10K chars)</td><td>Text-to-speech, voice cloning, narration</td></tr>
-      <tr><td><b>Adobe Podcast AI</b></td><td>podcast.adobe.com</td><td>Yes</td><td>Remove background noise from recordings — free</td></tr>
-      <tr><td><b>Otter.ai</b></td><td>otter.ai</td><td>Yes (300 min)</td><td>Meeting transcription and AI summaries</td></tr>
-      <tr><td><b>Fireflies.ai</b></td><td>fireflies.ai</td><td>Yes (limited)</td><td>Auto-join meetings, transcribe, and summarise</td></tr>
-      <tr><td><b>Krisp</b></td><td>krisp.ai</td><td>Yes (60 min)</td><td>Real-time noise cancellation in calls</td></tr>
+      <tr><td><b>ElevenLabs</b></td><td>elevenlabs.io</td><td>10K chars/mo</td><td>Text-to-speech, voice cloning, narration in 29 languages</td></tr>
+      <tr><td><b>Adobe Podcast AI</b></td><td>podcast.adobe.com</td><td>Yes</td><td>Remove noise/echo from recordings — free, no login</td></tr>
+      <tr><td><b>Otter.ai</b></td><td>otter.ai</td><td>300 min/mo</td><td>Meeting transcription and AI summaries</td></tr>
+      <tr><td><b>Fireflies.ai</b></td><td>fireflies.ai</td><td>Limited</td><td>Auto-join meetings, transcribe, and summarise</td></tr>
+      <tr><td><b>Krisp</b></td><td>krisp.ai</td><td>60 min/day</td><td>Real-time noise cancellation during live calls</td></tr>
     </tbody>
   </table>
-  <h2>AI for Productivity &amp; Project Management</h2>
+  <h2>AI for Productivity &amp; Presentations</h2>
   <table>
     <thead><tr><th>Tool</th><th>URL</th><th>Free?</th><th>Best Use</th></tr></thead>
     <tbody>
-      <tr><td><b>Notion AI</b></td><td>notion.so</td><td>Paid add-on</td><td>AI-powered knowledge base, docs, project wikis</td></tr>
-      <tr><td><b>Gamma</b></td><td>gamma.app</td><td>Yes</td><td>Create full presentations from a text prompt</td></tr>
-      <tr><td><b>Canva AI</b></td><td>canva.com</td><td>Yes</td><td>Graphic design, presentations, social media</td></tr>
-      <tr><td><b>Tome</b></td><td>tome.app</td><td>Yes</td><td>AI-generated presentations and visual stories</td></tr>
-      <tr><td><b>Beautiful.ai</b></td><td>beautiful.ai</td><td>No</td><td>Presentation design that auto-adjusts layout</td></tr>
+      <tr><td><b>Gamma</b></td><td>gamma.app</td><td>Yes</td><td>Full presentations from a text prompt in minutes</td></tr>
+      <tr><td><b>Canva AI</b></td><td>canva.com</td><td>Yes</td><td>Graphics, presentations, social media, AI images</td></tr>
+      <tr><td><b>Notion AI</b></td><td>notion.so</td><td>Paid add-on</td><td>AI-powered knowledge base, SOPs, project wikis</td></tr>
+      <tr><td><b>Grammarly</b></td><td>grammarly.com</td><td>Yes</td><td>Grammar, clarity, and tone for technical English</td></tr>
     </tbody>
   </table>
-  <h2>AI Engineering-Specific Tools</h2>
-  <table>
-    <thead><tr><th>Tool</th><th>Category</th><th>What It Does</th></tr></thead>
-    <tbody>
-      <tr><td><b>Wolfram Alpha</b></td><td>Calculation</td><td>Exact mathematics, physics, unit conversion, equation solving</td></tr>
-      <tr><td><b>MATLAB AI</b></td><td>Analysis</td><td>AI writes and debugs MATLAB code for engineering simulation</td></tr>
-      <tr><td><b>Autodesk Forma</b></td><td>BIM/Design</td><td>AI analyses building performance in early design stage</td></tr>
-      <tr><td><b>Speckle AI</b></td><td>BIM</td><td>AI-powered BIM data management and analysis across platforms</td></tr>
-      <tr><td><b>Grammarly</b></td><td>Writing</td><td>Grammar, tone, and clarity for technical English writing</td></tr>
-    </tbody>
-  </table>
-  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>16</span></div>
 </div>
 </div>
 
 <div class="pdata" id="pd-qref">
 <div class="pg">
   <div class="rh"><span>Quick Reference</span><span>AI Tools for Engineers — Cheat Sheet</span></div>
+  <div class="rf"><span>AYE Tech Hub — Engineering the Future</span><span>21</span></div>
   <div class="eye">Quick Reference</div>
-  <div class="ctitle" style="font-size:clamp(17px,2vw,26px);margin-bottom:6px;">Engineer's AI Cheat Sheet</div><hr class="crule">
-  <h2>By Task — Which Tool First?</h2>
+  <div class="ctitle" style="font-size:clamp(14px,1.6vw,20px);margin-bottom:4px;">Engineer's AI Cheat Sheet</div><hr class="crule">
+  <h2>Task → Best Tool (Quick Lookup)</h2>
   <table>
-    <thead><tr><th>Task</th><th>Tool #1</th><th>Tool #2 (backup)</th></tr></thead>
+    <thead><tr><th>Task</th><th>First Choice</th><th>Alternative</th></tr></thead>
     <tbody>
-      <tr><td>Engineering calculation</td><td>ChatGPT o3</td><td>Wolfram Alpha</td></tr>
+      <tr><td>Multi-step calculation</td><td>ChatGPT o3</td><td>Wolfram Alpha</td></tr>
       <tr><td>Write technical report</td><td>Claude</td><td>Microsoft Copilot</td></tr>
       <tr><td>Research current standards</td><td>Perplexity</td><td>Gemini</td></tr>
-      <tr><td>Analyse a document</td><td>NotebookLM</td><td>Claude (paste text)</td></tr>
-      <tr><td>Write Python/VBA code</td><td>ChatGPT</td><td>Claude</td></tr>
-      <tr><td>Create presentation</td><td>Gamma</td><td>Canva AI</td></tr>
-      <tr><td>Generate engineering image</td><td>Midjourney</td><td>DALL-E 3 in ChatGPT</td></tr>
-      <tr><td>Transcribe meeting</td><td>Otter.ai</td><td>Fireflies.ai</td></tr>
-      <tr><td>Clean up audio recording</td><td>Adobe Podcast AI (free)</td><td>Krisp</td></tr>
-      <tr><td>Create avatar presenter video</td><td>HeyGen</td><td>Synthesia</td></tr>
+      <tr><td>Analyse your own documents</td><td>NotebookLM</td><td>Claude (paste text)</td></tr>
+      <tr><td>Write Python / VBA / PLC code</td><td>ChatGPT / Claude</td><td>Replit AI</td></tr>
+      <tr><td>Create presentations fast</td><td>Gamma</td><td>Canva AI</td></tr>
+      <tr><td>Concept renders / images</td><td>Midjourney</td><td>DALL-E 3 in ChatGPT</td></tr>
+      <tr><td>Meeting notes &amp; summaries</td><td>Otter.ai</td><td>Fireflies.ai</td></tr>
+      <tr><td>Clean up audio recordings</td><td>Adobe Podcast AI (free)</td><td>Krisp</td></tr>
+      <tr><td>Talking-head presenter video</td><td>HeyGen</td><td>Synthesia</td></tr>
     </tbody>
   </table>
-  <h2>The Non-Negotiable AI Safety Rules for Engineers</h2>
+  <h2>The 5 Non-Negotiable AI Safety Rules</h2>
   <ul>
-    <li>&#9745; <b>Never trust AI for specific standards clause numbers</b> — always verify in the actual standard</li>
-    <li>&#9745; <b>Verify all safety-critical calculations</b> independently before using in a design</li>
-    <li>&#9745; <b>Do not paste confidential client data</b> into public AI tools without checking privacy policy</li>
-    <li>&#9745; <b>Disclose AI use in professional documents</b> where required by your professional body</li>
-    <li>&#9745; <b>You sign, you are responsible</b> — AI output requires your professional judgement before use</li>
+    <li>&#9745; <b>Never use AI-generated standards clause numbers</b> without verifying in the original standard</li>
+    <li>&#9745; <b>Verify all safety-critical calculations</b> independently before putting them in a design</li>
+    <li>&#9745; <b>Do not paste confidential client data</b> into public AI tools without reviewing their data policy</li>
+    <li>&#9745; <b>Disclose AI use</b> in professional documents where required by your professional body or client</li>
+    <li>&#9745; <b>You sign — you are responsible.</b> AI output requires your engineering judgement before it becomes professional work</li>
   </ul>
   <div class="orn">&bull; &diams; &bull;</div>
-  <p style="text-align:center;font-style:italic;color:#7a6040;font-size:clamp(11px,1vw,14px);">Continue learning at <strong>ayetechub.com/ai-tools.html</strong> — updated tool reviews, prompts, and tutorials.</p>
-  <div class="rf"><span>AYE Tech Hub &mdash; Engineering the Future</span><span>17</span></div>
+  <p style="text-align:center;font-size:clamp(10px,0.9vw,13px);color:#7a6040;font-style:italic">More tools, prompts &amp; tutorials: <b>ayetechub.com</b></p>
 </div>
 </div>
 
@@ -651,16 +877,16 @@ body{background:radial-gradient(ellipse at 50% 0%,#1a0820 0%,#06040a 100%);min-h
   <div class="bc-logo">AYE Tech Hub</div>
   <div class="bc-rule"></div>
   <div class="bc-tag">"Engineering the Future — one engineer at a time."<br><br>Part of AYE Tech Hub's free engineering education initiative, serving engineers across Africa and beyond.</div>
-  <div class="bc-item">&#128218; <b>PDF Library</b> — Free &amp; premium engineering guides <span>&nbsp;ayetechub.com/pdfs.html</span></div>
-  <div class="bc-item">&#127979; <b>Courses</b> — PLC, HMI, HVAC, Solar, AI Tools <span>&nbsp;ayetechub.com/courses.html</span></div>
-  <div class="bc-item">&#129302; <b>AI Tools</b> — Engineering-specific AI applications <span>&nbsp;ayetechub.com/ai-tools.html</span></div>
-  <div class="bc-item">&#128172; <b>Telegram Community</b> — Live support <span>&nbsp;t.me/ayetechub</span></div>
-  <div style="color:#ec4899;font-size:18px;">&#10022;</div>
+  <div class="bc-item">&#128218; <b>PDF Library</b> — Free &amp; premium engineering guides <span>&nbsp;&bull;&nbsp;ayetechub.com/pdfs.html</span></div>
+  <div class="bc-item">&#127979; <b>Courses</b> — PLC, HMI, HVAC, Solar, AI Tools <span>&nbsp;&bull;&nbsp;ayetechub.com/courses.html</span></div>
+  <div class="bc-item">&#129302; <b>AI Tools</b> — Engineering AI applications reviewed <span>&nbsp;&bull;&nbsp;ayetechub.com/ai-tools.html</span></div>
+  <div class="bc-item">&#128172; <b>Telegram Community</b> — Ask, share, learn <span>&nbsp;&bull;&nbsp;t.me/ayetechub</span></div>
+  <div style="color:#ec4899;font-size:16px;">&#10022;</div>
   <div class="bc-copy">&#169; 2026 AYE Tech Hub. Published by Awet G. Nway.<br>Free for personal and educational use.</div>
 </div>
 </div>
 
-<!-- ═══════════════ SCRIPT ═══════════ -->
+<!-- ═══════════ SCRIPT ═══════════ -->
 <script>
 const PAGE_IDS = [
   'pd-cover','pd-toc',
@@ -668,14 +894,16 @@ const PAGE_IDS = [
   'pd-ch2a','pd-ch2b',
   'pd-ch3','pd-ch4',
   'pd-ch5','pd-ch6',
-  'pd-ch7','pd-ch9',
+  'pd-ch7','pd-ch8',
+  'pd-ch9a','pd-ch9b',
+  'pd-ch10a','pd-ch10b',
   'pd-ch11',
   'pd-dir1','pd-dir2','pd-dir3',
   'pd-qref','pd-back'
 ];
 
-let actx=null, soundOn=true;
-function initAudio(){if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();}
+let actx=null,soundOn=true;
+function initAudio(){if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)()}
 function playFlip(){
   if(!soundOn)return;
   try{
