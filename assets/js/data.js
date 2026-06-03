@@ -3718,6 +3718,18 @@ const BLOG_POSTS = [
     featured: false
   },
   {
+    id: 'ai-tools-comparison-engineers',
+    title: 'ChatGPT vs Claude vs Gemini vs Copilot: The Honest Guide for Engineers in 2026',
+    category: 'ai',
+    date: '2026-06-03',
+    author: 'Awet G. Nway',
+    readTime: '10 min read',
+    excerpt: 'Which AI tool should engineers actually use? An honest, practical comparison of ChatGPT (o1/o3), Claude, Gemini, and Microsoft Copilot — with real engineering prompts, a side-by-side comparison table, and a hybrid workflow that combines all four for maximum productivity.',
+    image: 'assets/images/og-cover.png',
+    url: 'blog/ai-tools-comparison-engineers.html',
+    featured: true
+  },
+  {
     id: 'plumbing-building-systems',
     title: 'Common Plumbing Failures in Buildings: Causes, Diagnosis & Engineering Solutions',
     category: 'plumbing',
