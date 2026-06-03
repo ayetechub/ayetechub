@@ -2323,6 +2323,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'solar-curriculum-009-solar-wiring-basics',
+    title: {
+      en: 'SOLAR-009: Solar Wiring Basics — Safe Wiring from Panel to Load',
+      ti: 'SOLAR-009: ናይ ሶላር ሽቦ መሰረታዊ — ካብ ፓነል ናብ ጾር ሓቲቱ',
+      am: 'SOLAR-009: የፀሐይ ሽቦ መሰረቶች — ከፓነል እስከ ጭነት ደህንነቱ የተጠበቀ ሽቦ'
+    },
+    category: 'solar',
+    pages: 7,
+    size: '35 KB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: 'Complete solar wiring flow diagram (Panels→MPPT→Battery→Inverter→Loads), series vs parallel panel wiring diagram with voltage/current rules, DC cable sizing table (1.5–50mm²) with ampacity and voltage drop formula, MPPT connection order (battery first rule), battery bank series/parallel configurations, AC output cable sizing by inverter power, grounding and earthing diagram, 8-row common wiring mistakes table — by Awet G. Nway.',
+      ti: 'Solar wiring flow diagram (Panels→MPPT→Battery→Inverter)፣ series vs parallel diagram፣ DC cable sizing table (1.5–50mm²)፣ MPPT connection order (battery first)፣ battery bank configurations፣ AC output cable sizing፣ grounding diagram፣ 8-row wiring mistakes table — ብ Awet G. Nway።',
+      am: 'Solar wiring flow diagram (Panels→MPPT→Battery→Inverter)፣ series vs parallel diagram፣ DC cable sizing table (1.5–50mm²)፣ MPPT connection order (battery first)፣ battery bank configurations፣ AC output cable sizing፣ grounding diagram፣ 8-row wiring mistakes table — በ Awet G. Nway።'
+    },
+    file: 'pdfs/SOLAR-009-Solar-Wiring-Basics.pdf',
+    color: '#fbbf24',
+    preview: true
+  },
+  {
     id: 'ai-curriculum-002-understanding-chatgpt',
     title: {
       en: 'AI-002: Understanding ChatGPT',
