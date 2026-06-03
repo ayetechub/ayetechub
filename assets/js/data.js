@@ -1756,6 +1756,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'mep-curriculum-006-cooling-systems-and-chillers',
+    title: {
+      en: 'MEP-006: Cooling Systems and Chillers',
+      ti: 'MEP-006: ናይ ምቅዛን ስርዓት ን Chiller',
+      am: 'MEP-006: የማቀዝቀዣ ሥርዓቶች እና ቺለር'
+    },
+    category: 'mep',
+    pages: 8,
+    size: '33 KB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: 'Vapour compression cycle diagram (evaporator/compressor/condenser/expansion valve), chiller types comparison diagram (air-cooled/water-cooled/absorption), primary-secondary chilled water system diagram, refrigerant comparison table (R-32/R-410A/R-1234ze), chiller type selection table, efficiency metrics table (COP/EER/IPLV), chilled water design parameters, cooling tower Legionella management table, FCU/AHU/VAV terminal comparison, worked example (620 kW office building chiller plant) — by Awet G. Nway.',
+      ti: 'Vapour compression cycle diagram፣ chiller types diagram (air-cooled/water-cooled/absorption)፣ primary-secondary chilled water system diagram፣ refrigerant table፣ chiller efficiency metrics (COP/IPLV)፣ Legionella management table፣ FCU/AHU/VAV comparison፣ worked example 620 kW office — ብ Awet G. Nway።',
+      am: 'Vapour compression cycle diagram፣ chiller types diagram (air-cooled/water-cooled/absorption)፣ primary-secondary chilled water system diagram፣ refrigerant table፣ chiller efficiency metrics (COP/IPLV)፣ Legionella management table፣ FCU/AHU/VAV comparison፣ worked example 620 kW office — በ Awet G. Nway።'
+    },
+    file: 'pdfs/MEP-006-Cooling-Systems-and-Chillers.pdf',
+    color: '#0d9488',
+    preview: true
+  },
+  {
     id: 'mech-curriculum-001-intro-to-mechanical',
     title: {
       en: 'MECH-001: Introduction to Mechanical Engineering',
