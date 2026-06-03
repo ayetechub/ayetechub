@@ -2,6 +2,36 @@
    Supplements main.css for multi-page platform features.
 */
 
+/* ============ BLOG ARTICLE — FULL-WIDTH LAYOUT ============ */
+/* Overrides the max-width:780px set inline in every blog file */
+.article-wrap {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left:  clamp(20px, 5vw, 80px) !important;
+  padding-right: clamp(20px, 5vw, 80px) !important;
+  box-sizing: border-box !important;
+}
+/* Keep header text readable at full width */
+.article-header h1 {
+  max-width: 900px;
+}
+/* Keep body text line-length comfortable but wide */
+.article-body {
+  max-width: 100%;
+}
+/* Tables, grids, cards stretch naturally with the wider layout */
+.article-body table,
+.article-body .component-grid,
+.article-body .ppe-grid,
+.article-body .scan-step,
+.article-body .loto-step,
+.article-body .hazard-bar,
+.article-body .callout,
+.article-body .practice-card,
+.article-body .code-block {
+  max-width: 100%;
+}
+
 /* ============ BLOG ARTICLE META ROW ============ */
 /* Override inline styles in all blog articles for consistent, prominent meta */
 .article-wrap .article-header {
