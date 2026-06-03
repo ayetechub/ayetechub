@@ -754,6 +754,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'ct-curriculum-007-philosophy-of-free-will',
+    title: {
+      en: 'CT-007: The Philosophy of Free Will in a Deterministic World',
+      ti: 'CT-007: ፍልስፍና ናይ ናጻ ፍቓድ ኣብ ዓለም ዝተወሰነ',
+      am: 'CT-007: በተወሰነ ዓለም ውስጥ የነፃ ፍቃድ ፍልስፍና'
+    },
+    category: 'critical-thinking',
+    pages: 8,
+    size: '30 KB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: 'Three-position philosophical spectrum diagram (Hard Determinism/Compatibilism/Libertarian Free Will), Libet experiment timeline diagram (readiness potential 550ms before consciousness), definitions table, Hard Determinist argument structure, Libet interpretations table, five major compatibilist thinkers table, free will and justice system comparison, five classic thought experiments, practical life implications table, key thinkers reference card — by Awet G. Nway.',
+      ti: 'Three-position philosophical spectrum diagram፣ Libet experiment timeline diagram (readiness potential 550ms)፣ definitions table፣ Hard Determinist argument፣ Libet interpretations table፣ 5 compatibilist thinkers table፣ justice system comparison፣ 5 thought experiments — ብ Awet G. Nway።',
+      am: 'Three-position philosophical spectrum diagram፣ Libet experiment timeline diagram (readiness potential 550ms)፣ definitions table፣ Hard Determinist argument፣ Libet interpretations table፣ 5 compatibilist thinkers table፣ justice system comparison፣ 5 thought experiments — በ Awet G. Nway።'
+    },
+    file: 'pdfs/CT-007-The-Philosophy-of-Free-Will.pdf',
+    color: '#7c3aed',
+    preview: true
+  },
+  {
     id: 'ct-philosophy-truth-vs-consequences',
     title: {
       en: 'Truth and Falsehood: Should Truth Always Be Absolute?',
