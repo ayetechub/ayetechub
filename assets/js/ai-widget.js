@@ -1,7 +1,7 @@
 'use strict';
 
 /* ============================================================
-   AYE Tech Hub — AI Assistant Widget  v3.0
+   AYE Tech Hub — ዓወት AI Widget  v3.0
    OpenAI gpt-4o-mini · SSE streaming · Conversation memory
    Web Speech API  · STT (mic) + TTS (voice responses)
    ============================================================ */
@@ -632,7 +632,7 @@
             : 'Connection error. Please try again in a moment.'
         );
         if (history.length && history[history.length - 1].role === 'user') history.pop();
-        console.error('[AYE AI] Request failed:', err);
+        console.error('[ዓወት AI] Request failed:', err);
       }
     } finally {
       fetchController = null;
