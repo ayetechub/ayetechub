@@ -35,7 +35,7 @@ body{background:radial-gradient(ellipse at 50% 0%,#1c1208 0%,#0a0806 100%);min-h
 .half.left::before{content:'';position:absolute;top:0;right:0;bottom:0;width:3px;background:linear-gradient(90deg,transparent,rgba(0,0,0,.08));z-index:2;}
 .half.right::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:linear-gradient(270deg,transparent,rgba(0,0,0,.08));z-index:2;}
 .half-inner{position:absolute;inset:0;overflow:hidden;}
-#flipper{position:absolute;top:0;width:calc(50% - 4px);transform-style:preserve-3d;transition:transform 0.65s cubic-bezier(.4,0,.2,1);z-index:20;pointer-events:none;}
+#flipper{position:absolute;top:0;width:calc(50% - 4px);height:100%;transform-style:preserve-3d;transition:transform 0.65s cubic-bezier(.4,0,.2,1);z-index:20;pointer-events:none;}
 #flipper.right-start{right:0;transform-origin:left center;}
 #flipper.left-start{left:0;transform-origin:right center;}
 #flipper.flipping-forward{transform:perspective(1800px) rotateY(-180deg);}
