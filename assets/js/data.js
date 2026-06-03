@@ -1504,6 +1504,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'fit-hub-day17-protein-and-muscle',
+    title: {
+      en: 'Day 17: Protein & Muscle — How Much, When, and Why',
+      ti: 'መዓልቲ 17: ፕሮቲን ን ጭዋዳ — ክንደይ፣ መዓዝ፣ ን\'ምንታይ',
+      am: 'ቀን 17: ፕሮቲን እና ጡንቻ — ምን ያህል፣ መቼ፣ እና ለምን'
+    },
+    category: 'fit-hub',
+    pages: 7,
+    size: '25 KB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: 'MPS cycle diagram (Protein→Amino Acids→mTOR→Muscle), MPS vs dose bar chart (10g to 50g+), protein timing day diagram (4 meals with grams), protein intake table by goal (6 rows), MPS per meal dose research table, protein timing research table (5 timing questions), 11 protein sources ranked (whey to quinoa with leucine/digestibility), practical hitting-target strategies table, protein myths busted table (5 myths), 5-step action plan — by Awet G. Nway.',
+      ti: 'MPS cycle diagram፣ MPS vs dose bar chart (10g–50g+)፣ protein timing day diagram (4 meals)፣ protein intake by goal table (6 rows)፣ timing research table (5 questions)፣ 11 protein sources ranked (whey to quinoa)፣ practical strategies table፣ protein myths table (5 myths) — ብ Awet G. Nway።',
+      am: 'MPS cycle diagram፣ MPS vs dose bar chart (10g–50g+)፣ protein timing day diagram (4 meals)፣ protein intake by goal table (6 rows)፣ timing research table (5 questions)፣ 11 protein sources ranked (whey to quinoa)፣ practical strategies table፣ protein myths table (5 myths) — በ Awet G. Nway።'
+    },
+    file: 'pdfs/aye-fit-hub-day17-protein-and-muscle.pdf',
+    color: '#00d4ff',
+    preview: true
+  },
+  {
     id: 'ai-curriculum-001-intro-to-ai',
     title: {
       en: 'AI-001: Introduction to Artificial Intelligence',
