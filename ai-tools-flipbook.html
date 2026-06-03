@@ -45,9 +45,9 @@ body{background:radial-gradient(ellipse at 50% 0%,#1a0820 0%,#06040a 100%);min-h
 .pdata{display:none;}
 
 /* ══ PAGE STYLES ══ */
-.pg{width:100%;height:100%;background:#faf6ed;background-image:repeating-linear-gradient(transparent 0px,transparent 30px,rgba(160,140,100,.06) 30px,rgba(160,140,100,.06) 31px);padding:clamp(18px,2.5vh,36px) clamp(18px,2.5vw,40px) clamp(30px,4vh,50px);font-family:'Merriweather',Georgia,serif;color:#1a1208;overflow:hidden;position:relative;box-sizing:border-box;}
-.pg .rh{font-family:'Lato',sans-serif;font-size:clamp(9px,0.8vw,12px);color:#9a8060;text-transform:uppercase;letter-spacing:1.5px;border-bottom:1px solid #d4bc90;padding-bottom:7px;margin-bottom:18px;display:flex;justify-content:space-between;}
-.pg .rf{position:absolute;bottom:14px;left:clamp(18px,2.5vw,40px);right:clamp(18px,2.5vw,40px);font-family:'Lato',sans-serif;font-size:clamp(9px,0.8vw,12px);color:#9a8060;border-top:1px solid #d4bc90;padding-top:7px;display:flex;justify-content:space-between;}
+.pg{width:100%;height:100%;background:#faf6ed;background-image:repeating-linear-gradient(transparent 0px,transparent 30px,rgba(160,140,100,.06) 30px,rgba(160,140,100,.06) 31px);padding:clamp(18px,2.5vh,36px) clamp(18px,2.5vw,40px) clamp(18px,2.5vh,28px);font-family:'Merriweather',Georgia,serif;color:#1a1208;overflow:hidden;position:relative;box-sizing:border-box;display:flex;flex-direction:column;}
+.pg .rh{order:-2;font-family:'Lato',sans-serif;font-size:clamp(9px,0.8vw,12px);color:#9a8060;text-transform:uppercase;letter-spacing:1.5px;border-bottom:none;padding-bottom:3px;margin-bottom:0;display:flex;justify-content:space-between;flex-shrink:0;}
+.pg .rf{order:-1;position:static;font-family:'Lato',sans-serif;font-size:clamp(9px,0.8vw,12px);color:#9a8060;border-top:none;border-bottom:1px solid #d4bc90;padding-top:0;padding-bottom:7px;margin-bottom:14px;display:flex;justify-content:space-between;flex-shrink:0;}
 .pg .eye{font-family:'Lato',sans-serif;font-size:clamp(10px,0.9vw,13px);font-weight:900;color:#9d174d;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
 .pg .cnum{font-family:'Lato',sans-serif;font-size:clamp(28px,3.5vw,50px);font-weight:900;color:#ec4899;line-height:1;}
 .pg .ctitle{font-size:clamp(20px,2.5vw,34px);font-weight:700;color:#0a0e1a;line-height:1.2;margin:4px 0;font-family:'Lato',sans-serif;}
