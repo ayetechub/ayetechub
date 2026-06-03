@@ -1693,6 +1693,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'plc-curriculum-006-data-handling-and-move-instructions',
+    title: {
+      en: 'PLC-006: Data Handling & Move Instructions',
+      ti: 'PLC-006: Data Handling ን Move መምርሒታት',
+      am: 'PLC-006: Data Handling እና Move ትእዛዞች'
+    },
+    category: 'plc',
+    pages: 6,
+    size: '145 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'PLC memory organisation (BIT/BYTE/INT/DINT/REAL) with data-type size chart, MOV instruction data-flow diagram, FILL block-fill diagram, indirect addressing pointer diagram, MOV/FILL/COP/indirect addressing instruction tables (Siemens TIA Portal + Allen-Bradley), recipe array example with 4-step table, practice exercises, and lesson summary — 5 diagrams — by Awet G. Nway.',
+      ti: 'PLC memory organisation data types diagram፣ MOV instruction data-flow diagram፣ FILL block-fill diagram፣ indirect addressing pointer diagram፣ MOV/FILL/COP instruction tables (TIA Portal + AB)፣ recipe array example፣ 5 exercises — ብ Awet G. Nway።',
+      am: 'PLC memory organisation data types diagram፣ MOV instruction data-flow diagram፣ FILL block-fill diagram፣ indirect addressing pointer diagram፣ MOV/FILL/COP instruction tables (TIA Portal + AB)፣ recipe array example፣ 5 exercises — በ Awet G. Nway።'
+    },
+    file: 'pdfs/PLC-006-Data-Handling-and-Move-Instructions.pdf',
+    color: '#22c55e',
+    preview: true
+  },
+  {
     id: 'mep-curriculum-001-intro-to-mep',
     title: {
       en: 'MEP-001: Introduction to MEP Engineering',
