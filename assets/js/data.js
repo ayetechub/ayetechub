@@ -3697,6 +3697,18 @@ const BLOG_POSTS = [
     featured: false
   },
   {
+    id: 'plumbing-building-systems',
+    title: 'Common Plumbing Failures in Buildings: Causes, Diagnosis & Engineering Solutions',
+    category: 'plumbing',
+    date: '2026-06-03',
+    author: 'Awet G. Nway',
+    readTime: '12 min read',
+    excerpt: 'The seven most costly plumbing failures — pipe corrosion, water hammer, Legionella contamination, low pressure, drain blockages, frozen pipes, and backflow — explained with root causes, diagnosis methods, and engineering prevention strategies.',
+    image: 'assets/images/og-cover.png',
+    url: 'blog/plumbing-building-systems.html',
+    featured: true
+  },
+  {
     id: 'progressive-overload',
     title: 'Progressive Overload: The Science of Never Plateauing',
     category: 'fit-hub',
