@@ -3718,6 +3718,18 @@ const BLOG_POSTS = [
     featured: false
   },
   {
+    id: 'hvac-system-selection-guide',
+    title: 'VRF vs Chiller vs Split AC: The Engineer\'s Guide to Choosing the Right HVAC System',
+    category: 'hvac',
+    date: '2026-06-03',
+    author: 'Awet G. Nway',
+    readTime: '12 min read',
+    excerpt: 'How to select the right cooling system for any building — split AC, VRF heat recovery, or central chilled water. Complete comparison table, 7-question decision framework, real project examples, energy payback analysis for Ethiopian electricity costs, and 6 common selection mistakes that cost engineers dearly.',
+    image: 'assets/images/og-cover.png',
+    url: 'blog/hvac-system-selection-guide.html',
+    featured: true
+  },
+  {
     id: 'hvac-fundamentals',
     title: 'HVAC System Design: A Practical Beginner\'s Guide',
     category: 'hvac',
