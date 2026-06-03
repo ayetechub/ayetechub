@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Electrical Safety Basics Every Technician Must Know – AYE Tech Hub</title>
+<meta name="description" content="Critical electrical safety protocols every technician must know — LOTO procedures, arc flash protection, PPE selection, shock prevention, and safe working practices that save lives."/>
+<link rel="canonical" href="https://ayetechub.com/blog/electrical-safety-basics-technicians.html"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23020817'/%3E%3Crect x='3' y='3' width='94' height='94' rx='20' fill='none' stroke='%2300d4ff' stroke-width='3'/%3E%3Ctext x='50' y='62' font-family='Arial Black,sans-serif' font-size='30' font-weight='900' fill='%2300d4ff' text-anchor='middle'%3EAYE%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;700&display=swap"/>
+<link rel="stylesheet" href="../assets/css/main.css"/>
+<link rel="stylesheet" href="../assets/css/pages.css"/>
+<style>
+.article-wrap{max-width:780px;margin:0 auto;padding:0 20px 80px}
+.article-header{padding:48px 0 36px;border-bottom:1px solid var(--border);margin-bottom:36px}
+.article-cat{display:inline-block;background:rgba(234,179,8,.12);color:#eab308;border:1px solid rgba(234,179,8,.3);font-size:.72rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:16px}
+.article-header h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;line-height:1.2;margin-bottom:16px}
+.article-meta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;color:var(--text-muted);font-size:.82rem}
+.article-body{font-size:1.02rem;line-height:1.85;color:var(--text-soft)}
+.article-body h2{font-size:1.3rem;font-weight:800;color:var(--text);margin:40px 0 14px;padding-left:14px;border-left:3px solid #eab308}
+.article-body h3{font-size:1.05rem;font-weight:700;color:#eab308;margin:28px 0 10px}
+.article-body p{margin-bottom:18px}
+.article-body ul,.article-body ol{padding-left:22px;margin-bottom:18px}
+.article-body li{margin-bottom:8px;line-height:1.75}
+.article-body strong{color:var(--text)}
+.article-body blockquote{border-left:4px solid #eab308;background:var(--bg-card);padding:16px 20px;margin:24px 0;border-radius:0 8px 8px 0;font-style:italic;color:var(--text)}
+.callout{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:18px 20px;margin:24px 0}
+.callout.danger{border-color:rgba(239,68,68,.4);background:rgba(239,68,68,.06)}
+.callout.warning{border-color:rgba(234,179,8,.4);background:rgba(234,179,8,.06)}
+.callout.tip{border-color:rgba(34,197,94,.4);background:rgba(34,197,94,.06)}
+.callout-title{font-weight:800;font-size:.85rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;color:#eab308}
+.callout.danger .callout-title{color:#ef4444}
+.callout.tip .callout-title{color:#22c55e}
+.callout p{margin:0;font-size:.92rem;line-height:1.7;color:var(--text-soft)}
+.tag-row{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}
+.tag{font-size:.72rem;padding:4px 12px;background:var(--bg-card);border:1px solid var(--border);border-radius:20px;color:var(--text-muted)}
+a.tag{color:var(--text-muted);text-decoration:none;transition:color .2s,border-color .2s}
+a.tag:hover{color:#eab308;border-color:#eab308}
+.article-footer{margin-top:48px;padding-top:32px;border-top:1px solid var(--border);display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.safety-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:.9rem}
+.safety-table th{background:rgba(234,179,8,.15);color:#eab308;padding:10px 14px;text-align:left;font-weight:700;border-bottom:2px solid rgba(234,179,8,.3)}
+.safety-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--text-soft);line-height:1.6;vertical-align:top}
+.safety-table tr:hover td{background:rgba(234,179,8,.04)}
+.loto-step{display:flex;gap:14px;align-items:flex-start;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:16px 18px;margin:10px 0}
+.loto-num{display:flex;align-items:center;justify-content:center;min-width:36px;height:36px;border-radius:50%;background:#eab308;color:#020817;font-weight:900;font-size:.9rem;flex-shrink:0}
+.loto-body h4{font-size:.95rem;font-weight:700;color:var(--text);margin:0 0 5px}
+.loto-body p{margin:0;font-size:.88rem;color:var(--text-soft);line-height:1.6}
+.ppe-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:20px 0}
+.ppe-card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:15px 16px}
+.ppe-card h4{font-size:.9rem;font-weight:700;color:#eab308;margin:0 0 7px}
+.ppe-card p{margin:0;font-size:.85rem;color:var(--text-soft);line-height:1.55}
+.hazard-bar{display:flex;align-items:center;gap:12px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin:8px 0}
+.hazard-icon{font-size:1.4rem;flex-shrink:0}
+.hazard-text h4{font-size:.92rem;font-weight:700;color:var(--text);margin:0 0 3px}
+.hazard-text p{margin:0;font-size:.85rem;color:var(--text-soft);line-height:1.5}
+</style>
+</head>
+<body>
+<div id="loading-screen"><div class="loading-logo">AYE</div><div class="loading-bar-wrap"><div class="loading-bar"></div></div><div class="loading-text">LOADING ARTICLE</div></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-menu" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path fill="currentColor" d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.39 5.39 0 0 1-4.4 2.26 5.5 5.5 0 0 1-3.14-10A9.32 9.32 0 0 0 12 3z"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><path fill="currentColor" d="M6.76 4.84 4.96 3.05 3.55 4.46l1.79 1.79zM4 10.5H1v2h3zm9-9.95h-2V3.5h2zm7.45 3.91-1.41-1.41-1.79 1.79 1.41 1.41zM17.24 18.16l1.79 1.8 1.41-1.41-1.8-1.79zM20 10.5v2h3v-2zM12 5.5a6 6 0 0 0-6 6c0 3.31 2.69 6 6 6s6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2zM4.96 19.95l1.41 1.41 1.79-1.8-1.41-1.41z"/></symbol>
+<symbol id="i-telegram" viewBox="0 0 24 24"><path fill="currentColor" d="M22 3 2 11l6 2 2 7 4-5 6 5 2-17zm-5 5L10 14l-1 4-1-3 9-7z"/></symbol>
+</defs></svg>
+
+<header id="navbar">
+  <div class="container nav-inner">
+    <a href="../index.html" class="brand"><img src="../assets/images/logo.png" alt="AYE Tech Hub" style="width:42px;height:42px;border-radius:10px;object-fit:cover;"/><div><div class="brand-name">AYE Tech Hub</div><div class="brand-tag">Engineering the Future</div></div></a>
+    <nav class="nav-menu">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../courses.html" class="nav-link">Courses</a>
+      <a href="../pdfs.html" class="nav-link">PDF Library</a>
+      <a href="../tutorials.html" class="nav-link">Tutorials</a>
+      <a href="../blog.html" class="nav-link active">Blog</a>
+      <a href="../contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="nav-controls">
+      <button class="icon-btn" onclick="toggleTheme()" aria-label="Toggle theme"><svg class="svg-icon"><use id="theme-use" href="#i-moon"/></svg></button>
+      <a href="https://t.me/ayetechub" target="_blank" rel="noopener" class="btn btn-primary btn-sm hide-mobile"><svg class="svg-icon" aria-hidden="true"><use href="#i-telegram"/></svg> Telegram</a>
+      <button class="icon-btn hamburger" onclick="toggleMobileMenu()" aria-label="Open menu"><svg class="svg-icon"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="container">
+    <a href="../index.html" class="mobile-link">Home</a>
+    <a href="../courses.html" class="mobile-link">Courses</a>
+    <a href="../blog.html" class="mobile-link" style="color:var(--neon)">Blog</a>
+    <a href="../contact.html" class="mobile-link">Contact</a>
+  </div>
+</header>
+
+<div class="article-wrap">
+
+  <div class="article-header">
+    <span class="article-cat">&#9889; Electrical Safety</span>
+    <h1>Electrical Safety Basics Every Technician Must Know</h1>
+    <div class="article-meta">
+      <span>&#128197; June 3, 2026</span>
+      <span>&#9997; Awet G. Nway</span>
+      <span>&#128337; 5 min read</span>
+
+      <div class="blog-lang-bar">
+        <span class="bl-label">&#127760; Read in:</span>
+        <button class="bl-btn active" id="bl-en" onclick="blogLang('en')">EN</button>
+        <button class="bl-btn" id="bl-ti" onclick="blogLang('ti')" lang="ti">ትግርኛ</button>
+        <button class="bl-btn" id="bl-am" onclick="blogLang('am')" lang="am">አማርኛ</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-body">
+
+    <p>Every year, electrical accidents kill thousands of workers worldwide — not because electricity is unpredictable, but because safe procedures were skipped, PPE was not worn, or someone assumed the circuit was dead without verifying it. The tragedy is that virtually every electrical fatality is preventable. The knowledge exists. The procedures exist. The equipment exists. What is missing, in most cases, is disciplined application of what every technician should already know.</p>
+
+    <p>Whether you are an electrical technician, an automation engineer, a maintenance professional, or a student preparing to work on industrial equipment — this article covers the non-negotiable fundamentals of electrical safety that will protect you, your colleagues, and your career.</p>
+
+    <blockquote>"Electricity does not forgive a second mistake. Every safety rule in this field was written because someone died the first time it was ignored."</blockquote>
+
+    <h2>1. Understanding Electrical Hazards — What Can Actually Kill You</h2>
+
+    <p>To work safely around electricity, you must first understand exactly what makes it dangerous. There are four primary electrical hazards, and each requires a different response.</p>
+
+    <div class="hazard-bar">
+      <div class="hazard-icon">&#9889;</div>
+      <div class="hazard-text"><h4>Electric Shock (Electrocution)</h4><p>Current passing through the human body. As little as <strong>50 milliamps (0.05A)</strong> through the heart can cause ventricular fibrillation and death. A standard 13A socket can supply 260 times the lethal dose. Severity depends on current magnitude, path through the body, duration, and skin resistance (wet skin = far more dangerous).</p></div>
+    </div>
+    <div class="hazard-bar">
+      <div class="hazard-icon">&#128293;</div>
+      <div class="hazard-text"><h4>Arc Flash</h4><p>An arc flash is an explosive release of energy caused by a short circuit through the air. Arc temperatures can reach <strong>20,000°C</strong> — four times the surface temperature of the sun. It produces a pressure blast, molten copper droplets, and UV/infrared radiation. Arc flash is the leading cause of electrical fatalities in industrial environments.</p></div>
+    </div>
+    <div class="hazard-bar">
+      <div class="hazard-icon">&#128376;</div>
+      <div class="hazard-text"><h4>Arc Blast</h4><p>The pressure wave produced by an arc flash. The rapid expansion of superheated vapour can generate pressures exceeding <strong>2,000 lb/ft²</strong> — enough to throw a person across a room, shatter panels, and damage hearing permanently at distances of several metres.</p></div>
+    </div>
+    <div class="hazard-bar">
+      <div class="hazard-icon">&#128248;</div>
+      <div class="hazard-text"><h4>Electrical Fire</h4><p>Overloaded conductors, poor connections, and insulation failure are major causes of building fires. Unlike open flames, electrical fires can start inside walls and conduit where they are invisible until significant damage has occurred. Never fight an electrical fire with water.</p></div>
+    </div>
+
+    <div class="callout danger">
+      <div class="callout-title">&#9888; The Voltage Myth</div>
+      <p>Many technicians believe that low voltage (24V, 48V) is safe. This is wrong. 24VDC can deliver lethal current through a low-resistance path (wet hands, puncture wound). <strong>Any voltage above 50V AC or 120V DC must be treated as potentially lethal.</strong> In practice, treat all electrical circuits as live and dangerous until proven otherwise.</p>
+    </div>
+
+    <h2>2. Lockout/Tagout (LOTO) — The Most Important Safety Procedure</h2>
+
+    <p><strong>Lockout/Tagout (LOTO)</strong> is the procedure used to ensure that a machine or circuit is completely de-energised — and stays de-energised — before any maintenance or repair work begins. LOTO prevents the accidental re-energisation of equipment while someone is working on it. It is the single procedure that prevents the majority of electrical fatalities in industrial environments.</p>
+
+    <p>LOTO is not optional. It is mandated by <strong>IEC 60364, OSHA 29 CFR 1910.147, BS EN ISO 14118</strong>, and the safety regulations of every country with workplace safety legislation. Bypassing LOTO is grounds for immediate dismissal in any professionally-run organisation — and criminal prosecution if someone is injured as a result.</p>
+
+    <h3>The 6-Step LOTO Procedure</h3>
+
+    <div class="loto-step">
+      <div class="loto-num">1</div>
+      <div class="loto-body"><h4>Identify All Energy Sources</h4><p>Identify every source of energy that could harm you: electrical supply (may be multiple circuits), stored energy in capacitors or charged cables, pneumatic pressure, hydraulic pressure, gravity (raised loads), and thermal energy (hot surfaces). All must be addressed.</p></div>
+    </div>
+    <div class="loto-step">
+      <div class="loto-num">2</div>
+      <div class="loto-body"><h4>Notify All Affected Personnel</h4><p>Inform everyone who operates or works near the equipment that it will be de-energised. Record who has been notified. This prevents someone from re-energising the equipment because they were unaware of the maintenance work.</p></div>
+    </div>
+    <div class="loto-step">
+      <div class="loto-num">3</div>
+      <div class="loto-body"><h4>Isolate All Energy Sources</h4><p>Open every isolation point: the main circuit breaker, isolator switch, fuses, and any control circuit disconnects. For multi-circuit equipment, each circuit must be isolated separately. Turn the equipment OFF before isolating — do not isolate under load if avoidable.</p></div>
+    </div>
+    <div class="loto-step">
+      <div class="loto-num">4</div>
+      <div class="loto-body"><h4>Apply Lockout and Tagout</h4><p>Fit a <strong>padlock</strong> through the hasp of every isolation point — one padlock per worker. Each worker applies their own lock, retaining the only key. No one else can remove your lock. Attach a <strong>danger tag</strong> that identifies you, your contact number, and the date. If the isolation point cannot be locked, a tag alone is used (with additional precautions).</p></div>
+    </div>
+    <div class="loto-step">
+      <div class="loto-num">5</div>
+      <div class="loto-body"><h4>Dissipate Stored Energy</h4><p>Release all stored energy before touching any conductors: discharge capacitors using a dedicated discharge resistor, bleed pneumatic/hydraulic pressure through the correct relief points, lower raised loads to a supported position, and allow hot surfaces to cool. Verify each action is complete.</p></div>
+    </div>
+    <div class="loto-step">
+      <div class="loto-num">6</div>
+      <div class="loto-body"><h4>Verify Isolation — Test Before Touch</h4><p>This is the most critical step. Using an approved voltage tester, <strong>test every conductor you will touch</strong> to confirm it is dead. Check phase-to-neutral, phase-to-earth, and phase-to-phase. A circuit can appear dead but still be live through a back-feed, an open neutral, or a sneak circuit. <strong>Test every time, every wire, no exceptions.</strong></p></div>
+    </div>
+
+    <div class="callout warning">
+      <div class="callout-title">&#128204; Test Before Touch — Always</div>
+      <p>Never assume a circuit is dead because a breaker is open. Verify with a calibrated voltage tester. The standard procedure: test the tester on a known live source → test the circuit → test the tester again on the live source. If the tester works before and after, the circuit is confirmed dead. This is called the "live-dead-live" verification sequence.</p>
+    </div>
+
+    <h2>3. Arc Flash — The Invisible Killer</h2>
+
+    <p>Arc flash is the most underestimated electrical hazard in industry. Many experienced technicians have never received formal arc flash training, yet work daily on equipment capable of producing a catastrophic arc flash event. Understanding the basics is not optional for anyone working on energised electrical equipment.</p>
+
+    <h3>What Causes an Arc Flash?</h3>
+    <ul>
+      <li>Accidental contact between conductors with a conductive tool or body part</li>
+      <li>Insulation breakdown caused by contamination (dust, moisture, vermin)</li>
+      <li>Overvoltage events (lightning, switching surges)</li>
+      <li>Incorrect insertion of test equipment while equipment is energised</li>
+      <li>Tracking across contaminated busbar surfaces</li>
+    </ul>
+
+    <h3>Arc Flash Protection — The Hierarchy of Controls</h3>
+    <table class="safety-table">
+      <thead><tr><th>Control Level</th><th>Method</th><th>Effectiveness</th></tr></thead>
+      <tbody>
+        <tr><td><strong>1. Elimination</strong></td><td>De-energise before working. LOTO applied. No live work.</td><td>100% — removes the hazard entirely. Always the first choice.</td></tr>
+        <tr><td><strong>2. Substitution</strong></td><td>Replace high-incident-energy equipment with arc-resistant switchgear (arc-proof panels)</td><td>Reduces severity if arc still occurs</td></tr>
+        <tr><td><strong>3. Engineering controls</strong></td><td>Zone-selective interlocking, bus differential protection, reducing fault clearing time</td><td>Reduces incident energy by faster fault clearance</td></tr>
+        <tr><td><strong>4. Administrative controls</strong></td><td>Establish an Energised Electrical Work Permit (EEWP) system. Only permit live work when absolutely necessary with documented justification.</td><td>Reduces frequency of exposure</td></tr>
+        <tr><td><strong>5. PPE</strong></td><td>Arc-rated FR clothing, face shield, insulating gloves. The LAST line of defence, not the first.</td><td>Reduces injury severity — does NOT prevent the arc</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout danger">
+      <div class="callout-title">&#128681; The #1 Myth About Electrical PPE</div>
+      <p>Many technicians believe that wearing arc flash PPE makes them safe to work on energised equipment. It does not. PPE reduces injury severity — it does not prevent an arc flash from occurring, and it does not guarantee survival at high incident energy levels. The only guaranteed protection is de-energisation. PPE is the last resort, not the first choice.</p>
+    </div>
+
+    <h2>4. Personal Protective Equipment (PPE) for Electrical Work</h2>
+
+    <p>When de-energisation is not possible and justified live work must proceed, the correct PPE must be selected based on an <strong>arc flash risk assessment</strong> that calculates the <strong>incident energy</strong> in cal/cm² at the working distance. The PPE arc rating must exceed the calculated incident energy.</p>
+
+    <div class="ppe-grid">
+      <div class="ppe-card">
+        <h4>&#9760; Insulating Gloves</h4>
+        <p>Rubber insulating gloves with leather protectors. <strong>Class 00:</strong> 500V max. <strong>Class 0:</strong> 1000V. <strong>Class 2:</strong> 17,000V. Must be tested every 6 months per IEC 60903. Never use damaged gloves.</p>
+      </div>
+      <div class="ppe-card">
+        <h4>&#128128; Arc Flash Face Shield</h4>
+        <p>Arc-rated face shield with minimum arc rating matching the hazard level. Standard safety glasses do NOT protect against arc flash. The face shield must cover the full face and neck.</p>
+      </div>
+      <div class="ppe-card">
+        <h4>&#128084; Arc-Rated FR Clothing</h4>
+        <p>Flame-resistant (FR) clothing that will not ignite and continue to burn. Arc rating (cal/cm²) must exceed calculated incident energy. Cotton and synthetic blends are NOT arc-rated.</p>
+      </div>
+      <div class="ppe-card">
+        <h4>&#128165; Insulating Footwear</h4>
+        <p>Electrical-hazard (EH) rated safety boots. Provides a barrier between your feet and earth potential. Required for all electrical work. Never wear conductive-soled footwear on electrical work.</p>
+      </div>
+      <div class="ppe-card">
+        <h4>&#128084; Hard Hat</h4>
+        <p>Class E (electrical) hard hat rated for 20,000V. Protects against head injuries from arc blast and falling objects. Must be non-conductive — no metal parts.</p>
+      </div>
+      <div class="ppe-card">
+        <h4>&#128083; Hearing Protection</h4>
+        <p>Arc blast produces impulse noise exceeding 140 dB at close range — above the threshold for immediate permanent hearing damage. Hearing protection is required for any switching operation on high-energy equipment.</p>
+      </div>
+    </div>
+
+    <h2>5. Safe Working Practices — The Daily Habits That Keep You Alive</h2>
+
+    <p>Beyond LOTO and PPE, there are fundamental day-to-day practices that distinguish a safe technician from one who will eventually have a serious incident.</p>
+
+    <h3>Use the Right Tools — Always</h3>
+    <ul>
+      <li><strong>Use insulated tools only</strong> — every screwdriver, pliers, spanner, and probe that goes near live conductors must be rated for the voltage class. VDE-rated (1000V AC / 1500V DC) tools are the minimum standard for LV electrical work.</li>
+      <li><strong>Use a calibrated voltage tester</strong> — not a cheap multimeter with frayed test leads. Use a CAT III or CAT IV rated tester appropriate for the installation. Replace test leads that show any signs of damage.</li>
+      <li><strong>Use one hand where possible</strong> — when testing live equipment that cannot be de-energised, keep one hand behind your back or in your pocket. This reduces the risk of a hand-to-hand current path through your heart.</li>
+    </ul>
+
+    <h3>Work Area Safety</h3>
+    <ul>
+      <li><strong>Never work alone on energised equipment</strong> — always have a second person present who can call for emergency services and begin CPR if needed. They must not touch the casualty until the power is confirmed off.</li>
+      <li><strong>Clear the work area</strong> — remove all conductive objects, tools, jewellery, and debris from the work area. Rings, watches, and metal-framed glasses have caused electrical burns and fatalities.</li>
+      <li><strong>Barricade the work zone</strong> — use warning tape and barriers to prevent unauthorised personnel from entering the electrical work area. Post warning signs: "ELECTRICAL WORK IN PROGRESS — KEEP OUT."</li>
+      <li><strong>Maintain a clean, dry workspace</strong> — water and electricity are a lethal combination. Dry all surfaces before beginning electrical work. If the environment is wet, do not proceed without additional precautions.</li>
+    </ul>
+
+    <h3>Permits and Documentation</h3>
+    <ul>
+      <li><strong>Use Permit-to-Work (PTW) for all energised work</strong> — a PTW is a written record that documents the isolation, the workers authorised, the scope of work, and the safety measures applied.</li>
+      <li><strong>Never work beyond your competency</strong> — if you are not qualified or trained for a task, stop and get the right person. Overconfidence is a primary cause of electrical accidents.</li>
+    </ul>
+
+    <h2>6. Emergency Response — What to Do If Someone Is Electrocuted</h2>
+
+    <p>Knowing how to respond correctly in the first 30 seconds can mean the difference between life and death for a colleague.</p>
+
+    <table class="safety-table">
+      <thead><tr><th>Step</th><th>Action</th><th>Critical Detail</th></tr></thead>
+      <tbody>
+        <tr><td><strong>1. Do NOT touch</strong></td><td>Do NOT touch the casualty if they are still in contact with live electricity</td><td>You will become a second casualty. Isolate the power first.</td></tr>
+        <tr><td><strong>2. Isolate power</strong></td><td>Switch off the supply at the nearest isolator, breaker, or emergency stop</td><td>If you cannot isolate, use a dry non-conductive object to push the casualty away from the source</td></tr>
+        <tr><td><strong>3. Call emergency services</strong></td><td>Call emergency services (police/ambulance) immediately — before starting CPR if you cannot do both simultaneously</td><td>Give your exact location, the nature of the incident, and the number of casualties</td></tr>
+        <tr><td><strong>4. Begin CPR</strong></td><td>If the casualty is unresponsive and not breathing normally, begin CPR immediately (30 chest compressions : 2 rescue breaths)</td><td>Electrical shock causes cardiac arrest and respiratory arrest. CPR must begin within 4 minutes for best outcome</td></tr>
+        <tr><td><strong>5. Use AED if available</strong></td><td>Attach an Automated External Defibrillator (AED) as soon as one is available and follow its instructions</td><td>AEDs are required by law in many countries in all workplaces above a certain size</td></tr>
+        <tr><td><strong>6. Treat for shock and burns</strong></td><td>Even if the casualty is conscious, treat for shock. Cover entry/exit burn wounds lightly with a clean dressing.</td><td>Electrical burns are often deeper than they appear. ALL electrical shock casualties must be assessed by a medical professional, even if they "feel fine."</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout tip">
+      <div class="callout-title">&#128218; Get First Aid Trained</div>
+      <p>Every electrical technician should hold a current first aid certificate including CPR and AED use. In many countries, this is a legal requirement for electrical workers. A 1-day first aid course can make the difference between a colleague's survival and death. Book yours today.</p>
+    </div>
+
+    <h2>7. Key Electrical Safety Regulations</h2>
+
+    <table class="safety-table">
+      <thead><tr><th>Standard</th><th>Region</th><th>What It Covers</th></tr></thead>
+      <tbody>
+        <tr><td><strong>IEC 60364</strong></td><td>International</td><td>Complete electrical installation safety — design, protection, wiring, inspection, and testing. The foundation of all national electrical safety codes.</td></tr>
+        <tr><td><strong>NFPA 70E</strong></td><td>USA</td><td>Standard for Electrical Safety in the Workplace. Arc flash assessment, PPE selection, LOTO, energised electrical work permit. The most detailed arc flash standard in the world.</td></tr>
+        <tr><td><strong>BS 7671 (IET Wiring Regulations)</strong></td><td>UK</td><td>National adoption of IEC 60364 with UK amendments. Applies across UK and many former Commonwealth nations. Currently 18th Edition (2018 + Amendment 2, 2022).</td></tr>
+        <tr><td><strong>OSHA 1910.269 / 1926.950</strong></td><td>USA</td><td>Electric power generation, transmission, and distribution safety. Mandates LOTO, PPE, and approach distances for all high-voltage work.</td></tr>
+        <tr><td><strong>IEC 60900</strong></td><td>International</td><td>Live working — minimum requirements for insulating hand tools. Specifies voltage ratings and testing intervals for electrical insulating tools.</td></tr>
+        <tr><td><strong>IEC 60903</strong></td><td>International</td><td>Specification for insulating rubber gloves used in electrical work. Defines voltage classes (00, 0, 1, 2, 3, 4) and mandatory 6-monthly testing intervals.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>8. The Most Common Electrical Safety Mistakes</h2>
+
+    <ul>
+      <li><strong>Assuming the circuit is dead</strong> — the most common fatal mistake. Always verify with a tester. Always.</li>
+      <li><strong>Using PPE as a substitute for isolation</strong> — gloves and face shields reduce injury; they do not make working on live equipment safe.</li>
+      <li><strong>Skipping LOTO for "just a quick job"</strong> — the majority of electrical fatalities happen during brief, routine maintenance tasks where LOTO was skipped because the job "only takes two minutes."</li>
+      <li><strong>Not checking for multiple supply sources</strong> — equipment fed from two separate panels, UPS systems, capacitor banks, and standby generators have all killed technicians who isolated only one source.</li>
+      <li><strong>Using unrated tools</strong> — a standard screwdriver used to probe a live terminal has no insulation at the tip. One slip and the tool becomes a conductor.</li>
+      <li><strong>Ignoring near-misses</strong> — near-miss events (a small arc, an unexpected shock, a sparking tool) are warnings. Every near-miss must be reported and investigated as if it were a serious accident, because next time it may be.</li>
+    </ul>
+
+    <div class="callout warning">
+      <div class="callout-title">&#128276; Carry These Three Rules Always</div>
+      <p><strong>1. Treat every circuit as live until proven dead with a tester.</strong><br/>
+      <strong>2. Lock it, tag it, test it — every time, no exceptions.</strong><br/>
+      <strong>3. Work within your competence and your authorisation — if in doubt, don't.</strong></p>
+    </div>
+
+    <div class="tag-row">
+      <a href="../blog.html" class="tag">Electrical Safety</a>
+      <a href="../blog.html" class="tag">LOTO</a>
+      <a href="../blog.html" class="tag">Arc Flash</a>
+      <a href="../blog.html" class="tag">PPE</a>
+      <a href="../blog.html" class="tag">Industrial Safety</a>
+      <a href="../blog.html" class="tag">IEC 60364</a>
+    </div>
+
+  </div><!-- /.article-body -->
+
+  <div class="article-footer">
+    <a href="../blog.html" class="btn btn-outline btn-sm">&#8592; Back to Blog</a>
+    <a href="../electrical-safety-flipbook.html" class="btn btn-primary btn-sm" style="background:linear-gradient(135deg,#92400e,#eab308)">Electrical Safety eBook &#8594;</a>
+  </div>
+
+</div><!-- /.article-wrap -->
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand">
+      <div class="brand-name">AYE Tech Hub</div>
+      <div class="brand-tag">Engineering the Future</div>
+    </div>
+    <p style="color:var(--text-muted);font-size:.82rem;margin-top:12px">&#169; 2026 AYE Tech Hub &bull; Free Engineering Education for Africa and Beyond</p>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/blog-translate.js"></script>
+<div id="google_translate_element" style="display:none"></div>
+<script>
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'ti,am',layout:google.translate.TranslateElement.InlineLayout.SIMPLE},'google_translate_element');
+}
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

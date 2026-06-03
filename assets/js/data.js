@@ -3742,6 +3742,18 @@ const BLOG_POSTS = [
     featured: true
   },
   {
+    id: 'electrical-safety-basics-technicians',
+    title: 'Electrical Safety Basics Every Technician Must Know',
+    category: 'electrical',
+    date: '2026-06-03',
+    author: 'Awet G. Nway',
+    readTime: '5 min read',
+    excerpt: 'Critical electrical safety protocols every technician must know — LOTO procedures, arc flash hazards, PPE selection, safe working practices, emergency response, and key regulations (IEC 60364, NFPA 70E). Safety rules that save lives.',
+    image: 'assets/images/og-cover.png',
+    url: 'blog/electrical-safety-basics-technicians.html',
+    featured: true
+  },
+  {
     id: 'how-plc-works-complete-guide',
     title: 'How PLC Works: The Complete Beginner\'s Guide',
     category: 'plc',
