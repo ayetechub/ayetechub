@@ -3742,6 +3742,18 @@ const BLOG_POSTS = [
     featured: true
   },
   {
+    id: 'top-10-ai-tools-engineers',
+    title: 'Top 10 AI Tools That Will Make You a Better Engineer',
+    category: 'ai',
+    date: '2026-06-03',
+    author: 'Awet G. Nway',
+    readTime: '7 min read',
+    excerpt: 'From ChatGPT to Copilot and beyond — the 10 AI tools every modern engineer needs in 2026. Practical breakdown with what each tool does, who should use it, and real engineering starter prompts for calculations, writing, coding, research, presentations, and meetings.',
+    image: 'assets/images/og-cover.png',
+    url: 'blog/top-10-ai-tools-engineers.html',
+    featured: true
+  },
+  {
     id: 'electrical-safety-basics-technicians',
     title: 'Electrical Safety Basics Every Technician Must Know',
     category: 'electrical',
