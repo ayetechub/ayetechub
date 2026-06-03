@@ -1819,6 +1819,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'plumb-002-plumbing-tools-and-safety',
+    title: {
+      en: 'PLUMB-002: Plumbing Tools and Safety',
+      ti: 'PLUMB-002: ናይ ቧንቧ መሳርሒታት ን ድሕነት',
+      am: 'PLUMB-002: የቧምቧ መሳሪያዎች እና ደህንነት'
+    },
+    category: 'plumbing',
+    pages: 7,
+    size: '28 KB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: '4-category tools diagram (measuring/cutting/joining/testing), PPE body diagram with 10 items labelled, hazard risk matrix diagram, 10-tool hand tools table (pipe wrench to PTFE tape), measuring tools table, 6-power tools table (drill/grinder/press tool/drain snake), 7 pipe joining methods table (solder/compression/push-fit/press/solvent/threaded/flanged), 5-test pressure testing table, 6-hazard safety table, hot works permit explanation — by Awet G. Nway.',
+      ti: '4-category tools diagram፣ PPE body diagram (10 items)፣ hazard risk matrix diagram፣ 10-tool hand tools table፣ 6-power tools table (drill/grinder/press tool)፣ 7 pipe joining methods table፣ 5-test pressure testing table፣ 6-hazard safety table — ብ Awet G. Nway።',
+      am: '4-category tools diagram፣ PPE body diagram (10 items)፣ hazard risk matrix diagram፣ 10-tool hand tools table፣ 6-power tools table (drill/grinder/press tool)፣ 7 pipe joining methods table፣ 5-test pressure testing table፣ 6-hazard safety table — በ Awet G. Nway።'
+    },
+    file: 'pdfs/PLUMB-002-Plumbing-Tools-and-Safety.pdf',
+    color: '#0369a1',
+    preview: true
+  },
+  {
     id: 'mech-curriculum-001-intro-to-mechanical',
     title: {
       en: 'MECH-001: Introduction to Mechanical Engineering',
