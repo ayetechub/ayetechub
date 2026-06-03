@@ -3742,6 +3742,18 @@ const BLOG_POSTS = [
     featured: true
   },
   {
+    id: 'mechanical-maintenance-guide-industrial',
+    title: 'Mechanical Maintenance Guide for Industrial Equipment',
+    category: 'mechanical',
+    date: '2026-06-03',
+    author: 'Awet G. Nway',
+    readTime: '9 min read',
+    excerpt: 'Predictive vs preventive vs reactive maintenance — the complete guide. Covers PM scheduling, vibration analysis, oil analysis, thermography, RCM methodology, key KPIs (MTBF, MTTR, OEE, availability), CMMS systems, spare parts strategy, and a 4-year roadmap to world-class maintenance.',
+    image: 'assets/images/og-cover.png',
+    url: 'blog/mechanical-maintenance-guide-industrial.html',
+    featured: true
+  },
+  {
     id: 'top-10-ai-tools-engineers',
     title: 'Top 10 AI Tools That Will Make You a Better Engineer',
     category: 'ai',
