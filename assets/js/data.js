@@ -2155,6 +2155,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'hvac-curriculum-009-psychrometrics',
+    title: {
+      en: 'HVAC-009: Psychrometrics — The Science of Moist Air',
+      ti: 'HVAC-009: Psychrometrics — ሳይንስ ናይ ጡዑም ኣየር',
+      am: 'HVAC-009: Psychrometrics — የእርጥበት አየር ሳይንስ'
+    },
+    category: 'hvac',
+    pages: 6,
+    size: '33 KB',
+    downloads: '0',
+    badge: 'NEW',
+    description: {
+      en: 'Psychrometric chart reading (7 key properties: DBT, WBT, DPT, RH, W, enthalpy, specific volume), 4 fundamental HVAC processes diagram (sensible cooling, cooling+dehumidification, heating, humidification), complete worked example (cooling coil selection for 38°C Tigray outdoor conditions), ASHRAE comfort zones table, humidity effect table, 6 common design mistakes — by Awet G. Nway.',
+      ti: 'Psychrometric chart (7 properties: DBT/WBT/DPT/RH/W/enthalpy)፣ 4 HVAC processes diagram፣ complete worked example (cooling coil for 38°C Tigray conditions)፣ ASHRAE comfort zones table፣ humidity effects table — ብ Awet G. Nway።',
+      am: 'Psychrometric chart (7 properties: DBT/WBT/DPT/RH/W/enthalpy)፣ 4 HVAC processes diagram፣ complete worked example (cooling coil for 38°C Tigray conditions)፣ ASHRAE comfort zones table፣ humidity effects table — በ Awet G. Nway።'
+    },
+    file: 'pdfs/HVAC-009-Psychrometrics.pdf',
+    color: '#00d4ff',
+    preview: true
+  },
+  {
     id: 'solar-curriculum-002-radiation-basics',
     title: {
       en: 'SOLAR-002: Solar Radiation Basics',
