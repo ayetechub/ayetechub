@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How PLC Works: The Complete Beginner's Guide – AYE Tech Hub</title>
+<meta name="description" content="From relay logic to modern programmable controllers — understand the brain of industrial automation. A complete beginner's guide to PLC hardware, programming, and real-world applications."/>
+<link rel="canonical" href="https://ayetechub.com/blog/how-plc-works-complete-guide.html"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23020817'/%3E%3Crect x='3' y='3' width='94' height='94' rx='20' fill='none' stroke='%2300d4ff' stroke-width='3'/%3E%3Ctext x='50' y='62' font-family='Arial Black,sans-serif' font-size='30' font-weight='900' fill='%2300d4ff' text-anchor='middle'%3EAYE%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;700&display=swap"/>
+<link rel="stylesheet" href="../assets/css/main.css"/>
+<link rel="stylesheet" href="../assets/css/pages.css"/>
+<style>
+.article-wrap{max-width:780px;margin:0 auto;padding:0 20px 80px}
+.article-header{padding:48px 0 36px;border-bottom:1px solid var(--border);margin-bottom:36px}
+.article-cat{display:inline-block;background:rgba(0,212,255,.12);color:var(--neon);border:1px solid rgba(0,212,255,.3);font-size:.72rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:16px}
+.article-header h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;line-height:1.2;margin-bottom:16px}
+.article-meta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;color:var(--text-muted);font-size:.82rem}
+.article-body{font-size:1.02rem;line-height:1.85;color:var(--text-soft)}
+.article-body h2{font-size:1.3rem;font-weight:800;color:var(--text);margin:40px 0 14px;padding-left:14px;border-left:3px solid var(--neon)}
+.article-body h3{font-size:1.05rem;font-weight:700;color:var(--neon);margin:28px 0 10px}
+.article-body p{margin-bottom:18px}
+.article-body ul,.article-body ol{padding-left:22px;margin-bottom:18px}
+.article-body li{margin-bottom:8px;line-height:1.75}
+.article-body strong{color:var(--text)}
+.article-body blockquote{border-left:4px solid var(--neon);background:var(--bg-card);padding:16px 20px;margin:24px 0;border-radius:0 8px 8px 0;font-style:italic;color:var(--text)}
+.callout{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:18px 20px;margin:24px 0}
+.callout-title{font-weight:800;font-size:.85rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;color:var(--neon)}
+.callout p{margin:0;font-size:.92rem;line-height:1.7;color:var(--text-soft)}
+.tag-row{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}
+.tag{font-size:.72rem;padding:4px 12px;background:var(--bg-card);border:1px solid var(--border);border-radius:20px;color:var(--text-muted)}
+a.tag{color:var(--text-muted);text-decoration:none;transition:color .2s,border-color .2s}
+a.tag:hover{color:var(--neon);border-color:var(--neon)}
+.article-footer{margin-top:48px;padding-top:32px;border-top:1px solid var(--border);display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.component-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:20px 0}
+.component-card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:16px 18px}
+.component-card h4{font-size:.95rem;font-weight:700;color:var(--neon);margin:0 0 8px}
+.component-card p{margin:0;font-size:.88rem;color:var(--text-soft);line-height:1.6}
+.scan-step{display:flex;gap:14px;align-items:flex-start;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:16px 18px;margin:10px 0}
+.scan-num{display:flex;align-items:center;justify-content:center;min-width:36px;height:36px;border-radius:50%;background:var(--neon);color:#020817;font-weight:900;font-size:.9rem;flex-shrink:0}
+.scan-body h4{font-size:.95rem;font-weight:700;color:var(--text);margin:0 0 5px}
+.scan-body p{margin:0;font-size:.88rem;color:var(--text-soft);line-height:1.6}
+.plc-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:.9rem}
+.plc-table th{background:var(--bg-card);color:var(--neon);padding:10px 14px;text-align:left;font-weight:700;border-bottom:2px solid var(--border)}
+.plc-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--text-soft);line-height:1.6}
+.plc-table tr:hover td{background:rgba(0,212,255,.04)}
+.code-block{background:#020817;border:1px solid var(--border);border-left:3px solid var(--neon);border-radius:4px;padding:14px 18px;margin:16px 0;font-family:'Courier New',monospace;font-size:.85rem;color:#e2e8f0;line-height:1.6;overflow-x:auto}
+.code-block .cm{color:#64748b}.code-block .kw{color:#00d4ff}.code-block .ok{color:#22c55e}
+</style>
+</head>
+<body>
+<div id="loading-screen"><div class="loading-logo">AYE</div><div class="loading-bar-wrap"><div class="loading-bar"></div></div><div class="loading-text">LOADING ARTICLE</div></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-menu" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path fill="currentColor" d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.39 5.39 0 0 1-4.4 2.26 5.5 5.5 0 0 1-3.14-10A9.32 9.32 0 0 0 12 3z"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><path fill="currentColor" d="M6.76 4.84 4.96 3.05 3.55 4.46l1.79 1.79zM4 10.5H1v2h3zm9-9.95h-2V3.5h2zm7.45 3.91-1.41-1.41-1.79 1.79 1.41 1.41zM17.24 18.16l1.79 1.8 1.41-1.41-1.8-1.79zM20 10.5v2h3v-2zM12 5.5a6 6 0 0 0-6 6c0 3.31 2.69 6 6 6s6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2zM4.96 19.95l1.41 1.41 1.79-1.8-1.41-1.41z"/></symbol>
+<symbol id="i-telegram" viewBox="0 0 24 24"><path fill="currentColor" d="M22 3 2 11l6 2 2 7 4-5 6 5 2-17zm-5 5L10 14l-1 4-1-3 9-7z"/></symbol>
+</defs></svg>
+
+<header id="navbar">
+  <div class="container nav-inner">
+    <a href="../index.html" class="brand"><img src="../assets/images/logo.png" alt="AYE Tech Hub" style="width:42px;height:42px;border-radius:10px;object-fit:cover;"/><div><div class="brand-name">AYE Tech Hub</div><div class="brand-tag">Engineering the Future</div></div></a>
+    <nav class="nav-menu">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../courses.html" class="nav-link">Courses</a>
+      <a href="../pdfs.html" class="nav-link">PDF Library</a>
+      <a href="../tutorials.html" class="nav-link">Tutorials</a>
+      <a href="../blog.html" class="nav-link active">Blog</a>
+      <a href="../contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="nav-controls">
+      <button class="icon-btn" onclick="toggleTheme()" aria-label="Toggle theme"><svg class="svg-icon"><use id="theme-use" href="#i-moon"/></svg></button>
+      <a href="https://t.me/ayetechub" target="_blank" rel="noopener" class="btn btn-primary btn-sm hide-mobile"><svg class="svg-icon" aria-hidden="true"><use href="#i-telegram"/></svg> Telegram</a>
+      <button class="icon-btn hamburger" onclick="toggleMobileMenu()" aria-label="Open menu"><svg class="svg-icon"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="container">
+    <a href="../index.html" class="mobile-link">Home</a>
+    <a href="../courses.html" class="mobile-link">Courses</a>
+    <a href="../blog.html" class="mobile-link" style="color:var(--neon)">Blog</a>
+    <a href="../contact.html" class="mobile-link">Contact</a>
+  </div>
+</header>
+
+<div class="article-wrap">
+
+  <div class="article-header">
+    <span class="article-cat">PLC &amp; Automation</span>
+    <h1>How PLC Works: The Complete Beginner's Guide</h1>
+    <div class="article-meta">
+      <span>&#128197; June 3, 2026</span>
+      <span>&#9997; Awet G. Nway</span>
+      <span>&#128337; 6 min read</span>
+
+      <div class="blog-lang-bar">
+        <span class="bl-label">&#127760; Read in:</span>
+        <button class="bl-btn active" id="bl-en" onclick="blogLang('en')">EN</button>
+        <button class="bl-btn" id="bl-ti" onclick="blogLang('ti')" lang="ti">ትግርኛ</button>
+        <button class="bl-btn" id="bl-am" onclick="blogLang('am')" lang="am">አማርኛ</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-body">
+
+    <p>Walk into any modern factory — whether it's a bottling plant in Addis Ababa, an automotive assembly line in Germany, or a water treatment facility in Nairobi — and you will find one piece of technology running almost everything: the <strong>Programmable Logic Controller</strong>, or PLC. It controls conveyor belts, manages pump sequences, monitors temperatures, responds to emergency stops, and communicates with hundreds of sensors and actuators — all in real time, 24 hours a day, 365 days a year, without a single human operator manually switching anything.</p>
+
+    <p>If you are starting your career in electrical engineering, automation, HVAC, manufacturing, or industrial maintenance, understanding how a PLC works is not optional. It is foundational. This guide will take you from zero to a clear, confident understanding of what a PLC is, how it works, and why it is the most important piece of equipment in modern industry.</p>
+
+    <blockquote>"The PLC is the brain of industrial automation. Everything else — sensors, motors, valves, HMIs — is either the senses or the muscles. The PLC is where decisions are made."</blockquote>
+
+    <h2>1. What Is a PLC — and Where Did It Come From?</h2>
+
+    <p>A <strong>Programmable Logic Controller (PLC)</strong> is a ruggedised industrial computer designed to control machinery and processes by monitoring inputs (sensors, switches, buttons) and switching outputs (motors, valves, lights) according to a stored program.</p>
+
+    <p>Before PLCs existed — before 1968 — factories used <strong>relay panels</strong>: enormous metal cabinets packed with hundreds of electromechanical relays, timers, and contactors, all wired together to form logic circuits. When the production requirements changed, engineers had to physically rewire the entire panel. This was expensive, time-consuming, and error-prone.</p>
+
+    <p>In 1968, <strong>General Motors</strong> issued a specification for a replacement that would be programmable — so the logic could be changed in software rather than hardware. <strong>Dick Morley</strong> and his team at Bedford Associates responded with the first PLC: the <strong>Modicon 084</strong>. The name "Programmable Logic Controller" was coined, and an entire industry was born.</p>
+
+    <p>Today, PLCs from manufacturers like Siemens, Allen-Bradley (Rockwell), Mitsubishi, Omron, and ABB control virtually every industrial process on earth. The global PLC market is worth over $14 billion per year and growing.</p>
+
+    <h2>2. PLC Hardware — What's Inside the Box?</h2>
+
+    <p>A PLC is not just one component — it is a system of modules that work together. Understanding each component will help you wire, commission, and troubleshoot PLC systems on the job.</p>
+
+    <div class="component-grid">
+      <div class="component-card">
+        <h4>&#9889; Power Supply Module</h4>
+        <p>Converts incoming AC mains (110V or 230V) to regulated DC voltages (typically 24VDC) that power the CPU, I/O modules, and field devices. Loss of power supply = entire system stops.</p>
+      </div>
+      <div class="component-card">
+        <h4>&#129504; CPU Module</h4>
+        <p>The Central Processing Unit — executes the user program, manages memory, and controls communication. The CPU contains the processor chip, program memory (Flash), and working memory (RAM).</p>
+      </div>
+      <div class="component-card">
+        <h4>&#128268; Digital Input (DI) Module</h4>
+        <p>Reads ON/OFF signals from the field: pushbuttons, limit switches, proximity sensors, emergency stops. Typically 24VDC input. The PLC reads each input as either 1 (ON) or 0 (OFF).</p>
+      </div>
+      <div class="component-card">
+        <h4>&#128161; Digital Output (DO) Module</h4>
+        <p>Switches external devices ON or OFF: contactors, solenoid valves, indicator lights, relays. Relay outputs can switch AC or DC loads; transistor outputs switch DC loads at higher speed.</p>
+      </div>
+      <div class="component-card">
+        <h4>&#128202; Analogue Input (AI) Module</h4>
+        <p>Reads continuously variable signals from sensors: temperature (4–20mA from a PT100 transmitter), pressure, flow, level. Converts the analogue signal to a digital number the CPU can process.</p>
+      </div>
+      <div class="component-card">
+        <h4>&#128225; Communication Module</h4>
+        <p>Connects the PLC to industrial networks: Profibus, Profinet, EtherNet/IP, Modbus TCP. Enables PLC-to-PLC communication, HMI data exchange, and SCADA system integration.</p>
+      </div>
+    </div>
+
+    <h2>3. The PLC Scan Cycle — How a PLC "Thinks"</h2>
+
+    <p>Unlike a computer that runs multiple programs simultaneously, a PLC executes its program in a continuous, repetitive loop called the <strong>scan cycle</strong>. Understanding this cycle is critical — it explains everything about PLC timing, response to events, and program behaviour.</p>
+
+    <p>A typical PLC scan cycle takes between <strong>1 millisecond and 100 milliseconds</strong>, depending on program size and CPU speed. For most industrial applications, this is fast enough to control any mechanical process.</p>
+
+    <div class="scan-step">
+      <div class="scan-num">1</div>
+      <div class="scan-body"><h4>Read Inputs</h4><p>The CPU reads the current state of all digital and analogue inputs and copies the values into an area of memory called the <strong>Process Image Input (PII)</strong> or Input Image Table. During the rest of the scan, the program reads from this snapshot — NOT from the live inputs. This ensures consistency.</p></div>
+    </div>
+    <div class="scan-step">
+      <div class="scan-num">2</div>
+      <div class="scan-body"><h4>Execute Program</h4><p>The CPU works through every rung (or every statement) in the program, from first to last, exactly once. For each rung, it reads from the Input Image, performs the logical evaluation, and writes results to the <strong>Process Image Output (PIQ)</strong> or Output Image Table — a second memory area for outputs.</p></div>
+    </div>
+    <div class="scan-step">
+      <div class="scan-num">3</div>
+      <div class="scan-body"><h4>Write Outputs</h4><p>After the program has finished executing, the CPU copies all values from the Process Image Output to the actual physical output modules. This is when motors actually start, valves actually open, and lights actually turn on.</p></div>
+    </div>
+    <div class="scan-step">
+      <div class="scan-num">4</div>
+      <div class="scan-body"><h4>Housekeeping</h4><p>The CPU handles internal communication tasks: updating the watchdog timer (which resets to prove the CPU is not frozen), communicating with the programming terminal, updating HMI data, and processing interrupt requests.</p></div>
+    </div>
+    <div class="scan-step">
+      <div class="scan-num">5</div>
+      <div class="scan-body"><h4>Repeat</h4><p>The cycle starts again from Step 1. This repeats continuously, every few milliseconds, as long as the PLC is in RUN mode. The moment you change a pushbutton, the PLC will detect it within one scan cycle.</p></div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-title">&#9888; Why This Matters in Practice</div>
+      <p>Because outputs are only written at the END of the scan, an output that is set and then immediately cleared within the same scan will never actually turn on at the physical output terminal. This is a common source of bugs for new PLC programmers. Understanding the scan cycle prevents hours of troubleshooting frustration.</p>
+    </div>
+
+    <h2>4. PLC Programming Languages — The 5 IEC 61131-3 Languages</h2>
+
+    <p>The international standard <strong>IEC 61131-3</strong> defines five programming languages for PLCs. You can use any of them — or mix them in the same project. Each has strengths suited to different applications.</p>
+
+    <table class="plc-table">
+      <thead><tr><th>Language</th><th>Type</th><th>Best For</th><th>Looks Like</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Ladder Diagram (LD)</strong></td><td>Graphical</td><td>Sequential machine control, relay logic replacement, motor control</td><td>Electrical relay circuit diagrams — contacts and coils on horizontal rungs</td></tr>
+        <tr><td><strong>Function Block Diagram (FBD)</strong></td><td>Graphical</td><td>Process control, PID loops, analogue signal processing</td><td>Connected signal-flow blocks (AND gates, timers, counters, math blocks)</td></tr>
+        <tr><td><strong>Structured Text (ST)</strong></td><td>Textual</td><td>Complex calculations, data handling, string processing, algorithms</td><td>High-level programming language similar to Pascal or C</td></tr>
+        <tr><td><strong>Instruction List (IL)</strong></td><td>Textual</td><td>Legacy systems, very small PLCs with limited memory</td><td>Assembly-like code (largely obsolete in modern systems)</td></tr>
+        <tr><td><strong>Sequential Function Chart (SFC)</strong></td><td>Graphical</td><td>Batch processes, sequential operations with multiple steps</td><td>Flowchart with steps, transitions, and branches</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Ladder Logic — Why It Is Still Dominant</h3>
+
+    <p>Even 55 years after the PLC was invented, <strong>Ladder Diagram</strong> (LD) is still the most widely used PLC programming language in the world — and for good reason. It was specifically designed to look like relay wiring diagrams, which meant that electricians and technicians who had spent years reading relay panels could immediately understand PLC programs without learning a new language from scratch.</p>
+
+    <p>A ladder logic rung works like a series circuit. Current can flow from the left power rail to the right power rail (and energise the output coil) only if all the conditions in between are met. A <strong>Normally Open (NO)</strong> contact allows current when its associated bit is TRUE. A <strong>Normally Closed (NC)</strong> contact allows current when its bit is FALSE. Contacts in series = AND logic. Contacts in parallel = OR logic.</p>
+
+    <div class="code-block"><span class="cm">--- Ladder Logic: Motor Start/Stop circuit ---</span>
+
+|---[  PB_Start  ]---+---[  PB_Start  ]---+---( Motor_Run )---|
+|                    |                    |
+|---[ Motor_Run  ]---+                    |
+|                                         |
+|---[/ PB_Stop   ]---[/ E_Stop   ]---------</div>
+
+    <p>This single rung does everything: pressing <strong>PB_Start</strong> energises <strong>Motor_Run</strong>. The <strong>Motor_Run</strong> auxiliary contact in parallel seals in the coil (so the motor keeps running after the button is released). Pressing <strong>PB_Stop</strong> or activating <strong>E_Stop</strong> breaks the circuit and drops the motor.</p>
+
+    <h2>5. Inputs and Outputs — How PLCs Connect to the Real World</h2>
+
+    <p>A PLC on its own does nothing. Its power comes from connecting it to the physical world through sensors (inputs) and actuators (outputs). Understanding this wiring is one of the most important practical skills for any electrical engineer.</p>
+
+    <h3>Common Digital Inputs (Sensors)</h3>
+    <ul>
+      <li><strong>Pushbuttons and selector switches</strong> — operator interface, panel controls</li>
+      <li><strong>Limit switches</strong> — detect end of travel (conveyor end, actuator retracted)</li>
+      <li><strong>Proximity sensors</strong> — inductive (metal objects), capacitive (any material), photoelectric (light beam)</li>
+      <li><strong>Float switches</strong> — high/low level detection in tanks</li>
+      <li><strong>Emergency stop buttons</strong> — safety-critical, wired NC (normally closed)</li>
+      <li><strong>Pressure switches</strong> — detect above/below pressure threshold</li>
+    </ul>
+
+    <h3>Common Digital Outputs (Actuators)</h3>
+    <ul>
+      <li><strong>Contactors and motor starters</strong> — starting and stopping AC motors</li>
+      <li><strong>Solenoid valves</strong> — opening/closing pneumatic or hydraulic valves</li>
+      <li><strong>Indicator lights and alarms</strong> — status feedback to operators</li>
+      <li><strong>Relays</strong> — switching higher-voltage loads from the PLC's 24VDC output</li>
+      <li><strong>VFD enable/disable signals</strong> — starting Variable Frequency Drives</li>
+    </ul>
+
+    <h3>Analogue Signals</h3>
+    <p>The most common analogue standard in industry is <strong>4–20 mA</strong>. A transmitter on the process (temperature sensor, pressure transmitter, flow meter) produces a current proportional to the measured value: 4 mA = 0% of range, 20 mA = 100% of range. The PLC's analogue input module converts this to a digital number (typically 0–27648 in Siemens, 0–32767 in Allen-Bradley). The program then scales this number to the actual engineering unit (e.g., 0–150°C).</p>
+
+    <h2>6. PLC Types — Which One for Which Job?</h2>
+
+    <table class="plc-table">
+      <thead><tr><th>Type</th><th>Description</th><th>Best Application</th><th>Examples</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Micro / Nano PLC</strong></td><td>All-in-one compact unit. Fixed I/O count (typically 8–64 points). No expansion or minimal expansion.</td><td>Small machines, simple sequences, conveyor control, OEM equipment</td><td>Siemens S7-1200, Allen-Bradley Micro820, Mitsubishi FX5U</td></tr>
+        <tr><td><strong>Modular PLC</strong></td><td>Separate CPU, I/O, and communication modules on a backplane or rack. Fully expandable.</td><td>Mid-size to large production systems, multi-axis control</td><td>Siemens S7-300/400, Allen-Bradley CompactLogix</td></tr>
+        <tr><td><strong>Rack-mount PLC</strong></td><td>Large-scale systems with many I/O points. High processing power, redundancy options.</td><td>Power plants, refineries, large infrastructure projects</td><td>Siemens S7-400H, Allen-Bradley ControlLogix</td></tr>
+        <tr><td><strong>Safety PLC</strong></td><td>Certified to IEC 61508/IEC 62061. Dual-channel redundant processing. Used for safety functions.</td><td>Machines requiring SIL 2/3 — where failure causes injury or death</td><td>Siemens ET 200SP F-CPU, Allen-Bradley GuardLogix</td></tr>
+      </tbody>
+    </table>
+
+    <h2>7. Major PLC Brands — What You Will Encounter on the Job</h2>
+
+    <p>As a practicing engineer, you will encounter PLCs from several manufacturers depending on your region and industry. Here are the most important ones to know:</p>
+
+    <ul>
+      <li><strong>Siemens (Germany)</strong> — the most widely used brand globally. TIA Portal is the programming environment. The S7-1200 (small) and S7-1500 (large) are the current generation. Dominant in Europe, Africa, and Asia.</li>
+      <li><strong>Allen-Bradley / Rockwell Automation (USA)</strong> — the dominant brand in North America and Latin America. Studio 5000 Logix Designer is the programming environment. CompactLogix and ControlLogix are the main families.</li>
+      <li><strong>Mitsubishi Electric (Japan)</strong> — very popular in Asia, East Africa, and automotive manufacturing. GX Works3 is the programming environment.</li>
+      <li><strong>Omron (Japan)</strong> — widely used in food and beverage, packaging, and semiconductor industries worldwide.</li>
+      <li><strong>Schneider Electric (France)</strong> — EcoStruxure Machine Expert / Unity Pro. Prominent in building automation, water treatment, and French-speaking markets.</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout-title">&#128161; Which Brand Should You Learn First?</div>
+      <p>If you are in East Africa, Europe, the Middle East, or Asia: start with <strong>Siemens TIA Portal + S7-1200</strong>. It is the most globally deployed, has excellent free student licences, and the skills transfer to S7-300/400/1500. If you are in North America or work with American manufacturers: start with <strong>Allen-Bradley Studio 5000</strong>. The programming concepts are identical — only the software environment and addressing conventions differ.</p>
+    </div>
+
+    <h2>8. Real-World PLC Applications</h2>
+
+    <p>PLCs are not just used in factories. Once you understand the technology, you start seeing them everywhere:</p>
+
+    <ul>
+      <li><strong>Manufacturing:</strong> Automotive assembly lines, bottling plants, cement factories, steel mills — PLCs control every step of production.</li>
+      <li><strong>Water and wastewater:</strong> Water treatment plants use PLCs to manage pumps, dosing, filtration, and chemical treatment in exact sequences.</li>
+      <li><strong>Building automation:</strong> HVAC systems, elevators, car parks, and fire suppression systems are all PLC-controlled.</li>
+      <li><strong>Energy:</strong> Solar inverter systems, diesel genset panels, wind turbine controllers, and substation automation all rely on PLCs or PLC-like devices.</li>
+      <li><strong>Agriculture:</strong> Irrigation systems, grain dryers, greenhouse climate control — PLCs automate agricultural processes across Africa.</li>
+      <li><strong>Mining:</strong> Conveyor systems, crushing plants, dewatering pumps, and hoists — PLCs manage extremely harsh industrial environments.</li>
+      <li><strong>Oil and gas:</strong> Pipeline control, pump stations, separator controls — often with safety PLCs for hazardous area applications.</li>
+    </ul>
+
+    <h2>9. PLC vs Microcontroller vs Industrial PC — What's the Difference?</h2>
+
+    <table class="plc-table">
+      <thead><tr><th>Feature</th><th>PLC</th><th>Microcontroller (Arduino/STM32)</th><th>Industrial PC (IPC)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Designed for</strong></td><td>Industrial control — reliable 24/7 operation in harsh environments</td><td>Prototyping, hobby projects, embedded products</td><td>High-performance processing, data analytics, HMI</td></tr>
+        <tr><td><strong>Programming</strong></td><td>Ladder Logic, FBD, ST — IEC 61131-3 standard</td><td>C/C++, Python — requires embedded coding skills</td><td>Any PC language — C++, Python, .NET</td></tr>
+        <tr><td><strong>Reliability</strong></td><td>MTBF 50,000+ hours. Built for vibration, heat, EMI</td><td>Consumer-grade. Not rated for industrial environments</td><td>Industrial-grade components. High but higher cost.</td></tr>
+        <tr><td><strong>Real-time guarantee</strong></td><td>Deterministic scan cycle. Guaranteed response time.</td><td>Deterministic at embedded level, not for complex programs</td><td>Requires RTOS for deterministic control</td></tr>
+        <tr><td><strong>Maintenance</strong></td><td>Any industrial electrician can troubleshoot with basic training</td><td>Requires a software developer to modify</td><td>Requires IT/software skills</td></tr>
+      </tbody>
+    </table>
+
+    <p>The reason PLCs dominate industry — despite costing far more than a microcontroller — is <strong>reliability, determinism, and maintainability</strong>. A PLC will run continuously for 10+ years without a reboot. A microcontroller or PC cannot make that claim in a harsh industrial environment.</p>
+
+    <h2>10. Getting Started — Your Learning Path</h2>
+
+    <p>You do not need expensive equipment to start learning PLCs. Here is the most effective path to getting job-ready PLC skills:</p>
+
+    <ol>
+      <li><strong>Start with the fundamentals (right now):</strong> Download our free PLC curriculum PDFs — PLC-001 through PLC-006 are already available at <a href="../pdfs.html" style="color:var(--neon)">ayetechub.com/pdfs.html</a>. Read them in order.</li>
+      <li><strong>Install Siemens TIA Portal (free student licence):</strong> Siemens offers a 21-day trial and a Student Licence through their education program. PLCSIM (the PLC simulator built into TIA Portal) runs your programs without any hardware.</li>
+      <li><strong>Practice with our free PLC Simulator:</strong> Our browser-based <a href="../downloads/plc-simulator.html" style="color:var(--neon)">Ladder Logic Simulator</a> runs in your browser — no software needed. Practice start/stop circuits, timers, and counters immediately.</li>
+      <li><strong>Build your first project:</strong> Write a simple motor start/stop circuit. Add an overload fault. Add a run timer. Add a fault lamp. This covers 80% of what you need for your first job.</li>
+      <li><strong>Study real wiring:</strong> Download the AYE Tech Hub <a href="../wiring-diagram-flipbook.html" style="color:var(--neon)">Wiring Diagram Mastery eBook</a> to understand how PLCs connect to the physical world.</li>
+      <li><strong>Get hands-on:</strong> A used Siemens S7-1200 CPU + a simple I/O module costs less than $150 on the second-hand market. One real hardware project is worth 100 hours of simulator practice.</li>
+    </ol>
+
+    <div class="callout">
+      <div class="callout-title">&#127891; Continue Your PLC Journey</div>
+      <p>This article introduced the fundamentals. Our full 30-lesson PLC Programming curriculum on AYE Tech Hub covers everything from basic ladder logic through advanced topics like Profinet communication, PID control, safety PLCs, and complete project commissioning. Browse the curriculum at <a href="../pdfs.html" style="color:var(--neon)">ayetechub.com/pdfs.html</a> — all lessons are free.</p>
+    </div>
+
+    <div class="tag-row">
+      <a href="../blog.html" class="tag">PLC</a>
+      <a href="../blog.html" class="tag">Automation</a>
+      <a href="../blog.html" class="tag">Ladder Logic</a>
+      <a href="../blog.html" class="tag">Industrial Control</a>
+      <a href="../blog.html" class="tag">Beginner Guide</a>
+      <a href="../blog.html" class="tag">Engineering</a>
+    </div>
+
+  </div><!-- /.article-body -->
+
+  <div class="article-footer">
+    <a href="../blog.html" class="btn btn-outline btn-sm">&#8592; Back to Blog</a>
+    <a href="../pdfs.html" class="btn btn-primary btn-sm">PLC PDF Library &#8594;</a>
+  </div>
+
+</div><!-- /.article-wrap -->
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand">
+      <div class="brand-name">AYE Tech Hub</div>
+      <div class="brand-tag">Engineering the Future</div>
+    </div>
+    <p style="color:var(--text-muted);font-size:.82rem;margin-top:12px">&#169; 2026 AYE Tech Hub &bull; Free Engineering Education for Africa and Beyond</p>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/blog-translate.js"></script>
+<div id="google_translate_element" style="display:none"></div>
+<script>
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'ti,am',layout:google.translate.TranslateElement.InlineLayout.SIMPLE},'google_translate_element');
+}
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

@@ -3742,6 +3742,18 @@ const BLOG_POSTS = [
     featured: true
   },
   {
+    id: 'how-plc-works-complete-guide',
+    title: 'How PLC Works: The Complete Beginner\'s Guide',
+    category: 'plc',
+    date: '2026-06-03',
+    author: 'Awet G. Nway',
+    readTime: '6 min read',
+    excerpt: 'From relay logic to modern programmable controllers — understand the brain of industrial automation. Covers PLC hardware, the scan cycle, ladder logic, inputs/outputs, programming languages, and how to get started.',
+    image: 'assets/images/og-cover.png',
+    url: 'blog/how-plc-works-complete-guide.html',
+    featured: true
+  },
+  {
     id: 'plc-programming-tips',
     title: 'Top 10 PLC Programming Best Practices',
     category: 'plc',
