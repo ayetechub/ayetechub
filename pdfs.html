@@ -153,9 +153,9 @@
         <button class="filter-tag" data-cat="plc">PLC</button>
         <button class="filter-tag" data-cat="electrical">Electrical</button>
         <button class="filter-tag" data-cat="mechanical">Mechanical</button>
-        <button class="filter-tag" data-cat="hvac">HVAC</button>
-        <button class="filter-tag" data-cat="solar">Solar</button>
-        <button class="filter-tag" data-cat="mep">MEP</button>
+        <button class="filter-tag filter-group-btn" data-cat="mep-group" id="mep-main-btn">
+          MEP &#9662;
+        </button>
         <button class="filter-tag" data-cat="autocad">AutoCAD</button>
         <button class="filter-tag" data-cat="robotics">Robotics</button>
         <button class="filter-tag" data-cat="revit">Revit BIM</button>
@@ -163,6 +163,16 @@
         <button class="filter-tag" data-cat="coohom">Coohom</button>
         <button class="filter-tag" data-cat="critical-thinking">Critical Thinking</button>
       </div>
+
+      <!-- MEP Sub-filters — hidden until MEP is clicked -->
+      <div id="mep-subfilters" style="display:none;margin-top:8px;padding:8px 12px;background:rgba(13,148,136,.08);border:1px solid rgba(13,148,136,.25);border-radius:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+        <span style="font-size:.72rem;font-weight:800;color:#0d9488;text-transform:uppercase;letter-spacing:1px;margin-right:4px;">MEP:</span>
+        <button class="filter-sub active" data-subcat="mep-all">All MEP</button>
+        <button class="filter-sub" data-subcat="hvac">&#10052; HVAC</button>
+        <button class="filter-sub" data-subcat="solar">&#9728; Solar</button>
+        <button class="filter-sub" data-subcat="mep">&#127968; Plumbing &amp; MEP</button>
+      </div>
+
       <div class="result-count" data-count-for="pdf-grid">9 results</div>
     </div>
 
@@ -258,14 +268,18 @@
 'use strict';
 let _cat = 'all', _q = '';
 
+// MEP group: all sub-categories that live under the MEP umbrella
+const MEP_CATS = ['mep', 'hvac', 'solar'];
+
 function renderPdfs() {
   const AI_CATS  = ['ai', 'ai-30day', 'ai-curriculum'];
   const CAD_CATS = ['autocad', 'design'];
   const q = _q.toLowerCase();
   const filtered = PDFS.filter(p => {
     const matchCat = _cat === 'all'
-      || (_cat === 'ai'      && AI_CATS.includes(p.category))
-      || (_cat === 'autocad' && CAD_CATS.includes(p.category))
+      || (_cat === 'ai'       && AI_CATS.includes(p.category))
+      || (_cat === 'autocad'  && CAD_CATS.includes(p.category))
+      || (_cat === 'mep-all'  && MEP_CATS.includes(p.category))
       || p.category === _cat;
     if (!matchCat) return false;
     if (!q) return true;
@@ -276,38 +290,87 @@ function renderPdfs() {
   renderGrid('pdf-grid', filtered, p => renderPdfCard(p), 'No PDFs found');
 }
 
+function showMepSubfilters(show) {
+  const row = document.getElementById('mep-subfilters');
+  if (!row) return;
+  row.style.display = show ? 'flex' : 'none';
+}
+
+function setMepSubActive(subcat) {
+  document.querySelectorAll('.filter-sub').forEach(b => {
+    b.classList.toggle('active', b.dataset.subcat === subcat);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   // Read ?cat= URL parameter and pre-select that filter
   const params = new URLSearchParams(window.location.search);
   let catParam = params.get('cat');
-  // Redirect merged categories to their combined tab
   if (catParam === 'ai-curriculum' || catParam === 'ai-30day') catParam = 'ai';
   if (catParam === 'design') catParam = 'autocad';
-  if (catParam) {
+  // If URL param is one of the MEP sub-cats, activate MEP group
+  if (MEP_CATS.includes(catParam)) {
+    document.getElementById('mep-main-btn').classList.add('active');
+    showMepSubfilters(true);
+    _cat = catParam;
+    setMepSubActive(catParam);
+    renderPdfs();
+  } else if (catParam) {
     _cat = catParam;
     const matchBtn = document.querySelector(`#pdf-filters .filter-tag[data-cat="${catParam}"]`);
     if (matchBtn) {
       document.querySelectorAll('#pdf-filters .filter-tag').forEach(t => t.classList.remove('active'));
       matchBtn.classList.add('active');
-      matchBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     }
   }
 
   renderPdfs();
 
-  // Auto-count: update the PDF Documents stat to match actual count in data.js
+  // Auto-count
   if (typeof PDFS !== 'undefined') {
     const available = PDFS.filter(p => p.file && p.file !== '#coming-soon').length;
     const countEl = document.getElementById('pdf-doc-count');
     if (countEl) countEl.textContent = available + '+';
   }
 
+  // Main filter clicks
   document.getElementById('pdf-filters').addEventListener('click', e => {
     const tag = e.target.closest('.filter-tag');
     if (!tag) return;
-    document.querySelectorAll('#pdf-filters .filter-tag').forEach(t => t.classList.remove('active'));
-    tag.classList.add('active');
-    _cat = tag.dataset.cat;
+
+    if (tag.dataset.cat === 'mep-group') {
+      // Toggle MEP group
+      const isActive = tag.classList.contains('active');
+      document.querySelectorAll('#pdf-filters .filter-tag').forEach(t => t.classList.remove('active'));
+
+      if (!isActive) {
+        // Open MEP group — show sub-filters, select "All MEP" by default
+        tag.classList.add('active');
+        showMepSubfilters(true);
+        setMepSubActive('mep-all');
+        _cat = 'mep-all';
+      } else {
+        // Close MEP group — go back to All
+        showMepSubfilters(false);
+        document.querySelector('[data-cat="all"]').classList.add('active');
+        _cat = 'all';
+      }
+    } else {
+      // Any other filter — close MEP sub-row
+      document.querySelectorAll('#pdf-filters .filter-tag').forEach(t => t.classList.remove('active'));
+      tag.classList.add('active');
+      showMepSubfilters(false);
+      _cat = tag.dataset.cat;
+    }
+    renderPdfs();
+  });
+
+  // MEP sub-filter clicks
+  document.getElementById('mep-subfilters').addEventListener('click', e => {
+    const btn = e.target.closest('.filter-sub');
+    if (!btn) return;
+    setMepSubActive(btn.dataset.subcat);
+    _cat = btn.dataset.subcat;
     renderPdfs();
   });
 

@@ -111,6 +111,39 @@
   color: #020817;
   font-weight: 600;
 }
+/* MEP Group button — teal accent when active */
+.filter-group-btn.active {
+  background: #0d9488;
+  border-color: #0d9488;
+  color: #fff;
+}
+.filter-group-btn:hover { border-color: #0d9488; color: #0d9488; background: rgba(13,148,136,.1); }
+
+/* Sub-filter buttons inside the MEP expandable row */
+.filter-sub {
+  background: transparent;
+  border: 1px solid rgba(13,148,136,.4);
+  border-radius: 16px;
+  padding: 5px 14px;
+  font-size: 0.78rem;
+  color: #0d9488;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 600;
+}
+.filter-sub:hover, .filter-sub.active {
+  background: #0d9488;
+  border-color: #0d9488;
+  color: #fff;
+}
+/* Animate the sub-filter row */
+#mep-subfilters {
+  animation: slideDown 0.2s ease;
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 .sort-select {
   background: var(--bg);
   border: 1px solid var(--border);
