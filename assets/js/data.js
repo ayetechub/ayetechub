@@ -355,6 +355,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'robot-curriculum-005-kuka-robot-programming',
+    title: {
+      en: 'ROBOT-005: KUKA Robot Programming',
+      ti: 'ROBOT-005: ናይ KUKA Robot ፕሮግራሚን',
+      am: 'ROBOT-005: KUKA Robot ፕሮግራሚንግ'
+    },
+    category: 'robotics',
+    pages: 7,
+    size: '138 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'KUKA robot models table (KR 6 to KR 1000 TITAN), KRC4 controller architecture diagram (KPC/KSD/KPS/SafetyBUS/SmartPad), KRL .SRC and .DAT file structure diagram, PTP/LIN/CIRC motion type diagram, KRL data types table (BOOL/INT/REAL/E6POS/E6AXIS), operators and control flow table, motion instruction syntax table, approximate positioning (C_DIS/C_VEL/C_ORI), digital I/O and subprogram tables, 5 practice exercises — 4 diagrams — by Awet G. Nway.',
+      ti: 'KUKA robot models table፣ KRC4 controller architecture diagram፣ KRL .SRC/.DAT file structure diagram፣ PTP/LIN/CIRC motion diagram፣ KRL data types/operators/motion tables፣ I/O and subprogram tables፣ 5 exercises — ብ Awet G. Nway።',
+      am: 'KUKA robot models table፣ KRC4 controller architecture diagram፣ KRL .SRC/.DAT file structure diagram፣ PTP/LIN/CIRC motion diagram፣ KRL data types/operators/motion tables፣ I/O and subprogram tables፣ 5 exercises — በ Awet G. Nway።'
+    },
+    file: 'pdfs/ROBOT-005-KUKA-Robot-Programming.pdf',
+    color: '#ec4899',
+    preview: true
+  },
+  {
     id: 'prota-curriculum-001-introduction-to-protastructure',
     title: {
       en: 'PROTA-001: Introduction to ProtaStructure',
