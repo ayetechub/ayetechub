@@ -3670,6 +3670,18 @@ const BLOG_POSTS = [
     featured: true
   },
   {
+    id: 'solar-system-design-guide',
+    title: 'How to Design an Off-Grid Solar System: The Engineer\'s Complete Guide',
+    category: 'solar',
+    date: '2026-06-03',
+    author: 'Awet G. Nway',
+    readTime: '14 min read',
+    excerpt: 'Eight-step engineering design process for off-grid solar — load schedule, worst-month PSH, panel sizing with temperature derating, LiFePO4 battery bank, MPPT controller, inverter selection, DC cable sizing, earthing. Full calculations for a school in Tigray with real numbers throughout.',
+    image: 'assets/images/og-cover.png',
+    url: 'blog/solar-system-design-guide.html',
+    featured: true
+  },
+  {
     id: 'solar-tigray',
     title: 'Solar Energy Opportunities in Tigray, Ethiopia',
     category: 'solar',
