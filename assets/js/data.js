@@ -1966,6 +1966,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'mep-curriculum-007-ventilation-and-indoor-air-quality',
+    title: {
+      en: 'MEP-007: Ventilation & Indoor Air Quality',
+      ti: 'MEP-007: Ventilation ን ናይ ውሽጢ ኣየር ጥራነት',
+      am: 'MEP-007: Ventilation እና የውስጥ አየር ጥራት'
+    },
+    category: 'mep',
+    pages: 6,
+    size: '144 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'IAQ pollutants radial diagram (CO₂/CO/VOCs/PM2.5/Humidity/Radon around central room — sources and WHO thresholds), ventilation types diagram (Natural/Mechanical/Mixed Mode — 3 panels with system components), MVHR cross-flow heat recovery diagram (fresh air 2°C→18°C / stale air 21°C→4°C with 85-95% efficiency), 6-pollutant health thresholds table, ASHRAE 62.1 formula and 8-space outdoor air rates table, ACH by space table (8 space types), MVHR vs alternatives table, DCV sensor types table, ventilation system selection guide, and 5 practice exercises — 3 diagrams — by Awet G. Nway.',
+      ti: 'IAQ pollutants radial diagram (CO₂/CO/VOCs/PM2.5/Humidity/Radon — WHO thresholds)፣ ventilation types diagram (Natural/Mechanical/Mixed Mode)፣ MVHR heat recovery diagram (2°C→18°C / 21°C→4°C)፣ ASHRAE 62.1 formula (Rp×Pz + Ra×Az)፣ ACH table (8 space types)፣ DCV sensor table፣ 5 exercises — ብ Awet G. Nway።',
+      am: 'IAQ pollutants radial diagram (CO₂/CO/VOCs/PM2.5/Humidity/Radon — WHO thresholds)፣ ventilation types diagram (Natural/Mechanical/Mixed Mode)፣ MVHR heat recovery diagram (2°C→18°C / 21°C→4°C)፣ ASHRAE 62.1 formula (Rp×Pz + Ra×Az)፣ ACH table (8 space types)፣ DCV sensor table፣ 5 exercises — በ Awet G. Nway።'
+    },
+    file: 'pdfs/MEP-007-Ventilation-and-Indoor-Air-Quality.pdf',
+    color: '#0d9488',
+    preview: true
+  },
+  {
     id: 'plumb-001-introduction-to-plumbing-systems',
     title: {
       en: 'PLUMB-001: Introduction to Plumbing Systems',
