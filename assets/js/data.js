@@ -2386,6 +2386,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'hvac-curriculum-010-hvac-load-calculation',
+    title: {
+      en: 'HVAC-010: HVAC Load Calculation',
+      ti: 'HVAC-010: ናይ HVAC ሎድ ሕሳብ',
+      am: 'HVAC-010: HVAC ጭነት ስሌት'
+    },
+    category: 'hvac',
+    pages: 6,
+    size: '148 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Heat gain sources room diagram (solar/transmission/people/lighting/equipment/infiltration/ventilation), CLTD concept curve diagram (sol-air vs indoor with time lag), cooling load breakdown bar chart, complete 6×6m office worked example (transmission/solar/people/lighting/equipment/ventilation step-by-step tables), CLTD/CLF formula table for all sources, equipment selection guide, and 5 practice exercises — 3 diagrams — by Awet G. Nway.',
+      ti: 'Heat gain sources room diagram፣ CLTD concept curve diagram (sol-air vs indoor)፣ cooling load breakdown bar chart፣ 6×6m office worked example (all steps)፣ CLTD/CLF formula table፣ AC equipment selection guide፣ 5 exercises — ብ Awet G. Nway።',
+      am: 'Heat gain sources room diagram፣ CLTD concept curve diagram፣ cooling load breakdown bar chart፣ 6×6m office worked example (all steps)፣ CLTD/CLF formula table፣ AC equipment selection guide፣ 5 exercises — በ Awet G. Nway።'
+    },
+    file: 'pdfs/HVAC-010-HVAC-Load-Calculation.pdf',
+    color: '#0ea5e9',
+    preview: true
+  },
+  {
     id: 'solar-curriculum-002-radiation-basics',
     title: {
       en: 'SOLAR-002: Solar Radiation Basics',
