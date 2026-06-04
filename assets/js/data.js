@@ -1735,6 +1735,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'plc-curriculum-007-math-and-comparison-instructions',
+    title: {
+      en: 'PLC-007: Math & Comparison Instructions',
+      ti: 'PLC-007: ናይ Math ን Comparison መምርሒታት',
+      am: 'PLC-007: Math እና Comparison ትእዛዞች'
+    },
+    category: 'plc',
+    pages: 6,
+    size: '152 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Arithmetic function block diagram (ADD/SUB/MUL/DIV with IN1/IN2/OUT wires), comparison instruction diagram (EQU/NEQ/LES/LEQ/GRT/GEQ Boolean output), analogue scaling diagram (4-20mA to engineering units), alarm ladder diagram, code tables for all instructions (Siemens TIA + Allen-Bradley), analogue scaling step-by-step table, production rate calculator, temperature alarm with hysteresis, flow from differential pressure, and 5 practice exercises — 4 diagrams — by Awet G. Nway.',
+      ti: 'Arithmetic function block diagram (ADD/SUB/MUL/DIV)፣ comparison instructions diagram (EQU/NEQ/LES/GRT/GEQ Boolean)፣ analogue scaling diagram (4-20mA to EU)፣ alarm ladder diagram፣ code tables (TIA Portal + AB)፣ 5 practice exercises — ብ Awet G. Nway።',
+      am: 'Arithmetic function block diagram (ADD/SUB/MUL/DIV)፣ comparison instructions diagram (EQU/NEQ/LES/GRT/GEQ Boolean)፣ analogue scaling diagram (4-20mA to EU)፣ alarm ladder diagram፣ code tables (TIA Portal + AB)፣ 5 practice exercises — በ Awet G. Nway።'
+    },
+    file: 'pdfs/PLC-007-Math-and-Comparison-Instructions.pdf',
+    color: '#22c55e',
+    preview: true
+  },
+  {
     id: 'mep-curriculum-001-intro-to-mep',
     title: {
       en: 'MEP-001: Introduction to MEP Engineering',
