@@ -670,6 +670,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'cohoom-curriculum-005-wall-editing',
+    title: {
+      en: 'COHOOM-005: Wall Editing in Coohom',
+      ti: 'COHOOM-005: ኣብ Coohom ናይ ድንቢ ምምሕያሽ',
+      am: 'COHOOM-005: በCoohom ግድግዳ ማስተካከያ'
+    },
+    category: 'coohom',
+    pages: 6,
+    size: '148 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Wall selection floor plan diagram (selected wall highlighted with handles + properties panel), four wall operations diagram (Move/Resize/Height/Opening side-by-side), wall opening types diagram (Door/Window/Archway/Glass Wall elevation views), wall material swatches diagram (6 finish types), wall selection methods table, move/resize/height tables, standard opening dimensions table, material application methods table, curved wall 6-step guide, and 5 practice exercises — 4 diagrams — by Awet G. Nway.',
+      ti: 'Wall selection floor plan diagram (selected wall + properties panel)፣ 4 wall operations diagram (Move/Resize/Height/Opening)፣ wall opening types diagram (Door/Window/Archway/Glass)፣ material swatches diagram (6 types)፣ opening dimensions table፣ material application table፣ curved wall guide፣ 5 exercises — ብ Awet G. Nway።',
+      am: 'Wall selection floor plan diagram (selected wall + properties panel)፣ 4 wall operations diagram (Move/Resize/Height/Opening)፣ wall opening types diagram (Door/Window/Archway/Glass)፣ material swatches diagram (6 types)፣ opening dimensions table፣ material application table፣ curved wall guide፣ 5 exercises — በ Awet G. Nway።'
+    },
+    file: 'pdfs/COHOOM-005-Wall-Editing.pdf',
+    color: '#f43f5e',
+    preview: true
+  },
+  {
     id: 'ct-001-introduction-to-critical-thinking',
     title: {
       en: 'CT-001: Introduction to Critical Thinking in the AI Age',
