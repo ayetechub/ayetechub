@@ -2890,6 +2890,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'ai-curriculum-010-ai-voice-and-avatar-tools',
+    title: {
+      en: 'AI-010: AI Voice & Avatar Tools',
+      ti: 'AI-010: AI ድምጺ ን Avatar መሳርሒታት',
+      am: 'AI-010: AI ድምጽ እና Avatar መሳሪያዎች'
+    },
+    category: 'ai-curriculum',
+    pages: 6,
+    size: '148 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'TTS pipeline diagram (Text→Language Processing→Neural Model→Synthesis→Audio Output), voice cloning process diagram (Record→Neural Network→Cloned Output with waveforms), AI avatar video generation diagram (Consent Video+Script+Language→AI Engine→MP4), TTS tools comparison table (ElevenLabs/Murf/OpenAI/Google/Azure/Polly), ElevenLabs 7-step voice clone guide, stability/similarity settings table, HeyGen 6-step avatar setup, HeyGen vs Synthesia comparison, meeting tools table (Otter/Fireflies/Read.ai/Adobe Podcast/Krisp/Descript), Adobe Podcast free guide, AI voice ethics table, and 5 practice exercises — 3 diagrams — by Awet G. Nway.',
+      ti: 'TTS pipeline diagram (Text→Neural Model→Audio)፣ voice cloning process diagram (Record→Neural Network→Cloned Output)፣ AI avatar video generation diagram (Consent+Script→AI Engine→MP4)፣ TTS tools comparison table (ElevenLabs/Murf/OpenAI)፣ ElevenLabs 7-step guide፣ HeyGen vs Synthesia comparison፣ meeting tools table (Otter/Fireflies/Adobe Podcast) — ብ Awet G. Nway።',
+      am: 'TTS pipeline diagram (Text→Neural Model→Audio)፣ voice cloning process diagram (Record→Neural Network→Cloned Output)፣ AI avatar video generation diagram (Consent+Script→AI Engine→MP4)፣ TTS tools comparison table (ElevenLabs/Murf/OpenAI)፣ ElevenLabs 7-step guide፣ HeyGen vs Synthesia comparison፣ meeting tools table (Otter/Fireflies/Adobe Podcast) — በ Awet G. Nway።'
+    },
+    file: 'pdfs/AI-010-AI-Voice-and-Avatar-Tools.pdf',
+    color: '#8b5cf6',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'hvac',
