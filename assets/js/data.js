@@ -2575,6 +2575,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'solar-curriculum-010-solar-load-calculation',
+    title: {
+      en: 'SOLAR-010: Solar Load Calculation',
+      ti: 'SOLAR-010: ናይ ሶላር ሎድ ሕሳብ',
+      am: 'SOLAR-010: የፀሐይ ሶላር ጭነት ስሌት'
+    },
+    category: 'solar',
+    pages: 6,
+    size: '150 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'PSH concept diagram (irradiance bell curve vs equivalent rectangle), 5-step system sizing flow diagram (Load→Panels→Battery→MPPT→Inverter), energy balance generation vs consumption diagram, design step table, load schedule formula, PSH table for 8 African/Middle East cities (worst-month values), component sizing formulas, complete health clinic worked example (8-load schedule, 8.3 kWh/day, 1.68 kWp panels, 9.6 kWh LiFePO4 battery, 30A MPPT, 1.5kW inverter), and 5 practice exercises — 3 diagrams — by Awet G. Nway.',
+      ti: 'PSH concept diagram (bell curve vs rectangle)፣ 5-step sizing flow diagram፣ energy balance diagram፣ PSH table for 8 cities (worst-month)፣ complete health clinic worked example (8 loads, 8.3 kWh/day, full sizing)፣ 5 exercises — ብ Awet G. Nway።',
+      am: 'PSH concept diagram (bell curve vs rectangle)፣ 5-step sizing flow diagram፣ energy balance diagram፣ PSH table for 8 cities (worst-month)፣ complete health clinic worked example (8 loads, 8.3 kWh/day, full sizing)፣ 5 exercises — በ Awet G. Nway።'
+    },
+    file: 'pdfs/SOLAR-010-Solar-Load-Calculation.pdf',
+    color: '#f59e0b',
+    preview: true
+  },
+  {
     id: 'ai-curriculum-002-understanding-chatgpt',
     title: {
       en: 'AI-002: Understanding ChatGPT',
