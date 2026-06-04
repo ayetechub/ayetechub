@@ -271,6 +271,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'cad-curriculum-003-drawing-tools',
+    title: {
+      en: 'CAD-003: Drawing Tools',
+      ti: 'CAD-003: ናይ ምስላ መሳርሒታት',
+      am: 'CAD-003: ስዕል ቀሪጾ መሳሪያዎች'
+    },
+    category: 'autocad',
+    pages: 6,
+    size: '148 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: '8 drawing entities diagram (LINE/CIRCLE/ARC/RECTANG/PLINE/POLYGON/ELLIPSE/HATCH — each drawn with correct shape), coordinate input methods diagram (Absolute/Relative/Polar — 3 panels with grid visuals), circle and arc methods diagram (5 circle methods + 5 arc methods with mini arc visuals), 8-command reference table (alias/what it creates/key option), coordinate input table, precision aids table (F8/F10/F3/F12), LINE step-by-step, RECTANG options table, PLINE sub-commands, POLYGON/ELLIPSE/HATCH table, HATCH patterns table, and 5 practice exercises — 3 diagrams — by Awet G. Nway.',
+      ti: '8 drawing entities diagram (LINE/CIRCLE/ARC/RECTANG/PLINE/POLYGON/ELLIPSE/HATCH)፣ coordinate input diagram (Absolute/Relative/Polar)፣ circle and arc methods diagram (5+5 methods)፣ 8-command reference table (alias/key option)፣ precision aids table (F8/F10/F3)፣ HATCH patterns table፣ 5 exercises — ብ Awet G. Nway።',
+      am: '8 drawing entities diagram (LINE/CIRCLE/ARC/RECTANG/PLINE/POLYGON/ELLIPSE/HATCH)፣ coordinate input diagram (Absolute/Relative/Polar)፣ circle and arc methods diagram (5+5 methods)፣ 8-command reference table (alias/key option)፣ precision aids table (F8/F10/F3)፣ HATCH patterns table፣ 5 exercises — በ Awet G. Nway።'
+    },
+    file: 'pdfs/CAD-003-Drawing-Tools.pdf',
+    color: '#dc2626',
+    preview: true
+  },
+  {
     id: 'robot-curriculum-001-introduction-to-industrial-robotics',
     title: {
       en: 'ROBOT-001: Introduction to Industrial Robotics',
