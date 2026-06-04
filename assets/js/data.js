@@ -2281,6 +2281,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'elec-curriculum-008-electrical-symbols',
+    title: {
+      en: 'ELEC-008: Electrical Symbols',
+      ti: 'ELEC-008: ናይ ኤሌክትሪካዊ ምልክታት',
+      am: 'ELEC-008: የኤሌክትሪክ ምልክቶች'
+    },
+    category: 'electrical',
+    pages: 6,
+    size: '145 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Passive components diagram (resistor/capacitor/inductor/battery/motor/transformer/lamp/earth — drawn symbols in 8 panels), IEC vs ANSI comparison diagram (resistor zigzag vs rectangle, earth triangle vs three-lines, NC contact), switch/contact symbols diagram (NO/NC/pushbutton/motor/fuse drawn), reference designator mini-schematic (ladder with S0/S1/KM1/H1 cross-referenced), IEC vs ANSI table, switch symbols table (8 types), protection devices table, 8-step schematic reading process, and 5 practice exercises — 4 diagrams — by Awet G. Nway.',
+      ti: 'Passive components diagram (resistor/capacitor/inductor/battery/motor/transformer — drawn symbols)፣ IEC vs ANSI comparison diagram፣ switch/contact symbols diagram (NO/NC/pushbutton/fuse drawn)፣ reference designator mini-schematic (ladder with cross-references)፣ 8-step schematic reading process፣ 5 exercises — ብ Awet G. Nway።',
+      am: 'Passive components diagram (resistor/capacitor/inductor/battery/motor/transformer — drawn symbols)፣ IEC vs ANSI comparison diagram፣ switch/contact symbols diagram (NO/NC/pushbutton/fuse drawn)፣ reference designator mini-schematic (ladder with cross-references)፣ 8-step schematic reading process፣ 5 exercises — በ Awet G. Nway።'
+    },
+    file: 'pdfs/ELEC-008-Electrical-Symbols.pdf',
+    color: '#fbbf24',
+    preview: true
+  },
+  {
     id: 'electricity-decoded-ohms-law-visual-guide',
     title: {
       en: 'Decoding the Invisible Forces of Electricity',
