@@ -565,6 +565,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'revit-curriculum-005-wall-creation',
+    title: {
+      en: 'REVIT-005: Wall Creation in Revit',
+      ti: 'REVIT-005: ኣብ Revit ናይ ድንቢ ምፍጣር',
+      am: 'REVIT-005: በRevit ግድግዳ መፍጠሪያ'
+    },
+    category: 'revit',
+    pages: 6,
+    size: '148 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Three wall categories diagram (Basic/Stacked/Curtain with layered visuals), wall properties section diagram (height/constraints/location line), compound wall layer diagram (exterior→finish→structure→insulation→finish→interior with core boundaries), wall join types plan diagram (T-join/L-join/Butt join), wall Family vs Type vs Instance explanation, Options Bar settings guide, compound layer functions table (Structure/Substrate/Thermal/Finish), wall joins tools table, structural usage types, and 5 practice exercises — 4 diagrams — by Awet G. Nway.',
+      ti: 'Three wall categories diagram (Basic/Stacked/Curtain)፣ wall properties section diagram (height/constraints)፣ compound wall layer diagram (core boundaries)፣ wall join types plan diagram (T/L/Butt)፣ layer functions table፣ wall joins tools table፣ 5 exercises — ብ Awet G. Nway።',
+      am: 'Three wall categories diagram (Basic/Stacked/Curtain)፣ wall properties section diagram (height/constraints)፣ compound wall layer diagram (core boundaries)፣ wall join types plan diagram (T/L/Butt)፣ layer functions table፣ wall joins tools table፣ 5 exercises — በ Awet G. Nway።'
+    },
+    file: 'pdfs/REVIT-005-Wall-Creation.pdf',
+    color: '#4338ca',
+    preview: true
+  },
+  {
     id: 'cohoom-curriculum-001-introduction-to-coohom',
     title: {
       en: 'COHOOM-001: Introduction to Coohom',
