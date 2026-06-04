@@ -2008,6 +2008,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'plumbing-curriculum-003-pipe-materials-and-types',
+    title: {
+      en: 'PLUMB-003: Pipe Materials and Types',
+      ti: 'PLUMB-003: ናይ ቱቦ ማቴርያላትን ዓይነታትን',
+      am: 'PLUMB-003: የቱቦ ቁሳቁሶች እና ዓይነቶች'
+    },
+    category: 'plumbing',
+    pages: 6,
+    size: '144 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Pipe cross-sections diagram (copper/CPVC/PEX/PPR/HDPE/galvanised steel — 6 materials with wall/bore/water shown), pipe joining methods diagram (solder/push-fit/compression/threaded/fusion — 5 methods with visual), material selection guide diagram (6 applications→correct material), 8-material properties table (temp/pressure/lifespan/cost), copper type comparison (K/L/M/DWV), plastic materials detail table (uPVC/CPVC/PEX-A/PEX-B/PPR/HDPE with cannot-use), joining methods table (5 methods with tools/releasable/key rule), 5 common mistakes table, and 5 practice exercises — 3 diagrams — by Awet G. Nway.',
+      ti: 'Pipe cross-sections diagram (copper/CPVC/PEX/PPR/HDPE/steel — 6 materials)፣ joining methods diagram (solder/push-fit/compression/threaded/fusion)፣ selection guide diagram (6 applications→material)፣ 8-material properties table (temp/pressure/lifespan)፣ plastic materials table (uPVC/CPVC/PEX/PPR/HDPE)፣ 5 mistakes table — ብ Awet G. Nway።',
+      am: 'Pipe cross-sections diagram (copper/CPVC/PEX/PPR/HDPE/steel — 6 materials)፣ joining methods diagram (solder/push-fit/compression/threaded/fusion)፣ selection guide diagram (6 applications→material)፣ 8-material properties table (temp/pressure/lifespan)፣ plastic materials table (uPVC/CPVC/PEX/PPR/HDPE)፣ 5 mistakes table — በ Awet G. Nway።'
+    },
+    file: 'pdfs/PLUMB-003-Pipe-Materials-and-Types.pdf',
+    color: '#0369a1',
+    preview: true
+  },
+  {
     id: 'mech-curriculum-001-intro-to-mechanical',
     title: {
       en: 'MECH-001: Introduction to Mechanical Engineering',
