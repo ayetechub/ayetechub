@@ -2071,6 +2071,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'mech-curriculum-007-machine-elements',
+    title: {
+      en: 'MECH-007: Machine Elements',
+      ti: 'MECH-007: ናይ መሽን ኤለመንታት',
+      am: 'MECH-007: የማሽን ክፍሎች'
+    },
+    category: 'mechanical',
+    pages: 6,
+    size: '152 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Shaft assembly diagram (motor→coupling→shaft→gear→bearing with labels), ball bearing vs journal bearing cross-section diagram, four gear types diagram (spur/helical/bevel/worm), shaft design formulas (τ=16T/πd³), key selection ISO 773 table, coupling types table (rigid/jaw/disc/universal/fluid), bearing types table (6 types with load/speed/application), gear ratio formulas (VR=T₁/T₂), belt/chain types table, spring types table, fastener property class table, bolt torque formula, and 5 practice exercises — 3 diagrams — by Awet G. Nway.',
+      ti: 'Shaft assembly diagram (motor→coupling→shaft→gear→bearing)፣ ball bearing vs journal bearing diagram፣ 4 gear types diagram (spur/helical/bevel/worm)፣ shaft design formulas፣ bearing C/P selection table፣ fastener property class table፣ 5 exercises — ብ Awet G. Nway።',
+      am: 'Shaft assembly diagram (motor→coupling→shaft→gear→bearing)፣ ball bearing vs journal bearing diagram፣ 4 gear types diagram (spur/helical/bevel/worm)፣ shaft design formulas፣ bearing C/P selection table፣ fastener property class table፣ 5 exercises — በ Awet G. Nway።'
+    },
+    file: 'pdfs/MECH-007-Machine-Elements.pdf',
+    color: '#0891b2',
+    preview: true
+  },
+  {
     id: 'elec-curriculum-001-intro-to-electricity',
     title: {
       en: 'ELEC-001: Introduction to Electricity',
