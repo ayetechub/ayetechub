@@ -481,6 +481,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'prota-curriculum-006-column-design',
+    title: {
+      en: 'PROTA-006: Column Design in ProtaStructure',
+      ti: 'PROTA-006: ናይ Column ዲዛይን ኣብ ProtaStructure',
+      am: 'PROTA-006: Column ዲዛይን በProtaStructure'
+    },
+    category: 'prota-structure',
+    pages: 6,
+    size: '152 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Column cross-section types diagram (rectangular/square/circular/L-shaped with rebar dots and stirrups), column grid placement plan diagram (4×3 grid with corner vs interior columns), column reinforcement elevation+cross-section diagram (longitudinal bars/stirrups/lap splice zone/cover dimensions), 6-step design workflow diagram (Define→Place→Load→Analyse→Design→Check), column types table, placement procedure table, properties table, reinforcement rules table (min/max steel ratio/bar spacing/links), Unity Check interpretation table, and 5 practice exercises — 4 diagrams — by Awet G. Nway.',
+      ti: 'Column types diagram (rectangular/square/circular/L-shaped with rebar)፣ column grid placement plan diagram (4×3 grid)፣ column reinforcement elevation+cross-section diagram (bars/stirrups/lap/cover)፣ 6-step workflow diagram (Define→Place→Analyse→Design→Check)፣ Unity Check table፣ 5 exercises — ብ Awet G. Nway።',
+      am: 'Column types diagram (rectangular/square/circular/L-shaped with rebar)፣ column grid placement plan diagram (4×3 grid)፣ column reinforcement elevation+cross-section diagram (bars/stirrups/lap/cover)፣ 6-step workflow diagram (Define→Place→Analyse→Design→Check)፣ Unity Check table፣ 5 exercises — በ Awet G. Nway።'
+    },
+    file: 'pdfs/PROTA-006-Column-Design.pdf',
+    color: '#0369a1',
+    preview: true
+  },
+  {
     id: 'revit-curriculum-001-introduction-to-revit',
     title: {
       en: 'REVIT-001: Introduction to Revit',
