@@ -376,6 +376,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'robot-curriculum-006-fanuc-robot-systems',
+    title: {
+      en: 'ROBOT-006: Fanuc Robot Systems',
+      ti: 'ROBOT-006: ናይ Fanuc Robot ስርዓታት',
+      am: 'ROBOT-006: Fanuc Robot ሥርዓቶች'
+    },
+    category: 'robotics',
+    pages: 6,
+    size: '148 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Fanuc robot series diagram (LR Mate/M-10iA/M-20iB/R-2000iC/M-2000iA with payload/reach/applications), TP motion types diagram (J curved/L straight/C arc paths with via point), FANUC vs KUKA vs ABB platform comparison diagram, TP program structure with register types diagram (R[]/PR[]/DI[]/DO[]/AI[] panels), robot series selection table, R-30iB Plus controller components table, iPendant controls table, motion instruction syntax table (J/L/C with speed/zone), register TP code table, platform syntax comparison table (J vs MoveJ vs PTP), and 5 practice exercises — 4 diagrams — by Awet G. Nway.',
+      ti: 'Fanuc robot series diagram (LR Mate/M-10iA/M-20iB/R-2000iC/M-2000iA)፣ TP motion types diagram (J/L/C paths)፣ FANUC vs KUKA vs ABB comparison diagram፣ TP program+register types diagram፣ motion syntax table (J/L/C)፣ register TP code table፣ platform syntax comparison table፣ 5 exercises — ብ Awet G. Nway።',
+      am: 'Fanuc robot series diagram (LR Mate/M-10iA/M-20iB/R-2000iC/M-2000iA)፣ TP motion types diagram (J/L/C paths)፣ FANUC vs KUKA vs ABB comparison diagram፣ TP program+register types diagram፣ motion syntax table (J/L/C)፣ register TP code table፣ platform syntax comparison table፣ 5 exercises — በ Awet G. Nway።'
+    },
+    file: 'pdfs/ROBOT-006-Fanuc-Robot-Systems.pdf',
+    color: '#ec4899',
+    preview: true
+  },
+  {
     id: 'prota-curriculum-001-introduction-to-protastructure',
     title: {
       en: 'PROTA-001: Introduction to ProtaStructure',
