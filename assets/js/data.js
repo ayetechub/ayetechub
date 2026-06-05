@@ -2428,6 +2428,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'elec-curriculum-009-circuit-design-basics',
+    title: {
+      en: 'ELEC-009: Circuit Design Basics',
+      ti: 'ELEC-009: ናይ Circuit Design መሰረታዊ',
+      am: 'ELEC-009: Circuit Design መሰረቶች'
+    },
+    category: 'electrical',
+    pages: 6,
+    size: '148 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: "Series vs parallel circuit diagram (both circuits with IEC resistors, source, current arrows, and component values), Kirchhoff's laws diagram (KCL node with 4 current arrows + KVL loop with voltmeter values and loop arrow), voltage divider + power triangle diagram (divider circuit with tap output and Vout formula + P-V-I triangle with all 3 formulas), Ohm's Law table (V/I/R/P definitions), power formula table (5 rows with examples), series vs parallel properties table, KVL step-by-step table, MCB type selection table (B/C/D/MCCB), protection sizing worked example, and 5 practice exercises — 3 diagrams — by Awet G. Nway.",
+      ti: "Series vs parallel circuit diagram (IEC resistors + source + current arrows)፣ KCL node + KVL loop diagram (Kirchhoff's laws)፣ voltage divider + P-V-I power triangle diagram፣ Ohm's Law table (V/I/R/P)፣ power formula table (5 rows)፣ series vs parallel properties table፣ MCB type table (B/C/D/MCCB)፣ protection example፣ 5 exercises — ብ Awet G. Nway።",
+      am: "Series vs parallel circuit diagram (IEC resistors + source + current arrows)፣ KCL node + KVL loop diagram (Kirchhoff's laws)፣ voltage divider + P-V-I power triangle diagram፣ Ohm's Law table (V/I/R/P)፣ power formula table (5 rows)፣ series vs parallel properties table፣ MCB type table (B/C/D/MCCB)፣ protection example፣ 5 exercises — በ Awet G. Nway።"
+    },
+    file: 'pdfs/ELEC-009-Circuit-Design-Basics.pdf',
+    color: '#fbbf24',
+    preview: true
+  },
+  {
     id: 'electricity-decoded-ohms-law-visual-guide',
     title: {
       en: 'Decoding the Invisible Forces of Electricity',
