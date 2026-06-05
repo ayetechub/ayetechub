@@ -2239,6 +2239,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'mech-curriculum-008-manufacturing-processes',
+    title: {
+      en: 'MECH-008: Manufacturing Processes',
+      ti: 'MECH-008: ናይ ምፍርራህ ስርዓታት',
+      am: 'MECH-008: የማምረቻ ሂደቶች'
+    },
+    category: 'mechanical',
+    pages: 6,
+    size: '152 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Manufacturing processes tree diagram (Shaping/Machining/Joining/Finishing — 4 panels with process chips), machining operations diagram (Turning with workpiece rotation/Milling with cutter/Drilling with feed arrow — visual), welding processes diagram (MIG/TIG/SMAW — 3 panels with weld bead and arc flash), process selection guide diagram (volume vs tolerance matrix with coloured zones), 4-category comparison table, primary shaping table (sand casting/die casting/forging/rolling/extrusion/injection moulding), machining table (6 operations with tolerances), cutting tool table (HSS to PCD), welding table (5 processes), heat treatment table, and 5 practice exercises — 4 diagrams — by Awet G. Nway.',
+      ti: 'Manufacturing processes tree diagram (Shaping/Machining/Joining/Finishing)፣ machining operations diagram (Turning/Milling/Drilling visuals)፣ welding processes diagram (MIG/TIG/SMAW)፣ process selection guide diagram (volume vs tolerance matrix)፣ primary shaping table፣ machining table (6 operations+tolerances)፣ cutting tool table (HSS to PCD)፣ welding table (5 processes)፣ 5 exercises — ብ Awet G. Nway።',
+      am: 'Manufacturing processes tree diagram (Shaping/Machining/Joining/Finishing)፣ machining operations diagram (Turning/Milling/Drilling visuals)፣ welding processes diagram (MIG/TIG/SMAW)፣ process selection guide diagram (volume vs tolerance matrix)፣ primary shaping table፣ machining table (6 operations+tolerances)፣ cutting tool table (HSS to PCD)፣ welding table (5 processes)፣ 5 exercises — በ Awet G. Nway።'
+    },
+    file: 'pdfs/MECH-008-Manufacturing-Processes.pdf',
+    color: '#0891b2',
+    preview: true
+  },
+  {
     id: 'elec-curriculum-001-intro-to-electricity',
     title: {
       en: 'ELEC-001: Introduction to Electricity',
