@@ -4171,6 +4171,18 @@ const BLOG_POSTS = [
     featured: true
   },
   {
+    id: 'chilled-water-vs-vrf-hvac-selection',
+    title: 'Chilled Water vs VRF: How to Choose the Right HVAC System for Any Building',
+    category: 'hvac',
+    date: '2026-06-05',
+    author: 'Awet G. Nway',
+    readTime: '11 min read',
+    excerpt: 'The definitive engineering comparison of chilled water and VRF/VRV systems — how each works, 13-parameter comparison table, building-type decision guide (residential/hotel/office/hospital/school/data centre/high-rise), life-cycle cost formula, F-Gas regulatory risks, spare parts availability, and a 12-question quick selection checklist.',
+    image: 'assets/images/og-cover.png',
+    url: 'blog/chilled-water-vs-vrf-hvac-selection.html',
+    featured: true
+  },
+  {
     id: 'ai-workflows-engineers-2026',
     title: '5 AI Workflows Every Engineer Should Automate in 2026',
     category: 'ai',
