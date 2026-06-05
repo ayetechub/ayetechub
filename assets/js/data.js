@@ -2785,6 +2785,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'solar-curriculum-011-battery-sizing',
+    title: {
+      en: 'SOLAR-011: Battery Sizing for Solar PV Systems',
+      ti: 'SOLAR-011: ናይ Solar PV ስርዓት Battery Sizing',
+      am: 'SOLAR-011: Solar PV ሥርዓት Battery ስሌት'
+    },
+    category: 'solar',
+    pages: 6,
+    size: '155 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Battery chemistry comparison diagram (Lead-Acid/LiFePO4/Li-NMC rating bars for cost/cycle life/DoD/safety/weight), DoD concept diagram (three battery types showing usable vs reserve zones with formula), series/parallel/4S-2P configuration diagram, 5-step sizing flowchart (Daily Energy→Autonomy→Usable Ah→DoD Factor→Config), chemistry comparison table (9 parameters), key battery parameters table (7 terms), worked example 7-step table (8.3 kWh/day clinic → 23 kWh LiFePO4 bank), BMS functions table, temperature derating table, and 5 practice exercises — 4 diagrams — by Awet G. Nway.',
+      ti: 'Battery chemistry comparison diagram (Lead-Acid/LiFePO4/Li-NMC rating bars)፣ DoD concept diagram (usable vs reserve zones)፣ series/parallel/4S-2P configuration diagram፣ 5-step sizing flowchart፣ chemistry table (9 parameters)፣ battery parameters table (7 terms)፣ worked example table (8.3 kWh/day → 23 kWh bank)፣ BMS functions table፣ temperature derating table፣ 5 exercises — ብ Awet G. Nway።',
+      am: 'Battery chemistry comparison diagram (Lead-Acid/LiFePO4/Li-NMC rating bars)፣ DoD concept diagram (usable vs reserve zones)፣ series/parallel/4S-2P configuration diagram፣ 5-step sizing flowchart፣ chemistry table (9 parameters)፣ battery parameters table (7 terms)፣ worked example table (8.3 kWh/day → 23 kWh bank)፣ BMS functions table፣ temperature derating table፣ 5 exercises — በ Awet G. Nway።'
+    },
+    file: 'pdfs/SOLAR-011-Battery-Sizing.pdf',
+    color: '#f59e0b',
+    preview: true
+  },
+  {
     id: 'ai-curriculum-002-understanding-chatgpt',
     title: {
       en: 'AI-002: Understanding ChatGPT',
