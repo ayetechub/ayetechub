@@ -1882,6 +1882,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'plc-curriculum-009-structured-text',
+    title: {
+      en: 'PLC-009: Structured Text (ST) Programming',
+      ti: 'PLC-009: ናይ Structured Text (ST) ፕሮግራሚን',
+      am: 'PLC-009: Structured Text (ST) ፕሮግራሚንግ'
+    },
+    category: 'plc',
+    pages: 6,
+    size: '152 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'ST vs other IEC 61131-3 languages diagram (LD/FBD/ST/SFC 4-panel comparison), IF/ELSIF/WHILE/FOR/CASE control flow visual diagram (flowcharts for all 4 structures), ST program structure code block, 7-data-type table (BOOL/INT/DINT/REAL/TIME/STRING/ARRAY), ST operators table (6 categories), IF temperature alarm code (multi-threshold), FOR loop array processing code, CASE state machine code (4-state machine), TON/CTU calling in ST code, analogue scaling complete code (with clamp), and 5 practice exercises — 2 diagrams + 6 code blocks — by Awet G. Nway.',
+      ti: 'ST vs other IEC 61131-3 languages diagram (LD/FBD/ST/SFC)፣ IF/WHILE/FOR/CASE flowcharts diagram፣ ST program structure code block፣ 7-data-type table (BOOL/INT/DINT/REAL/TIME/STRING/ARRAY)፣ ST operators table (6 categories)፣ IF temperature alarm code፣ FOR loop code፣ CASE state machine code (4-state)፣ analogue scaling code (with clamp)፣ 5 exercises — ብ Awet G. Nway።',
+      am: 'ST vs other IEC 61131-3 languages diagram (LD/FBD/ST/SFC)፣ IF/WHILE/FOR/CASE flowcharts diagram፣ ST program structure code block፣ 7-data-type table (BOOL/INT/DINT/REAL/TIME/STRING/ARRAY)፣ ST operators table (6 categories)፣ IF temperature alarm code፣ FOR loop code፣ CASE state machine code (4-state)፣ analogue scaling code (with clamp)፣ 5 exercises — በ Awet G. Nway።'
+    },
+    file: 'pdfs/PLC-009-Structured-Text.pdf',
+    color: '#22c55e',
+    preview: true
+  },
+  {
     id: 'mep-curriculum-001-intro-to-mep',
     title: {
       en: 'MEP-001: Introduction to MEP Engineering',
