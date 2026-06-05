@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>5 AI Workflows Every Engineer Should Automate in 2026 – AYE Tech Hub</title>
+<meta name="description" content="Stop using AI as a search engine. Here are 5 specific, copy-paste AI workflows that save engineers 5–10 hours per week — report writing, calculations, research, code, and meeting documentation."/>
+<link rel="canonical" href="https://ayetechub.com/blog/ai-workflows-engineers-2026.html"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23020817'/%3E%3Crect x='3' y='3' width='94' height='94' rx='20' fill='none' stroke='%2300d4ff' stroke-width='3'/%3E%3Ctext x='50' y='62' font-family='Arial Black,sans-serif' font-size='30' font-weight='900' fill='%2300d4ff' text-anchor='middle'%3EAYE%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;700&display=swap"/>
+<link rel="stylesheet" href="../assets/css/main.css"/>
+<link rel="stylesheet" href="../assets/css/pages.css"/>
+<style>
+.article-wrap{max-width:780px;margin:0 auto;padding:0 20px 80px}
+.article-header{padding:48px 0 36px;border-bottom:1px solid var(--border);margin-bottom:36px}
+.article-cat{display:inline-block;background:rgba(168,85,247,.12);color:#a855f7;border:1px solid rgba(168,85,247,.3);font-size:.72rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:16px}
+.article-header h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;line-height:1.2;margin-bottom:16px}
+.article-meta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;color:var(--text-muted);font-size:.82rem}
+.article-body{font-size:1.02rem;line-height:1.85;color:var(--text-soft)}
+.article-body h2{font-size:1.3rem;font-weight:800;color:var(--text);margin:40px 0 14px;padding-left:14px;border-left:3px solid #a855f7}
+.article-body h3{font-size:1.05rem;font-weight:700;color:#a855f7;margin:28px 0 10px}
+.article-body p{margin-bottom:18px}
+.article-body ul,.article-body ol{padding-left:22px;margin-bottom:18px}
+.article-body li{margin-bottom:8px;line-height:1.75}
+.article-body strong{color:var(--text)}
+.article-body blockquote{border-left:4px solid #a855f7;background:var(--bg-card);padding:16px 20px;margin:24px 0;border-radius:0 8px 8px 0;font-style:italic;color:var(--text)}
+.callout{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:18px 20px;margin:24px 0}
+.callout.tip{border-color:rgba(168,85,247,.4);background:rgba(168,85,247,.06)}
+.callout.warn{border-color:rgba(234,179,8,.4);background:rgba(234,179,8,.06)}
+.callout.green{border-color:rgba(34,197,94,.4);background:rgba(34,197,94,.06)}
+.callout-title{font-weight:800;font-size:.85rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;color:#a855f7}
+.callout.warn .callout-title{color:#eab308}
+.callout.green .callout-title{color:#22c55e}
+.callout p{margin:0;font-size:.92rem;line-height:1.7;color:var(--text-soft)}
+.tag-row{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}
+.tag{font-size:.72rem;padding:4px 12px;background:var(--bg-card);border:1px solid var(--border);border-radius:20px;color:var(--text-muted)}
+a.tag{color:var(--text-muted);text-decoration:none;transition:color .2s,border-color .2s}
+a.tag:hover{color:#a855f7;border-color:#a855f7}
+.article-footer{margin-top:48px;padding-top:32px;border-top:1px solid var(--border);display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+
+/* Workflow cards */
+.workflow-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:24px;margin:24px 0;position:relative;overflow:hidden}
+.workflow-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px}
+.wf1::before{background:linear-gradient(90deg,#a855f7,#6d28d9)}
+.wf2::before{background:linear-gradient(90deg,#f97316,#eab308)}
+.wf3::before{background:linear-gradient(90deg,#06b6d4,#3b82f6)}
+.wf4::before{background:linear-gradient(90deg,#22c55e,#14b8a6)}
+.wf5::before{background:linear-gradient(90deg,#ec4899,#f97316)}
+.wf-header{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.wf-num{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.1rem;flex-shrink:0}
+.wf1 .wf-num{background:rgba(168,85,247,.15);color:#a855f7}
+.wf2 .wf-num{background:rgba(249,115,22,.15);color:#f97316}
+.wf3 .wf-num{background:rgba(6,182,212,.15);color:#06b6d4}
+.wf4 .wf-num{background:rgba(34,197,94,.15);color:#22c55e}
+.wf5 .wf-num{background:rgba(236,72,153,.15);color:#ec4899}
+.wf-title{font-size:1.1rem;font-weight:800;color:var(--text)}
+.wf-subtitle{font-size:.82rem;color:var(--text-muted);margin-top:2px}
+.wf-meta{display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+.wf-badge{font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:12px}
+.wf1 .wf-badge{background:rgba(168,85,247,.1);color:#a855f7;border:1px solid rgba(168,85,247,.2)}
+.wf2 .wf-badge{background:rgba(249,115,22,.1);color:#f97316;border:1px solid rgba(249,115,22,.2)}
+.wf3 .wf-badge{background:rgba(6,182,212,.1);color:#06b6d4;border:1px solid rgba(6,182,212,.2)}
+.wf4 .wf-badge{background:rgba(34,197,94,.1);color:#22c55e;border:1px solid rgba(34,197,94,.2)}
+.wf5 .wf-badge{background:rgba(236,72,153,.1);color:#ec4899;border:1px solid rgba(236,72,153,.2)}
+.prompt-box{background:#020817;border:1px solid var(--border);border-left:3px solid #a855f7;border-radius:6px;padding:14px 18px;margin:14px 0;font-family:'Courier New',monospace;font-size:.82rem;color:#c4b5fd;line-height:1.7;position:relative}
+.wf2 .prompt-box{border-left-color:#f97316;color:#fed7aa}
+.wf3 .prompt-box{border-left-color:#06b6d4;color:#a5f3fc}
+.wf4 .prompt-box{border-left-color:#22c55e;color:#bbf7d0}
+.wf5 .prompt-box{border-left-color:#ec4899;color:#fbcfe8}
+.prompt-label{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#a855f7;margin-bottom:6px;font-family:inherit}
+.wf2 .prompt-label{color:#f97316}
+.wf3 .prompt-label{color:#06b6d4}
+.wf4 .prompt-label{color:#22c55e}
+.wf5 .prompt-label{color:#ec4899}
+.time-save{display:inline-flex;align-items:center;gap:6px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.2);padding:4px 12px;border-radius:12px;font-size:.78rem;font-weight:700;color:#22c55e;margin-bottom:12px}
+.steps-list{counter-reset:step;padding-left:0;list-style:none}
+.steps-list li{counter-increment:step;display:flex;gap:12px;margin-bottom:10px;align-items:flex-start}
+.steps-list li::before{content:counter(step);display:flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:rgba(168,85,247,.15);color:#a855f7;font-weight:900;font-size:.8rem;flex-shrink:0;margin-top:2px}
+.wf2 .steps-list li::before{background:rgba(249,115,22,.15);color:#f97316}
+.wf3 .steps-list li::before{background:rgba(6,182,212,.15);color:#06b6d4}
+.wf4 .steps-list li::before{background:rgba(34,197,94,.15);color:#22c55e}
+.wf5 .steps-list li::before{background:rgba(236,72,153,.15);color:#ec4899}
+.steps-list li .step-text{font-size:.92rem;color:var(--text-soft);line-height:1.65}
+
+/* Time savings summary */
+.savings-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:20px 0}
+.saving-box{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center}
+.saving-box .hrs{font-size:1.4rem;font-weight:900;color:#a855f7}
+.saving-box .task{font-size:.75rem;color:var(--text-muted);margin-top:3px}
+</style>
+</head>
+<body>
+<div id="loading-screen"><div class="loading-logo">AYE</div><div class="loading-bar-wrap"><div class="loading-bar"></div></div><div class="loading-text">LOADING ARTICLE</div></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-menu" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path fill="currentColor" d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.39 5.39 0 0 1-4.4 2.26 5.5 5.5 0 0 1-3.14-10A9.32 9.32 0 0 0 12 3z"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><path fill="currentColor" d="M6.76 4.84 4.96 3.05 3.55 4.46l1.79 1.79zM4 10.5H1v2h3zm9-9.95h-2V3.5h2zm7.45 3.91-1.41-1.41-1.79 1.79 1.41 1.41zM17.24 18.16l1.79 1.8 1.41-1.41-1.8-1.79zM20 10.5v2h3v-2zM12 5.5a6 6 0 0 0-6 6c0 3.31 2.69 6 6 6s6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2zM4.96 19.95l1.41 1.41 1.79-1.8-1.41-1.41z"/></symbol>
+<symbol id="i-telegram" viewBox="0 0 24 24"><path fill="currentColor" d="M22 3 2 11l6 2 2 7 4-5 6 5 2-17zm-5 5L10 14l-1 4-1-3 9-7z"/></symbol>
+</defs></svg>
+
+<header id="navbar">
+  <div class="container nav-inner">
+    <a href="../index.html" class="brand"><img src="../assets/images/logo.png" alt="AYE Tech Hub" style="width:42px;height:42px;border-radius:10px;object-fit:cover;"/><div><div class="brand-name">AYE Tech Hub</div><div class="brand-tag">Engineering the Future</div></div></a>
+    <nav class="nav-menu">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../courses.html" class="nav-link">Courses</a>
+      <a href="../pdfs.html" class="nav-link">PDF Library</a>
+      <a href="../ai-tools.html" class="nav-link">AI Tools</a>
+      <a href="../blog.html" class="nav-link active">Blog</a>
+      <a href="../contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="nav-controls">
+      <button class="icon-btn" onclick="toggleTheme()" aria-label="Toggle theme"><svg class="svg-icon"><use id="theme-use" href="#i-moon"/></svg></button>
+      <a href="https://t.me/ayetechub" target="_blank" rel="noopener" class="btn btn-primary btn-sm hide-mobile"><svg class="svg-icon" aria-hidden="true"><use href="#i-telegram"/></svg> Telegram</a>
+      <button class="icon-btn hamburger" onclick="toggleMobileMenu()" aria-label="Open menu"><svg class="svg-icon"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="container">
+    <a href="../index.html" class="mobile-link">Home</a>
+    <a href="../blog.html" class="mobile-link" style="color:var(--neon)">Blog</a>
+    <a href="../contact.html" class="mobile-link">Contact</a>
+  </div>
+</header>
+
+<div class="article-wrap">
+
+  <div class="article-header">
+    <span class="article-cat">&#129302; AI &amp; Productivity</span>
+    <h1>5 AI Workflows Every Engineer Should Automate in 2026</h1>
+    <div class="article-meta">
+      <span>&#128197; June 5, 2026</span>
+      <span>&#9997; Awet G. Nway</span>
+      <span>&#128337; 9 min read</span>
+      <div class="blog-lang-bar">
+        <span class="bl-label">&#127760; Read in:</span>
+        <button class="bl-btn active" id="bl-en" onclick="blogLang('en')">EN</button>
+        <button class="bl-btn" id="bl-ti" onclick="blogLang('ti')" lang="ti">ትግርኛ</button>
+        <button class="bl-btn" id="bl-am" onclick="blogLang('am')" lang="am">አማርኛ</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-body">
+
+    <p>Most engineers use AI the same way they used to use Google — they type a question, read the answer, close the tab, and go back to doing everything manually. That is not productivity. That is a slightly faster search engine.</p>
+
+    <p>The engineers who are genuinely saving 5–10 hours per week with AI are doing something different: they have <strong>built repeatable workflows</strong> where AI handles the time-consuming, template-driven, research-intensive parts of their work, and they focus their attention on the engineering judgement that only they can provide. The output of those workflows is then verified, refined, and delivered — not generated from scratch every time.</p>
+
+    <p>This article gives you 5 of those workflows — fully described, with copy-paste prompts, step-by-step instructions, and realistic time savings you can start using today.</p>
+
+    <blockquote>"The engineers saving the most time with AI are not the ones who know the most about AI. They are the ones who have built the same 5 workflows into their daily routine and use them every single day."</blockquote>
+
+    <div class="savings-grid">
+      <div class="saving-box"><div class="hrs">2–3 hrs</div><div class="task">Saved per report</div></div>
+      <div class="saving-box"><div class="hrs">45 min</div><div class="task">Saved per calculation</div></div>
+      <div class="saving-box"><div class="hrs">1–2 hrs</div><div class="task">Saved per research task</div></div>
+      <div class="saving-box"><div class="hrs">1 hr</div><div class="task">Saved per script</div></div>
+      <div class="saving-box"><div class="hrs">30 min</div><div class="task">Saved per meeting</div></div>
+    </div>
+
+    <!-- ══ WORKFLOW 1 ══ -->
+    <div class="workflow-card wf1">
+      <div class="wf-header">
+        <div class="wf-num">1</div>
+        <div>
+          <div class="wf-title">Technical Report Writing</div>
+          <div class="wf-subtitle">From bullet points to professional report in 30 minutes</div>
+        </div>
+      </div>
+      <span class="time-save">&#9889; Saves 2–3 hours per report</span>
+      <div class="wf-meta">
+        <span class="wf-badge">Claude or ChatGPT</span>
+        <span class="wf-badge">Any engineering discipline</span>
+        <span class="wf-badge">Client-ready output</span>
+      </div>
+
+      <p style="font-size:.92rem;color:var(--text-soft);margin-bottom:14px">The most time-consuming part of engineering is not the calculation — it is translating the calculation into a professionally written document that a client, contractor, or regulatory body can act on. This workflow cuts report writing time by 70–80%.</p>
+
+      <h3>The Workflow</h3>
+      <ul class="steps-list">
+        <li><span class="step-text"><strong>Gather your raw data:</strong> Jot down your bullet points — what was designed, what were the key inputs, what are the results, what are the recommendations. This takes 10 minutes and requires no writing skill.</span></li>
+        <li><span class="step-text"><strong>Paste into Claude with the master prompt below.</strong> Be specific about your discipline, the audience, and the report section you need.</span></li>
+        <li><span class="step-text"><strong>Review the output critically:</strong> Check all specific figures, standards references, and technical claims against your original data. AI will write confidently — your job is verification.</span></li>
+        <li><span class="step-text"><strong>Refine with follow-up prompts:</strong> "Make the executive summary shorter and more direct." "Rewrite section 3 in a more formal tone." "Add a risk table to section 4."</span></li>
+        <li><span class="step-text"><strong>Export and finalise</strong> in your company template. Total time: 25–40 minutes for a report that used to take 3–4 hours.</span></li>
+      </ul>
+
+      <div class="prompt-label">&#128203; Copy-Paste Master Prompt</div>
+      <div class="prompt-box">You are a senior [MEP / structural / civil / electrical] engineer with 15 years of experience writing professional technical reports for [clients / regulatory bodies / contractors].
+
+Write the [executive summary / section 3: system design / recommendations section] of a technical report based on these bullet points:
+
+[PASTE YOUR BULLET POINTS HERE]
+
+Requirements:
+- Formal engineering report tone — precise, professional, third-person
+- Length: [300–500 words / 1 page]
+- Include: [key design decisions, performance data, compliance references, recommendations]
+- Standards: reference [BS EN / ASHRAE / IEC / ISO] where relevant
+- End with 3 clear, numbered action items for the client
+
+Do not add information not in my bullet points. Flag any assumptions you make.</div>
+    </div>
+
+    <!-- ══ WORKFLOW 2 ══ -->
+    <div class="workflow-card wf2">
+      <div class="wf-header">
+        <div class="wf-num">2</div>
+        <div>
+          <div class="wf-title">Engineering Calculations with Step-by-Step Verification</div>
+          <div class="wf-subtitle">Multi-step problems solved, shown, and checked</div>
+        </div>
+      </div>
+      <span class="time-save">&#9889; Saves 30–60 min per calculation set</span>
+      <div class="wf-meta">
+        <span class="wf-badge" style="background:rgba(249,115,22,.1);color:#f97316;border-color:rgba(249,115,22,.2)">ChatGPT o3</span>
+        <span class="wf-badge" style="background:rgba(249,115,22,.1);color:#f97316;border-color:rgba(249,115,22,.2)">Wolfram Alpha (verify)</span>
+        <span class="wf-badge" style="background:rgba(249,115,22,.1);color:#f97316;border-color:rgba(249,115,22,.2)">HVAC, Solar, Structural, MEP</span>
+      </div>
+
+      <p style="font-size:.92rem;color:var(--text-soft);margin-bottom:14px">Use the o3 reasoning model (NOT standard ChatGPT) for engineering calculations. It thinks step-by-step and catches its own errors. The workflow includes a mandatory Wolfram Alpha verification step — never use AI calculations without independent verification on safety-critical values.</p>
+
+      <h3>The Workflow</h3>
+      <ul class="steps-list">
+        <li><span class="step-text"><strong>Open ChatGPT, select o3 model</strong> (requires ChatGPT Plus, or use the free tier which includes limited o1 access).</span></li>
+        <li><span class="step-text"><strong>Paste the calculation prompt</strong> with ALL inputs specified with units. Ambiguous units are the most common source of AI calculation errors.</span></li>
+        <li><span class="step-text"><strong>Review intermediate steps:</strong> AI shows its work. Check each step — not just the final answer. A wrong intermediate value will cascade into a wrong final answer that looks plausible.</span></li>
+        <li><span class="step-text"><strong>Cross-check the final result</strong> with Wolfram Alpha or a manual estimate (back-of-envelope). If the results disagree significantly, investigate before trusting either.</span></li>
+        <li><span class="step-text"><strong>Copy the step-by-step working into your calculation sheet</strong> as a structured draft — edit the format but keep the engineering logic.</span></li>
+      </ul>
+
+      <div class="prompt-label">&#128203; Solar Sizing Example Prompt</div>
+      <div class="prompt-box">You are a senior solar PV engineer. Size an off-grid solar system for a health clinic in Mekelle, Tigray, Ethiopia.
+
+Daily load: 8.5 kWh/day (from attached load schedule)
+Peak Sun Hours: 5.5 h/day (worst-month July)
+System voltage: 48V DC
+Battery type: LiFePO4, DoD = 80%, autonomy = 2 days
+System efficiency η = 0.78
+Safety margin: 10%
+
+Calculate step by step:
+1. Design energy (after efficiency + margin)
+2. Required panel kWp
+3. Battery bank kWh and Ah at 48V
+4. MPPT controller rating (array Isc × 1.25)
+5. Minimum inverter size
+
+Show every intermediate value. State all assumptions. Flag anything requiring site verification.</div>
+
+      <div class="callout warn">
+        <div class="callout-title">&#9888; The AI Calculation Safety Rule</div>
+        <p>Never use an AI-generated value for a safety-critical engineering parameter without independent verification. A wrong solar panel count costs money. A wrong structural load calculation can cost lives. Verify every critical number against a second source — Wolfram Alpha, a textbook formula, or a trusted colleague.</p>
+      </div>
+    </div>
+
+    <!-- ══ WORKFLOW 3 ══ -->
+    <div class="workflow-card wf3">
+      <div class="wf-header">
+        <div class="wf-num">3</div>
+        <div>
+          <div class="wf-title">Standards Research and Document Analysis</div>
+          <div class="wf-subtitle">Extract what you need from 300 pages in 5 minutes</div>
+        </div>
+      </div>
+      <span class="time-save">&#9889; Saves 1–2 hours per research task</span>
+      <div class="wf-meta">
+        <span class="wf-badge" style="background:rgba(6,182,212,.1);color:#06b6d4;border-color:rgba(6,182,212,.2)">NotebookLM (your docs)</span>
+        <span class="wf-badge" style="background:rgba(6,182,212,.1);color:#06b6d4;border-color:rgba(6,182,212,.2)">Perplexity (live web)</span>
+        <span class="wf-badge" style="background:rgba(6,182,212,.1);color:#06b6d4;border-color:rgba(6,182,212,.2)">Claude (long documents)</span>
+      </div>
+
+      <p style="font-size:.92rem;color:var(--text-soft);margin-bottom:14px">Engineers spend enormous time hunting through specifications, standards, and contracts for specific clauses. This two-tool workflow handles both: NotebookLM reads YOUR documents; Perplexity searches the current web with citations. Use each where it is strongest.</p>
+
+      <h3>Tool A — NotebookLM for Your Own Documents</h3>
+      <ul class="steps-list">
+        <li><span class="step-text">Go to <strong>notebooklm.google.com</strong> (free). Upload your project specification PDF, contract, or set of drawings.</span></li>
+        <li><span class="step-text">Ask specific extraction questions — not general summaries.</span></li>
+        <li><span class="step-text">Every answer includes the exact page and paragraph citation from your document. Verify it. NotebookLM does not hallucinate outside your sources.</span></li>
+      </ul>
+
+      <div class="prompt-label">&#128203; NotebookLM Extraction Prompt</div>
+      <div class="prompt-box">Extract ALL requirements in this specification that apply to the [hot water system / electrical distribution / structural steelwork]. For each requirement: (1) exact clause number, (2) the requirement verbatim, (3) whether it references an external standard and which one. Present as a numbered list.</div>
+
+      <h3>Tool B — Perplexity for Live Standards Research</h3>
+      <ul class="steps-list">
+        <li><span class="step-text">Open <strong>perplexity.ai</strong> (free tier is generous). Ask your standards question — Perplexity searches the current web and cites sources.</span></li>
+        <li><span class="step-text">Always click at least 2 citations to verify the information comes from authoritative sources (official standards bodies, government documents, established industry organisations).</span></li>
+        <li><span class="step-text">Follow up with: "What is the most recent revision of this standard?" to ensure you are not working from outdated information.</span></li>
+      </ul>
+
+      <div class="prompt-label">&#128203; Perplexity Standards Research Prompt</div>
+      <div class="prompt-box">What is the current ASHRAE 62.1 minimum outdoor air ventilation rate for a hospital patient room? Include: the specific table and section number, the rate in L/s per person AND L/s per m², any special requirements for isolation rooms, and the current edition of the standard. Cite your sources.</div>
+    </div>
+
+    <!-- ══ WORKFLOW 4 ══ -->
+    <div class="workflow-card wf4">
+      <div class="wf-header">
+        <div class="wf-num">4</div>
+        <div>
+          <div class="wf-title">Engineering Scripts and Data Processing Tools</div>
+          <div class="wf-subtitle">Build your own custom calculators without programming experience</div>
+        </div>
+      </div>
+      <span class="time-save">&#9889; Saves 1–3 hours per tool built</span>
+      <div class="wf-meta">
+        <span class="wf-badge" style="background:rgba(34,197,94,.1);color:#22c55e;border-color:rgba(34,197,94,.2)">Claude or ChatGPT</span>
+        <span class="wf-badge" style="background:rgba(34,197,94,.1);color:#22c55e;border-color:rgba(34,197,94,.2)">Python / Excel VBA / JavaScript</span>
+        <span class="wf-badge" style="background:rgba(34,197,94,.1);color:#22c55e;border-color:rgba(34,197,94,.2)">No coding experience needed</span>
+      </div>
+
+      <p style="font-size:.92rem;color:var(--text-soft);margin-bottom:14px">Every engineer has at least one calculation they do repeatedly — load schedules, pipe sizing, cable schedules, equipment selection. AI can write a custom Python script or Excel macro for that calculation in minutes. You run it forever. The one-time investment of 30 minutes pays back on the first use.</p>
+
+      <h3>The Workflow</h3>
+      <ul class="steps-list">
+        <li><span class="step-text"><strong>Describe the calculation exactly</strong> — what inputs go in, what outputs come out, what formula or method is used. Be precise with units.</span></li>
+        <li><span class="step-text"><strong>Specify the output format</strong> — Excel table, Python printout, HTML calculator, PDF report. The more specific you are, the better the code.</span></li>
+        <li><span class="step-text"><strong>Test with known values:</strong> Run the script on a calculation you have already done manually. If the results match, the tool is correct. If they don't, paste the discrepancy back to AI for debugging.</span></li>
+        <li><span class="step-text"><strong>Ask for comments and input validation:</strong> "Add comments explaining each section, and warn the user if any input is outside a reasonable engineering range."</span></li>
+      </ul>
+
+      <div class="prompt-label">&#128203; Python Solar Load Calculator Prompt</div>
+      <div class="prompt-box">Write a Python script that calculates solar PV system sizing.
+
+Inputs (user enters via input() prompts):
+- Daily energy consumption (Wh/day)
+- Peak Sun Hours (hours/day)
+- System efficiency (decimal, e.g. 0.78)
+- Safety margin percentage (e.g. 10)
+- Battery DoD (decimal, e.g. 0.8)
+- Days of autonomy (e.g. 2)
+- System voltage (12, 24, or 48V)
+
+Outputs (printed clearly):
+- Design energy after losses and margin (Wh/day)
+- Required panel capacity (kWp)
+- Battery bank (kWh and Ah at system voltage)
+- MPPT controller minimum rating (A)
+- Inverter minimum rating (kW)
+
+Add comments explaining each calculation. Validate inputs (reject negative values, voltage must be 12/24/48). Show working for each step.</div>
+
+      <div class="callout green">
+        <div class="callout-title">&#128161; Start With Excel VBA if You're New to This</div>
+        <p>Python is more powerful, but Excel VBA runs directly in the spreadsheet your team already uses. Ask Claude: "Write an Excel VBA macro that reads load schedule data from Sheet1 columns A–D, calculates daily energy consumption, and writes results to Sheet2 with a formatted summary table." Zero Python experience needed.</p>
+      </div>
+    </div>
+
+    <!-- ══ WORKFLOW 5 ══ -->
+    <div class="workflow-card wf5">
+      <div class="wf-header">
+        <div class="wf-num">5</div>
+        <div>
+          <div class="wf-title">Meeting Intelligence — From Conversation to Action</div>
+          <div class="wf-subtitle">Automatic transcription, summaries, and action tracking</div>
+        </div>
+      </div>
+      <span class="time-save">&#9889; Saves 30–60 min per meeting</span>
+      <div class="wf-meta">
+        <span class="wf-badge" style="background:rgba(236,72,153,.1);color:#ec4899;border-color:rgba(236,72,153,.2)">Otter.ai or Fireflies</span>
+        <span class="wf-badge" style="background:rgba(236,72,153,.1);color:#ec4899;border-color:rgba(236,72,153,.2)">Claude (post-meeting)</span>
+        <span class="wf-badge" style="background:rgba(236,72,153,.1);color:#ec4899;border-color:rgba(236,72,153,.2)">All client and team meetings</span>
+      </div>
+
+      <p style="font-size:.92rem;color:var(--text-soft);margin-bottom:14px">Engineers spend an average of 9 hours per week in meetings. Writing up meeting minutes, action items, and distributing them typically takes 30–60 additional minutes per meeting. This workflow makes that entirely automatic — and produces a better record than manual notes.</p>
+
+      <h3>The Workflow — Before, During, and After</h3>
+      <ul class="steps-list">
+        <li><span class="step-text"><strong>Before the meeting:</strong> Connect Otter.ai to your calendar (free account — 300 min/month). It auto-joins your Zoom, Teams, or Google Meet call when it starts.</span></li>
+        <li><span class="step-text"><strong>During the meeting:</strong> Otter transcribes in real time. You focus on the conversation — not on note-taking. Occasionally glance at the live transcript to catch mis-transcriptions.</span></li>
+        <li><span class="step-text"><strong>Immediately after:</strong> Otter generates an AI summary with key topics, decisions, and action items. Review and approve (takes 3–5 minutes).</span></li>
+        <li><span class="step-text"><strong>For complex meetings:</strong> Paste the full Otter transcript into Claude for deeper processing — extract specific technical decisions, create a formal minutes document, or identify open issues that need follow-up.</span></li>
+        <li><span class="step-text"><strong>Distribute:</strong> Send the Otter summary link directly, or paste the Claude-formatted minutes into your email. Total post-meeting time: 5–10 minutes instead of 45–60.</span></li>
+      </ul>
+
+      <div class="prompt-label">&#128203; Claude Post-Meeting Processing Prompt</div>
+      <div class="prompt-box">I am pasting the transcript of a project coordination meeting below. Extract and format:
+
+1. DECISIONS MADE (list every firm decision with the name of who made it)
+2. ACTION ITEMS (table: Item | Responsible person | Due date | Priority)
+3. OPEN ISSUES (items discussed but not resolved — need follow-up)
+4. NEXT MEETING agenda items suggested during this meeting
+5. Any technical specifications mentioned with exact values
+
+Format as a professional meeting minutes document. Do not include small talk or tangential conversation. [PASTE TRANSCRIPT HERE]</div>
+    </div>
+
+    <h2>Building Your AI Workflow System — Getting Started</h2>
+
+    <p>The biggest mistake engineers make with AI is treating it as a one-off tool for occasional questions. The engineers who save the most time are those who have built the same 3–5 workflows into a repeatable daily system. Here is how to start:</p>
+
+    <ol>
+      <li><strong>Week 1 — Pick one workflow.</strong> Choose the one from this list that addresses your single most time-consuming recurring task. Implement only that one. Use it every time that task comes up.</li>
+      <li><strong>Week 2–3 — Build your prompt library.</strong> Each time you write a prompt that works well, save it to a document titled "My AI Prompts." Over 3 weeks, you will have 10–15 prompts you can reuse without writing from scratch.</li>
+      <li><strong>Week 4 — Add a second workflow.</strong> Once the first workflow feels automatic (you use it without thinking), add a second one. Never try to implement all five at once.</li>
+      <li><strong>Month 2 onwards — Measure the time savings.</strong> Track how long specific tasks take before and after AI assistance. The numbers will motivate continued use and justify the tool costs to your employer or client.</li>
+    </ol>
+
+    <div class="callout tip">
+      <div class="callout-title">&#127775; The Compound Effect of AI Workflows</div>
+      <p>Engineers who implement all 5 workflows in this article typically report saving 5–8 hours per week by month 2. Over a year, that is 260–415 hours — more than 6 full working weeks — returned to deep engineering work, career development, or personal time. AI does not replace engineering. It eliminates the parts of engineering that were never really engineering in the first place.</p>
+    </div>
+
+    <div class="tag-row">
+      <a href="../blog.html" class="tag">AI Tools</a>
+      <a href="../blog.html" class="tag">Productivity</a>
+      <a href="../blog.html" class="tag">Engineering Career</a>
+      <a href="../blog.html" class="tag">ChatGPT</a>
+      <a href="../blog.html" class="tag">Claude</a>
+      <a href="../blog.html" class="tag">Workflow Automation</a>
+      <a href="../blog.html" class="tag">NotebookLM</a>
+    </div>
+
+  </div><!-- /.article-body -->
+
+  <div class="article-footer">
+    <a href="../blog.html" class="btn btn-outline btn-sm">&#8592; Back to Blog</a>
+    <a href="../ai-tools.html" class="btn btn-primary btn-sm" style="background:linear-gradient(135deg,#5b21b6,#a855f7)">AI Tools Directory &#8594;</a>
+  </div>
+
+</div><!-- /.article-wrap -->
+
+<div id="notif" class="notif-bar" role="alert"><div class="notif-icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8z"/></svg></div><div class="notif-text"><strong class="notif-title"></strong><span class="notif-msg"></span></div><div class="notif-close" onclick="document.getElementById('notif').classList.remove('show')"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></div></div>
+<button id="btt-btn" onclick="scrollToTop()" aria-label="Back to top"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M4 12 5.41 13.41 11 7.83V20H13V7.83l5.58 5.59L20 12l-8-8z"/></svg></button>
+<script src="../assets/js/data.js"></script>
+<script src="../assets/js/platform.js"></script>
+<div id="google_translate_element" style="display:none;visibility:hidden"></div>
+<script src="../assets/js/blog-translate.js"></script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
+</body>
+</html>

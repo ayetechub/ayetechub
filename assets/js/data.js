@@ -4171,6 +4171,18 @@ const BLOG_POSTS = [
     featured: true
   },
   {
+    id: 'ai-workflows-engineers-2026',
+    title: '5 AI Workflows Every Engineer Should Automate in 2026',
+    category: 'ai',
+    date: '2026-06-05',
+    author: 'Awet G. Nway',
+    readTime: '9 min read',
+    excerpt: 'Stop using AI as a fancy search engine. Here are 5 specific, copy-paste AI workflows that save engineers 5–10 hours per week: report writing with Claude, step-by-step calculations with ChatGPT o3, standards research with NotebookLM+Perplexity, Python/VBA script generation, and meeting intelligence with Otter.ai. Each workflow includes the exact prompts to use.',
+    image: 'assets/images/og-cover.png',
+    url: 'blog/ai-workflows-engineers-2026.html',
+    featured: true
+  },
+  {
     id: '20-minute-engineer-workout',
     title: 'The 20-Minute Engineer Workout: Build Strength When Time Is Your Scarcest Resource',
     category: 'fit-hub',
