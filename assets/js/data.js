@@ -4171,6 +4171,18 @@ const BLOG_POSTS = [
     featured: true
   },
   {
+    id: '20-minute-engineer-workout',
+    title: 'The 20-Minute Engineer Workout: Build Strength When Time Is Your Scarcest Resource',
+    category: 'fit-hub',
+    date: '2026-06-05',
+    author: 'Awet G. Nway',
+    readTime: '8 min read',
+    excerpt: 'A complete 4-day workout plan built for engineers — compound movements, maximum efficiency, minimum time. Day 1: Upper body push. Day 2: Lower body strength. Day 3: Active recovery. Day 4: Upper body pull + core. Nutrition tips, progressive overload, and recovery strategies for desk workers.',
+    image: 'assets/images/og-cover.png',
+    url: 'blog/20-minute-engineer-workout.html',
+    featured: true
+  },
+  {
     id: 'building-water-supply-systems-design',
     title: 'Building Water Supply Systems: Design Principles Every Engineer Must Know',
     category: 'plumbing',
