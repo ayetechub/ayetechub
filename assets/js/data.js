@@ -2974,6 +2974,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'ai-curriculum-011-ai-automation-basics',
+    title: {
+      en: 'AI-011: AI Automation Basics',
+      ti: 'AI-011: ናይ AI Automation መሰረታዊ',
+      am: 'AI-011: AI አውቶሜሽን መሰረቶች'
+    },
+    category: 'ai-curriculum',
+    pages: 6,
+    size: '150 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Automation workflow diagram (Trigger/Condition/AI Action/Output/Notify — 5-step pipeline), Zapier vs Make vs n8n tool comparison diagram (3 panels with features/pricing), 6 engineering automation use cases diagram (email intelligence/report generation/meeting follow-up/document processing/alert monitoring/tender tracking), prompt chaining 4-step pipeline diagram (Extract→Classify→Respond→Output), 3-level automation table (manual/rule-based/AI), tool comparison table, email intelligence 6-step workflow table, weekly report automation table, prompt chaining comparison table, and 5 practice exercises — 4 diagrams — by Awet G. Nway.',
+      ti: 'Automation workflow diagram (Trigger→AI Action→Output)፣ Zapier vs Make vs n8n comparison diagram (3 panels)፣ 6 engineering automation use cases diagram፣ prompt chaining 4-step pipeline diagram (Extract→Classify→Respond→Output)፣ email intelligence 6-step workflow table፣ 5 exercises — ብ Awet G. Nway።',
+      am: 'Automation workflow diagram (Trigger→AI Action→Output)፣ Zapier vs Make vs n8n comparison diagram (3 panels)፣ 6 engineering automation use cases diagram፣ prompt chaining 4-step pipeline diagram (Extract→Classify→Respond→Output)፣ email intelligence 6-step workflow table፣ 5 exercises — በ Awet G. Nway።'
+    },
+    file: 'pdfs/AI-011-AI-Automation-Basics.pdf',
+    color: '#8b5cf6',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'hvac',
