@@ -1861,6 +1861,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'plc-curriculum-008-function-block-diagram',
+    title: {
+      en: 'PLC-008: Function Block Diagram (FBD)',
+      ti: 'PLC-008: ናይ Function Block Diagram (FBD)',
+      am: 'PLC-008: Function Block Diagram (FBD)'
+    },
+    category: 'plc',
+    pages: 6,
+    size: '148 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'FBD basic logic blocks diagram (AND/OR/NOT/XOR with input-output wires and logic truth tables), motor start/stop FBD program diagram (variables→OR→NOT blocks→AND→SR flip-flop→output coil connected), TON timer and CTU counter FBD blocks diagram (pin labels/descriptions), FBD vs Ladder same-logic comparison diagram (AND block vs rung contact), FBD elements table, FBD vs LD selection table, timer types table (TON/TOF/TP/RTO), counter types table (CTU/CTD/CTUD), user-defined FB concepts table, conveyor jam detection example, and 5 practice exercises — 4 diagrams — by Awet G. Nway.',
+      ti: 'FBD basic logic blocks diagram (AND/OR/NOT/XOR)፣ motor start/stop FBD program diagram (variables→OR→AND→SR→output)፣ TON timer + CTU counter FBD blocks diagram፣ FBD vs Ladder comparison diagram፣ timer types table (TON/TOF/TP/RTO)፣ counter types table (CTU/CTD/CTUD)፣ 5 exercises — ብ Awet G. Nway።',
+      am: 'FBD basic logic blocks diagram (AND/OR/NOT/XOR)፣ motor start/stop FBD program diagram (variables→OR→AND→SR→output)፣ TON timer + CTU counter FBD blocks diagram፣ FBD vs Ladder comparison diagram፣ timer types table (TON/TOF/TP/RTO)፣ counter types table (CTU/CTD/CTUD)፣ 5 exercises — በ Awet G. Nway።'
+    },
+    file: 'pdfs/PLC-008-Function-Block-Diagram.pdf',
+    color: '#22c55e',
+    preview: true
+  },
+  {
     id: 'mep-curriculum-001-intro-to-mep',
     title: {
       en: 'MEP-001: Introduction to MEP Engineering',
