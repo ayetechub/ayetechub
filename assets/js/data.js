@@ -649,6 +649,18 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'coohom-tips-interior-designers-2026',
+    title: '10 Coohom Tips Every Interior Designer Must Know in 2026',
+    category: 'coohom',
+    date: '2026-06-05',
+    author: 'Awet G. Nway',
+    readTime: '8 min read',
+    excerpt: 'Master Coohom interior design software with 10 professional tips — project setup (units/ceiling height/wall defaults), catalogue filters and favourites, measurement-first layout (clearances/viewing distances), lighting layers for photorealistic renders, material application levels (room/wall/face/object), furniture alignment and grouping tools, camera angles (eye level/3-point/FOV), render quality by purpose, built-in panorama and walkthrough presentations, and a 12-shortcut keyboard reference grid.',
+    image: 'assets/images/og-cover.png',
+    url: 'blog/coohom-tips-interior-designers-2026.html',
+    featured: true
+  },
+  {
     id: 'cohoom-curriculum-001-introduction-to-coohom',
     title: {
       en: 'COHOOM-001: Introduction to Coohom',
