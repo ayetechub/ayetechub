@@ -4171,6 +4171,18 @@ const BLOG_POSTS = [
     featured: true
   },
   {
+    id: 'building-water-supply-systems-design',
+    title: 'Building Water Supply Systems: Design Principles Every Engineer Must Know',
+    category: 'plumbing',
+    date: '2026-06-05',
+    author: 'Awet G. Nway',
+    readTime: '10 min read',
+    excerpt: 'A complete engineering guide to water supply system design — direct vs indirect systems, loading unit pipe sizing, hot water Legionella control (60°C storage rule), cold water cistern sizing, pressure zoning for tall buildings, backflow prevention, and key regulations (BS EN 806, WRAS, L8).',
+    image: 'assets/images/og-cover.png',
+    url: 'blog/building-water-supply-systems-design.html',
+    featured: true
+  },
+  {
     id: 'plumbing-building-systems',
     title: 'Common Plumbing Failures in Buildings: Causes, Diagnosis & Engineering Solutions',
     category: 'plumbing',
