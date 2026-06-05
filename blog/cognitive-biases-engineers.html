@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Why Engineers Make Bad Decisions: 7 Cognitive Biases That Sabotage Your Thinking – AYE Tech Hub</title>
+<meta name="description" content="Engineers are trained to be analytical — yet they consistently fall into the same cognitive traps. Here are the 7 most dangerous biases that distort engineering judgement, with real examples and practical debiasing strategies."/>
+<link rel="canonical" href="https://ayetechub.com/blog/cognitive-biases-engineers.html"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23020817'/%3E%3Crect x='3' y='3' width='94' height='94' rx='20' fill='none' stroke='%2300d4ff' stroke-width='3'/%3E%3Ctext x='50' y='62' font-family='Arial Black,sans-serif' font-size='30' font-weight='900' fill='%2300d4ff' text-anchor='middle'%3EAYE%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;700&display=swap"/>
+<link rel="stylesheet" href="../assets/css/main.css"/>
+<link rel="stylesheet" href="../assets/css/pages.css"/>
+<style>
+.article-wrap{max-width:780px;margin:0 auto;padding:0 20px 80px}
+.article-header{padding:48px 0 36px;border-bottom:1px solid var(--border);margin-bottom:36px}
+.article-cat{display:inline-block;background:rgba(124,58,237,.12);color:#7c3aed;border:1px solid rgba(124,58,237,.3);font-size:.72rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:16px}
+.article-header h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;line-height:1.2;margin-bottom:16px}
+.article-meta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;color:var(--text-muted);font-size:.82rem}
+.article-body{font-size:1.02rem;line-height:1.85;color:var(--text-soft)}
+.article-body h2{font-size:1.3rem;font-weight:800;color:var(--text);margin:40px 0 14px;padding-left:14px;border-left:3px solid #7c3aed}
+.article-body h3{font-size:1.05rem;font-weight:700;color:#7c3aed;margin:28px 0 10px}
+.article-body p{margin-bottom:18px}
+.article-body ul,.article-body ol{padding-left:22px;margin-bottom:18px}
+.article-body li{margin-bottom:8px;line-height:1.75}
+.article-body strong{color:var(--text)}
+.article-body blockquote{border-left:4px solid #7c3aed;background:var(--bg-card);padding:16px 20px;margin:24px 0;border-radius:0 8px 8px 0;font-style:italic;color:var(--text)}
+.callout{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:18px 20px;margin:24px 0}
+.callout.tip{border-color:rgba(124,58,237,.4);background:rgba(124,58,237,.06)}
+.callout.warn{border-color:rgba(234,179,8,.4);background:rgba(234,179,8,.06)}
+.callout.danger{border-color:rgba(239,68,68,.4);background:rgba(239,68,68,.06)}
+.callout.green{border-color:rgba(34,197,94,.4);background:rgba(34,197,94,.06)}
+.callout-title{font-weight:800;font-size:.85rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;color:#7c3aed}
+.callout.warn .callout-title{color:#eab308}
+.callout.danger .callout-title{color:#ef4444}
+.callout.green .callout-title{color:#22c55e}
+.callout p{margin:0;font-size:.92rem;line-height:1.7;color:var(--text-soft)}
+.tag-row{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}
+.tag{font-size:.72rem;padding:4px 12px;background:var(--bg-card);border:1px solid var(--border);border-radius:20px;color:var(--text-muted)}
+a.tag{color:var(--text-muted);text-decoration:none;transition:color .2s,border-color .2s}
+a.tag:hover{color:#7c3aed;border-color:#7c3aed}
+.article-footer{margin-top:48px;padding-top:32px;border-top:1px solid var(--border);display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+
+/* Bias cards */
+.bias-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:22px 24px;margin:24px 0;position:relative;overflow:hidden}
+.bias-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:#7c3aed}
+.bias-num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;background:rgba(124,58,237,.15);color:#7c3aed;font-weight:900;font-size:.95rem;margin-right:10px;flex-shrink:0;vertical-align:middle}
+.bias-name{font-size:1.1rem;font-weight:800;color:var(--text);display:inline;vertical-align:middle}
+.bias-subtitle{font-size:.82rem;color:#7c3aed;font-weight:700;display:block;margin:4px 0 14px 42px;letter-spacing:.5px;text-transform:uppercase}
+.bias-scenario{background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.2);border-radius:8px;padding:12px 16px;margin:14px 0;font-size:.9rem;color:var(--text-soft);line-height:1.65}
+.bias-scenario::before{content:'&#128203; Real Scenario: ';font-weight:700;color:#7c3aed}
+.bias-fix{background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.2);border-radius:8px;padding:12px 16px;margin:8px 0;font-size:.9rem;color:var(--text-soft);line-height:1.65}
+.bias-fix::before{content:'&#10003; Fix: ';font-weight:700;color:#22c55e}
+.bias-card p{font-size:.95rem;color:var(--text-soft);line-height:1.78;margin-bottom:10px}
+
+/* Checklist */
+.check-item{display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;margin:8px 0}
+.check-box{width:22px;height:22px;border:2px solid #7c3aed;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.check-text{font-size:.92rem;color:var(--text-soft);line-height:1.6}
+.check-text strong{color:var(--text)}
+</style>
+</head>
+<body>
+<div id="loading-screen"><div class="loading-logo">AYE</div><div class="loading-bar-wrap"><div class="loading-bar"></div></div><div class="loading-text">LOADING ARTICLE</div></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-menu" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path fill="currentColor" d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.39 5.39 0 0 1-4.4 2.26 5.5 5.5 0 0 1-3.14-10A9.32 9.32 0 0 0 12 3z"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><path fill="currentColor" d="M6.76 4.84 4.96 3.05 3.55 4.46l1.79 1.79zM4 10.5H1v2h3zm9-9.95h-2V3.5h2zm7.45 3.91-1.41-1.41-1.79 1.79 1.41 1.41zM17.24 18.16l1.79 1.8 1.41-1.41-1.8-1.79zM20 10.5v2h3v-2zM12 5.5a6 6 0 0 0-6 6c0 3.31 2.69 6 6 6s6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2zM4.96 19.95l1.41 1.41 1.79-1.8-1.41-1.41z"/></symbol>
+<symbol id="i-telegram" viewBox="0 0 24 24"><path fill="currentColor" d="M22 3 2 11l6 2 2 7 4-5 6 5 2-17zm-5 5L10 14l-1 4-1-3 9-7z"/></symbol>
+</defs></svg>
+
+<header id="navbar">
+  <div class="container nav-inner">
+    <a href="../index.html" class="brand"><img src="../assets/images/logo.png" alt="AYE Tech Hub" style="width:42px;height:42px;border-radius:10px;object-fit:cover;"/><div><div class="brand-name">AYE Tech Hub</div><div class="brand-tag">Engineering the Future</div></div></a>
+    <nav class="nav-menu">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../courses.html" class="nav-link">Courses</a>
+      <a href="../pdfs.html" class="nav-link">PDF Library</a>
+      <a href="../blog.html" class="nav-link active">Blog</a>
+      <a href="../contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="nav-controls">
+      <button class="icon-btn" onclick="toggleTheme()" aria-label="Toggle theme"><svg class="svg-icon"><use id="theme-use" href="#i-moon"/></svg></button>
+      <a href="https://t.me/ayetechub" target="_blank" rel="noopener" class="btn btn-primary btn-sm hide-mobile"><svg class="svg-icon" aria-hidden="true"><use href="#i-telegram"/></svg> Telegram</a>
+      <button class="icon-btn hamburger" onclick="toggleMobileMenu()" aria-label="Open menu"><svg class="svg-icon"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="container">
+    <a href="../index.html" class="mobile-link">Home</a>
+    <a href="../blog.html" class="mobile-link" style="color:var(--neon)">Blog</a>
+    <a href="../contact.html" class="mobile-link">Contact</a>
+  </div>
+</header>
+
+<div class="article-wrap">
+
+  <div class="article-header">
+    <span class="article-cat">&#129504; Critical Thinking</span>
+    <h1>Why Engineers Make Bad Decisions: 7 Cognitive Biases That Sabotage Your Thinking</h1>
+    <div class="article-meta">
+      <span>&#128197; June 5, 2026</span>
+      <span>&#9997; Awet G. Nway</span>
+      <span>&#128337; 9 min read</span>
+      <div class="blog-lang-bar">
+        <span class="bl-label">&#127760; Read in:</span>
+        <button class="bl-btn active" id="bl-en" onclick="blogLang('en')">EN</button>
+        <button class="bl-btn" id="bl-ti" onclick="blogLang('ti')" lang="ti">ትግርኛ</button>
+        <button class="bl-btn" id="bl-am" onclick="blogLang('am')" lang="am">አማርኛ</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-body">
+
+    <p>There is a comforting myth in engineering: that technical training produces rational thinkers who make decisions based purely on data and logic. Engineers know the numbers, apply the formulas, follow the codes. What could go wrong?</p>
+
+    <p>Quite a lot, as it turns out. The same engineers who can solve a differential equation in their sleep routinely approve undersized pipe because they don't want to challenge the senior partner's initial estimate. They continue testing a design that has already failed three times because they have invested six months in it. They become completely overconfident after passing a professional exam. These are not technical failures. They are cognitive failures — and they happen to brilliant people every single day.</p>
+
+    <p>Cognitive biases are systematic errors in human thinking that affect judgement regardless of intelligence, education, or technical expertise. Understanding them is not a soft skill — it is a professional competence that separates engineers who make consistently good decisions from those who make expensive, sometimes catastrophic mistakes.</p>
+
+    <blockquote>"An engineer who knows the formulas but cannot recognise when their own thinking is distorted is more dangerous than one who is still learning the formulas. The first has confidence without calibration."</blockquote>
+
+    <h2>The 7 Cognitive Biases That Affect Engineers Most</h2>
+
+    <!-- BIAS 1 -->
+    <div class="bias-card">
+      <div><span class="bias-num">1</span><span class="bias-name">Confirmation Bias</span></div>
+      <span class="bias-subtitle">Seeking evidence that confirms what you already believe</span>
+      <p>Confirmation bias is the tendency to search for, interpret, and favour information that confirms your existing hypothesis while ignoring contradicting evidence. It is not wilful dishonesty — it is how the human brain conserves cognitive effort. Once we form an initial view, we unconsciously filter incoming information to support it.</p>
+      <p>For engineers, this is especially dangerous because we typically form a design hypothesis early in the process and then spend weeks or months refining it. At every decision point, we are susceptible to accepting data that supports the design and dismissing data that challenges it.</p>
+      <div class="bias-scenario">A structural engineer designs a foundation system based on initial soil bore logs showing medium-dense sand. When additional bore logs at the other end of the site show soft clay at 3m depth, the engineer notes it as "localised variation" and does not revise the foundation design. Three months after construction, differential settlement causes significant cracking in the superstructure.</div>
+      <div class="bias-fix">Deliberately seek disconfirming evidence. Ask: "What data would prove me wrong?" and actively look for it. Assign a specific team member the role of devil's advocate on critical decisions. When reviewing test data, list your concerns before reviewing results — this forces you to confront contradictions rather than explain them away.</div>
+    </div>
+
+    <!-- BIAS 2 -->
+    <div class="bias-card">
+      <div><span class="bias-num">2</span><span class="bias-name">Sunk Cost Fallacy</span></div>
+      <span class="bias-subtitle">Continuing a bad path because of what you've already invested</span>
+      <p>The sunk cost fallacy is the tendency to continue investing in a failing course of action because of the time, money, or effort already committed — even when objective analysis shows that stopping would produce a better outcome. Sunk costs are by definition irrecoverable. Rational decision-making should ignore them. Human psychology makes this nearly impossible without deliberate effort.</p>
+      <p>In engineering, sunk cost thinking appears when teams continue with flawed designs because "we've already spent three months on this," or when organisations continue projects past the point of economic viability because of capital already committed.</p>
+      <div class="bias-scenario">An MEP team has spent 14 weeks developing a centralised chilled water system for a mixed-use development. Mid-design, the client reduces the build programme by 4 months — a change that makes the complex central plant impossible to commission on time. Rather than recommend switching to a VRF system (which would require 4 weeks of redesign but deliver on time), the team continues with the original design because "we can't throw away all that work." The project is delivered 8 weeks late with significant penalties.</div>
+      <div class="bias-fix">When evaluating whether to continue a project direction, explicitly exclude past investment from the analysis. Ask: "If we had not started this path at all, would we choose it now, given current information?" If the answer is no, the sunk cost fallacy is distorting your judgment. Separate the emotional difficulty of changing course from the logical case for doing so.</div>
+    </div>
+
+    <!-- BIAS 3 -->
+    <div class="bias-card">
+      <div><span class="bias-num">3</span><span class="bias-name">Dunning-Kruger Effect</span></div>
+      <span class="bias-subtitle">Overconfidence at the beginning of learning; underconfidence at expertise</span>
+      <p>The Dunning-Kruger effect describes a two-phase competence-confidence mismatch. Beginners — who know enough to do a task but not enough to know what they don't know — often demonstrate very high confidence. As expertise deepens and the learner discovers the true complexity of the field, confidence drops dramatically. Only at genuine expert level does confidence re-align with actual competence.</p>
+      <p>For engineers, the Dunning-Kruger "peak of Mount Stupid" — as practitioners call it — typically occurs in the first 1–3 years after qualification. The engineer knows the theory, has passed the exams, and has not yet encountered the failures and edge cases that teach humility. This is precisely when the most consequential mistakes are made with the most confidence.</p>
+      <div class="bias-scenario">A newly qualified electrical engineer, six months post-graduation, confidently selects cable sizes for a large commercial installation using the standard reference tables — without applying grouping factors, temperature correction factors, or checking voltage drop over the long cable runs. When the completed installation fails the commissioning test for voltage drop and cable overcurrent, the engineer is genuinely surprised, because "I followed the tables correctly."</div>
+      <div class="bias-fix">Calibrate confidence by seeking feedback and tracking prediction accuracy. Before a design is built, write down your predictions for specific outcomes (pressure drops, temperatures, costs). After commissioning, compare. Where you were consistently wrong, you have identified knowledge gaps. Actively seek out experienced engineers who will challenge your assumptions — not those who will validate them.</div>
+    </div>
+
+    <!-- BIAS 4 -->
+    <div class="bias-card">
+      <div><span class="bias-num">4</span><span class="bias-name">Planning Fallacy</span></div>
+      <span class="bias-subtitle">Systematically underestimating time, cost, and risk</span>
+      <p>The planning fallacy, first identified by Daniel Kahneman and Amos Tversky in 1979, is the near-universal tendency for people to underestimate the time, cost, and risk of future actions while overestimating the benefits. Studies show this applies equally to individuals and large organisations, to simple tasks and complex projects, to optimists and pessimists alike.</p>
+      <p>Engineering projects are particularly vulnerable because they involve many sequential steps, each of which must be correctly executed. A delay or problem in any one step cascades through the schedule. The planning fallacy causes engineers to plan for best-case scenarios rather than realistic scenarios — and then be repeatedly surprised when reality differs.</p>
+      <div class="bias-scenario">An engineering team prepares a project schedule showing 14 weeks for design development. This is based on the assumption that the client will provide feedback within one week at each review stage, that no significant changes will be required after each review, and that all specialist sub-consultants will deliver on their promised dates. The project takes 26 weeks — despite everyone on the team being competent and working hard — because none of those assumptions held consistently.</div>
+      <div class="bias-fix">Use "reference class forecasting" — instead of estimating from the inside (how this specific project will go), look at how similar past projects actually performed. Add a 40–50% time buffer to design programmes based on historical project data. Use pre-mortems: before finalising a schedule, imagine the project ended 6 months late, and work backwards to identify the most likely causes — then address them in advance.</div>
+    </div>
+
+    <!-- BIAS 5 -->
+    <div class="bias-card">
+      <div><span class="bias-num">5</span><span class="bias-name">Authority Bias</span></div>
+      <span class="bias-subtitle">Deferring to the expert without applying independent judgement</span>
+      <p>Authority bias is the tendency to attribute greater accuracy and trustworthiness to the opinion of an authority figure — a senior engineer, a well-known manufacturer, a prestigious consultant — regardless of whether that authority's expertise applies to the specific question being asked. It is partly social (deferring to status reduces conflict) and partly cognitive (assuming expertise generalises).</p>
+      <p>In engineering, authority bias is particularly insidious because consulting senior colleagues is appropriate and necessary most of the time. The bias occurs when we accept an expert opinion as final without applying our own critical judgement — especially when the expert is operating outside their area of deepest expertise, or when significant time has passed since their practical experience.</p>
+      <div class="bias-scenario">A junior MEP engineer notices that the pipe sizing specified by the lead engineer produces a velocity of 4.2 m/s in a 50mm copper pipe — significantly above the recommended maximum of 3.0 m/s for cold water, which will cause noise and erosion. Unsure whether to challenge the lead engineer, who has 20 years of experience, the junior says nothing. The installation causes persistent noise complaints from tenants and premature pipe fitting wear.</div>
+      <div class="bias-fix">Separate the person from the claim. Evaluate the technical argument on its merits, not on who made it. In professional environments, frame challenges constructively: "I want to check my understanding — what factor is allowing the higher velocity here?" Creates dialogue without confrontation. Organisations should actively create cultures where junior engineers are encouraged and rewarded for raising technical concerns, regardless of who holds the original position.</div>
+    </div>
+
+    <!-- BIAS 6 -->
+    <div class="bias-card">
+      <div><span class="bias-num">6</span><span class="bias-name">Availability Heuristic</span></div>
+      <span class="bias-subtitle">Judging probability by how easily examples come to mind</span>
+      <p>The availability heuristic is the mental shortcut of judging how likely something is by how easily you can think of an example. Events that are recent, vivid, or emotionally significant feel more probable — even when statistical evidence says otherwise. Engineers who recently experienced a waterproofing failure will overestimate the probability of waterproofing failure on their next project; those who have never experienced structural failure will systematically underestimate it.</p>
+      <p>The most dangerous form of this bias for engineers is the tendency to design for failure modes that have already happened (because they are memorable) while neglecting failure modes that have not yet occurred in their experience.</p>
+      <div class="bias-scenario">After a high-profile pipe burst in a hospital caused extensive water damage, an engineering practice begins over-specifying pipe integrity measures across all their projects, adding significant cost and programme time — but continues to specify electrical systems without the arc-flash analysis that saved a different client from a far more likely electrical failure. The memorable, dramatic flooding event dominates risk assessment; the statistically more probable electrical hazard does not.</div>
+      <div class="bias-fix">Base risk assessments on systematic data, not on memorable events. Use formal risk registers and failure mode analysis (FMEA) that force you to consider all failure modes, not just recent ones. When making probability judgements, ask: "What does the historical data across many similar projects show?" rather than "What is the most recent failure I can recall?" Actively seek base rate statistics for the risk you are assessing.</div>
+    </div>
+
+    <!-- BIAS 7 -->
+    <div class="bias-card">
+      <div><span class="bias-num">7</span><span class="bias-name">Groupthink</span></div>
+      <span class="bias-subtitle">The pressure to conform overrides individual critical thinking</span>
+      <p>Groupthink occurs when the desire for harmony, consensus, and group cohesion overrides realistic appraisal of alternatives. In engineering teams, groupthink is most dangerous when a design decision is made early in the project, the team becomes invested in it, and subsequent concerns are suppressed — not necessarily by direct pressure, but by the social dynamics of not wanting to be the one who "keeps raising problems."</p>
+      <p>Engineering projects under time and financial pressure are especially vulnerable. When the project programme is tight, raising a fundamental design concern feels like sabotage. When the client relationship is fragile, questioning the agreed approach feels disloyal. These social pressures suppress exactly the critical thinking that engineering demands.</p>
+      <div class="bias-scenario">An engineering team has agreed on a specific foundation system for a new commercial building. During a design review, one of the geotechnical team members has concerns about the bearing capacity assumptions in a small area of the site, but the meeting is running over time, the project director signals impatience, and the team is clearly ready to move forward. The concern is filed mentally as "probably fine" and not raised. When the building is under construction, differential settlement occurs in exactly that area.</div>
+      <div class="bias-fix">Formally assign a "devil's advocate" role in design reviews — someone whose explicit job is to challenge the leading hypothesis. Use anonymous feedback mechanisms for technical concerns on high-stakes projects. Establish a "no-blame" reporting culture where raising concerns is recognised and rewarded, not penalised. Leaders must actively invite dissent: "Before we move on — what concerns has anyone NOT raised that they thought about raising?" creates space for suppressed concerns to surface.</div>
+    </div>
+
+    <h2>The Debiasing Toolkit — Practical Strategies That Work</h2>
+
+    <p>Awareness of cognitive biases reduces but does not eliminate their effect. The most effective debiasing strategies are structural — they change the process so that biases have less opportunity to operate, rather than relying on individuals to override their own thinking in real time.</p>
+
+    <div class="check-item">
+      <div class="check-box">&#10003;</div>
+      <div class="check-text"><strong>Pre-mortem analysis:</strong> Before finalising a major design decision, ask the team to imagine it is 12 months later and the project has failed catastrophically. What went wrong? This exercise surfaces concerns that groupthink suppresses and forces consideration of failure modes the planning fallacy ignores.</div>
+    </div>
+    <div class="check-item">
+      <div class="check-box">&#10003;</div>
+      <div class="check-text"><strong>Red team review:</strong> Assign a qualified engineer who was NOT involved in the design to review it specifically looking for weaknesses. Give them a brief to find problems, not to validate the design. This directly counteracts confirmation bias and groupthink simultaneously.</div>
+    </div>
+    <div class="check-item">
+      <div class="check-box">&#10003;</div>
+      <div class="check-text"><strong>Reference class forecasting:</strong> For cost and programme estimates, start with the historical average for similar projects, then adjust for specific features. Do not start from first principles and work forward — start from base rates and adjust. This directly counteracts the planning fallacy.</div>
+    </div>
+    <div class="check-item">
+      <div class="check-box">&#10003;</div>
+      <div class="check-text"><strong>Structured decision criteria:</strong> Before making a major system selection decision, write down the criteria and their weightings before you know which option will win. This prevents post-hoc rationalisation where you choose on instinct and then construct the criteria to justify the choice.</div>
+    </div>
+    <div class="check-item">
+      <div class="check-box">&#10003;</div>
+      <div class="check-text"><strong>Explicit uncertainty quantification:</strong> Instead of stating "the load will be 500 kW," state "the load will be between 420 and 620 kW, most likely 510 kW." Forces recognition of uncertainty and counteracts overconfidence bias. Calibrated uncertainty estimates are a hallmark of expert engineering judgement.</div>
+    </div>
+    <div class="check-item">
+      <div class="check-box">&#10003;</div>
+      <div class="check-text"><strong>Stopping rule for sunk cost:</strong> For every major project, define in advance the objective criteria that would trigger a fundamental design review or project cancellation. Write this down before the project starts, not when you are already deeply invested in a direction. When those criteria are met, the stopping rule must be applied.</div>
+    </div>
+
+    <div class="callout danger">
+      <div class="callout-title">&#9888; The Most Dangerous Combination</div>
+      <p>The most catastrophic engineering decisions typically involve multiple biases operating simultaneously: <strong>confirmation bias</strong> (ignoring warning signals) + <strong>authority bias</strong> (not questioning the senior engineer) + <strong>groupthink</strong> (nobody raises the concern in the meeting) + <strong>sunk cost</strong> (too late to change course now). When you feel very confident about a major decision and the whole team agrees without debate, that is precisely the moment to be most suspicious of your own thinking.</p>
+    </div>
+
+    <h2>The Metacognitive Habit — Thinking About Your Thinking</h2>
+
+    <p>The engineers who are most resistant to cognitive biases are not those with the highest IQ or the most technical knowledge. They are those who have developed a <strong>metacognitive habit</strong> — the practice of regularly examining their own reasoning process, not just their conclusions.</p>
+
+    <p>Practically, this looks like asking yourself a set of questions at key decision points:</p>
+
+    <ul>
+      <li><strong>"What would change my mind about this?"</strong> — if you cannot answer this, you are probably in the grip of confirmation bias.</li>
+      <li><strong>"Am I continuing because the evidence supports it, or because I've already invested so much?"</strong> — the sunk cost check.</li>
+      <li><strong>"How confident am I, and what is that confidence based on?"</strong> — differentiates calibrated expertise from Dunning-Kruger overconfidence.</li>
+      <li><strong>"What would a completely fresh engineer, seeing this for the first time, notice?"</strong> — breaks you out of the insider perspective and groupthink.</li>
+      <li><strong>"What are the three most likely ways this decision could be wrong?"</strong> — forces genuine engagement with failure modes rather than dismissing them.</li>
+    </ul>
+
+    <p>These questions are not comfortable. They create productive friction between your initial judgement and a more careful analysis. That friction is not a sign that your thinking is flawed — it is evidence that your critical thinking process is working. The engineer who makes every decision smoothly and confidently, without internal debate, is not thinking carefully enough.</p>
+
+    <div class="callout green">
+      <div class="callout-title">&#127891; Continue the Critical Thinking Journey</div>
+      <p>This article introduces cognitive biases — one dimension of critical thinking. Our full Critical Thinking Series (CT-001 through CT-030) covers logical fallacies, the Socratic method, epistemology, AI and human intelligence, and how to build a personal philosophy of rigorous thinking. Available free at <a href="../pdfs.html" style="color:#22c55e">ayetechub.com/pdfs.html</a>. Also see our full AI Tools for Engineers eBook for how AI can help compensate for some of these biases — and introduce new ones you need to watch for.</p>
+    </div>
+
+    <div class="tag-row">
+      <a href="../blog.html" class="tag">Critical Thinking</a>
+      <a href="../blog.html" class="tag">Cognitive Biases</a>
+      <a href="../blog.html" class="tag">Engineering Career</a>
+      <a href="../blog.html" class="tag">Decision Making</a>
+      <a href="../blog.html" class="tag">Professional Development</a>
+      <a href="../blog.html" class="tag">Psychology</a>
+    </div>
+
+  </div><!-- /.article-body -->
+
+  <div class="article-footer">
+    <a href="../blog.html" class="btn btn-outline btn-sm">&#8592; Back to Blog</a>
+    <a href="../pdfs.html" class="btn btn-primary btn-sm" style="background:linear-gradient(135deg,#4c1d95,#7c3aed)">Critical Thinking Series &#8594;</a>
+  </div>
+
+</div><!-- /.article-wrap -->
+
+<div id="notif" class="notif-bar" role="alert"><div class="notif-icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8z"/></svg></div><div class="notif-text"><strong class="notif-title"></strong><span class="notif-msg"></span></div><div class="notif-close" onclick="document.getElementById('notif').classList.remove('show')"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></div></div>
+<button id="btt-btn" onclick="scrollToTop()" aria-label="Back to top"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M4 12 5.41 13.41 11 7.83V20H13V7.83l5.58 5.59L20 12l-8-8z"/></svg></button>
+<script src="../assets/js/data.js"></script>
+<script src="../assets/js/platform.js"></script>
+<div id="google_translate_element" style="display:none;visibility:hidden"></div>
+<script src="../assets/js/blog-translate.js"></script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
+</body>
+</html>

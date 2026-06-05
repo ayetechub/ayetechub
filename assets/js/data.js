@@ -4171,6 +4171,18 @@ const BLOG_POSTS = [
     featured: true
   },
   {
+    id: 'cognitive-biases-engineers',
+    title: 'Why Engineers Make Bad Decisions: 7 Cognitive Biases That Sabotage Your Thinking',
+    category: 'critical-thinking',
+    date: '2026-06-05',
+    author: 'Awet G. Nway',
+    readTime: '9 min read',
+    excerpt: 'Engineers are trained to be analytical — yet they consistently fall into the same cognitive traps. Here are the 7 most dangerous biases affecting engineering judgement: confirmation bias, sunk cost fallacy, Dunning-Kruger effect, planning fallacy, authority bias, availability heuristic, and groupthink — each with a real engineering scenario and a practical fix.',
+    image: 'assets/images/og-cover.png',
+    url: 'blog/cognitive-biases-engineers.html',
+    featured: true
+  },
+  {
     id: 'chilled-water-vs-vrf-hvac-selection',
     title: 'Chilled Water vs VRF: How to Choose the Right HVAC System for Any Building',
     category: 'hvac',
