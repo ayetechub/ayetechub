@@ -4345,6 +4345,18 @@ const BLOG_POSTS = [
     featured: true
   },
   {
+    id: 'llm-ai-agents-agentic-ai-3-levels',
+    title: 'LLM, AI Agents & Agentic AI: The 3 Levels of AI Evolution Every Engineer Should Understand',
+    category: 'ai',
+    date: '2026-06-07',
+    author: 'Awet G. Nway',
+    readTime: '10 min read',
+    excerpt: 'LLMs, AI Agents, and Agentic AI are not the same thing — they are three progressive levels of AI capability. A clear breakdown of each level (the brain, the brain with hands, and the team of brains), what each can genuinely do, where each one breaks down, a side-by-side comparison table, and a 3-question test to spot which level any "AI-powered" tool is actually using.',
+    image: 'assets/images/og-cover.png',
+    url: 'blog/llm-ai-agents-agentic-ai-3-levels.html',
+    featured: true
+  },
+  {
     id: '20-minute-engineer-workout',
     title: 'The 20-Minute Engineer Workout: Build Strength When Time Is Your Scarcest Resource',
     category: 'fit-hub',
