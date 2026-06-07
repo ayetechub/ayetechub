@@ -3112,6 +3112,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'ai-curriculum-012-ai-agents-introduction',
+    title: {
+      en: 'AI-012: AI Agents Introduction',
+      ti: 'AI-012: ናይ AI Agents መእተዊ',
+      am: 'AI-012: የ AI ወኪሎች መግቢያ'
+    },
+    category: 'ai-curriculum',
+    pages: 10,
+    size: '34 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Chatbot vs AI Agent vs Agentic System comparison diagram (3-panel table), the agent loop diagram (Perceive→Plan→Act→Observe with ReAct loop-back), real agent platforms diagram comparing Claude/OpenAI Operator/AutoGPT-CrewAI, 6 engineering agent use cases diagram (standards research/calculation scripts/document review/data analysis/inbox triage/drawing QA), agent safety guardrails diagram (Goal→Agent Plans→Human Checkpoint→Real-World Action), agent loop comparison table, agent platforms table, first-agent-workflow walkthrough table, five safety rules table, and 5 practice exercises — 5 diagrams — by Awet G. Nway.',
+      ti: 'Chatbot vs AI Agent vs Agentic System comparison diagram፣ the agent loop diagram (Perceive→Plan→Act→Observe)፣ real agent platforms diagram (Claude/OpenAI Operator/AutoGPT)፣ 6 engineering agent use cases diagram፣ agent safety guardrails diagram (Goal→Agent→Human Checkpoint→Action)፣ five safety rules table — ብ Awet G. Nway።',
+      am: 'Chatbot vs AI Agent vs Agentic System comparison diagram፣ the agent loop diagram (Perceive→Plan→Act→Observe)፣ real agent platforms diagram (Claude/OpenAI Operator/AutoGPT)፣ 6 engineering agent use cases diagram፣ agent safety guardrails diagram (Goal→Agent→Human Checkpoint→Action)፣ five safety rules table — በ Awet G. Nway።'
+    },
+    file: 'pdfs/AI-012-AI-Agents-Introduction.pdf',
+    color: '#8b5cf6',
+    preview: true
+  },
+  {
     id: 'hvac-design',
     title: 'HVAC System Design Manual',
     category: 'hvac',
