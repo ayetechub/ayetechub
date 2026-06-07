@@ -3098,8 +3098,8 @@ const PDFS = [
       am: 'AI-011: AI አውቶሜሽን መሰረቶች'
     },
     category: 'ai-curriculum',
-    pages: 6,
-    size: '150 KB',
+    pages: 11,
+    size: '34 KB',
     downloads: '0',
     badge: 'FREE',
     description: {
