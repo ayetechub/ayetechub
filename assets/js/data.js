@@ -2692,6 +2692,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'hvac-curriculum-011-split-ac-systems',
+    title: {
+      en: 'HVAC-011: Split AC Systems',
+      ti: 'HVAC-011: ናይ Split AC ስርዓታት',
+      am: 'HVAC-011: የSplit AC ስርዓቶች'
+    },
+    category: 'hvac',
+    pages: 8,
+    size: '29 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Split AC system layout diagram (indoor/outdoor units, refrigerant lines, drain, controls), fixed-speed vs inverter compressor power-output graph, cooling capacity quick-reference bar chart by room size, six-component anatomy table, refrigerant circuit walkthrough with operating-modes table, five system types compared (wall-mounted/floor-standing/cassette/ducted/multi-split), inverter vs fixed-speed comparison table, EER/COP/SEER/ISEER ratings table, sizing & installation guidelines, glossary, and 5 practice exercises — 3 diagrams — by Awet G. Nway.',
+      ti: 'Split AC system layout diagram (indoor/outdoor units, refrigerant lines)፣ fixed-speed vs inverter compressor graph፣ cooling capacity bar chart፣ six-component table፣ refrigerant circuit + operating modes፣ five system types ምውድዳር፣ inverter vs fixed-speed ምውድዳር፣ EER/COP/SEER/ISEER ratings table፣ sizing guidelines፣ glossary፣ 5 exercises — ብ Awet G. Nway።',
+      am: 'Split AC system layout diagram (የውስጥ/የውጭ ዩኒቶች፣ refrigerant lines)፣ fixed-speed vs inverter compressor graph፣ cooling capacity bar chart፣ ስድስት-ክፍል ሰንጠረዥ፣ refrigerant circuit + operating modes፣ አምስት የስርዓት ዓይነቶች ንጽጽር፣ inverter vs fixed-speed ንጽጽር፣ EER/COP/SEER/ISEER ratings table፣ sizing መመሪያዎች፣ ቃላት ማብራሪያ፣ 5 መልመጃዎች — በ Awet G. Nway።'
+    },
+    file: 'pdfs/HVAC-011-Split-AC-Systems.pdf',
+    color: '#0ea5e9',
+    preview: true
+  },
+  {
     id: 'solar-curriculum-002-radiation-basics',
     title: {
       en: 'SOLAR-002: Solar Radiation Basics',
