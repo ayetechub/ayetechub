@@ -2923,6 +2923,27 @@ const PDFS = [
     preview: true
   },
   {
+    id: 'solar-curriculum-012-inverter-sizing',
+    title: {
+      en: 'SOLAR-012: Inverter Sizing for Solar PV Systems',
+      ti: 'SOLAR-012: ናይ Solar PV ስርዓት Inverter Sizing',
+      am: 'SOLAR-012: Solar PV ሥርዓት Inverter ስሌት'
+    },
+    category: 'solar',
+    pages: 9,
+    size: '31 KB',
+    downloads: '0',
+    badge: 'FREE',
+    description: {
+      en: 'Plotted waveform diagram (pure sine/modified sine/square wave panels), running-vs-surge bar chart (6 appliances incl. borehole pump 4.5x surge), 5-step sizing flowchart (List Loads→Sum Running W→Find Largest Surge→Add Safety Margin→Select Std Size), waveform comparison table (THD/cost/compatible loads/issues), appliance surge ratings table, sizing formula (P_cont ≥ ΣP_running × 1.25, P_surge ≥ largest motor surge), worked example 5-step table (1,250 W running → 2,000 W/4,000 VA inverter), efficiency-curve table, hybrid inverter-charger comparison table (Victron/SMA/Growatt/Deye), glossary, and 5 practice exercises — 3 diagrams — by Awet G. Nway.',
+      ti: 'Plotted waveform diagram (pure sine/modified sine/square wave)፣ running-vs-surge bar chart (6 appliances)፣ 5-step sizing flowchart፣ waveform comparison table (THD/cost/loads/issues)፣ appliance surge ratings table፣ sizing formula (P_cont ≥ ΣP_running × 1.25)፣ worked example table (1,250 W → 2,000 W inverter)፣ efficiency-curve table፣ hybrid inverter-charger table (Victron/SMA/Growatt/Deye)፣ glossary፣ 5 exercises — ብ Awet G. Nway።',
+      am: 'Plotted waveform diagram (pure sine/modified sine/square wave)፣ running-vs-surge bar chart (6 appliances)፣ 5-step sizing flowchart፣ waveform comparison table (THD/cost/loads/issues)፣ appliance surge ratings table፣ sizing formula (P_cont ≥ ΣP_running × 1.25)፣ worked example table (1,250 W → 2,000 W inverter)፣ efficiency-curve table፣ hybrid inverter-charger table (Victron/SMA/Growatt/Deye)፣ glossary፣ 5 exercises — በ Awet G. Nway።'
+    },
+    file: 'pdfs/SOLAR-012-Inverter-Sizing.pdf',
+    color: '#f59e0b',
+    preview: true
+  },
+  {
     id: 'ai-curriculum-002-understanding-chatgpt',
     title: {
       en: 'AI-002: Understanding ChatGPT',
