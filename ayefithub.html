@@ -330,37 +330,33 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
       </div>
     </a>
     <nav class="nav-menu" aria-label="Main navigation">
-      <a href="#features" class="nav-link" data-i18n="nav.features">Features</a>
-      <a href="#programs" class="nav-link" data-i18n="nav.programs">Programs</a>
-      <a href="#journey" class="nav-link" data-i18n="nav.journey">30 Days</a>
-      <a href="#trainer" class="nav-link" data-i18n="nav.trainer">Trainer</a>
-      <a href="#faq" class="nav-link" data-i18n="nav.faq">FAQ</a>
-      <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
-      <a href="index.html" class="nav-link" style="color:var(--purple)">AYE Tech Hub</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#mission" class="nav-link">Mission</a>
+      <a href="#programs" class="nav-link">Programs</a>
+      <a href="#pdfs" class="nav-link">PDFs</a>
+      <a href="#blogs" class="nav-link">Blogs</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="#contact" class="nav-link">Contact</a>
     </nav>
     <div class="nav-controls">
-      <div class="lang-switcher">
+      <div class="lang-switcher" style="margin-left:12px">
         <button class="lang-btn active" onclick="setLang('en')" id="lang-en">EN</button>
         <button class="lang-btn" onclick="setLang('am')" id="lang-am">አማ</button>
         <button class="lang-btn" onclick="setLang('ti')" id="lang-ti">ትግ</button>
       </div>
       <button class="icon-btn" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle theme">☀</button>
-      <a href="https://t.me/ayetechub" target="_blank" rel="noopener" class="btn btn-purple btn-sm hide-mobile" style="font-size:.78rem">✈ Telegram</a>
       <button class="icon-btn hamburger" onclick="toggleMobileMenu()" aria-label="Open menu">☰</button>
     </div>
   </div>
   <div id="mobile-menu" class="container">
-    <a href="#features" class="mobile-link" onclick="toggleMobileMenu()" data-i18n="nav.features">Features</a>
-    <a href="#programs" class="mobile-link" onclick="toggleMobileMenu()" data-i18n="nav.programs">Programs</a>
-    <a href="#journey" class="mobile-link" onclick="toggleMobileMenu()" data-i18n="nav.journey">30 Days</a>
-    <a href="#trainer" class="mobile-link" onclick="toggleMobileMenu()" data-i18n="nav.trainer">Trainer</a>
-    <a href="#faq" class="mobile-link" onclick="toggleMobileMenu()" data-i18n="nav.faq">FAQ</a>
-    <a href="#contact" class="mobile-link" onclick="toggleMobileMenu()" data-i18n="nav.contact">Contact</a>
-    <a href="index.html" class="mobile-link" onclick="toggleMobileMenu()" style="color:var(--purple)">🌐 AYE Tech Hub</a>
-    <div style="display:flex;gap:12px;padding:16px 0">
-      <a href="https://youtube.com/@ayefithub" target="_blank" rel="noopener" class="social-btn s-youtube" style="flex:1;justify-content:center">▶ YouTube</a>
-      <a href="https://t.me/ayetechub" target="_blank" rel="noopener" class="social-btn s-telegram" style="flex:1;justify-content:center">✈ Telegram</a>
-    </div>
+    <a href="#about" class="mobile-link" onclick="toggleMobileMenu()">About</a>
+    <a href="#mission" class="mobile-link" onclick="toggleMobileMenu()">Mission</a>
+    <a href="#programs" class="mobile-link" onclick="toggleMobileMenu()">Programs</a>
+    <a href="#pdfs" class="mobile-link" onclick="toggleMobileMenu()">PDFs</a>
+    <a href="#blogs" class="mobile-link" onclick="toggleMobileMenu()">Blogs</a>
+    <a href="#faq" class="mobile-link" onclick="toggleMobileMenu()">FAQ</a>
+    <a href="#contact" class="mobile-link" onclick="toggleMobileMenu()">Contact</a>
+    <a href="https://youtube.com/@ayefithub" target="_blank" rel="noopener" class="social-btn s-youtube" style="display:flex;justify-content:center;margin-top:12px;margin-bottom:12px">▶ Watch on YouTube</a>
   </div>
 </header>
 
@@ -589,12 +585,13 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
   </div>
 </section>
 
-<!-- ============================================================ WHY ============================================================ -->
-<section style="background:linear-gradient(180deg,transparent,rgba(167,139,250,0.04),transparent)">
+<!-- ============================================================ MISSION ============================================================ -->
+<section id="mission" style="background:linear-gradient(180deg,transparent,rgba(167,139,250,0.04),transparent)">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-tag">⚡ Why AYE Fit Hub</div>
+      <div class="section-tag">🎯 Our Mission</div>
       <h2 class="section-title">Built Different. <span class="gradient-text">For You.</span></h2>
+      <p class="section-subtitle">AYE Fit Hub exists to make science-based fitness free and accessible to every Ethiopian, Eritrean, and African — at home, in the gym, or anywhere in the world.</p>
     </div>
     <div class="why-grid">
       <div class="why-card reveal"><div class="why-icon">🆓</div><div class="why-title">100% Free</div><div class="why-desc">Every program, guide, and video is completely free. No subscription, no paywall, no excuses.</div></div>
@@ -607,12 +604,12 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
   </div>
 </section>
 
-<!-- ============================================================ TRAINER ============================================================ -->
-<section id="trainer" style="background:linear-gradient(135deg,rgba(167,139,250,0.05),rgba(10,22,40,0.98))">
+<!-- ============================================================ ABOUT ============================================================ -->
+<section id="about" style="background:linear-gradient(135deg,rgba(167,139,250,0.05),rgba(10,22,40,0.98))">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-tag">👤 Your Trainer</div>
-      <h2 class="section-title">Trained by an <span class="gradient-text">Engineer</span></h2>
+      <div class="section-tag">👤 About AYE Fit Hub</div>
+      <h2 class="section-title">Built by an <span class="gradient-text">Engineer</span></h2>
     </div>
     <div class="trainer-inner">
       <div class="trainer-photo-wrap reveal">
@@ -661,6 +658,242 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
         <p class="testi-text">"The mindset sessions hit different. I used to quit by day 10. With AYE Fit Hub I completed the full 30 days for the first time in my life."</p>
         <div class="testi-author"><div class="testi-avatar">👩</div><div><div class="testi-name">Sara H.</div><div class="testi-loc">Stockholm, Sweden</div></div></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ PDFS ============================================================ -->
+<section id="pdfs" style="background:linear-gradient(180deg,transparent,rgba(167,139,250,0.06),transparent)">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">📄 Free PDF Guides</div>
+      <h2 class="section-title">Download Your <span class="gradient-text">Daily Guide</span></h2>
+      <p class="section-subtitle">Every program day comes with a free PDF — workout plan, nutrition notes, and key principles. Download, print, or save offline.</p>
+    </div>
+    <div class="programs-grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">
+
+      <div class="program-card reveal">
+        <span class="prog-icon">💪</span>
+        <div class="prog-title">Day 1 — 30-Day Transformation Kickoff</div>
+        <div class="prog-desc">Program overview, baseline measurements, foundation strength circuit, and Day 1 self-check.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
+          <span class="prog-badge badge-purple">5 pages · 85 KB</span>
+          <a href="pdfs/aye-fit-hub-day01-welcome-30day-transformation.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+        </div>
+      </div>
+
+      <div class="program-card reveal">
+        <span class="prog-icon">🔥</span>
+        <div class="prog-title">Day 2 — HIIT 101: Fat Burning in 20 Min</div>
+        <div class="prog-desc">What HIIT is, EPOC science, 4 HIIT formats (Tabata/EMOM/AMRAP), 20-min no-equipment circuit.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
+          <span class="prog-badge badge-rose">6 pages · 90 KB</span>
+          <a href="pdfs/aye-fit-hub-day02-hiit-101-fat-burning.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+        </div>
+      </div>
+
+      <div class="program-card reveal">
+        <span class="prog-icon">🎯</span>
+        <div class="prog-title">Day 3 — Core Anatomy: More Than Abs</div>
+        <div class="prog-desc">9 core muscle groups, bracing technique, 7-exercise core circuit, lower-back prevention.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
+          <span class="prog-badge badge-purple">5 pages · 92 KB</span>
+          <a href="pdfs/aye-fit-hub-day03-core-anatomy.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+        </div>
+      </div>
+
+      <div class="program-card reveal">
+        <span class="prog-icon">🏠</span>
+        <div class="prog-title">Day 4 — Home Workout Setup</div>
+        <div class="prog-desc">Space checklist, exercise substitution table, 8-exercise full-body circuit, Week 1 template.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
+          <span class="prog-badge badge-orange">5 pages · 93 KB</span>
+          <a href="pdfs/aye-fit-hub-day04-home-workout-setup.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+        </div>
+      </div>
+
+      <div class="program-card reveal">
+        <span class="prog-icon">🥗</span>
+        <div class="prog-title">Day 5 — Nutrition Basics: Macros Made Simple</div>
+        <div class="prog-desc">Macronutrients explained, calorie targets, meal timing, hydration guide, Ethiopian food reference.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
+          <span class="prog-badge badge-teal">5 pages · 94 KB</span>
+          <a href="pdfs/aye-fit-hub-day05-nutrition-basics-macros.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+        </div>
+      </div>
+
+      <div class="program-card reveal">
+        <span class="prog-icon">🧠</span>
+        <div class="prog-title">Day 6 — Mindset Reset</div>
+        <div class="prog-desc">Identity-based habits, growth mindset, cognitive reframing, Day 6 mental workout and self-audit.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
+          <span class="prog-badge badge-indigo">5 pages</span>
+          <a href="pdfs/aye-fit-hub-day06-mindset-reset.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+        </div>
+      </div>
+
+      <div class="program-card reveal">
+        <span class="prog-icon">🌿</span>
+        <div class="prog-title">Day 7 — Active Recovery</div>
+        <div class="prog-desc">Why recovery is training, muscle repair science, mobility flow, sleep protocol, weekly check-in.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
+          <span class="prog-badge badge-green">5 pages</span>
+          <a href="pdfs/aye-fit-hub-day07-active-recovery.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+        </div>
+      </div>
+
+      <div class="program-card reveal">
+        <span class="prog-icon">📈</span>
+        <div class="prog-title">Day 8 — Progressive Overload</div>
+        <div class="prog-desc">The #1 rule of strength: progressive overload. Load, reps, tempo, density progression methods.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
+          <span class="prog-badge badge-purple">6 pages</span>
+          <a href="pdfs/aye-fit-hub-day08-progressive-overload.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+        </div>
+      </div>
+
+      <div class="program-card reveal">
+        <span class="prog-icon">⏱️</span>
+        <div class="prog-title">Day 9 — Tabata Protocol</div>
+        <div class="prog-desc">Tabata science (Dr. Tabata's original research), 20/10 protocol, full Tabata session, tracking sheet.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
+          <span class="prog-badge badge-rose">5 pages</span>
+          <a href="pdfs/aye-fit-hub-day09-tabata-protocol.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+        </div>
+      </div>
+
+      <div class="program-card reveal">
+        <span class="prog-icon">🤸</span>
+        <div class="prog-title">Day 10 — Flexibility & Mobility</div>
+        <div class="prog-desc">Static vs dynamic stretching, 12-movement mobility flow, posture correction, injury prevention.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
+          <span class="prog-badge badge-teal">5 pages</span>
+          <a href="pdfs/aye-fit-hub-day10-flexibility-mobility.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+        </div>
+      </div>
+
+      <div class="program-card reveal">
+        <span class="prog-icon">🍱</span>
+        <div class="prog-title">Day 11 — Meal Prep Mastery</div>
+        <div class="prog-desc">Batch cooking system, 5-ingredient meals, meal prep schedule, Ethiopian-friendly recipe examples.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
+          <span class="prog-badge badge-orange">6 pages</span>
+          <a href="pdfs/aye-fit-hub-day11-meal-prep-mastery.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+        </div>
+      </div>
+
+      <div class="program-card reveal">
+        <span class="prog-icon">😴</span>
+        <div class="prog-title">Day 12 — Sleep & Recovery Science</div>
+        <div class="prog-desc">Sleep cycles, optimal sleep for muscle growth, sleep hygiene protocol, tracking your recovery score.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
+          <span class="prog-badge badge-indigo">5 pages</span>
+          <a href="pdfs/aye-fit-hub-day12-sleep-recovery-science.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+        </div>
+      </div>
+
+      <div class="program-card reveal">
+        <span class="prog-icon">💪</span>
+        <div class="prog-title">Day 13 — Upper Body Power</div>
+        <div class="prog-desc">Push/pull mechanics, chest-shoulder-back-bicep-tricep circuits, scapular stability, form checklist.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
+          <span class="prog-badge badge-purple">6 pages</span>
+          <a href="pdfs/aye-fit-hub-day13-upper-body-power.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+        </div>
+      </div>
+
+      <div class="program-card reveal">
+        <span class="prog-icon">🦵</span>
+        <div class="prog-title">Day 14 — Lower Body Burn</div>
+        <div class="prog-desc">Glute activation, quad/hamstring/calf development, squat pattern mastery, lower body superset.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
+          <span class="prog-badge badge-rose">6 pages</span>
+          <a href="pdfs/aye-fit-hub-day14-lower-body-burn.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+        </div>
+      </div>
+
+      <div class="program-card reveal">
+        <span class="prog-icon">🏆</span>
+        <div class="prog-title">Day 15 — Halfway Check-In</div>
+        <div class="prog-desc">Progress assessment framework, measurements retake, goal adjustment, Week 3 programming preview.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
+          <span class="prog-badge badge-teal">5 pages</span>
+          <a href="pdfs/aye-fit-hub-day15-halfway-checkin.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:36px" class="reveal">
+      <p style="font-size:.9rem;color:var(--text-muted);margin-bottom:16px">New PDFs drop every week as new days go live.</p>
+      <a href="pdfs.html" class="btn btn-outline">Browse Full PDF Library →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ BLOGS ============================================================ -->
+<section id="blogs">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">📹 Content & Blogs</div>
+      <h2 class="section-title">Watch. Learn. <span class="gradient-text">Transform.</span></h2>
+      <p class="section-subtitle">Every day of the program is a full episode — YouTube video + written guide + PDF. Follow along at your own pace.</p>
+    </div>
+    <div class="features-grid" style="grid-template-columns:repeat(auto-fill,minmax(300px,1fr))">
+
+      <div class="feature-card reveal" style="border-color:rgba(244,63,94,0.3)">
+        <div class="feature-icon" style="background:rgba(244,63,94,0.1)">▶</div>
+        <div class="feature-title">YouTube Channel</div>
+        <div class="card-desc">Full workout videos, tutorials, and daily program episodes. Subscribe to @ayefithub for new content every week.</div>
+        <a href="https://youtube.com/@ayefithub" target="_blank" rel="noopener" class="btn btn-rose btn-sm" style="margin-top:16px;display:inline-flex">▶ Watch on YouTube</a>
+      </div>
+
+      <div class="feature-card reveal" style="border-color:rgba(167,139,250,0.3)">
+        <div class="feature-icon">🎵</div>
+        <div class="feature-title">TikTok Short Clips</div>
+        <div class="card-desc">60-second workout tips, quick form checks, nutrition hacks, and motivation clips. Follow @ayefithub on TikTok.</div>
+        <a href="https://tiktok.com/@ayefithub" target="_blank" rel="noopener" class="btn btn-outline btn-sm" style="margin-top:16px;display:inline-flex">Follow on TikTok</a>
+      </div>
+
+      <div class="feature-card reveal" style="border-color:rgba(24,119,242,0.3)">
+        <div class="feature-icon" style="background:rgba(24,119,242,0.1)">👥</div>
+        <div class="feature-title">Facebook Community</div>
+        <div class="card-desc">Share progress, ask questions, and connect with the growing AYE Fit Hub community. Post your Day results.</div>
+        <a href="https://facebook.com/ayefithub" target="_blank" rel="noopener" class="btn btn-outline btn-sm" style="margin-top:16px;display:inline-flex;border-color:#1877f2;color:#1877f2">Join on Facebook</a>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon">📝</div>
+        <div class="feature-title">Day 1 — Transformation Kickoff</div>
+        <div class="card-desc">The full breakdown of the 30-day program, what to expect, how to track progress, and your first workout.</div>
+        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+          <a href="https://youtube.com/@ayefithub" target="_blank" rel="noopener" class="prog-badge badge-rose" style="text-decoration:none;cursor:pointer">▶ Watch</a>
+          <a href="pdfs/aye-fit-hub-day01-welcome-30day-transformation.pdf" download class="prog-badge badge-green" style="text-decoration:none;cursor:pointer">⬇ PDF</a>
+        </div>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon">🔥</div>
+        <div class="feature-title">Day 2 — HIIT Science</div>
+        <div class="card-desc">Why 20 minutes of HIIT outperforms 60 minutes of steady cardio. The EPOC effect explained with a full session.</div>
+        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+          <a href="https://youtube.com/@ayefithub" target="_blank" rel="noopener" class="prog-badge badge-rose" style="text-decoration:none;cursor:pointer">▶ Watch</a>
+          <a href="pdfs/aye-fit-hub-day02-hiit-101-fat-burning.pdf" download class="prog-badge badge-green" style="text-decoration:none;cursor:pointer">⬇ PDF</a>
+        </div>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon">🎯</div>
+        <div class="feature-title">Day 3 — Core Anatomy</div>
+        <div class="card-desc">Your core is not just abs. Learn the 9 muscle groups that make up your true core and how to train them correctly.</div>
+        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+          <a href="https://youtube.com/@ayefithub" target="_blank" rel="noopener" class="prog-badge badge-rose" style="text-decoration:none;cursor:pointer">▶ Watch</a>
+          <a href="pdfs/aye-fit-hub-day03-core-anatomy.pdf" download class="prog-badge badge-green" style="text-decoration:none;cursor:pointer">⬇ PDF</a>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:32px" class="reveal">
+      <a href="https://youtube.com/@ayefithub" target="_blank" rel="noopener" class="btn btn-purple">▶ See All Episodes on YouTube</a>
     </div>
   </div>
 </section>
