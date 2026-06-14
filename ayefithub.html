@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8"/>
@@ -307,6 +307,22 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
 .footer-copy{font-size:.75rem;color:var(--text-muted)}
 .footer-aye{font-size:.75rem;color:var(--text-muted)}
 .footer-aye a{color:var(--purple)}
+
+/* ---- PDF MODAL ---- */
+#pdf-viewer-modal{display:none;position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,0.88);align-items:center;justify-content:center;padding:16px}
+#pdf-viewer-modal.open{display:flex}
+.pdf-modal-box{background:var(--bg-card);border:1px solid var(--border-strong);border-radius:24px;width:100%;max-width:720px;max-height:92vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 30px 80px rgba(167,139,250,0.2)}
+.pdf-modal-head{padding:18px 20px 14px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-shrink:0}
+.pdf-modal-title{font-size:1rem;font-weight:800;line-height:1.35;color:var(--text);flex:1}
+.pdf-modal-close{width:34px;height:34px;border-radius:9px;background:rgba(167,139,250,0.1);border:1px solid var(--border);color:var(--purple);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;flex-shrink:0;transition:background .2s}
+.pdf-modal-close:hover{background:rgba(244,63,94,0.15);color:var(--rose)}
+.pdf-modal-meta{padding:10px 20px;display:flex;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--border);flex-shrink:0}
+.pdf-meta-chip{padding:4px 12px;border-radius:100px;background:rgba(167,139,250,0.08);border:1px solid var(--border);font-size:.75rem;color:var(--purple);font-weight:700}
+.pdf-modal-frame{flex:1;overflow:hidden;min-height:0}
+.pdf-modal-frame iframe{width:100%;height:100%;min-height:60vh;border:none;display:block;background:#fff}
+.pdf-modal-frame .pdf-mobile-msg{display:none;padding:28px 20px;text-align:center}
+.pdf-modal-foot{padding:14px 20px;border-top:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;align-items:center;flex-shrink:0}
+.pdf-modal-foot-info{font-size:.78rem;color:var(--text-muted)}
 
 /* ---- GALLERY ---- */
 .fh-gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
@@ -692,7 +708,7 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
         <div class="prog-desc">Program overview, baseline measurements, foundation strength circuit, and Day 1 self-check.</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
           <span class="prog-badge badge-purple">5 pages · 85 KB</span>
-          <a href="pdfs/aye-fit-hub-day01-welcome-30day-transformation.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+          <button onclick="openFhPdf('day01')" class="prog-badge badge-green" style="cursor:pointer;border:none">📖 Read PDF</button>
         </div>
       </div>
 
@@ -702,7 +718,7 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
         <div class="prog-desc">What HIIT is, EPOC science, 4 HIIT formats (Tabata/EMOM/AMRAP), 20-min no-equipment circuit.</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
           <span class="prog-badge badge-rose">6 pages · 90 KB</span>
-          <a href="pdfs/aye-fit-hub-day02-hiit-101-fat-burning.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+          <button onclick="openFhPdf('day02')" class="prog-badge badge-green" style="cursor:pointer;border:none">📖 Read PDF</button>
         </div>
       </div>
 
@@ -712,7 +728,7 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
         <div class="prog-desc">9 core muscle groups, bracing technique, 7-exercise core circuit, lower-back prevention.</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
           <span class="prog-badge badge-purple">5 pages · 92 KB</span>
-          <a href="pdfs/aye-fit-hub-day03-core-anatomy.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+          <button onclick="openFhPdf('day03')" class="prog-badge badge-green" style="cursor:pointer;border:none">📖 Read PDF</button>
         </div>
       </div>
 
@@ -722,7 +738,7 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
         <div class="prog-desc">Space checklist, exercise substitution table, 8-exercise full-body circuit, Week 1 template.</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
           <span class="prog-badge badge-orange">5 pages · 93 KB</span>
-          <a href="pdfs/aye-fit-hub-day04-home-workout-setup.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+          <button onclick="openFhPdf('day04')" class="prog-badge badge-green" style="cursor:pointer;border:none">📖 Read PDF</button>
         </div>
       </div>
 
@@ -732,7 +748,7 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
         <div class="prog-desc">Macronutrients explained, calorie targets, meal timing, hydration guide, Ethiopian food reference.</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
           <span class="prog-badge badge-teal">5 pages · 94 KB</span>
-          <a href="pdfs/aye-fit-hub-day05-nutrition-basics-macros.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+          <button onclick="openFhPdf('day05')" class="prog-badge badge-green" style="cursor:pointer;border:none">📖 Read PDF</button>
         </div>
       </div>
 
@@ -742,7 +758,7 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
         <div class="prog-desc">Identity-based habits, growth mindset, cognitive reframing, Day 6 mental workout and self-audit.</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
           <span class="prog-badge badge-indigo">5 pages</span>
-          <a href="pdfs/aye-fit-hub-day06-mindset-reset.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+          <button onclick="openFhPdf('day06')" class="prog-badge badge-green" style="cursor:pointer;border:none">📖 Read PDF</button>
         </div>
       </div>
 
@@ -752,7 +768,7 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
         <div class="prog-desc">Why recovery is training, muscle repair science, mobility flow, sleep protocol, weekly check-in.</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
           <span class="prog-badge badge-green">5 pages</span>
-          <a href="pdfs/aye-fit-hub-day07-active-recovery.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+          <button onclick="openFhPdf('day07')" class="prog-badge badge-green" style="cursor:pointer;border:none">📖 Read PDF</button>
         </div>
       </div>
 
@@ -762,7 +778,7 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
         <div class="prog-desc">The #1 rule of strength: progressive overload. Load, reps, tempo, density progression methods.</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
           <span class="prog-badge badge-purple">6 pages</span>
-          <a href="pdfs/aye-fit-hub-day08-progressive-overload.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+          <button onclick="openFhPdf('day08')" class="prog-badge badge-green" style="cursor:pointer;border:none">📖 Read PDF</button>
         </div>
       </div>
 
@@ -772,7 +788,7 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
         <div class="prog-desc">Tabata science (Dr. Tabata's original research), 20/10 protocol, full Tabata session, tracking sheet.</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
           <span class="prog-badge badge-rose">5 pages</span>
-          <a href="pdfs/aye-fit-hub-day09-tabata-protocol.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+          <button onclick="openFhPdf('day09')" class="prog-badge badge-green" style="cursor:pointer;border:none">📖 Read PDF</button>
         </div>
       </div>
 
@@ -782,7 +798,7 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
         <div class="prog-desc">Static vs dynamic stretching, 12-movement mobility flow, posture correction, injury prevention.</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
           <span class="prog-badge badge-teal">5 pages</span>
-          <a href="pdfs/aye-fit-hub-day10-flexibility-mobility.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+          <button onclick="openFhPdf('day10')" class="prog-badge badge-green" style="cursor:pointer;border:none">📖 Read PDF</button>
         </div>
       </div>
 
@@ -792,7 +808,7 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
         <div class="prog-desc">Batch cooking system, 5-ingredient meals, meal prep schedule, Ethiopian-friendly recipe examples.</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
           <span class="prog-badge badge-orange">6 pages</span>
-          <a href="pdfs/aye-fit-hub-day11-meal-prep-mastery.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+          <button onclick="openFhPdf('day11')" class="prog-badge badge-green" style="cursor:pointer;border:none">📖 Read PDF</button>
         </div>
       </div>
 
@@ -802,7 +818,7 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
         <div class="prog-desc">Sleep cycles, optimal sleep for muscle growth, sleep hygiene protocol, tracking your recovery score.</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
           <span class="prog-badge badge-indigo">5 pages</span>
-          <a href="pdfs/aye-fit-hub-day12-sleep-recovery-science.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+          <button onclick="openFhPdf('day12')" class="prog-badge badge-green" style="cursor:pointer;border:none">📖 Read PDF</button>
         </div>
       </div>
 
@@ -812,7 +828,7 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
         <div class="prog-desc">Push/pull mechanics, chest-shoulder-back-bicep-tricep circuits, scapular stability, form checklist.</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
           <span class="prog-badge badge-purple">6 pages</span>
-          <a href="pdfs/aye-fit-hub-day13-upper-body-power.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+          <button onclick="openFhPdf('day13')" class="prog-badge badge-green" style="cursor:pointer;border:none">📖 Read PDF</button>
         </div>
       </div>
 
@@ -822,7 +838,7 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
         <div class="prog-desc">Celebrate progress, recalibrate goals, adjust training load, and set Week 3 intentions.</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
           <span class="prog-badge badge-rose">4 pages · 120 KB</span>
-          <a href="pdfs/aye-fit-hub-day14-week2-checkin.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+          <button onclick="openFhPdf('day14')" class="prog-badge badge-green" style="cursor:pointer;border:none">📖 Read PDF</button>
         </div>
       </div>
 
@@ -832,7 +848,7 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
         <div class="prog-desc">Two elite training formats — Every Minute On the Minute and As Many Rounds As Possible — with full sessions for each.</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
           <span class="prog-badge badge-teal">4 pages · 112 KB</span>
-          <a href="pdfs/aye-fit-hub-day15-emom-amrap.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+          <button onclick="openFhPdf('day15')" class="prog-badge badge-green" style="cursor:pointer;border:none">📖 Read PDF</button>
         </div>
       </div>
 
@@ -842,7 +858,7 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
         <div class="prog-desc">Hips, hamstrings, and IT band deep-stretch protocol. Unlock lower body mobility for better squat depth and injury prevention.</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
           <span class="prog-badge badge-orange">8 pages · 39 KB</span>
-          <a href="pdfs/aye-fit-hub-day16-lower-body-flexibility.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+          <button onclick="openFhPdf('day16')" class="prog-badge badge-green" style="cursor:pointer;border:none">📖 Read PDF</button>
         </div>
       </div>
 
@@ -852,7 +868,7 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
         <div class="prog-desc">How much protein you actually need, when to eat it, and why — with practical targets for every body type and goal.</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
           <span class="prog-badge badge-indigo">7 pages · 25 KB</span>
-          <a href="pdfs/aye-fit-hub-day17-protein-and-muscle.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+          <button onclick="openFhPdf('day17')" class="prog-badge badge-green" style="cursor:pointer;border:none">📖 Read PDF</button>
         </div>
       </div>
 
@@ -896,6 +912,27 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
     </div>
   </div>
 </section>
+
+<!-- PDF viewer modal -->
+<div id="pdf-viewer-modal" role="dialog" aria-modal="true" onclick="if(event.target===this)closePdfViewer()">
+  <div class="pdf-modal-box">
+    <div class="pdf-modal-head">
+      <div class="pdf-modal-title" id="pv-title"></div>
+      <button class="pdf-modal-close" onclick="closePdfViewer()" aria-label="Close">✕</button>
+    </div>
+    <div class="pdf-modal-meta" id="pv-meta"></div>
+    <div class="pdf-modal-frame" id="pv-frame">
+      <iframe id="pv-iframe" src="" title="PDF viewer" allowfullscreen></iframe>
+    </div>
+    <div class="pdf-modal-foot">
+      <span class="pdf-modal-foot-info" id="pv-info"></span>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a id="pv-open" href="#" target="_blank" rel="noopener" class="btn btn-outline btn-sm" style="font-size:.78rem">🔗 Open in Browser</a>
+        <button onclick="closePdfViewer()" class="btn btn-purple btn-sm" style="font-size:.78rem">✓ Done</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Gallery lightbox -->
 <div id="gallery-lightbox" style="display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;flex-direction:column">
@@ -1128,6 +1165,47 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
 
 <!-- ============================================================ SCRIPTS ============================================================ -->
 <script>
+// PDF viewer
+const FH_PDFS = {
+  day01:{title:'Day 1 — 30-Day Transformation Kickoff',desc:'Program overview, baseline measurements, foundation strength circuit, and Day 1 self-check.',pages:5,size:'85 KB',file:'pdfs/aye-fit-hub-day01-welcome-30day-transformation.pdf'},
+  day02:{title:'Day 2 — HIIT 101: Fat Burning in 20 Min',desc:'What HIIT is, EPOC science, 4 HIIT formats (Tabata/EMOM/AMRAP), 20-min no-equipment circuit.',pages:6,size:'90 KB',file:'pdfs/aye-fit-hub-day02-hiit-101-fat-burning.pdf'},
+  day03:{title:'Day 3 — Core Anatomy: More Than Abs',desc:'9 core muscle groups, bracing technique, 7-exercise core circuit, lower-back injury prevention.',pages:5,size:'92 KB',file:'pdfs/aye-fit-hub-day03-core-anatomy.pdf'},
+  day04:{title:'Day 4 — Home Workout Setup',desc:'Space checklist, exercise substitution table, 8-exercise full-body circuit, Week 1 template.',pages:5,size:'93 KB',file:'pdfs/aye-fit-hub-day04-home-workout-setup.pdf'},
+  day05:{title:'Day 5 — Nutrition Basics: Macros Made Simple',desc:'Macronutrients explained, calorie targets, meal timing, hydration guide, Ethiopian food reference.',pages:5,size:'94 KB',file:'pdfs/aye-fit-hub-day05-nutrition-basics-macros.pdf'},
+  day06:{title:'Day 6 — Mindset Reset',desc:'Identity-based habits, growth mindset, cognitive reframing, Day 6 mental workout and self-audit.',pages:5,size:'91 KB',file:'pdfs/aye-fit-hub-day06-mindset-shift.pdf'},
+  day07:{title:'Day 7 — Active Recovery',desc:'Why recovery is training, muscle repair science, mobility flow, sleep protocol, weekly check-in.',pages:5,size:'93 KB',file:'pdfs/aye-fit-hub-day07-recovery-active-rest.pdf'},
+  day08:{title:'Day 8 — Progressive Overload',desc:'The #1 rule of strength: progressive overload. Load, reps, tempo, density progression methods.',pages:5,size:'95 KB',file:'pdfs/aye-fit-hub-day08-progressive-overload.pdf'},
+  day09:{title:'Day 9 — Tabata Protocol',desc:'Tabata science (Dr. Tabata\'s original research), 20/10 protocol, full Tabata session, tracking sheet.',pages:5,size:'95 KB',file:'pdfs/aye-fit-hub-day09-tabata-training.pdf'},
+  day10:{title:'Day 10 — Flexibility & Mobility',desc:'Static vs dynamic stretching, 12-movement mobility flow, posture correction, injury prevention.',pages:4,size:'120 KB',file:'pdfs/aye-fit-hub-day10-flexibility-fundamentals.pdf'},
+  day11:{title:'Day 11 — Meal Prep Mastery',desc:'Batch cooking system, 5-ingredient meals, meal prep schedule, Ethiopian-friendly recipe examples.',pages:4,size:'120 KB',file:'pdfs/aye-fit-hub-day11-meal-prep-mastery.pdf'},
+  day12:{title:'Day 12 — Sleep & Recovery Science',desc:'Sleep cycles, optimal sleep for muscle growth, sleep hygiene protocol, tracking your recovery score.',pages:4,size:'120 KB',file:'pdfs/aye-fit-hub-day12-sleep-and-recovery.pdf'},
+  day13:{title:'Day 13 — Upper Body Power',desc:'Push/pull mechanics, chest-shoulder-back-bicep-tricep circuits, scapular stability, form checklist.',pages:4,size:'120 KB',file:'pdfs/aye-fit-hub-day13-upper-body-power.pdf'},
+  day14:{title:'Day 14 — Week 2 Check-In',desc:'Celebrate progress, recalibrate goals, adjust training load, and set Week 3 intentions.',pages:4,size:'120 KB',file:'pdfs/aye-fit-hub-day14-week2-checkin.pdf'},
+  day15:{title:'Day 15 — EMOM & AMRAP: Train Like an Athlete',desc:'Two elite training formats — Every Minute On the Minute and As Many Rounds As Possible — with full sessions.',pages:4,size:'112 KB',file:'pdfs/aye-fit-hub-day15-emom-amrap.pdf'},
+  day16:{title:'Day 16 — Lower Body Flexibility',desc:'Hips, hamstrings, and IT band deep-stretch protocol. Unlock lower body mobility for better squat depth.',pages:8,size:'39 KB',file:'pdfs/aye-fit-hub-day16-lower-body-flexibility.pdf'},
+  day17:{title:'Day 17 — Protein & Muscle',desc:'How much protein you actually need, when to eat it, and why — practical targets for every body type.',pages:7,size:'25 KB',file:'pdfs/aye-fit-hub-day17-protein-and-muscle.pdf'},
+};
+function openFhPdf(id){
+  const p = FH_PDFS[id]; if(!p) return;
+  document.getElementById('pv-title').textContent = p.title;
+  document.getElementById('pv-meta').innerHTML =
+    `<span class="pdf-meta-chip">📄 ${p.pages} pages</span><span class="pdf-meta-chip">💾 ${p.size}</span><span class="pdf-meta-chip" style="color:#22c55e;border-color:rgba(34,197,94,0.3);background:rgba(34,197,94,0.08)">✓ FREE</span>`;
+  document.getElementById('pv-info').textContent = p.desc;
+  document.getElementById('pv-open').href = p.file;
+  document.getElementById('pv-iframe').src = p.file;
+  const modal = document.getElementById('pdf-viewer-modal');
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closePdfViewer(){
+  document.getElementById('pdf-viewer-modal').classList.remove('open');
+  document.getElementById('pv-iframe').src = '';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape' && document.getElementById('pdf-viewer-modal').classList.contains('open')) closePdfViewer();
+});
+
 // Gallery lightbox
 const galleryImgs = [
   {src:'assets/images/fit-gallery/fit-gallery-01-back-pose.jpg', cap:'Studio Session — AYE Fit Hub'},
