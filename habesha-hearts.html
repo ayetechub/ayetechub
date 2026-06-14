@@ -114,8 +114,12 @@ section{padding:80px 0;position:relative;overflow:hidden}
   box-shadow:0 0 16px var(--green-glow);
 }
 .brand-text{display:flex;flex-direction:column}
-.brand-name{font-weight:900;font-size:.95rem;color:var(--green);letter-spacing:.5px}
-.brand-tag{font-size:.58rem;color:var(--text-muted);letter-spacing:1.5px;text-transform:uppercase}
+.brand-name{font-weight:900;font-size:1.25rem;color:var(--green);letter-spacing:.3px}
+.brand-tag{font-size:.62rem;color:var(--text-muted);letter-spacing:1.5px;text-transform:uppercase}
+/* ---- LANGUAGE SWITCHER ---- */
+.lang-switcher{display:flex;align-items:center;gap:3px;background:rgba(34,197,94,0.06);border:1px solid var(--border-strong);border-radius:9px;padding:3px;font-family:'Noto Sans Ethiopic','Segoe UI',sans-serif}
+.lang-btn{padding:4px 9px;border-radius:6px;font-size:.68rem;font-weight:700;color:var(--text-muted);cursor:pointer;transition:all .2s;background:none;border:none;font-family:inherit;letter-spacing:.5px}
+.lang-btn.active,.lang-btn:hover{background:var(--green);color:#fff}
 .nav-menu{display:none;gap:20px;align-items:center}
 @media(min-width:1024px){.nav-menu{display:flex}}
 .nav-link{position:relative;color:var(--text-soft);font-size:.75rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:6px 0;transition:color .3s}
@@ -462,14 +466,13 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
 @media(max-width:900px){.founder-inner{grid-template-columns:1fr;text-align:center}}
 .founder-photo-wrap{position:relative}
 .founder-photo{
-  width:240px;height:300px;border-radius:24px;
-  background:linear-gradient(160deg,rgba(34,197,94,0.12),rgba(22,163,74,0.06));
+  width:280px;height:360px;border-radius:24px;
   border:2px solid var(--border-strong);
-  display:flex;align-items:center;justify-content:center;
-  font-size:5rem;
-  box-shadow:0 20px 60px rgba(34,197,94,0.15);
+  overflow:hidden;
+  box-shadow:0 20px 60px rgba(34,197,94,0.2);
   margin:0 auto;
 }
+.founder-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
 .founder-badge{
   position:absolute;bottom:-12px;right:0;
   padding:8px 16px;border-radius:100px;
@@ -582,7 +585,7 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
 <header id="navbar">
   <div class="container nav-inner">
     <a href="#hero" class="brand" aria-label="Habesha Hearts home">
-      <img src="assets/images/habesha-hearts-logo.svg" alt="Habesha Hearts" style="width:42px;height:42px;border-radius:10px;animation:heartbeat 2.5s ease-in-out infinite;filter:drop-shadow(0 0 8px rgba(124,58,237,0.5))"/>
+      <img src="assets/images/habesha-hearts-logo.svg" alt="Habesha Hearts" style="width:58px;height:58px;border-radius:13px;animation:heartbeat 2.5s ease-in-out infinite;filter:drop-shadow(0 0 10px rgba(124,58,237,0.6))"/>
       <div class="brand-text">
         <div class="brand-name" style="color:#7C3AED">Habesha Hearts</div>
         <div class="brand-tag">Find Your Match</div>
@@ -590,16 +593,21 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
     </a>
 
     <nav class="nav-menu" aria-label="Main navigation">
-      <a href="#features" class="nav-link">Features</a>
-      <a href="#mission" class="nav-link">Mission</a>
-      <a href="#founder" class="nav-link">Founder</a>
-      <a href="#safety" class="nav-link">Safety</a>
-      <a href="#pricing" class="nav-link">Plans</a>
-      <a href="#contact" class="nav-link">Contact</a>
+      <a href="#features" class="nav-link" data-i18n="nav.features">Features</a>
+      <a href="#mission" class="nav-link" data-i18n="nav.mission">Mission</a>
+      <a href="#founder" class="nav-link" data-i18n="nav.founder">Founder</a>
+      <a href="#safety" class="nav-link" data-i18n="nav.safety">Safety</a>
+      <a href="#pricing" class="nav-link" data-i18n="nav.plans">Plans</a>
+      <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
       <a href="index.html" class="nav-link" style="color:var(--neon)">AYE Tech Hub</a>
     </nav>
 
     <div class="nav-controls">
+      <div class="lang-switcher" aria-label="Language selector">
+        <button class="lang-btn active" onclick="setLang('en')" id="lang-en">EN</button>
+        <button class="lang-btn" onclick="setLang('am')" id="lang-am">አማ</button>
+        <button class="lang-btn" onclick="setLang('ti')" id="lang-ti">ትግ</button>
+      </div>
       <button class="icon-btn" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle theme">☀</button>
       <a href="#download" class="btn btn-green btn-sm hide-mobile">📲 Download</a>
       <button class="icon-btn hamburger" onclick="toggleMobileMenu()" aria-label="Open menu">☰</button>
@@ -607,12 +615,12 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
   </div>
 
   <div id="mobile-menu" class="container">
-    <a href="#features" class="mobile-link" onclick="toggleMobileMenu()">Features</a>
-    <a href="#mission" class="mobile-link" onclick="toggleMobileMenu()">Mission</a>
-    <a href="#founder" class="mobile-link" onclick="toggleMobileMenu()">Founder</a>
-    <a href="#safety" class="mobile-link" onclick="toggleMobileMenu()">Safety</a>
-    <a href="#pricing" class="mobile-link" onclick="toggleMobileMenu()">Plans</a>
-    <a href="#contact" class="mobile-link" onclick="toggleMobileMenu()">Contact</a>
+    <a href="#features" class="mobile-link" onclick="toggleMobileMenu()" data-i18n="nav.features">Features</a>
+    <a href="#mission" class="mobile-link" onclick="toggleMobileMenu()" data-i18n="nav.mission">Mission</a>
+    <a href="#founder" class="mobile-link" onclick="toggleMobileMenu()" data-i18n="nav.founder">Founder</a>
+    <a href="#safety" class="mobile-link" onclick="toggleMobileMenu()" data-i18n="nav.safety">Safety</a>
+    <a href="#pricing" class="mobile-link" onclick="toggleMobileMenu()" data-i18n="nav.plans">Plans</a>
+    <a href="#contact" class="mobile-link" onclick="toggleMobileMenu()" data-i18n="nav.contact">Contact</a>
     <a href="index.html" class="mobile-link" style="color:var(--neon)" onclick="toggleMobileMenu()">← AYE Tech Hub</a>
     <div style="display:flex;gap:10px;margin-top:14px">
       <a href="#download" class="btn btn-green" style="flex:1" onclick="toggleMobileMenu()">📲 Download App</a>
@@ -642,19 +650,16 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
       <div style="margin-bottom:20px" class="reveal">
         <img src="assets/images/habesha-hearts-logo.svg" alt="Habesha Hearts Logo" style="width:90px;height:90px;border-radius:20px;filter:drop-shadow(0 0 20px rgba(124,58,237,0.5))"/>
       </div>
-      <div class="hero-tag reveal" style="border-color:rgba(124,58,237,0.4);background:rgba(124,58,237,0.08);color:#7C3AED">💜 The Habesha Dating App</div>
-      <h1 class="hero-headline gradient-text reveal">
-        Find Your<br/>Habesha<br/>Match
-      </h1>
-      <p class="hero-subtitle reveal">
-        The first dedicated dating app for <strong style="color:var(--green)">Ethiopian</strong> and <strong style="color:var(--green)">Eritrean</strong> singles worldwide. Connect with someone who truly understands your culture, language, and values — wherever you are in the world.
+      <div class="hero-tag reveal" style="border-color:rgba(124,58,237,0.4);background:rgba(124,58,237,0.08);color:#7C3AED"><span data-i18n="hero.tag">💜 The Habesha Dating App</span></div>
+      <h1 class="hero-headline gradient-text reveal"><span data-i18n-html="hero.headline">Find Your<br/>Habesha<br/>Match</span></h1>
+      <p class="hero-subtitle reveal"><span data-i18n-html="hero.subtitle">The first dedicated dating app for <strong style="color:var(--green)">Ethiopian</strong> and <strong style="color:var(--green)">Eritrean</strong> singles worldwide. Connect with someone who truly understands your culture, language, and values — wherever you are in the world.
       </p>
       <div class="hero-buttons reveal">
         <a href="#download" class="btn btn-green">
-          📲 Download Free
+          <span data-i18n="hero.btn_download">📲 Download Free</span>
         </a>
         <a href="#features" class="btn btn-outline">
-          ✨ See Features
+          <span data-i18n="hero.btn_features">✨ See Features</span>
         </a>
       </div>
       <div class="hero-stats reveal">
@@ -727,7 +732,7 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
 <section id="features">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-tag">✨ App Features</div>
+      <div class="section-tag"><span data-i18n="features.tag">✨ App Features</span></div>
       <h2 class="section-title">Everything You Need to<br/><span class="gradient-text">Find a Real Connection</span></h2>
       <p class="section-subtitle">Designed specifically for Habesha singles — with features that matter to our community.</p>
     </div>
@@ -991,7 +996,7 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
 <section id="mission" style="background:linear-gradient(180deg,transparent,rgba(34,197,94,0.04),transparent)">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-tag">🌟 Our Mission</div>
+      <div class="section-tag"><span data-i18n="mission.tag">🌟 Our Mission</span></div>
       <h2 class="section-title">Why <span class="gradient-text">Habesha Hearts</span> Exists</h2>
       <p class="section-subtitle" style="max-width:680px">Connecting Habesha people worldwide through meaningful and authentic relationships — while fostering a respectful, secure, and culturally connected community.</p>
     </div>
@@ -1039,7 +1044,7 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
     </div>
     <div class="founder-inner">
       <div class="founder-photo-wrap reveal">
-        <div class="founder-photo">👨‍💻</div>
+        <div class="founder-photo"><img src="assets/images/awet-founder.jpg" alt="Awet G. Nway - Founder of Habesha Hearts"/></div>
         <div class="founder-badge">Founder & CEO · AYE Tech Hub</div>
       </div>
       <div class="founder-info reveal">
@@ -1064,7 +1069,7 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
 <section id="safety" style="background:linear-gradient(180deg,rgba(10,22,40,0.98),transparent)">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-tag">🛡️ Trust & Safety</div>
+      <div class="section-tag"><span data-i18n="safety.tag">🛡 TRUST & SAFETY</span></div>
       <h2 class="section-title">Your Safety is Our <span class="gradient-text">Top Priority</span></h2>
       <p class="section-subtitle">Habesha Hearts is built with multiple layers of protection to keep every member safe, respected, and protected from abuse or fraud.</p>
     </div>
@@ -1107,7 +1112,7 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
 <section id="pricing">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-tag">💎 Membership Plans</div>
+      <div class="section-tag"><span data-i18n="plans.tag">💎 Membership Plans</span></div>
       <h2 class="section-title">Choose Your <span class="gradient-text">Plan</span></h2>
       <p class="section-subtitle">Start free and upgrade anytime. Pay in USD or Ethiopian Birr (ETB) via Wegagen Bank, Oromia Bank, or international card.</p>
     </div>
@@ -1367,5 +1372,283 @@ async function submitForm(e){
   }finally{btn.disabled=false;btn.textContent='Send Message →'}
 }
 </script>
-</body>
+
+<!-- ============================================================ LANGUAGE SWITCHER ============================================================ -->
+<script>
+const HH_TRANSLATIONS = {
+  en: {
+    'nav.features': 'Features',
+    'nav.mission': 'Mission',
+    'nav.founder': 'Founder',
+    'nav.safety': 'Safety',
+    'nav.plans': 'Plans',
+    'nav.contact': 'Contact',
+    'nav.download': '📲 Download',
+    'hero.tag': '💜 The Habesha Dating App',
+    'hero.btn_download': '📲 Download Free',
+    'hero.btn_features': '✨ See Features',
+    'features.tag': '✨ App Features',
+    'mission.tag': '🌟 Our Mission',
+    'safety.tag': '🛡 TRUST & SAFETY',
+    'plans.tag': '💎 Membership Plans',
+    'founder.badge': 'Founder & CEO · AYE Tech Hub',
+    // Feature cards
+    'feat.photo.title': 'Photo Swiping',
+    'feat.photo.desc': 'Browse multiple photos per profile by swiping. Know exactly who you\'re connecting with before you say hello.',
+    'feat.voice.title': 'Voice Bio',
+    'feat.voice.desc': 'Record up to 15 seconds of your voice. Let your personality shine through — hear someone\'s voice before you match.',
+    'feat.msg.title': 'Private Messaging',
+    'feat.msg.desc': 'Send private messages to anyone you like. No match required — open, respectful communication from the start.',
+    'feat.discover.title': 'Smart Discover',
+    'feat.discover.desc': 'Swipe through curated profiles with glassmorphism cards. Filter by age, city, interests, and more.',
+    'feat.verified.title': 'Verified Profiles',
+    'feat.verified.desc': 'Blue badge verification means you\'re connecting with real people — no bots, no fake accounts.',
+    'feat.feed.title': 'Community Feed',
+    'feat.feed.desc': 'Share moments, see posts from the community, and like content. More than dating — a Habesha social space.',
+    'feat.premium.title': 'Premium & Premium+',
+    'feat.premium.desc': 'Unlock unlimited likes, see who liked you, boost your profile, and more. Pay in USD or Ethiopian Birr (ETB).',
+    'feat.safety.title': 'Report & Block',
+    'feat.safety.desc': 'Full report and block system keeps the community safe. Our moderation team reviews all reports.',
+    // Mission cards
+    'mission.m1.title': 'Meaningful Relationships',
+    'mission.m2.title': 'Friendship First',
+    'mission.m3.title': 'Community Building',
+    'mission.m4.title': 'Cultural Connection',
+    'mission.m5.title': 'Respect & Safety',
+    'mission.m6.title': 'Diaspora Pride',
+    // Plans
+    'plans.free': 'Free',
+    'plans.premium': 'Premium',
+    'plans.premiumplus': 'Premium+',
+    'plans.free.price': '$0 / forever',
+    'plans.premium.price': '$9.99 / month',
+    'plans.premiumplus.price': '$19.99 / month',
+    'plans.cta.free': 'Get Started Free',
+    'plans.cta.premium': 'Get Premium',
+    'plans.cta.premiumplus': 'Get Premium+',
+    // Download
+    'download.store': 'GET IT ON',
+    'download.store.name': 'Google Play',
+    // Contact
+    'contact.send': 'Send Message',
+    // Floating CTA
+    'cta.download': '📲 Download App',
+  },
+  am: {
+    'nav.features': 'ባህሪያት',
+    'nav.mission': 'ተልዕኮ',
+    'nav.founder': 'መሥራቹ',
+    'nav.safety': 'ደህንነት',
+    'nav.plans': 'ዕቅዶች',
+    'nav.contact': 'ያግኙን',
+    'nav.download': '📲 አውርድ',
+    'hero.tag': '💜 የሀበሻ ዳቲንግ አፕ',
+    'hero.btn_download': '📲 በነፃ አውርድ',
+    'hero.btn_features': '✨ ባህሪያቱን ይመልከቱ',
+    'features.tag': '✨ የአፕ ባህሪያት',
+    'mission.tag': '🌟 ተልዕኮአችን',
+    'safety.tag': '🛡 ደህንነት & እምነት',
+    'plans.tag': '💎 የአባልነት ዕቅዶች',
+    'founder.badge': 'መሥራቹ & ዋና ሥራ አስኪያጅ · AYE Tech Hub',
+    'feat.photo.title': 'ፎቶ ማሸብለል',
+    'feat.photo.desc': 'ለእያንዳንዱ ፕሮፋይል ብዙ ፎቶዎችን ያስሱ። ሰላም ከማለትዎ በፊት ከ누ን እያነጋገሩ እንደሆነ ያውቃሉ።',
+    'feat.voice.title': 'የድምፅ ባዮ',
+    'feat.voice.desc': 'እስከ 15 ሰከንድ ድምፅዎን ይቅዱ። ከማዛመድ በፊት የሌሎችን ድምፅ ይስሙ።',
+    'feat.msg.title': 'የግል መልዕክት',
+    'feat.msg.desc': 'ለሚወዷቸው ሰዎች የግል መልዕክቶች ይላኩ። ክብርን ከሚያሳዩ ክፍት ግንኙነቶች ጀምሩ።',
+    'feat.discover.title': 'ፕሮፋይሎችን ፈልጉ',
+    'feat.discover.desc': 'በዕድሜ፣ ከተማ፣ ፍላጎቶች እና ሌሎች ነገሮች ያጣሩ። ለሀበሻ ብቻ ።',
+    'feat.verified.title': 'የተረጋገጡ ፕሮፋይሎች',
+    'feat.verified.desc': 'ሰማያዊ ባጅ ማረጋገጫ ከእውነተኛ ሰዎች ጋር እያነጋገሩ መሆናቸውን ያሳያል።',
+    'feat.feed.title': 'ማህበረሰብ ፊድ',
+    'feat.feed.desc': 'ቅጽበቶችን ያጋሩ፣ ከማህበረሰቡ ፖስቶችን ይመልከቱ። ከዳቲንግ በላይ — የሀበሻ ማህበራዊ ቦታ።',
+    'feat.premium.title': 'ፕሪሚየም & ፕሪሚየም+',
+    'feat.premium.desc': 'ያልተገደበ ላይኮች ይክፈቱ፣ 누ን እንደወደዱዎ ይዩ፣ ፕሮፋይልዎን ያሳድጉ። በዶላር ወይም ብር ይክፈሉ።',
+    'feat.safety.title': 'ሪፖርት & ብሎክ',
+    'feat.safety.desc': 'ሙሉ ሪፖርት እና ብሎክ ሲስተም ማህበረሰቡን ደህንነቱ ይጠብቃል። ቡድናችን ሁሉንም ሪፖርቶች ያጣራል።',
+    'mission.m1.title': 'ትርጉም ያለው ግንኙነት',
+    'mission.m2.title': 'ወዳጅነት አስቀድሞ',
+    'mission.m3.title': 'ማህበረሰብ ግንባታ',
+    'mission.m4.title': 'የባህል ትስስር',
+    'mission.m5.title': 'ክብር & ደህንነት',
+    'mission.m6.title': 'ዲያስፖራ ኩራት',
+    'plans.free': 'ነፃ',
+    'plans.premium': 'ፕሪሚየም',
+    'plans.premiumplus': 'ፕሪሚየም+',
+    'plans.free.price': '$0 / ለዘላለም',
+    'plans.premium.price': '$9.99 / ወር',
+    'plans.premiumplus.price': '$19.99 / ወር',
+    'plans.cta.free': 'ነፃ ጀምር',
+    'plans.cta.premium': 'ፕሪሚየም አግኝ',
+    'plans.cta.premiumplus': 'ፕሪሚየም+ አግኝ',
+    'download.store': 'ከዚህ አውርድ',
+    'download.store.name': 'Google Play',
+    'contact.send': 'መልዕክት ላክ',
+    'cta.download': '📲 አፑን አውርድ',
+  },
+  ti: {
+    'nav.features': 'ባህርያት',
+    'nav.mission': 'ተልእኾ',
+    'nav.founder': 'መስራቲ',
+    'nav.safety': 'ድሕነት',
+    'nav.plans': 'ውጥናት',
+    'nav.contact': 'ርኸቡና',
+    'nav.download': '📲 ኣውርድ',
+    'hero.tag': '💜 ናይ ሓበሻ ዳቲንግ ኣፕ',
+    'hero.btn_download': '📲 ብነጻ ኣውርድ',
+    'hero.btn_features': '✨ ባህርያት ርኣይ',
+    'features.tag': '✨ ናይ ኣፕ ባህርያት',
+    'mission.tag': '🌟 ተልእኾና',
+    'safety.tag': '🛡 ድሕነት & እምነት',
+    'plans.tag': '💎 ናይ ኣባልነት ውጥናት',
+    'founder.badge': 'መስራቲ & ዋና ፈጻሚ · AYE Tech Hub',
+    'feat.photo.title': 'ፎቶ ምጥፋጥ',
+    'feat.photo.desc': 'ንነፍሲ ወከፍ ፕሮፋይል ብዙ ፎቶታት ተመልከት። ሰላም ቅድሚ ምባልካ ምስ ዝተራኸብካ ትፈልጥ።',
+    'feat.voice.title': 'ናይ ድምጺ ባዮ',
+    'feat.voice.desc': 'ክሳዕ 15 ሰኮንዲ ድምጽኻ ኣቐምጥ። ቅድሚ ምምጥጣን ናይ ሰባት ድምጺ ስምዕ።',
+    'feat.msg.title': 'ናይ ውልቂ መልእኽቲ',
+    'feat.msg.desc': 'ናብ ዝደለኻዮ ሰብ ናይ ውልቂ መልእኽቲ ስደድ። ዝኸበረ ናይ ክፉት ምርኻብ ጀምር።',
+    'feat.discover.title': 'ፕሮፋይላት ፈልጥ',
+    'feat.discover.desc': 'ብዕድመ፣ ከተማ፣ ዝጥዕሞም ባህርያት ፈልትር ግበር። ንሓበሻ ጥራሕ።',
+    'feat.verified.title': 'ዝተረጋገጹ ፕሮፋይላት',
+    'feat.verified.desc': 'ናይ ሰማያዊ ባጅ ኣረጋጊጽካ ምስ ሓቀኛ ሰባት ከምዘለካ ይሕብረካ — ቦት የለን።',
+    'feat.feed.title': 'ናይ ሕብረተሰብ ፊድ',
+    'feat.feed.desc': 'ናይ ጊዜ ቅጽበት ካብ ሕብረተሰብ ተጋሪ። ካብ ዳቲንግ ንላዕሊ — ናይ ሓበሻ ማሕበራዊ ቦታ።',
+    'feat.premium.title': 'ፕሪሚየም & ፕሪሚየም+',
+    'feat.premium.desc': 'ዘይተደረተ ላይካት ክፈት፣ ዝወደዳካ ርኣይ፣ ፕሮፋይልካ ኣደምቕ። ብዶላር ወይ ብር ክፈል።',
+    'feat.safety.title': 'ሪፖርት & ብሎክ',
+    'feat.safety.desc': 'ዝተሓወሰ ሪፖርት ን ብሎክ ሲስተም ሕብረተሰብ ድሕሩ ይሕሉ። ቡድናና ኩሎም ሪፖርታት ይምርምር።',
+    'mission.m1.title': 'ዘምዕቕ ምርኻብ',
+    'mission.m2.title': 'ቅድም ዕርክነት',
+    'mission.m3.title': 'ሕብረተሰብ ምህናጽ',
+    'mission.m4.title': 'ናይ ባህሊ ምትእስሳር',
+    'mission.m5.title': 'ኽብርን ድሕነትን',
+    'mission.m6.title': 'ናይ ዲያስፖራ ኩርዓት',
+    'plans.free': 'ነጻ',
+    'plans.premium': 'ፕሪሚየም',
+    'plans.premiumplus': 'ፕሪሚየም+',
+    'plans.free.price': '$0 / ንዘለኣለም',
+    'plans.premium.price': '$9.99 / ወርሒ',
+    'plans.premiumplus.price': '$19.99 / ወርሒ',
+    'plans.cta.free': 'ብነጻ ጀምር',
+    'plans.cta.premium': 'ፕሪሚየም ርኸብ',
+    'plans.cta.premiumplus': 'ፕሪሚየም+ ርኸብ',
+    'download.store': 'ካብዚ ኣውርድ',
+    'download.store.name': 'Google Play',
+    'contact.send': 'መልእኽቲ ስደድ',
+    'cta.download': '📲 ኣፑ ኣውርድ',
+  }
+};
+
+let currentLang = localStorage.getItem('hh_lang') || 'en';
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('hh_lang', lang);
+
+  // Update active button
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('lang-' + lang);
+  if (activeBtn) activeBtn.classList.add('active');
+
+  // Set Ethiopic font on body when using AM or TI
+  document.body.style.fontFamily = (lang !== 'en')
+    ? "'Noto Sans Ethiopic','Segoe UI',sans-serif"
+    : "'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',Arial,sans-serif";
+
+  const t = HH_TRANSLATIONS[lang] || HH_TRANSLATIONS.en;
+
+  // Swap all data-i18n text elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key]) el.textContent = t[key];
+  });
+
+  // Swap all data-i18n-html elements (allow HTML like <br/>)
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (t[key]) el.innerHTML = t[key];
+  });
+
+  // Hero headline special case
+  const headline = document.querySelector('.hero-headline');
+  if (headline) {
+    if (lang === 'am') headline.innerHTML = 'ሀበሻ<br/>ፍቅርህን<br/>ፈልግ';
+    else if (lang === 'ti') headline.innerHTML = 'ናይ ሓበሻ<br/>ፍቕርኻ<br/>ፈልጥ';
+    else headline.innerHTML = 'Find Your<br/>Habesha<br/>Match';
+  }
+
+  // Hero subtitle
+  const subtitle = document.querySelector('.hero-subtitle');
+  if (subtitle) {
+    if (lang === 'am') subtitle.innerHTML = 'ለ<strong style="color:var(--green)">ኢትዮጵያ</strong> እና <strong style="color:var(--green)">ኤርትራ</strong> ነጠላ ሰዎች ዓለም አቀፍ የተሰጠ የመጀመሪያው ዳቲንግ አፕ። ባህልዎን፣ ቋንቋዎን እና እሴቶቻቸውን በትክክል ከሚረዱ ሰዎች ጋር ይገናኙ።';
+    else if (lang === 'ti') subtitle.innerHTML = 'ንኤርትራውያን ናይ <strong style="color:var(--green)">ኤርትራ</strong> ን <strong style="color:var(--green)">ኢትዮጵያ</strong> ነጠልቲ ኣህጉር ለዊጥ ብናይ ቀዳማይ ዳቲንግ ኣፕ ርኸቡ።';
+    else subtitle.innerHTML = 'The first dedicated dating app for <strong style="color:var(--green)">Ethiopian</strong> and <strong style="color:var(--green)">Eritrean</strong> singles worldwide. Connect with someone who truly understands your culture, language, and values — wherever you are in the world.';
+  }
+
+  // Feature cards — map by title text
+  const featureMap = {
+    en: [
+      ['Photo Swiping','feat.photo.title','feat.photo.desc'],
+      ['Voice Bio','feat.voice.title','feat.voice.desc'],
+      ['Private Messaging','feat.msg.title','feat.msg.desc'],
+      ['Smart Discover','feat.discover.title','feat.discover.desc'],
+      ['Verified Profiles','feat.verified.title','feat.verified.desc'],
+      ['Community Feed','feat.feed.title','feat.feed.desc'],
+      ['Premium & Premium+','feat.premium.title','feat.premium.desc'],
+      ['Report & Block','feat.safety.title','feat.safety.desc'],
+    ]
+  };
+
+  document.querySelectorAll('.feature-card').forEach((card, i) => {
+    const titleEl = card.querySelector('.feature-title');
+    const descEl = card.querySelector('.feature-desc');
+    const keys = [
+      ['feat.photo.title','feat.photo.desc'],
+      ['feat.voice.title','feat.voice.desc'],
+      ['feat.msg.title','feat.msg.desc'],
+      ['feat.discover.title','feat.discover.desc'],
+      ['feat.verified.title','feat.verified.desc'],
+      ['feat.feed.title','feat.feed.desc'],
+      ['feat.premium.title','feat.premium.desc'],
+      ['feat.safety.title','feat.safety.desc'],
+    ];
+    if (keys[i] && titleEl && descEl) {
+      if (t[keys[i][0]]) titleEl.textContent = t[keys[i][0]];
+      if (t[keys[i][1]]) descEl.textContent = t[keys[i][1]];
+    }
+  });
+
+  // Mission cards
+  const missionTitles = document.querySelectorAll('.mission-title');
+  const missionKeys = ['mission.m1.title','mission.m2.title','mission.m3.title','mission.m4.title','mission.m5.title','mission.m6.title'];
+  missionTitles.forEach((el, i) => {
+    if (missionKeys[i] && t[missionKeys[i]]) el.textContent = t[missionKeys[i]];
+  });
+
+  // Plan names
+  const planNames = document.querySelectorAll('.plan-name');
+  const planKeys = ['plans.free','plans.premium','plans.premiumplus'];
+  planNames.forEach((el, i) => { if (planKeys[i] && t[planKeys[i]]) el.textContent = t[planKeys[i]]; });
+
+  // Plan CTA buttons
+  const planCtaBtns = document.querySelectorAll('.plans-grid .btn');
+  const ctaKeys = ['plans.cta.free','plans.cta.premium','plans.cta.premiumplus'];
+  planCtaBtns.forEach((el, i) => { if (ctaKeys[i] && t[ctaKeys[i]]) el.textContent = t[ctaKeys[i]]; });
+
+  // Floating CTA
+  const floatingBtn = document.querySelector('.floating-btn');
+  if (floatingBtn && t['cta.download']) floatingBtn.textContent = t['cta.download'];
+
+  // Contact submit button
+  const submitBtn = document.getElementById('fsubmit');
+  if (submitBtn && t['contact.send']) submitBtn.textContent = t['contact.send'];
+}
+
+// Init on page load
+document.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem('hh_lang') || 'en';
+  setLang(saved);
+});
+</script></body>
 </html>
