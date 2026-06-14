@@ -308,6 +308,18 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
 .footer-aye{font-size:.75rem;color:var(--text-muted)}
 .footer-aye a{color:var(--purple)}
 
+/* ---- GALLERY ---- */
+.fh-gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+@media(min-width:900px){.fh-gallery-grid{grid-template-columns:repeat(3,1fr)}}
+.fh-gallery-item{position:relative;border-radius:18px;overflow:hidden;cursor:pointer;aspect-ratio:4/5;background:rgba(10,22,40,0.6);border:1px solid var(--border)}
+.fh-gallery-item img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .4s ease}
+.fh-gallery-item:hover img{transform:scale(1.06)}
+.fh-gallery-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.7) 0%,transparent 55%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:18px}
+.fh-gallery-item:hover .fh-gallery-overlay{opacity:1}
+.fh-gallery-caption{color:#fff;font-size:.88rem;font-weight:700;letter-spacing:.3px}
+#gallery-lightbox{display:none}
+#gallery-lightbox.open{display:flex}
+
 /* ---- FLOATING CTA ---- */
 #floating-cta{position:fixed;bottom:28px;right:28px;z-index:500;opacity:0;transform:translateY(20px);transition:all .4s;pointer-events:none}
 #floating-cta.show{opacity:1;transform:translateY(0);pointer-events:auto}
@@ -334,6 +346,7 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
       <a href="#mission" class="nav-link">Mission</a>
       <a href="#programs" class="nav-link">Programs</a>
       <a href="#pdfs" class="nav-link">PDFs</a>
+      <a href="#gallery" class="nav-link">Gallery</a>
       <a href="#blogs" class="nav-link">Blogs</a>
       <a href="#faq" class="nav-link">FAQ</a>
       <a href="#contact" class="nav-link">Contact</a>
@@ -353,6 +366,7 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
     <a href="#mission" class="mobile-link" onclick="toggleMobileMenu()">Mission</a>
     <a href="#programs" class="mobile-link" onclick="toggleMobileMenu()">Programs</a>
     <a href="#pdfs" class="mobile-link" onclick="toggleMobileMenu()">PDFs</a>
+    <a href="#gallery" class="mobile-link" onclick="toggleMobileMenu()">Gallery</a>
     <a href="#blogs" class="mobile-link" onclick="toggleMobileMenu()">Blogs</a>
     <a href="#faq" class="mobile-link" onclick="toggleMobileMenu()">FAQ</a>
     <a href="#contact" class="mobile-link" onclick="toggleMobileMenu()">Contact</a>
@@ -614,7 +628,7 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
     <div class="trainer-inner">
       <div class="trainer-photo-wrap reveal">
         <div class="trainer-photo">
-          <img src="assets/images/awet-founder.jpg" alt="Awet G. Nway — Founder of AYE Fit Hub"/>
+          <img src="assets/images/fit-gallery/fit-gallery-01-back-pose.jpg" alt="Awet G. Nway — Founder of AYE Fit Hub, in front of AYE Fit Hub studio sign"/>
         </div>
         <div class="trainer-badge">Founder · AYE Tech Hub & AYE Fit Hub</div>
       </div>
@@ -803,22 +817,42 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
       </div>
 
       <div class="program-card reveal">
-        <span class="prog-icon">🦵</span>
-        <div class="prog-title">Day 14 — Lower Body Burn</div>
-        <div class="prog-desc">Glute activation, quad/hamstring/calf development, squat pattern mastery, lower body superset.</div>
+        <span class="prog-icon">📊</span>
+        <div class="prog-title">Day 14 — Week 2 Check-In</div>
+        <div class="prog-desc">Celebrate progress, recalibrate goals, adjust training load, and set Week 3 intentions.</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
-          <span class="prog-badge badge-rose">6 pages</span>
-          <a href="pdfs/aye-fit-hub-day14-lower-body-burn.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+          <span class="prog-badge badge-rose">4 pages · 120 KB</span>
+          <a href="pdfs/aye-fit-hub-day14-week2-checkin.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
         </div>
       </div>
 
       <div class="program-card reveal">
-        <span class="prog-icon">🏆</span>
-        <div class="prog-title">Day 15 — Halfway Check-In</div>
-        <div class="prog-desc">Progress assessment framework, measurements retake, goal adjustment, Week 3 programming preview.</div>
+        <span class="prog-icon">⏳</span>
+        <div class="prog-title">Day 15 — EMOM & AMRAP: Train Like an Athlete</div>
+        <div class="prog-desc">Two elite training formats — Every Minute On the Minute and As Many Rounds As Possible — with full sessions for each.</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
-          <span class="prog-badge badge-teal">5 pages</span>
-          <a href="pdfs/aye-fit-hub-day15-halfway-checkin.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+          <span class="prog-badge badge-teal">4 pages · 112 KB</span>
+          <a href="pdfs/aye-fit-hub-day15-emom-amrap.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+        </div>
+      </div>
+
+      <div class="program-card reveal">
+        <span class="prog-icon">🦵</span>
+        <div class="prog-title">Day 16 — Lower Body Flexibility</div>
+        <div class="prog-desc">Hips, hamstrings, and IT band deep-stretch protocol. Unlock lower body mobility for better squat depth and injury prevention.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
+          <span class="prog-badge badge-orange">8 pages · 39 KB</span>
+          <a href="pdfs/aye-fit-hub-day16-lower-body-flexibility.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
+        </div>
+      </div>
+
+      <div class="program-card reveal">
+        <span class="prog-icon">🥩</span>
+        <div class="prog-title">Day 17 — Protein & Muscle</div>
+        <div class="prog-desc">How much protein you actually need, when to eat it, and why — with practical targets for every body type and goal.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
+          <span class="prog-badge badge-indigo">7 pages · 25 KB</span>
+          <a href="pdfs/aye-fit-hub-day17-protein-and-muscle.pdf" download class="prog-badge badge-green" style="cursor:pointer;text-decoration:none">⬇ Download</a>
         </div>
       </div>
 
@@ -830,70 +864,130 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
   </div>
 </section>
 
-<!-- ============================================================ BLOGS ============================================================ -->
-<section id="blogs">
+<!-- ============================================================ GALLERY ============================================================ -->
+<section id="gallery" style="background:linear-gradient(180deg,rgba(167,139,250,0.05),transparent)">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-tag">📹 Content & Blogs</div>
-      <h2 class="section-title">Watch. Learn. <span class="gradient-text">Transform.</span></h2>
-      <p class="section-subtitle">Every day of the program is a full episode — YouTube video + written guide + PDF. Follow along at your own pace.</p>
+      <div class="section-tag">📸 Photo Gallery</div>
+      <h2 class="section-title">Train Hard. <span class="gradient-text">Look The Part.</span></h2>
+      <p class="section-subtitle">Behind the program — real training, real effort, real results.</p>
     </div>
-    <div class="features-grid" style="grid-template-columns:repeat(auto-fill,minmax(300px,1fr))">
-
-      <div class="feature-card reveal" style="border-color:rgba(244,63,94,0.3)">
-        <div class="feature-icon" style="background:rgba(244,63,94,0.1)">▶</div>
-        <div class="feature-title">YouTube Channel</div>
-        <div class="card-desc">Full workout videos, tutorials, and daily program episodes. Subscribe to @ayefithub for new content every week.</div>
-        <a href="https://youtube.com/@ayefithub" target="_blank" rel="noopener" class="btn btn-rose btn-sm" style="margin-top:16px;display:inline-flex">▶ Watch on YouTube</a>
+    <div class="fh-gallery-grid reveal">
+      <div class="fh-gallery-item" onclick="openGallery(0)" data-caption="Studio Session — AYE Fit Hub">
+        <img src="assets/images/fit-gallery/fit-gallery-01-back-pose.jpg" alt="Awet — back pose in front of AYE Fit Hub studio sign" loading="lazy"/>
+        <div class="fh-gallery-overlay"><div class="fh-gallery-caption">Studio Session — AYE Fit Hub</div></div>
       </div>
-
-      <div class="feature-card reveal" style="border-color:rgba(167,139,250,0.3)">
-        <div class="feature-icon">🎵</div>
-        <div class="feature-title">TikTok Short Clips</div>
-        <div class="card-desc">60-second workout tips, quick form checks, nutrition hacks, and motivation clips. Follow @ayefithub on TikTok.</div>
-        <a href="https://tiktok.com/@ayefithub" target="_blank" rel="noopener" class="btn btn-outline btn-sm" style="margin-top:16px;display:inline-flex">Follow on TikTok</a>
+      <div class="fh-gallery-item" onclick="openGallery(1)" data-caption="Day One Energy">
+        <img src="assets/images/fit-gallery/fit-gallery-02-thumbs-up.jpg" alt="Day one energy — thumbs up after training" loading="lazy"/>
+        <div class="fh-gallery-overlay"><div class="fh-gallery-caption">Day One Energy</div></div>
       </div>
-
-      <div class="feature-card reveal" style="border-color:rgba(24,119,242,0.3)">
-        <div class="feature-icon" style="background:rgba(24,119,242,0.1)">👥</div>
-        <div class="feature-title">Facebook Community</div>
-        <div class="card-desc">Share progress, ask questions, and connect with the growing AYE Fit Hub community. Post your Day results.</div>
-        <a href="https://facebook.com/ayefithub" target="_blank" rel="noopener" class="btn btn-outline btn-sm" style="margin-top:16px;display:inline-flex;border-color:#1877f2;color:#1877f2">Join on Facebook</a>
+      <div class="fh-gallery-item" onclick="openGallery(2)" data-caption="Strength in Progress">
+        <img src="assets/images/fit-gallery/fit-gallery-03-double-bicep.jpg" alt="Double bicep flex — strength in progress" loading="lazy"/>
+        <div class="fh-gallery-overlay"><div class="fh-gallery-caption">Strength in Progress</div></div>
       </div>
+      <div class="fh-gallery-item" onclick="openGallery(3)" data-caption="Built Through Consistency">
+        <img src="assets/images/fit-gallery/fit-gallery-04-side-flex.jpg" alt="Side bicep flex — built through consistency" loading="lazy"/>
+        <div class="fh-gallery-overlay"><div class="fh-gallery-caption">Built Through Consistency</div></div>
+      </div>
+      <div class="fh-gallery-item" onclick="openGallery(4)" data-caption="Mobility & Power">
+        <img src="assets/images/fit-gallery/fit-gallery-05-high-kick.jpg" alt="High kick — mobility and power" loading="lazy"/>
+        <div class="fh-gallery-overlay"><div class="fh-gallery-caption">Mobility &amp; Power</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <div class="feature-card reveal">
-        <div class="feature-icon">📝</div>
-        <div class="feature-title">Day 1 — Transformation Kickoff</div>
-        <div class="card-desc">The full breakdown of the 30-day program, what to expect, how to track progress, and your first workout.</div>
-        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
-          <a href="https://youtube.com/@ayefithub" target="_blank" rel="noopener" class="prog-badge badge-rose" style="text-decoration:none;cursor:pointer">▶ Watch</a>
-          <a href="pdfs/aye-fit-hub-day01-welcome-30day-transformation.pdf" download class="prog-badge badge-green" style="text-decoration:none;cursor:pointer">⬇ PDF</a>
+<!-- Gallery lightbox -->
+<div id="gallery-lightbox" style="display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;flex-direction:column">
+  <button onclick="closeGallery()" style="position:absolute;top:20px;right:24px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;line-height:1">✕</button>
+  <button onclick="galleryNav(-1)" style="position:absolute;left:20px;background:none;border:none;color:#fff;font-size:2.5rem;cursor:pointer;line-height:1">‹</button>
+  <button onclick="galleryNav(1)" style="position:absolute;right:20px;background:none;border:none;color:#fff;font-size:2.5rem;cursor:pointer;line-height:1">›</button>
+  <img id="gallery-lb-img" src="" alt="" style="max-width:90vw;max-height:80vh;border-radius:16px;object-fit:contain;box-shadow:0 0 60px rgba(167,139,250,0.3)"/>
+  <div id="gallery-lb-caption" style="color:#cbd5e1;margin-top:16px;font-size:.95rem;letter-spacing:.5px"></div>
+  <div id="gallery-lb-counter" style="color:var(--text-muted);font-size:.8rem;margin-top:6px"></div>
+</div>
+
+<!-- ============================================================ BLOGS ============================================================ -->
+<section id="blogs" style="background:linear-gradient(180deg,transparent,rgba(167,139,250,0.04),transparent)">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">📝 Blogs & Articles</div>
+      <h2 class="section-title">Read. Learn. <span class="gradient-text">Apply.</span></h2>
+      <p class="section-subtitle">In-depth fitness articles written by an engineer — science explained simply so you can train smarter.</p>
+    </div>
+
+    <!-- Social channels row -->
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:48px" class="reveal">
+      <a href="https://youtube.com/@ayefithub" target="_blank" rel="noopener" class="social-btn s-youtube">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>
+        YouTube @ayefithub
+      </a>
+      <a href="https://tiktok.com/@ayefithub" target="_blank" rel="noopener" class="social-btn s-tiktok">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.77 1.53V6.77a4.85 4.85 0 0 1-1-.08z"/></svg>
+        TikTok @ayefithub
+      </a>
+      <a href="https://facebook.com/ayefithub" target="_blank" rel="noopener" class="social-btn s-facebook">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073C24 5.404 18.627 0 12 0S0 5.404 0 12.073c0 6.031 4.388 11.035 10.125 11.927V15.56H7.078v-3.487h3.047V9.356c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.324h3.328l-.532 3.487h-2.796v8.44C19.612 23.108 24 18.104 24 12.073z"/></svg>
+        Facebook
+      </a>
+    </div>
+
+    <!-- Blog article cards -->
+    <div class="programs-grid" style="grid-template-columns:repeat(auto-fill,minmax(300px,1fr))">
+
+      <div class="program-card reveal" style="border-color:rgba(167,139,250,0.35)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <span style="font-size:1.8rem">⏱️</span>
+          <span class="prog-badge badge-purple">Fit Hub · Workout</span>
         </div>
+        <div class="prog-title">The 20-Minute Engineer Workout</div>
+        <div class="prog-desc">A practical 4-day plan for engineers and desk workers — compound movements, maximum efficiency, minimum time. Build real strength without spending hours in the gym.</div>
+        <a href="blog/20-minute-engineer-workout.html" class="btn btn-purple btn-sm" style="margin-top:16px;display:inline-flex">Read Article →</a>
       </div>
 
-      <div class="feature-card reveal">
-        <div class="feature-icon">🔥</div>
-        <div class="feature-title">Day 2 — HIIT Science</div>
-        <div class="card-desc">Why 20 minutes of HIIT outperforms 60 minutes of steady cardio. The EPOC effect explained with a full session.</div>
-        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
-          <a href="https://youtube.com/@ayefithub" target="_blank" rel="noopener" class="prog-badge badge-rose" style="text-decoration:none;cursor:pointer">▶ Watch</a>
-          <a href="pdfs/aye-fit-hub-day02-hiit-101-fat-burning.pdf" download class="prog-badge badge-green" style="text-decoration:none;cursor:pointer">⬇ PDF</a>
+      <div class="program-card reveal" style="border-color:rgba(244,63,94,0.35)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <span style="font-size:1.8rem">🔥</span>
+          <span class="prog-badge badge-rose">Fit Hub · Cardio</span>
         </div>
+        <div class="prog-title">HIIT vs Steady-State Cardio: Which Burns More Fat?</div>
+        <div class="prog-desc">HIIT burns more calories per minute. Steady-state builds your aerobic base. The optimal approach uses both — here's how.</div>
+        <a href="blog/hiit-vs-cardio.html" class="btn btn-rose btn-sm" style="margin-top:16px;display:inline-flex">Read Article →</a>
       </div>
 
-      <div class="feature-card reveal">
-        <div class="feature-icon">🎯</div>
-        <div class="feature-title">Day 3 — Core Anatomy</div>
-        <div class="card-desc">Your core is not just abs. Learn the 9 muscle groups that make up your true core and how to train them correctly.</div>
-        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
-          <a href="https://youtube.com/@ayefithub" target="_blank" rel="noopener" class="prog-badge badge-rose" style="text-decoration:none;cursor:pointer">▶ Watch</a>
-          <a href="pdfs/aye-fit-hub-day03-core-anatomy.pdf" download class="prog-badge badge-green" style="text-decoration:none;cursor:pointer">⬇ PDF</a>
+      <div class="program-card reveal" style="border-color:rgba(20,184,166,0.35)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <span style="font-size:1.8rem">🥗</span>
+          <span class="prog-badge badge-teal">Fit Hub · Nutrition</span>
         </div>
+        <div class="prog-title">Nutrition Basics for Busy Engineers: Macros Made Simple</div>
+        <div class="prog-desc">Stop overthinking food. Understand macros, hit your targets, and fuel performance — practical nutrition science with no fluff.</div>
+        <a href="blog/nutrition-busy-engineers.html" class="btn btn-outline btn-sm" style="margin-top:16px;display:inline-flex;border-color:#14b8a6;color:#14b8a6">Read Article →</a>
+      </div>
+
+      <div class="program-card reveal" style="border-color:rgba(249,115,22,0.35)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <span style="font-size:1.8rem">📈</span>
+          <span class="prog-badge badge-orange">Fit Hub · Strength</span>
+        </div>
+        <div class="prog-title">Progressive Overload: The Science of Never Plateauing</div>
+        <div class="prog-desc">The single most important principle in strength training. Learn exactly how to apply it — load, reps, tempo, and density — so you never stop getting stronger.</div>
+        <a href="blog/progressive-overload.html" class="btn btn-outline btn-sm" style="margin-top:16px;display:inline-flex;border-color:#f97316;color:#f97316">Read Article →</a>
+      </div>
+
+      <div class="program-card reveal" style="border-color:rgba(99,102,241,0.35)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <span style="font-size:1.8rem">😴</span>
+          <span class="prog-badge badge-indigo">Fit Hub · Recovery</span>
+        </div>
+        <div class="prog-title">Sleep & Recovery: The Overlooked Performance Tool</div>
+        <div class="prog-desc">Sleep is when your body builds muscle, burns fat hormones, and repairs tissue. Growth hormone, cortisol, hunger hormones — and 5 sleep upgrades to start tonight.</div>
+        <a href="blog/sleep-and-recovery.html" class="btn btn-outline btn-sm" style="margin-top:16px;display:inline-flex;border-color:#6366f1;color:#6366f1">Read Article →</a>
       </div>
 
     </div>
     <div style="text-align:center;margin-top:32px" class="reveal">
-      <a href="https://youtube.com/@ayefithub" target="_blank" rel="noopener" class="btn btn-purple">▶ See All Episodes on YouTube</a>
+      <a href="https://youtube.com/@ayefithub" target="_blank" rel="noopener" class="btn btn-purple">▶ Watch All Episodes on YouTube</a>
     </div>
   </div>
 </section>
@@ -1034,6 +1128,48 @@ footer{background:rgba(2,4,14,0.95);border-top:1px solid var(--border);padding:5
 
 <!-- ============================================================ SCRIPTS ============================================================ -->
 <script>
+// Gallery lightbox
+const galleryImgs = [
+  {src:'assets/images/fit-gallery/fit-gallery-01-back-pose.jpg', cap:'Studio Session — AYE Fit Hub'},
+  {src:'assets/images/fit-gallery/fit-gallery-02-thumbs-up.jpg', cap:'Day One Energy'},
+  {src:'assets/images/fit-gallery/fit-gallery-03-double-bicep.jpg', cap:'Strength in Progress'},
+  {src:'assets/images/fit-gallery/fit-gallery-04-side-flex.jpg', cap:'Built Through Consistency'},
+  {src:'assets/images/fit-gallery/fit-gallery-05-high-kick.jpg', cap:'Mobility & Power'},
+];
+let galleryIdx = 0;
+function openGallery(i){
+  galleryIdx = i;
+  const lb = document.getElementById('gallery-lightbox');
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  renderGallery();
+}
+function closeGallery(){
+  document.getElementById('gallery-lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function galleryNav(dir){
+  galleryIdx = (galleryIdx + dir + galleryImgs.length) % galleryImgs.length;
+  renderGallery();
+}
+function renderGallery(){
+  const g = galleryImgs[galleryIdx];
+  document.getElementById('gallery-lb-img').src = g.src;
+  document.getElementById('gallery-lb-img').alt = g.cap;
+  document.getElementById('gallery-lb-caption').textContent = g.cap;
+  document.getElementById('gallery-lb-counter').textContent = (galleryIdx+1) + ' / ' + galleryImgs.length;
+}
+document.addEventListener('keydown', e => {
+  const lb = document.getElementById('gallery-lightbox');
+  if(!lb.classList.contains('open')) return;
+  if(e.key === 'ArrowRight') galleryNav(1);
+  if(e.key === 'ArrowLeft') galleryNav(-1);
+  if(e.key === 'Escape') closeGallery();
+});
+document.getElementById('gallery-lightbox').addEventListener('click', function(e){
+  if(e.target === this) closeGallery();
+});
+
 // Navbar scroll
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll',()=>{
