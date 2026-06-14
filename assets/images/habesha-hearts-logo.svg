@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- H left bar -->
+  <rect x="22" y="20" width="44" height="130" rx="8" fill="#7C3AED"/>
+  <!-- H right bar -->
+  <rect x="134" y="20" width="44" height="130" rx="8" fill="#7C3AED"/>
+  <!-- Heart in center of H -->
+  <path d="M100 115 C100 115 68 90 68 70 C68 55 80 46 88 50 C92 52 96 57 100 63 C104 57 108 52 112 50 C120 46 132 55 132 70 C132 90 100 115 100 115Z" fill="#DC2626"/>
+  <path d="M100 110 C100 110 72 87 72 70 C72 57 82 50 88 53 C92 55 96 59 100 64 C104 59 108 55 112 53 C118 50 128 57 128 70 C128 87 100 110 100 110Z" fill="#EF4444"/>
+  <!-- Highlight on heart -->
+  <ellipse cx="85" cy="62" rx="7" ry="5" fill="rgba(255,255,255,0.35)" transform="rotate(-20,85,62)"/>
+  <!-- Text: Habesha Dating -->
+  <text x="100" y="167" font-family="Arial Black, sans-serif" font-size="16" font-weight="900" fill="#5B21B6" text-anchor="middle" letter-spacing="0.5">Habesha Dating</text>
+  <!-- Subtext -->
+  <text x="100" y="185" font-family="Arial, sans-serif" font-size="8.5" fill="#7C3AED" text-anchor="middle" letter-spacing="0.3">Connecting Habesha Hearts Worldwide</text>
+</svg>
