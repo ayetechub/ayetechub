@@ -94,7 +94,7 @@ export default {
     subtitle: 'ካብ ዲዛይን ክሳብ ገጠማ — ናይ ኮሪያ ኢንዱስትሪ ደረጃ ናብ ኣብያተ ዕዮን ትካላትን ኣብ ትግራይ፣ ኢትዮጵያ ምምጻእ።',
     live_badge: 'ሕጂ ኣብ ትግራይ ዝርከብ',
     tagline_main: 'ቦትኻ',
-    tagline_highlight: 'ምቁሩ፣ ጽሩይ & ቀጥዒ',
+    tagline_highlight: 'ምችው፣ ጽሩይ & ብቑዕ',
     hero_desc: 'ኣብ ትግራይ ፕሮጀክት ትሃኒጽ ኣለኻ? ብቑዕ ሞያ ዘለዎም ቡድናትና ዝደለኻዮ ጽሬት ምሳኻ ክህቡ እዮም — ጽሩይ ፍጻሜ፣ ዕቑር ሃይሊ፣ ናይ ኮሪያ ኢንዱስትሪ ደረጃ ምህንድስና።',
     languages_bar_html: '🌍 <strong>ቋንቋታት፦</strong> ትግርኛ · አማርኛ · English',
     card_hvac_title: 'HVAC ምትካል',
