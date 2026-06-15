@@ -202,7 +202,7 @@ export default {
     stat_channels: 'ቻናላት',
     stat_motivation: 'ተበግሶ',
     programs_label: 'ናይ ፊትነስ ፕሮግራምታት',
-    programs_title: 'ብልሒ ሓዙ። ሓይሊ ሓዙ።',
+    programs_title: 'ብጥበብ ሰልጥኑ፤ በርቲዕኩም ስርሑ።',
     programs_subtitle: 'ሹዱሽተ ብሉጻት ፕሮግራማት ን ሓቀኛ ምዕዋት — ካብ ጀምርቲ ክሳብ ዝሰልጠኑ። ኩሉ ናጻ።',
     blog_label: 'Fit Hub ብሎግ',
     blog_title: 'ብልሕቲ ስልጠና። ዝያዳ ኣንብቡ።',
