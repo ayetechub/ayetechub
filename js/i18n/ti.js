@@ -195,8 +195,8 @@ export default {
   },
 
   fithub: {
-    hero_tagline: 'ብዕላማ ስልጠና። ብሓይሊ ነባሩ።',
-    hero_sub: 'ጸጋ ሃኑጹ። ኣትኩሮ ሃኑጹ። ዝሓሸ ነባሩ።',
+    hero_tagline: 'ዕላማ ዘለዎ ስልጠና። ዕቤት ዘለዎ ህይወት።',
+    hero_sub: 'ጥንካረን ኣትኩሮን ህነጹ፤ ዝሓሸ ህይወት ንበሩ።',
     stat_programs: 'ፕሮግራምታት',
     stat_content: 'ኩሉ ትሕዝቶ',
     stat_channels: 'ቻናላት',
