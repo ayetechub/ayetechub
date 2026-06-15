@@ -205,7 +205,7 @@ export default {
     programs_title: 'ብጥበብ ሰልጥኑ፤ በርቲዕኩም ስርሑ።',
     programs_subtitle: 'ሹዱሽተ ብሉጻት ፕሮግራማት ን ሓቀኛ ምዕዋት — ካብ ጀምርቲ ክሳብ ዝሰልጠኑ። ኩሉ ናጻ።',
     blog_label: 'Fit Hub ብሎግ',
-    blog_title: 'ብልሕቲ ስልጠና። ዝያዳ ኣንብቡ።',
+    blog_title: 'ብጥበብ ሰልጥኑ። ተወሳኺ ኣንብቡ።',
     blog_subtitle: 'ናይ ፊትነስ ሙያዊ ጽሑፋት — ናይ ስልጠና ሳይንስ፣ ምዕዛዝ፣ ምሕዋስ፣ ናይ ሓሳብ ኣተሓሕዛ ካብ ናይ AYE Fit Hub ቡድን።',
     view_all_btn: 'ኩሎም Fit Hub ጽሑፋት ርኣዩ'
   },
