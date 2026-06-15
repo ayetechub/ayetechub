@@ -243,7 +243,7 @@ export default {
 
   founder: {
     tag: 'ምስ መስራቲ ተላለዩ',
-    title: 'ናይ AYE Tech Hub ሓሳብ ዘለዎ',
+    title: 'ናይ AYE Tech Hub ሓሳብ በዓ ራኢ',
     subtitle: 'ካብ ናይ ኢትዮጵያ ቤት-ትምህርቲ ናብ ናይ ኮሪያ ሮቦቲክስ ዕዮ-ቤት — ናይ ኣፍሪካ ዓለምለኻዊ ፕላትፎርም ትምህርቲ ምህንድስና ምህናጽ።',
     badge: 'መስራቲ & CEO',
     role: 'ሜካኒካዊ ኢንጂነር · ሮቦቲክስ & PLC ሙያዊ · መምሃር',
