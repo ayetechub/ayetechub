@@ -202,7 +202,7 @@ export default {
     stat_channels: 'ቻናሎች',
     stat_motivation: 'ተነሳሽነት',
     programs_label: 'የፊትነስ ፕሮግራሞች',
-    programs_title: 'ዘዴኛ ስልጠና። ጠንካራ ስልጠና።',
+    programs_title: 'በዘዴ ይሰልጠኑ። ጠንክረው ይስሩ።',
     programs_subtitle: 'ለእውነተኛ ውጤት ስድስት ፕሮግራሞች — ጀምርም ሆነ ዕቤት ፈጣሪ። ሁሉም ይዘት ነፃ።',
     blog_label: 'Fit Hub ብሎግ',
     blog_title: 'ዘዴኛ ስልጠና። ተጨማሪ ያንብቡ።',
