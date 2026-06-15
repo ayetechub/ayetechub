@@ -82,7 +82,9 @@ export default {
     pro_spec_2_title: 'Global Access',
     pro_spec_2_sub: 'Free Downloads',
     pro_cta_download: 'Download Resources',
-    pro_cta_join: 'Join'
+    pro_cta_join: 'Join',
+    tech_label: 'TECHNOLOGY DIVISION',
+    fitness_label: 'FITNESS DIVISION'
   },
 
   services: {
@@ -138,8 +140,9 @@ export default {
 
   courses: {
     tag: 'Engineering Courses',
-    title: 'Start Learning Today',
-    subtitle: 'Professional engineering courses designed for real-world practice.',
+    section_tag: 'Learning Paths',
+    title: 'Professional Engineering Courses',
+    subtitle: 'Structured learning paths designed by industry experts for real-world engineering success.',
     filter_all: 'All Courses',
     filter_plc: 'PLC & Automation',
     filter_electrical: 'Electrical',
@@ -151,7 +154,11 @@ export default {
     level_intermediate: 'Intermediate',
     level_advanced: 'Advanced',
     badge_free: 'FREE',
-    badge_premium: 'PREMIUM'
+    badge_premium: 'PREMIUM',
+    search_courses: 'Search courses…',
+    avg_rating: 'Avg Rating',
+    cert_title: 'Earn Your Engineering Certification',
+    cert_desc: 'Complete courses and pass assessments to earn AYE Tech Hub certificates — recognized in industry and shareable on LinkedIn.'
   },
 
   tutorials: {
@@ -184,6 +191,34 @@ export default {
     subtitle: 'Curated AI tools to boost your engineering productivity.',
     try_btn: 'Try Tool',
     guide_btn: 'View Guide'
+  },
+
+  fithub: {
+    hero_tagline: 'Train With Purpose. Live With Power.',
+    hero_sub: 'Build Strength. Build Focus. Live Better.',
+    stat_programs: 'Programs',
+    stat_content: 'All Content',
+    stat_channels: 'Channels',
+    stat_motivation: 'Motivation',
+    programs_label: 'Fitness Programs',
+    programs_title: 'Train Smarter. Train Harder.',
+    programs_subtitle: 'Six focused programs built for real results — whether you\'re starting out or leveling up. All content is free.',
+    blog_label: 'Fit Hub Blog',
+    blog_title: 'Train Smart. Read More.',
+    blog_subtitle: 'Expert fitness articles — training science, nutrition, recovery, and mindset from the AYE Fit Hub team.',
+    view_all_btn: 'View All Fit Hub Articles'
+  },
+
+  how: {
+    tag: '🚀 Getting Started',
+    title: 'How It Works',
+    subtitle: 'Three simple steps to find your Habesha match.',
+    step1_title: 'Create Your Profile',
+    step1_desc: 'Sign up free and build your profile with photos, voice bio, and your story.',
+    step2_title: 'Discover Matches',
+    step2_desc: 'Browse profiles filtered by age, city, and interests. Swipe or search.',
+    step3_title: 'Connect & Chat',
+    step3_desc: 'Match with someone you like and start a private conversation.',
   },
 
   lang_switcher: {
@@ -226,7 +261,12 @@ export default {
     stat_years: 'Years Experience',
     stat_countries: 'Countries Worked',
     stat_degrees: 'Degrees & Certs',
-    stat_mission: 'Bold Mission'
+    stat_mission: 'Bold Mission',
+    mission_title: 'My Mission',
+    mission_text: 'To empower African engineers and technical learners — especially in Ethiopia — to build <strong>real-world technical skills</strong> and prepare for the future of engineering and technology. Through <strong>AYE Tech Hub</strong>, I bridge the gap between academic theory and industrial practice with hands-on training in <strong>PLC programming, industrial automation, CAD/Revit, robotics, and AI</strong>. Soon, our first physical training center opens in <strong>Mekelle, Tigray</strong> — building the next generation who will industrialize Africa.',
+    office_soon_label: 'Coming Soon · Physical Office',
+    office_soon_text: 'AYE Tech Hub training center launching in <strong>Mekelle, Tigray, Ethiopia</strong> 🇪🇹 — stay tuned on social media for the grand opening!',
+    card_social: 'Connect & Follow'
   },
 
   contact: {
@@ -249,7 +289,10 @@ export default {
     form_subject_ph: 'Course inquiry, collaboration, support...',
     form_message: 'Message',
     form_message_ph: 'Tell us how we can help you...',
-    form_submit: 'Send Message'
+    form_submit: 'Send Message',
+    reply_note: 'We respond within 24–48 hours. For urgent matters, use Telegram.',
+    offer_title: 'What We Offer',
+    offer_subtitle: 'AYE Tech Hub provides both online education and on-site engineering services.'
   },
 
   faq: {

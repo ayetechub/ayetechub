@@ -83,7 +83,9 @@ export default {
     pro_spec_2_title: 'ዓለም አቀፍ ዕድል',
     pro_spec_2_sub: 'ነፃ ማውረዶች',
     pro_cta_download: 'ሀብቶቸን አውርዱ',
-    pro_cta_join: 'ይቀላቀሉ'
+    pro_cta_join: 'ይቀላቀሉ',
+    tech_label: 'የቴክኖሎጂ ክፍል',
+    fitness_label: 'የፊትነስ ክፍል'
   },
 
   services: {
@@ -139,8 +141,9 @@ export default {
 
   courses: {
     tag: 'የምህንድስና ኮርሶች',
-    title: 'ዛሬ ይማሩ',
-    subtitle: 'ለትክክለኛ ሥራ የተዘጋጁ ሙያዊ የምህንድስና ኮርሶች።',
+    section_tag: 'የምምሃር መንገዶች',
+    title: 'ሙያዊ የምህንድስና ኮርሶች',
+    subtitle: 'በኢንዱስትሪ ባለሙያዎች ለተጨባጭ ምህንድስና ስኬት የተዘጋጁ ኮርሶች።',
     filter_all: 'ሁሉም ኮርሶች',
     filter_plc: 'PLC & አውቶሜሽን',
     filter_electrical: 'ኤሌክትሪካዊ',
@@ -152,7 +155,11 @@ export default {
     level_intermediate: 'መካከለኛ',
     level_advanced: 'ምሩጥ',
     badge_free: 'ነፃ',
-    badge_premium: 'ፕሪሚዬም'
+    badge_premium: 'ፕሪሚዬም',
+    search_courses: 'ኮርሶችን ይፈልጉ...',
+    avg_rating: 'አማካይ ደረጃ',
+    cert_title: 'የምህንድስና ሰርቲፊኬት ያግኙ',
+    cert_desc: 'ኮርሶቹን ጨርሰው ፈተናዎቹን ካለፉ የ AYE Tech Hub ሰርቲፊኬት ያስጨብጣቸዋል — በኢንዱስትሪ ዕውቅ እና ኤልሱ LinkedIn ላይ ማካፈል ይቻላል።'
   },
 
   tutorials: {
@@ -185,6 +192,22 @@ export default {
     subtitle: 'የምህንድስና ምርታማነትዎን ለማሳደግ የተዘጋጁ AI መሣሪያዎች።',
     try_btn: 'ሞክሩ',
     guide_btn: 'መምሪያ ይመልከቱ'
+  },
+
+  fithub: {
+    hero_tagline: 'በዓላማ ስልጠና ይሰልጠኑ። በሓይሊ ይኑሩ።',
+    hero_sub: 'ጥንካሬ ይሙሉ። ትኩረት ያሳድጉ። ሕይወት ይሻሉ።',
+    stat_programs: 'ፕሮግራሞች',
+    stat_content: 'ሁሉ ይዘት',
+    stat_channels: 'ቻናሎች',
+    stat_motivation: 'ተነሳሽነት',
+    programs_label: 'የፊትነስ ፕሮግራሞች',
+    programs_title: 'ዘዴኛ ስልጠና። ጠንካራ ስልጠና።',
+    programs_subtitle: 'ለእውነተኛ ውጤት ስድስት ፕሮግራሞች — ጀምርም ሆነ ዕቤት ፈጣሪ። ሁሉም ይዘት ነፃ።',
+    blog_label: 'Fit Hub ብሎግ',
+    blog_title: 'ዘዴኛ ስልጠና። ተጨማሪ ያንብቡ።',
+    blog_subtitle: 'ምሁር የፊትነስ ጽሑፎች — የስልጠና ሳይንስ፣ ምግብ፣ ማነቃቃ፣ አስተሳሰብ ከ AYE Fit Hub ቡድን።',
+    view_all_btn: 'ሁሉም Fit Hub ጽሑፎች ይመልከቱ'
   },
 
   lang_switcher: {
@@ -227,7 +250,12 @@ export default {
     stat_years: 'ዓመት ልምድ',
     stat_countries: 'ሀገሮች ሠርቻለሁ',
     stat_degrees: 'ዲግሪዎች & ሰርቲፊኬቶች',
-    stat_mission: 'ደፋር ተልዕኮ'
+    stat_mission: 'ደፋር ተልዕኮ',
+    mission_title: 'ተልዕኮዬ',
+    mission_text: 'የአፍሪካ ምህንዶሶችን እና ቴክኒካዊ ተማሪዎችን — በተለይ በኢትዮጵያ — ለማብቃት እና ለምህንድስናና ቴክኖሎጂ ወደፊት ዘመን ለማዘጋጀት። በ<strong>AYE Tech Hub</strong> አካዳሚያዊ ንድፈ ሃሳብ እና የኢንዱስትሪ ተግባርን አቀራርቦ <strong>PLC ፕሮግራሚን፣ ኢንዱስትሪ አውቶሜሽን፣ CAD/Revit፣ ሮቦቲክስ እና AI</strong> ስልጠና ለመስጠት እሰራለሁ። ቅርቡ የመጀመሪያ የልምምድ ማዕከላችን <strong>መቐለ፣ ትግራይ</strong> ይከፈታል።',
+    office_soon_label: 'በቅርቡ · ቋሚ ቢሮ',
+    office_soon_text: 'የ AYE Tech Hub ስልጠና ማዕከል ኣብ <strong>መቐለ፣ ትግራይ፣ ኢትዮጵያ</strong> 🇪🇹 ይከፈታል — ለፕሮሰሱ በማህበራዊ ሚዲያ ይከታተሉ!',
+    card_social: 'ያገኙን እና ይከታተሉ'
   },
 
   contact: {
@@ -250,7 +278,10 @@ export default {
     form_subject_ph: 'ስለ ኮርስ ጥያቄ፣ ትብብር፣ ድጋፍ...',
     form_message: 'መልዕክት',
     form_message_ph: 'እንዴት ልናግዝህ እንደምንችል ንገሩን...',
-    form_submit: 'መልዕክት ላክ'
+    form_submit: 'መልዕክት ላክ',
+    reply_note: 'ውስጥ 24–48 ሰዓት ምላሽ እንሰጣለን። ለአፋጣኝ ጉዳይ Telegram ይጠቀሙ።',
+    offer_title: 'ምን እናቀርብ',
+    offer_subtitle: 'AYE Tech Hub ናይ ኦንላይን ትምህርቲን ናይ ቦቱ ናይ ምህንድስና ኣገልጋሎትን ይህብ።'
   },
 
   faq: {

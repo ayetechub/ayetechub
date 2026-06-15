@@ -83,7 +83,9 @@ export default {
     pro_spec_2_title: 'ዓለምለኻዊ ምዕራፍ',
     pro_spec_2_sub: 'ናጻ ምርካብ',
     pro_cta_download: 'ሓበሬታ ርኸቡ',
-    pro_cta_join: 'ተጽምቡ'
+    pro_cta_join: 'ተጽምቡ',
+    tech_label: 'ክፍሊ ቴክኖሎጂ',
+    fitness_label: 'ክፍሊ ፊትነስ'
   },
 
   services: {
@@ -139,8 +141,9 @@ export default {
 
   courses: {
     tag: 'ኮርሳት ምህንድስና',
-    title: 'ሎሚ ተምሃሩ',
-    subtitle: 'ሙያዊ ኮርሳት ምህንድስና ናብ ሓቀኛ ስራሕ ዝዓለሙ።',
+    section_tag: 'ናይ ምምሃር መንገዲ',
+    title: 'ሙያዊ ናይ ምህንድስና ኮርሳት',
+    subtitle: 'ናይ ምህንድስና ሙያዊ ምዕዋት ዝዓለሙ ናይ ምምሃር ውጥናት።',
     filter_all: 'ኩሎም ኮርሳት',
     filter_plc: 'PLC & ኦቶሜሽን',
     filter_electrical: 'ኤለክትሪካዊ',
@@ -152,7 +155,11 @@ export default {
     level_intermediate: 'ማእከላይ',
     level_advanced: 'ምሩጽ',
     badge_free: 'ናጻ',
-    badge_premium: 'ፕሪሚዮም'
+    badge_premium: 'ፕሪሚዮም',
+    search_courses: 'ኮርሳት ፈልዩ...',
+    avg_rating: 'ማእከላይ ሬቲን',
+    cert_title: 'ናይ ምህንድስና ሰርቲፊኬት ውሰዱ',
+    cert_desc: 'ኮርሳት ዛዚምኩም ፈተናታት ሓሊፍኩም ናይ AYE Tech Hub ሰርቲፊኬት ርኸቡ — ኣብ ኢንዱስትሪ ዝፍለጥ ኣብ LinkedIn ዘካፈሉ።'
   },
 
   tutorials: {
@@ -185,6 +192,22 @@ export default {
     subtitle: 'ዝተዳለዉ AI ሓጋዚ ናይ ምህንድስና ምፍቃር ዕቤት ዝህቡ።',
     try_btn: 'ሃሱ ፈትኑ',
     guide_btn: 'መምርሒ ርኣዩ'
+  },
+
+  fithub: {
+    hero_tagline: 'ብዕላማ ስልጠና። ብሓይሊ ነባሩ።',
+    hero_sub: 'ጸጋ ሃኑጹ። ኣትኩሮ ሃኑጹ። ዝሓሸ ነባሩ።',
+    stat_programs: 'ፕሮግራምታት',
+    stat_content: 'ኩሉ ትሕዝቶ',
+    stat_channels: 'ቻናላት',
+    stat_motivation: 'ተበግሶ',
+    programs_label: 'ናይ ፊትነስ ፕሮግራምታት',
+    programs_title: 'ብልሕቲ ስልጠና። ዓቢ ስልጠና።',
+    programs_subtitle: 'ሹዱሽተ ዝዓለሙ ፕሮግራምታት ን ሓቀኛ ውጽኢት — ጀምር ወይ ዕቤት ምግባር። ኩሉ ትሕዝቶ ናጻ።',
+    blog_label: 'Fit Hub ብሎግ',
+    blog_title: 'ብልሕቲ ስልጠና። ዝያዳ ኣንብቡ።',
+    blog_subtitle: 'ናይ ፊትነስ ሙያዊ ጽሑፋት — ናይ ስልጠና ሳይንስ፣ ምዕዛዝ፣ ምሕዋስ፣ ናይ ሓሳብ ኣተሓሕዛ ካብ ናይ AYE Fit Hub ቡድን።',
+    view_all_btn: 'ኩሎም Fit Hub ጽሑፋት ርኣዩ'
   },
 
   lang_switcher: {
@@ -227,7 +250,12 @@ export default {
     stat_years: 'ዓመት ልምዲ',
     stat_countries: 'ሃገር ሰሪሐ',
     stat_degrees: 'ዲግሪን ሰርቲፊኬትን',
-    stat_mission: 'ሓያል ዕላማ'
+    stat_mission: 'ሓያል ዕላማ',
+    mission_title: 'ዕላማይ',
+    mission_text: 'ናይ ኣፍሪካ ኢንጂነራትን ተምሃሮ ቴክኒካዊ ትምህርቲን — ብፍላይ ኣብ ኢትዮጵያ — ንምሕያልን ናይ ቀጻሊ ምህንድስናን ቴክኖሎጂን መጻኢ ንምህናጽ ዝዓለም። ብ<strong>AYE Tech Hub</strong> ኣቢለ ኣካዳሚያዊ ትምህርትን ናይ ኢንዱስትሪ ተግባርን ዘሳኽኡ ናይ ኢደ-ስራሕ ልምምድ ኣብ <strong>PLC፣ ናይ ኢንዱስትሪ ኦቶሜሽን፣ CAD/Revit፣ ሮቦቲክስን AI</strong> ንህብ። ቀሪቡ ቀዳማይ ናይ ልምምድ ማእከልና ኣብ <strong>መቐለ፣ ትግራይ</strong> ክኽፈት እዩ።',
+    office_soon_label: 'ቀሪቡ · ናይ ቦታ ቤት-ጽሕፈት',
+    office_soon_text: 'ናይ AYE Tech Hub ናይ ልምምድ ማእከል ኣብ <strong>መቐለ፣ ትግራይ፣ ኢትዮጵያ</strong> 🇪🇹 ክኽፈት እዩ — ኣብ ሶሻል ሚዲያ ጽምቡ!',
+    card_social: 'ተራኸቡን ተኸታተሉን'
   },
 
   contact: {
@@ -250,7 +278,10 @@ export default {
     form_subject_ph: 'ናይ ኮርስ ሕቶ፣ ምትሕብባር፣ ሓጋዚ...',
     form_message: 'መልእኽቲ',
     form_message_ph: 'ብኸመይ ክሕግዘኩም ንኽሰርሕ ሓብሩና...',
-    form_submit: 'መልእኽቲ ልኡኹ'
+    form_submit: 'መልእኽቲ ልኡኹ',
+    reply_note: 'ኣብ 24–48 ሰዓታት ንምልስ። ንህጹጽ ጉዳይ ን Telegram ተጠቀሙ።',
+    offer_title: 'እንታይ ንህብ',
+    offer_subtitle: 'AYE Tech Hub ናይ ኦንላይን ትምህርቲን ናይ ቦቱ ናይ ምህንድስና ኣገልጋሎትን ይህብ።'
   },
 
   faq: {
