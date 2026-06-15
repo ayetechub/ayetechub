@@ -119,18 +119,18 @@ export default {
     why_honest_desc: 'ሽፋን ዘይብሎ ሰበርቲ፣ ቅን ዋጋ፣ ዘተኣማምን ሰዓት — ሃሱ ምንጻፍ የለን።',
     contact_title: '📞 ርኸቡና — ኣብ ደቓይቕ ይምለሱ',
     contact_subtitle: 'ናይ ናጻ ምኽሪ፣ ዋጋ ዝሓዘ ሓበሬታ፣ ወይ ናይ ቦታ ምርኣይ ንምዕዛዝ ኣብ WhatsApp ዘርጉሑ።',
-    wa_tigray_title: '🇪🇹 ናይ ቦቱ ቡድን ትግራይ',
-    wa_tigray_sub: 'ኣብ-ቦቱ ኣገልጋሎት · ምርኣይ ቦታ · ዋጋ',
-    wa_korea_title: '🇰🇷 ኣወት — መስራቲ',
+    wa_tigray_title: '🇪🇹 ናይ ዉሽጢ ዓዲ ቡድን ትግራይ',
+    wa_tigray_sub: 'ናይ ዉሽጢ ዓዲ ኣገልጋሎት · ምርኣይ ቦታ · ዋጋ',
+    wa_korea_title: '🇰🇷 ዓወት — መስራቲ',
     wa_korea_sub: 'ናይ ፕሮጀክት ምቁጽጻር · ቆጸራ',
     wa_tigray_msg: 'ሰላም AYE Tech Hub! ኣብ ኣገልጋሎት ምህንድስና ኣብ ትግራይ ዝምልከቱ ዝያዳ ሓበሬታ ርሸነሉኒ?',
-    wa_korea_msg: 'ሰላም ኣወት! ምስ AYE Tech Hub ብዛዕባ ፕሮጀክት ክዛረብ ደሊየ።'
+    wa_korea_msg: 'ሰላም ዓወት! ምስ AYE Tech Hub ብዛዕባ ፕሮጀክት ክዛረብ ደሊየ።'
   },
 
   pdfs: {
     tag: 'ማእከል ሓበሬታ',
     title: 'ማእከል ምርካብ ፒዲኤፍ',
-    subtitle: 'ሓቀኛ ናይ ምህንድስና ሓበሬታ ብ ኣወት ጌ. ኤናወይ። ናጻ መምርሒ፣ ቴክኒካዊ ኢ-ጽሑፋት፣ ናይ ምምሃር ሓበሬታ — ዕቤት ዝህቦ ቤተ-መጻሕፍቲ፣ 2026።',
+    subtitle: 'ሓቀኛ ናይ ምህንድስና ሓበሬታ ብ ዓወት ጌ. ኤናወይ። ናጻ መምርሒ፣ ቴክኒካዊ ኢ-ጽሑፋት፣ ናይ ምምሃር ሓበሬታ — ዕቤት ዝህቦ ቤተ-መጻሕፍቲ፣ 2026።',
     search_placeholder: 'ፒዲኤፋት፣ መምርሒ፣ ማኑዋላት ፈልዩ...',
     filter_all: 'ኩሉ',
     filter_plc: 'PLC',
@@ -264,9 +264,9 @@ export default {
     subtitle: 'ሕቶ፣ ምትሕብባር ሓሳብ፣ ወይ ሓጋዚ ዘድልዮ? ኣለና።',
     label_email: 'ኢሜይል',
     label_wa_tigray: 'WhatsApp · 🇪🇹 ቡድን ትግራይ',
-    label_wa_korea: 'WhatsApp · 🇰🇷 መስራቲ (ኣወት)',
+    label_wa_korea: 'WhatsApp · 🇰🇷 መስራቲ (ዓወት)',
     location_html: '🇪🇹 ትግራይ፣ ኢትዮጵያ · 🇰🇷 ጊምፖ፣ ደቡብ ኮሪያ',
-    location_note: 'ኣብ ትግራይ ናይ ቦቱ ኣገልጋሎት',
+    location_note: 'ኣብ ትግራይ ናይ ዉሽጢ ዓዲ ኣገልጋሎት',
     form_title: 'መልእኽቲ ስደዱ',
     form_first_name: 'ቀዳማይ ስም',
     form_first_name_ph: 'ዓቤበ',
@@ -281,7 +281,7 @@ export default {
     form_submit: 'መልእኽቲ ልኡኹ',
     reply_note: 'ኣብ 24–48 ሰዓታት ንምልስ። ንህጹጽ ጉዳይ ን Telegram ተጠቀሙ።',
     offer_title: 'እንታይ ንህብ',
-    offer_subtitle: 'AYE Tech Hub ናይ ኦንላይን ትምህርቲን ናይ ቦቱ ናይ ምህንድስና ኣገልጋሎትን ይህብ።'
+    offer_subtitle: 'AYE Tech Hub ናይ ኦንላይን ትምህርቲን ናይ ዉሽጢ ዓዲ ናይ ምህንድስና ኣገልጋሎትን ይህብ።'
   },
 
   faq: {
