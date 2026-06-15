@@ -196,7 +196,7 @@ export default {
 
   fithub: {
     hero_tagline: 'በዓላማ ስልጠና ይሰልጠኑ። በሓይሊ ይኑሩ።',
-    hero_sub: 'ጥንካሬ ይሙሉ። ትኩረት ያሳድጉ። ሕይወት ይሻሉ።',
+    hero_sub: 'ጥንካሬ ይሙሉ። ትኩረት ያሳድጉ። ሕይወትዎ ያሻሻሉ።',
     stat_programs: 'ፕሮግራሞች',
     stat_content: 'ሁሉ ይዘት',
     stat_channels: 'ቻናሎች',
