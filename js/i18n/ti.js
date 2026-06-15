@@ -252,7 +252,7 @@ export default {
     stat_degrees: 'ዲግሪን ሰርቲፊኬትን',
     stat_mission: 'ሓያል ዕላማ',
     mission_title: 'ዕላማይ',
-    mission_text: 'ናይ ኣፍሪካ ኢንጂነራትን ተምሃሮ ቴክኒካዊ ትምህርቲን — ብፍላይ ኣብ ኢትዮጵያ — ንምሕያልን ናይ ቀጻሊ ምህንድስናን ቴክኖሎጂን መጻኢ ንምህናጽ ዝዓለም። ብ<strong>AYE Tech Hub</strong> ኣቢለ ኣካዳሚያዊ ትምህርትን ናይ ኢንዱስትሪ ተግባርን ዘሳኽኡ ናይ ኢደ-ስራሕ ልምምድ ኣብ <strong>PLC፣ ናይ ኢንዱስትሪ ኦቶሜሽን፣ CAD/Revit፣ ሮቦቲክስን AI</strong> ንህብ። ኣብ ቀረባ ቀዳማይ ናይ ልምምድ ማእከልና ኣብ <strong>መቐለ፣ ትግራይ</strong> ክኽፈት እዩ።',
+    mission_text: 'ናይ ኣፍሪካ ኢንጂነራትን ተምሃሮ ቴክኒካዊ ትምህርቲን — ብፍላይ ኣብ ኢትዮጵያ — ንምሕያልን ናይ ቀጻሊ ምህንድስናን ቴክኖሎጂን መጻኢ ንምህናጽ ዝዓለሜ። ብ<strong>AYE Tech Hub</strong> ኣቢለ ኣካዳሚያዊ ትምህርትን ናይ ኢንዱስትሪ ተግባርን ዘሳኽኡ ናይ ኢደ-ስራሕ ልምምድ ኣብ <strong>PLC፣ ናይ ኢንዱስትሪ ኦቶሜሽን፣ CAD/Revit፣ ሮቦቲክስን AI</strong> ንህብ። ኣብ ቀረባ ቀዳማይ ናይ ልምምድ ማእከልና ኣብ <strong>መቐለ፣ ትግራይ</strong> ክኽፈት እዩ።',
     office_soon_label: 'ቀሪቡ · ናይ ቦታ ቤት-ጽሕፈት',
     office_soon_text: 'ናይ AYE Tech Hub ናይ ልምምድ ማእከል ኣብ <strong>መቐለ፣ ትግራይ፣ ኢትዮጵያ</strong> 🇪🇹 ክኽፈት እዩ — ኣብ ሶሻል ሚዲያ ጽምቡ!',
     card_social: 'ተራኸቡን ተኸታተሉን'
