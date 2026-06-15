@@ -195,7 +195,7 @@ export default {
   },
 
   fithub: {
-    hero_tagline: 'በዓላማ ስልጠና ይሰልጠኑ። በሓይሊ ይኑሩ።',
+    hero_tagline: 'በዓላማ ይሰልጠኑ። ሃይሉን ይዘው ይኑሩ།',
     hero_sub: 'ጥንካሬ ይሙሉ። ትኩረት ያሳድጉ። ሕይወትዎ ያሻሻሉ።',
     stat_programs: 'ፕሮግራሞች',
     stat_content: 'ሁሉ ይዘት',
@@ -207,7 +207,17 @@ export default {
     blog_label: 'Fit Hub ብሎግ',
     blog_title: 'ዘዴኛ ስልጠና። ተጨማሪ ያንብቡ።',
     blog_subtitle: 'ምሁር የፊትነስ ጽሑፎች — የስልጠና ሳይንስ፣ ምግብ፣ ማነቃቃ፣ አስተሳሰብ ከ AYE Fit Hub ቡድን።',
-    view_all_btn: 'ሁሉም Fit Hub ጽሑፎች ይመልከቱ'
+    view_all_btn: 'ሁሉም Fit Hub ጽሑፎች ይመልከቱ',
+    tips_label: 'የፊትነስ ብሎግ',
+    tips_title: 'ምክሮቸ፣ መምሪያዎቸ & ዕውቀቶቸ',
+    tips_subtitle: 'ተግባራዊ የፊትነስ ዕውቀት — የስልጠና ምክሮቸ፣ ሳይንስ ዕረፍቶቸ፣ ምግብ ምናልባቶቸ፣ ትኩረቶቸ።',
+    tips_card1_tag: 'የጥንካሬ ስልጠና',
+    tips_card1_title: 'Progressive Overload: ጡንቻ ለማሳደግ #1 መርህ',
+    tips_card2_tag: 'ካርዲዮ & ቅባት መቀነስ',
+    tips_card2_title: 'HIIT vs ቋሚ ካርዲዮ: የቱ ቅባት ያቃጥላል?',
+    tips_card3_tag: 'አመጋገብ',
+    tips_card3_title: 'Protein Timing: ለጡንቻ ዕድገት ያስፈልጋልን?',
+    tips_coming_soon: 'AYE Fit Hub · በቅርቡ'
   },
 
   lang_switcher: {

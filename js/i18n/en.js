@@ -206,7 +206,17 @@ export default {
     blog_label: 'Fit Hub Blog',
     blog_title: 'Train Smart. Read More.',
     blog_subtitle: 'Expert fitness articles — training science, nutrition, recovery, and mindset from the AYE Fit Hub team.',
-    view_all_btn: 'View All Fit Hub Articles'
+    view_all_btn: 'View All Fit Hub Articles',
+    tips_label: 'Fitness Blog',
+    tips_title: 'Tips, Guides & Insights',
+    tips_subtitle: 'Practical fitness knowledge — training tips, recovery science, nutrition basics, and gym mindset.',
+    tips_card1_tag: 'Strength Training',
+    tips_card1_title: 'Progressive Overload: The #1 Principle for Building Muscle',
+    tips_card2_tag: 'Cardio & Fat Loss',
+    tips_card2_title: 'HIIT vs Steady-State Cardio: Which Burns More Fat?',
+    tips_card3_tag: 'Nutrition',
+    tips_card3_title: 'Protein Timing: Does It Really Matter for Muscle Growth?',
+    tips_coming_soon: 'AYE Fit Hub · Coming Soon'
   },
 
   how: {

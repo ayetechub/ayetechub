@@ -207,7 +207,17 @@ export default {
     blog_label: 'Fit Hub ብሎግ',
     blog_title: 'ብጥበብ ሰልጥኑ። ተወሳኺ ኣንብቡ።',
     blog_subtitle: 'ናይ ፊትነስ ሙያዊ ጽሑፋት — ናይ ስልጠና ሳይንስ፣ ምዕዛዝ፣ ምሕዋስ፣ ናይ ሓሳብ ኣተሓሕዛ ካብ ናይ AYE Fit Hub ቡድን።',
-    view_all_btn: 'ኩሎም Fit Hub ጽሑፋት ርኣዩ'
+    view_all_btn: 'ኩሎም Fit Hub ጽሑፋት ርኣዩ',
+    tips_label: 'ብሎግ ፊትነስ',
+    tips_title: 'ምኽርታት፣ መምርሒን ፍልጠትን',
+    tips_subtitle: 'ናይ ፊትነስ ሙያዊ ፍልጠት — ምኽሪ ስልጠና፣ ሳይንስ ምሕዋስ፣ ኣሰራርሓ ምዕዛዝ፣ ኣተሓሕዛ ሓሳብ።',
+    tips_card1_tag: 'ስልጠና ጥንካረ',
+    tips_card1_title: 'Progressive Overload: ቀዳሞ ሕጊ ን ምህናጽ ጡዋት',
+    tips_card2_tag: 'ካርዲዮ & ምቕናስ ስብሒ',
+    tips_card2_title: 'HIIT ምስ ቀጻሊ ካርዲዮ: ዝያዳ ስብሒ ዘቃጽሎ?',
+    tips_card3_tag: 'ምዕዛዝ',
+    tips_card3_title: 'Protein Timing: ን ምዕባይ ጡዋት ሓቀኛ ኣገዳሲዶ?',
+    tips_coming_soon: 'AYE Fit Hub · ቀሪቡ ይርከብ'
   },
 
   lang_switcher: {
