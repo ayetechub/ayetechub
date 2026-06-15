@@ -32,7 +32,7 @@ export default {
     btn_services: '🇪🇹 ኣገልጋሎት ምህንድስና',
     btn_founder: 'ምስ መስራቲ ተላለዩ',
     btn_pdfs: 'ናጻ ፒዲኤፋት',
-    btn_telegram: 'ቴሌግራም ተጽምቡ',
+    btn_telegram: 'ሳብስክራይብ Telegram',
     stat_tigray_label: '🇪🇹 ኣገልጋሎት ትግራይ',
     stat_pdf_label: 'ቤተ-መጻሕፍቲ ፒዲኤፍ',
     stat_courses_label: 'ቪዲዮ ኮርሳት',
