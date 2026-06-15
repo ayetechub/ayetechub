@@ -205,7 +205,7 @@ export default {
     programs_title: 'በዘዴ ይሰልጠኑ። ጠንክረው ይስሩ።',
     programs_subtitle: 'ለእውነተኛ ውጤት ስድስት ፕሮግራሞች — ጀምርም ሆነ ዕቤት ፈጣሪ። ሁሉም ይዘት ነፃ።',
     blog_label: 'Fit Hub ብሎግ',
-    blog_title: 'ዘዴኛ ስልጠና። ተጨማሪ ያንብቡ።',
+    blog_title: 'በዘዴ ይሰልጠኑ : ተጨማሪ ያንብቡ།',
     blog_subtitle: 'ምሁር የፊትነስ ጽሑፎች — የስልጠና ሳይንስ፣ ምግብ፣ ማነቃቃ፣ አስተሳሰብ ከ AYE Fit Hub ቡድን።',
     view_all_btn: 'ሁሉም Fit Hub ጽሑፎች ይመልከቱ',
     tips_label: 'የፊትነስ ብሎግ',
