@@ -447,6 +447,31 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
 .footer-aye{font-size:.75rem;color:var(--text-muted)}
 .footer-aye a{color:var(--neon);font-weight:600}
 .footer-aye a:hover{color:#00ffff}
+.footer-legal{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.footer-legal-link{font-size:.75rem;color:var(--text-muted);transition:color .2s}
+.footer-legal-link:hover{color:var(--green)}
+.footer-legal-sep{font-size:.7rem;color:var(--text-muted)}
+
+/* ---- LEGAL (PRIVACY POLICY / TERMS OF SERVICE) ---- */
+.legal-section{background:linear-gradient(180deg,rgba(10,22,40,0.55),transparent)}
+[data-theme="light"] .legal-section{background:linear-gradient(180deg,rgba(255,255,255,0.5),transparent)}
+.legal-wrap{max-width:860px;margin:0 auto}
+.legal-updated{font-size:.78rem;color:var(--text-muted);text-align:center;margin-top:-8px;margin-bottom:32px}
+.legal-toc{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:44px}
+.legal-toc a{padding:6px 14px;border-radius:100px;border:1px solid var(--border);background:rgba(34,197,94,0.05);font-size:.7rem;font-weight:700;letter-spacing:.3px;color:var(--text-soft);transition:all .2s}
+[data-theme="light"] .legal-toc a{background:rgba(255,255,255,0.7)}
+.legal-toc a:hover{border-color:var(--green);color:var(--green)}
+.legal-block{padding:22px 0;border-bottom:1px solid var(--border)}
+.legal-block:last-of-type{border-bottom:none}
+.legal-block h3{font-size:1.15rem;font-weight:800;color:var(--green);margin-bottom:10px;scroll-margin-top:120px}
+.legal-block p{font-size:.93rem;color:var(--text-soft);line-height:1.75;margin-bottom:10px}
+.legal-block ul{padding-left:20px;list-style:disc;margin:8px 0 10px}
+.legal-block li{font-size:.93rem;color:var(--text-soft);line-height:1.7;margin-bottom:6px}
+[data-theme="light"] .legal-block p,[data-theme="light"] .legal-block li{color:#475569}
+.legal-note{margin-top:8px;padding:18px 20px;border-radius:14px;background:rgba(34,197,94,0.06);border:1px solid var(--border);font-size:.85rem;color:var(--text-soft);line-height:1.7}
+[data-theme="light"] .legal-note{color:#475569}
+.legal-contact-box{margin-top:8px;padding:20px;border-radius:16px;background:rgba(34,197,94,0.06);border:1px solid var(--border)}
+@media(max-width:640px){.legal-block h3{font-size:1.05rem}}
 
 /* ---- FLOATING CTA ---- */
 
@@ -1251,6 +1276,194 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
   </div>
 </section>
 
+<!-- ============================================================ PRIVACY POLICY ============================================================ -->
+<section id="privacy-policy" class="legal-section" aria-labelledby="privacy-policy-heading">
+  <div class="container legal-wrap">
+    <div class="section-header reveal">
+      <div class="section-tag">🔒 Privacy</div>
+      <h2 class="section-title" id="privacy-policy-heading">Privacy <span class="gradient-text">Policy</span></h2>
+      <p class="section-subtitle">How Habesha Hearts collects, uses, and protects your information.</p>
+    </div>
+    <p class="legal-updated">Last updated: June 17, 2026 &middot; Applies to the Habesha Hearts app (package: <code>com.habeshahearts.app</code>) and this website.</p>
+
+    <nav class="legal-toc reveal" aria-label="Privacy policy sections">
+      <a href="#pp-info-collect">Information We Collect</a>
+      <a href="#pp-how-use">How We Use Information</a>
+      <a href="#pp-location">Location Data</a>
+      <a href="#pp-photos">Profile Photos</a>
+      <a href="#pp-chat">Chat Messages</a>
+      <a href="#pp-device">Device Information</a>
+      <a href="#pp-analytics">Analytics</a>
+      <a href="#pp-third-party">Third-Party Services</a>
+      <a href="#pp-sharing">Data Sharing</a>
+      <a href="#pp-security">Data Security</a>
+      <a href="#pp-rights">Your Rights &amp; Deletion</a>
+      <a href="#pp-children">Children's Privacy</a>
+      <a href="#pp-contact">Contact</a>
+    </nav>
+
+    <article class="reveal">
+      <div class="legal-block">
+        <p>Habesha Hearts ("we," "us," or "our") is operated by AYE Tech Hub. This Privacy Policy explains what information we collect from users of the Habesha Hearts mobile application and website, how we use it, who we share it with, and the choices and rights available to you. By creating an account or using the app, you agree to the practices described in this policy.</p>
+      </div>
+
+      <div class="legal-block" id="pp-info-collect">
+        <h3>Information We Collect</h3>
+        <p>We collect the following categories of information to operate the dating service:</p>
+        <ul>
+          <li><strong>Account information:</strong> name, email address, phone number, date of birth, and gender, collected at sign-up (including via Google or Facebook sign-in).</li>
+          <li><strong>Profile information:</strong> profile photos, bio text, voice bio recordings, interests, and any other details you choose to add to your profile.</li>
+          <li><strong>Location data:</strong> approximate or precise location, used to show you nearby matches (see "Location Data Usage" below).</li>
+          <li><strong>Messages and communications:</strong> content of chat messages, likes, matches, and reports you send within the app.</li>
+          <li><strong>Device and usage information:</strong> device model, operating system, app version, IP address, crash logs, and in-app activity.</li>
+          <li><strong>Payment information:</strong> if you purchase Premium or Premium+, payment is processed by our payment providers (e.g. Stripe, bank transfer references). We do not store your full card number.</li>
+        </ul>
+      </div>
+
+      <div class="legal-block" id="pp-how-use">
+        <h3>How We Use Information</h3>
+        <p>We use the information we collect to:</p>
+        <ul>
+          <li>Create and maintain your account and profile.</li>
+          <li>Show you relevant matches and suggestions based on preferences, location, and activity.</li>
+          <li>Enable messaging, matching, likes, and other core dating-app features.</li>
+          <li>Verify profiles, detect fraud, and enforce our Community Guidelines and Terms of Service.</li>
+          <li>Process subscription payments (Premium / Premium+) and manage billing.</li>
+          <li>Send important notifications (matches, messages, safety alerts, account updates).</li>
+          <li>Improve app performance and develop new features through aggregated analytics.</li>
+        </ul>
+      </div>
+
+      <div class="legal-block" id="pp-location">
+        <h3>Location Data Usage</h3>
+        <p>Habesha Hearts uses your device's location to show you potential matches who are nearby and to display an approximate distance on profiles. You can grant precise or approximate location access through your device's permission settings. Location access is optional — you may still use core features without enabling location, though match suggestions may be less relevant. We do not display your exact GPS coordinates to other users; only an approximate distance or city is shown. You may revoke location permission at any time from your device settings.</p>
+      </div>
+
+      <div class="legal-block" id="pp-photos">
+        <h3>Profile Photos</h3>
+        <p>Photos you upload are stored securely on Firebase Storage and are shown to other users as part of your public profile, in line with standard dating-app functionality. Do not upload photos of anyone other than yourself, or any content that violates our Community Guidelines (nudity, minors, violence, or impersonation). We may remove photos or suspend accounts that violate these guidelines. You can delete or replace your photos at any time from your profile settings.</p>
+      </div>
+
+      <div class="legal-block" id="pp-chat">
+        <h3>Chat Messages</h3>
+        <p>Messages you send through Habesha Hearts are stored on our servers (Firebase Firestore) to deliver the conversation to the recipient and to support features such as message history, reporting, and moderation. We do not sell the content of your private messages. Our moderation team may review reported conversations solely to investigate violations of our Community Guidelines, harassment, or safety reports. Blocked or deleted conversations are removed from active display but may be retained briefly for safety and legal-compliance purposes.</p>
+      </div>
+
+      <div class="legal-block" id="pp-device">
+        <h3>Device Information</h3>
+        <p>We automatically collect certain technical information when you use the app, including device model, operating system and version, unique device identifiers, mobile network information, app version, language settings, and crash/diagnostic logs. This information helps us secure accounts, fix bugs, and ensure compatibility across devices.</p>
+      </div>
+
+      <div class="legal-block" id="pp-analytics">
+        <h3>Analytics</h3>
+        <p>We use analytics tools, including Firebase Analytics and Google Analytics, to understand how users interact with the app — for example, which features are used most, session length, and retention. Analytics data is generally aggregated and used to improve the product; it is not used to publicly identify individual users.</p>
+      </div>
+
+      <div class="legal-block" id="pp-third-party">
+        <h3>Third-Party Services</h3>
+        <p>Habesha Hearts relies on the following third-party service providers to operate the app. Each provider processes data under its own privacy policy:</p>
+        <ul>
+          <li><strong>Firebase (Google):</strong> Authentication, Firestore database, Cloud Storage (photos/voice bios), Cloud Messaging (push notifications), and Crashlytics.</li>
+          <li><strong>Google Analytics / Firebase Analytics:</strong> in-app usage analytics.</li>
+          <li><strong>Google AdMob:</strong> may display ads to free-tier users and uses device identifiers (e.g. advertising ID) for ad delivery and limited ad personalization, subject to your device's ad-tracking settings.</li>
+          <li><strong>Payment processors</strong> (e.g. Stripe, Wegagen Bank, Oromia Bank): process Premium and Premium+ subscription payments.</li>
+          <li><strong>Google / Facebook Sign-In:</strong> optional social login providers, used only with your explicit authorization.</li>
+        </ul>
+      </div>
+
+      <div class="legal-block" id="pp-sharing">
+        <h3>Data Sharing</h3>
+        <p>We do not sell your personal information. We share data only in the following limited circumstances:</p>
+        <ul>
+          <li>With the service providers listed above, strictly to operate the app (hosting, storage, analytics, payments, push notifications).</li>
+          <li>With other users, limited to what you choose to display on your public profile (photos, bio, voice bio, approximate distance, online status).</li>
+          <li>With law enforcement or regulators, when required by law, legal process, or to protect the safety of our users.</li>
+          <li>In connection with a merger, acquisition, or sale of assets, with continued protection under this policy.</li>
+        </ul>
+      </div>
+
+      <div class="legal-block" id="pp-security">
+        <h3>Data Security</h3>
+        <p>We use industry-standard security measures to protect your data, including encrypted connections (HTTPS/TLS), Firebase security rules restricting access to authorized users, and access controls limiting employee access to personal data. While we work hard to protect your information, no method of transmission or storage is 100% secure, and we cannot guarantee absolute security.</p>
+      </div>
+
+      <div class="legal-block" id="pp-rights">
+        <h3>User Rights and Data Deletion</h3>
+        <p>You have the right to access, correct, export, or delete your personal data. You can:</p>
+        <ul>
+          <li>Edit your profile information directly within the app at any time.</li>
+          <li>Delete individual photos, your voice bio, or specific conversations from your account.</li>
+          <li>Permanently delete your account and associated data from Settings &rarr; Account &rarr; Delete Account, or by emailing us at <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a> with the subject line "DELETE MY ACCOUNT".</li>
+          <li>Request a copy of the personal data we hold about you.</li>
+        </ul>
+        <p>Account deletion requests are processed within 30 days. Some information may be retained for a limited period where required for legal, safety, fraud-prevention, or accounting purposes (e.g. transaction records).</p>
+      </div>
+
+      <div class="legal-block" id="pp-children">
+        <h3>Children's Privacy (18+ Only)</h3>
+        <p>Habesha Hearts is strictly intended for adults aged 18 and older. We do not knowingly collect personal information from anyone under 18. Account creation requires confirming you are at least 18 years of age. If we become aware that a user is under 18, we will suspend the account and delete the associated data as soon as reasonably possible. If you believe a minor is using the app, please contact us immediately at <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a>.</p>
+      </div>
+
+      <div class="legal-block" id="pp-contact">
+        <h3>Contact Information</h3>
+        <div class="legal-contact-box">
+          <p style="margin-bottom:6px"><strong>AYE Tech Hub — Habesha Hearts</strong></p>
+          <p style="margin-bottom:6px">Email: <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a></p>
+          <p style="margin-bottom:0">Telegram: <a href="https://t.me/ayetechub" target="_blank" rel="noopener" style="color:var(--green)">@ayetechub</a></p>
+        </div>
+        <p style="margin-top:14px">We may update this Privacy Policy from time to time. Material changes will be communicated through the app or via email, and the "Last updated" date above will reflect the most recent revision.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============================================================ TERMS OF SERVICE ============================================================ -->
+<section id="terms-of-service" class="legal-section" aria-labelledby="terms-heading" style="background:linear-gradient(180deg,transparent,rgba(34,197,94,0.03),transparent)">
+  <div class="container legal-wrap">
+    <div class="section-header reveal">
+      <div class="section-tag">📜 Legal</div>
+      <h2 class="section-title" id="terms-heading">Terms of <span class="gradient-text">Service</span></h2>
+      <p class="section-subtitle">The rules for using the Habesha Hearts app.</p>
+    </div>
+    <p class="legal-updated">Last updated: June 17, 2026</p>
+
+    <article class="reveal">
+      <div class="legal-block" id="tos-eligibility">
+        <h3>Eligibility</h3>
+        <p>You must be at least 18 years old to create an account or use Habesha Hearts. By using the app, you confirm that you are 18 or older and that all information you provide is accurate.</p>
+      </div>
+      <div class="legal-block" id="tos-account">
+        <h3>Your Account</h3>
+        <p>You are responsible for maintaining the confidentiality of your login credentials and for all activity under your account. Notify us immediately of any unauthorized use at <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a>.</p>
+      </div>
+      <div class="legal-block" id="tos-conduct">
+        <h3>Community Conduct</h3>
+        <p>You agree not to harass, threaten, scam, impersonate others, post explicit or illegal content, or use the app for any unlawful purpose. Violations may result in content removal, account suspension, or permanent ban, per our Community Guidelines.</p>
+      </div>
+      <div class="legal-block" id="tos-subscriptions">
+        <h3>Subscriptions &amp; Payments</h3>
+        <p>Premium and Premium+ are auto-renewing subscriptions billed in USD or Ethiopian Birr (ETB) through Google Play, Stripe, or supported local bank transfers. You may cancel anytime; cancellation takes effect at the end of the current billing period. Fees are non-refundable except where required by law or Google Play policy.</p>
+      </div>
+      <div class="legal-block" id="tos-termination">
+        <h3>Termination</h3>
+        <p>We may suspend or terminate accounts that violate these Terms, our Community Guidelines, or applicable law. You may delete your account at any time as described in our Privacy Policy.</p>
+      </div>
+      <div class="legal-block" id="tos-liability">
+        <h3>Disclaimer &amp; Liability</h3>
+        <p>Habesha Hearts is provided "as is." We do not guarantee matches, relationships, or outcomes from using the app, and we are not liable for the conduct of other users, on or off the platform. Always exercise caution and follow safe-dating practices when meeting someone in person.</p>
+      </div>
+      <div class="legal-block" id="tos-changes">
+        <h3>Changes to These Terms</h3>
+        <p>We may update these Terms from time to time. Continued use of the app after changes take effect constitutes acceptance of the revised Terms.</p>
+      </div>
+      <div class="legal-block" id="tos-contact">
+        <h3>Contact</h3>
+        <p>Questions about these Terms can be sent to <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a>.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
 <!-- ============================================================ FOOTER ============================================================ -->
 <footer>
   <div class="container">
@@ -1274,6 +1487,7 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
         <a href="#how-it-works" class="footer-link">How It Works</a>
         <a href="#download" class="footer-link">Download</a>
         <a href="#faq" class="footer-link">FAQ</a>
+        <a href="#privacy-policy" class="footer-link">Privacy Policy</a>
         <a href="https://play.google.com/store/apps/details?id=com.habeshahearts.app" target="_blank" rel="noopener" class="footer-link" style="color:var(--green)">📲 Google Play</a>
       </div>
       <div>
@@ -1288,6 +1502,13 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
     </div>
     <div class="footer-bottom">
       <div class="footer-copy">© 2026 Habesha Hearts · All rights reserved · Package: com.habeshahearts.app</div>
+      <nav class="footer-legal" aria-label="Legal links">
+        <a href="#privacy-policy" class="footer-legal-link">Privacy Policy</a>
+        <span class="footer-legal-sep">·</span>
+        <a href="#terms-of-service" class="footer-legal-link">Terms of Service</a>
+        <span class="footer-legal-sep">·</span>
+        <a href="#contact" class="footer-legal-link">Contact Support</a>
+      </nav>
       <div class="footer-aye">Powered by <a href="index.html">AYE Tech Hub</a> 🇪🇹</div>
     </div>
   </div>
