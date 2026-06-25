@@ -5,6 +5,12 @@
       "maxDuration": 30
     }
   },
+  "rewrites": [
+    {
+      "source": "/habesha-hearts/delete-account",
+      "destination": "/habesha-hearts/delete-account.html"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
