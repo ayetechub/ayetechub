@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Delete Account — Habesha Hearts</title>
+<meta name="description" content="Request permanent deletion of your Habesha Hearts account, profile data, chats, and uploaded media."/>
+<meta name="robots" content="noindex"/>
+<link rel="icon" type="image/png" href="../assets/images/habesha-hearts-logo.png"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --green:#22c55e;
+  --green-dark:#16a34a;
+  --green-light:#4ade80;
+  --green-glow:rgba(34,197,94,0.3);
+  --bg:#020817;
+  --bg-card:#0a1628;
+  --border:rgba(34,197,94,0.15);
+  --border-strong:rgba(34,197,94,0.3);
+  --text:#e2e8f0;
+  --text-soft:#94a3b8;
+  --text-muted:#475569;
+  --red:#ef4444;
+}
+body{
+  font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',Arial,sans-serif;
+  line-height:1.6;-webkit-font-smoothing:antialiased;
+  background:var(--bg);color:var(--text);
+  min-height:100vh;
+}
+a{color:var(--green);text-decoration:none}
+.wrap{max-width:640px;margin:0 auto;padding:48px 20px 80px}
+.logo-row{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:28px}
+.logo-row img{width:48px;height:48px;border-radius:11px}
+.brand{font-weight:900;font-size:1.3rem}
+.brand .h{color:var(--green)}
+.brand .d{color:var(--red)}
+.card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:36px 32px;
+}
+h1{font-size:1.7rem;font-weight:800;text-align:center;margin-bottom:8px}
+.sub{color:var(--text-soft);text-align:center;font-size:.95rem;margin-bottom:28px}
+.notice{
+  background:rgba(239,68,68,0.08);
+  border:1px solid rgba(239,68,68,0.3);
+  border-radius:12px;
+  padding:16px 18px;
+  font-size:.9rem;
+  color:#fca5a5;
+  margin-bottom:28px;
+  line-height:1.6;
+}
+.notice strong{color:#fff}
+h2{font-size:1.05rem;font-weight:700;margin:28px 0 10px;color:var(--green-light)}
+ol{margin-left:1.2rem;color:var(--text-soft);font-size:.92rem}
+ol li{margin-bottom:6px}
+.divider{height:1px;background:var(--border);margin:28px 0}
+.form-group{margin-bottom:18px}
+label{display:block;font-size:.85rem;font-weight:600;margin-bottom:6px;color:var(--text)}
+label .opt{color:var(--text-muted);font-weight:400}
+input,textarea{
+  width:100%;padding:12px 14px;border-radius:10px;
+  border:1px solid var(--border-strong);
+  background:rgba(255,255,255,0.03);
+  color:var(--text);font-size:.92rem;font-family:inherit;
+}
+input:focus,textarea:focus{outline:none;border-color:var(--green)}
+textarea{resize:vertical;min-height:90px}
+.submit-btn{
+  width:100%;padding:14px;border-radius:12px;
+  background:linear-gradient(135deg,var(--green-dark),var(--green));
+  color:#fff;font-weight:700;font-size:1rem;
+  box-shadow:0 0 16px var(--green-glow);
+  border:none;cursor:pointer;margin-top:8px;
+}
+.submit-btn:disabled{opacity:.6;cursor:not-allowed}
+.status{
+  margin-top:16px;padding:14px;border-radius:10px;font-size:.88rem;text-align:center;display:none;
+}
+.status.success{display:block;background:rgba(34,197,94,0.1);border:1px solid var(--border-strong);color:var(--green-light)}
+.status.error{display:block;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);color:#fca5a5}
+.footer-link{text-align:center;margin-top:24px;font-size:.85rem;color:var(--text-muted)}
+@media(max-width:480px){
+  .card{padding:26px 20px}
+  h1{font-size:1.4rem}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo-row">
+    <img src="../assets/images/habesha-hearts-logo.png" alt="Habesha Hearts"/>
+    <span class="brand"><span class="h">Habesha</span> <span class="d">Hearts</span></span>
+  </div>
+
+  <div class="card">
+    <h1>Delete Your Account</h1>
+    <p class="sub">Permanently remove your Habesha Hearts account and all associated data.</p>
+
+    <div class="notice">
+      <strong>Important:</strong> When your request is confirmed, all profile data, chats, uploaded media, and account information will be permanently deleted. This action cannot be undone.
+    </div>
+
+    <h2>How it works</h2>
+    <ol>
+      <li>Submit the form below with your account details.</li>
+      <li>Our team verifies your identity using the information provided.</li>
+      <li>Once confirmed, we permanently delete your profile, photos, voice/video intros, chat history, matches, and account record from our systems.</li>
+      <li>You'll receive a confirmation email once deletion is complete (typically within a few business days).</li>
+    </ol>
+    <p style="color:var(--text-muted);font-size:.82rem;margin-top:10px">
+      Prefer to delete in-app? Open Habesha Hearts → Settings → Delete Account for instant, self-service deletion while signed in.
+    </p>
+
+    <div class="divider"></div>
+
+    <form id="delete-form">
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" name="fullName" placeholder="Your full name" required/>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="The email linked to your account" required/>
+      </div>
+      <div class="form-group">
+        <label for="userId">User ID <span class="opt">(optional)</span></label>
+        <input type="text" id="userId" name="userId" placeholder="Found in Settings → About → Account ID, if known"/>
+      </div>
+      <div class="form-group">
+        <label for="reason">Reason for Deletion</label>
+        <textarea id="reason" name="reason" placeholder="Let us know why you're leaving (helps us improve)" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn" id="submit-btn">Submit Deletion Request</button>
+      <div class="status" id="status"></div>
+    </form>
+
+    <p class="footer-link">
+      Questions? Contact us at <a href="mailto:myhabeshadate@gmail.com">myhabeshadate@gmail.com</a>
+    </p>
+  </div>
+</div>
+
+<script>
+const ENDPOINT = 'https://europe-west1-habesha-dating-b2773.cloudfunctions.net/submitAccountDeletionRequest';
+const form = document.getElementById('delete-form');
+const btn = document.getElementById('submit-btn');
+const status = document.getElementById('status');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  btn.disabled = true;
+  btn.textContent = 'Submitting…';
+  status.className = 'status';
+
+  const payload = {
+    fullName: document.getElementById('fullName').value.trim(),
+    email: document.getElementById('email').value.trim(),
+    userId: document.getElementById('userId').value.trim(),
+    reason: document.getElementById('reason').value.trim(),
+  };
+
+  try {
+    const res = await fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    if (!res.ok) throw new Error('Request failed');
+
+    status.textContent = "Your deletion request has been received. We'll verify your identity and process it shortly — you'll get a confirmation email once it's complete.";
+    status.className = 'status success';
+    form.reset();
+    btn.textContent = 'Request Submitted ✓';
+  } catch (err) {
+    status.textContent = 'Something went wrong submitting your request. Please email myhabeshadate@gmail.com directly instead.';
+    status.className = 'status error';
+    btn.disabled = false;
+    btn.textContent = 'Submit Deletion Request';
+  }
+});
+</script>
+</body>
+</html>
