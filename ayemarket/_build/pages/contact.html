@@ -1,0 +1,72 @@
+<section class="page-hero">
+      <div class="container" data-reveal>
+        <span class="eyebrow">Contact Us</span>
+        <h1>We'd love to hear from you</h1>
+        <p>Support questions, business inquiries, feedback, or press — reach out below.</p>
+      </div>
+    </section>
+
+    <section class="section--tight">
+      <div class="container grid grid-2" style="align-items:flex-start;">
+        <div data-reveal>
+          <h2>Send us a message</h2>
+          <!--
+            To make this form actually deliver email, sign up free at
+            https://formspree.io, create a form, and replace the
+            "YOUR_FORM_ID" below with your real Formspree endpoint
+            (e.g. https://formspree.io/f/abc123). No backend required.
+          -->
+          <form data-contact-form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="form-field">
+              <label for="name">Full name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-field">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-field">
+              <label for="topic">Topic</label>
+              <select id="topic" name="topic">
+                <option>General support</option>
+                <option>Business inquiry</option>
+                <option>Report a bug</option>
+                <option>Press / media</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+            <div class="form-status"></div>
+          </form>
+        </div>
+
+        <div data-reveal>
+          <h2>Other ways to reach us</h2>
+          <div class="card" style="margin-bottom:16px;">
+            <div class="card-icon">✉️</div>
+            <h3>Email</h3>
+            <p>General support, business inquiries, and press — all reach the same team.</p>
+            <a href="mailto:ayetechub@gmail.com" style="font-weight:700;color:var(--brand-blue);">ayetechub@gmail.com</a>
+          </div>
+          <div class="card" style="margin-bottom:16px;">
+            <div class="card-icon">🕒</div>
+            <h3>Response time</h3>
+            <p>We aim to respond within 1–2 business days.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">📣</div>
+            <h3>Follow us</h3>
+            <p>Updates, tips, and announcements.</p>
+            <div class="flex gap-12" style="margin-top:10px;">
+              <a href="https://t.me/AYETechHub" target="_blank" rel="noopener" class="btn btn-outline" style="padding:8px 16px;font-size:0.85rem;">Telegram</a>
+              <a href="https://www.youtube.com/@AYETechEngine" target="_blank" rel="noopener" class="btn btn-outline" style="padding:8px 16px;font-size:0.85rem;">YouTube</a>
+            </div>
+          </div>
+          <p class="small" style="margin-top:20px;">Already using the app? The fastest way to reach us is the in-app Feedback & Support tool (Settings → Feedback) — it keeps your account context with your message.</p>
+        </div>
+      </div>
+    </section>
