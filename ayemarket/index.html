@@ -1,277 +1,1163 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AYE Marketplace — Buy, Sell & Find Jobs in Tigray | AYE Tech Hub</title>
-  <meta name="description" content="AYE Marketplace is Tigray's modern buy-and-sell app — browse verified listings, chat with sellers, find local jobs, and shop safely across Mekelle and beyond. Free to download." />
-  <link rel="canonical" href="https://ayetechub.com/ayemarket/" />
-  <link rel="icon" href="assets/images/logo.png" type="image/png" />
-  <meta name="theme-color" content="#2E9E4F" />
-  <meta name="robots" content="index, follow" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="AYE Marketplace" />
-  <meta property="og:title" content="AYE Marketplace — Buy, Sell & Find Jobs in Tigray | AYE Tech Hub" />
-  <meta property="og:description" content="AYE Marketplace is Tigray's modern buy-and-sell app — browse verified listings, chat with sellers, find local jobs, and shop safely across Mekelle and beyond. Free to download." />
-  <meta property="og:url" content="https://ayetechub.com/ayemarket/" />
-  <meta property="og:image" content="https://ayetechub.com/ayemarket/assets/images/logo.png" />
-  <meta property="og:locale" content="en_US" />
+<title>AYE Market – Buy, Sell & Find Jobs in Tigray | Ethiopia's Local Marketplace</title>
+<meta name="description" content="AYE Market is Tigray's modern marketplace app — buy and sell vehicles, property, electronics and more, find jobs or hire talent, chat with sellers, and trade safely. Free to download."/>
+<meta name="keywords" content="AYE Market, AYE Marketplace, Tigray marketplace, Ethiopia buy and sell, Mekelle classifieds, Ethiopian jobs app, Tigray jobs, habesha marketplace, buy sell Ethiopia"/>
+<meta name="author" content="AYE Tech Hub"/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#020817"/>
+<link rel="canonical" href="https://ayetechub.com/ayemarket/"/>
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AYE Marketplace — Buy, Sell & Find Jobs in Tigray | AYE Tech Hub" />
-  <meta name="twitter:description" content="AYE Marketplace is Tigray's modern buy-and-sell app — browse verified listings, chat with sellers, find local jobs, and shop safely across Mekelle and beyond. Free to download." />
-  <meta name="twitter:image" content="https://ayetechub.com/ayemarket/assets/images/logo.png" />
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="AYE Market"/>
+<meta property="og:title" content="AYE Market – Buy, Sell & Find Jobs in Tigray"/>
+<meta property="og:description" content="Tigray's modern marketplace app — buy and sell locally, find jobs or hire talent, chat with sellers, and trade safely. Free to download."/>
+<meta property="og:url" content="https://ayetechub.com/ayemarket/"/>
+<meta property="og:image" content="https://ayetechub.com/ayemarket/assets/images/logo.png"/>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"AYE Marketplace","operatingSystem":"ANDROID","applicationCategory":"ShoppingApplication","url":"https://ayetechub.com/ayemarket/","author":{"@type":"Organization","name":"AYE Tech Hub","url":"https://ayetechub.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"ETB"}}</script>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="AYE Market – Buy, Sell & Find Jobs in Tigray"/>
+<meta name="twitter:description" content="Tigray's modern marketplace app — buy and sell locally, find jobs or hire talent, and trade safely."/>
+<meta name="twitter:image" content="https://ayetechub.com/ayemarket/assets/images/logo.png"/>
+
+<link rel="icon" type="image/png" href="assets/images/logo.png"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "AYE Market",
+  "operatingSystem": "ANDROID",
+  "applicationCategory": "ShoppingApplication",
+  "url": "https://ayetechub.com/ayemarket/",
+  "author": {"@type": "Organization", "name": "AYE Tech Hub", "url": "https://ayetechub.com"},
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "ETB"}
+}
+</script>
+
+<style>
+/* ============================================================
+   AYE MARKET LANDING PAGE
+   Matches AYE Tech Hub / Habesha Hearts design language —
+   dark, glass, green — with AYE Market's own green+blue brand.
+   ============================================================ */
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;background:#020817;color:#e2e8f0;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+img{max-width:100%;display:block}
+ul{list-style:none}
+h1,h2,h3,h4{font-weight:700;line-height:1.2;letter-spacing:-0.5px}
+
+:root{
+  --green:#22c55e;
+  --green-dark:#16a34a;
+  --green-light:#4ade80;
+  --green-glow:rgba(34,197,94,0.3);
+  --blue:#3b82f6;
+  --blue-dark:#2563eb;
+  --blue-glow:rgba(59,130,246,0.3);
+  --gold:#f5c242;
+  --bg:#020817;
+  --bg-card:#0a1628;
+  --border:rgba(34,197,94,0.15);
+  --border-strong:rgba(34,197,94,0.3);
+  --border-blue:rgba(59,130,246,0.3);
+  --text:#e2e8f0;
+  --text-soft:#94a3b8;
+  --text-muted:#475569;
+  --neon:#00d4ff;
+}
+[data-theme="light"]{
+  --bg:#f0f4f8;--bg-card:#fff;
+  --border:rgba(22,163,74,0.15);--border-strong:rgba(22,163,74,0.35);
+  --text:#1e293b;--text-soft:#475569;--text-muted:#94a3b8;
+}
+[data-theme="dark"] .feature-desc,
+[data-theme="dark"] .step-desc,
+[data-theme="dark"] .faq-a,
+[data-theme="dark"] .plan-feature,
+[data-theme="dark"] .about-desc,
+[data-theme="dark"] .safety-desc,
+[data-theme="dark"] .founder-bio,
+[data-theme="dark"] .detail-desc{color:#cbd5e1}
+body{background:var(--bg);color:var(--text)}
+
+.container{max-width:1280px;margin:0 auto;padding:0 20px}
+section{padding:80px 0;position:relative;overflow:hidden}
+@media(max-width:640px){section{padding:60px 0}}
+
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--green);border-radius:3px}
+
+.gradient-text{
+  background:linear-gradient(135deg,#22c55e 0%,#ffffff 50%,#3b82f6 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+[data-theme="light"] .gradient-text{
+  background:linear-gradient(135deg,#15803d 0%,#1d4ed8 60%,#16a34a 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse-green{0%,100%{box-shadow:0 0 20px rgba(34,197,94,0.3)}50%{box-shadow:0 0 50px rgba(34,197,94,0.7)}}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ---- NAVBAR ---- */
+#navbar{position:fixed;top:0;left:0;right:0;z-index:1000;transition:all .3s;padding:14px 0}
+#navbar.scrolled{background:rgba(2,8,23,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:8px 0}
+[data-theme="light"] #navbar.scrolled{background:rgba(240,244,248,0.95)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-text{display:flex;flex-direction:column}
+.brand-name{font-weight:900;font-size:1.25rem;letter-spacing:.3px}
+.brand-tag{font-size:.62rem;color:var(--text-muted);letter-spacing:1.5px;text-transform:uppercase}
+.nav-menu{display:none;gap:20px;align-items:center}
+@media(min-width:1024px){.nav-menu{display:flex}}
+.nav-link{position:relative;color:var(--text-soft);font-size:.75rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:6px 0;transition:color .3s}
+.nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--green);transition:width .3s}
+.nav-link:hover{color:var(--green)}
+.nav-link:hover::after{width:100%}
+.nav-controls{display:flex;align-items:center;gap:8px}
+.icon-btn{width:38px;height:38px;border-radius:9px;background:rgba(34,197,94,0.05);border:1px solid var(--border-strong);color:var(--green);display:flex;align-items:center;justify-content:center;transition:all .3s;font-size:.9rem}
+.icon-btn:hover{background:rgba(34,197,94,0.15);transform:translateY(-2px)}
+.hamburger{display:flex}
+@media(min-width:1024px){.hamburger{display:none}}
+#mobile-menu{display:none;border-top:1px solid var(--border);margin-top:10px;padding:8px 20px 16px;background:rgba(2,8,23,0.98)}
+[data-theme="light"] #mobile-menu{background:rgba(240,244,248,0.98)}
+#mobile-menu.open{display:block}
+.mobile-link{display:block;padding:12px 0;font-size:.78rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-soft);border-bottom:1px solid rgba(34,197,94,0.08);transition:color .2s}
+.mobile-link:hover{color:var(--green)}
+
+/* ---- BUTTONS ---- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:12px;font-weight:700;font-size:.85rem;letter-spacing:.5px;transition:all .3s;white-space:nowrap;cursor:pointer}
+.btn-green{background:linear-gradient(135deg,var(--green-dark),var(--green));color:#fff;box-shadow:0 4px 20px var(--green-glow)}
+.btn-green:hover{transform:translateY(-3px);box-shadow:0 8px 35px rgba(34,197,94,0.5)}
+.btn-blue{background:linear-gradient(135deg,var(--blue-dark),var(--blue));color:#fff;box-shadow:0 4px 20px var(--blue-glow)}
+.btn-blue:hover{transform:translateY(-3px);box-shadow:0 8px 35px rgba(59,130,246,0.5)}
+.btn-outline{border:1.5px solid var(--border-strong);color:var(--green);background:transparent}
+.btn-outline:hover{background:rgba(34,197,94,0.1);transform:translateY(-2px)}
+
+.store-badge{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:14px 22px;border-radius:14px;
+  border:1.5px solid var(--border-strong);
+  background:rgba(10,22,40,0.7);
+  transition:all .3s;
+}
+.store-badge:hover{border-color:var(--green);box-shadow:0 8px 30px var(--green-glow);transform:translateY(-3px)}
+[data-theme="light"] .store-badge{background:rgba(255,255,255,0.85)}
+.store-badge.disabled{opacity:.55;cursor:default}
+.store-badge.disabled:hover{border-color:var(--border-strong);box-shadow:none;transform:none}
+.store-icon{font-size:2rem;line-height:1}
+.store-info .store-sub{font-size:.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;display:block}
+.store-info .store-name{font-size:.95rem;font-weight:700;color:var(--text);display:block}
+
+/* ---- TICKER ---- */
+.ticker-wrap{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:rgba(34,197,94,0.03)}
+.ticker-inner{display:flex;gap:48px;padding:10px 0;white-space:nowrap;animation:ticker 30s linear infinite;width:max-content}
+.ticker-item{display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-soft)}
+.ticker-dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
+
+/* ---- HERO ---- */
+#hero{
+  min-height:100vh;display:flex;align-items:center;
+  padding-top:100px;
+  background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(34,197,94,0.12) 0%,transparent 70%);
+}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr;text-align:center}}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 14px;border-radius:100px;
+  border:1px solid var(--border-strong);
+  background:rgba(34,197,94,0.08);
+  font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--green);margin-bottom:20px;
+}
+.hero-headline{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:900;margin-bottom:20px;line-height:1.08}
+.hero-subtitle{font-size:1.05rem;color:var(--text-soft);margin-bottom:32px;max-width:500px;line-height:1.75}
+@media(max-width:900px){.hero-subtitle{margin:0 auto 32px}}
+.hero-buttons{display:flex;gap:14px;flex-wrap:wrap}
+@media(max-width:900px){.hero-buttons{justify-content:center}}
+.hero-stats{display:flex;gap:28px;margin-top:36px;flex-wrap:wrap}
+@media(max-width:900px){.hero-stats{justify-content:center}}
+.stat{text-align:center}
+.stat-num{font-size:1.6rem;font-weight:900;color:var(--green)}
+.stat-label{font-size:.65rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px}
+
+/* ---- PHONE MOCKUPS ---- */
+.phone-wrap{display:flex;justify-content:center;align-items:center;gap:20px;position:relative}
+.phone{
+  width:230px;height:450px;border-radius:38px;
+  background:linear-gradient(160deg,#0d1f35,#061020);
+  border:2px solid rgba(34,197,94,0.4);
+  box-shadow:0 30px 80px rgba(0,0,0,0.6),0 0 0 1px rgba(34,197,94,0.1);
+  position:relative;overflow:hidden;
+  animation:float 4s ease-in-out infinite;
+  display:flex;flex-direction:column;
+}
+.phone-2{animation-delay:.8s;opacity:.75;transform:scale(0.88);margin-top:30px;border-color:rgba(59,130,246,0.4)}
+.phone-notch{width:80px;height:22px;background:#020817;border-radius:0 0 14px 14px;margin:0 auto;border-bottom:1px solid rgba(34,197,94,0.2)}
+.phone-screen{flex:1;padding:10px;display:flex;flex-direction:column;gap:8px;overflow:hidden}
+.mock-head{font-size:.7rem;font-weight:900;color:var(--green);padding:2px 4px;display:flex;justify-content:space-between;align-items:center}
+.mock-listing{
+  border-radius:14px;overflow:hidden;
+  background:linear-gradient(160deg,rgba(34,197,94,0.12),rgba(0,0,0,0.3));
+  border:1px solid rgba(34,197,94,0.2);
+  flex:1;display:flex;flex-direction:column;
+}
+.mock-listing.blue{background:linear-gradient(160deg,rgba(59,130,246,0.12),rgba(0,0,0,0.3));border-color:rgba(59,130,246,0.25)}
+.mock-img{flex:1;display:flex;align-items:center;justify-content:center;font-size:2.4rem}
+.mock-info{padding:8px 10px;background:linear-gradient(to top,rgba(0,0,0,0.85),transparent)}
+.mock-title{font-size:.68rem;font-weight:700;color:#fff}
+.mock-price{font-size:.64rem;color:var(--green-light);font-weight:700}
+.mock-loc{font-size:.56rem;color:rgba(255,255,255,0.55)}
+.mock-badge{display:inline-block;font-size:.5rem;font-weight:800;letter-spacing:.5px;padding:2px 7px;border-radius:100px;background:var(--gold);color:#4a3600;margin-bottom:4px}
+
+/* ---- SECTION HEADER ---- */
+.section-header{text-align:center;margin-bottom:56px}
+.section-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:5px 14px;border-radius:100px;
+  border:1px solid var(--border-strong);background:rgba(34,197,94,0.07);
+  font-size:.78rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--green);margin-bottom:16px;
+}
+.section-title{font-size:clamp(2.2rem,4vw,3.4rem);font-weight:900;margin-bottom:14px}
+.section-subtitle{font-size:1.1rem;font-weight:500;color:var(--text-soft);max-width:640px;margin:0 auto}
+
+/* ---- CATEGORY GRID ---- */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.cat-chip{
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  padding:20px 10px;border-radius:16px;text-align:center;
+  background:rgba(10,22,40,0.6);border:1px solid var(--border);
+  transition:all .3s;font-weight:700;font-size:.82rem;color:var(--text);
+}
+.cat-chip:hover{border-color:var(--border-strong);transform:translateY(-4px);box-shadow:0 12px 30px rgba(34,197,94,0.12)}
+[data-theme="light"] .cat-chip{background:rgba(255,255,255,0.8)}
+.cat-emoji{font-size:1.7rem}
+
+/* ---- FEATURES ---- */
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.feature-card{
+  padding:28px;border-radius:20px;
+  background:rgba(10,22,40,0.6);
+  border:1px solid var(--border);
+  transition:all .3s;position:relative;overflow:hidden;
+}
+.feature-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--green),transparent);
+  opacity:0;transition:opacity .3s;
+}
+.feature-card:hover{border-color:var(--border-strong);transform:translateY(-6px);box-shadow:0 20px 50px rgba(34,197,94,0.1)}
+.feature-card:hover::before{opacity:1}
+[data-theme="light"] .feature-card{background:rgba(255,255,255,0.8)}
+.feature-icon{
+  width:54px;height:54px;border-radius:16px;
+  background:linear-gradient(135deg,rgba(34,197,94,0.15),rgba(22,163,74,0.08));
+  border:1px solid var(--border-strong);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;margin-bottom:16px;
+}
+.feature-title{font-size:1.2rem;font-weight:800;margin-bottom:10px;color:var(--text)}
+.feature-desc{font-size:.97rem;color:var(--text-soft);line-height:1.65}
+
+/* ---- DETAIL BANDS (buying / selling / jobs deep-dives) ---- */
+.detail-band{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+@media(max-width:900px){.detail-band{grid-template-columns:1fr}}
+.detail-title{font-size:clamp(1.6rem,3vw,2.3rem);font-weight:900;margin-bottom:16px}
+.detail-desc{font-size:1rem;color:var(--text-soft);line-height:1.8;margin-bottom:18px}
+.detail-list li{display:flex;gap:12px;padding:9px 0;font-size:.97rem;color:var(--text-soft);line-height:1.6}
+.detail-list li::before{content:'✓';color:var(--green);font-weight:900;flex-shrink:0}
+.detail-list.blue li::before{color:var(--blue)}
+.detail-visual{
+  border-radius:24px;padding:34px;
+  background:linear-gradient(135deg,rgba(34,197,94,0.07),rgba(10,22,40,0.9));
+  border:1px solid var(--border);
+}
+.detail-visual.blue{background:linear-gradient(135deg,rgba(59,130,246,0.07),rgba(10,22,40,0.9));border-color:var(--border-blue)}
+.mini-row{display:flex;align-items:center;gap:14px;padding:13px 16px;border-radius:14px;background:rgba(10,22,40,0.75);border:1px solid var(--border);margin-bottom:12px}
+.mini-row:last-child{margin-bottom:0}
+[data-theme="light"] .mini-row{background:rgba(255,255,255,0.85)}
+.mini-icon{font-size:1.3rem;flex-shrink:0}
+.mini-title{font-size:.88rem;font-weight:800}
+.mini-sub{font-size:.76rem;color:var(--text-muted)}
+
+/* ---- STEPS ---- */
+#how-it-works{background:linear-gradient(180deg,transparent,rgba(34,197,94,0.04),transparent)}
+.steps-wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+@media(max-width:900px){.steps-wrap{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.steps-wrap{grid-template-columns:1fr}}
+.step{text-align:center;padding:26px 16px;border-radius:18px;background:rgba(10,22,40,0.45);border:1px solid var(--border)}
+[data-theme="light"] .step{background:rgba(255,255,255,0.75)}
+.step-num{
+  width:64px;height:64px;border-radius:50%;
+  background:linear-gradient(135deg,var(--green-dark),var(--green));
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;font-weight:900;color:#fff;
+  margin:0 auto 16px;
+  box-shadow:0 0 0 8px rgba(34,197,94,0.1);
+}
+.step.blue .step-num{background:linear-gradient(135deg,var(--blue-dark),var(--blue));box-shadow:0 0 0 8px rgba(59,130,246,0.1)}
+.step-title{font-size:1.05rem;font-weight:800;margin-bottom:8px}
+.step-desc{font-size:.9rem;color:var(--text-soft);line-height:1.6}
+
+/* ---- PRICING ---- */
+.plans-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;align-items:stretch}
+.plan-card{
+  padding:30px 26px;border-radius:22px;position:relative;
+  background:rgba(10,22,40,0.6);border:1.5px solid var(--border);
+  display:flex;flex-direction:column;transition:all .3s;
+}
+.plan-card:hover{transform:translateY(-6px)}
+[data-theme="light"] .plan-card{background:rgba(255,255,255,0.85)}
+.plan-card.featured{border-color:var(--gold);box-shadow:0 0 40px rgba(245,194,66,0.12)}
+.plan-ribbon{
+  position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+  background:var(--gold);color:#4a3600;
+  font-size:.66rem;font-weight:900;letter-spacing:1px;text-transform:uppercase;
+  padding:5px 16px;border-radius:100px;
+}
+.plan-name{font-size:1.15rem;font-weight:900;margin-bottom:6px}
+.plan-price{font-size:2.1rem;font-weight:900;margin:6px 0 2px}
+.plan-period{font-size:.8rem;color:var(--text-muted);margin-bottom:18px}
+.plan-features{margin-bottom:24px;flex:1}
+.plan-feature{display:flex;gap:10px;padding:6px 0;font-size:.9rem;color:var(--text-soft);line-height:1.5}
+.plan-feature::before{content:'✓';color:var(--green);font-weight:900;flex-shrink:0}
+
+/* ---- SAFETY ---- */
+#safety{background:linear-gradient(180deg,rgba(10,22,40,0.98),transparent)}
+.safety-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.safety-card{padding:26px;border-radius:18px;background:rgba(10,22,40,0.6);border:1px solid var(--border)}
+[data-theme="light"] .safety-card{background:rgba(255,255,255,0.85)}
+.safety-icon{font-size:1.8rem;margin-bottom:12px}
+.safety-title{font-size:1.08rem;font-weight:800;margin-bottom:8px}
+.safety-desc{font-size:.93rem;color:var(--text-soft);line-height:1.65}
+
+/* ---- ABOUT BAND ---- */
+#about{
+  background:linear-gradient(135deg,rgba(22,163,74,0.06),rgba(10,22,40,0.95));
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+@media(max-width:900px){.about-inner{grid-template-columns:1fr;text-align:center}}
+.about-title{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;margin-bottom:16px}
+.about-desc{font-size:.98rem;color:var(--text-soft);line-height:1.85;margin-bottom:18px}
+
+/* ---- FOUNDER ---- */
+#founder{background:linear-gradient(135deg,rgba(34,197,94,0.05),rgba(10,22,40,0.98))}
+.founder-card{
+  max-width:860px;margin:0 auto;padding:40px;border-radius:26px;
+  background:rgba(10,22,40,0.7);border:1px solid var(--border-strong);
+  display:grid;grid-template-columns:180px 1fr;gap:36px;align-items:center;
+}
+@media(max-width:700px){.founder-card{grid-template-columns:1fr;text-align:center;padding:30px 22px}}
+[data-theme="light"] .founder-card{background:rgba(255,255,255,0.9)}
+.founder-photo{
+  width:180px;height:180px;border-radius:50%;object-fit:cover;
+  border:3px solid var(--green);box-shadow:0 0 40px var(--green-glow);
+  margin:0 auto;
+}
+.founder-name{font-size:1.5rem;font-weight:900;margin-bottom:4px}
+.founder-role{font-size:.85rem;font-weight:700;color:var(--green);letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+.founder-bio{font-size:.95rem;color:var(--text-soft);line-height:1.8}
+
+/* ---- FAQ ---- */
+.faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.faq-item{border-radius:14px;border:1px solid var(--border);background:rgba(10,22,40,0.5);overflow:hidden;transition:border-color .3s}
+.faq-item:hover{border-color:var(--border-strong)}
+[data-theme="light"] .faq-item{background:rgba(255,255,255,0.8)}
+.faq-q{padding:18px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:1.02rem;gap:12px}
+.faq-arrow{font-size:.7rem;color:var(--green);transition:transform .3s;flex-shrink:0}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+.faq-a{display:none;padding:0 20px 20px;font-size:.97rem;color:var(--text-soft);line-height:1.75}
+.faq-item.open .faq-a{display:block}
+
+/* ---- DOWNLOAD ---- */
+#download{background:linear-gradient(135deg,rgba(22,163,74,0.08),rgba(10,22,40,0.95),rgba(59,130,246,0.06))}
+.download-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+@media(max-width:900px){.download-inner{grid-template-columns:1fr;text-align:center}}
+.download-buttons{display:flex;gap:16px;flex-wrap:wrap;margin-top:28px}
+@media(max-width:900px){.download-buttons{justify-content:center}}
+.app-mockup{
+  width:250px;height:500px;border-radius:42px;
+  background:linear-gradient(160deg,#0d1f35,#061020);
+  border:2px solid rgba(34,197,94,0.4);
+  box-shadow:0 40px 100px rgba(0,0,0,0.6);
+  position:relative;overflow:hidden;
+  animation:float 4s ease-in-out infinite,pulse-green 3s ease-in-out infinite;
+  display:flex;flex-direction:column;margin:0 auto;
+}
+
+/* ---- CONTACT ---- */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;max-width:900px;margin:0 auto}
+.contact-card{padding:28px;border-radius:18px;background:rgba(10,22,40,0.6);border:1px solid var(--border);text-align:center}
+[data-theme="light"] .contact-card{background:rgba(255,255,255,0.85)}
+.contact-icon{font-size:2rem;margin-bottom:12px}
+.contact-title{font-weight:800;margin-bottom:6px}
+.contact-value{font-size:.92rem;color:var(--green);font-weight:700}
+.contact-note{font-size:.8rem;color:var(--text-muted);margin-top:6px}
+
+/* ---- FOOTER ---- */
+footer{border-top:1px solid var(--border);padding:56px 0 30px;background:rgba(2,8,23,0.9)}
+[data-theme="light"] footer{background:rgba(240,244,248,0.95)}
+.footer-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:36px;margin-bottom:40px}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.footer-grid{grid-template-columns:1fr}}
+.footer-title{font-size:.78rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:14px}
+.footer-link{display:block;padding:5px 0;font-size:.9rem;color:var(--text-soft);transition:color .2s}
+.footer-link:hover{color:var(--green)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:24px;border-top:1px solid var(--border);font-size:.8rem;color:var(--text-muted)}
+</style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="navbar">
-    <div class="container navbar-inner">
-      <a href="index.html" class="navbar-brand">
-        <img src="assets/images/logo.png" alt="AYE Marketplace logo" width="34" height="34" />
-        AYE Marketplace
-      </a>
-      <nav class="navbar-links" data-nav-links aria-label="Primary">
-        <a href="features.html">Features</a>
-      <a href="how-it-works.html">How It Works</a>
-      <a href="safety.html">Safety Center</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="help.html">Help Center</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      </nav>
-      <div class="navbar-actions">
-        <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">🌙</button>
-        <a href="https://play.google.com/store/apps/details?id=com.ayetechub.ayemarket" class="btn btn-primary btn-block-mobile" style="padding:10px 20px;font-size:0.88rem;">Get the App</a>
-        <button class="nav-toggle" data-nav-toggle aria-label="Open menu" aria-expanded="false">☰</button>
+
+<!-- ============================================================ NAVBAR ============================================================ -->
+<header id="navbar">
+  <div class="container nav-inner">
+    <a href="#hero" class="brand" aria-label="AYE Market home">
+      <img src="assets/images/logo.png" alt="AYE Market" style="width:52px;height:52px;border-radius:13px;filter:drop-shadow(0 0 10px rgba(34,197,94,0.5))"/>
+      <div class="brand-text">
+        <div class="brand-name"><span style="color:var(--green)">AYE </span><span style="color:var(--blue)">Market</span></div>
+        <div class="brand-tag">Buy · Sell · Connect</div>
+      </div>
+    </a>
+
+    <nav class="nav-menu" aria-label="Main navigation">
+      <a href="#categories" class="nav-link">Categories</a>
+      <a href="#features" class="nav-link">Features</a>
+      <a href="#jobs" class="nav-link">Jobs</a>
+      <a href="#pricing" class="nav-link">Premium</a>
+      <a href="#safety" class="nav-link">Safety</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="/" class="nav-link" style="color:var(--neon)">AYE Tech Hub</a>
+    </nav>
+
+    <div class="nav-controls">
+      <button class="icon-btn" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle theme">☀</button>
+      <button class="icon-btn hamburger" onclick="toggleMobileMenu()" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="container">
+    <a href="#categories" class="mobile-link" onclick="toggleMobileMenu()">Categories</a>
+    <a href="#features" class="mobile-link" onclick="toggleMobileMenu()">Features</a>
+    <a href="#jobs" class="mobile-link" onclick="toggleMobileMenu()">Jobs</a>
+    <a href="#pricing" class="mobile-link" onclick="toggleMobileMenu()">Premium</a>
+    <a href="#safety" class="mobile-link" onclick="toggleMobileMenu()">Safety</a>
+    <a href="#faq" class="mobile-link" onclick="toggleMobileMenu()">FAQ</a>
+    <a href="#contact" class="mobile-link" onclick="toggleMobileMenu()">Contact</a>
+    <a href="/" class="mobile-link" style="color:var(--neon)" onclick="toggleMobileMenu()">← AYE Tech Hub</a>
+    <div style="display:flex;gap:10px;margin-top:14px">
+      <a href="#download" class="btn btn-green" style="flex:1" onclick="toggleMobileMenu()">📲 Download App</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================ TICKER ============================================================ -->
+<div class="ticker-wrap" style="margin-top:70px">
+  <div class="ticker-inner">
+    <span class="ticker-item"><span class="ticker-dot"></span>Tigray's Modern Marketplace</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Buy · Sell · Find Jobs · Hire Talent</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Chat · Call · WhatsApp · SMS</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>ትግርኛ · አማርኛ · English</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Tigray's Modern Marketplace</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Buy · Sell · Find Jobs · Hire Talent</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Chat · Call · WhatsApp · SMS</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>ትግርኛ · አማርኛ · English</span>
+  </div>
+</div>
+
+<!-- ============================================================ HERO ============================================================ -->
+<section id="hero">
+  <div class="container hero-inner">
+    <div>
+      <div style="margin-bottom:20px" class="reveal">
+        <img src="assets/images/logo.png" alt="AYE Market app logo" style="width:96px;height:96px;border-radius:22px;filter:drop-shadow(0 0 22px rgba(34,197,94,0.5))"/>
+      </div>
+      <div class="hero-tag reveal">🛒 Tigray's Modern Marketplace</div>
+      <h1 class="hero-headline gradient-text reveal">AYE Market</h1>
+      <p class="hero-subtitle reveal">Buy and sell anything locally — vehicles, property, electronics, fashion, services and more. Find a job or hire the right person. Chat, call, or WhatsApp sellers directly. Built for <strong style="color:var(--green)">Tigray</strong>, in <strong style="color:var(--green)">ትግርኛ</strong>, <strong style="color:var(--green)">አማርኛ</strong>, and English.</p>
+      <div class="hero-buttons reveal">
+        <a href="#download" class="btn btn-green">📲 Download Free</a>
+        <a href="#features" class="btn btn-outline">✨ Explore Features</a>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="stat"><div class="stat-num">22</div><div class="stat-label">Categories</div></div>
+        <div class="stat"><div class="stat-num">3</div><div class="stat-label">Languages</div></div>
+        <div class="stat"><div class="stat-num">4</div><div class="stat-label">Contact Channels</div></div>
+        <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Free to Use</div></div>
       </div>
     </div>
-  </header>
-  <main id="main">
-    <section class="hero">
-      <div class="hero-blob hero-blob--1" aria-hidden="true"></div>
-      <div class="hero-blob hero-blob--2" aria-hidden="true"></div>
-      <div class="container hero-grid">
-        <div data-reveal>
-          <span class="eyebrow">Now in early access · Tigray, Ethiopia</span>
-          <h1>Buy, sell, and find jobs — right where you live.</h1>
-          <p class="hero-sub">AYE Marketplace is a modern, safe, and free-to-use classifieds app built for Tigray — browse verified listings, chat directly with sellers, and post your own in minutes, in Tigrinya, Amharic, or English.</p>
-          <div class="hero-ctas">
-            <a href="https://play.google.com/store/apps/details?id=com.ayetechub.ayemarket" class="btn btn-primary btn-lg">▶ Download on Google Play</a>
-            <a href="#" class="btn btn-disabled btn-lg" aria-disabled="true" onclick="return false;">🍎 App Store — Coming Soon</a>
-          </div>
-          <p class="hero-store-note">Free to download · Android 8.0 and up · Launching soon on Google Play</p>
-          <div class="hero-stats">
-            <div class="hero-stat"><b>8+</b><span>Listing categories</span></div>
-            <div class="hero-stat"><b>3</b><span>Languages supported</span></div>
-            <div class="hero-stat"><b>100%</b><span>Free to browse & message</span></div>
-          </div>
-        </div>
-        <div data-reveal>
-          <div class="phone-frame" data-slider>
-            <div data-slide style="background:linear-gradient(160deg,#1B5FC1,#2E9E4F);height:100%;padding:22px 14px;color:#fff;">
-              <div style="font-weight:800;font-size:0.95rem;margin-bottom:14px;">🏠 Home</div>
-              <div style="background:rgba(255,255,255,0.14);border-radius:14px;padding:12px;margin-bottom:10px;">
-                <div style="background:rgba(255,255,255,0.25);height:70px;border-radius:8px;margin-bottom:8px;"></div>
-                <div style="font-size:0.78rem;font-weight:700;">Toyota Vitz 2015</div>
-                <div style="font-size:0.72rem;opacity:0.85;">850,000 ETB · Mekelle</div>
-              </div>
-              <div style="background:rgba(255,255,255,0.14);border-radius:14px;padding:12px;">
-                <div style="background:rgba(255,255,255,0.25);height:70px;border-radius:8px;margin-bottom:8px;"></div>
-                <div style="font-size:0.78rem;font-weight:700;">2-Bedroom Apartment</div>
-                <div style="font-size:0.72rem;opacity:0.85;">12,000 ETB/mo · Adi Haki</div>
-              </div>
-            </div>
-            <div data-slide style="display:none;background:linear-gradient(160deg,#2E9E4F,#134791);height:100%;padding:22px 14px;color:#fff;">
-              <div style="font-weight:800;font-size:0.95rem;margin-bottom:14px;">💬 Chat</div>
-              <div style="background:rgba(255,255,255,0.16);border-radius:14px;padding:14px;margin-bottom:10px;max-width:80%;font-size:0.8rem;">Is this still available?</div>
-              <div style="background:rgba(255,255,255,0.35);border-radius:14px;padding:14px;margin-left:auto;max-width:80%;font-size:0.8rem;">Yes! Still here 👍</div>
-            </div>
-            <div data-slide style="display:none;background:linear-gradient(160deg,#F5C242,#C77700);height:100%;padding:22px 14px;color:#fff;">
-              <div style="font-weight:800;font-size:0.95rem;margin-bottom:14px;">⭐ Premium+</div>
-              <div style="background:rgba(255,255,255,0.2);border-radius:14px;padding:16px;font-size:0.8rem;">
-                <div style="font-weight:800;margin-bottom:6px;">Your listing is Promoted 🚀</div>
-                <div style="opacity:0.9;">Up to 5x more views this week</div>
-              </div>
+
+    <div class="phone-wrap reveal">
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="mock-head">AYE Market <span>🔔</span></div>
+          <div class="mock-listing">
+            <div class="mock-img">🚗</div>
+            <div class="mock-info">
+              <div><span class="mock-badge">PROMOTED</span></div>
+              <div class="mock-title">Toyota Vitz 2015</div>
+              <div class="mock-price">850,000 ETB</div>
+              <div class="mock-loc">📍 Mekelle · Verified Seller ✓</div>
             </div>
           </div>
-          <div class="slider-dots" data-slider-dots></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="categories-heading">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="eyebrow">Browse by category</span>
-          <h2 id="categories-heading">Whatever you're looking for, it's local</h2>
-          <p>From vehicles to vacancies — every category is organized for how people actually shop and hire in Tigray.</p>
-        </div>
-        <div class="grid grid-4" data-reveal>
-          <a href="features.html" class="category-chip"><span class="emoji">🚗</span>Vehicles</a>
-          <a href="features.html" class="category-chip"><span class="emoji">🏠</span>Property</a>
-          <a href="features.html" class="category-chip"><span class="emoji">📱</span>Electronics</a>
-          <a href="features.html" class="category-chip"><span class="emoji">👗</span>Fashion</a>
-          <a href="features.html" class="category-chip"><span class="emoji">💼</span>Jobs</a>
-          <a href="features.html" class="category-chip"><span class="emoji">🧑‍💻</span>Jobs Wanted</a>
-          <a href="features.html" class="category-chip"><span class="emoji">🛋️</span>Home & Furniture</a>
-          <a href="features.html" class="category-chip"><span class="emoji">🛠️</span>Services</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--alt" aria-labelledby="why-heading">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="eyebrow">Why AYE Marketplace</span>
-          <h2 id="why-heading">Built different, on purpose</h2>
-        </div>
-        <div class="grid grid-3">
-          <div class="card" data-reveal>
-            <div class="card-icon">💬</div>
-            <h3>Chat, call, or WhatsApp</h3>
-            <p>Reach a seller however works for you — in-app chat, a direct call, WhatsApp, or SMS. No middleman, no hidden fees.</p>
-          </div>
-          <div class="card" data-reveal>
-            <div class="card-icon">📍</div>
-            <h3>Truly local</h3>
-            <p>Search by GPS location or browse an interactive Tigray map so you only see what's actually near you.</p>
-          </div>
-          <div class="card" data-reveal>
-            <div class="card-icon">🛡️</div>
-            <h3>Built for safety</h3>
-            <p>Verified sellers, admin moderation on every listing, and a full Safety Center with real guidance — not just fine print.</p>
-          </div>
-          <div class="card" data-reveal>
-            <div class="card-icon">🌐</div>
-            <h3>Speaks your language</h3>
-            <p>Fully available in Tigrinya, Amharic, and English — switch anytime in Settings.</p>
-          </div>
-          <div class="card" data-reveal>
-            <div class="card-icon">💼</div>
-            <h3>More than a marketplace</h3>
-            <p>Post job openings, browse Jobs Wanted candidate ads, and manage applications — all in the same app.</p>
-          </div>
-          <div class="card" data-reveal>
-            <div class="card-icon">🌓</div>
-            <h3>Light or dark, your call</h3>
-            <p>A clean interface that adapts to how you like to browse, day or night.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="mission-heading">
-      <div class="container grid grid-2" style="align-items:center;">
-        <div data-reveal>
-          <span class="eyebrow">Our mission</span>
-          <h2 id="mission-heading">Make local commerce work for everyone in Tigray</h2>
-          <p>Too many people still rely on word-of-mouth, physical noticeboards, or unsafe informal channels to buy, sell, or find work locally. AYE Marketplace exists to replace that with something modern, trustworthy, and built specifically for how people here actually communicate and transact.</p>
-        </div>
-        <div data-reveal>
-          <span class="eyebrow">Our vision</span>
-          <h2>A safer, more connected local economy</h2>
-          <p>We want AYE Marketplace to become the default place Tigrayans go to buy, sell, and hire — known for being safe, easy, and genuinely useful, not just another app. Every feature we build starts from that promise.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--alt" aria-labelledby="early-heading">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="eyebrow">Early access</span>
-          <h2 id="early-heading">Be one of the first to use AYE Marketplace</h2>
-          <p>We're launching soon — join early and help shape a marketplace built around real feedback from real users in Tigray, not assumptions.</p>
-        </div>
-        <div class="grid grid-3">
-          <div class="testimonial-card" data-reveal>
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-quote">"We built AYE Marketplace because we were tired of watching friends and family get scammed on informal buy-sell groups. Every safety feature in this app exists because of a real story we heard."</p>
-            <div class="testimonial-person">
-              <div class="avatar-circle">AN</div>
-              <div><strong>Awet G. Nway</strong><br /><span class="small">Founder, AYE Tech Hub</span></div>
+          <div class="mock-listing">
+            <div class="mock-img">🏠</div>
+            <div class="mock-info">
+              <div class="mock-title">2-Bedroom Apartment</div>
+              <div class="mock-price">12,000 ETB / month</div>
+              <div class="mock-loc">📍 Adi Haki, Mekelle</div>
             </div>
           </div>
-          <div class="card" data-reveal>
-            <div class="card-icon">🚀</div>
-            <h3>Early access perks</h3>
-            <p>The first sellers to join get extra visibility as the marketplace grows — your listings help define the categories everyone else sees.</p>
-          </div>
-          <div class="card" data-reveal>
-            <div class="card-icon">📣</div>
-            <h3>Your feedback shapes it</h3>
-            <p>Use the in-app Feedback & Support tool anytime — early user reports go straight to the team building the app.</p>
-          </div>
         </div>
       </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="cta-band" data-reveal>
-          <h2>Ready to buy, sell, or hire?</h2>
-          <p>Download AYE Marketplace free and post your first listing in minutes.</p>
-          <a href="https://play.google.com/store/apps/details?id=com.ayetechub.ayemarket" class="btn btn-white btn-lg">▶ Get AYE Marketplace</a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <a href="index.html" class="footer-brand">
-            <img src="assets/images/logo.png" alt="AYE Marketplace logo" width="32" height="32" />
-            AYE Marketplace
-          </a>
-          <p style="max-width:280px;">Tigray's modern marketplace for buying, selling, and finding jobs — safely and locally.</p>
-          <div class="footer-social">
-            <a href="https://t.me/AYETechHub" aria-label="Telegram" target="_blank" rel="noopener">✈️</a>
-            <a href="https://www.youtube.com/@AYETechEngine" aria-label="YouTube" target="_blank" rel="noopener">▶️</a>
-            <a href="mailto:ayetechub@gmail.com" aria-label="Email">✉️</a>
+      <div class="phone phone-2">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="mock-head" style="color:var(--blue)">Jobs <span>💼</span></div>
+          <div class="mock-listing blue">
+            <div class="mock-img">🧑‍💼</div>
+            <div class="mock-info">
+              <div class="mock-title">Sales Officer — Full Time</div>
+              <div class="mock-price" style="color:#93c5fd">8,000 ETB / month</div>
+              <div class="mock-loc">📍 Mekelle · 12 applicants</div>
+            </div>
+          </div>
+          <div class="mock-listing blue">
+            <div class="mock-img">🔧</div>
+            <div class="mock-info">
+              <div class="mock-title">Electrician Available</div>
+              <div class="mock-price" style="color:#93c5fd">Jobs Wanted Ad</div>
+              <div class="mock-loc">📍 5 yrs experience · CV ✓</div>
+            </div>
           </div>
         </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <a href="about.html">About Us</a>
-          <a href="how-it-works.html">How It Works</a>
-          <a href="safety.html">Safety Center</a>
-          <a href="developers.html">Developer Info</a>
-          <a href="release-notes.html">Release Notes</a>
-        </div>
-        <div class="footer-col">
-          <h4>Product</h4>
-          <a href="features.html">Features</a>
-          <a href="pricing.html">Premium Plans</a>
-          <a href="help.html">Help Center / FAQ</a>
-          <a href="contact.html">Contact Us</a>
-        </div>
-        <div class="footer-col">
-          <h4>Legal</h4>
-          <a href="privacy-policy.html">Privacy Policy</a>
-          <a href="terms.html">Terms of Service</a>
-          <a href="community-guidelines.html">Community Guidelines</a>
-          <a href="cookie-policy.html">Cookie Policy</a>
-        </div>
-        <div class="footer-col">
-          <h4>Your Privacy</h4>
-          <a href="privacy-center.html">Data & Privacy Center</a>
-          <a href="delete-account.html">Delete My Account</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© <span data-year>2026</span> AYE Marketplace — a product of <a href="https://ayetechub.com" style="color:var(--brand-blue);">AYE Tech Hub</a>. All rights reserved.</span>
-        <span>Made for Tigray, Ethiopia 🇪🇹</span>
       </div>
     </div>
-  </footer>
-  <script src="assets/js/main.js"></script>
+  </div>
+</section>
+
+<!-- ============================================================ CATEGORIES ============================================================ -->
+<section id="categories">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">🗂️ 22 Categories</div>
+      <h2 class="section-title">Whatever You Need,<br/><span class="gradient-text">It's On AYE Market</span></h2>
+      <p class="section-subtitle">Every category is organized for how people in Tigray actually shop, sell, and hire — each with its own tailored listing form, filters, and search attributes.</p>
+    </div>
+    <div class="cat-grid reveal">
+      <div class="cat-chip"><span class="cat-emoji">🚗</span>Vehicles</div>
+      <div class="cat-chip"><span class="cat-emoji">🏠</span>Property</div>
+      <div class="cat-chip"><span class="cat-emoji">💼</span>Jobs</div>
+      <div class="cat-chip"><span class="cat-emoji">🧑‍💼</span>Jobs Wanted</div>
+      <div class="cat-chip"><span class="cat-emoji">📺</span>Electronics</div>
+      <div class="cat-chip"><span class="cat-emoji">📱</span>Phones & Tablets</div>
+      <div class="cat-chip"><span class="cat-emoji">💻</span>Computers</div>
+      <div class="cat-chip"><span class="cat-emoji">🛋️</span>Home & Furniture</div>
+      <div class="cat-chip"><span class="cat-emoji">👗</span>Fashion</div>
+      <div class="cat-chip"><span class="cat-emoji">💄</span>Beauty</div>
+      <div class="cat-chip"><span class="cat-emoji">🛠️</span>Services</div>
+      <div class="cat-chip"><span class="cat-emoji">🌾</span>Agriculture</div>
+      <div class="cat-chip"><span class="cat-emoji">🏭</span>Industrial Equipment</div>
+      <div class="cat-chip"><span class="cat-emoji">📚</span>Education</div>
+      <div class="cat-chip"><span class="cat-emoji">⚽</span>Sports</div>
+      <div class="cat-chip"><span class="cat-emoji">🐄</span>Animals</div>
+      <div class="cat-chip"><span class="cat-emoji">🍼</span>Baby Products</div>
+      <div class="cat-chip"><span class="cat-emoji">🩺</span>Health</div>
+      <div class="cat-chip"><span class="cat-emoji">🍯</span>Food</div>
+      <div class="cat-chip"><span class="cat-emoji">🏪</span>Business</div>
+      <div class="cat-chip"><span class="cat-emoji">🏗️</span>Construction</div>
+      <div class="cat-chip"><span class="cat-emoji">➕</span>More</div>
+    </div>
+    <p class="reveal" style="text-align:center;margin-top:28px;font-size:.95rem;color:var(--text-soft);max-width:720px;margin-left:auto;margin-right:auto;line-height:1.8">
+      Vehicles come with brand, model, year, mileage, fuel and transmission filters. Property listings support rent and sale across apartments, houses, villas, offices, land and more. Construction covers both materials and services. Every category speaks its own language — so buyers find exactly what they're looking for, faster.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================ BUYING BAND ============================================================ -->
+<section style="background:linear-gradient(180deg,transparent,rgba(34,197,94,0.03),transparent)">
+  <div class="container detail-band">
+    <div class="reveal">
+      <div class="section-tag">🛍️ For Buyers</div>
+      <h3 class="detail-title">Find it, check it, <span class="gradient-text">contact the seller your way</span></h3>
+      <p class="detail-desc">AYE Market is built around one idea: you should never have to guess. Every listing carries real photos with a full-screen zoom gallery, a detailed description, the seller's verification status, and the exact location on a map — before you ever reach out.</p>
+      <ul class="detail-list">
+        <li><strong>Powerful search</strong>&nbsp;— keyword search across every category, with singular/plural matching so "phone" also finds "phones".</li>
+        <li><strong>Advanced filters</strong>&nbsp;— narrow by price range, condition, brand, model, and category-specific attributes like bedrooms, mileage, or storage size.</li>
+        <li><strong>Nearby search</strong>&nbsp;— with GPS permission, see listings sorted by real distance from where you stand.</li>
+        <li><strong>Tigray location system</strong>&nbsp;— browse by the real administrative hierarchy: region, zone, wereda, tabiya, and city — not a generic address box.</li>
+        <li><strong>Favorites & saved searches</strong>&nbsp;— save any listing to your Favorites, or save a whole search and get notified when new matches appear.</li>
+        <li><strong>Four contact channels</strong>&nbsp;— in-app chat, phone call, WhatsApp, or SMS. The seller chooses which they accept; you choose which you prefer.</li>
+      </ul>
+    </div>
+    <div class="detail-visual reveal">
+      <div class="mini-row"><span class="mini-icon">🔍</span><div><div class="mini-title">Search "vitz mekelle"</div><div class="mini-sub">2 results near you · sorted by distance</div></div></div>
+      <div class="mini-row"><span class="mini-icon">🎛️</span><div><div class="mini-title">Filters: 500k–900k ETB · Used · Toyota</div><div class="mini-sub">Applied to Vehicles › Cars</div></div></div>
+      <div class="mini-row"><span class="mini-icon">📍</span><div><div class="mini-title">Mekelle › Hadnet › Adi Haki</div><div class="mini-sub">Region → Zone → Wereda → Tabiya</div></div></div>
+      <div class="mini-row"><span class="mini-icon">❤️</span><div><div class="mini-title">Saved to Favorites</div><div class="mini-sub">Price-drop notifications on</div></div></div>
+      <div class="mini-row"><span class="mini-icon">💬</span><div><div class="mini-title">Chat · 📞 Call · 🟢 WhatsApp · ✉️ SMS</div><div class="mini-sub">Contact the seller your way</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ SELLING BAND ============================================================ -->
+<section>
+  <div class="container detail-band">
+    <div class="detail-visual blue reveal" style="order:1">
+      <div class="mini-row"><span class="mini-icon">📸</span><div><div class="mini-title">8 photos · drag to reorder</div><div class="mini-sub">First photo becomes your cover</div></div></div>
+      <div class="mini-row"><span class="mini-icon">📝</span><div><div class="mini-title">Category-specific form</div><div class="mini-sub">Car? Get brand/model/year fields. House? Bedrooms & area.</div></div></div>
+      <div class="mini-row"><span class="mini-icon">💾</span><div><div class="mini-title">Auto-saved draft</div><div class="mini-sub">Never lose a half-finished listing</div></div></div>
+      <div class="mini-row"><span class="mini-icon">📊</span><div><div class="mini-title">Seller Dashboard</div><div class="mini-sub">Views, favorites, and listing performance</div></div></div>
+      <div class="mini-row"><span class="mini-icon">🏪</span><div><div class="mini-title">Business account</div><div class="mini-sub">Store name + storefront presence</div></div></div>
+    </div>
+    <div class="reveal" style="order:2">
+      <div class="section-tag" style="color:var(--blue);border-color:var(--border-blue);background:rgba(59,130,246,0.07)">📤 For Sellers</div>
+      <h3 class="detail-title">Post in minutes, <span class="gradient-text">manage like a pro</span></h3>
+      <p class="detail-desc">Publishing a listing takes minutes: pick a category, add up to 8 photos, set your price and location, publish. But underneath, AYE Market gives sellers real tools — not just an ad slot.</p>
+      <ul class="detail-list blue">
+        <li><strong>Category-smart forms</strong>&nbsp;— every category has its own tailored fields, so your listing carries the details buyers filter by.</li>
+        <li><strong>Full listing lifecycle</strong>&nbsp;— publish, edit, pause, mark sold, archive, duplicate, or delete from My Listings, anytime.</li>
+        <li><strong>Auto-save drafts</strong>&nbsp;— your listing saves itself as you type; come back and finish whenever.</li>
+        <li><strong>Seller Dashboard</strong>&nbsp;— track total views, favorites, sold counts, and (with Premium) deeper analytics and trends.</li>
+        <li><strong>Reviews & reputation</strong>&nbsp;— buyers rate their experience, and your rating shows on every listing you post.</li>
+        <li><strong>Contact preference</strong>&nbsp;— accept chat only, calls only, or both. Your phone number is never shown unless you allow it.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ JOBS BAND ============================================================ -->
+<section id="jobs" style="background:linear-gradient(135deg,rgba(59,130,246,0.05),rgba(10,22,40,0.95))">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag" style="color:var(--blue);border-color:var(--border-blue);background:rgba(59,130,246,0.07)">💼 Jobs Marketplace</div>
+      <h2 class="section-title">A Complete <span class="gradient-text">Jobs Platform</span> Inside</h2>
+      <p class="section-subtitle">AYE Market isn't just for goods — it's a full two-sided jobs marketplace for Tigray, with dedicated experiences for job seekers and employers.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">🔎</div>
+        <div class="feature-title">Find Jobs</div>
+        <div class="feature-desc">Browse openings by category, qualification, employment type, and salary range. Every posting carries industry, experience level, education requirements, benefits, and application deadline — filterable, not buried in text.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📄</div>
+        <div class="feature-title">Job Seeker Profile & CV</div>
+        <div class="feature-desc">Build one professional profile — CV upload, skills, languages, education, experience level, expected salary, and how employers may contact you. Your "Jobs Wanted" ad stays in sync with it automatically.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">✅</div>
+        <div class="feature-title">One-Tap Applications</div>
+        <div class="feature-desc">Apply with your CV in seconds, then track every application's status — pending, viewed, shortlisted — from your applications dashboard.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📣</div>
+        <div class="feature-title">Post a Job</div>
+        <div class="feature-desc">Employers post openings with company name, vacancies, responsibilities, required skills, salary, deadline, and location. Manage all postings and applicants from the Employer Dashboard.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🧑‍🔧</div>
+        <div class="feature-title">Hire Talent — Jobs Wanted</div>
+        <div class="feature-desc">Browse candidate ads by profession, qualification, experience, and employment type. See skills, education and expected salary up front — and view CVs once your account is verified.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🔐</div>
+        <div class="feature-title">CV Privacy Protection</div>
+        <div class="feature-desc">A candidate's CV is personal. Only identity-verified employers can open CVs — the same document protection applied to job applications and Jobs Wanted ads alike.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FEATURES ============================================================ -->
+<section id="features">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">✨ Everything Included</div>
+      <h2 class="section-title">Features That Make Trading<br/><span class="gradient-text">Simple and Safe</span></h2>
+      <p class="section-subtitle">Every feature below exists in the app today — nothing here is a promise.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">💬</div>
+        <div class="feature-title">Real-Time Chat</div>
+        <div class="feature-desc">Message any seller instantly, share photos, and pick conversations back up anytime. Typing indicators, unread counts, and the listing you're discussing pinned right in the thread — without ever sharing your phone number.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📞</div>
+        <div class="feature-title">Call, WhatsApp & SMS</div>
+        <div class="feature-desc">When a seller shares their number, reach them the way Tigray actually communicates — a direct call, a WhatsApp message pre-filled with the listing, or a plain SMS.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🗺️</div>
+        <div class="feature-title">GPS + Interactive Map</div>
+        <div class="feature-desc">Pin your listing's exact location on a map, browse what's nearby, and search by distance. The location picker follows Tigray's real administrative structure down to tabiya level.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🔔</div>
+        <div class="feature-title">Smart Notifications</div>
+        <div class="feature-desc">New messages, price drops on favorites, saved-search matches, application updates, listing approvals — delivered as push notifications with a full notification center in-app.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">✅</div>
+        <div class="feature-title">Verified Sellers</div>
+        <div class="feature-desc">Sellers can verify with a Fayda ID, Kebele Residence ID, Driver's License, Business License, or Passport — reviewed by a human moderator. Verified accounts wear a badge buyers can trust.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">⭐</div>
+        <div class="feature-title">Reviews & Ratings</div>
+        <div class="feature-desc">Rate sellers after a transaction. Ratings, response rate, and member-since dates appear on every seller profile — reputation that's earned, not claimed.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🛡️</div>
+        <div class="feature-title">Moderation & Reporting</div>
+        <div class="feature-desc">Every listing and user can be reported in one tap. A human moderation team reviews reports against published Community Guidelines — with warnings, suspensions, and bans for violators.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🚫</div>
+        <div class="feature-title">Block Anyone</div>
+        <div class="feature-desc">Block any user from their profile or a chat. Blocked users can't message you or see your contact options — no questions asked.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">👥</div>
+        <div class="feature-title">Follow Sellers</div>
+        <div class="feature-desc">Follow sellers you like and get notified when they post something new — build your own trusted seller network.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🎭</div>
+        <div class="feature-title">Multi-Role Accounts</div>
+        <div class="feature-desc">One account, four roles — Buyer, Seller, Job Seeker, Employer. Switch any role on or off in Settings and your app adapts; nothing you posted is ever lost.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🌐</div>
+        <div class="feature-title">Three Languages</div>
+        <div class="feature-desc">Fully translated into Tigrinya, Amharic, and English — every screen, every button, every notification. Switch anytime in Settings.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🌓</div>
+        <div class="feature-title">Light & Dark Mode</div>
+        <div class="feature-desc">A clean light theme by default, a full dark theme when you want it — or follow your system setting.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ HOW IT WORKS ============================================================ -->
+<section id="how-it-works">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">🚀 Getting Started</div>
+      <h2 class="section-title">Up and Running in <span class="gradient-text">4 Steps</span></h2>
+    </div>
+    <div class="steps-wrap">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <div class="step-title">Create Your Account</div>
+        <div class="step-desc">Sign up free with email, phone, or Google. Pick your roles — buyer, seller, job seeker, employer, or all four.</div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <div class="step-title">Browse or Post</div>
+        <div class="step-desc">Search 22 categories with smart filters, or publish your own listing with photos, price, and map location in minutes.</div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <div class="step-title">Connect Directly</div>
+        <div class="step-desc">Chat in-app, or call, WhatsApp, and SMS when the seller shares a number. No middleman, no commission.</div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">4</div>
+        <div class="step-title">Trade Safely</div>
+        <div class="step-desc">Meet in public, inspect before paying, and mark it sold. Verification badges and our Safety Center guide every step.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ PRICING ============================================================ -->
+<section id="pricing">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">👑 Premium</div>
+      <h2 class="section-title">Free Forever. <span class="gradient-text">Boost When You Want.</span></h2>
+      <p class="section-subtitle">Browsing, chatting, posting, and applying are free — and always will be. Premium plans add visibility on top, with prices in Ethiopian Birr and payment methods that work here.</p>
+    </div>
+    <div class="plans-grid">
+      <div class="plan-card reveal">
+        <div class="plan-name">Free</div>
+        <div class="plan-price">0 <span style="font-size:1rem">ETB</span></div>
+        <div class="plan-period">forever</div>
+        <ul class="plan-features">
+          <li class="plan-feature">Unlimited browsing & search</li>
+          <li class="plan-feature">Post listings in all 22 categories</li>
+          <li class="plan-feature">Chat, call, WhatsApp & SMS</li>
+          <li class="plan-feature">Favorites & saved searches</li>
+          <li class="plan-feature">Apply to jobs & post Jobs Wanted ads</li>
+          <li class="plan-feature">Basic seller dashboard</li>
+        </ul>
+        <a href="#download" class="btn btn-outline">Get Started</a>
+      </div>
+      <div class="plan-card reveal">
+        <div class="plan-name" style="color:var(--gold)">🚀 7-Day Promotion</div>
+        <div class="plan-price">200 <span style="font-size:1rem">ETB</span></div>
+        <div class="plan-period">one listing · 7 days</div>
+        <ul class="plan-features">
+          <li class="plan-feature">~5× more visibility</li>
+          <li class="plan-feature">Higher search ranking</li>
+          <li class="plan-feature">Top of category placement</li>
+          <li class="plan-feature">"Promoted" badge on your listing</li>
+        </ul>
+        <a href="#download" class="btn btn-outline">Promote in App</a>
+      </div>
+      <div class="plan-card reveal">
+        <div class="plan-name" style="color:var(--blue)">Premium</div>
+        <div class="plan-price">400 <span style="font-size:1rem">ETB</span></div>
+        <div class="plan-period">per month</div>
+        <ul class="plan-features">
+          <li class="plan-feature">~10× more visibility</li>
+          <li class="plan-feature">Listings rank above free listings</li>
+          <li class="plan-feature">Featured Seller badge</li>
+          <li class="plan-feature">More homepage exposure</li>
+          <li class="plan-feature">Detailed listing analytics</li>
+          <li class="plan-feature">Priority support</li>
+        </ul>
+        <a href="#download" class="btn btn-blue">Upgrade in App</a>
+      </div>
+      <div class="plan-card featured reveal">
+        <div class="plan-ribbon">Most Popular</div>
+        <div class="plan-name" style="color:var(--gold)">Premium+</div>
+        <div class="plan-price">600 <span style="font-size:1rem">ETB</span></div>
+        <div class="plan-period">per month</div>
+        <ul class="plan-features">
+          <li class="plan-feature">~15×+ more visibility — highest ranking</li>
+          <li class="plan-feature">Premium+ gold badge</li>
+          <li class="plan-feature">Homepage & category featured placement</li>
+          <li class="plan-feature">Priority in suggested listings</li>
+          <li class="plan-feature">Performance-level analytics</li>
+          <li class="plan-feature">Early access to new features</li>
+        </ul>
+        <a href="#download" class="btn btn-green">Upgrade in App</a>
+      </div>
+    </div>
+    <p class="reveal" style="text-align:center;margin-top:30px;font-size:.9rem;color:var(--text-soft);max-width:680px;margin-left:auto;margin-right:auto;line-height:1.7">
+      💳 Payments are currently processed manually by our team — choose your plan in the app, follow the payment instructions, upload your receipt, and your upgrade activates on approval (usually within a business day). Automatic <strong style="color:var(--green)">Telebirr</strong> and <strong style="color:var(--green)">Chapa</strong> payments are coming soon. When a plan expires, your listings simply return to normal ranking — nothing is ever deleted.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================ SAFETY ============================================================ -->
+<section id="safety">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">🛡️ Safety First</div>
+      <h2 class="section-title">Built So You Can <span class="gradient-text">Trade With Confidence</span></h2>
+      <p class="section-subtitle">Trust isn't a feature — it's the product. Here's how AYE Market protects its community.</p>
+    </div>
+    <div class="safety-grid">
+      <div class="safety-card reveal">
+        <div class="safety-icon">🪪</div>
+        <div class="safety-title">Human-Reviewed Verification</div>
+        <div class="safety-desc">Identity verification with Fayda ID, Kebele Residence ID, Driver's License, Business License, or Passport — every submission reviewed by a real moderator, never auto-approved. Optional phone verification adds a second badge.</div>
+      </div>
+      <div class="safety-card reveal">
+        <div class="safety-icon">👁️</div>
+        <div class="safety-title">Active Moderation</div>
+        <div class="safety-desc">A moderation team reviews reported listings and users against published Community Guidelines. Prohibited items, counterfeits, spam, and scams are removed; repeat offenders are suspended or banned.</div>
+      </div>
+      <div class="safety-card reveal">
+        <div class="safety-icon">🚨</div>
+        <div class="safety-title">One-Tap Reporting</div>
+        <div class="safety-desc">Report any listing, chat, or profile in one tap with a specific reason. Every report lands in a human review queue — and false reporting is itself a violation.</div>
+      </div>
+      <div class="safety-card reveal">
+        <div class="safety-icon">🔒</div>
+        <div class="safety-title">Your Privacy, Protected</div>
+        <div class="safety-desc">Chat without revealing your number. Location permission is optional. CVs are visible only to verified employers. ID documents are seen only by the verification team — never other users.</div>
+      </div>
+      <div class="safety-card reveal">
+        <div class="safety-icon">📖</div>
+        <div class="safety-title">Safety Center</div>
+        <div class="safety-desc">A full guide to safe trading: recognizing scam patterns, meeting safely in public, payment safety, and what to do if something goes wrong. <a href="safety-center/" style="color:var(--green);font-weight:700">Read the Safety Center →</a></div>
+      </div>
+      <div class="safety-card reveal">
+        <div class="safety-icon">⚖️</div>
+        <div class="safety-title">Clear Rules, Fair Process</div>
+        <div class="safety-desc">Published <a href="community-guidelines/" style="color:var(--green);font-weight:700">Community Guidelines</a> define exactly what's allowed. Moderation decisions can be appealed — and enforcement is logged and accountable.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ ABOUT ============================================================ -->
+<section id="about">
+  <div class="container about-inner">
+    <div class="reveal">
+      <div class="section-tag">🌍 Why AYE Market</div>
+      <h3 class="about-title">Built for Tigray, <span class="gradient-text">Not Adapted For It</span></h3>
+      <p class="about-desc">People in Tigray were already buying, selling, and hiring every day — through word of mouth, Telegram groups, and noticeboards. What was missing was a platform actually designed for it: local languages, local places, local ways of communicating, and safety features that address real local risks.</p>
+      <p class="about-desc">AYE Market started deliberately narrow. Instead of a generic "all of Ethiopia" app, we built the details right for one region first: full Tigrinya and Amharic translation, a location system that knows your tabiya, contact options that match how people here actually talk, and human moderation with local context.</p>
+      <p class="about-desc">AYE Market is developed by <a href="/" style="color:var(--neon);font-weight:700">AYE Tech Hub</a> — the same Ethiopian technology studio behind the AYE TechEngine & TechPro engineering education platform and the Habesha Hearts dating app.</p>
+    </div>
+    <div class="reveal">
+      <div class="detail-visual">
+        <div class="mini-row"><span class="mini-icon">🗣️</span><div><div class="mini-title">ትግርኛ · አማርኛ · English</div><div class="mini-sub">Every screen, fully translated</div></div></div>
+        <div class="mini-row"><span class="mini-icon">🗺️</span><div><div class="mini-title">Region → Zone → Wereda → Tabiya</div><div class="mini-sub">Tigray's real administrative hierarchy</div></div></div>
+        <div class="mini-row"><span class="mini-icon">💰</span><div><div class="mini-title">Prices in ETB, payments that work here</div><div class="mini-sub">Manual now, Telebirr & Chapa coming</div></div></div>
+        <div class="mini-row"><span class="mini-icon">🤝</span><div><div class="mini-title">No commission on sales</div><div class="mini-sub">Buyers and sellers deal directly</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FOUNDER ============================================================ -->
+<section id="founder">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">👨‍💻 The Builder</div>
+      <h2 class="section-title">Built by a <span class="gradient-text">Tigrayan Engineer</span></h2>
+    </div>
+    <div class="founder-card reveal">
+      <img src="/assets/images/founder-photo.jpg" alt="Awet G. Nway, founder of AYE Tech Hub and AYE Market" class="founder-photo" loading="lazy"/>
+      <div>
+        <div class="founder-name">Awet G. Nway</div>
+        <div class="founder-role">Founder of AYE Tech Hub · Founder of AYE Market</div>
+        <p class="founder-bio">Awet is a mechanical, digital, and automation engineer and the founder of AYE Tech Hub — an Ethiopian technology studio building practical software and engineering education for African engineers and communities. With AYE Market, Awet leads product and engineering end-to-end: the Android app, the backend systems, the moderation tools, and this website. The goal is simple — give Tigray a marketplace that's as safe, modern, and capable as anything built anywhere, and genuinely local in a way nothing imported can be.</p>
+        <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">
+          <a href="/#founder" class="btn btn-outline" style="padding:9px 18px;font-size:.78rem">Full Profile on AYE Tech Hub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FAQ ============================================================ -->
+<section id="faq" style="background:linear-gradient(180deg,transparent,rgba(34,197,94,0.03),transparent)">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">❓ Questions</div>
+      <h2 class="section-title">Common <span class="gradient-text">Questions</span></h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Is AYE Market really free? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Yes. Creating an account, browsing, searching, posting listings, chatting, applying to jobs, and posting job openings are all completely free, with no commission taken on anything you sell. The only paid features are optional visibility boosts — the 7-Day Promotion, Premium, and Premium+ plans.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Which languages does the app support? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Tigrinya (ትግርኛ), Amharic (አማርኛ), and English — fully translated across every screen, form, and notification. Switch anytime in Settings → Preferences → Language.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do I need to verify my ID or phone to use the app? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">No. You can browse, message, buy, sell, post jobs, and apply to jobs without any verification. Verification is optional — it adds a visible trust badge to your profile and unlocks CV access for employers. You can verify with a Fayda ID, Kebele Residence ID, Driver's License, Business License, or Passport.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How do I pay for Premium or a promotion? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Choose your plan in the app, select Manual Payment, follow the instructions shown, and upload your payment receipt. Our team reviews and activates it — usually within one business day. You'll get a notification the moment it's approved. Automatic Telebirr and Chapa payments are in development.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Does the seller see my phone number when I chat? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">No. In-app chat never reveals your phone number. Call, WhatsApp, and SMS buttons only appear when a seller has chosen to share their own number — and you're never required to share yours.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What phones does AYE Market work on? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Android 8.0 (Oreo) and above. An iPhone version is on the roadmap but not yet available — the App Store badge below will light up when it ships.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How does AYE Market handle scams? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Three layers: prevention (verification badges, seller ratings, published safety guidance), detection (one-tap reporting on every listing and profile, reviewed by human moderators), and enforcement (listing removal, warnings, suspensions, and bans). Read the full guide in our <a href="safety-center/" style="color:var(--green)">Safety Center</a>.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I delete my account and data? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Yes, permanently. Visit our <a href="account-deletion/" style="color:var(--green)">Account Deletion page</a>, sign in to verify it's you, and submit your request. Once approved, your login, profile, listings, photos, CV, and personal data are permanently deleted. You can also request a copy of your data first via the <a href="gdpr/" style="color:var(--green)">Privacy Rights page</a>.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Is AYE Market only for Tigray? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Today, yes — deliberately. We're building the experience deeply for one region first: its languages, its places, its market. Expansion to more Ethiopian regions is planned once the core experience is proven.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">I found a bug or have a suggestion — where do I send it? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Use the in-app Feedback & Support tool (Settings → Feedback) — it creates a support ticket our team answers directly in the app. Or email <a href="mailto:ayetechub@gmail.com" style="color:var(--green)">ayetechub@gmail.com</a>.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ DOWNLOAD ============================================================ -->
+<section id="download">
+  <div class="container download-inner">
+    <div class="reveal">
+      <div class="section-tag">📲 Get the App</div>
+      <h2 class="section-title">Download <span class="gradient-text">AYE Market</span></h2>
+      <p class="section-subtitle" style="margin:0 0 8px;max-width:none;text-align:left">Free on Android. Post your first listing, find your next job, or hire your next hire — today.</p>
+      <div class="download-buttons">
+        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.ayetechub.ayemarket" rel="noopener">
+          <span class="store-icon">▶</span>
+          <span class="store-info"><span class="store-sub">Get it on</span><span class="store-name">Google Play</span></span>
+        </a>
+        <span class="store-badge disabled" title="Coming soon">
+          <span class="store-icon"></span>
+          <span class="store-info"><span class="store-sub">Coming soon to</span><span class="store-name">App Store</span></span>
+        </span>
+      </div>
+      <p style="margin-top:18px;font-size:.8rem;color:var(--text-muted)">Android 8.0+ · Free download · Launching on Google Play</p>
+    </div>
+    <div class="reveal">
+      <div class="app-mockup">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="mock-head">AYE Market <span>👤</span></div>
+          <div class="mock-listing">
+            <div class="mock-img">🏗️</div>
+            <div class="mock-info">
+              <div><span class="mock-badge" style="background:var(--gold)">PREMIUM+</span></div>
+              <div class="mock-title">Cement — 50kg Bags (Bulk)</div>
+              <div class="mock-price">Negotiable</div>
+              <div class="mock-loc">📍 Mekelle Industrial Zone ✓</div>
+            </div>
+          </div>
+          <div class="mock-listing blue">
+            <div class="mock-img">💻</div>
+            <div class="mock-info">
+              <div class="mock-title">HP EliteBook — Like New</div>
+              <div class="mock-price" style="color:#93c5fd">38,000 ETB</div>
+              <div class="mock-loc">📍 Ayder · ⭐ 4.9 Seller</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ CONTACT ============================================================ -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">📮 Contact</div>
+      <h2 class="section-title">We're Here to <span class="gradient-text">Help</span></h2>
+      <p class="section-subtitle">Support, business inquiries, press, or feedback — every message reaches the team that actually builds the app.</p>
+    </div>
+    <div class="contact-grid reveal">
+      <div class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-title">Email Us</div>
+        <a href="mailto:ayetechub@gmail.com" class="contact-value">ayetechub@gmail.com</a>
+        <div class="contact-note">Replies within 1–2 business days</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">💬</div>
+        <div class="contact-title">In-App Support</div>
+        <div class="contact-value">Settings → Feedback</div>
+        <div class="contact-note">Fastest — keeps your account context with your message</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📣</div>
+        <div class="contact-title">Follow AYE Tech Hub</div>
+        <a href="https://t.me/AYETechHub" class="contact-value" rel="noopener" target="_blank">Telegram @AYETechHub</a>
+        <div class="contact-note">News, updates & launches</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FOOTER ============================================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="#hero" class="brand" style="margin-bottom:14px">
+          <img src="assets/images/logo.png" alt="AYE Market" style="width:44px;height:44px;border-radius:11px"/>
+          <div class="brand-text">
+            <div class="brand-name"><span style="color:var(--green)">AYE </span><span style="color:var(--blue)">Market</span></div>
+            <div class="brand-tag">Buy · Sell · Connect</div>
+          </div>
+        </a>
+        <p style="font-size:.88rem;color:var(--text-soft);line-height:1.7;max-width:300px;margin-top:12px">Tigray's modern marketplace for buying, selling, and finding work — safely and locally. A product of <a href="/" style="color:var(--neon)">AYE Tech Hub</a>.</p>
+      </div>
+      <div>
+        <div class="footer-title">Product</div>
+        <a class="footer-link" href="#categories">Categories</a>
+        <a class="footer-link" href="#features">Features</a>
+        <a class="footer-link" href="#jobs">Jobs Marketplace</a>
+        <a class="footer-link" href="#pricing">Premium Plans</a>
+        <a class="footer-link" href="#download">Download</a>
+      </div>
+      <div>
+        <div class="footer-title">Trust & Safety</div>
+        <a class="footer-link" href="safety-center/">Safety Center</a>
+        <a class="footer-link" href="community-guidelines/">Community Guidelines</a>
+        <a class="footer-link" href="children-policy/">Children's Privacy</a>
+        <a class="footer-link" href="third-party-services/">Third-Party Services</a>
+        <a class="footer-link" href="data-safety/">Data Safety</a>
+      </div>
+      <div>
+        <div class="footer-title">Legal & Privacy</div>
+        <a class="footer-link" href="privacy-policy/">Privacy Policy</a>
+        <a class="footer-link" href="terms/">Terms of Service</a>
+        <a class="footer-link" href="cookie-policy/">Cookie Policy</a>
+        <a class="footer-link" href="gdpr/">Privacy Rights (GDPR)</a>
+        <a class="footer-link" href="account-deletion/">Delete My Account</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> AYE Market — a product of AYE Tech Hub. All rights reserved.</span>
+      <span>Made for Tigray, Ethiopia 🇪🇹</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Navbar scroll effect */
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{navbar.classList.toggle('scrolled',window.scrollY>30)});
+
+/* Mobile menu */
+function toggleMobileMenu(){document.getElementById('mobile-menu').classList.toggle('open')}
+
+/* Theme toggle */
+function toggleTheme(){
+  const html=document.documentElement;
+  const next=html.getAttribute('data-theme')==='dark'?'light':'dark';
+  html.setAttribute('data-theme',next);
+  localStorage.setItem('ayemarket-theme',next);
+}
+(function(){
+  const saved=localStorage.getItem('ayemarket-theme');
+  if(saved)document.documentElement.setAttribute('data-theme',saved);
+})();
+
+/* FAQ */
+function toggleFaq(el){el.parentElement.classList.toggle('open')}
+
+/* Reveal on scroll */
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}});
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* Year */
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
 </body>
 </html>

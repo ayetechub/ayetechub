@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Privacy Rights & GDPR – AYE Market</title>
+<meta name="description" content="Exercise your privacy rights on AYE Market: download your personal data, request corrections, and understand every right you hold — GDPR-ready by design."/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#020817"/>
+<link rel="canonical" href="https://ayetechub.com/ayemarket/gdpr/"/>
+<link rel="icon" type="image/png" href="/ayemarket/assets/images/logo.png"/>
+<link rel="stylesheet" href="/ayemarket/assets/css/legal.css"/>
+</head>
+<body>
+
+<header id="navbar">
+  <div class="container nav-inner">
+    <a href="/ayemarket/" class="brand">
+      <img src="/ayemarket/assets/images/logo.png" alt="AYE Market"/>
+      <div>
+        <div class="brand-name"><span class="g">AYE </span><span class="b">Market</span></div>
+        <div class="brand-tag">Privacy Rights</div>
+      </div>
+    </a>
+    <div class="nav-actions">
+      <button class="icon-btn" onclick="toggleTheme()" aria-label="Toggle theme">☀</button>
+      <a href="/ayemarket/" class="back-link">← AYE Market</a>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="page-tag">🧭 Your Data, Your Rules</div>
+    <h1 class="page-title">Privacy Rights <span class="gradient-text">&amp; GDPR</span></h1>
+    <p class="page-sub">Every right you hold over your data, and working tools to exercise them — right here.</p>
+    <span class="last-updated">Last updated: July 17, 2026</span>
+  </div>
+</div>
+
+<main class="container prose">
+  <h2>Your rights at a glance</h2>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Right</th><th>What it means</th><th>How to exercise it</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Access / Export</strong></td><td>Get a copy of the personal data we hold about you</td><td>Export request below</td></tr>
+      <tr><td><strong>Correction</strong></td><td>Fix inaccurate or outdated information</td><td>Edit in-app (Settings → Profile), or correction request below</td></tr>
+      <tr><td><strong>Deletion</strong></td><td>Permanently erase your account and data</td><td><a href="/ayemarket/account-deletion/">Account Deletion page</a></td></tr>
+      <tr><td><strong>Portability</strong></td><td>Receive your data in a common, machine-readable format</td><td>Export request below — data is provided as JSON/CSV</td></tr>
+      <tr><td><strong>Objection / Restriction</strong></td><td>Object to a specific use of your data</td><td>Email us — we respond within 30 days</td></tr>
+      <tr><td><strong>Withdraw consent</strong></td><td>Revoke permissions you granted</td><td>Location: device settings · Notifications: in-app settings</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>AYE Market serves users in Ethiopia, and these tools exist for everyone — not only where a law such as the EU's GDPR mandates them. If you access the Service from a region with its own data protection law (GDPR, UK GDPR, or similar), the rights above map directly onto those laws' requirements, and we honor them the same way.</p>
+
+  <h2>How requests are handled</h2>
+  <ol>
+    <li><strong>Sign in below</strong> — proving control of the account is the identity verification; nobody can request your data by just knowing your email address.</li>
+    <li><strong>Submit</strong> — your request is recorded with a pending status.</li>
+    <li><strong>Human review & fulfilment</strong> — our team processes it: exports are compiled and sent to your account email; corrections are applied after review. Typical turnaround is within 7 days, and always within 30.</li>
+    <li><strong>Everything is logged</strong> — privacy requests and the actions taken on them are auditable.</li>
+  </ol>
+
+  <h2 id="export">Request a copy of your data</h2>
+  <p>You'll receive your profile, listings, applications, favorites, reviews, and account records in machine-readable form, sent to your account email.</p>
+
+  <div class="auth-box" data-privacy-request data-request-type="export">
+    <div data-signed-out>
+      <p style="font-size:.92rem;margin-bottom:16px;color:var(--text-soft)">Sign in with your AYE Market account:</p>
+      <form data-email-signin-form>
+        <div class="form-field">
+          <label for="exp-email">Email</label>
+          <input id="exp-email" name="email" type="email" autocomplete="email" required/>
+        </div>
+        <div class="form-field">
+          <label for="exp-password">Password</label>
+          <input id="exp-password" name="password" type="password" autocomplete="current-password" required/>
+        </div>
+        <button type="submit" class="btn btn-green btn-block">Sign In</button>
+      </form>
+      <div class="divider-or">— or —</div>
+      <button type="button" class="btn btn-outline btn-block" data-google-signin>Continue with Google</button>
+    </div>
+    <div data-signed-in style="display:none">
+      <div class="user-chip" data-user-chip></div>
+      <form data-request-form data-submit-label="Request Data Export">
+        <div class="form-field">
+          <label for="exp-details">Anything specific you need? (optional)</label>
+          <textarea id="exp-details" name="details" placeholder="e.g. only my listings and reviews"></textarea>
+        </div>
+        <button type="submit" class="btn btn-green btn-block">Request Data Export</button>
+      </form>
+      <div style="text-align:center;margin-top:12px">
+        <button type="button" data-sign-out style="font-size:.8rem;color:var(--text-muted);text-decoration:underline">Sign out</button>
+      </div>
+    </div>
+    <div data-already-pending style="display:none">
+      <div class="callout">✅ <strong>Your export request is already submitted</strong> and being prepared. It will arrive at your account email.</div>
+      <div style="text-align:center;margin-top:8px">
+        <button type="button" data-sign-out style="font-size:.8rem;color:var(--text-muted);text-decoration:underline">Sign out</button>
+      </div>
+    </div>
+    <div class="form-status"></div>
+  </div>
+
+  <h2 id="correction" style="margin-top:3em">Request a correction</h2>
+  <p>Most information can be edited instantly in the app under <strong>Settings → Profile</strong>. Use this for anything you can't change yourself.</p>
+
+  <div class="auth-box" data-privacy-request data-request-type="correction">
+    <div data-signed-out>
+      <p style="font-size:.92rem;margin-bottom:16px;color:var(--text-soft)">Sign in with your AYE Market account:</p>
+      <form data-email-signin-form>
+        <div class="form-field">
+          <label for="cor-email">Email</label>
+          <input id="cor-email" name="email" type="email" autocomplete="email" required/>
+        </div>
+        <div class="form-field">
+          <label for="cor-password">Password</label>
+          <input id="cor-password" name="password" type="password" autocomplete="current-password" required/>
+        </div>
+        <button type="submit" class="btn btn-green btn-block">Sign In</button>
+      </form>
+      <div class="divider-or">— or —</div>
+      <button type="button" class="btn btn-outline btn-block" data-google-signin>Continue with Google</button>
+    </div>
+    <div data-signed-in style="display:none">
+      <div class="user-chip" data-user-chip></div>
+      <form data-request-form data-submit-label="Submit Correction Request">
+        <div class="form-field">
+          <label for="cor-details">What needs correcting?</label>
+          <textarea id="cor-details" name="details" placeholder="Describe the incorrect information and what it should be" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-green btn-block">Submit Correction Request</button>
+      </form>
+      <div style="text-align:center;margin-top:12px">
+        <button type="button" data-sign-out style="font-size:.8rem;color:var(--text-muted);text-decoration:underline">Sign out</button>
+      </div>
+    </div>
+    <div data-already-pending style="display:none">
+      <div class="callout">✅ <strong>Your correction request is already submitted</strong> and awaiting review.</div>
+      <div style="text-align:center;margin-top:8px">
+        <button type="button" data-sign-out style="font-size:.8rem;color:var(--text-muted);text-decoration:underline">Sign out</button>
+      </div>
+    </div>
+    <div class="form-status"></div>
+  </div>
+
+  <h2 style="margin-top:3em">Privacy FAQs</h2>
+  <p><strong>Who can see my phone number?</strong> Only people you allow — chat never reveals it; call/WhatsApp/SMS buttons appear only where you've shared a number and enabled those channels.</p>
+  <p><strong>Who can see my CV?</strong> Only identity-verified employers. Unverified accounts see that a CV exists, never its contents.</p>
+  <p><strong>Who sees my ID verification documents?</strong> Only our verification team. Never other users, never third parties.</p>
+  <p><strong>Do you sell my data?</strong> No. No advertising partners, no data brokers, no exceptions. See <a href="/ayemarket/data-safety/">Data Safety</a>.</p>
+  <p><strong>Something else?</strong> <a href="mailto:ayetechub@gmail.com">ayetechub@gmail.com</a> — privacy questions answered within 1–2 business days.</p>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span data-year>2026</span> AYE Market — a product of <a href="/" style="color:var(--neon)">AYE Tech Hub</a></span>
+    <div class="footer-links">
+      <a href="/ayemarket/privacy-policy/">Privacy</a>
+      <a href="/ayemarket/data-safety/">Data Safety</a>
+      <a href="/ayemarket/account-deletion/">Delete Account</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleTheme(){const h=document.documentElement;const n=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('ayemarket-theme',n)}
+(function(){const s=localStorage.getItem('ayemarket-theme');if(s)document.documentElement.setAttribute('data-theme',s)})();
+document.querySelectorAll('[data-year]').forEach(e=>e.textContent=new Date().getFullYear());
+</script>
+<script type="module" src="/ayemarket/assets/js/privacy-requests.js"></script>
+</body>
+</html>

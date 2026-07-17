@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cookie Policy – AYE Market</title>
+<meta name="description" content="How the AYE Market website uses cookies and local storage — and why the mobile app uses none at all."/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#020817"/>
+<link rel="canonical" href="https://ayetechub.com/ayemarket/cookie-policy/"/>
+<link rel="icon" type="image/png" href="/ayemarket/assets/images/logo.png"/>
+<link rel="stylesheet" href="/ayemarket/assets/css/legal.css"/>
+</head>
+<body>
+
+<header id="navbar">
+  <div class="container nav-inner">
+    <a href="/ayemarket/" class="brand">
+      <img src="/ayemarket/assets/images/logo.png" alt="AYE Market"/>
+      <div>
+        <div class="brand-name"><span class="g">AYE </span><span class="b">Market</span></div>
+        <div class="brand-tag">Cookie Policy</div>
+      </div>
+    </a>
+    <div class="nav-actions">
+      <button class="icon-btn" onclick="toggleTheme()" aria-label="Toggle theme">☀</button>
+      <a href="/ayemarket/" class="back-link">← AYE Market</a>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="page-tag">🍪 Legal</div>
+    <h1 class="page-title">Cookie <span class="gradient-text">Policy</span></h1>
+    <p class="page-sub">Short version: this website remembers your theme preference. That's it.</p>
+    <span class="last-updated">Last updated: July 17, 2026</span>
+  </div>
+</div>
+
+<main class="container prose">
+  <h2>Scope</h2>
+  <p>This policy covers the AYE Market pages of ayetechub.com. It does not apply to the AYE Market mobile app, which does not use browser cookies at all.</p>
+
+  <h2>What are cookies and local storage?</h2>
+  <p>Cookies are small text files a website stores on your device between visits. We use the closely related <code style="color:var(--green)">localStorage</code> browser feature for the same purpose.</p>
+
+  <h2>What we actually use</h2>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Type</th><th>Purpose</th><th>Used on this site?</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Essential (localStorage)</strong></td><td>Remembering your dark/light theme choice</td><td>Yes — one key, <code>ayemarket-theme</code></td></tr>
+      <tr><td><strong>Analytics / performance</strong></td><td>Traffic measurement</td><td>No — none installed. If we ever add one, this page updates first</td></tr>
+      <tr><td><strong>Advertising / tracking</strong></td><td>Ad targeting, retargeting</td><td>No — never</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Firebase on privacy pages</h2>
+  <p>Our <a href="/ayemarket/account-deletion/">Account Deletion</a> and <a href="/ayemarket/gdpr/">Privacy Rights</a> pages load the Firebase Authentication SDK so you can sign in to verify your identity. Firebase may use its own browser storage to keep you signed in during that process — governed by <a href="https://policies.google.com/privacy" rel="noopener">Google's Privacy Policy</a>. This happens only on those two pages, only when you use them.</p>
+
+  <h2>Managing cookies</h2>
+  <p>Your browser's settings let you block or clear cookies and local storage at any time. The only effect here: your theme choice resets to default on your next visit. Everything else on the site works identically.</p>
+
+  <h2>Questions</h2>
+  <p><a href="mailto:ayetechub@gmail.com">ayetechub@gmail.com</a></p>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span data-year>2026</span> AYE Market — a product of <a href="/" style="color:var(--neon)">AYE Tech Hub</a></span>
+    <div class="footer-links">
+      <a href="/ayemarket/privacy-policy/">Privacy</a>
+      <a href="/ayemarket/terms/">Terms</a>
+      <a href="/ayemarket/data-safety/">Data Safety</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleTheme(){const h=document.documentElement;const n=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('ayemarket-theme',n)}
+(function(){const s=localStorage.getItem('ayemarket-theme');if(s)document.documentElement.setAttribute('data-theme',s)})();
+document.querySelectorAll('[data-year]').forEach(e=>e.textContent=new Date().getFullYear());
+</script>
+</body>
+</html>
