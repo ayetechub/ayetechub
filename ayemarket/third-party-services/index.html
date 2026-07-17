@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Third-Party Services – AYE Market</title>
-<meta name="description" content="Every third-party service AYE Market uses — Firebase, Google Sign-In, WhatsApp deep links and more — and exactly what data each one processes."/>
+<meta name="description" content="Every third-party service AYE Market uses — Firebase, Google &amp; Facebook Sign-In, WhatsApp deep links and more — and exactly what data each one processes."/>
 <meta name="robots" content="index, follow"/>
 <meta name="theme-color" content="#020817"/>
 <link rel="canonical" href="https://ayetechub.com/ayemarket/third-party-services/"/>
@@ -56,8 +56,8 @@
   </table>
   </div>
 
-  <h2>Google Sign-In</h2>
-  <p>An optional sign-in method. If you choose it, Google shares your name, email address, and profile photo with the app to create your account. If you sign up with email or phone instead, Google Sign-In is never involved. Governed by <a href="https://policies.google.com/privacy" rel="noopener">Google's Privacy Policy</a>.</p>
+  <h2>Google &amp; Facebook Sign-In</h2>
+  <p>Optional sign-in methods. If you choose one, that provider shares your name, email address, and profile photo with the app to create your account. If you sign up with email or phone instead, neither is ever involved. Governed by <a href="https://policies.google.com/privacy" rel="noopener">Google's Privacy Policy</a> and <a href="https://www.facebook.com/privacy/policy/" rel="noopener">Meta's Privacy Policy</a> respectively.</p>
 
   <h2>Google Play Billing</h2>
   <p>Google Play's in-app purchase infrastructure is integrated in the app. Today, Premium purchases run through our manual payment flow instead (receipt upload + admin review) — Play Billing processes no payment data for AYE Market unless/until that path is used, in which case Google handles the transaction under its own terms.</p>
@@ -79,7 +79,7 @@
     <li><strong>No third-party analytics SDKs</strong> (no Google Analytics for Firebase, no Mixpanel, etc.) — usage measurement is limited to first-party counters like listing view counts.</li>
     <li><strong>No crash-reporting SDKs</strong> currently (no Crashlytics/Sentry). If one is added to improve stability, this page and the <a href="/ayemarket/privacy-policy/">Privacy Policy</a> will be updated first.</li>
     <li><strong>No advertising networks or tracking SDKs</strong> — the app contains no third-party ads.</li>
-    <li><strong>No social media SDKs</strong> — Facebook Login is not enabled.</li>
+    <li><strong>No advertising or tracking social SDKs</strong> — Facebook Login is used only as an optional sign-in method (see above); no Facebook/Meta ads or tracking pixel is present anywhere in the app.</li>
     <li><strong>No data brokers</strong> — we never share data with data resellers.</li>
   </ul>
 
@@ -94,6 +94,7 @@
   <div class="container footer-inner">
     <span>© <span data-year>2026</span> AYE Market — a product of <a href="/" style="color:var(--neon)">AYE Tech Hub</a></span>
     <div class="footer-links">
+      <a href="/ayemarket/legal-hub/">All Policies</a>
       <a href="/ayemarket/privacy-policy/">Privacy</a>
       <a href="/ayemarket/data-safety/">Data Safety</a>
       <a href="/ayemarket/cookie-policy/">Cookies</a>

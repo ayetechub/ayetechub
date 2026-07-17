@@ -423,6 +423,17 @@ footer{border-top:1px solid var(--border);padding:56px 0 30px;background:rgba(2,
 .footer-link{display:block;padding:5px 0;font-size:.9rem;color:var(--text-soft);transition:color .2s}
 .footer-link:hover{color:var(--green)}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:24px;border-top:1px solid var(--border);font-size:.8rem;color:var(--text-muted)}
+
+/* ---- LANGUAGE SWITCHER ---- */
+.lang-switcher{display:inline-flex;align-items:center;gap:2px;background:rgba(34,197,94,0.05);border:1px solid var(--border-strong);border-radius:999px;padding:3px}
+.lang-switcher .lang-btn{background:transparent;border:0;color:var(--text-soft);font-size:.72rem;font-weight:700;padding:6px 10px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:all .2s}
+.lang-switcher .lang-btn:hover{color:var(--text);background:rgba(34,197,94,0.1)}
+.lang-switcher .lang-btn.is-active{background:var(--green);color:#020817}
+.lang-switcher .lang-btn[data-lang-btn="ti"],.lang-switcher .lang-btn[data-lang-btn="am"]{font-family:'Noto Sans Ethiopic','Segoe UI',system-ui,sans-serif;font-size:.8rem}
+html[lang="ti"] body,html[lang="am"] body{font-family:'Noto Sans Ethiopic','Segoe UI',system-ui,-apple-system,sans-serif}
+@media(max-width:1024px){.nav-controls .lang-switcher{display:none}}
+#mobile-menu .lang-switcher{display:flex;margin:14px 0 4px;width:100%;justify-content:space-between}
+#mobile-menu .lang-switcher .lang-btn{flex:1;text-align:center}
 </style>
 </head>
 <body>
@@ -434,38 +445,50 @@ footer{border-top:1px solid var(--border);padding:56px 0 30px;background:rgba(2,
       <img src="assets/images/aye-market-icon.png" alt="AYE Market" style="width:52px;height:52px;border-radius:13px;filter:drop-shadow(0 0 10px rgba(34,197,94,0.5))"/>
       <div class="brand-text">
         <div class="brand-name"><span style="color:var(--green)">AYE </span><span style="color:var(--blue)">Market</span></div>
-        <div class="brand-tag">Buy · Sell · Connect</div>
+        <div class="brand-tag" data-i18n="nav.brandTag">Buy · Sell · Connect</div>
       </div>
     </a>
 
     <nav class="nav-menu" aria-label="Main navigation">
-      <a href="#categories" class="nav-link">Categories</a>
-      <a href="#features" class="nav-link">Features</a>
-      <a href="#jobs" class="nav-link">Jobs</a>
-      <a href="#pricing" class="nav-link">Premium</a>
-      <a href="#safety" class="nav-link">Safety</a>
-      <a href="#faq" class="nav-link">FAQ</a>
-      <a href="#contact" class="nav-link">Contact</a>
+      <a href="#categories" class="nav-link" data-i18n="nav.categories">Categories</a>
+      <a href="#features" class="nav-link" data-i18n="nav.features">Features</a>
+      <a href="#jobs" class="nav-link" data-i18n="nav.jobs">Jobs</a>
+      <a href="#pricing" class="nav-link" data-i18n="nav.premium">Premium</a>
+      <a href="#safety" class="nav-link" data-i18n="nav.safety">Safety</a>
+      <a href="#faq" class="nav-link" data-i18n="nav.faq">FAQ</a>
+      <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+      <a href="/ayemarket/help-center/" class="nav-link" data-i18n="nav.help">Help</a>
       <a href="/" class="nav-link" style="color:var(--neon)">AYE Tech Hub</a>
     </nav>
 
     <div class="nav-controls">
+      <div class="lang-switcher" role="group" aria-label="Language">
+        <button class="lang-btn" data-lang-btn="en" onclick="ayeSetLang('en')" aria-pressed="false">EN</button>
+        <button class="lang-btn" data-lang-btn="ti" onclick="ayeSetLang('ti')" aria-pressed="false">ትግርኛ</button>
+        <button class="lang-btn" data-lang-btn="am" onclick="ayeSetLang('am')" aria-pressed="false">አማርኛ</button>
+      </div>
       <button class="icon-btn" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle theme">☀</button>
       <button class="icon-btn hamburger" onclick="toggleMobileMenu()" aria-label="Open menu">☰</button>
     </div>
   </div>
 
   <div id="mobile-menu" class="container">
-    <a href="#categories" class="mobile-link" onclick="toggleMobileMenu()">Categories</a>
-    <a href="#features" class="mobile-link" onclick="toggleMobileMenu()">Features</a>
-    <a href="#jobs" class="mobile-link" onclick="toggleMobileMenu()">Jobs</a>
-    <a href="#pricing" class="mobile-link" onclick="toggleMobileMenu()">Premium</a>
-    <a href="#safety" class="mobile-link" onclick="toggleMobileMenu()">Safety</a>
-    <a href="#faq" class="mobile-link" onclick="toggleMobileMenu()">FAQ</a>
-    <a href="#contact" class="mobile-link" onclick="toggleMobileMenu()">Contact</a>
+    <a href="#categories" class="mobile-link" onclick="toggleMobileMenu()" data-i18n="nav.categories">Categories</a>
+    <a href="#features" class="mobile-link" onclick="toggleMobileMenu()" data-i18n="nav.features">Features</a>
+    <a href="#jobs" class="mobile-link" onclick="toggleMobileMenu()" data-i18n="nav.jobs">Jobs</a>
+    <a href="#pricing" class="mobile-link" onclick="toggleMobileMenu()" data-i18n="nav.premium">Premium</a>
+    <a href="#safety" class="mobile-link" onclick="toggleMobileMenu()" data-i18n="nav.safety">Safety</a>
+    <a href="#faq" class="mobile-link" onclick="toggleMobileMenu()" data-i18n="nav.faq">FAQ</a>
+    <a href="#contact" class="mobile-link" onclick="toggleMobileMenu()" data-i18n="nav.contact">Contact</a>
+    <a href="/ayemarket/help-center/" class="mobile-link" onclick="toggleMobileMenu()" data-i18n="nav.help">Help</a>
     <a href="/" class="mobile-link" style="color:var(--neon)" onclick="toggleMobileMenu()">← AYE Tech Hub</a>
+    <div class="lang-switcher" role="group" aria-label="Language">
+      <button class="lang-btn" data-lang-btn="en" onclick="ayeSetLang('en')" aria-pressed="false">EN</button>
+      <button class="lang-btn" data-lang-btn="ti" onclick="ayeSetLang('ti')" aria-pressed="false">ትግርኛ</button>
+      <button class="lang-btn" data-lang-btn="am" onclick="ayeSetLang('am')" aria-pressed="false">አማርኛ</button>
+    </div>
     <div style="display:flex;gap:10px;margin-top:14px">
-      <a href="#download" class="btn btn-green" style="flex:1" onclick="toggleMobileMenu()">📲 Download App</a>
+      <a href="#download" class="btn btn-green" style="flex:1" onclick="toggleMobileMenu()" data-i18n="nav.downloadApp">📲 Download App</a>
     </div>
   </div>
 </header>
@@ -473,13 +496,13 @@ footer{border-top:1px solid var(--border);padding:56px 0 30px;background:rgba(2,
 <!-- ============================================================ TICKER ============================================================ -->
 <div class="ticker-wrap" style="margin-top:70px">
   <div class="ticker-inner">
-    <span class="ticker-item"><span class="ticker-dot"></span>Tigray's Modern Marketplace</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Buy · Sell · Find Jobs · Hire Talent</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Chat · Call · WhatsApp · SMS</span>
+    <span class="ticker-item"><span class="ticker-dot"></span><span data-i18n="ticker.modern">Tigray's Modern Marketplace</span></span>
+    <span class="ticker-item"><span class="ticker-dot"></span><span data-i18n="ticker.buysell">Buy · Sell · Find Jobs · Hire Talent</span></span>
+    <span class="ticker-item"><span class="ticker-dot"></span><span data-i18n="ticker.contact">Chat · Call · WhatsApp · SMS</span></span>
     <span class="ticker-item"><span class="ticker-dot"></span>ትግርኛ · አማርኛ · English</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Tigray's Modern Marketplace</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Buy · Sell · Find Jobs · Hire Talent</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Chat · Call · WhatsApp · SMS</span>
+    <span class="ticker-item"><span class="ticker-dot"></span><span data-i18n="ticker.modern">Tigray's Modern Marketplace</span></span>
+    <span class="ticker-item"><span class="ticker-dot"></span><span data-i18n="ticker.buysell">Buy · Sell · Find Jobs · Hire Talent</span></span>
+    <span class="ticker-item"><span class="ticker-dot"></span><span data-i18n="ticker.contact">Chat · Call · WhatsApp · SMS</span></span>
     <span class="ticker-item"><span class="ticker-dot"></span>ትግርኛ · አማርኛ · English</span>
   </div>
 </div>
@@ -489,20 +512,20 @@ footer{border-top:1px solid var(--border);padding:56px 0 30px;background:rgba(2,
   <div class="container hero-inner">
     <div>
       <div style="margin-bottom:20px" class="reveal">
-        <img src="assets/images/aye-market-icon.png" alt="AYE Market app logo" style="width:96px;height:96px;border-radius:22px;filter:drop-shadow(0 0 22px rgba(34,197,94,0.5))"/>
+        <img src="assets/images/aye-market-icon.png" alt="AYE Market app logo" data-i18n-attr="alt:hero.logoAlt" style="width:96px;height:96px;border-radius:22px;filter:drop-shadow(0 0 22px rgba(34,197,94,0.5))"/>
       </div>
-      <div class="hero-tag reveal">🛒 Tigray's Modern Marketplace</div>
+      <div class="hero-tag reveal" data-i18n="hero.tag">🛒 Tigray's Modern Marketplace</div>
       <h1 class="hero-headline gradient-text reveal">AYE Market</h1>
-      <p class="hero-subtitle reveal">Buy and sell anything locally — vehicles, property, electronics, fashion, services and more. Find a job or hire the right person. Chat, call, or WhatsApp sellers directly. Built for <strong style="color:var(--green)">Tigray</strong>, in <strong style="color:var(--green)">ትግርኛ</strong>, <strong style="color:var(--green)">አማርኛ</strong>, and English.</p>
+      <p class="hero-subtitle reveal" data-i18n="hero.subtitle_html">Buy and sell anything locally — vehicles, property, electronics, fashion, services and more. Find a job or hire the right person. Chat, call, or WhatsApp sellers directly. Built for <strong style="color:var(--green)">Tigray</strong>, in <strong style="color:var(--green)">ትግርኛ</strong>, <strong style="color:var(--green)">አማርኛ</strong>, and English.</p>
       <div class="hero-buttons reveal">
-        <a href="#download" class="btn btn-green">📲 Download Free</a>
-        <a href="#features" class="btn btn-outline">✨ Explore Features</a>
+        <a href="#download" class="btn btn-green" data-i18n="hero.btnDownload">📲 Download Free</a>
+        <a href="#features" class="btn btn-outline" data-i18n="hero.btnFeatures">✨ Explore Features</a>
       </div>
       <div class="hero-stats reveal">
-        <div class="stat"><div class="stat-num">22</div><div class="stat-label">Categories</div></div>
-        <div class="stat"><div class="stat-num">3</div><div class="stat-label">Languages</div></div>
-        <div class="stat"><div class="stat-num">4</div><div class="stat-label">Contact Channels</div></div>
-        <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Free to Use</div></div>
+        <div class="stat"><div class="stat-num">22</div><div class="stat-label" data-i18n="hero.statCategories">Categories</div></div>
+        <div class="stat"><div class="stat-num">3</div><div class="stat-label" data-i18n="hero.statLanguages">Languages</div></div>
+        <div class="stat"><div class="stat-num">4</div><div class="stat-label" data-i18n="hero.statChannels">Contact Channels</div></div>
+        <div class="stat"><div class="stat-num">100%</div><div class="stat-label" data-i18n="hero.statFree">Free to Use</div></div>
       </div>
     </div>
 
@@ -514,17 +537,17 @@ footer{border-top:1px solid var(--border);padding:56px 0 30px;background:rgba(2,
           <div class="mock-listing">
             <div class="mock-img">🚗</div>
             <div class="mock-info">
-              <div><span class="mock-badge">PROMOTED</span></div>
+              <div><span class="mock-badge" data-i18n="hero.badgePromoted">PROMOTED</span></div>
               <div class="mock-title">Toyota Vitz 2015</div>
               <div class="mock-price">850,000 ETB</div>
-              <div class="mock-loc">📍 Mekelle · Verified Seller ✓</div>
+              <div class="mock-loc" data-i18n="hero.mock1Loc">📍 Mekelle · Verified Seller ✓</div>
             </div>
           </div>
           <div class="mock-listing">
             <div class="mock-img">🏠</div>
             <div class="mock-info">
-              <div class="mock-title">2-Bedroom Apartment</div>
-              <div class="mock-price">12,000 ETB / month</div>
+              <div class="mock-title" data-i18n="hero.mock2Title">2-Bedroom Apartment</div>
+              <div class="mock-price" data-i18n="hero.mock2Price">12,000 ETB / month</div>
               <div class="mock-loc">📍 Adi Haki, Mekelle</div>
             </div>
           </div>
@@ -533,21 +556,21 @@ footer{border-top:1px solid var(--border);padding:56px 0 30px;background:rgba(2,
       <div class="phone phone-2">
         <div class="phone-notch"></div>
         <div class="phone-screen">
-          <div class="mock-head" style="color:var(--blue)">Jobs <span>💼</span></div>
+          <div class="mock-head" style="color:var(--blue)" data-i18n="hero.mockJobsHead">Jobs <span>💼</span></div>
           <div class="mock-listing blue">
             <div class="mock-img">🧑‍💼</div>
             <div class="mock-info">
-              <div class="mock-title">Sales Officer — Full Time</div>
-              <div class="mock-price" style="color:#93c5fd">8,000 ETB / month</div>
-              <div class="mock-loc">📍 Mekelle · 12 applicants</div>
+              <div class="mock-title" data-i18n="hero.mockJob1Title">Sales Officer — Full Time</div>
+              <div class="mock-price" style="color:#93c5fd" data-i18n="hero.mockJob1Price">8,000 ETB / month</div>
+              <div class="mock-loc" data-i18n="hero.mockJob1Loc">📍 Mekelle · 12 applicants</div>
             </div>
           </div>
           <div class="mock-listing blue">
             <div class="mock-img">🔧</div>
             <div class="mock-info">
-              <div class="mock-title">Electrician Available</div>
-              <div class="mock-price" style="color:#93c5fd">Jobs Wanted Ad</div>
-              <div class="mock-loc">📍 5 yrs experience · CV ✓</div>
+              <div class="mock-title" data-i18n="hero.mockJob2Title">Electrician Available</div>
+              <div class="mock-price" style="color:#93c5fd" data-i18n="hero.mockJob2Price">Jobs Wanted Ad</div>
+              <div class="mock-loc" data-i18n="hero.mockJob2Loc">📍 5 yrs experience · CV ✓</div>
             </div>
           </div>
         </div>
@@ -560,35 +583,35 @@ footer{border-top:1px solid var(--border);padding:56px 0 30px;background:rgba(2,
 <section id="categories">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-tag">🗂️ 22 Categories</div>
-      <h2 class="section-title">Whatever You Need,<br/><span class="gradient-text">It's On AYE Market</span></h2>
-      <p class="section-subtitle">Every category is organized for how people in Tigray actually shop, sell, and hire — each with its own tailored listing form, filters, and search attributes.</p>
+      <div class="section-tag" data-i18n="cat.tag">🗂️ 22 Categories</div>
+      <h2 class="section-title" data-i18n="cat.title_html">Whatever You Need,<br/><span class="gradient-text">It's On AYE Market</span></h2>
+      <p class="section-subtitle" data-i18n="cat.subtitle">Every category is organized for how people in Tigray actually shop, sell, and hire — each with its own tailored listing form, filters, and search attributes.</p>
     </div>
     <div class="cat-grid reveal">
-      <div class="cat-chip"><span class="cat-emoji">🚗</span>Vehicles</div>
-      <div class="cat-chip"><span class="cat-emoji">🏠</span>Property</div>
-      <div class="cat-chip"><span class="cat-emoji">💼</span>Jobs</div>
-      <div class="cat-chip"><span class="cat-emoji">🧑‍💼</span>Jobs Wanted</div>
-      <div class="cat-chip"><span class="cat-emoji">📺</span>Electronics</div>
-      <div class="cat-chip"><span class="cat-emoji">📱</span>Phones & Tablets</div>
-      <div class="cat-chip"><span class="cat-emoji">💻</span>Computers</div>
-      <div class="cat-chip"><span class="cat-emoji">🛋️</span>Home & Furniture</div>
-      <div class="cat-chip"><span class="cat-emoji">👗</span>Fashion</div>
-      <div class="cat-chip"><span class="cat-emoji">💄</span>Beauty</div>
-      <div class="cat-chip"><span class="cat-emoji">🛠️</span>Services</div>
-      <div class="cat-chip"><span class="cat-emoji">🌾</span>Agriculture</div>
-      <div class="cat-chip"><span class="cat-emoji">🏭</span>Industrial Equipment</div>
-      <div class="cat-chip"><span class="cat-emoji">📚</span>Education</div>
-      <div class="cat-chip"><span class="cat-emoji">⚽</span>Sports</div>
-      <div class="cat-chip"><span class="cat-emoji">🐄</span>Animals</div>
-      <div class="cat-chip"><span class="cat-emoji">🍼</span>Baby Products</div>
-      <div class="cat-chip"><span class="cat-emoji">🩺</span>Health</div>
-      <div class="cat-chip"><span class="cat-emoji">🍯</span>Food</div>
-      <div class="cat-chip"><span class="cat-emoji">🏪</span>Business</div>
-      <div class="cat-chip"><span class="cat-emoji">🏗️</span>Construction</div>
-      <div class="cat-chip"><span class="cat-emoji">➕</span>More</div>
+      <div class="cat-chip"><span class="cat-emoji">🚗</span><span data-i18n="cat.vehicles">Vehicles</span></div>
+      <div class="cat-chip"><span class="cat-emoji">🏠</span><span data-i18n="cat.property">Property</span></div>
+      <div class="cat-chip"><span class="cat-emoji">💼</span><span data-i18n="cat.jobs">Jobs</span></div>
+      <div class="cat-chip"><span class="cat-emoji">🧑‍💼</span><span data-i18n="cat.jobsWanted">Jobs Wanted</span></div>
+      <div class="cat-chip"><span class="cat-emoji">📺</span><span data-i18n="cat.electronics">Electronics</span></div>
+      <div class="cat-chip"><span class="cat-emoji">📱</span><span data-i18n="cat.phones">Phones & Tablets</span></div>
+      <div class="cat-chip"><span class="cat-emoji">💻</span><span data-i18n="cat.computers">Computers</span></div>
+      <div class="cat-chip"><span class="cat-emoji">🛋️</span><span data-i18n="cat.homeFurniture">Home & Furniture</span></div>
+      <div class="cat-chip"><span class="cat-emoji">👗</span><span data-i18n="cat.fashion">Fashion</span></div>
+      <div class="cat-chip"><span class="cat-emoji">💄</span><span data-i18n="cat.beauty">Beauty</span></div>
+      <div class="cat-chip"><span class="cat-emoji">🛠️</span><span data-i18n="cat.services">Services</span></div>
+      <div class="cat-chip"><span class="cat-emoji">🌾</span><span data-i18n="cat.agriculture">Agriculture</span></div>
+      <div class="cat-chip"><span class="cat-emoji">🏭</span><span data-i18n="cat.industrial">Industrial Equipment</span></div>
+      <div class="cat-chip"><span class="cat-emoji">📚</span><span data-i18n="cat.education">Education</span></div>
+      <div class="cat-chip"><span class="cat-emoji">⚽</span><span data-i18n="cat.sports">Sports</span></div>
+      <div class="cat-chip"><span class="cat-emoji">🐄</span><span data-i18n="cat.animals">Animals</span></div>
+      <div class="cat-chip"><span class="cat-emoji">🍼</span><span data-i18n="cat.baby">Baby Products</span></div>
+      <div class="cat-chip"><span class="cat-emoji">🩺</span><span data-i18n="cat.health">Health</span></div>
+      <div class="cat-chip"><span class="cat-emoji">🍯</span><span data-i18n="cat.food">Food</span></div>
+      <div class="cat-chip"><span class="cat-emoji">🏪</span><span data-i18n="cat.business">Business</span></div>
+      <div class="cat-chip"><span class="cat-emoji">🏗️</span><span data-i18n="cat.construction">Construction</span></div>
+      <div class="cat-chip"><span class="cat-emoji">➕</span><span data-i18n="cat.more">More</span></div>
     </div>
-    <p class="reveal" style="text-align:center;margin-top:28px;font-size:.95rem;color:var(--text-soft);max-width:720px;margin-left:auto;margin-right:auto;line-height:1.8">
+    <p class="reveal" style="text-align:center;margin-top:28px;font-size:.95rem;color:var(--text-soft);max-width:720px;margin-left:auto;margin-right:auto;line-height:1.8" data-i18n="cat.footnote">
       Vehicles come with brand, model, year, mileage, fuel and transmission filters. Property listings support rent and sale across apartments, houses, villas, offices, land and more. Construction covers both materials and services. Every category speaks its own language — so buyers find exactly what they're looking for, faster.
     </p>
   </div>
@@ -598,24 +621,24 @@ footer{border-top:1px solid var(--border);padding:56px 0 30px;background:rgba(2,
 <section style="background:linear-gradient(180deg,transparent,rgba(34,197,94,0.03),transparent)">
   <div class="container detail-band">
     <div class="reveal">
-      <div class="section-tag">🛍️ For Buyers</div>
-      <h3 class="detail-title">Find it, check it, <span class="gradient-text">contact the seller your way</span></h3>
-      <p class="detail-desc">AYE Market is built around one idea: you should never have to guess. Every listing carries real photos with a full-screen zoom gallery, a detailed description, the seller's verification status, and the exact location on a map — before you ever reach out.</p>
+      <div class="section-tag" data-i18n="buy.tag">🛍️ For Buyers</div>
+      <h3 class="detail-title" data-i18n="buy.title_html">Find it, check it, <span class="gradient-text">contact the seller your way</span></h3>
+      <p class="detail-desc" data-i18n="buy.desc">AYE Market is built around one idea: you should never have to guess. Every listing carries real photos with a full-screen zoom gallery, a detailed description, the seller's verification status, and the exact location on a map — before you ever reach out.</p>
       <ul class="detail-list">
-        <li><strong>Powerful search</strong>&nbsp;— keyword search across every category, with singular/plural matching so "phone" also finds "phones".</li>
-        <li><strong>Advanced filters</strong>&nbsp;— narrow by price range, condition, brand, model, and category-specific attributes like bedrooms, mileage, or storage size.</li>
-        <li><strong>Nearby search</strong>&nbsp;— with GPS permission, see listings sorted by real distance from where you stand.</li>
-        <li><strong>Tigray location system</strong>&nbsp;— browse by the real administrative hierarchy: region, zone, wereda, tabiya, and city — not a generic address box.</li>
-        <li><strong>Favorites & saved searches</strong>&nbsp;— save any listing to your Favorites, or save a whole search and get notified when new matches appear.</li>
-        <li><strong>Four contact channels</strong>&nbsp;— in-app chat, phone call, WhatsApp, or SMS. The seller chooses which they accept; you choose which you prefer.</li>
+        <li data-i18n="buy.item1_html"><strong>Powerful search</strong>&nbsp;— keyword search across every category, with singular/plural matching so "phone" also finds "phones".</li>
+        <li data-i18n="buy.item2_html"><strong>Advanced filters</strong>&nbsp;— narrow by price range, condition, brand, model, and category-specific attributes like bedrooms, mileage, or storage size.</li>
+        <li data-i18n="buy.item3_html"><strong>Nearby search</strong>&nbsp;— with GPS permission, see listings sorted by real distance from where you stand.</li>
+        <li data-i18n="buy.item4_html"><strong>Tigray location system</strong>&nbsp;— browse by the real administrative hierarchy: region, zone, wereda, tabiya, and city — not a generic address box.</li>
+        <li data-i18n="buy.item5_html"><strong>Favorites & saved searches</strong>&nbsp;— save any listing to your Favorites, or save a whole search and get notified when new matches appear.</li>
+        <li data-i18n="buy.item6_html"><strong>Four contact channels</strong>&nbsp;— in-app chat, phone call, WhatsApp, or SMS. The seller chooses which they accept; you choose which you prefer.</li>
       </ul>
     </div>
     <div class="detail-visual reveal">
-      <div class="mini-row"><span class="mini-icon">🔍</span><div><div class="mini-title">Search "vitz mekelle"</div><div class="mini-sub">2 results near you · sorted by distance</div></div></div>
-      <div class="mini-row"><span class="mini-icon">🎛️</span><div><div class="mini-title">Filters: 500k–900k ETB · Used · Toyota</div><div class="mini-sub">Applied to Vehicles › Cars</div></div></div>
-      <div class="mini-row"><span class="mini-icon">📍</span><div><div class="mini-title">Mekelle › Hadnet › Adi Haki</div><div class="mini-sub">Region → Zone → Wereda → Tabiya</div></div></div>
-      <div class="mini-row"><span class="mini-icon">❤️</span><div><div class="mini-title">Saved to Favorites</div><div class="mini-sub">Price-drop notifications on</div></div></div>
-      <div class="mini-row"><span class="mini-icon">💬</span><div><div class="mini-title">Chat · 📞 Call · 🟢 WhatsApp · ✉️ SMS</div><div class="mini-sub">Contact the seller your way</div></div></div>
+      <div class="mini-row"><span class="mini-icon">🔍</span><div><div class="mini-title" data-i18n="buy.mini1Title">Search "vitz mekelle"</div><div class="mini-sub" data-i18n="buy.mini1Sub">2 results near you · sorted by distance</div></div></div>
+      <div class="mini-row"><span class="mini-icon">🎛️</span><div><div class="mini-title" data-i18n="buy.mini2Title">Filters: 500k–900k ETB · Used · Toyota</div><div class="mini-sub" data-i18n="buy.mini2Sub">Applied to Vehicles › Cars</div></div></div>
+      <div class="mini-row"><span class="mini-icon">📍</span><div><div class="mini-title" data-i18n="buy.mini3Title">Mekelle › Hadnet › Adi Haki</div><div class="mini-sub" data-i18n="buy.mini3Sub">Region → Zone → Wereda → Tabiya</div></div></div>
+      <div class="mini-row"><span class="mini-icon">❤️</span><div><div class="mini-title" data-i18n="buy.mini4Title">Saved to Favorites</div><div class="mini-sub" data-i18n="buy.mini4Sub">Price-drop notifications on</div></div></div>
+      <div class="mini-row"><span class="mini-icon">💬</span><div><div class="mini-title" data-i18n="buy.mini5Title">Chat · 📞 Call · 🟢 WhatsApp · ✉️ SMS</div><div class="mini-sub" data-i18n="buy.mini5Sub">Contact the seller your way</div></div></div>
     </div>
   </div>
 </section>
@@ -624,23 +647,23 @@ footer{border-top:1px solid var(--border);padding:56px 0 30px;background:rgba(2,
 <section>
   <div class="container detail-band">
     <div class="detail-visual blue reveal" style="order:1">
-      <div class="mini-row"><span class="mini-icon">📸</span><div><div class="mini-title">8 photos · drag to reorder</div><div class="mini-sub">First photo becomes your cover</div></div></div>
-      <div class="mini-row"><span class="mini-icon">📝</span><div><div class="mini-title">Category-specific form</div><div class="mini-sub">Car? Get brand/model/year fields. House? Bedrooms & area.</div></div></div>
-      <div class="mini-row"><span class="mini-icon">💾</span><div><div class="mini-title">Auto-saved draft</div><div class="mini-sub">Never lose a half-finished listing</div></div></div>
-      <div class="mini-row"><span class="mini-icon">📊</span><div><div class="mini-title">Seller Dashboard</div><div class="mini-sub">Views, favorites, and listing performance</div></div></div>
-      <div class="mini-row"><span class="mini-icon">🏪</span><div><div class="mini-title">Business account</div><div class="mini-sub">Store name + storefront presence</div></div></div>
+      <div class="mini-row"><span class="mini-icon">📸</span><div><div class="mini-title" data-i18n="sell.mini1Title">8 photos · drag to reorder</div><div class="mini-sub" data-i18n="sell.mini1Sub">First photo becomes your cover</div></div></div>
+      <div class="mini-row"><span class="mini-icon">📝</span><div><div class="mini-title" data-i18n="sell.mini2Title">Category-specific form</div><div class="mini-sub" data-i18n="sell.mini2Sub">Car? Get brand/model/year fields. House? Bedrooms & area.</div></div></div>
+      <div class="mini-row"><span class="mini-icon">💾</span><div><div class="mini-title" data-i18n="sell.mini3Title">Auto-saved draft</div><div class="mini-sub" data-i18n="sell.mini3Sub">Never lose a half-finished listing</div></div></div>
+      <div class="mini-row"><span class="mini-icon">📊</span><div><div class="mini-title" data-i18n="sell.mini4Title">Seller Dashboard</div><div class="mini-sub" data-i18n="sell.mini4Sub">Views, favorites, and listing performance</div></div></div>
+      <div class="mini-row"><span class="mini-icon">🏪</span><div><div class="mini-title" data-i18n="sell.mini5Title">Business account</div><div class="mini-sub" data-i18n="sell.mini5Sub">Store name + storefront presence</div></div></div>
     </div>
     <div class="reveal" style="order:2">
-      <div class="section-tag" style="color:var(--blue);border-color:var(--border-blue);background:rgba(59,130,246,0.07)">📤 For Sellers</div>
-      <h3 class="detail-title">Post in minutes, <span class="gradient-text">manage like a pro</span></h3>
-      <p class="detail-desc">Publishing a listing takes minutes: pick a category, add up to 8 photos, set your price and location, publish. But underneath, AYE Market gives sellers real tools — not just an ad slot.</p>
+      <div class="section-tag" style="color:var(--blue);border-color:var(--border-blue);background:rgba(59,130,246,0.07)" data-i18n="sell.tag">📤 For Sellers</div>
+      <h3 class="detail-title" data-i18n="sell.title_html">Post in minutes, <span class="gradient-text">manage like a pro</span></h3>
+      <p class="detail-desc" data-i18n="sell.desc">Publishing a listing takes minutes: pick a category, add up to 8 photos, set your price and location, publish. But underneath, AYE Market gives sellers real tools — not just an ad slot.</p>
       <ul class="detail-list blue">
-        <li><strong>Category-smart forms</strong>&nbsp;— every category has its own tailored fields, so your listing carries the details buyers filter by.</li>
-        <li><strong>Full listing lifecycle</strong>&nbsp;— publish, edit, pause, mark sold, archive, duplicate, or delete from My Listings, anytime.</li>
-        <li><strong>Auto-save drafts</strong>&nbsp;— your listing saves itself as you type; come back and finish whenever.</li>
-        <li><strong>Seller Dashboard</strong>&nbsp;— track total views, favorites, sold counts, and (with Premium) deeper analytics and trends.</li>
-        <li><strong>Reviews & reputation</strong>&nbsp;— buyers rate their experience, and your rating shows on every listing you post.</li>
-        <li><strong>Contact preference</strong>&nbsp;— accept chat only, calls only, or both. Your phone number is never shown unless you allow it.</li>
+        <li data-i18n="sell.item1_html"><strong>Category-smart forms</strong>&nbsp;— every category has its own tailored fields, so your listing carries the details buyers filter by.</li>
+        <li data-i18n="sell.item2_html"><strong>Full listing lifecycle</strong>&nbsp;— publish, edit, pause, mark sold, archive, duplicate, or delete from My Listings, anytime.</li>
+        <li data-i18n="sell.item3_html"><strong>Auto-save drafts</strong>&nbsp;— your listing saves itself as you type; come back and finish whenever.</li>
+        <li data-i18n="sell.item4_html"><strong>Seller Dashboard</strong>&nbsp;— track total views, favorites, sold counts, and (with Premium) deeper analytics and trends.</li>
+        <li data-i18n="sell.item5_html"><strong>Reviews & reputation</strong>&nbsp;— buyers rate their experience, and your rating shows on every listing you post.</li>
+        <li data-i18n="sell.item6_html"><strong>Contact preference</strong>&nbsp;— accept chat only, calls only, or both. Your phone number is never shown unless you allow it.</li>
       </ul>
     </div>
   </div>
@@ -650,40 +673,40 @@ footer{border-top:1px solid var(--border);padding:56px 0 30px;background:rgba(2,
 <section id="jobs" style="background:linear-gradient(135deg,rgba(59,130,246,0.05),rgba(10,22,40,0.95))">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-tag" style="color:var(--blue);border-color:var(--border-blue);background:rgba(59,130,246,0.07)">💼 Jobs Marketplace</div>
-      <h2 class="section-title">A Complete <span class="gradient-text">Jobs Platform</span> Inside</h2>
-      <p class="section-subtitle">AYE Market isn't just for goods — it's a full two-sided jobs marketplace for Tigray, with dedicated experiences for job seekers and employers.</p>
+      <div class="section-tag" style="color:var(--blue);border-color:var(--border-blue);background:rgba(59,130,246,0.07)" data-i18n="jobs.tag">💼 Jobs Marketplace</div>
+      <h2 class="section-title" data-i18n="jobs.title_html">A Complete <span class="gradient-text">Jobs Platform</span> Inside</h2>
+      <p class="section-subtitle" data-i18n="jobs.subtitle">AYE Market isn't just for goods — it's a full two-sided jobs marketplace for Tigray, with dedicated experiences for job seekers and employers.</p>
     </div>
     <div class="features-grid">
       <div class="feature-card reveal">
         <div class="feature-icon">🔎</div>
-        <div class="feature-title">Find Jobs</div>
-        <div class="feature-desc">Browse openings by category, qualification, employment type, and salary range. Every posting carries industry, experience level, education requirements, benefits, and application deadline — filterable, not buried in text.</div>
+        <div class="feature-title" data-i18n="jobs.card1Title">Find Jobs</div>
+        <div class="feature-desc" data-i18n="jobs.card1Desc">Browse openings by category, qualification, employment type, and salary range. Every posting carries industry, experience level, education requirements, benefits, and application deadline — filterable, not buried in text.</div>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon">📄</div>
-        <div class="feature-title">Job Seeker Profile & CV</div>
-        <div class="feature-desc">Build one professional profile — CV upload, skills, languages, education, experience level, expected salary, and how employers may contact you. Your "Jobs Wanted" ad stays in sync with it automatically.</div>
+        <div class="feature-title" data-i18n="jobs.card2Title">Job Seeker Profile & CV</div>
+        <div class="feature-desc" data-i18n="jobs.card2Desc">Build one professional profile — CV upload, skills, languages, education, experience level, expected salary, and how employers may contact you. Your "Jobs Wanted" ad stays in sync with it automatically.</div>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon">✅</div>
-        <div class="feature-title">One-Tap Applications</div>
-        <div class="feature-desc">Apply with your CV in seconds, then track every application's status — pending, viewed, shortlisted — from your applications dashboard.</div>
+        <div class="feature-title" data-i18n="jobs.card3Title">One-Tap Applications</div>
+        <div class="feature-desc" data-i18n="jobs.card3Desc">Apply with your CV in seconds, then track every application's status — pending, viewed, shortlisted — from your applications dashboard.</div>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon">📣</div>
-        <div class="feature-title">Post a Job</div>
-        <div class="feature-desc">Employers post openings with company name, vacancies, responsibilities, required skills, salary, deadline, and location. Manage all postings and applicants from the Employer Dashboard.</div>
+        <div class="feature-title" data-i18n="jobs.card4Title">Post a Job</div>
+        <div class="feature-desc" data-i18n="jobs.card4Desc">Employers post openings with company name, vacancies, responsibilities, required skills, salary, deadline, and location. Manage all postings and applicants from the Employer Dashboard.</div>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon">🧑‍🔧</div>
-        <div class="feature-title">Hire Talent — Jobs Wanted</div>
-        <div class="feature-desc">Browse candidate ads by profession, qualification, experience, and employment type. See skills, education and expected salary up front — and view CVs once your account is verified.</div>
+        <div class="feature-title" data-i18n="jobs.card5Title">Hire Talent — Jobs Wanted</div>
+        <div class="feature-desc" data-i18n="jobs.card5Desc">Browse candidate ads by profession, qualification, experience, and employment type. See skills, education and expected salary up front — and view CVs once your account is verified.</div>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon">🔐</div>
-        <div class="feature-title">CV Privacy Protection</div>
-        <div class="feature-desc">A candidate's CV is personal. Only identity-verified employers can open CVs — the same document protection applied to job applications and Jobs Wanted ads alike.</div>
+        <div class="feature-title" data-i18n="jobs.card6Title">CV Privacy Protection</div>
+        <div class="feature-desc" data-i18n="jobs.card6Desc">A candidate's CV is personal. Only identity-verified employers can open CVs — the same document protection applied to job applications and Jobs Wanted ads alike.</div>
       </div>
     </div>
   </div>
@@ -693,71 +716,71 @@ footer{border-top:1px solid var(--border);padding:56px 0 30px;background:rgba(2,
 <section id="features">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-tag">✨ Everything Included</div>
-      <h2 class="section-title">Features That Make Trading<br/><span class="gradient-text">Simple and Safe</span></h2>
-      <p class="section-subtitle">Every feature below exists in the app today — nothing here is a promise.</p>
+      <div class="section-tag" data-i18n="feat.tag">✨ Everything Included</div>
+      <h2 class="section-title" data-i18n="feat.title_html">Features That Make Trading<br/><span class="gradient-text">Simple and Safe</span></h2>
+      <p class="section-subtitle" data-i18n="feat.subtitle">Every feature below exists in the app today — nothing here is a promise.</p>
     </div>
 
     <div class="features-grid">
       <div class="feature-card reveal">
         <div class="feature-icon">💬</div>
-        <div class="feature-title">Real-Time Chat</div>
-        <div class="feature-desc">Message any seller instantly, share photos, and pick conversations back up anytime. Typing indicators, unread counts, and the listing you're discussing pinned right in the thread — without ever sharing your phone number.</div>
+        <div class="feature-title" data-i18n="feat.card1Title">Real-Time Chat</div>
+        <div class="feature-desc" data-i18n="feat.card1Desc">Message any seller instantly, share photos, and pick conversations back up anytime. Typing indicators, unread counts, and the listing you're discussing pinned right in the thread — without ever sharing your phone number.</div>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon">📞</div>
-        <div class="feature-title">Call, WhatsApp & SMS</div>
-        <div class="feature-desc">When a seller shares their number, reach them the way Tigray actually communicates — a direct call, a WhatsApp message pre-filled with the listing, or a plain SMS.</div>
+        <div class="feature-title" data-i18n="feat.card2Title">Call, WhatsApp & SMS</div>
+        <div class="feature-desc" data-i18n="feat.card2Desc">When a seller shares their number, reach them the way Tigray actually communicates — a direct call, a WhatsApp message pre-filled with the listing, or a plain SMS.</div>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon">🗺️</div>
-        <div class="feature-title">GPS + Interactive Map</div>
-        <div class="feature-desc">Pin your listing's exact location on a map, browse what's nearby, and search by distance. The location picker follows Tigray's real administrative structure down to tabiya level.</div>
+        <div class="feature-title" data-i18n="feat.card3Title">GPS + Interactive Map</div>
+        <div class="feature-desc" data-i18n="feat.card3Desc">Pin your listing's exact location on a map, browse what's nearby, and search by distance. The location picker follows Tigray's real administrative structure down to tabiya level.</div>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon">🔔</div>
-        <div class="feature-title">Smart Notifications</div>
-        <div class="feature-desc">New messages, price drops on favorites, saved-search matches, application updates, listing approvals — delivered as push notifications with a full notification center in-app.</div>
+        <div class="feature-title" data-i18n="feat.card4Title">Smart Notifications</div>
+        <div class="feature-desc" data-i18n="feat.card4Desc">New messages, price drops on favorites, saved-search matches, application updates, listing approvals — delivered as push notifications with a full notification center in-app.</div>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon">✅</div>
-        <div class="feature-title">Verified Sellers</div>
-        <div class="feature-desc">Sellers can verify with a Fayda ID, Kebele Residence ID, Driver's License, Business License, or Passport — reviewed by a human moderator. Verified accounts wear a badge buyers can trust.</div>
+        <div class="feature-title" data-i18n="feat.card5Title">Verified Sellers</div>
+        <div class="feature-desc" data-i18n="feat.card5Desc">Sellers can verify with a Fayda ID, Kebele Residence ID, Driver's License, Business License, or Passport — reviewed by a human moderator. Verified accounts wear a badge buyers can trust.</div>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon">⭐</div>
-        <div class="feature-title">Reviews & Ratings</div>
-        <div class="feature-desc">Rate sellers after a transaction. Ratings, response rate, and member-since dates appear on every seller profile — reputation that's earned, not claimed.</div>
+        <div class="feature-title" data-i18n="feat.card6Title">Reviews & Ratings</div>
+        <div class="feature-desc" data-i18n="feat.card6Desc">Rate sellers after a transaction. Ratings, response rate, and member-since dates appear on every seller profile — reputation that's earned, not claimed.</div>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon">🛡️</div>
-        <div class="feature-title">Moderation & Reporting</div>
-        <div class="feature-desc">Every listing and user can be reported in one tap. A human moderation team reviews reports against published Community Guidelines — with warnings, suspensions, and bans for violators.</div>
+        <div class="feature-title" data-i18n="feat.card7Title">Moderation & Reporting</div>
+        <div class="feature-desc" data-i18n="feat.card7Desc">Every listing and user can be reported in one tap. A human moderation team reviews reports against published Community Guidelines — with warnings, suspensions, and bans for violators.</div>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon">🚫</div>
-        <div class="feature-title">Block Anyone</div>
-        <div class="feature-desc">Block any user from their profile or a chat. Blocked users can't message you or see your contact options — no questions asked.</div>
+        <div class="feature-title" data-i18n="feat.card8Title">Block Anyone</div>
+        <div class="feature-desc" data-i18n="feat.card8Desc">Block any user from their profile or a chat. Blocked users can't message you or see your contact options — no questions asked.</div>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon">👥</div>
-        <div class="feature-title">Follow Sellers</div>
-        <div class="feature-desc">Follow sellers you like and get notified when they post something new — build your own trusted seller network.</div>
+        <div class="feature-title" data-i18n="feat.card9Title">Follow Sellers</div>
+        <div class="feature-desc" data-i18n="feat.card9Desc">Follow sellers you like and get notified when they post something new — build your own trusted seller network.</div>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon">🎭</div>
-        <div class="feature-title">Multi-Role Accounts</div>
-        <div class="feature-desc">One account, four roles — Buyer, Seller, Job Seeker, Employer. Switch any role on or off in Settings and your app adapts; nothing you posted is ever lost.</div>
+        <div class="feature-title" data-i18n="feat.card10Title">Multi-Role Accounts</div>
+        <div class="feature-desc" data-i18n="feat.card10Desc">One account, four roles — Buyer, Seller, Job Seeker, Employer. Switch any role on or off in Settings and your app adapts; nothing you posted is ever lost.</div>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon">🌐</div>
-        <div class="feature-title">Three Languages</div>
-        <div class="feature-desc">Fully translated into Tigrinya, Amharic, and English — every screen, every button, every notification. Switch anytime in Settings.</div>
+        <div class="feature-title" data-i18n="feat.card11Title">Three Languages</div>
+        <div class="feature-desc" data-i18n="feat.card11Desc">Fully translated into Tigrinya, Amharic, and English — every screen, every button, every notification. Switch anytime in Settings.</div>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon">🌓</div>
-        <div class="feature-title">Light & Dark Mode</div>
-        <div class="feature-desc">A clean light theme by default, a full dark theme when you want it — or follow your system setting.</div>
+        <div class="feature-title" data-i18n="feat.card12Title">Light & Dark Mode</div>
+        <div class="feature-desc" data-i18n="feat.card12Desc">A clean light theme by default, a full dark theme when you want it — or follow your system setting.</div>
       </div>
     </div>
   </div>
@@ -767,29 +790,29 @@ footer{border-top:1px solid var(--border);padding:56px 0 30px;background:rgba(2,
 <section id="how-it-works">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-tag">🚀 Getting Started</div>
-      <h2 class="section-title">Up and Running in <span class="gradient-text">4 Steps</span></h2>
+      <div class="section-tag" data-i18n="steps.tag">🚀 Getting Started</div>
+      <h2 class="section-title" data-i18n="steps.title_html">Up and Running in <span class="gradient-text">4 Steps</span></h2>
     </div>
     <div class="steps-wrap">
       <div class="step reveal">
         <div class="step-num">1</div>
-        <div class="step-title">Create Your Account</div>
-        <div class="step-desc">Sign up free with email, phone, or Google. Pick your roles — buyer, seller, job seeker, employer, or all four.</div>
+        <div class="step-title" data-i18n="steps.step1Title">Create Your Account</div>
+        <div class="step-desc" data-i18n="steps.step1Desc">Sign up free with email, phone, or Google. Pick your roles — buyer, seller, job seeker, employer, or all four.</div>
       </div>
       <div class="step reveal">
         <div class="step-num">2</div>
-        <div class="step-title">Browse or Post</div>
-        <div class="step-desc">Search 22 categories with smart filters, or publish your own listing with photos, price, and map location in minutes.</div>
+        <div class="step-title" data-i18n="steps.step2Title">Browse or Post</div>
+        <div class="step-desc" data-i18n="steps.step2Desc">Search 22 categories with smart filters, or publish your own listing with photos, price, and map location in minutes.</div>
       </div>
       <div class="step reveal">
         <div class="step-num">3</div>
-        <div class="step-title">Connect Directly</div>
-        <div class="step-desc">Chat in-app, or call, WhatsApp, and SMS when the seller shares a number. No middleman, no commission.</div>
+        <div class="step-title" data-i18n="steps.step3Title">Connect Directly</div>
+        <div class="step-desc" data-i18n="steps.step3Desc">Chat in-app, or call, WhatsApp, and SMS when the seller shares a number. No middleman, no commission.</div>
       </div>
       <div class="step reveal">
         <div class="step-num">4</div>
-        <div class="step-title">Trade Safely</div>
-        <div class="step-desc">Meet in public, inspect before paying, and mark it sold. Verification badges and our Safety Center guide every step.</div>
+        <div class="step-title" data-i18n="steps.step4Title">Trade Safely</div>
+        <div class="step-desc" data-i18n="steps.step4Desc">Meet in public, inspect before paying, and mark it sold. Verification badges and our Safety Center guide every step.</div>
       </div>
     </div>
   </div>
@@ -799,68 +822,68 @@ footer{border-top:1px solid var(--border);padding:56px 0 30px;background:rgba(2,
 <section id="pricing">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-tag">👑 Premium</div>
-      <h2 class="section-title">Free Forever. <span class="gradient-text">Boost When You Want.</span></h2>
-      <p class="section-subtitle">Browsing, chatting, posting, and applying are free — and always will be. Premium plans add visibility on top, with prices in Ethiopian Birr and payment methods that work here.</p>
+      <div class="section-tag" data-i18n="pricing.tag">👑 Premium</div>
+      <h2 class="section-title" data-i18n="pricing.title_html">Free Forever. <span class="gradient-text">Boost When You Want.</span></h2>
+      <p class="section-subtitle" data-i18n="pricing.subtitle">Browsing, chatting, posting, and applying are free — and always will be. Premium plans add visibility on top, with prices in Ethiopian Birr and payment methods that work here.</p>
     </div>
     <div class="plans-grid">
       <div class="plan-card reveal">
-        <div class="plan-name">Free</div>
+        <div class="plan-name" data-i18n="pricing.planFreeName">Free</div>
         <div class="plan-price">0 <span style="font-size:1rem">ETB</span></div>
-        <div class="plan-period">forever</div>
+        <div class="plan-period" data-i18n="pricing.periodForever">forever</div>
         <ul class="plan-features">
-          <li class="plan-feature">Unlimited browsing & search</li>
-          <li class="plan-feature">Post listings in all 22 categories</li>
-          <li class="plan-feature">Chat, call, WhatsApp & SMS</li>
-          <li class="plan-feature">Favorites & saved searches</li>
-          <li class="plan-feature">Apply to jobs & post Jobs Wanted ads</li>
-          <li class="plan-feature">Basic seller dashboard</li>
+          <li class="plan-feature" data-i18n="pricing.free1">Unlimited browsing & search</li>
+          <li class="plan-feature" data-i18n="pricing.free2">Post listings in all 22 categories</li>
+          <li class="plan-feature" data-i18n="pricing.free3">Chat, call, WhatsApp & SMS</li>
+          <li class="plan-feature" data-i18n="pricing.free4">Favorites & saved searches</li>
+          <li class="plan-feature" data-i18n="pricing.free5">Apply to jobs & post Jobs Wanted ads</li>
+          <li class="plan-feature" data-i18n="pricing.free6">Basic seller dashboard</li>
         </ul>
-        <a href="#download" class="btn btn-outline">Get Started</a>
+        <a href="#download" class="btn btn-outline" data-i18n="pricing.btnGetStarted">Get Started</a>
       </div>
       <div class="plan-card reveal">
-        <div class="plan-name" style="color:var(--gold)">🚀 7-Day Promotion</div>
+        <div class="plan-name" style="color:var(--gold)" data-i18n="pricing.plan2Name">🚀 7-Day Promotion</div>
         <div class="plan-price">200 <span style="font-size:1rem">ETB</span></div>
-        <div class="plan-period">one listing · 7 days</div>
+        <div class="plan-period" data-i18n="pricing.period7day">one listing · 7 days</div>
         <ul class="plan-features">
-          <li class="plan-feature">~5× more visibility</li>
-          <li class="plan-feature">Higher search ranking</li>
-          <li class="plan-feature">Top of category placement</li>
-          <li class="plan-feature">"Promoted" badge on your listing</li>
+          <li class="plan-feature" data-i18n="pricing.promo1">~5× more visibility</li>
+          <li class="plan-feature" data-i18n="pricing.promo2">Higher search ranking</li>
+          <li class="plan-feature" data-i18n="pricing.promo3">Top of category placement</li>
+          <li class="plan-feature" data-i18n="pricing.promo4">"Promoted" badge on your listing</li>
         </ul>
-        <a href="#download" class="btn btn-outline">Promote in App</a>
+        <a href="#download" class="btn btn-outline" data-i18n="pricing.btnPromote">Promote in App</a>
       </div>
       <div class="plan-card reveal">
-        <div class="plan-name" style="color:var(--blue)">Premium</div>
+        <div class="plan-name" style="color:var(--blue)" data-i18n="pricing.plan3Name">Premium</div>
         <div class="plan-price">400 <span style="font-size:1rem">ETB</span></div>
-        <div class="plan-period">per month</div>
+        <div class="plan-period" data-i18n="pricing.periodMonth">per month</div>
         <ul class="plan-features">
-          <li class="plan-feature">~10× more visibility</li>
-          <li class="plan-feature">Listings rank above free listings</li>
-          <li class="plan-feature">Featured Seller badge</li>
-          <li class="plan-feature">More homepage exposure</li>
-          <li class="plan-feature">Detailed listing analytics</li>
-          <li class="plan-feature">Priority support</li>
+          <li class="plan-feature" data-i18n="pricing.prem1">~10× more visibility</li>
+          <li class="plan-feature" data-i18n="pricing.prem2">Listings rank above free listings</li>
+          <li class="plan-feature" data-i18n="pricing.prem3">Featured Seller badge</li>
+          <li class="plan-feature" data-i18n="pricing.prem4">More homepage exposure</li>
+          <li class="plan-feature" data-i18n="pricing.prem5">Detailed listing analytics</li>
+          <li class="plan-feature" data-i18n="pricing.prem6">Priority support</li>
         </ul>
-        <a href="#download" class="btn btn-blue">Upgrade in App</a>
+        <a href="#download" class="btn btn-blue" data-i18n="pricing.btnUpgrade">Upgrade in App</a>
       </div>
       <div class="plan-card featured reveal">
-        <div class="plan-ribbon">Most Popular</div>
-        <div class="plan-name" style="color:var(--gold)">Premium+</div>
+        <div class="plan-ribbon" data-i18n="pricing.ribbon">Most Popular</div>
+        <div class="plan-name" style="color:var(--gold)" data-i18n="pricing.plan4Name">Premium+</div>
         <div class="plan-price">600 <span style="font-size:1rem">ETB</span></div>
-        <div class="plan-period">per month</div>
+        <div class="plan-period" data-i18n="pricing.periodMonth">per month</div>
         <ul class="plan-features">
-          <li class="plan-feature">~15×+ more visibility — highest ranking</li>
-          <li class="plan-feature">Premium+ gold badge</li>
-          <li class="plan-feature">Homepage & category featured placement</li>
-          <li class="plan-feature">Priority in suggested listings</li>
-          <li class="plan-feature">Performance-level analytics</li>
-          <li class="plan-feature">Early access to new features</li>
+          <li class="plan-feature" data-i18n="pricing.plus1">~15×+ more visibility — highest ranking</li>
+          <li class="plan-feature" data-i18n="pricing.plus2">Premium+ gold badge</li>
+          <li class="plan-feature" data-i18n="pricing.plus3">Homepage & category featured placement</li>
+          <li class="plan-feature" data-i18n="pricing.plus4">Priority in suggested listings</li>
+          <li class="plan-feature" data-i18n="pricing.plus5">Performance-level analytics</li>
+          <li class="plan-feature" data-i18n="pricing.plus6">Early access to new features</li>
         </ul>
-        <a href="#download" class="btn btn-green">Upgrade in App</a>
+        <a href="#download" class="btn btn-green" data-i18n="pricing.btnUpgrade">Upgrade in App</a>
       </div>
     </div>
-    <p class="reveal" style="text-align:center;margin-top:30px;font-size:.9rem;color:var(--text-soft);max-width:680px;margin-left:auto;margin-right:auto;line-height:1.7">
+    <p class="reveal" style="text-align:center;margin-top:30px;font-size:.9rem;color:var(--text-soft);max-width:680px;margin-left:auto;margin-right:auto;line-height:1.7" data-i18n="pricing.footnote_html">
       💳 Payments are currently processed manually by our team — choose your plan in the app, follow the payment instructions, upload your receipt, and your upgrade activates on approval (usually within a business day). Automatic <strong style="color:var(--green)">Telebirr</strong> and <strong style="color:var(--green)">Chapa</strong> payments are coming soon. When a plan expires, your listings simply return to normal ranking — nothing is ever deleted.
     </p>
   </div>
@@ -870,40 +893,40 @@ footer{border-top:1px solid var(--border);padding:56px 0 30px;background:rgba(2,
 <section id="safety">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-tag">🛡️ Safety First</div>
-      <h2 class="section-title">Built So You Can <span class="gradient-text">Trade With Confidence</span></h2>
-      <p class="section-subtitle">Trust isn't a feature — it's the product. Here's how AYE Market protects its community.</p>
+      <div class="section-tag" data-i18n="safety.tag">🛡️ Safety First</div>
+      <h2 class="section-title" data-i18n="safety.title_html">Built So You Can <span class="gradient-text">Trade With Confidence</span></h2>
+      <p class="section-subtitle" data-i18n="safety.subtitle">Trust isn't a feature — it's the product. Here's how AYE Market protects its community.</p>
     </div>
     <div class="safety-grid">
       <div class="safety-card reveal">
         <div class="safety-icon">🪪</div>
-        <div class="safety-title">Human-Reviewed Verification</div>
-        <div class="safety-desc">Identity verification with Fayda ID, Kebele Residence ID, Driver's License, Business License, or Passport — every submission reviewed by a real moderator, never auto-approved. Optional phone verification adds a second badge.</div>
+        <div class="safety-title" data-i18n="safety.card1Title">Human-Reviewed Verification</div>
+        <div class="safety-desc" data-i18n="safety.card1Desc">Identity verification with Fayda ID, Kebele Residence ID, Driver's License, Business License, or Passport — every submission reviewed by a real moderator, never auto-approved. Optional phone verification adds a second badge.</div>
       </div>
       <div class="safety-card reveal">
         <div class="safety-icon">👁️</div>
-        <div class="safety-title">Active Moderation</div>
-        <div class="safety-desc">A moderation team reviews reported listings and users against published Community Guidelines. Prohibited items, counterfeits, spam, and scams are removed; repeat offenders are suspended or banned.</div>
+        <div class="safety-title" data-i18n="safety.card2Title">Active Moderation</div>
+        <div class="safety-desc" data-i18n="safety.card2Desc">A moderation team reviews reported listings and users against published Community Guidelines. Prohibited items, counterfeits, spam, and scams are removed; repeat offenders are suspended or banned.</div>
       </div>
       <div class="safety-card reveal">
         <div class="safety-icon">🚨</div>
-        <div class="safety-title">One-Tap Reporting</div>
-        <div class="safety-desc">Report any listing, chat, or profile in one tap with a specific reason. Every report lands in a human review queue — and false reporting is itself a violation.</div>
+        <div class="safety-title" data-i18n="safety.card3Title">One-Tap Reporting</div>
+        <div class="safety-desc" data-i18n="safety.card3Desc">Report any listing, chat, or profile in one tap with a specific reason. Every report lands in a human review queue — and false reporting is itself a violation.</div>
       </div>
       <div class="safety-card reveal">
         <div class="safety-icon">🔒</div>
-        <div class="safety-title">Your Privacy, Protected</div>
-        <div class="safety-desc">Chat without revealing your number. Location permission is optional. CVs are visible only to verified employers. ID documents are seen only by the verification team — never other users.</div>
+        <div class="safety-title" data-i18n="safety.card4Title">Your Privacy, Protected</div>
+        <div class="safety-desc" data-i18n="safety.card4Desc">Chat without revealing your number. Location permission is optional. CVs are visible only to verified employers. ID documents are seen only by the verification team — never other users.</div>
       </div>
       <div class="safety-card reveal">
         <div class="safety-icon">📖</div>
-        <div class="safety-title">Safety Center</div>
-        <div class="safety-desc">A full guide to safe trading: recognizing scam patterns, meeting safely in public, payment safety, and what to do if something goes wrong. <a href="safety-center/" style="color:var(--green);font-weight:700">Read the Safety Center →</a></div>
+        <div class="safety-title" data-i18n="safety.card5Title">Safety Center</div>
+        <div class="safety-desc" data-i18n="safety.card5Desc_html">A full guide to safe trading: recognizing scam patterns, meeting safely in public, payment safety, and what to do if something goes wrong. <a href="safety-center/" style="color:var(--green);font-weight:700">Read the Safety Center →</a></div>
       </div>
       <div class="safety-card reveal">
         <div class="safety-icon">⚖️</div>
-        <div class="safety-title">Clear Rules, Fair Process</div>
-        <div class="safety-desc">Published <a href="community-guidelines/" style="color:var(--green);font-weight:700">Community Guidelines</a> define exactly what's allowed. Moderation decisions can be appealed — and enforcement is logged and accountable.</div>
+        <div class="safety-title" data-i18n="safety.card6Title">Clear Rules, Fair Process</div>
+        <div class="safety-desc" data-i18n="safety.card6Desc_html">Published <a href="community-guidelines/" style="color:var(--green);font-weight:700">Community Guidelines</a> define exactly what's allowed. Moderation decisions can be appealed — and enforcement is logged and accountable.</div>
       </div>
     </div>
   </div>
@@ -913,18 +936,18 @@ footer{border-top:1px solid var(--border);padding:56px 0 30px;background:rgba(2,
 <section id="about">
   <div class="container about-inner">
     <div class="reveal">
-      <div class="section-tag">🌍 Why AYE Market</div>
-      <h3 class="about-title">Built for Tigray, <span class="gradient-text">Not Adapted For It</span></h3>
-      <p class="about-desc">People in Tigray were already buying, selling, and hiring every day — through word of mouth, Telegram groups, and noticeboards. What was missing was a platform actually designed for it: local languages, local places, local ways of communicating, and safety features that address real local risks.</p>
-      <p class="about-desc">AYE Market started deliberately narrow. Instead of a generic "all of Ethiopia" app, we built the details right for one region first: full Tigrinya and Amharic translation, a location system that knows your tabiya, contact options that match how people here actually talk, and human moderation with local context.</p>
-      <p class="about-desc">AYE Market is developed by <a href="/" style="color:var(--neon);font-weight:700">AYE Tech Hub</a> — the same Ethiopian technology studio behind the AYE TechEngine & TechPro engineering education platform and the Habesha Hearts dating app.</p>
+      <div class="section-tag" data-i18n="about.tag">🌍 Why AYE Market</div>
+      <h3 class="about-title" data-i18n="about.title_html">Built for Tigray, <span class="gradient-text">Not Adapted For It</span></h3>
+      <p class="about-desc" data-i18n="about.p1">People in Tigray were already buying, selling, and hiring every day — through word of mouth, Telegram groups, and noticeboards. What was missing was a platform actually designed for it: local languages, local places, local ways of communicating, and safety features that address real local risks.</p>
+      <p class="about-desc" data-i18n="about.p2">AYE Market started deliberately narrow. Instead of a generic "all of Ethiopia" app, we built the details right for one region first: full Tigrinya and Amharic translation, a location system that knows your tabiya, contact options that match how people here actually talk, and human moderation with local context.</p>
+      <p class="about-desc" data-i18n="about.p3_html">AYE Market is developed by <a href="/" style="color:var(--neon);font-weight:700">AYE Tech Hub</a> — the same Ethiopian technology studio behind the AYE TechEngine & TechPro engineering education platform and the Habesha Hearts dating app.</p>
     </div>
     <div class="reveal">
       <div class="detail-visual">
-        <div class="mini-row"><span class="mini-icon">🗣️</span><div><div class="mini-title">ትግርኛ · አማርኛ · English</div><div class="mini-sub">Every screen, fully translated</div></div></div>
-        <div class="mini-row"><span class="mini-icon">🗺️</span><div><div class="mini-title">Region → Zone → Wereda → Tabiya</div><div class="mini-sub">Tigray's real administrative hierarchy</div></div></div>
-        <div class="mini-row"><span class="mini-icon">💰</span><div><div class="mini-title">Prices in ETB, payments that work here</div><div class="mini-sub">Manual now, Telebirr & Chapa coming</div></div></div>
-        <div class="mini-row"><span class="mini-icon">🤝</span><div><div class="mini-title">No commission on sales</div><div class="mini-sub">Buyers and sellers deal directly</div></div></div>
+        <div class="mini-row"><span class="mini-icon">🗣️</span><div><div class="mini-title">ትግርኛ · አማርኛ · English</div><div class="mini-sub" data-i18n="about.mini1Sub">Every screen, fully translated</div></div></div>
+        <div class="mini-row"><span class="mini-icon">🗺️</span><div><div class="mini-title" data-i18n="about.mini2Title">Region → Zone → Wereda → Tabiya</div><div class="mini-sub" data-i18n="about.mini2Sub">Tigray's real administrative hierarchy</div></div></div>
+        <div class="mini-row"><span class="mini-icon">💰</span><div><div class="mini-title" data-i18n="about.mini3Title">Prices in ETB, payments that work here</div><div class="mini-sub" data-i18n="about.mini3Sub">Manual now, Telebirr & Chapa coming</div></div></div>
+        <div class="mini-row"><span class="mini-icon">🤝</span><div><div class="mini-title" data-i18n="about.mini4Title">No commission on sales</div><div class="mini-sub" data-i18n="about.mini4Sub">Buyers and sellers deal directly</div></div></div>
       </div>
     </div>
   </div>
@@ -934,17 +957,17 @@ footer{border-top:1px solid var(--border);padding:56px 0 30px;background:rgba(2,
 <section id="founder">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-tag">👨‍💻 The Builder</div>
-      <h2 class="section-title">Built by a <span class="gradient-text">Tigrayan Engineer</span></h2>
+      <div class="section-tag" data-i18n="founder.tag">👨‍💻 The Builder</div>
+      <h2 class="section-title" data-i18n="founder.title_html">Built by a <span class="gradient-text">Tigrayan Engineer</span></h2>
     </div>
     <div class="founder-card reveal">
-      <img src="/assets/images/founder-photo.jpg" alt="Awet G. Nway, founder of AYE Tech Hub and AYE Market" class="founder-photo" loading="lazy"/>
+      <img src="/assets/images/founder-photo.jpg" alt="Awet G. Nway, founder of AYE Tech Hub and AYE Market" data-i18n-attr="alt:founder.photoAlt" class="founder-photo" loading="lazy"/>
       <div>
         <div class="founder-name">Awet G. Nway</div>
-        <div class="founder-role">Founder of AYE Tech Hub · Founder of AYE Market</div>
-        <p class="founder-bio">Awet is a mechanical, digital, and automation engineer and the founder of AYE Tech Hub — an Ethiopian technology studio building practical software and engineering education for African engineers and communities. With AYE Market, Awet leads product and engineering end-to-end: the Android app, the backend systems, the moderation tools, and this website. The goal is simple — give Tigray a marketplace that's as safe, modern, and capable as anything built anywhere, and genuinely local in a way nothing imported can be.</p>
+        <div class="founder-role" data-i18n="founder.role">Founder of AYE Tech Hub · Founder of AYE Market</div>
+        <p class="founder-bio" data-i18n="founder.bio">Awet is a mechanical, digital, and automation engineer and the founder of AYE Tech Hub — an Ethiopian technology studio building practical software and engineering education for African engineers and communities. With AYE Market, Awet leads product and engineering end-to-end: the Android app, the backend systems, the moderation tools, and this website. The goal is simple — give Tigray a marketplace that's as safe, modern, and capable as anything built anywhere, and genuinely local in a way nothing imported can be.</p>
         <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">
-          <a href="/#founder" class="btn btn-outline" style="padding:9px 18px;font-size:.78rem">Full Profile on AYE Tech Hub</a>
+          <a href="/#founder" class="btn btn-outline" style="padding:9px 18px;font-size:.78rem" data-i18n="founder.fullProfile">Full Profile on AYE Tech Hub</a>
         </div>
       </div>
     </div>
@@ -955,49 +978,49 @@ footer{border-top:1px solid var(--border);padding:56px 0 30px;background:rgba(2,
 <section id="faq" style="background:linear-gradient(180deg,transparent,rgba(34,197,94,0.03),transparent)">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-tag">❓ Questions</div>
-      <h2 class="section-title">Common <span class="gradient-text">Questions</span></h2>
+      <div class="section-tag" data-i18n="faq.tag">❓ Questions</div>
+      <h2 class="section-title" data-i18n="faq.title_html">Common <span class="gradient-text">Questions</span></h2>
     </div>
     <div class="faq-list reveal">
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Is AYE Market really free? <span class="faq-arrow">▼</span></div>
-        <div class="faq-a">Yes. Creating an account, browsing, searching, posting listings, chatting, applying to jobs, and posting job openings are all completely free, with no commission taken on anything you sell. The only paid features are optional visibility boosts — the 7-Day Promotion, Premium, and Premium+ plans.</div>
+        <div class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q1">Is AYE Market really free?</span> <span class="faq-arrow">▼</span></div>
+        <div class="faq-a" data-i18n="faq.a1">Yes. Creating an account, browsing, searching, posting listings, chatting, applying to jobs, and posting job openings are all completely free, with no commission taken on anything you sell. The only paid features are optional visibility boosts — the 7-Day Promotion, Premium, and Premium+ plans.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Which languages does the app support? <span class="faq-arrow">▼</span></div>
-        <div class="faq-a">Tigrinya (ትግርኛ), Amharic (አማርኛ), and English — fully translated across every screen, form, and notification. Switch anytime in Settings → Preferences → Language.</div>
+        <div class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q2">Which languages does the app support?</span> <span class="faq-arrow">▼</span></div>
+        <div class="faq-a" data-i18n="faq.a2">Tigrinya (ትግርኛ), Amharic (አማርኛ), and English — fully translated across every screen, form, and notification. Switch anytime in Settings → Preferences → Language.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Do I need to verify my ID or phone to use the app? <span class="faq-arrow">▼</span></div>
-        <div class="faq-a">No. You can browse, message, buy, sell, post jobs, and apply to jobs without any verification. Verification is optional — it adds a visible trust badge to your profile and unlocks CV access for employers. You can verify with a Fayda ID, Kebele Residence ID, Driver's License, Business License, or Passport.</div>
+        <div class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q3">Do I need to verify my ID or phone to use the app?</span> <span class="faq-arrow">▼</span></div>
+        <div class="faq-a" data-i18n="faq.a3">No. You can browse, message, buy, sell, post jobs, and apply to jobs without any verification. Verification is optional — it adds a visible trust badge to your profile and unlocks CV access for employers. You can verify with a Fayda ID, Kebele Residence ID, Driver's License, Business License, or Passport.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">How do I pay for Premium or a promotion? <span class="faq-arrow">▼</span></div>
-        <div class="faq-a">Choose your plan in the app, select Manual Payment, follow the instructions shown, and upload your payment receipt. Our team reviews and activates it — usually within one business day. You'll get a notification the moment it's approved. Automatic Telebirr and Chapa payments are in development.</div>
+        <div class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q4">How do I pay for Premium or a promotion?</span> <span class="faq-arrow">▼</span></div>
+        <div class="faq-a" data-i18n="faq.a4">Choose your plan in the app, select Manual Payment, follow the instructions shown, and upload your payment receipt. Our team reviews and activates it — usually within one business day. You'll get a notification the moment it's approved. Automatic Telebirr and Chapa payments are in development.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Does the seller see my phone number when I chat? <span class="faq-arrow">▼</span></div>
-        <div class="faq-a">No. In-app chat never reveals your phone number. Call, WhatsApp, and SMS buttons only appear when a seller has chosen to share their own number — and you're never required to share yours.</div>
+        <div class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q5">Does the seller see my phone number when I chat?</span> <span class="faq-arrow">▼</span></div>
+        <div class="faq-a" data-i18n="faq.a5">No. In-app chat never reveals your phone number. Call, WhatsApp, and SMS buttons only appear when a seller has chosen to share their own number — and you're never required to share yours.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">What phones does AYE Market work on? <span class="faq-arrow">▼</span></div>
-        <div class="faq-a">Android 8.0 (Oreo) and above. An iPhone version is on the roadmap but not yet available — the App Store badge below will light up when it ships.</div>
+        <div class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q6">What phones does AYE Market work on?</span> <span class="faq-arrow">▼</span></div>
+        <div class="faq-a" data-i18n="faq.a6">Android 8.0 (Oreo) and above. An iPhone version is on the roadmap but not yet available — the App Store badge below will light up when it ships.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">How does AYE Market handle scams? <span class="faq-arrow">▼</span></div>
-        <div class="faq-a">Three layers: prevention (verification badges, seller ratings, published safety guidance), detection (one-tap reporting on every listing and profile, reviewed by human moderators), and enforcement (listing removal, warnings, suspensions, and bans). Read the full guide in our <a href="safety-center/" style="color:var(--green)">Safety Center</a>.</div>
+        <div class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q7">How does AYE Market handle scams?</span> <span class="faq-arrow">▼</span></div>
+        <div class="faq-a" data-i18n="faq.a7_html">Three layers: prevention (verification badges, seller ratings, published safety guidance), detection (one-tap reporting on every listing and profile, reviewed by human moderators), and enforcement (listing removal, warnings, suspensions, and bans). Read the full guide in our <a href="safety-center/" style="color:var(--green)">Safety Center</a>.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Can I delete my account and data? <span class="faq-arrow">▼</span></div>
-        <div class="faq-a">Yes, permanently. Visit our <a href="account-deletion/" style="color:var(--green)">Account Deletion page</a>, sign in to verify it's you, and submit your request. Once approved, your login, profile, listings, photos, CV, and personal data are permanently deleted. You can also request a copy of your data first via the <a href="gdpr/" style="color:var(--green)">Privacy Rights page</a>.</div>
+        <div class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q8">Can I delete my account and data?</span> <span class="faq-arrow">▼</span></div>
+        <div class="faq-a" data-i18n="faq.a8_html">Yes, permanently. Visit our <a href="account-deletion/" style="color:var(--green)">Account Deletion page</a>, sign in to verify it's you, and submit your request. Once approved, your login, profile, listings, photos, CV, and personal data are permanently deleted. You can also request a copy of your data first via the <a href="gdpr/" style="color:var(--green)">Privacy Rights page</a>.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Is AYE Market only for Tigray? <span class="faq-arrow">▼</span></div>
-        <div class="faq-a">Today, yes — deliberately. We're building the experience deeply for one region first: its languages, its places, its market. Expansion to more Ethiopian regions is planned once the core experience is proven.</div>
+        <div class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q9">Is AYE Market only for Tigray?</span> <span class="faq-arrow">▼</span></div>
+        <div class="faq-a" data-i18n="faq.a9">Today, yes — deliberately. We're building the experience deeply for one region first: its languages, its places, its market. Expansion to more Ethiopian regions is planned once the core experience is proven.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">I found a bug or have a suggestion — where do I send it? <span class="faq-arrow">▼</span></div>
-        <div class="faq-a">Use the in-app Feedback & Support tool (Settings → Feedback) — it creates a support ticket our team answers directly in the app. Or email <a href="mailto:ayetechub@gmail.com" style="color:var(--green)">ayetechub@gmail.com</a>.</div>
+        <div class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q10">I found a bug or have a suggestion — where do I send it?</span> <span class="faq-arrow">▼</span></div>
+        <div class="faq-a" data-i18n="faq.a10_html">Use the in-app Feedback & Support tool (Settings → Feedback) — it creates a support ticket our team answers directly in the app. Or email <a href="mailto:ayetechub@gmail.com" style="color:var(--green)">ayetechub@gmail.com</a>.</div>
       </div>
     </div>
   </div>
@@ -1007,20 +1030,20 @@ footer{border-top:1px solid var(--border);padding:56px 0 30px;background:rgba(2,
 <section id="download">
   <div class="container download-inner">
     <div class="reveal">
-      <div class="section-tag">📲 Get the App</div>
-      <h2 class="section-title">Download <span class="gradient-text">AYE Market</span></h2>
-      <p class="section-subtitle" style="margin:0 0 8px;max-width:none;text-align:left">Free on Android. Post your first listing, find your next job, or hire your next hire — today.</p>
+      <div class="section-tag" data-i18n="download.tag">📲 Get the App</div>
+      <h2 class="section-title" data-i18n="download.title_html">Download <span class="gradient-text">AYE Market</span></h2>
+      <p class="section-subtitle" style="margin:0 0 8px;max-width:none;text-align:left" data-i18n="download.subtitle">Free on Android. Post your first listing, find your next job, or hire your next hire — today.</p>
       <div class="download-buttons">
         <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.ayetechub.ayemarket" rel="noopener">
           <span class="store-icon">▶</span>
-          <span class="store-info"><span class="store-sub">Get it on</span><span class="store-name">Google Play</span></span>
+          <span class="store-info"><span class="store-sub" data-i18n="download.getItOn">Get it on</span><span class="store-name">Google Play</span></span>
         </a>
-        <span class="store-badge disabled" title="Coming soon">
+        <span class="store-badge disabled" title="Coming soon" data-i18n-attr="title:download.comingSoonAttr">
           <span class="store-icon"></span>
-          <span class="store-info"><span class="store-sub">Coming soon to</span><span class="store-name">App Store</span></span>
+          <span class="store-info"><span class="store-sub" data-i18n="download.comingSoonTo">Coming soon to</span><span class="store-name">App Store</span></span>
         </span>
       </div>
-      <p style="margin-top:18px;font-size:.8rem;color:var(--text-muted)">Android 8.0+ · Free download · Launching on Google Play</p>
+      <p style="margin-top:18px;font-size:.8rem;color:var(--text-muted)" data-i18n="download.footnote">Android 8.0+ · Free download · Launching on Google Play</p>
     </div>
     <div class="reveal">
       <div class="app-mockup">
@@ -1031,17 +1054,17 @@ footer{border-top:1px solid var(--border);padding:56px 0 30px;background:rgba(2,
             <div class="mock-img">🏗️</div>
             <div class="mock-info">
               <div><span class="mock-badge" style="background:var(--gold)">PREMIUM+</span></div>
-              <div class="mock-title">Cement — 50kg Bags (Bulk)</div>
-              <div class="mock-price">Negotiable</div>
-              <div class="mock-loc">📍 Mekelle Industrial Zone ✓</div>
+              <div class="mock-title" data-i18n="download.mockTitle1">Cement — 50kg Bags (Bulk)</div>
+              <div class="mock-price" data-i18n="download.mockPrice1">Negotiable</div>
+              <div class="mock-loc" data-i18n="download.mockLoc1">📍 Mekelle Industrial Zone ✓</div>
             </div>
           </div>
           <div class="mock-listing blue">
             <div class="mock-img">💻</div>
             <div class="mock-info">
-              <div class="mock-title">HP EliteBook — Like New</div>
+              <div class="mock-title" data-i18n="download.mockTitle2">HP EliteBook — Like New</div>
               <div class="mock-price" style="color:#93c5fd">38,000 ETB</div>
-              <div class="mock-loc">📍 Ayder · ⭐ 4.9 Seller</div>
+              <div class="mock-loc" data-i18n="download.mockLoc2">📍 Ayder · ⭐ 4.9 Seller</div>
             </div>
           </div>
         </div>
@@ -1054,28 +1077,28 @@ footer{border-top:1px solid var(--border);padding:56px 0 30px;background:rgba(2,
 <section id="contact">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-tag">📮 Contact</div>
-      <h2 class="section-title">We're Here to <span class="gradient-text">Help</span></h2>
-      <p class="section-subtitle">Support, business inquiries, press, or feedback — every message reaches the team that actually builds the app.</p>
+      <div class="section-tag" data-i18n="contact.tag">📮 Contact</div>
+      <h2 class="section-title" data-i18n="contact.title_html">We're Here to <span class="gradient-text">Help</span></h2>
+      <p class="section-subtitle" data-i18n="contact.subtitle">Support, business inquiries, press, or feedback — every message reaches the team that actually builds the app.</p>
     </div>
     <div class="contact-grid reveal">
       <div class="contact-card">
         <div class="contact-icon">✉️</div>
-        <div class="contact-title">Email Us</div>
+        <div class="contact-title" data-i18n="contact.card1Title">Email Us</div>
         <a href="mailto:ayetechub@gmail.com" class="contact-value">ayetechub@gmail.com</a>
-        <div class="contact-note">Replies within 1–2 business days</div>
+        <div class="contact-note" data-i18n="contact.card1Note">Replies within 1–2 business days</div>
       </div>
       <div class="contact-card">
         <div class="contact-icon">💬</div>
-        <div class="contact-title">In-App Support</div>
-        <div class="contact-value">Settings → Feedback</div>
-        <div class="contact-note">Fastest — keeps your account context with your message</div>
+        <div class="contact-title" data-i18n="contact.card2Title">In-App Support</div>
+        <div class="contact-value" data-i18n="contact.card2Value">Settings → Feedback</div>
+        <div class="contact-note" data-i18n="contact.card2Note">Fastest — keeps your account context with your message</div>
       </div>
       <div class="contact-card">
         <div class="contact-icon">📣</div>
-        <div class="contact-title">Follow AYE Tech Hub</div>
+        <div class="contact-title" data-i18n="contact.card3Title">Follow AYE Tech Hub</div>
         <a href="https://t.me/AYETechHub" class="contact-value" rel="noopener" target="_blank">Telegram @AYETechHub</a>
-        <div class="contact-note">News, updates & launches</div>
+        <div class="contact-note" data-i18n="contact.card3Note">News, updates & launches</div>
       </div>
     </div>
   </div>
@@ -1090,42 +1113,664 @@ footer{border-top:1px solid var(--border);padding:56px 0 30px;background:rgba(2,
           <img src="assets/images/aye-market-icon.png" alt="AYE Market" style="width:44px;height:44px;border-radius:11px"/>
           <div class="brand-text">
             <div class="brand-name"><span style="color:var(--green)">AYE </span><span style="color:var(--blue)">Market</span></div>
-            <div class="brand-tag">Buy · Sell · Connect</div>
+            <div class="brand-tag" data-i18n="nav.brandTag">Buy · Sell · Connect</div>
           </div>
         </a>
-        <p style="font-size:.88rem;color:var(--text-soft);line-height:1.7;max-width:300px;margin-top:12px">Tigray's modern marketplace for buying, selling, and finding work — safely and locally. A product of <a href="/" style="color:var(--neon)">AYE Tech Hub</a>.</p>
+        <p style="font-size:.88rem;color:var(--text-soft);line-height:1.7;max-width:300px;margin-top:12px" data-i18n="footer.tagline_html">Tigray's modern marketplace for buying, selling, and finding work — safely and locally. A product of <a href="/" style="color:var(--neon)">AYE Tech Hub</a>.</p>
       </div>
       <div>
-        <div class="footer-title">Product</div>
-        <a class="footer-link" href="#categories">Categories</a>
-        <a class="footer-link" href="#features">Features</a>
-        <a class="footer-link" href="#jobs">Jobs Marketplace</a>
-        <a class="footer-link" href="#pricing">Premium Plans</a>
-        <a class="footer-link" href="#download">Download</a>
+        <div class="footer-title" data-i18n="footer.colProduct">Product</div>
+        <a class="footer-link" href="#categories" data-i18n="nav.categories">Categories</a>
+        <a class="footer-link" href="#features" data-i18n="nav.features">Features</a>
+        <a class="footer-link" href="#jobs" data-i18n="footer.jobsMarketplace">Jobs Marketplace</a>
+        <a class="footer-link" href="#pricing" data-i18n="footer.premiumPlans">Premium Plans</a>
+        <a class="footer-link" href="#download" data-i18n="footer.download">Download</a>
+        <a class="footer-link" href="/ayemarket/about/" data-i18n="footer.about">About</a>
+        <a class="footer-link" href="/ayemarket/help-center/" data-i18n="footer.helpCenter">Help Center</a>
       </div>
       <div>
-        <div class="footer-title">Trust & Safety</div>
-        <a class="footer-link" href="safety-center/">Safety Center</a>
-        <a class="footer-link" href="community-guidelines/">Community Guidelines</a>
-        <a class="footer-link" href="children-policy/">Children's Privacy</a>
-        <a class="footer-link" href="third-party-services/">Third-Party Services</a>
-        <a class="footer-link" href="data-safety/">Data Safety</a>
+        <div class="footer-title" data-i18n="footer.colTrust">Trust & Safety</div>
+        <a class="footer-link" href="safety-center/" data-i18n="footer.safetyCenter">Safety Center</a>
+        <a class="footer-link" href="community-guidelines/" data-i18n="footer.communityGuidelines">Community Guidelines</a>
+        <a class="footer-link" href="children-policy/" data-i18n="footer.childrenPrivacy">Children's Privacy</a>
+        <a class="footer-link" href="third-party-services/" data-i18n="footer.thirdParty">Third-Party Services</a>
+        <a class="footer-link" href="data-safety/" data-i18n="footer.dataSafety">Data Safety</a>
       </div>
       <div>
-        <div class="footer-title">Legal & Privacy</div>
-        <a class="footer-link" href="privacy-policy/">Privacy Policy</a>
-        <a class="footer-link" href="terms/">Terms of Service</a>
-        <a class="footer-link" href="cookie-policy/">Cookie Policy</a>
-        <a class="footer-link" href="gdpr/">Privacy Rights (GDPR)</a>
-        <a class="footer-link" href="account-deletion/">Delete My Account</a>
+        <div class="footer-title" data-i18n="footer.colLegal">Legal & Privacy</div>
+        <a class="footer-link" href="/ayemarket/legal-hub/" data-i18n="footer.legalHub">All Policies (Legal Hub)</a>
+        <a class="footer-link" href="privacy-policy/" data-i18n="footer.privacyPolicy">Privacy Policy</a>
+        <a class="footer-link" href="terms/" data-i18n="footer.terms">Terms of Service</a>
+        <a class="footer-link" href="cookie-policy/" data-i18n="footer.cookiePolicy">Cookie Policy</a>
+        <a class="footer-link" href="gdpr/" data-i18n="footer.gdpr">Privacy Rights (GDPR)</a>
+        <a class="footer-link" href="account-deletion/" data-i18n="footer.deleteAccount">Delete My Account</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span id="year">2026</span> AYE Market — a product of AYE Tech Hub. All rights reserved.</span>
-      <span>Made for Tigray, Ethiopia 🇪🇹</span>
+      <span>© <span id="year">2026</span> <span data-i18n="footer.copyright">AYE Market — a product of AYE Tech Hub. All rights reserved.</span></span>
+      <span data-i18n="footer.madeFor">Made for Tigray, Ethiopia 🇪🇹</span>
     </div>
   </div>
 </footer>
+
+<script>
+/* ============================================================
+   AYE MARKET — self-contained i18n (EN / ትግርኛ / አማርኛ)
+   No external files. Flat dotted keys. data-i18n / data-i18n-attr.
+   ============================================================ */
+(function(){
+var translations={
+am:{
+"nav.brandTag":"ግዛ · ሽጥ · ተገናኝ",
+"nav.categories":"ምድቦች",
+"nav.features":"ባህሪያት",
+"nav.jobs":"ስራዎች",
+"nav.premium":"ፕሪሚየም",
+"nav.safety":"ደህንነት",
+"nav.faq":"ተደጋጋሚ ጥያቄዎች",
+"nav.contact":"አግኙን",
+"nav.help":"እገዛ",
+"nav.downloadApp":"📲 መተግበሪያውን አውርድ",
+"ticker.modern":"የትግራይ ዘመናዊ ገበያ",
+"ticker.buysell":"ግዛ · ሽጥ · ስራ ፈልግ · ሰራተኛ ቅጠር",
+"ticker.contact":"ቻት · ደውል · ዋትስአፕ · ኤስኤምኤስ",
+"hero.tag":"🛒 የትግራይ ዘመናዊ ገበያ",
+"hero.subtitle_html":"ተሽከርካሪ፣ ንብረት፣ ኤሌክትሮኒክስ፣ ፋሽንና አገልግሎቶችን ጨምሮ ማንኛውንም ነገር በአካባቢዎ ይግዙ እና ይሽጡ። ስራ ይፈልጉ ወይም ትክክለኛውን ሰው ይቅጠሩ። ከሻጮች ጋር በቀጥታ ይወያዩ፣ ይደውሉ ወይም በዋትስአፕ ያናግሩ። ለ<strong style=\"color:var(--green)\">ትግራይ</strong> የተገነባ፣ በ<strong style=\"color:var(--green)\">ትግርኛ</strong>፣ <strong style=\"color:var(--green)\">አማርኛ</strong>፣ እና እንግሊዝኛ።",
+"hero.btnDownload":"📲 በነጻ አውርድ",
+"hero.btnFeatures":"✨ ባህሪያትን ያስሱ",
+"hero.statCategories":"ምድቦች",
+"hero.statLanguages":"ቋንቋዎች",
+"hero.statChannels":"የመገናኛ መንገዶች",
+"hero.statFree":"ነጻ ለመጠቀም",
+"hero.logoAlt":"የAYE Market መተግበሪያ አርማ",
+"hero.badgePromoted":"ፕሮሞት",
+"hero.mock1Loc":"📍 መቀሌ · የተረጋገጠ ሻጭ ✓",
+"hero.mock2Title":"የ2 መኝታ ክፍል አፓርታማ",
+"hero.mock2Price":"12,000 ETB / ወር",
+"hero.mockJobsHead":"ስራዎች 💼",
+"hero.mockJob1Title":"የሽያጭ ባለሙያ — ሙሉ ጊዜ",
+"hero.mockJob1Price":"8,000 ETB / ወር",
+"hero.mockJob1Loc":"📍 መቀሌ · 12 አመልካቾች",
+"hero.mockJob2Title":"ኤሌክትሪሺያን ዝግጁ ነው",
+"hero.mockJob2Price":"ስራ ፈላጊ ማስታወቂያ",
+"hero.mockJob2Loc":"📍 5 ዓመት ልምድ · CV ✓",
+"cat.tag":"🗂️ 22 ምድቦች",
+"cat.title_html":"የፈለጉት ማንኛውም ነገር፣<br/><span class=\"gradient-text\">በAYE Market ላይ ይገኛል</span>",
+"cat.subtitle":"እያንዳንዱ ምድብ በትግራይ ያሉ ሰዎች በእውነት እንዴት እንደሚገዙ፣ እንደሚሸጡ እና እንደሚቀጥሩ መሰረት ተደርጎ የተደራጀ ነው — እያንዳንዱም የራሱ የተዘጋጀ የዝርዝር ፎርም፣ ማጣሪያዎች እና የፍለጋ ባህሪያት አሉት።",
+"cat.vehicles":"ተሽከርካሪዎች","cat.property":"ንብረት","cat.jobs":"ስራዎች","cat.jobsWanted":"ስራ ፈላጊዎች",
+"cat.electronics":"ኤሌክትሮኒክስ","cat.phones":"ስልኮች እና ታብሌቶች","cat.computers":"ኮምፒውተሮች","cat.homeFurniture":"ቤት እና የቤት እቃዎች",
+"cat.fashion":"ፋሽን","cat.beauty":"ውበት","cat.services":"አገልግሎቶች","cat.agriculture":"ግብርና",
+"cat.industrial":"የኢንዱስትሪ መሳሪያዎች","cat.education":"ትምህርት","cat.sports":"ስፖርት","cat.animals":"እንስሳት",
+"cat.baby":"የህጻናት እቃዎች","cat.health":"ጤና","cat.food":"ምግብ","cat.business":"ንግድ",
+"cat.construction":"ግንባታ","cat.more":"ተጨማሪ",
+"cat.footnote":"ተሽከርካሪዎች በምርት ስም፣ ሞዴል፣ ዓመት፣ የተጓዘ ርቀት፣ ነዳጅ እና ማርሽ ማጣሪያዎች ይመጣሉ። የንብረት ዝርዝሮች ኪራይ እና ሽያጭን ለአፓርታማዎች፣ ቤቶች፣ ቪላዎች፣ ቢሮዎች፣ መሬት እና ሌሎችንም ይደግፋሉ። ግንባታ ቁሳቁሶችንም አገልግሎቶችንም ይሸፍናል። እያንዳንዱ ምድብ የራሱን ቋንቋ ይናገራል — ስለዚህ ገዢዎች የሚፈልጉትን በትክክል በፍጥነት ያገኛሉ።",
+"buy.tag":"🛍️ ለገዢዎች",
+"buy.title_html":"ያግኙት፣ ያረጋግጡት፣ <span class=\"gradient-text\">ሻጩን በእርስዎ መንገድ ያናግሩ</span>",
+"buy.desc":"AYE Market የተገነባው በአንድ ሀሳብ ዙሪያ ነው፦ በጭራሽ መገመት የለብዎትም። እያንዳንዱ ዝርዝር ትክክለኛ ፎቶዎችን ከሙሉ ስክሪን ዙም ጋለሪ ጋር፣ ዝርዝር መግለጫ፣ የሻጩን የማረጋገጫ ሁኔታ እና በካርታ ላይ ትክክለኛውን አካባቢ ይይዛል — እርስዎ ከመገናኘትዎ በፊት።",
+"buy.item1_html":"<strong>ኃይለኛ ፍለጋ</strong>&nbsp;— በሁሉም ምድቦች ውስጥ በቁልፍ ቃል ፍለጋ፣ ነጠላ/ብዙ ቁጥር ግጥሚያ ያለው ስለዚህ \"ስልክ\" የሚለው \"ስልኮች\"ንም ያገኛል።",
+"buy.item2_html":"<strong>የላቁ ማጣሪያዎች</strong>&nbsp;— በዋጋ ክልል፣ ሁኔታ፣ የምርት ስም፣ ሞዴል እና እንደ መኝታ ክፍሎች፣ የተጓዘ ርቀት ወይም የማከማቻ መጠን ባሉ የምድብ-ተኮር ባህሪያት ያጥቡ።",
+"buy.item3_html":"<strong>የአቅራቢያ ፍለጋ</strong>&nbsp;— በGPS ፍቃድ፣ ካሉበት ቦታ በእውነተኛ ርቀት የተደረደሩ ዝርዝሮችን ይመልከቱ።",
+"buy.item4_html":"<strong>የትግራይ አካባቢ ስርዓት</strong>&nbsp;— በእውነተኛው የአስተዳደር ተዋረድ ያስሱ፦ ክልል፣ ዞን፣ ወረዳ፣ ታቢያ እና ከተማ — ተራ የአድራሻ ሳጥን ሳይሆን።",
+"buy.item5_html":"<strong>ተወዳጆች እና የተቀመጡ ፍለጋዎች</strong>&nbsp;— ማንኛውንም ዝርዝር ወደ ተወዳጆችዎ ያስቀምጡ፣ ወይም ሙሉ ፍለጋ ያስቀምጡ እና አዲስ ግጥሚያዎች ሲመጡ ማሳወቂያ ያግኙ።",
+"buy.item6_html":"<strong>አራት የመገናኛ መንገዶች</strong>&nbsp;— በመተግበሪያ ውስጥ ቻት፣ ስልክ ጥሪ፣ ዋትስአፕ ወይም ኤስኤምኤስ። ሻጩ የትኛውን እንደሚቀበል ይመርጣል፤ እርስዎ የሚመርጡትን ይመርጣሉ።",
+"buy.mini1Title":"ፍለጋ \"vitz mekelle\"",
+"buy.mini1Sub":"2 ውጤቶች በአቅራቢያዎ · በርቀት የተደረደሩ",
+"buy.mini2Title":"ማጣሪያዎች፦ 500ሺ–900ሺ ETB · ያገለገለ · ቶዮታ",
+"buy.mini2Sub":"በተሽከርካሪዎች › መኪኖች ላይ ተተግብሯል",
+"buy.mini3Title":"መቀሌ › ሓድነት › ዓዲ ሓቂ",
+"buy.mini3Sub":"ክልል → ዞን → ወረዳ → ታቢያ",
+"buy.mini4Title":"ወደ ተወዳጆች ተቀምጧል",
+"buy.mini4Sub":"የዋጋ ቅናሽ ማሳወቂያዎች በርቷል",
+"buy.mini5Title":"ቻት · 📞 ደውል · 🟢 ዋትስአፕ · ✉️ ኤስኤምኤስ",
+"buy.mini5Sub":"ሻጩን በእርስዎ መንገድ ያናግሩ",
+"sell.tag":"📤 ለሻጮች",
+"sell.title_html":"በደቂቃዎች ውስጥ ይለጥፉ፣ <span class=\"gradient-text\">እንደ ባለሙያ ያስተዳድሩ</span>",
+"sell.desc":"ዝርዝር ማሳተም ደቂቃዎችን ብቻ ይወስዳል፦ ምድብ ይምረጡ፣ እስከ 8 ፎቶዎችን ይጨምሩ፣ ዋጋዎን እና አካባቢዎን ያዘጋጁ፣ ያትሙ። ነገር ግን ከጀርባ፣ AYE Market ለሻጮች እውነተኛ መሳሪያዎችን ይሰጣል — የማስታወቂያ ቦታ ብቻ አይደለም።",
+"sell.item1_html":"<strong>በምድብ የተዘጋጁ ቅጾች</strong>&nbsp;— እያንዳንዱ ምድብ የራሱ የተዘጋጀ መስኮች አሉት፣ ስለዚህ ዝርዝርዎ ገዢዎች የሚያጣሩባቸውን ዝርዝሮች ይይዛል።",
+"sell.item2_html":"<strong>ሙሉ የዝርዝር የህይወት ዑደት</strong>&nbsp;— ከየእኔ ዝርዝሮች በማንኛውም ጊዜ ያትሙ፣ ያርትዑ፣ ያቁሙ፣ እንደተሸጠ ምልክት ያድርጉ፣ ያስቀምጡ፣ ያባዙ ወይም ይሰርዙ።",
+"sell.item3_html":"<strong>ራሱን የሚያስቀምጥ ረቂቅ</strong>&nbsp;— ሲተይቡ ዝርዝርዎ በራሱ ይቀመጣል፤ በማንኛውም ጊዜ ተመልሰው ይጨርሱ።",
+"sell.item4_html":"<strong>የሻጭ ዳሽቦርድ</strong>&nbsp;— ጠቅላላ እይታዎችን፣ ተወዳጆችን፣ የተሸጡ ብዛቶችን፣ እና (በPremium) ጥልቅ ትንታኔዎችን እና አዝማሚያዎችን ይከታተሉ።",
+"sell.item5_html":"<strong>ግምገማዎች እና መልካም ስም</strong>&nbsp;— ገዢዎች ልምዳቸውን ይገመግማሉ፣ ደረጃዎትም በሚለጥፉት እያንዳንዱ ዝርዝር ላይ ይታያል።",
+"sell.item6_html":"<strong>የመገናኛ ምርጫ</strong>&nbsp;— ቻት ብቻ፣ ጥሪ ብቻ ወይም ሁለቱንም ይቀበሉ። የስልክ ቁጥርዎ እርስዎ ካልፈቀዱ በስተቀር በጭራሽ አይታይም።",
+"sell.mini1Title":"8 ፎቶዎች · ለማዘዋወር ይጎትቱ",
+"sell.mini1Sub":"የመጀመሪያው ፎቶ ሽፋንዎ ይሆናል",
+"sell.mini2Title":"የምድብ-ተኮር ቅጽ",
+"sell.mini2Sub":"መኪና? የምርት ስም/ሞዴል/ዓመት መስኮች ያግኙ። ቤት? መኝታ ክፍሎች እና ስፋት።",
+"sell.mini3Title":"በራስ-የተቀመጠ ረቂቅ",
+"sell.mini3Sub":"ግማሽ የተጠናቀቀ ዝርዝርን በጭራሽ አያጡ",
+"sell.mini4Title":"የሻጭ ዳሽቦርድ",
+"sell.mini4Sub":"እይታዎች፣ ተወዳጆች እና የዝርዝር አፈጻጸም",
+"sell.mini5Title":"የንግድ አካውንት",
+"sell.mini5Sub":"የመደብር ስም + የመደብር ገጽታ",
+"jobs.tag":"💼 የስራ ገበያ",
+"jobs.title_html":"ሙሉ <span class=\"gradient-text\">የስራ መድረክ</span> በውስጡ",
+"jobs.subtitle":"AYE Market ለእቃዎች ብቻ አይደለም — ለትግራይ ሙሉ ባለሁለት ጎን የስራ ገበያ ነው፣ ለስራ ፈላጊዎች እና ቀጣሪዎች የተለዩ ተሞክሮዎች ያሉት።",
+"jobs.card1Title":"ስራ ፈልግ",
+"jobs.card1Desc":"ክፍት ቦታዎችን በምድብ፣ ብቃት፣ የስራ አይነት እና የደመወዝ ክልል ያስሱ። እያንዳንዱ ልጥፍ ኢንዱስትሪ፣ የልምድ ደረጃ፣ የትምህርት መስፈርቶች፣ ጥቅማጥቅሞች እና የማመልከቻ ገደብን ይይዛል — በማጣሪያ የሚደረስበት እንጂ በጽሁፍ ውስጥ የተቀበረ አይደለም።",
+"jobs.card2Title":"መገለጫ ስራ ፈላጊ እና CV",
+"jobs.card2Desc":"አንድ ሙያዊ መገለጫ ይገንቡ — የCV ስቀላ፣ ችሎታዎች፣ ቋንቋዎች፣ ትምህርት፣ የልምድ ደረጃ፣ የሚጠበቅ ደመወዝ፣ እና ቀጣሪዎች እንዴት ሊያገኙዎት እንደሚችሉ። የ\"ስራ ፈላጊ\" ማስታወቂያዎ ከዚህ ጋር በራስ-ሰር ይመሳሰላል።",
+"jobs.card3Title":"በአንድ-ንክኪ ማመልከቻዎች",
+"jobs.card3Desc":"በሰከንዶች ውስጥ በCVዎ ያመልክቱ፣ ከዚያም ከማመልከቻዎች ዳሽቦርድዎ የእያንዳንዱን ማመልከቻ ሁኔታ — በመጠባበቅ ላይ፣ የታየ፣ አጭር ዝርዝር ውስጥ የገባ — ይከታተሉ።",
+"jobs.card4Title":"ስራ ይለጥፉ",
+"jobs.card4Desc":"ቀጣሪዎች ክፍት ቦታዎችን በኩባንያ ስም፣ ክፍት የስራ ቦታዎች፣ ኃላፊነቶች፣ የሚያስፈልጉ ችሎታዎች፣ ደመወዝ፣ ገደብ እና አካባቢ ይለጥፋሉ። ሁሉንም ልጥፎች እና አመልካቾችን ከቀጣሪ ዳሽቦርድ ያስተዳድሩ።",
+"jobs.card5Title":"ሰራተኛ ቅጠሩ — ስራ ፈላጊዎች",
+"jobs.card5Desc":"የእጩ ማስታወቂያዎችን በሙያ፣ ብቃት፣ ልምድ እና የስራ አይነት ያስሱ። ችሎታዎችን፣ ትምህርትን እና የሚጠበቅ ደመወዝን አስቀድመው ይመልከቱ — እና አካውንትዎ ከተረጋገጠ በኋላ CVዎችን ይመልከቱ።",
+"jobs.card6Title":"የCV ግላዊነት ጥበቃ",
+"jobs.card6Desc":"የእጩ CV የግል ነው። የማንነት-የተረጋገጡ ቀጣሪዎች ብቻ CVዎችን መክፈት ይችላሉ — ተመሳሳይ የሰነድ ጥበቃ በስራ ማመልከቻዎች እና በስራ ፈላጊ ማስታወቂያዎችም ላይ ይተገበራል።",
+"feat.tag":"✨ ሁሉም ነገር ተካትቷል",
+"feat.title_html":"ንግድን ቀላል እና ደህንነቱ የተጠበቀ<br/><span class=\"gradient-text\">የሚያደርጉ ባህሪያት</span>",
+"feat.subtitle":"ከዚህ በታች ያለው እያንዳንዱ ባህሪ ዛሬ በመተግበሪያው ውስጥ አለ — እዚህ ምንም ቃል ኪዳን የለም።",
+"feat.card1Title":"የቅጽበት ቻት",
+"feat.card1Desc":"ማንኛውንም ሻጭ ወዲያውኑ መልእክት ይላኩ፣ ፎቶዎችን ያጋሩ እና ውይይቶችን በማንኛውም ጊዜ ይቀጥሉ። የመተየብ ምልክቶች፣ ያልተነበቡ ብዛቶች፣ እና እየተወያዩበት ያለው ዝርዝር በቀጥታ በክሮቹ ውስጥ ተያይዟል — የስልክ ቁጥርዎን ሳያጋሩ።",
+"feat.card2Title":"ደውል፣ ዋትስአፕ እና ኤስኤምኤስ",
+"feat.card2Desc":"ሻጭ ቁጥሩን ሲያጋራ፣ ትግራይ በእውነት በሚግባባበት መንገድ ያግኙት — ቀጥታ ጥሪ፣ በዝርዝሩ አስቀድሞ የተሞላ የዋትስአፕ መልእክት ወይም ተራ ኤስኤምኤስ።",
+"feat.card3Title":"GPS + ተግባቢ ካርታ",
+"feat.card3Desc":"የዝርዝርዎን ትክክለኛ አካባቢ በካርታ ላይ ይለጥፉ፣ በአቅራቢያ ያለውን ያስሱ እና በርቀት ይፈልጉ። የአካባቢ መራጩ የትግራይን እውነተኛ የአስተዳደር መዋቅር እስከ ታቢያ ደረጃ ድረስ ይከተላል።",
+"feat.card4Title":"ብልህ ማሳወቂያዎች",
+"feat.card4Desc":"አዲስ መልእክቶች፣ በተወዳጆች ላይ የዋጋ ቅናሾች፣ የተቀመጡ ፍለጋ ግጥሚያዎች፣ የማመልከቻ ዝማኔዎች፣ የዝርዝር ማጽደቆች — እንደ ግፊት ማሳወቂያዎች ከሙሉ የማሳወቂያ ማዕከል ጋር በመተግበሪያ ውስጥ ይደርሳሉ።",
+"feat.card5Title":"የተረጋገጡ ሻጮች",
+"feat.card5Desc":"ሻጮች በፋይዳ መታወቂያ፣ የቀበሌ መኖሪያ መታወቂያ፣ የመንጃ ፈቃድ፣ የንግድ ፈቃድ ወይም ፓስፖርት ማረጋገጥ ይችላሉ — በሰው አጣሪ የተገመገመ። የተረጋገጡ አካውንቶች ገዢዎች ሊያምኑት የሚችሉት ባጅ ይለብሳሉ።",
+"feat.card6Title":"ግምገማዎች እና ደረጃዎች",
+"feat.card6Desc":"ከግብይት በኋላ ሻጮችን ይገምግሙ። ደረጃዎች፣ የምላሽ መጠን እና ከዚህ ጀምሮ አባል የሆኑበት ቀን በእያንዳንዱ የሻጭ መገለጫ ላይ ይታያል — የተገኘ እንጂ የተገለጸ ስም አይደለም።",
+"feat.card7Title":"ቁጥጥር እና ሪፖርት ማድረግ",
+"feat.card7Desc":"እያንዳንዱ ዝርዝር እና ተጠቃሚ በአንድ ንክኪ ሪፖርት ሊደረግ ይችላል። የሰው ቁጥጥር ቡድን ሪፖርቶችን ከታተመው የማህበረሰብ መመሪያ አንጻር ይገመግማል — ለጣሱት ማስጠንቀቂያ፣ እገዳ እና ክልከላ ይሰጣል።",
+"feat.card8Title":"ማንንም ማገድ",
+"feat.card8Desc":"ማንኛውንም ተጠቃሚ ከመገለጫቸው ወይም ከቻት ያግዱ። የታገዱ ተጠቃሚዎች መልእክት ሊልኩዎት ወይም የግንኙነት አማራጮችዎን ማየት አይችሉም — ያለ ምንም ጥያቄ።",
+"feat.card9Title":"ሻጮችን ይከተሉ",
+"feat.card9Desc":"የወደዷቸውን ሻጮች ይከተሉ እና አዲስ ነገር ሲለጥፉ ማሳወቂያ ያግኙ — የራስዎን የታመነ የሻጭ አውታረ መረብ ይገንቡ።",
+"feat.card10Title":"ባለብዙ-ሚና አካውንቶች",
+"feat.card10Desc":"አንድ አካውንት፣ አራት ሚናዎች — ገዢ፣ ሻጭ፣ ስራ ፈላጊ፣ ቀጣሪ። በቅንብሮች ውስጥ ማንኛውንም ሚና ያብሩ ወይም ያጥፉ እና መተግበሪያዎ ይላመዳል፤ የለጠፉት ምንም ነገር በጭራሽ አይጠፋም።",
+"feat.card11Title":"ሶስት ቋንቋዎች",
+"feat.card11Desc":"ሙሉ በሙሉ ወደ ትግርኛ፣ አማርኛ እና እንግሊዝኛ ተተርጉሟል — እያንዳንዱ ገጽ፣ እያንዳንዱ ቁልፍ፣ እያንዳንዱ ማሳወቂያ። በቅንብሮች ውስጥ በማንኛውም ጊዜ ይቀይሩ።",
+"feat.card12Title":"ብርሃናዊ እና ጨለማ ገጽታ",
+"feat.card12Desc":"በነባሪነት ንጹህ ብርሃናዊ ገጽታ፣ ሲፈልጉ ሙሉ ጨለማ ገጽታ — ወይም የስርዓትዎን ቅንብር ይከተሉ።",
+"steps.tag":"🚀 ጀማምር",
+"steps.title_html":"በ<span class=\"gradient-text\">4 ደረጃዎች</span> ተነስተው ይጠቀሙ",
+"steps.step1Title":"አካውንትዎን ይፍጠሩ",
+"steps.step1Desc":"በኢሜይል፣ ስልክ ወይም Google በነጻ ይመዝገቡ። ሚናዎችዎን ይምረጡ — ገዢ፣ ሻጭ፣ ስራ ፈላጊ፣ ቀጣሪ ወይም ሁሉንም አራት።",
+"steps.step2Title":"ያስሱ ወይም ይለጥፉ",
+"steps.step2Desc":"22 ምድቦችን በብልህ ማጣሪያዎች ይፈልጉ፣ ወይም የራስዎን ዝርዝር ከፎቶዎች፣ ዋጋ እና የካርታ አካባቢ ጋር በደቂቃዎች ውስጥ ያትሙ።",
+"steps.step3Title":"በቀጥታ ይገናኙ",
+"steps.step3Desc":"በመተግበሪያ ውስጥ ይወያዩ፣ ወይም ሻጩ ቁጥር ሲያጋራ ይደውሉ፣ ዋትስአፕ ያድርጉ እና ኤስኤምኤስ ይላኩ። ምንም አማላጅ የለም፣ ምንም ኮሚሽን የለም።",
+"steps.step4Title":"በደህንነት ይነግዱ",
+"steps.step4Desc":"በአደባባይ ይገናኙ፣ ከመክፈልዎ በፊት ይመርምሩ፣ እንደተሸጠ ምልክት ያድርጉ። የማረጋገጫ ባጆች እና የደህንነት ማዕከላችን እያንዳንዱን እርምጃ ይመራሉ።",
+"pricing.tag":"👑 ፕሪሚየም",
+"pricing.title_html":"ለዘላለም ነጻ። <span class=\"gradient-text\">ሲፈልጉ ያሳድጉ።</span>",
+"pricing.subtitle":"ማሰስ፣ መወያየት፣ መለጠፍ እና ማመልከት ነጻ ናቸው — እና ሁልጊዜም ይሆናሉ። የፕሪሚየም እቅዶች ከላይ ታይነትን ይጨምራሉ፣ በኢትዮጵያ ብር ዋጋዎች እና እዚህ በሚሰሩ የክፍያ ዘዴዎች።",
+"pricing.planFreeName":"ነጻ",
+"pricing.periodForever":"ለዘላለም",
+"pricing.free1":"ያልተገደበ ማሰስ እና ፍለጋ",
+"pricing.free2":"በሁሉም 22 ምድቦች ውስጥ ዝርዝሮችን ይለጥፉ",
+"pricing.free3":"ቻት፣ ጥሪ፣ ዋትስአፕ እና ኤስኤምኤስ",
+"pricing.free4":"ተወዳጆች እና የተቀመጡ ፍለጋዎች",
+"pricing.free5":"ለስራዎች ያመልክቱ እና የስራ ፈላጊ ማስታወቂያዎችን ይለጥፉ",
+"pricing.free6":"መሰረታዊ የሻጭ ዳሽቦርድ",
+"pricing.btnGetStarted":"ይጀምሩ",
+"pricing.plan2Name":"🚀 7-ቀን ፕሮሞሽን",
+"pricing.period7day":"አንድ ዝርዝር · 7 ቀናት",
+"pricing.promo1":"~5× ተጨማሪ ታይነት",
+"pricing.promo2":"ከፍ ያለ የፍለጋ ደረጃ",
+"pricing.promo3":"በምድብ አናት ላይ አቀማመጥ",
+"pricing.promo4":"በዝርዝርዎ ላይ የ\"ፕሮሞት\" ባጅ",
+"pricing.btnPromote":"በመተግበሪያ ውስጥ ያስተዋውቁ",
+"pricing.plan3Name":"ፕሪሚየም",
+"pricing.periodMonth":"በወር",
+"pricing.prem1":"~10× ተጨማሪ ታይነት",
+"pricing.prem2":"ዝርዝሮች ከነጻ ዝርዝሮች በላይ ደረጃ ይሰጣቸዋል",
+"pricing.prem3":"የተመረጠ ሻጭ ባጅ",
+"pricing.prem4":"ተጨማሪ የመነሻ ገጽ ተጋላጭነት",
+"pricing.prem5":"ዝርዝር የዝርዝር ትንታኔ",
+"pricing.prem6":"ቅድሚያ የሚሰጠው ድጋፍ",
+"pricing.btnUpgrade":"በመተግበሪያ ውስጥ ያሻሽሉ",
+"pricing.ribbon":"በጣም ተወዳጅ",
+"pricing.plan4Name":"ፕሪሚየም+",
+"pricing.plus1":"~15×+ ተጨማሪ ታይነት — ከፍተኛ ደረጃ",
+"pricing.plus2":"የፕሪሚየም+ ወርቃማ ባጅ",
+"pricing.plus3":"በመነሻ ገጽ እና ምድብ ውስጥ የተለየ አቀማመጥ",
+"pricing.plus4":"በተጠቆሙ ዝርዝሮች ውስጥ ቅድሚያ",
+"pricing.plus5":"የአፈጻጸም-ደረጃ ትንታኔ",
+"pricing.plus6":"ለአዲስ ባህሪያት ቀደም ብሎ መዳረሻ",
+"pricing.footnote_html":"💳 ክፍያዎች በአሁኑ ጊዜ በቡድናችን በእጅ ይሰራሉ — በመተግበሪያው ውስጥ እቅድዎን ይምረጡ፣ የክፍያ መመሪያዎችን ይከተሉ፣ ደረሰኝዎን ይስቀሉ፣ ማሻሻያዎ ከጸደቀ በኋላ ይነቃል (አብዛኛውን ጊዜ በስራ ቀን ውስጥ)። ራስ-ሰር <strong style=\"color:var(--green)\">ቴሌብር</strong> እና <strong style=\"color:var(--green)\">ቻፓ</strong> ክፍያዎች በቅርቡ ይመጣሉ። እቅድ ሲያበቃ፣ ዝርዝሮችዎ በቀላሉ ወደ መደበኛ ደረጃ ይመለሳሉ — ምንም ነገር በጭራሽ አይሰረዝም።",
+"safety.tag":"🛡️ ደህንነት መጀመሪያ",
+"safety.title_html":"በልበ ሙሉነት <span class=\"gradient-text\">እንዲነግዱ</span> ተደርጎ የተሰራ",
+"safety.subtitle":"እምነት ባህሪ አይደለም — እሱ ራሱ ምርቱ ነው። AYE Market ማህበረሰቡን የሚጠብቅበት መንገድ ይህ ነው።",
+"safety.card1Title":"በሰው የተገመገመ ማረጋገጫ",
+"safety.card1Desc":"በፋይዳ መታወቂያ፣ የቀበሌ መኖሪያ መታወቂያ፣ የመንጃ ፈቃድ፣ የንግድ ፈቃድ ወይም ፓስፖርት የማንነት ማረጋገጫ — እያንዳንዱ ማቅረቢያ በእውነተኛ አጣሪ ይገመገማል፣ በጭራሽ በራስ-ሰር አይጸድቅም። አማራጭ የስልክ ማረጋገጫ ሁለተኛ ባጅ ይጨምራል።",
+"safety.card2Title":"ንቁ ቁጥጥር",
+"safety.card2Desc":"የቁጥጥር ቡድን የተዘገቡ ዝርዝሮችን እና ተጠቃሚዎችን ከታተመው የማህበረሰብ መመሪያ አንጻር ይገመግማል። የተከለከሉ እቃዎች፣ ሀሰተኛ ዕቃዎች፣ ስፓም እና ማጭበርበሮች ይወገዳሉ፤ ደጋግመው የሚያጠፉ ይታገዳሉ ወይም ይከለከላሉ።",
+"safety.card3Title":"በአንድ-ንክኪ ሪፖርት ማድረግ",
+"safety.card3Desc":"ማንኛውንም ዝርዝር፣ ቻት ወይም መገለጫ በአንድ ንክኪ በተወሰነ ምክንያት ሪፖርት ያድርጉ። እያንዳንዱ ሪፖርት በሰው የግምገማ ወረፋ ውስጥ ይደርሳል — የሀሰት ሪፖርት ማድረግም ራሱ ጥሰት ነው።",
+"safety.card4Title":"ግላዊነትዎ ተጠብቋል",
+"safety.card4Desc":"ቁጥርዎን ሳይገልጹ ይወያዩ። የአካባቢ ፍቃድ አማራጭ ነው። CVዎች ለተረጋገጡ ቀጣሪዎች ብቻ ይታያሉ። የመታወቂያ ሰነዶች የሚታዩት በማረጋገጫ ቡድን ብቻ ነው — በሌሎች ተጠቃሚዎች በጭራሽ አይታዩም።",
+"safety.card5Title":"ማዕከል ደህንነት",
+"safety.card5Desc_html":"ስለ ደህንነቱ የተጠበቀ ንግድ ሙሉ መመሪያ፦ የማጭበርበር ስልቶችን ማወቅ፣ በአደባባይ በደህንነት መገናኘት፣ የክፍያ ደህንነት እና ነገሮች ስህተት ከሆኑ ምን ማድረግ እንዳለብዎት። <a href=\"safety-center/\" style=\"color:var(--green);font-weight:700\">የደህንነት ማዕከልን ያንብቡ →</a>",
+"safety.card6Title":"ግልጽ ህጎች፣ ፍትሃዊ ሂደት",
+"safety.card6Desc_html":"የታተመው <a href=\"community-guidelines/\" style=\"color:var(--green);font-weight:700\">የማህበረሰብ መመሪያ</a> በትክክል የተፈቀደውን ይገልጻል። የቁጥጥር ውሳኔዎች ይግባኝ ሊባሉ ይችላሉ — አፈጻጸምም ተመዝግቦ ተጠያቂነት ያለው ነው።",
+"about.tag":"🌍 ለምን AYE Market",
+"about.title_html":"ለትግራይ የተገነባ፣ <span class=\"gradient-text\">የተለወጠ አይደለም</span>",
+"about.p1":"በትግራይ ያሉ ሰዎች በየቀኑ ቀድሞውኑ ይገዙ፣ ይሸጡ እና ይቀጥሩ ነበር — በአፍ ወሬ፣ በቴሌግራም ቡድኖች እና በማስታወቂያ ሰሌዳዎች። የጎደለው ለዚህ በእውነት የተነደፈ መድረክ ነበር፦ የአካባቢ ቋንቋዎች፣ የአካባቢ ቦታዎች፣ የአካባቢ የግንኙነት መንገዶች እና እውነተኛ የአካባቢ አደጋዎችን የሚፈቱ የደህንነት ባህሪያት።",
+"about.p2":"AYE Market ሆን ተብሎ ጠባብ ሆኖ ጀመረ። እንደ አጠቃላይ \"የመላው ኢትዮጵያ\" መተግበሪያ ፈንታ፣ ዝርዝሮቹን መጀመሪያ ለአንድ ክልል በትክክል ገነባን፦ ሙሉ የትግርኛ እና የአማርኛ ትርጉም፣ ታቢያዎን የሚያውቅ የአካባቢ ስርዓት፣ እዚህ ያሉ ሰዎች በእውነት እንዴት እንደሚነጋገሩ የሚስማሙ የመገናኛ አማራጮች እና ከአካባቢያዊ ዐውድ ጋር የሰው ቁጥጥር።",
+"about.p3_html":"AYE Market በ<a href=\"/\" style=\"color:var(--neon);font-weight:700\">AYE Tech Hub</a> የተገነባ ነው — ተመሳሳይ የኢትዮጵያ ቴክኖሎጂ ስቱዲዮ ከAYE TechEngine እና TechPro የምህንድስና ትምህርት መድረክ እና Habesha Hearts የፍቅር ግንኙነት መተግበሪያ በስተጀርባ ያለው።",
+"about.mini1Sub":"እያንዳንዱ ገጽ፣ ሙሉ በሙሉ የተተረጎመ",
+"about.mini2Title":"ክልል → ዞን → ወረዳ → ታቢያ",
+"about.mini2Sub":"የትግራይ እውነተኛ የአስተዳደር ተዋረድ",
+"about.mini3Title":"ዋጋዎች በETB፣ እዚህ የሚሰሩ ክፍያዎች",
+"about.mini3Sub":"አሁን በእጅ፣ ቴሌብር እና ቻፓ በቅርቡ",
+"about.mini4Title":"በሽያጭ ላይ ምንም ኮሚሽን የለም",
+"about.mini4Sub":"ገዢዎች እና ሻጮች በቀጥታ ይገናኛሉ",
+"founder.tag":"👨‍💻 ገንቢው",
+"founder.title_html":"በ<span class=\"gradient-text\">ትግራዋይ መሐንዲስ</span> የተገነባ",
+"founder.role":"የAYE Tech Hub መስራች · የAYE Market መስራች",
+"founder.bio":"አወት የሜካኒካል፣ ዲጂታል እና አውቶሜሽን መሐንዲስ እና የAYE Tech Hub መስራች ነው — ለአፍሪካ መሐንዲሶች እና ማህበረሰቦች ተግባራዊ ሶፍትዌር እና የምህንድስና ትምህርት የሚገነባ የኢትዮጵያ ቴክኖሎጂ ስቱዲዮ። በAYE Market፣ አወት ምርትና ምህንድስናን ከጫፍ እስከ ጫፍ ይመራል፦ የAndroid መተግበሪያውን፣ የበስተጀርባ ስርዓቶችን፣ የቁጥጥር መሳሪያዎችን እና ይህንን ድህረ ገጽ። ግቡ ቀላል ነው — ትግራይን የትም ከተገነባ ማንኛውም ነገር ጋር እኩል ደህንነቱ የተጠበቀ፣ ዘመናዊ እና ብቁ የሆነ ገበያ መስጠት፣ እውነተኛ በሆነ መልኩ ማንኛውም ከውጪ የመጣ ነገር ሊሆነው በማይችል መልኩ አካባቢያዊ።",
+"founder.fullProfile":"ሙሉ መገለጫ በAYE Tech Hub",
+"founder.photoAlt":"አወት ግ. ንዋይ፣ የAYE Tech Hub እና AYE Market መስራች",
+"faq.tag":"❓ ጥያቄዎች",
+"faq.title_html":"የተለመዱ <span class=\"gradient-text\">ጥያቄዎች</span>",
+"faq.q1":"AYE Market በእውነት ነጻ ነው?",
+"faq.a1":"አዎ። አካውንት መፍጠር፣ ማሰስ፣ መፈለግ፣ ዝርዝሮችን መለጠፍ፣ መወያየት፣ ለስራዎች ማመልከት እና የስራ ክፍት ቦታዎችን መለጠፍ ሁሉም ሙሉ በሙሉ ነጻ ናቸው፣ በሚሸጡት ማንኛውም ነገር ላይ ምንም ኮሚሽን ሳይወሰድ። ብቸኛ የሚከፈልባቸው ባህሪያት አማራጭ የታይነት ማሳደጊያዎች ናቸው — 7-ቀን ፕሮሞሽን፣ ፕሪሚየም እና ፕሪሚየም+ እቅዶች።",
+"faq.q2":"መተግበሪያው የትኞቹን ቋንቋዎች ይደግፋል?",
+"faq.a2":"ትግርኛ፣ አማርኛ እና እንግሊዝኛ — በእያንዳንዱ ገጽ፣ ቅጽ እና ማሳወቂያ ላይ ሙሉ በሙሉ ተተርጉሟል። በቅንብሮች → ምርጫዎች → ቋንቋ ውስጥ በማንኛውም ጊዜ ይቀይሩ።",
+"faq.q3":"መተግበሪያውን ለመጠቀም መታወቂያዬን ወይም ስልኬን ማረጋገጥ ያስፈልገኛል?",
+"faq.a3":"አይ። ያለምንም ማረጋገጫ ማሰስ፣ መልእክት መላክ፣ መግዛት፣ መሸጥ፣ ስራ መለጠፍ እና ለስራዎች ማመልከት ይችላሉ። ማረጋገጫ አማራጭ ነው — ለመገለጫዎ የሚታይ የመተማመኛ ባጅ ይጨምራል እና ለቀጣሪዎች የCV መዳረሻን ይከፍታል። በፋይዳ መታወቂያ፣ የቀበሌ መኖሪያ መታወቂያ፣ የመንጃ ፈቃድ፣ የንግድ ፈቃድ ወይም ፓስፖርት ማረጋገጥ ይችላሉ።",
+"faq.q4":"ለፕሪሚየም ወይም ማስተዋወቂያ እንዴት እከፍላለሁ?",
+"faq.a4":"በመተግበሪያው ውስጥ እቅድዎን ይምረጡ፣ በእጅ ክፍያን ይምረጡ፣ የሚታዩትን መመሪያዎች ይከተሉ እና የክፍያ ደረሰኝዎን ይስቀሉ። ቡድናችን ይገመግማል እና ያነቃቃል — አብዛኛውን ጊዜ በአንድ የስራ ቀን ውስጥ። ሲፀድቅ ወዲያውኑ ማሳወቂያ ያገኛሉ። ራስ-ሰር ቴሌብር እና ቻፓ ክፍያዎች በስራ ላይ ናቸው።",
+"faq.q5":"ስወያይ ሻጩ ስልክ ቁጥሬን ያያል?",
+"faq.a5":"አይ። በመተግበሪያ ውስጥ ያለው ቻት የስልክ ቁጥርዎን በጭራሽ አይገልጽም። የጥሪ፣ ዋትስአፕ እና ኤስኤምኤስ አዝራሮች የሚታዩት ሻጩ የራሱን ቁጥር ለማጋራት ሲመርጥ ብቻ ነው — እርስዎም የራስዎን እንዲያጋሩ በጭራሽ አይገደዱም።",
+"faq.q6":"AYE Market በየትኞቹ ስልኮች ላይ ይሰራል?",
+"faq.a6":"Android 8.0 (Oreo) እና ከዚያ በላይ። የiPhone ስሪት በእቅድ ላይ ነው ግን እስካሁን አልተገኘም — ከታች ያለው App Store ባጅ ሲወጣ ይበራል።",
+"faq.q7":"AYE Market ማጭበርበርን እንዴት ይይዛል?",
+"faq.a7_html":"ሶስት ደረጃዎች፦ መከላከል (የማረጋገጫ ባጆች፣ የሻጭ ደረጃዎች፣ የታተመ የደህንነት መመሪያ)፣ ማወቅ (በእያንዳንዱ ዝርዝር እና መገለጫ ላይ በአንድ-ንክኪ ሪፖርት ማድረግ፣ በሰው አጣሪዎች የተገመገመ)፣ እና ማስፈጸም (ዝርዝር ማስወገድ፣ ማስጠንቀቂያዎች፣ እገዳዎች እና ክልከላዎች)። ሙሉውን መመሪያ በ<a href=\"safety-center/\" style=\"color:var(--green)\">ደህንነት ማዕከላችን</a> ውስጥ ያንብቡ።",
+"faq.q8":"አካውንቴን እና ውሂቤን መሰረዝ እችላለሁ?",
+"faq.a8_html":"አዎ፣ በቋሚነት። የ<a href=\"account-deletion/\" style=\"color:var(--green)\">አካውንት ማስወገጃ ገጽ</a>ን ይጎብኙ፣ እርስዎ መሆንዎን ለማረጋገጥ ይግቡ እና ጥያቄዎን ያስገቡ። ከጸደቀ በኋላ፣ መግቢያዎ፣ መገለጫዎ፣ ዝርዝሮችዎ፣ ፎቶዎችዎ፣ CVዎ እና የግል ውሂብዎ በቋሚነት ይሰረዛሉ። እንዲሁም በ<a href=\"gdpr/\" style=\"color:var(--green)\">የግላዊነት መብቶች ገጽ</a> በኩል መጀመሪያ የውሂብዎን ቅጂ መጠየቅ ይችላሉ።",
+"faq.q9":"AYE Market ለትግራይ ብቻ ነው?",
+"faq.a9":"ዛሬ፣ አዎ — ሆን ተብሎ። ተሞክሮውን መጀመሪያ ለአንድ ክልል በጥልቀት እየገነባን ነው፦ ቋንቋዎቹ፣ ቦታዎቹ፣ ገበያው። ወደ ተጨማሪ የኢትዮጵያ ክልሎች መስፋፋት ዋናው ተሞክሮ ከተረጋገጠ በኋላ የታቀደ ነው።",
+"faq.q10":"ስህተት አገኘሁ ወይም ሀሳብ አለኝ — የት ልላክ?",
+"faq.a10_html":"የመተግበሪያ ውስጥ የግብረመልስ እና ድጋፍ መሳሪያውን ይጠቀሙ (ቅንብሮች → ግብረመልስ) — ቡድናችን በቀጥታ በመተግበሪያው ውስጥ የሚመልስለት የድጋፍ ትኬት ይፈጥራል። ወይም ኢሜይል ያድርጉ <a href=\"mailto:ayetechub@gmail.com\" style=\"color:var(--green)\">ayetechub@gmail.com</a>.",
+"download.tag":"📲 መተግበሪያውን ያግኙ",
+"download.title_html":"<span class=\"gradient-text\">AYE Market</span>ን ያውርዱ",
+"download.subtitle":"በAndroid ላይ ነጻ። የመጀመሪያ ዝርዝርዎን ይለጥፉ፣ የሚቀጥለውን ስራዎን ያግኙ፣ ወይም የሚቀጥለውን ተቀጣሪዎን ይቅጠሩ — ዛሬ።",
+"download.getItOn":"ያግኙት በ",
+"download.comingSoonTo":"በቅርቡ ይመጣል በ",
+"download.comingSoonAttr":"በቅርቡ",
+"download.footnote":"Android 8.0+ · ነጻ ውርድ · በGoogle Play ላይ ይጀምራል",
+"download.mockTitle1":"ሲሚንቶ — 50 ኪግ ከረጢት (ጅምላ)",
+"download.mockPrice1":"በድርድር",
+"download.mockLoc1":"📍 የመቐለ ኢንዱስትሪ ዞን ✓",
+"download.mockTitle2":"HP ኤሊትቡክ — አዲስ ቢጤ",
+"download.mockLoc2":"📍 ዓይደር · ⭐ 4.9 ሻጭ",
+"contact.tag":"📮 አግኙን",
+"contact.title_html":"እኛ <span class=\"gradient-text\">ለመርዳት</span> እዚህ ነን",
+"contact.subtitle":"ድጋፍ፣ የንግድ ጥያቄዎች፣ ፕሬስ ወይም ግብረመልስ — እያንዳንዱ መልእክት መተግበሪያውን በእውነት ወደሚገነባው ቡድን ይደርሳል።",
+"contact.card1Title":"ኢሜይል ይላኩልን",
+"contact.card1Note":"በ1-2 የስራ ቀናት ውስጥ ምላሽ ይሰጣል",
+"contact.card2Title":"በመተግበሪያ ውስጥ ድጋፍ",
+"contact.card2Value":"ቅንብሮች → ግብረመልስ",
+"contact.card2Note":"ፈጣኑ — የመልእክትዎን የአካውንት አውድ ይይዛል",
+"contact.card3Title":"AYE Tech Hubን ይከተሉ",
+"contact.card3Note":"ዜናዎች፣ ዝማኔዎች እና ይፋ መደረግያዎች",
+"footer.tagline_html":"የትግራይ ዘመናዊ ገበያ ለመግዛት፣ ለመሸጥ እና ስራ ለማግኘት — በደህንነት እና በአካባቢው። የ<a href=\"/\" style=\"color:var(--neon)\">AYE Tech Hub</a> ውጤት ነው።",
+"footer.colProduct":"ምርት",
+"footer.jobsMarketplace":"የስራ ገበያ",
+"footer.premiumPlans":"የፕሪሚየም እቅዶች",
+"footer.download":"አውርድ",
+"footer.about":"ስለ እኛ",
+"footer.helpCenter":"የእገዛ ማዕከል",
+"footer.legalHub":"ሁሉም ፖሊሲዎች (የሕግ ማዕከል)",
+"footer.colTrust":"እምነት እና ደህንነት",
+"footer.safetyCenter":"ማዕከል ደህንነት",
+"footer.communityGuidelines":"የማህበረሰብ መመሪያ",
+"footer.childrenPrivacy":"የህጻናት ግላዊነት",
+"footer.thirdParty":"የሶስተኛ ወገን አገልግሎቶች",
+"footer.dataSafety":"የውሂብ ደህንነት",
+"footer.colLegal":"ህጋዊ እና ግላዊነት",
+"footer.privacyPolicy":"የግላዊነት ፖሊሲ",
+"footer.terms":"የአገልግሎት ውሎች",
+"footer.cookiePolicy":"የኩኪ ፖሊሲ",
+"footer.gdpr":"የግላዊነት መብቶች (GDPR)",
+"footer.deleteAccount":"አካውንቴን ሰርዝ",
+"footer.copyright":"AYE Market — የAYE Tech Hub ውጤት። መብቱ በህግ የተጠበቀ ነው።",
+"footer.madeFor":"ለትግራይ፣ ኢትዮጵያ የተሰራ 🇪🇹"
+},
+ti:{
+"nav.brandTag":"ግዛእ · ሽጥ · ተራኸብ",
+"nav.categories":"ዓይነታት",
+"nav.features":"ፊቸራት",
+"nav.jobs":"ስራሕቲ",
+"nav.premium":"ፕሪሚየም",
+"nav.safety":"ውሕስነት",
+"nav.faq":"ተደጋጋሚ ሕቶታት",
+"nav.contact":"ርኸቡና",
+"nav.help":"ሓገዝ",
+"nav.downloadApp":"📲 ነቲ መተግበሪ ዳውንሎድ ግበር",
+"ticker.modern":"ዘመናዊ ዕዳጋ ትግራይ",
+"ticker.buysell":"ግዛእ · ሽጥ · ስራሕ ድለ · ክኢላ ቆጽር",
+"ticker.contact":"ቻት · ደውል · ዋትስኣፕ · ኤስኤምኤስ",
+"hero.tag":"🛒 ዘመናዊ ዕዳጋ ትግራይ",
+"hero.subtitle_html":"ተሽከርካሪ፣ ንብረት፣ ኤሌክትሮኒክስ፣ ፋሽንን ኣገልግሎትን ካልኦትን ብቐሊሉ ኣብ ከባቢኹም ግዝኡን ሽጡን። ስራሕ ድለዩ ወይ ግቡእ ሰብ ቆጽሩ። ምስ ሸየጥቲ ብቐጥታ ተዛረቡ፣ ደውሉ ወይ ብዋትስኣፕ ተራኸቡ። ን<strong style=\"color:var(--green)\">ትግራይ</strong> ዝተሰርሐ፣ ብ<strong style=\"color:var(--green)\">ትግርኛ</strong>፣ <strong style=\"color:var(--green)\">አማርኛ</strong>ን እንግሊዝኛን።",
+"hero.btnDownload":"📲 ብነጻ ውረድ",
+"hero.btnFeatures":"✨ ፊቸራት ርአዩ",
+"hero.statCategories":"ዓይነታት",
+"hero.statLanguages":"ቋንቋታት",
+"hero.statChannels":"መንገድታት ርክብ",
+"hero.statFree":"ብነጻ ዝጥቀም",
+"hero.logoAlt":"ኣርማ መተግበሪ AYE Market",
+"hero.badgePromoted":"ፕሮሞት",
+"hero.mock1Loc":"📍 መቐለ · ዝተረጋገጸ ሸያጣይ ✓",
+"hero.mock2Title":"ናይ 2 ክፍሊ-መደቀሲ ኣፓርታማ",
+"hero.mock2Price":"12,000 ETB / ወርሒ",
+"hero.mockJobsHead":"ስራሕቲ 💼",
+"hero.mockJob1Title":"ናይ ሽያጥ ሓላፊ — ምሉእ ግዜ",
+"hero.mockJob1Price":"8,000 ETB / ወርሒ",
+"hero.mockJob1Loc":"📍 መቐለ · 12 ኣመልከቲ",
+"hero.mockJob2Title":"ኤለክትሪሻን ኣሎ",
+"hero.mockJob2Price":"ስራሕ ደላይ ማስታወቂ",
+"hero.mockJob2Loc":"📍 5 ዓመት ልምዲ · CV ✓",
+"cat.tag":"🗂️ 22 ዓይነታት",
+"cat.title_html":"ዝደለኹምዎ ዝኾነ ነገር፣<br/><span class=\"gradient-text\">ኣብ AYE Market ኣሎ</span>",
+"cat.subtitle":"ነፍሲ ወከፍ ዓይነት ኣብ ትግራይ ዘለዉ ሰባት ብሓቂ ብኸመይ ከም ዝዕድጉ፣ ከም ዝሸጡን ከም ዝቆጽሩን ተመርኲሱ ዝተወደበ እዩ — ነፍሲ ወከፎም ናቱ ዝተዳለወ ናይ ምዝገባ ፎርም፣ መጻረዪ፣ ከምኡውን ናይ ምድላይ ባህርያት ኣለዎ።",
+"cat.vehicles":"ተሽከርከርቲ","cat.property":"ንብረት","cat.jobs":"ስራሕቲ","cat.jobsWanted":"ስራሕ ደለይቲ",
+"cat.electronics":"ኤለክትሮኒክስ","cat.phones":"ተሌፎናትን ታብለታትን","cat.computers":"ኮምፕዩተራት","cat.homeFurniture":"ቤትን ናውቲ ገዛን",
+"cat.fashion":"ፋሽን","cat.beauty":"ጽባቐ","cat.services":"ኣገልግሎታት","cat.agriculture":"ሕርሻ",
+"cat.industrial":"ናውቲ ኢንዱስትሪ","cat.education":"ትምህርቲ","cat.sports":"ስፖርት","cat.animals":"እንስሳ",
+"cat.baby":"ናውቲ ህጻናት","cat.health":"ጥዕና","cat.food":"መግቢ","cat.business":"ንግዲ",
+"cat.construction":"ህንጻ","cat.more":"ተወሳኺ",
+"cat.footnote":"ተሽከርከርቲ ብምስሊ ትካል፣ ሞዴል፣ ዓመት፣ ርሕቀት ጉዕዞ፣ ነዳድን መቐየሪ ማርሽን ዝሓዘ መጻረዪ ኣለዎም። ናይ ንብረት ዝርዝራት ክራይን ሽያጭን ንኣፓርታማታት፣ ኣባይቲ፣ ቪላታት፣ ቤት ጽሕፈታት፣ መሬትን ካልእን ይድግፉ። ህንጻ ንብረትን ኣገልግሎትን ክልቲኡ ይሽፍን። ነፍሲ ወከፍ ዓይነት ናቱ ቋንቋ ይዛረብ — በዚህ ድማ ገዛእቲ ንዝደልይዎ ብልክዕን ብቕልጡፍን ይረኽቡ።",
+"buy.tag":"🛍️ ንዓደግቲ",
+"buy.title_html":"ርኸብዎ፣ መርምርዎ፣ <span class=\"gradient-text\">ንሸያጣይ ብመንገድኹም ተራኸብዎ</span>",
+"buy.desc":"AYE Market ብሓንቲ ሓሳብ እዩ ዝተሃንጸ፦ ፈጺምኩም ክትግምቱ የብልኩምን። ነፍሲ ወከፍ ዝርዝር ሓቀኛ ስእልታት ምስ ምሉእ-መስኮት ዙም ጋለሪ፣ ዝርዝር መግለጺ፣ ኩነታት መረጋገጺ ናይቲ ሸያጣይ፣ ከምኡውን ልክዕ ኣብ ካርታ ዘሎ ቦታ ይሕዝ — ቅድሚ ምርኻብኩም።",
+"buy.item1_html":"<strong>ሓያል ምድላይ</strong>&nbsp;— ኣብ ኩሉ ዓይነታት ብቐይሕ-ቃል ምድላይ፣ ምስ ሓደ/ብዙሕ ቁጽሪ ምዝማድ ስለዘለዎ \"ተሌፎን\" ዝብል \"ተሌፎናት\"ውን ይረክብ።",
+"buy.item2_html":"<strong>ዝማዕበለ መጻረዪ</strong>&nbsp;— ብዋጋ ደረጃ፣ ኩነታት፣ ምስሊ ትካል፣ ሞዴል፣ ከምኡውን ከም ክፍሊ-መደቀሲ፣ ርሕቀት ጉዕዞ ወይ መጠን ኣወዳድባ ዝኣመሰሉ ብዓይነት-ተኮር ባህርያት ጸርዩ።",
+"buy.item3_html":"<strong>ናይ ጥቓ ምድላይ</strong>&nbsp;— ብፍቓድ GPS፣ ካብ ዘለኹምሉ ቦታ ብሓቀኛ ርሕቀት ዝተሰርዑ ዝርዝራት ርአዩ።",
+"buy.item4_html":"<strong>ስርዓት ቦታ ትግራይ</strong>&nbsp;— ብሓቀኛ ኣመሓድራ ደረጃ ርአዩ፦ ክልል፣ ዞባ፣ ወረዳ፣ ጣብያን ከተማን — ካብ ልሙድ ናይ ኣድራሻ ሳጹን ወጻኢ።",
+"buy.item5_html":"<strong>ተመራጽትን ዝተዓቀቡ ምድላያትን</strong>&nbsp;— ዝኾነ ዝርዝር ናብ ተመራጽትኹም ኣቐምጡ፣ ወይ ምሉእ ምድላይ ኣቐምጡ ከምኡውን ሓደስቲ ግጥምያታት ክመጹ ከለዉ ምሕባር ተቐበሉ።",
+"buy.item6_html":"<strong>ኣርባዕተ መንገድታት ርክብ</strong>&nbsp;— ኣብ-መተግበሪ ቻት፣ ጻውዒት ተሌፎን፣ ዋትስኣፕ ወይ ኤስኤምኤስ። ሸያጣይ እንታይ ከም ዝቕበል ይመርጽ፤ ንስኹምውን ትመርጹ ትደልይዎ።",
+"buy.mini1Title":"ምድላይ \"vitz mekelle\"",
+"buy.mini1Sub":"2 ውጽኢታት ኣብ ጥቓኹም · ብርሕቀት ዝተሰርዑ",
+"buy.mini2Title":"መጻረዪ፦ 500ሽሕ–900ሽሕ ETB · ዝተጠቕመሉ · ቶዮታ",
+"buy.mini2Sub":"ኣብ ተሽከርከርቲ › መካይን ተተግቢሩ",
+"buy.mini3Title":"መቐለ › ሓድነት › ዓዲ ሓቂ",
+"buy.mini3Sub":"ክልል → ዞባ → ወረዳ → ጣብያ",
+"buy.mini4Title":"ናብ ተመራጽቲ ተዓቂቡ",
+"buy.mini4Sub":"ምሕባር ናይ ዋጋ ምንካይ ተኸፊቱ",
+"buy.mini5Title":"ቻት · 📞 ደውል · 🟢 ዋትስኣፕ · ✉️ ኤስኤምኤስ",
+"buy.mini5Sub":"ንሸያጣይ ብመንገድኹም ተራኸብዎ",
+"sell.tag":"📤 ንሸየጥቲ",
+"sell.title_html":"ኣብ ውሽጢ ደቓይቕ ልጥፉ፣ <span class=\"gradient-text\">ከም ክኢላ ኣመሓድሩ</span>",
+"sell.desc":"ዝርዝር ምልጣፍ ደቓይቕ ጥራይ እዩ ዝወስድ፦ ዓይነት ምረጹ፣ ክሳብ 8 ስእልታት ወስኹ፣ ዋጋን ቦታን ኣዳልዉ፣ ልጥፉ። ግን ብድሕሪኡ፣ AYE Market ንሸየጥቲ ሓቀኛ መሳርሒታት ይህብ — ናይ ማስታወቂ ቦታ ጥራይ ኣይኰነን።",
+"sell.item1_html":"<strong>ብዓይነት ዝተዳለወ ፎርማት</strong>&nbsp;— ነፍሲ ወከፍ ዓይነት ናቱ ዝተዳለወ ሜዳታት ኣለዎ፣ በዚህ ድማ ዝርዝርኹም ገዛእቲ ዝጽርይሉ ዝርዝራት ይሕዝ።",
+"sell.item2_html":"<strong>ምሉእ ናይ ህይወት መስርሕ ዝርዝር</strong>&nbsp;— ካብ ናተይ ዝርዝራት ኣብ ዝኾነ ግዜ ልጥፉ፣ ኣርትዑ፣ ኣቋርጹ፣ ከም ዝተሸጠ ምልክት ግበሩ፣ ኣቐምጡ፣ ድገሙ ወይ ደምስሱ።",
+"sell.item3_html":"<strong>ብገዛእ ርእሱ ዝቕመጥ ንድፊ</strong>&nbsp;— ክትጽሕፉ ከለኹም ዝርዝርኹም ባዕሉ ይቕመጥ፤ ኣብ ዝኾነ ግዜ ተመሊስኹም ወድእዎ።",
+"sell.item4_html":"<strong>ዳሽቦርድ ሸያጣይ</strong>&nbsp;— ጠቕላላ ርእይቶታት፣ ተመራጽቲ፣ ቁጽሪ ዝተሸጠ፣ ከምኡውን (ብPremium) ዓሚቝ ትንተናን ኣንፈታትን ተኸታተሉ።",
+"sell.item5_html":"<strong>ግምገማን ክብርን</strong>&nbsp;— ገዛእቲ ተመኩሮኦም ይግምግሙ፣ ደረጃኹምውን ኣብ ነፍሲ ወከፍ ትልጥፍዎ ዝርዝር ይርአ።",
+"sell.item6_html":"<strong>ምርጫ ርክብ</strong>&nbsp;— ቻት ጥራይ፣ ጻውዒት ጥራይ ወይ ክልቲኡ ተቐበሉ። ቁጽሪ ተሌፎንኩም ፍቓድ ንስኹም ዘይሃብኩም ኣይርአን።",
+"sell.mini1Title":"8 ስእልታት · ንምስራዕ ጎትቱ",
+"sell.mini1Sub":"ቀዳማይ ስእሊ ሽፋንኩም ይኸውን",
+"sell.mini2Title":"ብዓይነት ዝተዳለወ ፎርም",
+"sell.mini2Sub":"መኪና? ምስሊ ትካል/ሞዴል/ዓመት ሜዳታት ርኸቡ። ገዛ? ክፍሊ-መደቀስን ስፍሓትን።",
+"sell.mini3Title":"ብገዛእ ርእሱ ዝተቐመጠ ንድፊ",
+"sell.mini3Sub":"ፍርቂ-ዝተወደአ ዝርዝር ኣይክትስእንዎን",
+"sell.mini4Title":"ዳሽቦርድ ሸያጣይ",
+"sell.mini4Sub":"ርእይቶታት፣ ተመራጽትን ኣፈጻጽማ ዝርዝርን",
+"sell.mini5Title":"ናይ ንግዲ ኣካውንት",
+"sell.mini5Sub":"ስም ድኳን + ትርኢት ድኳን",
+"jobs.tag":"💼 ዕዳጋ ስራሕ",
+"jobs.title_html":"ምሉእ <span class=\"gradient-text\">መድረኽ ስራሕ</span> ኣብ ውሽጢ",
+"jobs.subtitle":"AYE Market ንኣቕሑት ጥራይ ኣይኮነን — ንትግራይ ምሉእ ክልተ-ወገን ዕዳጋ ስራሕ እዩ፣ ንስራሕ ደለይትን ቀጸርትን ፍሉይ ተመኩሮ ዘለዎ።",
+"jobs.card1Title":"ስራሕ ድለ",
+"jobs.card1Desc":"ክፍቲ ቦታታት ብዓይነት፣ ብቕዓት፣ ዓይነት ስራሕን ደረጃ ደሞዝን ርአዩ። ነፍሲ ወከፍ ልጥፊ ኢንዱስትሪ፣ ደረጃ ልምዲ፣ ጠለባት ትምህርቲ፣ ጥቕምታትን ገደብ ምልክታን ይሕዝ — ብመጻረዪ ዝርከብ እምበር ኣብ ጽሑፍ ተቐቢሩ ዘይተርፍ።",
+"jobs.card2Title":"መግለጺ ስራሕ ደላይን CV ን",
+"jobs.card2Desc":"ሓደ ሞያዊ መግለጺ ስርሑ — ስቐላ CV፣ ክእለታት፣ ቋንቋታት፣ ትምህርቲ፣ ደረጃ ልምዲ፣ ትጽቢት ደሞዝ፣ ከምኡውን ቀጸርቲ ብኸመይ ክራኸቡኹም ከም ዝኽእሉ። ናይ \"ስራሕ ደላይ\" ማስታወቅታኹም ምስዚ ብቐጥታ ይሳነ።",
+"jobs.card3Title":"ብሓደ-ትንካፈ ምምልካት",
+"jobs.card3Desc":"ብሰከንድታት ብCVኹም መልክቱ፣ ሽዑ ካብ ዳሽቦርድ ማመልከትታትኩም ኩነታት ነፍሲ ወከፍ ማመልከቲ — ኣብ ምጽባይ፣ ዝረኣየ፣ ኣብ ሓጺር ዝርዝር ዝኣተወ — ተኸታተሉ።",
+"jobs.card4Title":"ስራሕ ልጠፉ",
+"jobs.card4Desc":"ቀጸርቲ ክፍቲ ቦታታት ብስም ትካል፣ ክፍቲ ቦታታት፣ ሓላፍነታት፣ ዘድልዩ ክእለታት፣ ደሞዝ፣ ገደብን ቦታን ይልጥፉ። ኩሎም ልጥፍታትን ኣመልከቲን ካብ ዳሽቦርድ ቀጻሪ ኣመሓድሩ።",
+"jobs.card5Title":"ክኢላ ቆጽሩ — ስራሕ ደለይቲ",
+"jobs.card5Desc":"ማስታወቅታ ተወዳደርቲ ብሞያ፣ ብቕዓት፣ ልምድን ዓይነት ስራሕን ርአዩ። ክእለታት፣ ትምህርትን ትጽቢት ደሞዝን ኣቐዲምኩም ርአዩ — ከምኡውን ኣካውንትኩም ምስ ተረጋገጸ CVታት ርአዩ።",
+"jobs.card6Title":"ውሕስነት ብሕታዊነት CV",
+"jobs.card6Desc":"CV ተወዳዳራይ ብሕታዊ እዩ። ማንነቶም ዝተረጋገጹ ቀጸርቲ ጥራይ CVታት ክኸፍቱ ይኽእሉ — ተመሳሳሊ ውሕስነት ሰነድ ኣብ ማመልከትታት ስራሕን ማስታወቅታ ስራሕ ደላይን ውን ይምልከት።",
+"feat.tag":"✨ ኩሉ ተሓቚፉ",
+"feat.title_html":"ንግዲ ቀሊልን<br/><span class=\"gradient-text\">ውሑስን ዝገብሩ ፊቸራት</span>",
+"feat.subtitle":"ኩሎም ኣብ ታሕቲ ዘለዉ ፊቸራት ሎሚ ኣብ መተግበሪ ኣለዉ — ኣብዚ ዝኾነ ተስፋ ኣይኮነን።",
+"feat.card1Title":"ህሞታዊ ቻት",
+"feat.card1Desc":"ንዝኾነ ሸያጣይ ብህሞት መልእኽቲ ስደዱ፣ ስእልታት ኣካፍሉ፣ ከምኡውን ኣብ ዝኾነ ግዜ ዝርርብ ቀጽሉ። ምልክታት ትየባ፣ ዘይተነበበ ቁጽሪ፣ ከምኡውን ዝካትዑሉ ዘለኹም ዝርዝር ብቐጥታ ኣብቲ ክር ተሓቲሙ ኣሎ — ቁጽሪ ተሌፎንኩም ከይኣካፈልኩም።",
+"feat.card2Title":"ደውል፣ ዋትስኣፕን ኤስኤምኤስን",
+"feat.card2Desc":"ሸያጣይ ቁጽሩ ኣካፊሉ ምስ ኮነ፣ ትግራይ ብሓቂ ብዝራኸበሉ መንገዲ ርኸብዎ — ቀጥታ ጻውዒት፣ ብዝርዝሩ ኣቐዲሙ ዝመልአ መልእኽቲ ዋትስኣፕ፣ ወይ ልሙድ ኤስኤምኤስ።",
+"feat.card3Title":"GPS + ካርታ",
+"feat.card3Desc":"ልክዕ ቦታ ዝርዝርኩም ኣብ ካርታ ኣቕምጡ፣ ጥቓ ዘሎ ርአዩ፣ ብርሕቀትውን ድለዩ። መረጻ ቦታ ናይ ትግራይ ሓቀኛ ኣመሓድራ ቅርጺ ክሳብ ደረጃ ጣብያ ይስዕብ።",
+"feat.card4Title":"ብልሓተኛ ምሕባራት",
+"feat.card4Desc":"ሓደስቲ መልእኽቲ፣ ምንካይ ዋጋ ኣብ ተመራጽቲ፣ ምዝማድ ዝተዓቀበ ምድላይ፣ ምሕዳስ ማመልከቲ፣ ምጽዳቕ ዝርዝር — ከም ግፍታዊ ምሕባር ምስ ምሉእ ማእከል ምሕባር ኣብ-መተግበሪ ይበጽሑ።",
+"feat.card5Title":"ዝተረጋገጹ ሸየጥቲ",
+"feat.card5Desc":"ሸየጥቲ ብፋይዳ መንነት፣ መንነት መንበሪ ቀበሌ፣ ፍቓድ መዘወሪ፣ ፍቓድ ንግዲ ወይ ፓስፖርት ክረጋገጹ ይኽእሉ — ብሰብ ኣጻራዪ ዝተገምገመ። ዝተረጋገጹ ኣካውንት ገዛእቲ ክኣምንዎ ዝኽእሉ ባጅ ይለብሱ።",
+"feat.card6Title":"ግምገማን ደረጃታትን",
+"feat.card6Desc":"ድሕሪ ልውውጥ ሸየጥቲ ግምግሙ። ደረጃታት፣ መጠን ምላሽ፣ ከምኡውን ካብ መዓስ ኣባል ከምዝኾኑ ዘመልክት ዕለት ኣብ ነፍሲ ወከፍ መግለጺ ሸያጣይ ይርአ — ዝተረኽበ እምበር ዝተገልጸ ክብሪ ኣይኮነን።",
+"feat.card7Title":"ቁጽጽርን ምጥርጣርን",
+"feat.card7Desc":"ነፍሲ ወከፍ ዝርዝርን ተጠቃማይን ብሓደ-ትንካፈ ክሽሙት ይኽእል። ጋንታ ሰብ ቁጽጽር ጥርዙ ምስ ዝተሓትመ መምርሒ ማሕበረሰብ የነጻጽር — ንዝጠሓሱ ማጠንቀቕታ፣ ደው ምባልን ክልከላን ይህብ።",
+"feat.card8Title":"ንዝኾነ ምዕጋት",
+"feat.card8Desc":"ንዝኾነ ተጠቃማይ ካብ መግለጺኡ ወይ ካብ ቻት ዕገቱ። ዝተዓገቱ ተጠቀምቲ መልእኽቲ ክሰዱኹም ወይ ምርጫታት ርክብኩም ክርእዩ ኣይኽእሉን — ብዘይ ዝኾነ ሕቶ።",
+"feat.card9Title":"ሸየጥቲ ተኸተሉ",
+"feat.card9Desc":"ዝፈተኹምዎም ሸየጥቲ ተኸተሉ ከምኡውን ሓድሽ ነገር ክልጥፉ ከለዉ ምሕባር ተቐበሉ — ናይ ገዛእ ርእስኹም እሙን መርበብ ሸያጣይ ስርሑ።",
+"feat.card10Title":"ኣካውንት ብዙሕ-ተራ",
+"feat.card10Desc":"ሓደ ኣካውንት፣ ኣርባዕተ ተራ — ዓዳጊ፣ ሸያጣይ፣ ስራሕ ደላይ፣ ቀጻሪ። ኣብ ቅጥዕታት ዝኾነ ተራ ኣብርሁ ወይ ኣጥፍኡ ከምኡውን መተግበርኹም ይተዓራረ፤ ዝለጠፍኩሞ ዝኾነ ነገር ፈጺሙ ኣይጠፍእን።",
+"feat.card11Title":"ሰለስተ ቋንቋታት",
+"feat.card11Desc":"ብሙሉኡ ናብ ትግርኛ፣ ኣማርኛን እንግሊዝኛን ተተርጒሙ — ነፍሲ ወከፍ ገጽ፣ ነፍሲ ወከፍ መጠፍቲ፣ ነፍሲ ወከፍ ምሕባር። ኣብ ቅጥዕታት ኣብ ዝኾነ ግዜ ቀይሩ።",
+"feat.card12Title":"ብሩህን ጸልማትን ኩነት",
+"feat.card12Desc":"ብቀደም ንጹህ ብሩህ ኩነት፣ ክትደልዩ ከለኹም ምሉእ ጸልማት ኩነት — ወይ ቅጥዕ ስርዓትኩም ስዓቡ።",
+"steps.tag":"🚀 ጀምር",
+"steps.title_html":"ኣብ <span class=\"gradient-text\">4 ደረጃታት</span> ጀምሩ ተጠቐሙ",
+"steps.step1Title":"ኣካውንትኩም ፍጠሩ",
+"steps.step1Desc":"ብኢመይል፣ ተሌፎን ወይ Google ብነጻ ተመዝገቡ። ተራታትኩም ምረጹ — ዓዳጊ፣ ሸያጣይ፣ ስራሕ ደላይ፣ ቀጻሪ ወይ ኩሎም ኣርባዕተ።",
+"steps.step2Title":"ርአዩ ወይ ልጥፉ",
+"steps.step2Desc":"22 ዓይነታት ብብልሓተኛ መጻረዪ ድለዩ፣ ወይ ናይ ገዛእ ርእስኹም ዝርዝር ምስ ስእልታት፣ ዋጋን ቦታ ካርታን ኣብ ውሽጢ ደቓይቕ ልጥፉ።",
+"steps.step3Title":"ብቐጥታ ተራኸቡ",
+"steps.step3Desc":"ኣብ-መተግበሪ ተዘራረቡ፣ ወይ ሸያጣይ ቁጽሪ ምስ ኣካፈለ ደውሉ፣ ዋትስኣፕን ኤስኤምኤስን ግበሩ። ዝኾነ ኣላይ የለን፣ ዝኾነ ኮሚሽን የለን።",
+"steps.step4Title":"ብውሕስነት ንግዱ",
+"steps.step4Desc":"ኣብ ህዝባዊ ቦታ ተራኸቡ፣ ቅድሚ ምኽፋልኩም መርምሩ፣ ከም ዝተሸጠ ምልክት ግበሩ። ባጃት መረጋገጺን ማእከል ውሕስነትናን ነፍሲ ወከፍ ስጉምቲ ይመርሑ።",
+"pricing.tag":"👑 ፕሪሚየም",
+"pricing.title_html":"ንዘልኣለም ነጻ። <span class=\"gradient-text\">ክትደልዩ ከለኹም ኣደንፍዑ።</span>",
+"pricing.subtitle":"ምንቕስቓስ፣ ዝርርብ፣ ልጥፍን ምምልካትን ነጻ እዮም — ወትሩውን ከምኡ ክኸውን እዩ። ውጥናት ፕሪሚየም ካብ ልዕሊኡ ተራእይነት ይውስኹ፣ ብዋጋታት ብር ኢትዮጵያን ኣብዚ ዝሰርሑ ኣገባባት ክፍሊትን።",
+"pricing.planFreeName":"ነጻ",
+"pricing.periodForever":"ንዘልኣለም",
+"pricing.free1":"ደረት ዘይብሉ ምንቕስቓስን ምድላይን",
+"pricing.free2":"ኣብ ኩሎም 22 ዓይነታት ዝርዝራት ልጥፉ",
+"pricing.free3":"ቻት፣ ጻውዒት፣ ዋትስኣፕን ኤስኤምኤስን",
+"pricing.free4":"ተመራጽትን ዝተዓቀቡ ምድላያትን",
+"pricing.free5":"ንስራሕቲ መልክቱ ከምኡውን ማስታወቅታ ስራሕ ደላይ ልጥፉ",
+"pricing.free6":"መሰረታዊ ዳሽቦርድ ሸያጣይ",
+"pricing.btnGetStarted":"ጀምሩ",
+"pricing.plan2Name":"🚀 7-መዓልቲ ፕሮሞሽን",
+"pricing.period7day":"ሓደ ዝርዝር · 7 መዓልቲ",
+"pricing.promo1":"~5× ተወሳኺ ተራእይነት",
+"pricing.promo2":"ልዑል ደረጃ ምድላይ",
+"pricing.promo3":"ኣብ ላዕሊ ዓይነት ቦታ",
+"pricing.promo4":"ኣብ ዝርዝርኹም ባጅ \"ፕሮሞት\"",
+"pricing.btnPromote":"ኣብ መተግበሪ ኣስተዋውቁ",
+"pricing.plan3Name":"ፕሪሚየም",
+"pricing.periodMonth":"ኣብ ወርሒ",
+"pricing.prem1":"~10× ተወሳኺ ተራእይነት",
+"pricing.prem2":"ዝርዝራት ልዕሊ ናይ ነጻ ዝርዝራት ደረጃ ይወሃቦም",
+"pricing.prem3":"ባጅ ተመራጺ ሸያጣይ",
+"pricing.prem4":"ተወሳኺ ትርኢት ገጽ መእተዊ",
+"pricing.prem5":"ዝርዝር ትንተና ዝርዝር",
+"pricing.prem6":"ቀዳምነት ዘለዎ ደገፍ",
+"pricing.btnUpgrade":"ኣብ መተግበሪ ኣመሓይሹ",
+"pricing.ribbon":"ኣዝዩ ተመራጺ",
+"pricing.plan4Name":"ፕሪሚየም+",
+"pricing.plus1":"~15×+ ተወሳኺ ተራእይነት — ልዑል ደረጃ",
+"pricing.plus2":"ወርቃዊ ባጅ ፕሪሚየም+",
+"pricing.plus3":"ኣብ ገጽ መእተውን ዓይነትን ፍሉይ ቦታ",
+"pricing.plus4":"ቀዳምነት ኣብ ዝተመኸሩ ዝርዝራት",
+"pricing.plus5":"ትንተና ደረጃ ኣፈጻጽማ",
+"pricing.plus6":"ኣቐዲምካ ምብጻሕ ሓደስቲ ፊቸራት",
+"pricing.footnote_html":"💳 ክፍሊታት ሕጂ ብጋንታና ብኢድ ይስርሑ ኣለዉ — ኣብ መተግበሪ ውጥንኩም ምረጹ፣ መምርሒ ክፍሊት ስዓቡ፣ ቅብሊትኩም ስቐሉ፣ ምምሕያሽኩም ምስ ጸደቐ ይነቕሕ (መብዛሕትኡ ግዜ ኣብ ውሽጢ ሓደ መዓልቲ ስራሕ)። ስሉጥ <strong style=\"color:var(--green)\">ተለብር</strong>ን <strong style=\"color:var(--green)\">ቻፓ</strong>ን ክፍሊታት ቀልጢፎም ክመጹ እዮም። ውጥን ምስ ኣብቀዐ፣ ዝርዝራትኩም ናብ ንቡር ደረጃ ይምለሱ — ዝኾነ ነገር ፈጺሙ ኣይድምሰስን።",
+"safety.tag":"🛡️ ውሕስነት ቀዳማይ",
+"safety.title_html":"ብምትእምማን <span class=\"gradient-text\">ንኽትነግዱ</span> ዝተሰርሐ",
+"safety.subtitle":"እምነት ፊቸር ኣይኮነን — ንሱ ባዕሉ እቲ ፍርያት እዩ። እነሆ AYE Market ንማሕበረሰቡ ዝከላኸለሉ መንገዲ።",
+"safety.card1Title":"ብሰብ ዝተገምገመ መረጋገጺ",
+"safety.card1Desc":"መንነት ብፋይዳ መንነት፣ መንነት መንበሪ ቀበሌ፣ ፍቓድ መዘወሪ፣ ፍቓድ ንግዲ ወይ ፓስፖርት ምርግጋጽ — ነፍሲ ወከፍ ምቕራብ ብሓቀኛ ኣጻራዪ ይግምገም፣ ፈጺሙ ብገዛእ ርእሱ ኣይጸድቕን። ፍቓደኛ መረጋገጺ ተሌፎን ካልኣይ ባጅ የውስኽ።",
+"safety.card2Title":"ንጡፍ ቁጽጽር",
+"safety.card2Desc":"ጋንታ ቁጽጽር ዝተሓበሩ ዝርዝራትን ተጠቀምትን ምስ ዝተሓትመ መምርሒ ማሕበረሰብ የነጻጽር። ዝተኸልከሉ ኣቕሑት፣ ሓሶት ኣቕሑት፣ ስፓምን ምትላልን ይእለዩ፤ ደጋጊሞም ዝጠሓሱ ደው ይብሉ ወይ ይኽልከሉ።",
+"safety.card3Title":"ብሓደ-ትንካፈ ጥርዓን",
+"safety.card3Desc":"ንዝኾነ ዝርዝር፣ ቻት ወይ መግለጺ ብሓደ-ትንካፈ ብፍሉይ ምኽንያት ጥርዑ። ነፍሲ ወከፍ ጥርዓን ኣብ መስርዕ ግምገማ ሰብ ይበጽሕ — ሓሶት ጥርዓን ባዕሉ ጥሕሰት እዩ።",
+"safety.card4Title":"ብሕታዊነትኩም ተሓልዩ",
+"safety.card4Desc":"ብዘይ ምግላጽ ቁጽርኹም ተዘራረቡ። ፍቓድ ቦታ ፍቓደኛ እዩ። CVታት ንዝተረጋገጹ ቀጸርቲ ጥራይ ይርኣዩ። ሰነዳት መንነት ብጋንታ መረጋገጺ ጥራይ ይርኣዩ — ብኻልኦት ተጠቀምቲ ፈጺሙ ኣይርኣዩን።",
+"safety.card5Title":"ማእከል ውሕስነት",
+"safety.card5Desc_html":"ምሉእ መምርሒ ውሑስ ንግዲ፦ ኣፍልጦ ስልቲ ምትላል፣ ብውሕስነት ኣብ ህዝባዊ ቦታ ምርኻብ፣ ውሕስነት ክፍሊትን እንታይ ክግበር ከምዘለዎ ነገራት ጌጋ እንተኾይኑ። <a href=\"safety-center/\" style=\"color:var(--green);font-weight:700\">ማእከል ውሕስነት ኣንብቡ →</a>",
+"safety.card6Title":"ንጹር ሕግታት፣ ፍትሓዊ መስርሕ",
+"safety.card6Desc_html":"ዝተሓትመ <a href=\"community-guidelines/\" style=\"color:var(--green);font-weight:700\">መምርሒ ማሕበረሰብ</a> ብልክዕ እንታይ ከምዝፍቀድ ይገልጽ። ውሳነታት ቁጽጽር ይግባይ ክበሃል ይኽእል — ኣፈጻጽማውን ተመዝጊቡ ተሓታትነት ኣለዎ።",
+"about.tag":"🌍 ስለምንታይ AYE Market",
+"about.title_html":"ንትግራይ ዝተሃንጸ፣ <span class=\"gradient-text\">ዝተመዓራረየ ኣይኮነን</span>",
+"about.p1":"ኣብ ትግራይ ዘለዉ ሰባት ኣቐዲሞም ኩሉ መዓልቲ ይዕድጉ፣ ይሸጡን ይቆጽሩን ነይሮም — ብቃል ወሬ፣ ብጋንታ ተለግራምን ሰሌዳ ማስታወቅታን። ዝጎደለ ብሓቂ ንዚ ዝተነደፈ መድረኽ እዩ ነይሩ፦ ቋንቋታት ከባቢ፣ ቦታታት ከባቢ፣ ኣገባብ ርክብ ከባቢ፣ ከምኡውን ንሓቀኛ ሓደጋታት ከባቢ ዝፈትሑ ባህርያት ውሕስነት።",
+"about.p2":"AYE Market ብሓሳብ ጸቢብ ኮይኑ ጀሚሩ። ኣብ ክንዲ ሓፈሻዊ \"ናይ ኩላ ኢትዮጵያ\" መተግበሪ፣ ዝርዝራት ቅድም ንሓንቲ ክልል ብልክዕ ሃነጽና፦ ምሉእ ትርጉም ትግርኛን ኣማርኛን፣ ንጣብያኹም ዝፈልጥ ስርዓት ቦታ፣ ምስ ኣገባብ ዘረባ ሰባት ኣብዚ ዝሳነ ምርጫታት ርክብ፣ ከምኡውን ቁጽጽር ሰብ ምስ ከባብያዊ ኣፍልጦ።",
+"about.p3_html":"AYE Market ብ<a href=\"/\" style=\"color:var(--neon);font-weight:700\">AYE Tech Hub</a> ዝማዕበለ እዩ — ተመሳሳሊ ስቱድዮ ቴክኖሎጂ ኢትዮጵያ ካብ ድሕሪ መድረኽ ትምህርቲ ኢንጅነሪንግ AYE TechEngine ከምኡውን TechPro ከምኡውን መተግበሪ ርክብ ፍቕሪ Habesha Hearts ዘሎ።",
+"about.mini1Sub":"ነፍሲ ወከፍ ገጽ፣ ብምሉኡ ዝተተርጎመ",
+"about.mini2Title":"ክልል → ዞባ → ወረዳ → ጣብያ",
+"about.mini2Sub":"ናይ ትግራይ ሓቀኛ ኣመሓድራ ደረጃ",
+"about.mini3Title":"ዋጋታት ብETB፣ ኣብዚ ዝሰርሑ ክፍሊታት",
+"about.mini3Sub":"ሕጂ ብኢድ፣ ተለብርን ቻፓን ቀልጢፎም",
+"about.mini4Title":"ኣብ ሽያጥ ዝኾነ ኮሚሽን የለን",
+"about.mini4Sub":"ዓደግትን ሸየጥትን ብቐጥታ ይራኸቡ",
+"founder.tag":"👨‍💻 ሃናጺ",
+"founder.title_html":"ብ<span class=\"gradient-text\">ትግራዋይ መሃንድስ</span> ዝተሃንጸ",
+"founder.role":"መስራቲ AYE Tech Hub · መስራቲ AYE Market",
+"founder.bio":"ኣወት መካኒካል፣ ዲጂታልን ኦቶሜሽንን መሃንድስ ከምኡውን መስራቲ AYE Tech Hub እዩ — ንኣፍሪቃውያን መሃንድሳትን ማሕበረሰብን ግብራዊ ሶፍትዌርን ትምህርቲ ኢንጅነሪንግን ዝሃንጽ ስቱድዮ ቴክኖሎጂ ኢትዮጵያ። ብAYE Market፣ ኣወት ፍርያትን ኢንጅነሪንግን ካብ ጫፍ ናብ ጫፍ ይመርሕ፦ መተግበሪ Android፣ ስርዓታት ድሕሪ ትሪ፣ መሳርሒታት ቁጽጽር፣ ከምኡውን እዚ ዌብሳይት። ሸቶ ቀሊል እዩ — ንትግራይ ኣበይ ይኹን ካብ ዝተሃንጸ ዝኾነ ነገር ማዕረ ውሑስ፣ ዘመናዊን ብቑዕን ዕዳጋ ምሃብ፣ ብሓቂ ናይ ከባቢ ብዘይ ኻልእ ካብ ወጻኢ ዝመጸ ክኸዎ ዘይክእል መገዲ።",
+"founder.fullProfile":"ምሉእ መግለጺ ኣብ AYE Tech Hub",
+"founder.photoAlt":"ኣወት ግ. ንዋይ፣ መስራቲ AYE Tech Hub ከምኡውን AYE Market",
+"faq.tag":"❓ ሕቶታት",
+"faq.title_html":"ልሙዳት <span class=\"gradient-text\">ሕቶታት</span>",
+"faq.q1":"AYE Market ብሓቂ ነጻ ድዩ?",
+"faq.a1":"እወ። ኣካውንት ምፍጣር፣ ምንቕስቓስ፣ ምድላይ፣ ልጥፊ ዝርዝራት፣ ዝርርብ፣ ምምልካት ስራሕን ልጥፊ ክፍቲ ቦታታት ስራሕን ኩሎም ብምሉኦም ነጻ እዮም፣ ብዘይ ዝኾነ ኮሚሽን ኣብ ዝሸጥኩሞ ነገር። እቶም ጥራይ ዝኽፈሎም ፊቸራት ፍቓደኛ ተራእይነት ምድንፋዕ እዮም — 7-መዓልቲ ፕሮሞሽን፣ ፕሪሚየምን ፕሪሚየም+ ውጥናትን።",
+"faq.q2":"መተግበሪ እንታይ ቋንቋታት ይድግፍ?",
+"faq.a2":"ትግርኛ፣ ኣማርኛን እንግሊዝኛን — ኣብ ነፍሲ ወከፍ ገጽ፣ ፎርምን ምሕባርን ብምሉኡ ዝተተርጎመ። ኣብ ቅጥዕታት → ምርጫታት → ቋንቋ ኣብ ዝኾነ ግዜ ቀይሩ።",
+"faq.q3":"መተግበሪ ንምጥቃም መንነተይ ወይ ተሌፎነይ ከረጋግጽ ኣለኒ ድዩ?",
+"faq.a3":"ኣይፋል። ብዘይ ዝኾነ መረጋገጺ ክትንቀሳቐሱ፣ መልእኽቲ ክትሰዱ፣ ክትዕድጉ፣ ክትሸጡ፣ ስራሕ ክትልጥፉን ንስራሕቲ ክትምልክቱን ትኽእሉ። መረጋገጺ ፍቓደኛ እዩ — ንመግለጺኹም ዝርአ ባጅ ምትእምማን ይውስኽ ከምኡውን ንቀጸርቲ ምብጻሕ CV ይኸፍት። ብፋይዳ መንነት፣ መንነት መንበሪ ቀበሌ፣ ፍቓድ መዘወሪ፣ ፍቓድ ንግዲ ወይ ፓስፖርት ክትረጋገጹ ትኽእሉ።",
+"faq.q4":"ንፕሪሚየም ወይ ፕሮሞሽን ብኸመይ እኽፍል?",
+"faq.a4":"ኣብ መተግበሪ ውጥንኩም ምረጹ፣ ክፍሊት ብኢድ ምረጹ፣ ዝረኣየ መምርሒ ስዓቡ ከምኡውን ቅብሊት ክፍሊትኩም ስቐሉ። ጋንታና ይግምግምን ይነቕሕን — መብዛሕትኡ ግዜ ኣብ ውሽጢ ሓደ መዓልቲ ስራሕ። ምስ ጸደቐ ብቕጽበት ምሕባር ትቕበሉ። ስሉጥ ተለብርን ቻፓን ክፍሊታት ኣብ ምስራሕ ኣለዉ።",
+"faq.q5":"ክዘራረብ ከለኹ ሸያጣይ ቁጽሪ ተሌፎነይ ይርኢ ድዩ?",
+"faq.a5":"ኣይፋል። ኣብ-መተግበሪ ቻት ቁጽሪ ተሌፎንኩም ፈጺሙ ኣይገልጽን። መጠፍቲ ጻውዒት፣ ዋትስኣፕን ኤስኤምኤስን ዝረኣዩ ሸያጣይ ናቱ ቁጽሪ ከካፍል ምስ መረጸ ጥራይ እዩ — ንስኹምውን ናትኩም ከተካፍሉ ፈጺሙ ኣይግደዱን።",
+"faq.q6":"AYE Market ኣብ እንታይ ተሌፎናት ይሰርሕ?",
+"faq.a6":"Android 8.0 (Oreo) ካብኡ ንላዕሊ። ግድፍ iPhone ኣብ መደብ ኣሎ ግን ገና ኣይተረኽበን — ኣብ ታሕቲ ዘሎ ባጅ App Store ምስ ወጸ ክበርህ እዩ።",
+"faq.q7":"AYE Market ምትላል ብኸመይ ይትሓዝ?",
+"faq.a7_html":"ሰለስተ ደረጃታት፦ ምክልኻል (ባጃት መረጋገጺ፣ ደረጃታት ሸያጣይ፣ ዝተሓትመ መምርሒ ውሕስነት)፣ ምፍላጥ (ብሓደ-ትንካፈ ጥርዓን ኣብ ነፍሲ ወከፍ ዝርዝርን መግለጽን፣ ብሰብ ኣጻረይቲ ዝተገምገመ)፣ ከምኡውን ኣትግባር (ምውጋድ ዝርዝር፣ ማጠንቀቕታ፣ ደው ምባልን ክልከላን)። ምሉእ መምርሒ ኣብ <a href=\"safety-center/\" style=\"color:var(--green)\">ማእከል ውሕስነትና</a> ኣንብቡ።",
+"faq.q8":"ኣካውንተይን ሓበሬታይን ክድምስስ እኽእል ድየ?",
+"faq.a8_html":"እወ፣ ብቐዋምነት። <a href=\"account-deletion/\" style=\"color:var(--green)\">ገጽ ምድምሳስ ኣካውንት</a> ብጽሑ፣ ንስኹም ምዃንኩም ንምርግጋጽ እቶ ከምኡውን ሕቶኹም ኣቕርቡ። ምስ ጸደቐ፣ መእተዊኹም፣ መግለጺኹም፣ ዝርዝራትኩም፣ ስእልታትኩም፣ CVኹምን ብሕታዊ ሓበሬታኹምን ብቐዋምነት ይድምሰሱ። ኣቐዲምኩም ቅዳሕ ሓበሬታኹም ብ<a href=\"gdpr/\" style=\"color:var(--green)\">ገጽ መሰላት ብሕታዊነት</a> ክትሓቱ ውን ትኽእሉ ኢኹም።",
+"faq.q9":"AYE Market ንትግራይ ጥራይ ድዩ?",
+"faq.a9":"ሎሚ፣ እወ — ብሓሳብ። ተመኩሮ ቅድም ንሓንቲ ክልል ብዕምቆት ንሃንጽ ኣለና፦ ቋንቋታታ፣ ቦታታታ፣ ዕዳጋኣ። ምስፍሕፋሕ ናብ ዝያዳ ክልላት ኢትዮጵያ ቀንዲ ተመኩሮ ምስ ተረጋገጸ ዝተመደበ እዩ።",
+"faq.q10":"ጌጋ ረኺበ ወይ ርእይቶ ኣሎኒ — ናበይ ክሰዶ?",
+"faq.a10_html":"ናይ ኣብ-መተግበሪ መሳርሒ ርኢቶን ደገፍን ተጠቐሙ (ቅጥዕታት → ርኢቶ) — ጋንታና ብቐጥታ ኣብ መተግበሪ ዝምልሰሉ ቲኬት ደገፍ ይፈጥር። ወይ ኢመይል ግበሩ <a href=\"mailto:ayetechub@gmail.com\" style=\"color:var(--green)\">ayetechub@gmail.com</a>.",
+"download.tag":"📲 መተግበሪ ርኸቡ",
+"download.title_html":"AYE Market <span class=\"gradient-text\">ውረዱ</span>",
+"download.subtitle":"ኣብ Android ነጻ። ቀዳማይ ዝርዝርኩም ልጥፉ፣ ዝቕጽል ስራሕኩም ርኸቡ፣ ወይ ዝቕጽል ተቆጻሪኹም ቆጽሩ — ሎሚ።",
+"download.getItOn":"ርኸብዎ ኣብ",
+"download.comingSoonTo":"ቀልጢፉ ክመጽእ እዩ ኣብ",
+"download.comingSoonAttr":"ቀልጢፉ",
+"download.footnote":"Android 8.0+ · ነጻ ውርዲ · ኣብ Google Play ይጅምር",
+"download.mockTitle1":"ሲሚንቶ — 50 ኪግ ኮርማ (ጅምላ)",
+"download.mockPrice1":"ብዘተ",
+"download.mockLoc1":"📍 ናይ መቐለ ኢንዱስትሪያል ዞን ✓",
+"download.mockTitle2":"HP ኤሊትቡክ — ከም ሓድሽ",
+"download.mockLoc2":"📍 ዓይደር · ⭐ 4.9 ሸያጣይ",
+"contact.tag":"📮 ርኸቡና",
+"contact.title_html":"ንሕና <span class=\"gradient-text\">ንምሕጋዝ</span> ኣብዚ ኣለና",
+"contact.subtitle":"ደገፍ፣ ሕቶታት ንግዲ፣ ፕረስ ወይ ርኢቶ — ነፍሲ ወከፍ መልእኽቲ ናብቲ ብሓቂ መተግበሪ ዝሃንጽ ጋንታ ይበጽሕ።",
+"contact.card1Title":"ኢመይል ስደዱልና",
+"contact.card1Note":"ኣብ ውሽጢ 1-2 መዓልቲ ስራሕ ምላሽ ይወሃብ",
+"contact.card2Title":"ደገፍ ኣብ-መተግበሪ",
+"contact.card2Value":"ቅጥዕታት → ርኢቶ",
+"contact.card2Note":"ቀልጣፋይ — ኣገዳ ኣካውንትኩም ምስ መልእኽትኹም ይሕዝ",
+"contact.card3Title":"AYE Tech Hub ተኸተሉ",
+"contact.card3Note":"ዜናታት፣ ምሕዳሳትን ምጅማራትን",
+"footer.tagline_html":"ዘመናዊ ዕዳጋ ትግራይ ንምዕዳግ፣ ንምሻጥን ስራሕ ንምርካብን — ብውሕስነትን ብከባቢያውን። ፍርያት <a href=\"/\" style=\"color:var(--neon)\">AYE Tech Hub</a> እዩ።",
+"footer.colProduct":"ፍርያት",
+"footer.jobsMarketplace":"ዕዳጋ ስራሕ",
+"footer.premiumPlans":"ውጥናት ፕሪሚየም",
+"footer.download":"ውረድ",
+"footer.about":"ብዛዕባና",
+"footer.helpCenter":"ናይ ሓገዝ ማእከል",
+"footer.legalHub":"ኩሎም ፖሊሲታት (ናይ ሕጊ ማእከል)",
+"footer.colTrust":"እምነትን ውሕስነትን",
+"footer.safetyCenter":"ማእከል ውሕስነት",
+"footer.communityGuidelines":"መምርሒ ማሕበረሰብ",
+"footer.childrenPrivacy":"ብሕታዊነት ህጻናት",
+"footer.thirdParty":"ኣገልግሎት ሳልሳይ ወገን",
+"footer.dataSafety":"ውሕስነት ሓበሬታ",
+"footer.colLegal":"ሕጋዊን ብሕታዊነትን",
+"footer.privacyPolicy":"ፖሊሲ ብሕታዊነት",
+"footer.terms":"ውዕላት ኣገልግሎት",
+"footer.cookiePolicy":"ፖሊሲ ኩኪ",
+"footer.gdpr":"መሰላት ብሕታዊነት (GDPR)",
+"footer.deleteAccount":"ኣካውንተይ ደምስስ",
+"footer.copyright":"AYE Market — ፍርያት AYE Tech Hub። መሰል ሕጊ ዝተሓለወ እዩ።",
+"footer.madeFor":"ንትግራይ፣ ኢትዮጵያ ዝተሰርሐ 🇪🇹"
+}
+};
+
+var originalEN={};
+
+function captureOriginals(){
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var key=el.getAttribute('data-i18n');
+    if(originalEN[key]!==undefined)return;
+    originalEN[key]=key.endsWith('_html')?el.innerHTML:el.textContent;
+  });
+  document.querySelectorAll('[data-i18n-attr]').forEach(function(el){
+    el.getAttribute('data-i18n-attr').split(',').forEach(function(pair){
+      var parts=pair.split(':');
+      var attr=parts[0].trim(),key=parts[1].trim();
+      if(originalEN[key]!==undefined)return;
+      originalEN[key]=el.getAttribute(attr);
+    });
+  });
+}
+
+function apply(lang){
+  var dict=translations[lang]||{};
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var key=el.getAttribute('data-i18n');
+    var val=dict[key]!==undefined?dict[key]:originalEN[key];
+    if(val===undefined)return;
+    if(key.endsWith('_html')){el.innerHTML=val;}else{el.textContent=val;}
+  });
+  document.querySelectorAll('[data-i18n-attr]').forEach(function(el){
+    el.getAttribute('data-i18n-attr').split(',').forEach(function(pair){
+      var parts=pair.split(':');
+      var attr=parts[0].trim(),key=parts[1].trim();
+      var val=dict[key]!==undefined?dict[key]:originalEN[key];
+      if(val===undefined)return;
+      el.setAttribute(attr,val);
+    });
+  });
+  document.documentElement.setAttribute('lang',lang);
+  document.querySelectorAll('[data-lang-btn]').forEach(function(btn){
+    var active=btn.getAttribute('data-lang-btn')===lang;
+    btn.classList.toggle('is-active',active);
+    btn.setAttribute('aria-pressed',active?'true':'false');
+  });
+  try{localStorage.setItem('ayemarket_lang',lang);}catch(e){}
+}
+
+function setLang(lang){apply(lang);}
+window.ayeSetLang=setLang;
+
+document.addEventListener('DOMContentLoaded',function(){
+  captureOriginals();
+  var initial='en';
+  try{
+    var saved=localStorage.getItem('ayemarket_lang');
+    if(saved){
+      initial=saved;
+    }else{
+      var nav=(navigator.language||'').toLowerCase();
+      if(nav.indexOf('ti')===0)initial='ti';
+      else if(nav.indexOf('am')===0)initial='am';
+    }
+  }catch(e){}
+  apply(initial);
+  document.querySelectorAll('[data-lang-btn]').forEach(function(btn){
+    btn.addEventListener('click',function(){setLang(btn.getAttribute('data-lang-btn'));});
+  });
+});
+})();
+</script>
 
 <script>
 /* Navbar scroll effect */

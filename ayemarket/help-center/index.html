@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Help Center – AYE Market</title>
+<meta name="description" content="Answers for buyers, sellers, job seekers and employers on AYE Market — listings, messaging, payments, Premium, verification, reporting, and troubleshooting."/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#020817"/>
+<link rel="canonical" href="https://ayetechub.com/ayemarket/help-center/"/>
+<link rel="icon" type="image/png" href="/ayemarket/assets/images/aye-market-icon.png"/>
+<link rel="stylesheet" href="/ayemarket/assets/css/legal.css"/>
+<style>
+.help-cat{margin:2.4em 0 1em;font-size:1.3rem;font-weight:900}
+.help-list{display:flex;flex-direction:column;gap:10px;margin-bottom:2em}
+.help-item{border-radius:14px;border:1px solid var(--border);background:rgba(10,22,40,0.5);overflow:hidden}
+[data-theme="light"] .help-item{background:rgba(255,255,255,0.8)}
+.help-item summary{padding:16px 20px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;font-weight:700;font-size:.98rem;color:var(--text)}
+.help-item summary::-webkit-details-marker{display:none}
+.help-item summary::after{content:'▼';font-size:.65rem;color:var(--green);flex-shrink:0;transition:transform .2s}
+.help-item[open] summary::after{transform:rotate(180deg)}
+.help-item .help-a{padding:0 20px 18px;font-size:.94rem;color:var(--text-soft);line-height:1.75}
+.help-search{width:100%;padding:14px 18px;border-radius:14px;border:1.5px solid var(--border-strong);background:rgba(10,22,40,0.6);color:var(--text);font-size:.95rem;margin-bottom:8px}
+[data-theme="light"] .help-search{background:#fff}
+.help-search:focus{outline:none;border-color:var(--green)}
+.help-jump{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:2em}
+.help-jump a{font-size:.76rem;font-weight:700;letter-spacing:.5px;padding:7px 14px;border-radius:100px;border:1px solid var(--border-strong);color:var(--text-soft);background:rgba(34,197,94,0.05)}
+.help-jump a:hover{color:var(--green);border-color:var(--green)}
+</style>
+</head>
+<body>
+
+<header id="navbar">
+  <div class="container nav-inner">
+    <a href="/ayemarket/" class="brand">
+      <img src="/ayemarket/assets/images/aye-market-icon.png" alt="AYE Market"/>
+      <div>
+        <div class="brand-name"><span class="g">AYE </span><span class="b">Market</span></div>
+        <div class="brand-tag">Help Center</div>
+      </div>
+    </a>
+    <div class="nav-actions">
+      <button class="icon-btn" onclick="toggleTheme()" aria-label="Toggle theme">☀</button>
+      <a href="/ayemarket/" class="back-link">← AYE Market</a>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="page-tag">🆘 Help Center</div>
+    <h1 class="page-title">How Can We <span class="gradient-text">Help?</span></h1>
+    <p class="page-sub">Answers for buyers, sellers, job seekers, and employers — search or browse by topic.</p>
+    <span class="last-updated">Last updated: July 17, 2026 · Version 1.0</span>
+  </div>
+</div>
+
+<main class="container prose">
+  <input type="text" class="help-search" id="helpSearch" placeholder="Search help articles… (e.g. &quot;verify&quot;, &quot;refund&quot;, &quot;block&quot;)" oninput="filterHelp(this.value)"/>
+  <div class="help-jump">
+    <a href="#getting-started">Getting Started</a>
+    <a href="#buying">Buying</a>
+    <a href="#selling">Selling</a>
+    <a href="#listings">Listings</a>
+    <a href="#messaging">Messaging</a>
+    <a href="#payments">Payments &amp; Premium</a>
+    <a href="#verification">Verification</a>
+    <a href="#reporting">Reporting &amp; Safety</a>
+    <a href="#jobs">Jobs</a>
+    <a href="#account">Account</a>
+    <a href="#troubleshooting">Troubleshooting</a>
+  </div>
+
+  <h2 class="help-cat" id="getting-started">🚀 Getting Started</h2>
+  <div class="help-list" data-cat>
+    <details class="help-item"><summary>How do I create an account?</summary><div class="help-a">Download AYE Market from Google Play, open the app, and sign up with your email, phone number, or Google account. Pick which roles apply to you — Buyer, Seller, Job Seeker, Employer — you can select more than one and change this anytime in Settings.</div></details>
+    <details class="help-item"><summary>Is AYE Market free to use?</summary><div class="help-a">Yes. Browsing, searching, posting listings, chatting, applying to jobs, and posting job openings are all completely free, with zero commission on anything sold. Optional paid upgrades (7-Day Promotion, Premium, Premium+) only add extra visibility — they're never required.</div></details>
+    <details class="help-item"><summary>What roles can one account have?</summary><div class="help-a">Buyer, Seller, Job Seeker, and Employer — toggle any combination on or off in Settings. Switching a role off just hides that section of the app; nothing you've posted is ever deleted.</div></details>
+    <details class="help-item"><summary>Which languages does the app support?</summary><div class="help-a">Tigrinya (ትግርኛ), Amharic (አማርኛ), and English, fully translated across every screen. Change it anytime in Settings → Preferences → Language.</div></details>
+    <details class="help-item"><summary>What devices does AYE Market work on?</summary><div class="help-a">Android 8.0 (Oreo) and above. An iOS version is planned but not yet available.</div></details>
+  </div>
+
+  <h2 class="help-cat" id="buying">🛍️ Buying</h2>
+  <div class="help-list" data-cat>
+    <details class="help-item"><summary>How do I search for something specific?</summary><div class="help-a">Use the search bar for keywords (it matches singular and plural forms automatically), then narrow results with category filters — price range, condition, brand, and category-specific attributes like bedrooms or mileage.</div></details>
+    <details class="help-item"><summary>How does "nearby" search work?</summary><div class="help-a">With location permission enabled, listings can be sorted by actual distance from where you are, using Tigray's real region → zone → wereda → tabiya hierarchy plus GPS.</div></details>
+    <details class="help-item"><summary>How do I save a listing or a search?</summary><div class="help-a">Tap the heart icon on any listing to add it to Favorites. You can also save a search's filters and get notified when new matching listings appear.</div></details>
+    <details class="help-item"><summary>How do I contact a seller?</summary><div class="help-a">Every listing shows the contact methods that seller has enabled — in-app Chat, Call, WhatsApp, or SMS. Pick whichever you prefer; the seller decides which channels to accept.</div></details>
+    <details class="help-item"><summary>Can I trust the photos on a listing?</summary><div class="help-a">Listings should carry real photos of the actual item — this is required by our <a href="/ayemarket/listing-policy/">Listing Policy</a>. If you spot stock or misleading photos, report the listing.</div></details>
+  </div>
+
+  <h2 class="help-cat" id="selling">📤 Selling</h2>
+  <div class="help-list" data-cat>
+    <details class="help-item"><summary>How do I post a listing?</summary><div class="help-a">Tap the post button, choose a category, add up to 8 photos (drag to reorder — the first becomes your cover photo), fill in the category-specific fields, set your price and location, and publish. Your draft auto-saves as you go.</div></details>
+    <details class="help-item"><summary>Does my listing need admin approval before it's visible?</summary><div class="help-a">No — listings publish immediately and are reviewed reactively, not gated behind pre-approval. Our moderation team can still remove or hide a listing afterward if it's reported or found to violate our policies.</div></details>
+    <details class="help-item"><summary>How do I manage my listings?</summary><div class="help-a">Go to My Listings to edit, pause, mark as sold, archive, duplicate, or delete any listing at any time.</div></details>
+    <details class="help-item"><summary>What does the Seller Dashboard show?</summary><div class="help-a">Total views, favorites, and sold counts for your listings. Premium and Premium+ sellers see deeper analytics and trends.</div></details>
+    <details class="help-item"><summary>Can I hide my phone number?</summary><div class="help-a">Yes. Set your contact preference to chat-only if you don't want to share your number — buyers can still reach you in-app without ever seeing it.</div></details>
+    <details class="help-item"><summary>Can I open a business/storefront account?</summary><div class="help-a">Yes — add a store name and business presence to your profile so buyers can browse everything you're selling in one place.</div></details>
+  </div>
+
+  <h2 class="help-cat" id="listings">📋 Listings</h2>
+  <div class="help-list" data-cat>
+    <details class="help-item"><summary>Why was my listing removed?</summary><div class="help-a">Usually because it was reported and found to violate our <a href="/ayemarket/listing-policy/">Listing Policy</a>, <a href="/ayemarket/prohibited-items-policy/">Prohibited Items Policy</a>, or Community Guidelines — e.g. wrong category, misleading price, duplicate posting, or stock photos. You can contest the decision through our <a href="/ayemarket/appeals-process/">Appeals Process</a>.</div></details>
+    <details class="help-item"><summary>Can I post the same item in multiple categories?</summary><div class="help-a">No — duplicate or cross-posted listings for the same item are against policy. Pick the single most accurate category.</div></details>
+    <details class="help-item"><summary>How many photos can I add?</summary><div class="help-a">Up to 8 photos per listing, and you can drag to reorder them — whichever is first becomes the cover photo shown in search results.</div></details>
+    <details class="help-item"><summary>What happens to a listing when I mark it Sold?</summary><div class="help-a">It's removed from active search results but stays in your My Listings history. Nothing is deleted unless you delete it yourself.</div></details>
+  </div>
+
+  <h2 class="help-cat" id="messaging">💬 Messaging</h2>
+  <div class="help-list" data-cat>
+    <details class="help-item"><summary>Does chat reveal my phone number?</summary><div class="help-a">No, never. In-app chat keeps your number private. Call, WhatsApp, and SMS buttons only appear when a seller has separately chosen to share their own number.</div></details>
+    <details class="help-item"><summary>Someone is messaging me inappropriately — what do I do?</summary><div class="help-a">Report the conversation or the user immediately (see our 8 report reasons, including Harassment and Spam), and use Block to stop them from messaging you again. See our <a href="/ayemarket/messaging-policy/">Messaging Policy</a> and <a href="/ayemarket/block-user-policy/">Block User Policy</a>.</div></details>
+    <details class="help-item"><summary>Are my chat messages kept forever?</summary><div class="help-a">Chats are retained for safety and moderation purposes. If you delete your account, your side of past conversations is anonymized rather than fully erased, so the other person's conversation history stays intact. See our <a href="/ayemarket/data-retention-policy/">Data Retention Policy</a>.</div></details>
+  </div>
+
+  <h2 class="help-cat" id="payments">💳 Payments &amp; Premium</h2>
+  <div class="help-list" data-cat>
+    <details class="help-item"><summary>What are the paid plans?</summary><div class="help-a">7-Day Listing Promotion (200 ETB, boosts one listing for a week), Premium (400 ETB/month, broader visibility and analytics), and Premium+ (600 ETB/month, the highest visibility tier). Everything else in the app is free.</div></details>
+    <details class="help-item"><summary>How do I pay?</summary><div class="help-a">Payments are currently processed manually: choose your plan, follow the in-app payment instructions, submit your reference number and receipt, and our team reviews and activates it — usually within one business day. Automatic Telebirr and Chapa payments are in development.</div></details>
+    <details class="help-item"><summary>What happens when my Premium plan expires?</summary><div class="help-a">Your listings are never deleted — they simply return to normal, non-boosted ranking. Renew anytime to restore the boost.</div></details>
+    <details class="help-item"><summary>Can I get a refund?</summary><div class="help-a">Paid upgrades are generally non-refundable once activated, since the benefit (visibility) is delivered immediately. Exceptions exist for billing errors or platform-side activation failures — see our <a href="/ayemarket/refund-cancellation-policy/">Refund &amp; Cancellation Policy</a>.</div></details>
+    <details class="help-item"><summary>Does AYE Market ever ask for my card or bank PIN?</summary><div class="help-a">Never. AYE Market does not collect card numbers, CVVs, or bank PINs anywhere in the app. Any message asking for these, claiming to be AYE Market, is a scam — report it immediately.</div></details>
+  </div>
+
+  <h2 class="help-cat" id="verification">✅ Verification</h2>
+  <div class="help-list" data-cat>
+    <details class="help-item"><summary>Do I need to verify my identity to use the app?</summary><div class="help-a">No — browsing, messaging, buying, selling, and applying to jobs all work without any ID verification. It's entirely optional and adds a trust badge plus CV-viewing rights for employers.</div></details>
+    <details class="help-item"><summary>What documents can I use to verify?</summary><div class="help-a">A Fayda ID, Kebele Residence ID, Driver's License, Business License, or Passport — reviewed by a real person on our team, never auto-approved.</div></details>
+    <details class="help-item"><summary>Who sees my ID documents?</summary><div class="help-a">Only our verification team. Never other users, never third parties. See our <a href="/ayemarket/identity-verification-policy/">Identity Verification Policy</a>.</div></details>
+    <details class="help-item"><summary>My verification was rejected — what now?</summary><div class="help-a">Check that your document is legible, current, and the name matches your account, then resubmit. You can also appeal via our <a href="/ayemarket/appeals-process/">Appeals Process</a>.</div></details>
+  </div>
+
+  <h2 class="help-cat" id="reporting">🛡️ Reporting &amp; Safety</h2>
+  <div class="help-list" data-cat>
+    <details class="help-item"><summary>How do I report a listing or a seller?</summary><div class="help-a">Tap Report on any listing or profile and choose a reason: Scam/Fraud, Fake Listings, Spam, Harassment, Offensive Content, Selling Prohibited Items, Impersonation, or Other. Reports go to a human moderation queue.</div></details>
+    <details class="help-item"><summary>What's the difference between Block and Report?</summary><div class="help-a">Report flags a listing or user to our moderation team for review and possible enforcement. Block is a personal filter — it hides that user's listings from you and stops them from messaging you, without notifying them.</div></details>
+    <details class="help-item"><summary>Will I be told what happened to my report?</summary><div class="help-a">To protect reporter privacy, we don't share the specific outcome of every report, but every report is reviewed and acted on where warranted.</div></details>
+    <details class="help-item"><summary>How do I avoid scams?</summary><div class="help-a">Never pay before inspecting an item, meet in public places, and be wary of anyone claiming to be "AYE Market escrow" — we never handle buyer-seller payments. See our full <a href="/ayemarket/safety-center/">Safety Center</a>.</div></details>
+  </div>
+
+  <h2 class="help-cat" id="jobs">💼 Jobs</h2>
+  <div class="help-list" data-cat>
+    <details class="help-item"><summary>How do I apply for a job?</summary><div class="help-a">Build your Job Seeker Profile with your CV, skills, and experience once, then apply to any opening in one tap. Track every application's status — pending, viewed, shortlisted — from your applications dashboard.</div></details>
+    <details class="help-item"><summary>Who can see my CV?</summary><div class="help-a">Only identity-verified employers. Unverified accounts can see that a CV exists, never its contents.</div></details>
+    <details class="help-item"><summary>How do I post a job opening?</summary><div class="help-a">As an Employer, use Post a Job with your company name, vacancies, responsibilities, required skills, salary, deadline, and location. Manage postings and applicants from your Employer Dashboard.</div></details>
+    <details class="help-item"><summary>What's a "Jobs Wanted" ad?</summary><div class="help-a">A candidate-side ad where job seekers advertise their availability, skills, and experience so employers can find and contact them directly — the mirror image of a job posting.</div></details>
+  </div>
+
+  <h2 class="help-cat" id="account">👤 Account Management</h2>
+  <div class="help-list" data-cat>
+    <details class="help-item"><summary>How do I change my language, theme, or notification settings?</summary><div class="help-a">All in Settings → Preferences. Changes apply instantly, no restart needed.</div></details>
+    <details class="help-item"><summary>How do I see who I've blocked?</summary><div class="help-a">Settings → Blocked Users lists everyone you've blocked, with an option to unblock at any time.</div></details>
+    <details class="help-item"><summary>How do I delete my account?</summary><div class="help-a">Visit our <a href="/ayemarket/account-deletion/">Account Deletion page</a>, sign in to verify it's you, and submit your request. Once approved, your profile, listings, photos, CV, and personal data are permanently deleted.</div></details>
+    <details class="help-item"><summary>Can I get a copy of my data first?</summary><div class="help-a">Yes — request an export anytime via our <a href="/ayemarket/gdpr/">Privacy Rights page</a> before deleting your account, or independently of deletion.</div></details>
+  </div>
+
+  <h2 class="help-cat" id="troubleshooting">🔧 Troubleshooting</h2>
+  <div class="help-list" data-cat>
+    <details class="help-item"><summary>The app won't let me sign in — what should I check?</summary><div class="help-a">Confirm you're using the same sign-in method you registered with (email, phone, or Google), check your internet connection, and make sure the app is updated to the latest version from Google Play.</div></details>
+    <details class="help-item"><summary>I'm not receiving notifications.</summary><div class="help-a">Check Settings → Notifications inside the app, and make sure notification permission is granted for AYE Market in your phone's system settings.</div></details>
+    <details class="help-item"><summary>A photo or CV won't upload.</summary><div class="help-a">Check your internet connection and that the file isn't unusually large; try again on Wi-Fi. If it keeps failing, contact support with a screenshot of any error message.</div></details>
+    <details class="help-item"><summary>I found a bug or have a feature idea.</summary><div class="help-a">Use Settings → Feedback in the app — it creates a ticket our team answers directly, or email <a href="mailto:ayetechub@gmail.com">ayetechub@gmail.com</a>.</div></details>
+    <details class="help-item"><summary>My question isn't answered here.</summary><div class="help-a">Email <a href="mailto:ayetechub@gmail.com">ayetechub@gmail.com</a> or use in-app Settings → Feedback — a real person on our team replies, usually within 1–2 business days.</div></details>
+  </div>
+
+  <p style="text-align:center;margin-top:2em">
+    Still stuck? <a href="mailto:ayetechub@gmail.com">Email us</a> · <a href="/ayemarket/legal-hub/">Legal Hub</a> · <a href="/ayemarket/safety-center/">Safety Center</a>
+  </p>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span data-year>2026</span> AYE Market — a product of <a href="/" style="color:var(--neon)">AYE Tech Hub</a></span>
+    <div class="footer-links">
+      <a href="/ayemarket/about/">About</a>
+      <a href="/ayemarket/legal-hub/">Legal Hub</a>
+      <a href="/ayemarket/safety-center/">Safety</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleTheme(){const h=document.documentElement;const n=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('ayemarket-theme',n)}
+(function(){const s=localStorage.getItem('ayemarket-theme');if(s)document.documentElement.setAttribute('data-theme',s)})();
+document.querySelectorAll('[data-year]').forEach(e=>e.textContent=new Date().getFullYear());
+function filterHelp(q){
+  q=q.trim().toLowerCase();
+  document.querySelectorAll('.help-item').forEach(item=>{
+    const text=item.textContent.toLowerCase();
+    const match=!q||text.includes(q);
+    item.style.display=match?'':'none';
+    if(q&&match)item.open=true;
+  });
+  document.querySelectorAll('[data-cat]').forEach(cat=>{
+    const anyVisible=[...cat.children].some(c=>c.style.display!=='none');
+    cat.previousElementSibling.style.display=anyVisible?'':'none';
+    cat.style.display=anyVisible?'':'none';
+  });
+}
+</script>
+</body>
+</html>

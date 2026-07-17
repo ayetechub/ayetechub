@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Security Policy – AYE Market</title>
+<meta name="description" content="The technical and organizational measures AYE Market takes to protect user data, your own security responsibilities, and how to report a vulnerability responsibly."/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#020817"/>
+<link rel="canonical" href="https://ayetechub.com/ayemarket/security-policy/"/>
+<link rel="icon" type="image/png" href="/ayemarket/assets/images/aye-market-icon.png"/>
+<link rel="stylesheet" href="/ayemarket/assets/css/legal.css"/>
+</head>
+<body>
+
+<header id="navbar">
+  <div class="container nav-inner">
+    <a href="/ayemarket/" class="brand">
+      <img src="/ayemarket/assets/images/aye-market-icon.png" alt="AYE Market"/>
+      <div>
+        <div class="brand-name"><span class="g">AYE </span><span class="b">Market</span></div>
+        <div class="brand-tag">Security Policy</div>
+      </div>
+    </a>
+    <div class="nav-actions">
+      <button class="icon-btn" onclick="toggleTheme()" aria-label="Toggle theme">☀</button>
+      <a href="/ayemarket/" class="back-link">← AYE Market</a>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="page-tag">🔐 Legal</div>
+    <h1 class="page-title">Security <span class="gradient-text">Policy</span></h1>
+    <p class="page-sub">How we protect your data, what to do on your end, and how to report a vulnerability responsibly.</p>
+    <span class="last-updated">Last updated: July 17, 2026 · Version 1.0</span>
+  </div>
+</div>
+
+<main class="container prose">
+  <p>This Security Policy describes the technical and organizational measures AYE Tech Hub takes to protect user data on the AYE Market app and website (the "Service"), what's expected of you as a user, and how to responsibly report a security vulnerability. It complements our <a href="/ayemarket/privacy-policy/">Privacy Policy</a>, which covers what data we collect and why.</p>
+
+  <div class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#measures">Our security measures</a></li>
+      <li><a href="#access-control">Access control</a></li>
+      <li><a href="#user-responsibilities">Your security responsibilities</a></li>
+      <li><a href="#vulnerability">Reporting a vulnerability</a></li>
+      <li><a href="#breach">In the event of a breach</a></li>
+      <li><a href="#law">Applicable law</a></li>
+      <li><a href="#changes">Changes</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </div>
+
+  <h2 id="measures">1. Our security measures</h2>
+  <ul>
+    <li><strong>Encryption in transit</strong> — all communication between the app and our backend is encrypted using HTTPS/TLS.</li>
+    <li><strong>Encryption at rest</strong> — data stored in Firebase (Cloud Firestore and Firebase Storage) is encrypted at rest, as provided by Google's Firebase platform.</li>
+    <li><strong>Firestore security rules</strong> — server-side rules enforce per-user data access on a least-privilege basis: you can read and write your own data, and only the specific data others have made public (listings, public profile fields) is visible to them.</li>
+    <li><strong>Restricted access to sensitive documents</strong> — ID verification documents (Fayda ID, Kebele Residence ID, Driver's License, Business License, Passport) and payment receipts are restricted to our verification and payment review teams only; they are never visible to other users, including the seller's own buyers.</li>
+    <li><strong>Server-side enforcement of sensitive actions</strong> — approving a verification or payment request, or deleting an account, is performed exclusively through server-side Cloud Functions after an administrator's explicit action, never trusted from the client app alone.</li>
+    <li><strong>Logged admin actions</strong> — moderation and administrative actions taken on accounts and content are logged for accountability.</li>
+  </ul>
+
+  <h2 id="access-control">2. Access control</h2>
+  <p>Internal access to user data is limited to what a given team needs to do its job — verification reviewers see submitted ID documents, payment reviewers see payment receipts, and moderators see reported content. This separation limits what any single compromised account or point of failure could expose.</p>
+
+  <h2 id="user-responsibilities">3. Your security responsibilities</h2>
+  <ul>
+    <li><strong>Use a strong, unique password</strong> for your AYE Market account — not one reused from another service.</li>
+    <li><strong>Never share an OTP code</strong> with anyone. Neither AYE Market staff nor a legitimate buyer or seller will ever legitimately ask you for one — a request for your OTP is always a red flag. See our <a href="/ayemarket/fraud-prevention-policy/">Fraud Prevention Policy</a>.</li>
+    <li><strong>Recognize phishing attempts</strong> — be suspicious of links sent in chat asking you to log in or enter payment details; AYE Market never requests this through in-app chat.</li>
+    <li><strong>Keep the app updated</strong> to the latest version, so you have current security fixes.</li>
+    <li><strong>Sign in with Google or Facebook where convenient</strong> — these benefit from that provider's own account security, in addition to email/password and phone sign-in options.</li>
+    <li><strong>Report a compromised account</strong> to us immediately if you notice activity you didn't perform.</li>
+  </ul>
+
+  <h2 id="vulnerability">4. Reporting a vulnerability</h2>
+  <p>If you discover a security vulnerability in the AYE Market app, website, or backend, we want to hear about it before anyone else does. Email <a href="mailto:ayetechub@gmail.com">ayetechub@gmail.com</a> with:</p>
+  <ul>
+    <li>A clear description of the vulnerability and its potential impact.</li>
+    <li>Steps to reproduce it, if possible.</li>
+    <li>Any relevant screenshots, logs, or proof-of-concept detail.</li>
+  </ul>
+  <p>Please report responsibly: don't access, modify, or delete data beyond what's necessary to demonstrate the issue, and don't publicly disclose a vulnerability until we've had a reasonable opportunity to investigate and fix it. We commit to acknowledging genuine reports and working in good faith with anyone who reports responsibly.</p>
+
+  <h2 id="breach">5. In the event of a breach</h2>
+  <p>If a security incident is confirmed to have exposed user data, we will investigate, take steps to contain and remediate it, and notify affected users and any relevant authority as required by applicable law, consistent with the data protection commitments in our <a href="/ayemarket/privacy-policy/">Privacy Policy</a>.</p>
+
+  <h2 id="law">6. Applicable law</h2>
+  <p>This policy is governed by the laws of the Federal Democratic Republic of Ethiopia, including applicable data protection requirements.</p>
+
+  <h2 id="changes">7. Changes to this policy</h2>
+  <p>We may update this policy as our security practices evolve. Material changes are reflected by updating the "Last updated" date above.</p>
+
+  <h2 id="contact">8. Contact</h2>
+  <p>Security questions or vulnerability reports: <a href="mailto:ayetechub@gmail.com">ayetechub@gmail.com</a>.</p>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span data-year>2026</span> AYE Market — a product of <a href="/" style="color:var(--neon)">AYE Tech Hub</a></span>
+    <div class="footer-links">
+      <a href="/ayemarket/legal-hub/">All Policies</a>
+      <a href="/ayemarket/privacy-policy/">Privacy</a>
+      <a href="/ayemarket/terms/">Terms</a>
+      <a href="/ayemarket/community-guidelines/">Guidelines</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleTheme(){const h=document.documentElement;const n=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('ayemarket-theme',n)}
+(function(){const s=localStorage.getItem('ayemarket-theme');if(s)document.documentElement.setAttribute('data-theme',s)})();
+document.querySelectorAll('[data-year]').forEach(e=>e.textContent=new Date().getFullYear());
+</script>
+</body>
+</html>
