@@ -1,0 +1,2330 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+<title>Habesha Hearts – Ethiopian & Eritrean Dating App | Find Your Match</title>
+<meta name="description" content="Habesha Hearts is the premier dating app for Ethiopian and Eritrean diaspora worldwide. Find meaningful connections with people who share your culture, language, and values."/>
+<meta name="keywords" content="Habesha Hearts, Ethiopian dating app, Eritrean dating app, habesha dating, Ethiopian singles, Eritrean singles, diaspora dating, habesha match, Ethiopian diaspora"/>
+<meta name="author" content="AYE Tech Hub"/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#020817"/>
+<link rel="canonical" href="https://ayetechub.com/habesha-hearts.html"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Habesha Hearts – Ethiopian & Eritrean Dating App"/>
+<meta property="og:description" content="Find meaningful connections with people who share your culture, language, and values. Built for the Ethiopian and Eritrean diaspora worldwide."/>
+<meta property="og:url" content="https://ayetechub.com/habesha-hearts.html"/>
+<meta property="og:image" content="https://ayetechub.com/assets/images/og-cover-v2.png"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Habesha Hearts – Ethiopian & Eritrean Dating App"/>
+<meta name="twitter:description" content="Find meaningful connections with people who share your culture, language, and values."/>
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23020817'/%3E%3Crect x='3' y='3' width='94' height='94' rx='20' fill='none' stroke='%2322c55e' stroke-width='3'/%3E%3Ctext x='50' y='64' font-family='Arial Black,sans-serif' font-size='38' text-anchor='middle'%3E%F0%9F%92%9A%3C/text%3E%3C/svg%3E"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;700;900&display=swap"/>
+
+<style>
+/* ============================================================
+   HABESHA HEARTS LANDING PAGE
+   Matches AYE Tech Hub design language — dark, glass, green
+   ============================================================ */
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;background:#020817;color:#e2e8f0;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+img{max-width:100%;display:block}
+ul{list-style:none}
+h1,h2,h3,h4{font-weight:700;line-height:1.2;letter-spacing:-0.5px}
+
+:root{
+  --green:#22c55e;
+  --green-dark:#16a34a;
+  --green-light:#4ade80;
+  --green-glow:rgba(34,197,94,0.3);
+  --bg:#020817;
+  --bg-card:#0a1628;
+  --border:rgba(34,197,94,0.15);
+  --border-strong:rgba(34,197,94,0.3);
+  --text:#e2e8f0;
+  --text-soft:#94a3b8;
+  --text-muted:#475569;
+  --neon:#00d4ff;
+}
+[data-theme="light"]{
+  --bg:#f0f4f8;--bg-card:#fff;
+  --border:rgba(22,163,74,0.15);--border-strong:rgba(22,163,74,0.35);
+  --text:#1e293b;--text-soft:#475569;--text-muted:#94a3b8;
+}
+/* Dark theme: boost card body text to slate-300 so it is readable on dark cards */
+[data-theme="dark"] .feature-desc,
+[data-theme="dark"] .mission-desc,
+[data-theme="dark"] .safety-desc,
+[data-theme="dark"] .step-desc,
+[data-theme="dark"] .testi-text,
+[data-theme="dark"] .faq-a,
+[data-theme="dark"] .plan-feature,
+[data-theme="dark"] .founder-bio{color:#cbd5e1}
+body{background:var(--bg);color:var(--text)}
+
+.container{max-width:1280px;margin:0 auto;padding:0 20px}
+section{padding:80px 0;position:relative;overflow:hidden}
+@media(max-width:640px){section{padding:60px 0}}
+
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--green);border-radius:3px}
+
+/* ---- GRADIENT TEXT ---- */
+.gradient-text{
+  background:linear-gradient(135deg,#22c55e 0%,#ffffff 50%,#4ade80 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+[data-theme="light"] .gradient-text{
+  background:linear-gradient(135deg,#15803d 0%,#7c3aed 50%,#16a34a 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.neon-text{color:var(--green);text-shadow:0 0 12px rgba(34,197,94,0.5)}
+
+/* ---- GLASS ---- */
+.glass{
+  background:rgba(10,22,40,0.65);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:1px solid var(--border);
+}
+[data-theme="light"] .glass{background:rgba(255,255,255,0.75)}
+
+/* ---- KEYFRAMES ---- */
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse-green{0%,100%{box-shadow:0 0 20px rgba(34,197,94,0.3)}50%{box-shadow:0 0 50px rgba(34,197,94,0.7)}}
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes heartbeat{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+
+/* ---- REVEAL ---- */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ---- NAVBAR ---- */
+#navbar{position:fixed;top:0;left:0;right:0;z-index:1000;transition:all .3s;padding:14px 0}
+#navbar.scrolled{background:rgba(2,8,23,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:8px 0}
+[data-theme="light"] #navbar.scrolled{background:rgba(240,244,248,0.95)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-logo{
+  width:42px;height:42px;border-radius:12px;
+  background:linear-gradient(135deg,var(--green-dark),var(--green));
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;animation:heartbeat 2.5s ease-in-out infinite;
+  box-shadow:0 0 16px var(--green-glow);
+}
+.brand-text{display:flex;flex-direction:column}
+.brand-name{font-weight:900;font-size:1.25rem;color:var(--green);letter-spacing:.3px}
+.brand-tag{font-size:.62rem;color:var(--text-muted);letter-spacing:1.5px;text-transform:uppercase}
+/* ---- LANGUAGE SWITCHER ---- */
+.lang-switcher{display:flex;align-items:center;gap:3px;background:rgba(34,197,94,0.06);border:1px solid var(--border-strong);border-radius:9px;padding:3px;font-family:'Noto Sans Ethiopic','Segoe UI',sans-serif}
+.lang-btn{padding:4px 9px;border-radius:6px;font-size:.68rem;font-weight:700;color:var(--text-muted);cursor:pointer;transition:all .2s;background:none;border:none;font-family:inherit;letter-spacing:.5px}
+.lang-btn.active,.lang-btn:hover{background:var(--green);color:#fff}
+.nav-menu{display:none;gap:20px;align-items:center}
+@media(min-width:1024px){.nav-menu{display:flex}}
+.nav-link{position:relative;color:var(--text-soft);font-size:.75rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:6px 0;transition:color .3s}
+.nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--green);transition:width .3s}
+.nav-link:hover{color:var(--green)}
+.nav-link:hover::after{width:100%}
+.nav-controls{display:flex;align-items:center;gap:8px}
+.icon-btn{width:38px;height:38px;border-radius:9px;background:rgba(34,197,94,0.05);border:1px solid var(--border-strong);color:var(--green);display:flex;align-items:center;justify-content:center;transition:all .3s;font-size:.9rem}
+.icon-btn:hover{background:rgba(34,197,94,0.15);transform:translateY(-2px)}
+.hamburger{display:flex}
+@media(min-width:1024px){.hamburger{display:none}}
+#mobile-menu{display:none;border-top:1px solid var(--border);margin-top:10px;padding:8px 20px 16px}
+#mobile-menu.open{display:block}
+.mobile-link{display:block;padding:12px 0;font-size:.78rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-soft);border-bottom:1px solid rgba(34,197,94,0.08);transition:color .2s}
+.mobile-link:hover{color:var(--green)}
+
+/* ---- BUTTONS ---- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:12px;font-weight:700;font-size:.85rem;letter-spacing:.5px;transition:all .3s;white-space:nowrap;cursor:pointer}
+.btn-green{background:linear-gradient(135deg,var(--green-dark),var(--green));color:#fff;box-shadow:0 4px 20px var(--green-glow)}
+.btn-green:hover{transform:translateY(-3px);box-shadow:0 8px 35px rgba(34,197,94,0.5)}
+.btn-outline{border:1.5px solid var(--border-strong);color:var(--green);background:transparent}
+.btn-outline:hover{background:rgba(34,197,94,0.1);transform:translateY(-2px)}
+.btn-store{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:14px 22px;border-radius:14px;
+  border:1.5px solid var(--border-strong);
+  background:rgba(10,22,40,0.8);color:var(--text);
+  transition:all .3s;min-width:180px;
+}
+.btn-store:hover{border-color:var(--green);background:rgba(34,197,94,0.08);transform:translateY(-3px);box-shadow:0 8px 30px var(--green-glow)}
+[data-theme="light"] .btn-store{background:rgba(255,255,255,0.8)}
+.btn-store .store-icon{font-size:1.8rem;line-height:1}
+.btn-store .store-text .label{font-size:.65rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px}
+.btn-store .store-text .name{font-size:1rem;font-weight:700;color:var(--text)}
+.btn-sm{padding:9px 18px;font-size:.78rem}
+
+/* ---- HERO ---- */
+#hero{
+  min-height:100vh;display:flex;align-items:center;
+  padding-top:100px;
+  background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(34,197,94,0.12) 0%,transparent 70%);
+}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr;text-align:center}}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 14px;border-radius:100px;
+  border:1px solid var(--border-strong);
+  background:rgba(34,197,94,0.08);
+  font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--green);margin-bottom:20px;
+}
+.hero-headline{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;margin-bottom:20px;line-height:1.1}
+.hero-subtitle{font-size:1.05rem;color:var(--text-soft);margin-bottom:32px;max-width:480px;line-height:1.7}
+@media(max-width:900px){.hero-subtitle{margin:0 auto 32px}}
+.hero-buttons{display:flex;gap:14px;flex-wrap:wrap}
+@media(max-width:900px){.hero-buttons{justify-content:center}}
+.hero-stats{display:flex;gap:28px;margin-top:36px}
+@media(max-width:900px){.hero-stats{justify-content:center}}
+.stat{text-align:center}
+.stat-num{font-size:1.6rem;font-weight:900;color:var(--green)}
+.stat-label{font-size:.65rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px}
+
+/* ---- PHONE MOCKUP ---- */
+.phone-wrap{display:flex;justify-content:center;align-items:center;gap:20px;position:relative}
+.phone{
+  width:220px;
+  height:430px;
+  border-radius:38px;
+  background:linear-gradient(160deg,#0d1f35,#061020);
+  border:2px solid rgba(34,197,94,0.4);
+  box-shadow:0 30px 80px rgba(0,0,0,0.6),0 0 0 1px rgba(34,197,94,0.1),inset 0 0 30px rgba(34,197,94,0.03);
+  position:relative;overflow:hidden;
+  animation:float 4s ease-in-out infinite;
+  display:flex;flex-direction:column;
+}
+.phone-2{animation-delay:.8s;opacity:.75;transform:scale(0.88);margin-top:30px}
+.phone-notch{
+  width:80px;height:22px;
+  background:#020817;border-radius:0 0 14px 14px;
+  margin:0 auto;
+  border-bottom:1px solid rgba(34,197,94,0.2);
+}
+.phone-screen{flex:1;padding:8px;display:flex;flex-direction:column;gap:6px;overflow:hidden}
+.phone-card{
+  border-radius:16px;overflow:hidden;position:relative;
+  background:linear-gradient(160deg,#1a2a1a,#0f1f0f);
+  border:1px solid rgba(34,197,94,0.2);
+  flex:1;display:flex;flex-direction:column;
+}
+.phone-card-img{
+  flex:1;
+  background:linear-gradient(160deg,rgba(34,197,94,0.15),rgba(22,163,74,0.08));
+  display:flex;align-items:center;justify-content:center;
+  font-size:3rem;
+}
+.phone-card-info{
+  padding:8px 10px;
+  background:linear-gradient(to top,rgba(0,0,0,0.9),transparent);
+}
+.phone-card-name{font-size:.72rem;font-weight:700;color:#fff;margin-bottom:2px}
+.phone-card-sub{font-size:.58rem;color:rgba(255,255,255,0.6)}
+.phone-actions{display:flex;gap:6px;padding:6px 8px;justify-content:center}
+.phone-btn{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;border:1px solid rgba(255,255,255,0.2)}
+.phone-btn-like{background:rgba(34,197,94,0.2);border-color:rgba(34,197,94,0.4)}
+.phone-btn-nope{background:rgba(239,68,68,0.15);border-color:rgba(239,68,68,0.3)}
+.phone-indicator{display:flex;gap:3px;padding:4px 8px}
+.phone-dot{height:3px;border-radius:2px;flex:1;background:rgba(255,255,255,0.25)}
+.phone-dot.active{background:var(--green)}
+@media(max-width:640px){.phone{width:185px;height:360px}.phone-2{display:none}}
+
+/* ---- SECTION HEADER ---- */
+.section-header{text-align:center;margin-bottom:56px}
+.section-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:5px 14px;border-radius:100px;
+  border:1px solid var(--border-strong);background:rgba(34,197,94,0.07);
+  font-size:.78rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--green);margin-bottom:16px;
+}
+.section-title{font-size:clamp(2.2rem,4vw,3.4rem);font-weight:900;margin-bottom:14px}
+.section-subtitle{font-size:1.1rem;font-weight:500;color:var(--text-soft);max-width:580px;margin:0 auto}
+
+/* ---- FEATURES GRID ---- */
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.feature-card{
+  padding:28px;border-radius:20px;
+  background:rgba(10,22,40,0.6);
+  border:1px solid var(--border);
+  transition:all .3s;position:relative;overflow:hidden;
+}
+.feature-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--green),transparent);
+  opacity:0;transition:opacity .3s;
+}
+.feature-card:hover{border-color:var(--border-strong);transform:translateY(-6px);box-shadow:0 20px 50px rgba(34,197,94,0.1)}
+.feature-card:hover::before{opacity:1}
+[data-theme="light"] .feature-card{background:rgba(255,255,255,0.8)}
+.feature-icon{
+  width:54px;height:54px;border-radius:16px;
+  background:linear-gradient(135deg,rgba(34,197,94,0.15),rgba(22,163,74,0.08));
+  border:1px solid var(--border-strong);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;margin-bottom:16px;
+}
+.feature-title{font-size:1.2rem;font-weight:800;margin-bottom:10px;color:var(--text)}
+.feature-desc{font-size:.97rem;color:var(--text-soft);line-height:1.65}
+
+/* ---- HOW IT WORKS ---- */
+#how-it-works{background:linear-gradient(180deg,transparent,rgba(34,197,94,0.04),transparent)}
+.steps-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;position:relative}
+@media(max-width:768px){.steps-wrap{grid-template-columns:1fr}}
+.steps-wrap::before{
+  content:'';position:absolute;top:38px;left:calc(16.67% + 20px);right:calc(16.67% + 20px);
+  height:2px;background:linear-gradient(90deg,var(--green-dark),var(--green),var(--green-dark));
+  opacity:.3;
+}
+@media(max-width:768px){.steps-wrap::before{display:none}}
+.step{text-align:center;padding:28px 20px}
+.step-num{
+  width:72px;height:72px;border-radius:50%;
+  background:linear-gradient(135deg,var(--green-dark),var(--green));
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;font-weight:900;color:#fff;
+  margin:0 auto 18px;
+  box-shadow:0 0 0 8px rgba(34,197,94,0.1);
+  position:relative;z-index:1;
+}
+.step-title{font-size:1.2rem;font-weight:800;margin-bottom:10px}
+.step-desc{font-size:.97rem;color:var(--text-soft);line-height:1.65}
+
+/* ---- DOWNLOAD ---- */
+#download{
+  background:linear-gradient(135deg,rgba(22,163,74,0.08),rgba(10,22,40,0.95),rgba(34,197,94,0.05));
+}
+.download-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+@media(max-width:900px){.download-inner{grid-template-columns:1fr;text-align:center}}
+.download-buttons{display:flex;gap:16px;flex-wrap:wrap;margin-top:28px}
+@media(max-width:900px){.download-buttons{justify-content:center}}
+.store-badge{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:14px 22px;border-radius:14px;
+  border:1.5px solid var(--border-strong);
+  background:rgba(10,22,40,0.7);
+  transition:all .3s;
+}
+.store-badge:hover{border-color:var(--green);box-shadow:0 8px 30px var(--green-glow);transform:translateY(-3px)}
+[data-theme="light"] .store-badge{background:rgba(255,255,255,0.85)}
+.store-icon{font-size:2rem;line-height:1}
+.store-info .store-sub{font-size:.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;display:block}
+.store-info .store-name{font-size:.95rem;font-weight:700;color:var(--text);display:block}
+.qr-wrap{
+  display:flex;justify-content:center;
+  margin-top:24px;
+}
+.qr-box{
+  width:120px;height:120px;border-radius:16px;
+  border:2px solid var(--border-strong);
+  background:rgba(34,197,94,0.05);
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;gap:6px;
+  font-size:.65rem;color:var(--text-muted);text-align:center;letter-spacing:.5px;text-transform:uppercase;
+}
+.qr-box .qr-icon{font-size:2rem}
+.download-visual{display:flex;justify-content:center}
+.app-mockup{
+  width:240px;height:480px;border-radius:40px;
+  background:linear-gradient(160deg,#0d1f35,#061020);
+  border:2px solid rgba(34,197,94,0.4);
+  box-shadow:0 40px 100px rgba(0,0,0,0.6),0 0 0 1px rgba(34,197,94,0.08);
+  position:relative;overflow:hidden;
+  animation:float 4s ease-in-out infinite,pulse-green 3s ease-in-out infinite;
+  display:flex;flex-direction:column;
+}
+.mock-header{padding:12px 16px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(34,197,94,0.1)}
+.mock-logo{font-weight:900;font-size:.8rem;color:var(--green)}
+.mock-icon{font-size:.9rem}
+.mock-body{flex:1;display:flex;flex-direction:column;gap:8px;padding:10px}
+.mock-card{
+  border-radius:14px;overflow:hidden;position:relative;flex:1;
+  background:linear-gradient(160deg,rgba(34,197,94,0.1),rgba(0,0,0,0.3));
+  border:1px solid rgba(34,197,94,0.2);display:flex;align-items:center;justify-content:center;font-size:2.5rem;
+}
+.mock-overlay{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:10px;
+  background:linear-gradient(to top,rgba(0,0,0,0.9) 0%,transparent 100%);
+}
+.mock-name{font-size:.72rem;font-weight:700;color:#fff}
+.mock-sub{font-size:.58rem;color:rgba(255,255,255,0.6)}
+.mock-actions{display:flex;gap:8px;padding:10px;justify-content:center}
+.mock-btn{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;border:1px solid rgba(255,255,255,0.15)}
+.mock-btn.like{background:rgba(34,197,94,0.2);border-color:rgba(34,197,94,0.4)}
+.mock-btn.nope{background:rgba(239,68,68,0.12);border-color:rgba(239,68,68,0.25)}
+.mock-btn.star{background:rgba(59,130,246,0.15);border-color:rgba(59,130,246,0.3)}
+.mock-notch{width:70px;height:18px;background:#020817;border-radius:0 0 12px 12px;margin:0 auto;border-bottom:1px solid rgba(34,197,94,0.15)}
+
+/* ---- TESTIMONIALS ---- */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.testi-card{
+  padding:24px;border-radius:18px;
+  background:rgba(10,22,40,0.6);border:1px solid var(--border);
+  position:relative;
+}
+[data-theme="light"] .testi-card{background:rgba(255,255,255,0.85)}
+.testi-stars{color:var(--green);font-size:1rem;margin-bottom:12px;letter-spacing:2px}
+.testi-text{font-size:.97rem;color:var(--text-soft);line-height:1.75;margin-bottom:16px;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:10px}
+.testi-avatar{
+  width:36px;height:36px;border-radius:50%;
+  background:linear-gradient(135deg,var(--green-dark),var(--green));
+  display:flex;align-items:center;justify-content:center;font-size:1rem;
+  border:1px solid rgba(34,197,94,0.4);
+}
+.testi-name{font-weight:800;font-size:.95rem;color:var(--text)}
+.testi-loc{font-size:.8rem;color:var(--text-muted)}
+
+/* ---- FAQ ---- */
+.faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.faq-item{border-radius:14px;border:1px solid var(--border);background:rgba(10,22,40,0.5);overflow:hidden;transition:border-color .3s}
+.faq-item:hover{border-color:var(--border-strong)}
+[data-theme="light"] .faq-item{background:rgba(255,255,255,0.8)}
+.faq-q{
+  padding:18px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+  font-weight:700;font-size:1.05rem;gap:12px;
+}
+.faq-arrow{font-size:.7rem;color:var(--green);transition:transform .3s;flex-shrink:0}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+.faq-a{display:none;padding:0 20px 20px;font-size:.97rem;color:var(--text-soft);line-height:1.75}
+.faq-item.open .faq-a{display:block}
+
+/* ---- ABOUT BAND ---- */
+#about-habesha{
+  background:linear-gradient(135deg,rgba(22,163,74,0.06),rgba(10,22,40,0.95));
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+@media(max-width:900px){.about-inner{grid-template-columns:1fr;text-align:center}}
+.about-flags{display:flex;gap:12px;font-size:2rem;margin-bottom:16px}
+@media(max-width:900px){.about-flags{justify-content:center}}
+.about-title{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;margin-bottom:16px}
+.about-desc{font-size:.95rem;color:var(--text-soft);line-height:1.8;margin-bottom:24px}
+.flag-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.flag-item{
+  padding:16px 12px;border-radius:14px;text-align:center;
+  background:rgba(10,22,40,0.6);border:1px solid var(--border);
+  transition:all .3s;
+}
+.flag-item:hover{border-color:var(--border-strong);transform:translateY(-4px)}
+[data-theme="light"] .flag-item{background:rgba(255,255,255,0.8)}
+.flag-item .flag{font-size:1.6rem;margin-bottom:6px}
+.flag-item .flag-name{font-size:.65rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px}
+
+/* ---- FOOTER ---- */
+footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:48px 0 24px}
+[data-theme="light"] footer{background:rgba(240,244,248,0.98)}
+.footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px}
+@media(max-width:768px){.footer-inner{grid-template-columns:1fr}}
+.footer-brand{margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.footer-logo{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--green-dark),var(--green));display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.footer-name{font-weight:900;font-size:.9rem;color:var(--green)}
+.footer-desc{font-size:.82rem;color:var(--text-muted);line-height:1.7;margin-bottom:20px;max-width:300px}
+.footer-social{display:flex;gap:10px}
+.social-btn{width:34px;height:34px;border-radius:9px;border:1px solid var(--border);background:rgba(34,197,94,0.04);display:flex;align-items:center;justify-content:center;font-size:.85rem;transition:all .3s}
+.social-btn:hover{border-color:var(--green);background:rgba(34,197,94,0.1);transform:translateY(-2px)}
+.footer-col-title{font-size:.78rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);margin-bottom:14px}
+.footer-link{display:block;font-size:.82rem;color:var(--text-muted);padding:5px 0;transition:color .2s}
+.footer-link:hover{color:var(--green)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:20px;display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+.footer-copy{font-size:.75rem;color:var(--text-muted)}
+.footer-aye{font-size:.75rem;color:var(--text-muted)}
+.footer-aye a{color:var(--neon);font-weight:600}
+.footer-aye a:hover{color:#00ffff}
+.footer-legal{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.footer-legal-link{font-size:.75rem;color:var(--text-muted);transition:color .2s}
+.footer-legal-link:hover{color:var(--green)}
+.footer-legal-sep{font-size:.7rem;color:var(--text-muted)}
+
+/* ---- LEGAL (PRIVACY POLICY / TERMS OF SERVICE) ---- */
+.legal-section{background:linear-gradient(180deg,rgba(10,22,40,0.55),transparent)}
+[data-theme="light"] .legal-section{background:linear-gradient(180deg,rgba(255,255,255,0.5),transparent)}
+.legal-wrap{max-width:860px;margin:0 auto}
+.legal-updated{font-size:.78rem;color:var(--text-muted);text-align:center;margin-top:-8px;margin-bottom:32px}
+.legal-toc{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:44px}
+.legal-toc a{padding:6px 14px;border-radius:100px;border:1px solid var(--border);background:rgba(34,197,94,0.05);font-size:.7rem;font-weight:700;letter-spacing:.3px;color:var(--text-soft);transition:all .2s}
+[data-theme="light"] .legal-toc a{background:rgba(255,255,255,0.7)}
+.legal-toc a:hover{border-color:var(--green);color:var(--green)}
+.legal-block{padding:22px 0;border-bottom:1px solid var(--border)}
+.legal-block:last-of-type{border-bottom:none}
+.legal-block h3{font-size:1.15rem;font-weight:800;color:var(--green);margin-bottom:10px;scroll-margin-top:120px}
+.legal-block p{font-size:.93rem;color:var(--text-soft);line-height:1.75;margin-bottom:10px}
+.legal-block ul{padding-left:20px;list-style:disc;margin:8px 0 10px}
+.legal-block li{font-size:.93rem;color:var(--text-soft);line-height:1.7;margin-bottom:6px}
+[data-theme="light"] .legal-block p,[data-theme="light"] .legal-block li{color:#475569}
+.legal-note{margin-top:8px;padding:18px 20px;border-radius:14px;background:rgba(34,197,94,0.06);border:1px solid var(--border);font-size:.85rem;color:var(--text-soft);line-height:1.7}
+[data-theme="light"] .legal-note{color:#475569}
+.legal-contact-box{margin-top:8px;padding:20px;border-radius:16px;background:rgba(34,197,94,0.06);border:1px solid var(--border)}
+@media(max-width:640px){.legal-block h3{font-size:1.05rem}}
+
+/* ---- FLOATING CTA ---- */
+
+
+/* ---- MISSION ---- */
+.mission-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:48px}
+.mission-card{padding:24px 20px;border-radius:18px;border:1px solid var(--border);background:rgba(10,22,40,0.5);text-align:center;transition:all .3s}
+.mission-card:hover{border-color:var(--border-strong);transform:translateY(-5px);box-shadow:0 16px 40px rgba(34,197,94,0.08)}
+[data-theme="light"] .mission-card{background:rgba(255,255,255,0.8)}
+.mission-icon{font-size:2.2rem;margin-bottom:12px}
+.mission-title{font-size:1.08rem;font-weight:800;margin-bottom:8px}
+.mission-desc{font-size:.93rem;color:var(--text-soft);line-height:1.65}
+
+/* ---- FOUNDER ---- */
+#founder{background:linear-gradient(135deg,rgba(34,197,94,0.05),rgba(10,22,40,0.98))}
+.founder-inner{display:grid;grid-template-columns:300px 1fr;gap:60px;align-items:start}
+@media(max-width:900px){.founder-inner{grid-template-columns:1fr;text-align:center}}
+.founder-photo-wrap{position:relative}
+.founder-photo{
+  width:280px;height:360px;border-radius:24px;
+  border:2px solid var(--border-strong);
+  overflow:hidden;
+  box-shadow:0 20px 60px rgba(34,197,94,0.2);
+  margin:0 auto;
+}
+.founder-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.founder-badge{
+  position:absolute;bottom:-12px;right:0;
+  padding:9px 18px;border-radius:100px;
+  background:linear-gradient(135deg,var(--green-dark),var(--green));
+  color:#fff;font-size:.82rem;font-weight:700;letter-spacing:.3px;
+}
+@media(max-width:900px){.founder-badge{position:static;display:inline-block;margin-top:16px}}
+.founder-info{padding-top:8px}
+.founder-name{font-size:2.2rem;font-weight:900;margin-bottom:6px;letter-spacing:-.5px}
+.founder-role{font-size:1rem;color:var(--green);font-weight:700;margin-bottom:20px;letter-spacing:.3px}
+.founder-bio{font-size:.95rem;color:var(--text-soft);line-height:1.8;margin-bottom:20px}
+.founder-tags{display:flex;gap:10px;flex-wrap:wrap}
+@media(max-width:900px){.founder-tags{justify-content:center}}
+.founder-tag{padding:7px 16px;border-radius:100px;border:1.5px solid var(--border-strong);background:rgba(34,197,94,0.1);font-size:.82rem;font-weight:700;color:var(--green);letter-spacing:.3px}
+
+/* ---- SAFETY ---- */
+.safety-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.safety-card{padding:24px;border-radius:18px;background:rgba(10,22,40,0.6);border:1px solid var(--border);transition:all .3s}
+.safety-card:hover{border-color:var(--border-strong);transform:translateY(-4px)}
+[data-theme="light"] .safety-card{background:rgba(255,255,255,0.85)}
+.safety-icon{font-size:1.6rem;margin-bottom:10px}
+.safety-title{font-size:1.1rem;font-weight:800;margin-bottom:10px}
+.safety-desc{font-size:.95rem;color:var(--text-soft);line-height:1.7}
+
+/* ---- PRICING ---- */
+#pricing{background:linear-gradient(180deg,transparent,rgba(34,197,94,0.04),transparent)}
+.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:900px){.plans-grid{grid-template-columns:1fr}}
+.plan-card{
+  padding:32px 28px;border-radius:24px;
+  background:rgba(10,22,40,0.6);border:1px solid var(--border);
+  position:relative;transition:all .3s;display:flex;flex-direction:column;
+}
+.plan-card.popular{border-color:var(--green);box-shadow:0 0 0 1px rgba(34,197,94,0.2),0 20px 60px rgba(34,197,94,0.12)}
+.plan-card:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(34,197,94,0.1)}
+[data-theme="light"] .plan-card{background:rgba(255,255,255,0.85)}
+.plan-badge{
+  position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+  padding:5px 16px;border-radius:100px;
+  background:linear-gradient(135deg,var(--green-dark),var(--green));
+  color:#fff;font-size:.68rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;
+}
+.plan-name{font-size:.85rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);margin-bottom:12px}
+.plan-price{font-size:2.4rem;font-weight:900;margin-bottom:4px;color:var(--text)}
+.plan-price span{font-size:.85rem;font-weight:400;color:var(--text-muted)}
+.plan-birr{font-size:.85rem;color:var(--text-muted);margin-bottom:20px}
+.plan-divider{height:1px;background:var(--border);margin:20px 0}
+.plan-features{flex:1;display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.plan-feature{display:flex;gap:10px;align-items:flex-start;font-size:.93rem;color:var(--text-soft)}
+.plan-feature .chk{color:var(--green);flex-shrink:0;font-size:.9rem}
+.plan-feature .no{color:var(--text-muted);flex-shrink:0}
+
+/* ---- CONTACT FORM ---- */
+#contact{background:linear-gradient(135deg,rgba(10,22,40,0.98),rgba(34,197,94,0.04))}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+@media(max-width:900px){.contact-inner{grid-template-columns:1fr}}
+.contact-info h3{font-size:1.4rem;font-weight:900;margin-bottom:16px}
+.contact-info p{font-size:.9rem;color:var(--text-soft);line-height:1.7;margin-bottom:24px}
+.contact-links{display:flex;flex-direction:column;gap:12px}
+.contact-link{display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:14px;border:1px solid var(--border);background:rgba(10,22,40,0.4);font-size:.85rem;transition:all .3s;color:var(--text)}
+.contact-link:hover{border-color:var(--green);background:rgba(34,197,94,0.06)}
+[data-theme="light"] .contact-link{background:rgba(255,255,255,0.7)}
+.contact-link .cl-icon{font-size:1.2rem;flex-shrink:0}
+.form-wrap{background:rgba(10,22,40,0.5);border:1px solid var(--border);border-radius:20px;padding:28px}
+[data-theme="light"] .form-wrap{background:rgba(255,255,255,0.85)}
+.form-title{font-size:1rem;font-weight:700;margin-bottom:20px;color:var(--text)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){.form-row{grid-template-columns:1fr}}
+.form-group{margin-bottom:14px}
+.form-label{display:block;font-size:.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.form-input,.form-select,.form-textarea{
+  width:100%;padding:11px 14px;border-radius:10px;
+  border:1.5px solid var(--border);
+  background:rgba(34,197,94,0.03);
+  color:var(--text);font-family:inherit;font-size:.87rem;
+  transition:border-color .3s;
+  outline:none;
+}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(34,197,94,0.1)}
+[data-theme="light"] .form-input,[data-theme="light"] .form-select,[data-theme="light"] .form-textarea{background:#f9fafb}
+.form-textarea{resize:vertical;min-height:100px}
+.form-select{appearance:none;cursor:pointer}
+.form-submit{width:100%;padding:13px;border-radius:12px;background:linear-gradient(135deg,var(--green-dark),var(--green));color:#fff;font-weight:700;font-size:.9rem;border:none;cursor:pointer;transition:all .3s;margin-top:4px}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(34,197,94,0.4)}
+.form-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.form-msg{font-size:.8rem;padding:10px 14px;border-radius:10px;margin-top:10px;display:none}
+.form-msg.success{background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:var(--green);display:block}
+.form-msg.error{background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.25);color:#ef4444;display:block}
+
+/* ---- TICKER ---- */
+.ticker-wrap{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:rgba(34,197,94,0.03);padding:12px 0}
+.ticker-inner{display:flex;gap:48px;animation:ticker 20s linear infinite;white-space:nowrap;width:max-content}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker-item{font-size:.75rem;color:var(--text-muted);letter-spacing:1px;display:flex;align-items:center;gap:10px}
+.ticker-dot{width:4px;height:4px;border-radius:50%;background:var(--green);flex-shrink:0}
+
+/* ---- RESPONSIVE ---- */
+@media(max-width:640px){
+  .hero-headline{font-size:2rem}
+  .section-title{font-size:1.7rem}
+  .features-grid{grid-template-columns:1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================ NAVBAR ============================================================ -->
+<header id="navbar">
+  <div class="container nav-inner">
+    <a href="#hero" class="brand" aria-label="Habesha Hearts home">
+      <img src="/assets/images/habesha-hearts-logo.png" alt="Habesha Hearts" style="width:58px;height:58px;border-radius:13px;animation:heartbeat 2.5s ease-in-out infinite;filter:drop-shadow(0 0 10px rgba(34,197,94,0.6))"/>
+      <div class="brand-text">
+        <div class="brand-name"><span style="color:var(--green)">Habesha </span><span style="color:#D32F2F">Hearts</span></div>
+        <div class="brand-tag">Find Your Match</div>
+      </div>
+    </a>
+
+    <nav class="nav-menu" aria-label="Main navigation">
+      <a href="#features" class="nav-link" data-i18n="nav.features">Features</a>
+      <a href="#mission" class="nav-link" data-i18n="nav.mission">Mission</a>
+      <a href="#founder" class="nav-link" data-i18n="nav.founder">Founder</a>
+      <a href="#safety" class="nav-link" data-i18n="nav.safety">Safety</a>
+      <a href="#pricing" class="nav-link" data-i18n="nav.plans">Plans</a>
+      <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+      <a href="/index.html" class="nav-link" style="color:var(--neon)">AYE Tech Hub</a>
+    </nav>
+
+    <div class="nav-controls">
+      <div class="lang-switcher" aria-label="Language selector" style="margin-left:auto">
+        <button class="lang-btn active" onclick="setLang('en')" id="lang-en">EN</button>
+        <button class="lang-btn" onclick="setLang('am')" id="lang-am">አማ</button>
+        <button class="lang-btn" onclick="setLang('ti')" id="lang-ti">ትግ</button>
+      </div>
+      <button class="icon-btn" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle theme">☀</button>
+      <button class="icon-btn hamburger" onclick="toggleMobileMenu()" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="container">
+    <a href="#features" class="mobile-link" onclick="toggleMobileMenu()" data-i18n="nav.features">Features</a>
+    <a href="#mission" class="mobile-link" onclick="toggleMobileMenu()" data-i18n="nav.mission">Mission</a>
+    <a href="#founder" class="mobile-link" onclick="toggleMobileMenu()" data-i18n="nav.founder">Founder</a>
+    <a href="#safety" class="mobile-link" onclick="toggleMobileMenu()" data-i18n="nav.safety">Safety</a>
+    <a href="#pricing" class="mobile-link" onclick="toggleMobileMenu()" data-i18n="nav.plans">Plans</a>
+    <a href="#contact" class="mobile-link" onclick="toggleMobileMenu()" data-i18n="nav.contact">Contact</a>
+    <a href="/index.html" class="mobile-link" style="color:var(--neon)" onclick="toggleMobileMenu()">← AYE Tech Hub</a>
+    <div style="display:flex;gap:10px;margin-top:14px">
+      <a href="#download" class="btn btn-green" style="flex:1" onclick="toggleMobileMenu()">📲 Download App</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================ TICKER ============================================================ -->
+<div class="ticker-wrap" style="margin-top:70px">
+  <div class="ticker-inner">
+    <span class="ticker-item"><span class="ticker-dot"></span>For Ethiopian Diaspora Worldwide</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>For Eritrean Diaspora Worldwide</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Voice Bio · Photo Swiping · Verified Profiles</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Private Messaging · Discover · Daily Matches</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>For Ethiopian Diaspora Worldwide</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>For Eritrean Diaspora Worldwide</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Voice Bio · Photo Swiping · Verified Profiles</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Private Messaging · Discover · Daily Matches</span>
+  </div>
+</div>
+
+<!-- ============================================================ HERO ============================================================ -->
+<section id="hero">
+  <div class="container hero-inner">
+    <!-- LEFT -->
+    <div>
+      <div style="margin-bottom:20px" class="reveal">
+        <img src="/assets/images/habesha-hearts-logo.png" alt="Habesha Hearts Logo" style="width:90px;height:90px;border-radius:20px;filter:drop-shadow(0 0 20px rgba(34,197,94,0.5))"/>
+      </div>
+      <div class="hero-tag reveal" style="border-color:rgba(34,197,94,0.4);background:rgba(34,197,94,0.08);color:var(--green)"><span data-i18n="hero.tag">❤️ The Habesha Dating App</span></div>
+      <h1 class="hero-headline gradient-text reveal"><span data-i18n-html="hero.headline">Find Your<br/>Habesha<br/>Match</span></h1>
+      <p class="hero-subtitle reveal"><span data-i18n-html="hero.subtitle">The first dedicated dating app for <strong style="color:var(--green)">Ethiopian</strong> and <strong style="color:var(--green)">Eritrean</strong> singles worldwide. Connect with someone who truly understands your culture, language, and values — wherever you are in the world.
+      </p>
+      <div class="hero-buttons reveal">
+        <a href="#download" class="btn btn-green">
+          <span data-i18n="hero.btn_download">📲 Download Free</span>
+        </a>
+        <a href="#features" class="btn btn-outline">
+          <span data-i18n="hero.btn_features">✨ See Features</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT — PHONE MOCKUP -->
+    <div class="phone-wrap reveal">
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="phone-indicator">
+            <div class="phone-dot active"></div>
+            <div class="phone-dot"></div>
+            <div class="phone-dot"></div>
+          </div>
+          <div class="phone-card">
+            <div class="phone-card-img">🌺</div>
+            <div class="phone-card-info">
+              <div class="phone-card-name">Helen, 30 · Tampere</div>
+              <div class="phone-card-sub">Ethiopian · Finland 🇫🇮</div>
+            </div>
+          </div>
+          <div class="phone-actions">
+            <div class="phone-btn phone-btn-nope">✕</div>
+            <div class="phone-btn phone-btn-like" style="width:40px;height:40px;font-size:1rem">💚</div>
+            <div class="phone-btn" style="background:rgba(59,130,246,0.15)">⭐</div>
+          </div>
+        </div>
+      </div>
+      <div class="phone phone-2">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="phone-indicator">
+            <div class="phone-dot active"></div>
+            <div class="phone-dot active"></div>
+            <div class="phone-dot"></div>
+          </div>
+          <div class="phone-card">
+            <div class="phone-card-img">💎</div>
+            <div class="phone-card-info">
+              <div class="phone-card-name">Micky, 30 · Seoul</div>
+              <div class="phone-card-sub">Ethiopian · South Korea 🇰🇷</div>
+            </div>
+          </div>
+          <div class="phone-actions">
+            <div class="phone-btn phone-btn-nope">✕</div>
+            <div class="phone-btn phone-btn-like" style="width:40px;height:40px;font-size:1rem">💚</div>
+            <div class="phone-btn" style="background:rgba(59,130,246,0.15)">⭐</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FEATURES ============================================================ -->
+<section id="features">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag"><span data-i18n="features.tag">✨ App Features</span></div>
+      <h2 class="section-title" data-i18n="features.title">Everything You Need to<br/><span class="gradient-text">Find a Real Connection</span></h2>
+      <p class="section-subtitle" data-i18n="features.subtitle">Designed specifically for Habesha singles — with features that matter to our community.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">📸</div>
+        <div class="feature-title">Photo Swiping</div>
+        <div class="feature-desc">Browse multiple photos per profile by swiping. Know exactly who you're connecting with before you say hello.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🎙️</div>
+        <div class="feature-title">Voice Bio</div>
+        <div class="feature-desc">Record up to 15 seconds of your voice. Let your personality shine through — hear someone's voice before you match.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">💬</div>
+        <div class="feature-title">Private Messaging</div>
+        <div class="feature-desc">Send private messages to anyone you like. No match required — open, respectful communication from the start.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🔍</div>
+        <div class="feature-title">Smart Discover</div>
+        <div class="feature-desc">Swipe through curated profiles with glassmorphism cards. Filter by age, city, interests, and more.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">✅</div>
+        <div class="feature-title">Verified Profiles</div>
+        <div class="feature-desc">Blue badge verification means you're connecting with real people — no bots, no fake accounts.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📰</div>
+        <div class="feature-title">Community Feed</div>
+        <div class="feature-desc">Share moments, see posts from the community, and like content. More than dating — a Habesha social space.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">👑</div>
+        <div class="feature-title">Premium & Premium+</div>
+        <div class="feature-desc">Unlock unlimited likes, see who liked you, boost your profile, and more. Pay in your local currency via Google Play Billing.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🛡️</div>
+        <div class="feature-title">Report & Block</div>
+        <div class="feature-desc">Full report and block system keeps the community safe. Our moderation team reviews all reports.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🌍</div>
+        <div class="feature-title">Global & Local</div>
+        <div class="feature-desc">Find Habesha singles in your city or across 50+ countries. Filter locally or go global.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ HOW IT WORKS ============================================================ -->
+<section id="how-it-works">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag" data-i18n="how.tag">🚀 Getting Started</div>
+      <h2 class="section-title" data-i18n="how.title">Start in <span class="gradient-text">3 Simple Steps</span></h2>
+      <p class="section-subtitle" data-i18n="how.subtitle">Create your profile and start meeting amazing Habesha singles in minutes.</p>
+    </div>
+    <div class="steps-wrap">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <div class="step-title" data-i18n="how.step1_title">Create Your Profile</div>
+        <div class="step-desc" data-i18n="how.step1_desc">Sign up with Google or email. Add photos, write a bio, record a voice intro, and list your interests. Takes less than 5 minutes.</div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <div class="step-title" data-i18n="how.step2_title">Discover Matches</div>
+        <div class="step-desc" data-i18n="how.step2_desc">Browse Suggestions For You, explore the Discover screen, or check the community feed. Swipe photos, listen to voice bios.</div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <div class="step-title" data-i18n="how.step3_title">Connect & Chat</div>
+        <div class="step-desc" data-i18n="how.step3_desc">Send a like or a private message. Start a real conversation and build something meaningful with someone who shares your roots.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ ABOUT HABESHA ============================================================ -->
+<section id="about-habesha">
+  <div class="container">
+    <div class="about-inner">
+      <div class="reveal">
+        <div class="about-flags">🇪🇹 🇪🇷</div>
+        <h2 class="about-title">Built for the <span class="gradient-text">Habesha Diaspora</span></h2>
+        <p class="about-desc">
+          Millions of Ethiopians and Eritreans live across the world — in North America, Europe, Australia, the Middle East, and beyond. Finding someone who truly shares your cultural background, language, and values can be hard on mainstream apps.
+        </p>
+        <p class="about-desc">
+          <strong>Habesha Hearts</strong> was built specifically for you. Whether you speak Amharic, Tigrinya, Oromo, or Somali — whether you're from Addis, Asmara, or grew up in the diaspora — this is your space.
+        </p>
+        <a href="#download" class="btn btn-green">Download Now — It's Free</a>
+      </div>
+      <div class="reveal">
+        <div class="flag-grid">
+          <div class="flag-item"><div class="flag">🇺🇸</div><div class="flag-name">USA</div></div>
+          <div class="flag-item"><div class="flag">🇬🇧</div><div class="flag-name">UK</div></div>
+          <div class="flag-item"><div class="flag">🇨🇦</div><div class="flag-name">Canada</div></div>
+          <div class="flag-item"><div class="flag">🇸🇪</div><div class="flag-name">Sweden</div></div>
+          <div class="flag-item"><div class="flag">🇦🇺</div><div class="flag-name">Australia</div></div>
+          <div class="flag-item"><div class="flag">🇩🇪</div><div class="flag-name">Germany</div></div>
+          <div class="flag-item"><div class="flag">🇳🇴</div><div class="flag-name">Norway</div></div>
+          <div class="flag-item"><div class="flag">🇳🇱</div><div class="flag-name">Netherlands</div></div>
+          <div class="flag-item"><div class="flag">🌍</div><div class="flag-name">50+ More</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ DOWNLOAD ============================================================ -->
+<section id="download">
+  <div class="container">
+    <div class="download-inner">
+      <div class="reveal">
+        <div class="section-tag" style="margin-bottom:16px">📲 Get the App</div>
+        <h2 class="section-title">Download <span class="gradient-text">Habesha Hearts</span></h2>
+        <p style="color:var(--text-soft);margin-top:12px;margin-bottom:4px;font-size:.95rem;line-height:1.7">
+          Available on Android now. iOS coming soon. Free to download — premium features billed automatically in your country's currency via Google Play Billing. 🇪🇹 Ethiopian payment via Telebirr and CBE Birr coming soon.
+        </p>
+        <div class="download-buttons">
+          <a href="https://play.google.com/store/apps/details?id=com.habeshahearts.app" target="_blank" rel="noopener" class="store-badge" aria-label="Download on Google Play">
+            <span class="store-icon">🤖</span>
+            <span class="store-info">
+              <span class="store-sub">Get it on</span>
+              <span class="store-name">Google Play</span>
+            </span>
+          </a>
+          <span class="store-badge" style="opacity:.55;cursor:not-allowed" title="Coming soon">
+            <span class="store-icon">🍎</span>
+            <span class="store-info">
+              <span class="store-sub">Coming Soon</span>
+              <span class="store-name">App Store</span>
+            </span>
+          </span>
+        </div>
+        <div class="qr-wrap" style="justify-content:flex-start;margin-top:28px">
+          <div class="qr-box">
+            <div class="qr-icon">📱</div>
+            <div>Scan to<br/>Download</div>
+          </div>
+        </div>
+        <p style="font-size:.72rem;color:var(--text-muted);margin-top:12px">
+          Package: com.habeshahearts.app · Powered by AYE Tech Hub
+        </p>
+      </div>
+
+      <div class="download-visual reveal">
+        <div class="app-mockup">
+          <div class="mock-notch"></div>
+          <div class="mock-header">
+            <span class="mock-logo">Habesha Hearts 💚</span>
+            <span class="mock-icon">🔔</span>
+          </div>
+          <div class="mock-body">
+            <div class="mock-card">
+              <span style="font-size:3rem">🌸</span>
+              <div class="mock-overlay">
+                <div class="mock-name">Semhal, 27 · Edmonton</div>
+                <div class="mock-sub">Eritrean · Canada 🇨🇦</div>
+              </div>
+            </div>
+          </div>
+          <div class="mock-actions">
+            <div class="mock-btn nope">✕</div>
+            <div class="mock-btn star">⭐</div>
+            <div class="mock-btn like">💚</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ TESTIMONIALS ============================================================ -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">💬 Reviews</div>
+      <h2 class="section-title">What Our <span class="gradient-text">Community Says</span></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"Finally an app where I don't have to explain what injera is! Met so many amazing habesha people in my city. The voice bio feature is a game changer."</div>
+        <div class="testi-author">
+          <div class="testi-avatar">🌸</div>
+          <div>
+            <div class="testi-name">ሜላት</div>
+            <div class="testi-loc">Addis Ababa, Ethiopia 🇪🇹</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"The design is beautiful and the app works really well. Finally an Ethiopian tech product we can be proud of!"</div>
+        <div class="testi-author">
+          <div class="testi-avatar">🌿</div>
+          <div>
+            <div class="testi-name">Dagmawi</div>
+            <div class="testi-loc">Adama, Ethiopia 🇪🇹</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"As an Eritrean in the diaspora, it was so hard to find someone who understands our culture. Habesha Hearts changed that. Simple, clean, and actually works."</div>
+        <div class="testi-author">
+          <div class="testi-avatar">🌺</div>
+          <div>
+            <div class="testi-name">Hanah</div>
+            <div class="testi-loc">Amsterdam, Netherlands 🇳🇱</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FAQ ============================================================ -->
+<section id="faq" style="background:linear-gradient(180deg,transparent,rgba(34,197,94,0.03),transparent)">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">❓ FAQ</div>
+      <h2 class="section-title">Common <span class="gradient-text">Questions</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">Is Habesha Hearts free to use? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Yes! Habesha Hearts is free to download and use. Free members can browse profiles, send likes, and post once per week. Premium and Premium+ subscriptions unlock unlimited likes, messaging boosts, profile highlights, and more.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">Who is the app for? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Habesha Hearts is designed for Ethiopian and Eritrean singles worldwide — whether you were born there or grew up in the diaspora. If you identify as Habesha and are looking for meaningful connections, this app is for you.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">How does the voice bio work? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">You can record up to 15 seconds of audio as your voice bio directly from your profile page. Other users can listen to your voice bio before messaging — giving them a sense of your personality before you connect.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">What currency do I pay in? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Payment is handled automatically by Google Play Billing, which charges you in your own country's currency — no manual conversion needed. Direct Ethiopian payment via Telebirr and CBE Birr is coming soon.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">Is it available on iPhone? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Currently available on Android via Google Play. The iOS (App Store) version is coming soon. Join the waitlist by downloading the Android version and we'll notify you when iOS launches.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">How is safety handled? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">We have a full report and block system. You can report any user for inappropriate behavior and our team reviews every report. Profile verification adds an extra layer of trust to the community.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ MISSION ============================================================ -->
+<section id="mission" style="background:linear-gradient(180deg,transparent,rgba(34,197,94,0.04),transparent)">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag"><span data-i18n="mission.tag">🌟 Our Mission</span></div>
+      <h2 class="section-title" data-i18n="mission.title">Why <span class="gradient-text">Habesha Hearts</span> Exists</h2>
+      <p class="section-subtitle" style="max-width:680px" data-i18n="mission.subtitle">Connecting Habesha people worldwide through meaningful and authentic relationships — while fostering a respectful, secure, and culturally connected community.</p>
+    </div>
+    <div class="mission-grid">
+      <div class="mission-card reveal">
+        <div class="mission-icon">💞</div>
+        <div class="mission-title">Meaningful Relationships</div>
+        <div class="mission-desc" data-i18n="mission.m1.desc">We believe every Habesha person deserves a partner who truly understands their culture, history, and values.</div>
+      </div>
+      <div class="mission-card reveal">
+        <div class="mission-icon">🤝</div>
+        <div class="mission-title">Friendship First</div>
+        <div class="mission-desc" data-i18n="mission.m2.desc">Not every connection has to lead to romance. Build genuine friendships within the Habesha community globally.</div>
+      </div>
+      <div class="mission-card reveal">
+        <div class="mission-icon">🌍</div>
+        <div class="mission-title">Community Building</div>
+        <div class="mission-desc" data-i18n="mission.m3.desc">A platform that goes beyond dating — a digital home for the Ethiopian and Eritrean diaspora to connect and thrive.</div>
+      </div>
+      <div class="mission-card reveal">
+        <div class="mission-icon">🏛️</div>
+        <div class="mission-title">Cultural Connection</div>
+        <div class="mission-desc" data-i18n="mission.m4.desc">Preserve and celebrate Habesha identity — languages, traditions, food, music, and values — in every interaction.</div>
+      </div>
+      <div class="mission-card reveal">
+        <div class="mission-icon">🛡️</div>
+        <div class="mission-title">Respect & Safety</div>
+        <div class="mission-desc" data-i18n="mission.m5.desc">A zero-tolerance policy for harassment, scams, and disrespect. Every member deserves to feel safe and valued.</div>
+      </div>
+      <div class="mission-card reveal">
+        <div class="mission-icon">🌱</div>
+        <div class="mission-title">Inclusivity</div>
+        <div class="mission-desc" data-i18n="mission.m6.desc">Open to all Habesha singles regardless of region, religion, language, or background. Unity is our strength.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FOUNDER ============================================================ -->
+<section id="founder" style="background:linear-gradient(135deg,rgba(34,197,94,0.05),rgba(10,22,40,0.98))">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">👤 The Founder</div>
+      <h2 class="section-title" data-i18n="founder.title">Built by a <span class="gradient-text">Habesha Engineer</span></h2>
+    </div>
+    <div class="founder-inner">
+      <div class="founder-photo-wrap reveal">
+        <div class="founder-photo"><img src="/assets/images/awet-founder.jpg" alt="Awet G. Nway - Founder of Habesha Hearts"/></div>
+        <div class="founder-badge">Founder & CEO · AYE Tech Hub</div>
+      </div>
+      <div class="founder-info reveal">
+        <h3 class="founder-name gradient-text">Awet G. Nway</h3>
+        <div class="founder-role">Founder of AYE Tech Hub &amp; Habesha Hearts</div>
+        <p class="founder-bio">As a mechanical and automation engineer with roots in Tigray, Ethiopia, Awet experienced firsthand how hard it is for Habesha singles in the diaspora to find someone who truly shares their cultural background and values on mainstream dating platforms.</p>
+        <p class="founder-bio">That gap inspired <strong style="color:var(--green)">Habesha Hearts</strong> — a purpose-built platform using modern technology (Flutter, Firebase, AI matching) to solve a real cultural problem. Built with Korean industrial engineering standards applied to human connection.</p>
+        <p class="founder-bio">AYE Tech Hub, founded to empower Ethiopian and Eritrean engineers and professionals, now extends that mission to the heart of the community: meaningful human connections.</p>
+        <div class="founder-tags">
+          <span class="founder-tag">🇪🇹 Ethiopian</span>
+          <span class="founder-tag">⚙️ Mechanical Engineer</span>
+          <span class="founder-tag">🤖 Automation Specialist</span>
+          <span class="founder-tag">📱 Flutter Developer</span>
+          <span class="founder-tag">🌍 Diaspora Advocate</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ SAFETY ============================================================ -->
+<section id="safety" style="background:linear-gradient(180deg,rgba(10,22,40,0.98),transparent)">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag"><span data-i18n="safety.tag">🛡 TRUST & SAFETY</span></div>
+      <h2 class="section-title" data-i18n="safety.title">Your Safety is Our <span class="gradient-text">Top Priority</span></h2>
+      <p class="section-subtitle" data-i18n="safety.subtitle">Habesha Hearts is built with multiple layers of protection to keep every member safe, respected, and protected from abuse or fraud.</p>
+    </div>
+    <div class="safety-grid">
+      <div class="safety-card reveal">
+        <div class="safety-icon">✅</div>
+        <div class="safety-title">Profile Verification</div>
+        <div class="safety-desc">Users can apply for a blue verified badge. Our team manually reviews verification requests to confirm real identity — no bots, no catfishing.</div>
+      </div>
+      <div class="safety-card reveal">
+        <div class="safety-icon">🔒</div>
+        <div class="safety-title">Privacy Protection</div>
+        <div class="safety-desc">Your data is stored securely on Firebase with industry-standard encryption. You control what's visible on your profile — location, photos, and bio are all adjustable.</div>
+      </div>
+      <div class="safety-card reveal">
+        <div class="safety-icon">🚨</div>
+        <div class="safety-title">Report System</div>
+        <div class="safety-desc">Every profile has a Report button. Reports are reviewed within 24 hours by our moderation team. Violations result in immediate account suspension.</div>
+      </div>
+      <div class="safety-card reveal">
+        <div class="safety-icon">🚫</div>
+        <div class="safety-title">Block System</div>
+        <div class="safety-desc">Block any user instantly. Blocked users cannot see your profile, send messages, or interact with your posts in any way.</div>
+      </div>
+      <div class="safety-card reveal">
+        <div class="safety-icon">🕵️</div>
+        <div class="safety-title">Anti-Scam Measures</div>
+        <div class="safety-desc">Automated fraud detection monitors suspicious behavior — mass messaging, unusual activity patterns, and financial solicitation are flagged and reviewed immediately.</div>
+      </div>
+      <div class="safety-card reveal">
+        <div class="safety-icon">📋</div>
+        <div class="safety-title">Community Guidelines</div>
+        <div class="safety-desc">All members agree to our community guidelines: respectful language, no harassment, no explicit content, and genuine intentions. Violations are zero-tolerance.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ PRICING ============================================================ -->
+<section id="pricing">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag"><span data-i18n="plans.tag">💎 Membership Plans</span></div>
+      <h2 class="section-title">Choose Your <span class="gradient-text">Plan</span></h2>
+      <p class="section-subtitle" data-i18n="plans.subtitle">Start free and upgrade anytime. Pay in your country's currency — automatically handled by Google Play Billing.</p>
+    </div>
+    <div class="plans-grid">
+      <!-- FREE -->
+      <div class="plan-card reveal">
+        <div class="plan-name">Free</div>
+        <div class="plan-price">$0 <span>/ forever</span></div>
+        <div class="plan-birr">Always free — no card required</div>
+        <div class="plan-divider"></div>
+        <div class="plan-features">
+          <div class="plan-feature"><span class="chk">✓</span> 20 likes per day</div>
+          <div class="plan-feature"><span class="chk">✓</span> Basic matching</div>
+          <div class="plan-feature"><span class="chk">✓</span> Standard messaging</div>
+          <div class="plan-feature"><span class="no">✕</span> <span style="color:var(--text-muted)">Banner &amp; swipe ads included</span></div>
+          <div class="plan-feature"><span class="no">✕</span> <span style="color:var(--text-muted)">See who liked you</span></div>
+          <div class="plan-feature"><span class="no">✕</span> <span style="color:var(--text-muted)">Unlimited likes</span></div>
+          <div class="plan-feature"><span class="no">✕</span> <span style="color:var(--text-muted)">Profile boost</span></div>
+          <div class="plan-feature"><span class="no">✕</span> <span style="color:var(--text-muted)">Read receipts</span></div>
+          <div class="plan-feature"><span class="no">✕</span> <span style="color:var(--text-muted)">Rewind swipes</span></div>
+        </div>
+        <a href="#download" class="btn btn-outline" style="text-align:center">Get Started Free</a>
+      </div>
+      <!-- PREMIUM -->
+      <div class="plan-card popular reveal">
+        <div class="plan-badge">Most Popular</div>
+        <div class="plan-name" style="margin-top:8px">Premium</div>
+        <div class="plan-price">$2.99 <span>/ month</span></div>
+        <div class="plan-birr">or $20.00 / year &middot; save 44%</div>
+        <div class="plan-divider"></div>
+        <div class="plan-features">
+          <div class="plan-feature"><span class="chk">✓</span> Unlimited likes</div>
+          <div class="plan-feature"><span class="chk">✓</span> See who liked you</div>
+          <div class="plan-feature"><span class="chk">✓</span> Unlimited messaging</div>
+          <div class="plan-feature"><span class="chk">✓</span> Advanced filters</div>
+          <div class="plan-feature"><span class="chk">✓</span> 1 profile boost / month</div>
+          <div class="plan-feature"><span class="chk">✓</span> Rewind swipes</div>
+          <div class="plan-feature"><span class="chk">✓</span> Read receipts</div>
+          <div class="plan-feature"><span class="chk">✓</span> Premium badge 👑</div>
+          <div class="plan-feature"><span class="chk">✓</span> No banner · fewer swipe ads</div>
+          <div class="plan-feature"><span class="no">✕</span> <span style="color:var(--text-muted)">Priority support</span></div>
+          <div class="plan-feature" style="margin-top:6px;border-top:1px solid rgba(34,197,94,0.15);padding-top:8px"><span class="chk">✓</span> <strong>Cancel anytime</strong></div>
+        </div>
+        <a href="#download" class="btn btn-green" style="text-align:center">Get Premium</a>
+      </div>
+      <!-- PREMIUM PLUS -->
+      <div class="plan-card reveal">
+        <div class="plan-name">Premium+</div>
+        <div class="plan-price">$4.99 <span>/ month</span></div>
+        <div class="plan-birr">or $30.00 / year &middot; save 50%</div>
+        <div class="plan-divider"></div>
+        <div class="plan-features">
+          <div class="plan-feature"><span class="chk">✓</span> Everything in Premium</div>
+          <div class="plan-feature"><span class="chk">✓</span> <strong>100% ad-free experience ✨</strong></div>
+          <div class="plan-feature"><span class="chk">✓</span> Highest visibility</div>
+          <div class="plan-feature"><span class="chk">✓</span> Priority support</div>
+          <div class="plan-feature"><span class="chk">✓</span> Advanced AI matching</div>
+          <div class="plan-feature"><span class="chk">✓</span> Travel mode</div>
+          <div class="plan-feature"><span class="chk">✓</span> 5 profile boosts / month</div>
+          <div class="plan-feature"><span class="chk">✓</span> Incognito browsing</div>
+          <div class="plan-feature"><span class="chk">✓</span> Premium+ diamond badge 💎</div>
+          <div class="plan-feature" style="margin-top:6px;border-top:1px solid rgba(34,197,94,0.15);padding-top:8px"><span class="chk">✓</span> <strong>Cancel anytime</strong></div>
+        </div>
+        <a href="#download" class="btn btn-outline" style="text-align:center">Get Premium+</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:28px;font-size:.78rem;color:var(--text-muted)">
+      Payment via Google Play Billing — charged automatically in your country's currency.<br/>
+      🇪🇹 Ethiopian payment via Telebirr and CBE Birr coming soon.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================ CONTACT ============================================================ -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">📬 Contact Support</div>
+      <h2 class="section-title">We're Here to <span class="gradient-text">Help</span></h2>
+    </div>
+    <div class="contact-inner">
+      <div class="reveal">
+        <div class="contact-info">
+          <h3>Get in Touch</h3>
+          <p>Have a question, bug report, or safety concern? Our team responds within 24 hours. You can also reach us directly through the channels below.</p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:myhabeshadate@gmail.com" class="contact-link">
+            <span class="cl-icon">✉️</span>
+            <span><strong>Email Support</strong><br/><small style="color:var(--text-muted)">myhabeshadate@gmail.com</small></span>
+          </a>
+          <a href="https://t.me/ayetechub" target="_blank" rel="noopener" class="contact-link">
+            <span class="cl-icon">✈️</span>
+            <span><strong>Telegram</strong><br/><small style="color:var(--text-muted)">@ayetechub — fastest response</small></span>
+          </a>
+          <a href="https://instagram.com/ayetechub" target="_blank" rel="noopener" class="contact-link">
+            <span class="cl-icon">📸</span>
+            <span><strong>Instagram DM</strong><br/><small style="color:var(--text-muted)">@ayetechub</small></span>
+          </a>
+        </div>
+        <div style="margin-top:28px;padding:20px;border-radius:16px;background:rgba(34,197,94,0.06);border:1px solid var(--border)">
+          <div style="font-weight:700;margin-bottom:8px;font-size:.9rem">⚠️ Safety Reports</div>
+          <div style="font-size:.82rem;color:var(--text-muted);line-height:1.6">For urgent safety concerns — harassment, abuse, scams — use the in-app Report button or email us with subject line <strong style="color:var(--green)">SAFETY REPORT</strong>. We respond within 2 hours.</div>
+        </div>
+      </div>
+      <div class="form-wrap reveal">
+        <div class="form-title">Send Us a Message</div>
+        <form id="contactForm" onsubmit="submitForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Name</label>
+              <input class="form-input" type="text" id="fname" placeholder="Your name" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input class="form-input" type="email" id="femail" placeholder="your@email.com" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Type</label>
+            <select class="form-select form-input" id="ftype">
+              <option value="general">General Inquiry</option>
+              <option value="bug">Bug Report</option>
+              <option value="account">Account Assistance</option>
+              <option value="safety">Safety Report</option>
+              <option value="feedback">Feedback</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Subject</label>
+            <input class="form-input" type="text" id="fsubject" placeholder="Brief subject" required/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea class="form-textarea" id="fmessage" placeholder="Tell us how we can help…" required></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="fsubmit">Send Message →</button>
+          <div id="formMsg" class="form-msg"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ PRIVACY POLICY ============================================================ -->
+<section id="privacy-policy" class="legal-section" aria-labelledby="privacy-policy-heading">
+  <div class="container legal-wrap">
+    <div class="section-header reveal">
+      <div class="section-tag" data-i18n="pp.tag">🔒 Privacy</div>
+      <h2 class="section-title" id="privacy-policy-heading" data-i18n-html="pp.title_html">Privacy <span class="gradient-text">Policy</span></h2>
+      <p class="section-subtitle" data-i18n="pp.subtitle">How Habesha Hearts collects, uses, and protects your information.</p>
+    </div>
+    <p class="legal-updated" data-i18n-html="pp.updated_html">Last updated: June 17, 2026 &middot; Applies to the Habesha Hearts app (package: <code>com.habeshahearts.app</code>) and this website.</p>
+
+    <nav class="legal-toc reveal" aria-label="Privacy policy sections">
+      <a href="#pp-info-collect" data-i18n="pp.toc.info_collect">Information We Collect</a>
+      <a href="#pp-how-use" data-i18n="pp.toc.how_use">How We Use Information</a>
+      <a href="#pp-location" data-i18n="pp.toc.location">Location Data</a>
+      <a href="#pp-photos" data-i18n="pp.toc.photos">Profile Photos</a>
+      <a href="#pp-chat" data-i18n="pp.toc.chat">Chat Messages</a>
+      <a href="#pp-device" data-i18n="pp.toc.device">Device Information</a>
+      <a href="#pp-analytics" data-i18n="pp.toc.analytics">Analytics</a>
+      <a href="#pp-third-party" data-i18n="pp.toc.third_party">Third-Party Services</a>
+      <a href="#pp-sharing" data-i18n="pp.toc.sharing">Data Sharing</a>
+      <a href="#pp-security" data-i18n="pp.toc.security">Data Security</a>
+      <a href="#pp-rights" data-i18n="pp.toc.rights">Your Rights &amp; Deletion</a>
+      <a href="#pp-children" data-i18n="pp.toc.children">Children's Privacy</a>
+      <a href="#pp-contact" data-i18n="pp.toc.contact">Contact</a>
+    </nav>
+
+    <article class="reveal">
+      <div class="legal-block">
+        <p data-i18n="pp.intro_html">Habesha Hearts ("we," "us," or "our") is operated by AYE Tech Hub. This Privacy Policy explains what information we collect from users of the Habesha Hearts mobile application and website, how we use it, who we share it with, and the choices and rights available to you. By creating an account or using the app, you agree to the practices described in this policy.</p>
+      </div>
+
+      <div class="legal-block" id="pp-info-collect">
+        <h3 data-i18n="pp.info_collect.title">Information We Collect</h3>
+        <div data-i18n-html="pp.info_collect.body_html">
+        <p>We collect the following categories of information to operate the dating service:</p>
+        <ul>
+          <li><strong>Account information:</strong> name, email address, phone number, date of birth, and gender, collected at sign-up (including via Google or Facebook sign-in).</li>
+          <li><strong>Profile information:</strong> profile photos, bio text, voice bio recordings, interests, and any other details you choose to add to your profile.</li>
+          <li><strong>Location data:</strong> approximate or precise location, used to show you nearby matches (see "Location Data Usage" below).</li>
+          <li><strong>Messages and communications:</strong> content of chat messages, likes, matches, and reports you send within the app.</li>
+          <li><strong>Device and usage information:</strong> device model, operating system, app version, IP address, crash logs, and in-app activity.</li>
+          <li><strong>Payment information:</strong> if you purchase Premium or Premium+, payment is processed by Google Play Billing. We do not receive or store your full card number.</li>
+        </ul>
+        </div>
+      </div>
+
+      <div class="legal-block" id="pp-how-use">
+        <h3 data-i18n="pp.how_use.title">How We Use Information</h3>
+        <div data-i18n-html="pp.how_use.body_html">
+        <p>We use the information we collect to:</p>
+        <ul>
+          <li>Create and maintain your account and profile.</li>
+          <li>Show you relevant matches and suggestions based on preferences, location, and activity.</li>
+          <li>Enable messaging, matching, likes, and other core dating-app features.</li>
+          <li>Verify profiles, detect fraud, and enforce our Community Guidelines and Terms of Service.</li>
+          <li>Process subscription payments (Premium / Premium+) and manage billing.</li>
+          <li>Send important notifications (matches, messages, safety alerts, account updates).</li>
+          <li>Improve app performance and develop new features through aggregated analytics.</li>
+        </ul>
+        </div>
+      </div>
+
+      <div class="legal-block" id="pp-location">
+        <h3 data-i18n="pp.location.title">Location Data Usage</h3>
+        <div data-i18n-html="pp.location.body_html">
+        <p>Habesha Hearts uses your device's location to show you potential matches who are nearby and to display an approximate distance on profiles. You can grant precise or approximate location access through your device's permission settings. Location access is optional — you may still use core features without enabling location, though match suggestions may be less relevant. We do not display your exact GPS coordinates to other users; only an approximate distance or city is shown. You may revoke location permission at any time from your device settings.</p>
+        </div>
+      </div>
+
+      <div class="legal-block" id="pp-photos">
+        <h3 data-i18n="pp.photos.title">Profile Photos</h3>
+        <div data-i18n-html="pp.photos.body_html">
+        <p>Photos you upload are stored securely on Firebase Storage and are shown to other users as part of your public profile, in line with standard dating-app functionality. Do not upload photos of anyone other than yourself, or any content that violates our Community Guidelines (nudity, minors, violence, or impersonation). We may remove photos or suspend accounts that violate these guidelines. You can delete or replace your photos at any time from your profile settings.</p>
+        </div>
+      </div>
+
+      <div class="legal-block" id="pp-chat">
+        <h3 data-i18n="pp.chat.title">Chat Messages</h3>
+        <div data-i18n-html="pp.chat.body_html">
+        <p>Messages you send through Habesha Hearts are stored on our servers (Firebase Firestore) to deliver the conversation to the recipient and to support features such as message history, reporting, and moderation. We do not sell the content of your private messages. Our moderation team may review reported conversations solely to investigate violations of our Community Guidelines, harassment, or safety reports. Blocked or deleted conversations are removed from active display but may be retained briefly for safety and legal-compliance purposes.</p>
+        </div>
+      </div>
+
+      <div class="legal-block" id="pp-device">
+        <h3 data-i18n="pp.device.title">Device Information</h3>
+        <div data-i18n-html="pp.device.body_html">
+        <p>We automatically collect certain technical information when you use the app, including device model, operating system and version, unique device identifiers, mobile network information, app version, language settings, and crash/diagnostic logs. This information helps us secure accounts, fix bugs, and ensure compatibility across devices.</p>
+        </div>
+      </div>
+
+      <div class="legal-block" id="pp-analytics">
+        <h3 data-i18n="pp.analytics.title">Analytics</h3>
+        <div data-i18n-html="pp.analytics.body_html">
+        <p>We use analytics tools, including Firebase Analytics and Google Analytics, to understand how users interact with the app — for example, which features are used most, session length, and retention. Analytics data is generally aggregated and used to improve the product; it is not used to publicly identify individual users.</p>
+        </div>
+      </div>
+
+      <div class="legal-block" id="pp-third-party">
+        <h3 data-i18n="pp.third_party.title">Third-Party Services</h3>
+        <div data-i18n-html="pp.third_party.body_html">
+        <p>Habesha Hearts relies on the following third-party service providers to operate the app. Each provider processes data under its own privacy policy:</p>
+        <ul>
+          <li><strong>Firebase (Google):</strong> Authentication, Firestore database, Cloud Storage (photos/voice bios), Cloud Messaging (push notifications), and Crashlytics.</li>
+          <li><strong>Google Analytics / Firebase Analytics:</strong> in-app usage analytics.</li>
+          <li><strong>Google AdMob:</strong> may display ads to free-tier users and uses device identifiers (e.g. advertising ID) for ad delivery and limited ad personalization, subject to your device's ad-tracking settings.</li>
+          <li><strong>Payment processor:</strong> Google Play Billing processes Premium and Premium+ subscription payments.</li>
+          <li><strong>Google / Facebook Sign-In:</strong> optional social login providers, used only with your explicit authorization.</li>
+        </ul>
+        </div>
+      </div>
+
+      <div class="legal-block" id="pp-sharing">
+        <h3 data-i18n="pp.sharing.title">Data Sharing</h3>
+        <div data-i18n-html="pp.sharing.body_html">
+        <p>We do not sell your personal information. We share data only in the following limited circumstances:</p>
+        <ul>
+          <li>With the service providers listed above, strictly to operate the app (hosting, storage, analytics, payments, push notifications).</li>
+          <li>With other users, limited to what you choose to display on your public profile (photos, bio, voice bio, approximate distance, online status).</li>
+          <li>With law enforcement or regulators, when required by law, legal process, or to protect the safety of our users.</li>
+          <li>In connection with a merger, acquisition, or sale of assets, with continued protection under this policy.</li>
+        </ul>
+        </div>
+      </div>
+
+      <div class="legal-block" id="pp-security">
+        <h3 data-i18n="pp.security.title">Data Security</h3>
+        <div data-i18n-html="pp.security.body_html">
+        <p>We use industry-standard security measures to protect your data, including encrypted connections (HTTPS/TLS), Firebase security rules restricting access to authorized users, and access controls limiting employee access to personal data. While we work hard to protect your information, no method of transmission or storage is 100% secure, and we cannot guarantee absolute security.</p>
+        </div>
+      </div>
+
+      <div class="legal-block" id="pp-rights">
+        <h3 data-i18n="pp.rights.title">User Rights and Data Deletion</h3>
+        <div data-i18n-html="pp.rights.body_html">
+        <p>You have the right to access, correct, export, or delete your personal data. You can:</p>
+        <ul>
+          <li>Edit your profile information directly within the app at any time.</li>
+          <li>Delete individual photos, your voice bio, or specific conversations from your account.</li>
+          <li>Permanently delete your account and associated data from Settings &rarr; Account &rarr; Delete Account, or by emailing us at <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a> with the subject line "DELETE MY ACCOUNT".</li>
+          <li>You can also submit a deletion request directly from our website: <a href="/habesha-hearts/delete-account" style="color:var(--green)">Delete My Account</a>.</li>
+          <li>Request a copy of the personal data we hold about you.</li>
+        </ul>
+        <p>Account deletion requests are processed within 30 days. Some information may be retained for a limited period where required for legal, safety, fraud-prevention, or accounting purposes (e.g. transaction records).</p>
+        </div>
+      </div>
+
+      <div class="legal-block" id="pp-children">
+        <h3 data-i18n="pp.children.title">Children's Privacy (18+ Only)</h3>
+        <div data-i18n-html="pp.children.body_html">
+        <p>Habesha Hearts is strictly intended for adults aged 18 and older. We do not knowingly collect personal information from anyone under 18. Account creation requires confirming you are at least 18 years of age. If we become aware that a user is under 18, we will suspend the account and delete the associated data as soon as reasonably possible. If you believe a minor is using the app, please contact us immediately at <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a>.</p>
+        </div>
+      </div>
+
+      <div class="legal-block" id="pp-contact">
+        <h3 data-i18n="pp.contact.title">Contact Information</h3>
+        <div data-i18n-html="pp.contact.body_html">
+        <div class="legal-contact-box">
+          <p style="margin-bottom:6px"><strong>AYE Tech Hub — Habesha Hearts</strong></p>
+          <p style="margin-bottom:6px">Email: <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a></p>
+          <p style="margin-bottom:0">Telegram: <a href="https://t.me/ayetechub" target="_blank" rel="noopener" style="color:var(--green)">@ayetechub</a></p>
+        </div>
+        <p style="margin-top:14px">We may update this Privacy Policy from time to time. Material changes will be communicated through the app or via email, and the "Last updated" date above will reflect the most recent revision.</p>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============================================================ TERMS OF SERVICE ============================================================ -->
+<section id="terms-of-service" class="legal-section" aria-labelledby="terms-heading" style="background:linear-gradient(180deg,transparent,rgba(34,197,94,0.03),transparent)">
+  <div class="container legal-wrap">
+    <div class="section-header reveal">
+      <div class="section-tag" data-i18n="tos.tag">📜 Legal</div>
+      <h2 class="section-title" id="terms-heading" data-i18n-html="tos.title_html">Terms of <span class="gradient-text">Service</span></h2>
+      <p class="section-subtitle" data-i18n="tos.subtitle">The rules for using the Habesha Hearts app.</p>
+    </div>
+    <p class="legal-updated" data-i18n="tos.updated">Last updated: June 17, 2026</p>
+
+    <article class="reveal">
+      <div class="legal-block" id="tos-eligibility">
+        <h3 data-i18n="tos.eligibility.title">Eligibility</h3>
+        <div data-i18n-html="tos.eligibility.body_html">
+        <p>You must be at least 18 years old to create an account or use Habesha Hearts. By using the app, you confirm that you are 18 or older and that all information you provide is accurate.</p>
+        </div>
+      </div>
+      <div class="legal-block" id="tos-account">
+        <h3 data-i18n="tos.account.title">Your Account</h3>
+        <div data-i18n-html="tos.account.body_html">
+        <p>You are responsible for maintaining the confidentiality of your login credentials and for all activity under your account. Notify us immediately of any unauthorized use at <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a>.</p>
+        </div>
+      </div>
+      <div class="legal-block" id="tos-conduct">
+        <h3 data-i18n="tos.conduct.title">Community Conduct</h3>
+        <div data-i18n-html="tos.conduct.body_html">
+        <p>You agree not to harass, threaten, scam, impersonate others, post explicit or illegal content, or use the app for any unlawful purpose. Violations may result in content removal, account suspension, or permanent ban, per our Community Guidelines.</p>
+        </div>
+      </div>
+      <div class="legal-block" id="tos-subscriptions">
+        <h3 data-i18n="tos.subscriptions.title">Subscriptions &amp; Payments</h3>
+        <div data-i18n-html="tos.subscriptions.body_html">
+        <p>Premium and Premium+ are auto-renewing subscriptions billed through Google Play Billing, in your country's local currency. You may cancel anytime; cancellation takes effect at the end of the current billing period. Fees are non-refundable except where required by law or Google Play policy.</p>
+        </div>
+      </div>
+      <div class="legal-block" id="tos-termination">
+        <h3 data-i18n="tos.termination.title">Termination</h3>
+        <div data-i18n-html="tos.termination.body_html">
+        <p>We may suspend or terminate accounts that violate these Terms, our Community Guidelines, or applicable law. You may delete your account at any time as described in our Privacy Policy.</p>
+        </div>
+      </div>
+      <div class="legal-block" id="tos-liability">
+        <h3 data-i18n="tos.liability.title">Disclaimer &amp; Liability</h3>
+        <div data-i18n-html="tos.liability.body_html">
+        <p>Habesha Hearts is provided "as is." We do not guarantee matches, relationships, or outcomes from using the app, and we are not liable for the conduct of other users, on or off the platform. Always exercise caution and follow safe-dating practices when meeting someone in person.</p>
+        </div>
+      </div>
+      <div class="legal-block" id="tos-changes">
+        <h3 data-i18n="tos.changes.title">Changes to These Terms</h3>
+        <div data-i18n-html="tos.changes.body_html">
+        <p>We may update these Terms from time to time. Continued use of the app after changes take effect constitutes acceptance of the revised Terms.</p>
+        </div>
+      </div>
+      <div class="legal-block" id="tos-contact">
+        <h3 data-i18n="tos.contact.title">Contact</h3>
+        <div data-i18n-html="tos.contact.body_html">
+        <p>Questions about these Terms can be sent to <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a>.</p>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============================================================ CHILD SAFETY STANDARDS ============================================================ -->
+<section id="child-safety-standards" class="legal-section" aria-labelledby="cs-heading">
+  <div class="container legal-wrap">
+    <div class="section-header reveal">
+      <div class="section-tag" data-i18n="cs.tag">🛡️ Safety</div>
+      <h2 class="section-title" id="cs-heading" data-i18n-html="cs.title_html">Child Safety <span class="gradient-text">Standards</span></h2>
+      <p class="section-subtitle" data-i18n="cs.subtitle">Habesha Hearts' commitment to protecting minors and preventing child sexual abuse and exploitation (CSAE).</p>
+    </div>
+    <p class="legal-updated" data-i18n="cs.updated">Last updated: June 18, 2026 · Applies to the Habesha Hearts app (package: com.habeshahearts.app).</p>
+
+    <article class="reveal">
+      <div class="legal-block" id="cs-commitment">
+        <h3 data-i18n="cs.commitment.title">Our Commitment</h3>
+        <div data-i18n-html="cs.commitment.body_html">
+        <p>Habesha Hearts has zero tolerance for child sexual abuse and exploitation (CSAE) in any form. Habesha Hearts is an adults-only dating platform and is not designed, intended, or permitted to be used by anyone under the age of 18. We do not permit content, accounts, or behavior that sexualizes, endangers, or exploits minors, and we will immediately remove such content and accounts whenever identified.</p>
+        </div>
+      </div>
+
+      <div class="legal-block" id="cs-age">
+        <h3 data-i18n="cs.age.title">Age Requirement</h3>
+        <div data-i18n-html="cs.age.body_html">
+        <p>Every user must confirm they are at least 18 years old during sign-up by providing their date of birth. Accounts found to belong to a person under 18 are suspended immediately and the associated data is deleted, in line with our <a href="#pp-children" style="color:var(--green)">Children's Privacy</a> policy.</p>
+        </div>
+      </div>
+
+      <div class="legal-block" id="cs-prohibited">
+        <h3 data-i18n="cs.prohibited.title">Prohibited Content &amp; Conduct</h3>
+        <div data-i18n-html="cs.prohibited.body_html">
+        <p>The following are strictly prohibited on Habesha Hearts and result in immediate account termination and, where applicable, a report to law enforcement and the National Center for Missing &amp; Exploited Children (NCMEC):</p>
+        <ul>
+          <li>Any image, video, or text that depicts, sexualizes, or endangers a minor.</li>
+          <li>Any attempt to solicit, groom, or arrange contact with a minor.</li>
+          <li>Impersonating a minor or claiming/implying to be under 18.</li>
+          <li>Sharing links to or promoting CSAE content hosted elsewhere.</li>
+        </ul>
+        </div>
+      </div>
+
+      <div class="legal-block" id="cs-prevention">
+        <h3 data-i18n="cs.prevention.title">Detection &amp; Prevention</h3>
+        <div data-i18n-html="cs.prevention.body_html">
+        <p>We use a combination of automated and human review to detect and act on CSAE risks, including profile photo moderation, in-app user reporting on every profile and conversation, and manual review of reported content by our moderation team. Accounts and content flagged for CSAE are prioritized for immediate review.</p>
+        </div>
+      </div>
+
+      <div class="legal-block" id="cs-report">
+        <h3 data-i18n="cs.report.title">How to Report a Concern</h3>
+        <div data-i18n-html="cs.report.body_html">
+        <p>If you encounter content or behavior that may involve a minor, or any suspected CSAE, report it immediately:</p>
+        <ul>
+          <li>In-app: use the "Report" option on any profile, photo, or chat conversation.</li>
+          <li>By email: <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a>, with subject line "CHILD SAFETY CONCERN".</li>
+        </ul>
+        <p>We review CSAE reports as a top priority and aim to take action within 24 hours of receiving a report.</p>
+        </div>
+      </div>
+
+      <div class="legal-block" id="cs-contact">
+        <h3 data-i18n="cs.contact.title">Designated Point of Contact</h3>
+        <div data-i18n-html="cs.contact.body_html">
+        <div class="legal-contact-box">
+          <p style="margin-bottom:6px"><strong>Awet G. Nway — AYE Tech Hub, Habesha Hearts</strong></p>
+          <p style="margin-bottom:0">Email: <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a></p>
+        </div>
+        <p style="margin-top:14px">This contact is responsible for receiving, reviewing, and responding to reports related to child sexual abuse and exploitation, and for cooperating with law enforcement where required by law.</p>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============================================================ FOOTER ============================================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">
+          <img src="/assets/images/habesha-hearts-logo.png" alt="Habesha Hearts" style="width:44px;height:44px;border-radius:10px"/>
+          <span class="footer-name" style="color:var(--green)">Habesha Hearts</span>
+        </div>
+        <p class="footer-desc">The premier dating app for Ethiopian and Eritrean singles worldwide. Find someone who truly shares your culture and values.</p>
+        <div class="footer-social">
+          <a href="https://t.me/ayetechub" target="_blank" rel="noopener" class="social-btn" title="Telegram" aria-label="Telegram">✈</a>
+          <a href="https://instagram.com/ayetechub" target="_blank" rel="noopener" class="social-btn" title="Instagram" aria-label="Instagram">📸</a>
+          <a href="https://tiktok.com/@ayetechub" target="_blank" rel="noopener" class="social-btn" title="TikTok" aria-label="TikTok">🎵</a>
+          <a href="https://facebook.com/ayetechub" target="_blank" rel="noopener" class="social-btn" title="Facebook" aria-label="Facebook">📘</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">App</div>
+        <a href="#features" class="footer-link">Features</a>
+        <a href="#how-it-works" class="footer-link">How It Works</a>
+        <a href="#download" class="footer-link">Download</a>
+        <a href="#faq" class="footer-link">FAQ</a>
+        <a href="#privacy-policy" class="footer-link">Privacy Policy</a>
+        <a href="#child-safety-standards" class="footer-link">Child Safety Standards</a>
+        <a href="/habesha-hearts/delete-account" class="footer-link">Delete Account</a>
+        <a href="https://play.google.com/store/apps/details?id=com.habeshahearts.app" target="_blank" rel="noopener" class="footer-link" style="color:var(--green)">📲 Google Play</a>
+      </div>
+      <div>
+        <div class="footer-col-title">AYE Tech Hub</div>
+        <a href="/index.html" class="footer-link">Home</a>
+        <a href="/courses.html" class="footer-link">Courses</a>
+        <a href="/pdfs.html" class="footer-link">PDF Library</a>
+        <a href="/fit-hub.html" class="footer-link">Fit Hub</a>
+        <a href="/contact.html" class="footer-link">Contact</a>
+        <a href="mailto:myhabeshadate@gmail.com" class="footer-link">myhabeshadate@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Habesha Hearts · All rights reserved · Package: com.habeshahearts.app</div>
+      <nav class="footer-legal" aria-label="Legal links">
+        <a href="#privacy-policy" class="footer-legal-link">Privacy Policy</a>
+        <span class="footer-legal-sep">·</span>
+        <a href="#terms-of-service" class="footer-legal-link">Terms of Service</a>
+        <span class="footer-legal-sep">·</span>
+        <a href="#contact" class="footer-legal-link">Contact Support</a>
+      </nav>
+      <div class="footer-aye">Powered by <a href="/index.html">AYE Tech Hub</a> 🇪🇹</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================ FLOATING CTA ============================================================ -->
+
+
+<script>
+// Navbar scroll
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll',()=>{
+  navbar.classList.toggle('scrolled',window.scrollY>40);
+});
+
+// Mobile menu
+function toggleMobileMenu(){
+  const m=document.getElementById('mobile-menu');
+  m.classList.toggle('open');
+}
+
+// Theme toggle
+function toggleTheme(){
+  const html=document.documentElement;
+  const isLight=html.getAttribute('data-theme')==='light';
+  html.setAttribute('data-theme',isLight?'dark':'light');
+  document.querySelector('#navbar .icon-btn').textContent=isLight?'☀':'🌙';
+}
+
+// Reveal on scroll
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}});
+},{threshold:0.12});
+reveals.forEach(el=>observer.observe(el));
+
+// FAQ toggle
+function toggleFaq(el){
+  const item=el.parentElement;
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen)item.classList.add('open');
+}
+
+// Close mobile menu on outside click
+document.addEventListener('click',e=>{
+  const menu=document.getElementById('mobile-menu');
+  const hamburger=document.querySelector('.hamburger');
+  if(menu.classList.contains('open')&&!menu.contains(e.target)&&!hamburger.contains(e.target)){
+    menu.classList.remove('open');
+  }
+});
+
+// Contact form submission (sends to Formspree)
+async function submitForm(e){
+  e.preventDefault();
+  const btn=document.getElementById('fsubmit');
+  const msg=document.getElementById('formMsg');
+  btn.disabled=true;btn.textContent='Sending…';
+  msg.className='form-msg';msg.textContent='';
+  const data={
+    name:document.getElementById('fname').value,
+    email:document.getElementById('femail').value,
+    type:document.getElementById('ftype').value,
+    subject:document.getElementById('fsubject').value,
+    message:document.getElementById('fmessage').value,
+    _subject:'[Habesha Hearts] '+document.getElementById('fsubject').value,
+    _replyto:document.getElementById('femail').value,
+    _template:'table',
+  };
+  try{
+    // Replace with your Formspree endpoint or Firebase Function URL
+    const res=await fetch('https://formsubmit.co/ajax/myhabeshadate@gmail.com',{
+      method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)
+    });
+    if(res.ok){
+      msg.className='form-msg success';msg.textContent='✓ Message sent! We\'ll reply within 24 hours.';
+      document.getElementById('contactForm').reset();
+    }else throw new Error();
+  }catch{
+    msg.className='form-msg error';msg.textContent='Failed to send. Please email us directly at myhabeshadate@gmail.com';
+  }finally{btn.disabled=false;btn.textContent='Send Message →'}
+}
+</script>
+
+<!-- ============================================================ LANGUAGE SWITCHER ============================================================ -->
+<script>
+const HH_TRANSLATIONS = {
+  en: {
+    'nav.features': 'Features',
+    'nav.mission': 'Mission',
+    'nav.founder': 'Founder',
+    'nav.safety': 'Safety',
+    'nav.plans': 'Plans',
+    'nav.contact': 'Contact',
+    'nav.download': '📲 Download',
+    'hero.tag': '❤️ The Habesha Dating App',
+    'hero.btn_download': '📲 Download Free',
+    'hero.btn_features': '✨ See Features',
+    'features.tag': '✨ App Features',
+    'mission.tag': '🌟 Our Mission',
+    'safety.tag': '🛡 TRUST & SAFETY',
+    'plans.tag': '💎 Membership Plans',
+    'founder.badge': 'Founder & CEO · AYE Tech Hub',
+    // Feature cards
+    'feat.photo.title': 'Photo Swiping',
+    'feat.photo.desc': 'Browse multiple photos per profile by swiping. Know exactly who you\'re connecting with before you say hello.',
+    'feat.voice.title': 'Voice Bio',
+    'feat.voice.desc': 'Record up to 15 seconds of your voice. Let your personality shine through — hear someone\'s voice before you match.',
+    'feat.msg.title': 'Private Messaging',
+    'feat.msg.desc': 'Send private messages to anyone you like. No match required — open, respectful communication from the start.',
+    'feat.discover.title': 'Smart Discover',
+    'feat.discover.desc': 'Swipe through curated profiles with glassmorphism cards. Filter by age, city, interests, and more.',
+    'feat.verified.title': 'Verified Profiles',
+    'feat.verified.desc': 'Blue badge verification means you\'re connecting with real people — no bots, no fake accounts.',
+    'feat.feed.title': 'Community Feed',
+    'feat.feed.desc': 'Share moments, see posts from the community, and like content. More than dating — a Habesha social space.',
+    'feat.premium.title': 'Premium & Premium+',
+    'feat.premium.desc': 'Unlock unlimited likes, see who liked you, boost your profile, and more. Pay in your local currency via Google Play Billing.',
+    'feat.safety.title': 'Report & Block',
+    'feat.safety.desc': 'Full report and block system keeps the community safe. Our moderation team reviews all reports.',
+    // Mission cards
+    'mission.m1.title': 'Meaningful Relationships',
+    'mission.m2.title': 'Friendship First',
+    'mission.m3.title': 'Community Building',
+    'mission.m4.title': 'Cultural Connection',
+    'mission.m5.title': 'Respect & Safety',
+    'mission.m6.title': 'Diaspora Pride',
+    // Plans
+    'plans.free': 'Free',
+    'plans.premium': 'Premium',
+    'plans.premiumplus': 'Premium+',
+    'plans.free.price': '$0 / forever',
+    'plans.premium.price': '$2.99 / month',
+    'plans.premiumplus.price': '$4.99 / month',
+    'plans.cta.free': 'Get Started Free',
+    'plans.cta.premium': 'Get Premium',
+    'plans.cta.premiumplus': 'Get Premium+',
+    // Download
+    'download.store': 'GET IT ON',
+    'download.store.name': 'Google Play',
+    // Contact
+    'contact.send': 'Send Message',
+    // Floating CTA
+    'cta.download': '📲 Download App',
+    // Hero stats
+    'hero.stat_members': 'Members',
+    'hero.stat_countries': 'Countries',
+    'hero.stat_rating': 'Rating',
+    // Features section
+    'features.title': 'Everything You Need to Find a Real Connection',
+    'features.subtitle': 'Designed specifically for Habesha singles — with features that matter to our community.',
+    // Mission section
+    'mission.title': 'Why Habesha Hearts Exists',
+    'mission.subtitle': 'Connecting Habesha people worldwide — through culture, language, and shared values.',
+    'mission.m1.desc': 'We believe in connections that go beyond surface level — built on shared values and cultural understanding.',
+    'mission.m2.desc': 'Get to know someone through voice, stories, and community before romance begins.',
+    'mission.m3.desc': 'A space where Habesha people can connect, share, and grow together globally.',
+    'mission.m4.desc': 'Matching people who share Ethiopian and Eritrean culture, language, and traditions.',
+    'mission.m5.desc': 'Every user deserves to feel safe and respected. Zero tolerance for harassment.',
+    'mission.m6.desc': 'Proudly serving the global Habesha diaspora — wherever you are in the world.',
+    // Founder section
+    'founder.title': 'Built by a Habesha Engineer',
+    // Safety section
+    'safety.title': 'Your Safety is Our Priority',
+    'safety.subtitle': 'We built Habesha Hearts with safety and trust at the core.',
+    // Plans section
+    'plans.subtitle': 'Start free. Upgrade when you\'re ready.',
+    // How It Works section
+    'how.tag': '🚀 Getting Started',
+    'how.title': 'How It Works',
+    'how.subtitle': 'Three simple steps to find your Habesha match.',
+    'how.step1_title': 'Create Your Profile',
+    'how.step1_desc': 'Sign up free and add your photos, voice bio, and a bit about yourself.',
+    'how.step2_title': 'Discover Matches',
+    'how.step2_desc': 'Browse and swipe through Habesha profiles filtered to your preferences.',
+    'how.step3_title': 'Connect & Chat',
+    'how.step3_desc': 'Match with someone you like and start a real private conversation.',
+    // Privacy Policy
+    'pp.tag': '🔒 Privacy',
+    'pp.title_html': 'Privacy <span class="gradient-text">Policy</span>',
+    'pp.subtitle': 'How Habesha Hearts collects, uses, and protects your information.',
+    'pp.updated_html': 'Last updated: June 17, 2026 &middot; Applies to the Habesha Hearts app (package: <code>com.habeshahearts.app</code>) and this website.',
+    'pp.toc.info_collect': 'Information We Collect',
+    'pp.toc.how_use': 'How We Use Information',
+    'pp.toc.location': 'Location Data',
+    'pp.toc.photos': 'Profile Photos',
+    'pp.toc.chat': 'Chat Messages',
+    'pp.toc.device': 'Device Information',
+    'pp.toc.analytics': 'Analytics',
+    'pp.toc.third_party': 'Third-Party Services',
+    'pp.toc.sharing': 'Data Sharing',
+    'pp.toc.security': 'Data Security',
+    'pp.toc.rights': 'Your Rights &amp; Deletion',
+    'pp.toc.children': "Children's Privacy",
+    'pp.toc.contact': 'Contact',
+    'pp.intro_html': 'Habesha Hearts ("we," "us," or "our") is operated by AYE Tech Hub. This Privacy Policy explains what information we collect from users of the Habesha Hearts mobile application and website, how we use it, who we share it with, and the choices and rights available to you. By creating an account or using the app, you agree to the practices described in this policy.',
+    'pp.info_collect.title': 'Information We Collect',
+    'pp.info_collect.body_html': '<p>We collect the following categories of information to operate the dating service:</p><ul><li><strong>Account information:</strong> name, email address, phone number, date of birth, and gender, collected at sign-up (including via Google or Facebook sign-in).</li><li><strong>Profile information:</strong> profile photos, bio text, voice bio recordings, interests, and any other details you choose to add to your profile.</li><li><strong>Location data:</strong> approximate or precise location, used to show you nearby matches (see "Location Data Usage" below).</li><li><strong>Messages and communications:</strong> content of chat messages, likes, matches, and reports you send within the app.</li><li><strong>Device and usage information:</strong> device model, operating system, app version, IP address, crash logs, and in-app activity.</li><li><strong>Payment information:</strong> if you purchase Premium or Premium+, payment is processed by Google Play Billing. We do not receive or store your full card number.</li></ul>',
+    'pp.how_use.title': 'How We Use Information',
+    'pp.how_use.body_html': '<p>We use the information we collect to:</p><ul><li>Create and maintain your account and profile.</li><li>Show you relevant matches and suggestions based on preferences, location, and activity.</li><li>Enable messaging, matching, likes, and other core dating-app features.</li><li>Verify profiles, detect fraud, and enforce our Community Guidelines and Terms of Service.</li><li>Process subscription payments (Premium / Premium+) and manage billing.</li><li>Send important notifications (matches, messages, safety alerts, account updates).</li><li>Improve app performance and develop new features through aggregated analytics.</li></ul>',
+    'pp.location.title': 'Location Data Usage',
+    'pp.location.body_html': '<p>Habesha Hearts uses your device\'s location to show you potential matches who are nearby and to display an approximate distance on profiles. You can grant precise or approximate location access through your device\'s permission settings. Location access is optional — you may still use core features without enabling location, though match suggestions may be less relevant. We do not display your exact GPS coordinates to other users; only an approximate distance or city is shown. You may revoke location permission at any time from your device settings.</p>',
+    'pp.photos.title': 'Profile Photos',
+    'pp.photos.body_html': '<p>Photos you upload are stored securely on Firebase Storage and are shown to other users as part of your public profile, in line with standard dating-app functionality. Do not upload photos of anyone other than yourself, or any content that violates our Community Guidelines (nudity, minors, violence, or impersonation). We may remove photos or suspend accounts that violate these guidelines. You can delete or replace your photos at any time from your profile settings.</p>',
+    'pp.chat.title': 'Chat Messages',
+    'pp.chat.body_html': '<p>Messages you send through Habesha Hearts are stored on our servers (Firebase Firestore) to deliver the conversation to the recipient and to support features such as message history, reporting, and moderation. We do not sell the content of your private messages. Our moderation team may review reported conversations solely to investigate violations of our Community Guidelines, harassment, or safety reports. Blocked or deleted conversations are removed from active display but may be retained briefly for safety and legal-compliance purposes.</p>',
+    'pp.device.title': 'Device Information',
+    'pp.device.body_html': '<p>We automatically collect certain technical information when you use the app, including device model, operating system and version, unique device identifiers, mobile network information, app version, language settings, and crash/diagnostic logs. This information helps us secure accounts, fix bugs, and ensure compatibility across devices.</p>',
+    'pp.analytics.title': 'Analytics',
+    'pp.analytics.body_html': '<p>We use analytics tools, including Firebase Analytics and Google Analytics, to understand how users interact with the app — for example, which features are used most, session length, and retention. Analytics data is generally aggregated and used to improve the product; it is not used to publicly identify individual users.</p>',
+    'pp.third_party.title': 'Third-Party Services',
+    'pp.third_party.body_html': '<p>Habesha Hearts relies on the following third-party service providers to operate the app. Each provider processes data under its own privacy policy:</p><ul><li><strong>Firebase (Google):</strong> Authentication, Firestore database, Cloud Storage (photos/voice bios), Cloud Messaging (push notifications), and Crashlytics.</li><li><strong>Google Analytics / Firebase Analytics:</strong> in-app usage analytics.</li><li><strong>Google AdMob:</strong> may display ads to free-tier users and uses device identifiers (e.g. advertising ID) for ad delivery and limited ad personalization, subject to your device\'s ad-tracking settings.</li><li><strong>Payment processor:</strong> Google Play Billing processes Premium and Premium+ subscription payments.</li><li><strong>Google / Facebook Sign-In:</strong> optional social login providers, used only with your explicit authorization.</li></ul>',
+    'pp.sharing.title': 'Data Sharing',
+    'pp.sharing.body_html': '<p>We do not sell your personal information. We share data only in the following limited circumstances:</p><ul><li>With the service providers listed above, strictly to operate the app (hosting, storage, analytics, payments, push notifications).</li><li>With other users, limited to what you choose to display on your public profile (photos, bio, voice bio, approximate distance, online status).</li><li>With law enforcement or regulators, when required by law, legal process, or to protect the safety of our users.</li><li>In connection with a merger, acquisition, or sale of assets, with continued protection under this policy.</li></ul>',
+    'pp.security.title': 'Data Security',
+    'pp.security.body_html': '<p>We use industry-standard security measures to protect your data, including encrypted connections (HTTPS/TLS), Firebase security rules restricting access to authorized users, and access controls limiting employee access to personal data. While we work hard to protect your information, no method of transmission or storage is 100% secure, and we cannot guarantee absolute security.</p>',
+    'pp.rights.title': 'User Rights and Data Deletion',
+    'pp.rights.body_html': '<p>You have the right to access, correct, export, or delete your personal data. You can:</p><ul><li>Edit your profile information directly within the app at any time.</li><li>Delete individual photos, your voice bio, or specific conversations from your account.</li><li>Permanently delete your account and associated data from Settings &rarr; Account &rarr; Delete Account, or by emailing us at <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a> with the subject line "DELETE MY ACCOUNT".</li><li>You can also submit a deletion request directly from our website: <a href="/habesha-hearts/delete-account" style="color:var(--green)">Delete My Account</a>.</li><li>Request a copy of the personal data we hold about you.</li></ul><p>Account deletion requests are processed within 30 days. Some information may be retained for a limited period where required for legal, safety, fraud-prevention, or accounting purposes (e.g. transaction records).</p>',
+    'pp.children.title': "Children's Privacy (18+ Only)",
+    'pp.children.body_html': '<p>Habesha Hearts is strictly intended for adults aged 18 and older. We do not knowingly collect personal information from anyone under 18. Account creation requires confirming you are at least 18 years of age. If we become aware that a user is under 18, we will suspend the account and delete the associated data as soon as reasonably possible. If you believe a minor is using the app, please contact us immediately at <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a>.</p>',
+    'pp.contact.title': 'Contact Information',
+    'pp.contact.body_html': '<div class="legal-contact-box"><p style="margin-bottom:6px"><strong>AYE Tech Hub — Habesha Hearts</strong></p><p style="margin-bottom:6px">Email: <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a></p><p style="margin-bottom:0">Telegram: <a href="https://t.me/ayetechub" target="_blank" rel="noopener" style="color:var(--green)">@ayetechub</a></p></div><p style="margin-top:14px">We may update this Privacy Policy from time to time. Material changes will be communicated through the app or via email, and the "Last updated" date above will reflect the most recent revision.</p>',
+    // Terms of Service
+    'tos.tag': '📜 Legal',
+    'tos.title_html': 'Terms of <span class="gradient-text">Service</span>',
+    'tos.subtitle': 'The rules for using the Habesha Hearts app.',
+    'tos.updated': 'Last updated: June 17, 2026',
+    'tos.eligibility.title': 'Eligibility',
+    'tos.eligibility.body_html': '<p>You must be at least 18 years old to create an account or use Habesha Hearts. By using the app, you confirm that you are 18 or older and that all information you provide is accurate.</p>',
+    'tos.account.title': 'Your Account',
+    'tos.account.body_html': '<p>You are responsible for maintaining the confidentiality of your login credentials and for all activity under your account. Notify us immediately of any unauthorized use at <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a>.</p>',
+    'tos.conduct.title': 'Community Conduct',
+    'tos.conduct.body_html': '<p>You agree not to harass, threaten, scam, impersonate others, post explicit or illegal content, or use the app for any unlawful purpose. Violations may result in content removal, account suspension, or permanent ban, per our Community Guidelines.</p>',
+    'tos.subscriptions.title': 'Subscriptions &amp; Payments',
+    'tos.subscriptions.body_html': '<p>Premium and Premium+ are auto-renewing subscriptions billed through Google Play Billing, in your country\'s local currency. You may cancel anytime; cancellation takes effect at the end of the current billing period. Fees are non-refundable except where required by law or Google Play policy.</p>',
+    'tos.termination.title': 'Termination',
+    'tos.termination.body_html': '<p>We may suspend or terminate accounts that violate these Terms, our Community Guidelines, or applicable law. You may delete your account at any time as described in our Privacy Policy.</p>',
+    'tos.liability.title': 'Disclaimer &amp; Liability',
+    'tos.liability.body_html': '<p>Habesha Hearts is provided "as is." We do not guarantee matches, relationships, or outcomes from using the app, and we are not liable for the conduct of other users, on or off the platform. Always exercise caution and follow safe-dating practices when meeting someone in person.</p>',
+    'tos.changes.title': 'Changes to These Terms',
+    'tos.changes.body_html': '<p>We may update these Terms from time to time. Continued use of the app after changes take effect constitutes acceptance of the revised Terms.</p>',
+    'tos.contact.title': 'Contact',
+    'tos.contact.body_html': '<p>Questions about these Terms can be sent to <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a>.</p>',
+    // Child Safety Standards
+    'cs.tag': '🛡️ Safety',
+    'cs.title_html': 'Child Safety <span class="gradient-text">Standards</span>',
+    'cs.subtitle': "Habesha Hearts' commitment to protecting minors and preventing child sexual abuse and exploitation (CSAE).",
+    'cs.updated': 'Last updated: June 18, 2026 · Applies to the Habesha Hearts app (package: com.habeshahearts.app).',
+    'cs.commitment.title': 'Our Commitment',
+    'cs.commitment.body_html': '<p>Habesha Hearts has zero tolerance for child sexual abuse and exploitation (CSAE) in any form. Habesha Hearts is an adults-only dating platform and is not designed, intended, or permitted to be used by anyone under the age of 18. We do not permit content, accounts, or behavior that sexualizes, endangers, or exploits minors, and we will immediately remove such content and accounts whenever identified.</p>',
+    'cs.age.title': 'Age Requirement',
+    'cs.age.body_html': '<p>Every user must confirm they are at least 18 years old during sign-up by providing their date of birth. Accounts found to belong to a person under 18 are suspended immediately and the associated data is deleted, in line with our <a href="#pp-children" style="color:var(--green)">Children\'s Privacy</a> policy.</p>',
+    'cs.prohibited.title': 'Prohibited Content &amp; Conduct',
+    'cs.prohibited.body_html': '<p>The following are strictly prohibited on Habesha Hearts and result in immediate account termination and, where applicable, a report to law enforcement and the National Center for Missing &amp; Exploited Children (NCMEC):</p><ul><li>Any image, video, or text that depicts, sexualizes, or endangers a minor.</li><li>Any attempt to solicit, groom, or arrange contact with a minor.</li><li>Impersonating a minor or claiming/implying to be under 18.</li><li>Sharing links to or promoting CSAE content hosted elsewhere.</li></ul>',
+    'cs.prevention.title': 'Detection &amp; Prevention',
+    'cs.prevention.body_html': '<p>We use a combination of automated and human review to detect and act on CSAE risks, including profile photo moderation, in-app user reporting on every profile and conversation, and manual review of reported content by our moderation team. Accounts and content flagged for CSAE are prioritized for immediate review.</p>',
+    'cs.report.title': 'How to Report a Concern',
+    'cs.report.body_html': '<p>If you encounter content or behavior that may involve a minor, or any suspected CSAE, report it immediately:</p><ul><li>In-app: use the "Report" option on any profile, photo, or chat conversation.</li><li>By email: <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a>, with subject line "CHILD SAFETY CONCERN".</li></ul><p>We review CSAE reports as a top priority and aim to take action within 24 hours of receiving a report.</p>',
+    'cs.contact.title': 'Designated Point of Contact',
+    'cs.contact.body_html': '<div class="legal-contact-box"><p style="margin-bottom:6px"><strong>Awet G. Nway — AYE Tech Hub, Habesha Hearts</strong></p><p style="margin-bottom:0">Email: <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a></p></div><p style="margin-top:14px">This contact is responsible for receiving, reviewing, and responding to reports related to child sexual abuse and exploitation, and for cooperating with law enforcement where required by law.</p>',
+  },
+  am: {
+    'nav.features': 'ባህሪያት',
+    'nav.mission': 'ተልዕኮ',
+    'nav.founder': 'መሥራቹ',
+    'nav.safety': 'ደህንነት',
+    'nav.plans': 'ዕቅዶች',
+    'nav.contact': 'ያግኙን',
+    'nav.download': '📲 አውርድ',
+    'hero.tag': '❤️ የሀበሻ ዴቲንግ አፕ',
+    'hero.btn_download': '📲 በነፃ አውርድ',
+    'hero.btn_features': '✨ ባህሪያቱን ይመልከቱ',
+    'features.tag': '✨ የአፕ ባህሪያት',
+    'mission.tag': '🌟 ተልዕኮአችን',
+    'safety.tag': '🛡 ደህንነት & እምነት',
+    'plans.tag': '💎 የአባልነት ዕቅዶች',
+    'founder.badge': 'መሥራቹ & ዋና ሥራ አስኪያጅ · AYE Tech Hub',
+    'feat.photo.title': 'ፎቶ ማሸብለል',
+    'feat.photo.desc': 'ለእያንዳንዱ ፕሮፋይል ብዙ ፎቶዎችን ያስሱ። ሰላም ከማለትዎ በፊት ከ누ን እያነጋገሩ እንደሆነ ያውቃሉ።',
+    'feat.voice.title': 'የድምፅ ባዮ',
+    'feat.voice.desc': 'እስከ 15 ሰከንድ ድምፅዎን ይቅዱ። ከማዛመድ በፊት የሌሎችን ድምፅ ይስሙ።',
+    'feat.msg.title': 'የግል መልዕክት',
+    'feat.msg.desc': 'ለሚወዷቸው ሰዎች የግል መልዕክቶች ይላኩ። ክብርን ከሚያሳዩ ክፍት ግንኙነቶች ጀምሩ።',
+    'feat.discover.title': 'ፕሮፋይሎችን ፈልጉ',
+    'feat.discover.desc': 'በዕድሜ፣ ከተማ፣ ፍላጎቶች እና ሌሎች ነገሮች ያጣሩ። ለሀበሻ ብቻ ።',
+    'feat.verified.title': 'የተረጋገጡ ፕሮፋይሎች',
+    'feat.verified.desc': 'ሰማያዊ ባጅ ማረጋገጫ ከእውነተኛ ሰዎች ጋር እያነጋገሩ መሆናቸውን ያሳያል።',
+    'feat.feed.title': 'ማህበረሰብ ፊድ',
+    'feat.feed.desc': 'ቅጽበቶችን ያጋሩ፣ ከማህበረሰቡ ፖስቶችን ይመልከቱ። ከዴቲንግ በላይ — የሀበሻ ማህበራዊ ቦታ።',
+    'feat.premium.title': 'ፕሪሚየም & ፕሪሚየም+',
+    'feat.premium.desc': 'ያልተገደበ ላይኮች ይክፈቱ፣ ማን እንደወደዱዎ ይዩ፣ ፕሮፋይልዎን ያሳድጉ። በሀገርዎ ምንዛሬ በGoogle Play Billing ይክፈሉ።',
+    'feat.safety.title': 'ሪፖርት & ብሎክ',
+    'feat.safety.desc': 'ሙሉ ሪፖርት እና ብሎክ ሲስተም ማህበረሰቡን ደህንነቱ ይጠብቃል። ቡድናችን ሁሉንም ሪፖርቶች ያጣራል።',
+    'mission.m1.title': 'ትርጉም ያለው ግንኙነት',
+    'mission.m2.title': 'ወዳጅነት አስቀድሞ',
+    'mission.m3.title': 'ማህበረሰብ ግንባታ',
+    'mission.m4.title': 'የባህል ትስስር',
+    'mission.m5.title': 'ክብር & ደህንነት',
+    'mission.m6.title': 'ዲያስፖራ ኩራት',
+    'plans.free': 'ነፃ',
+    'plans.premium': 'ፕሪሚየም',
+    'plans.premiumplus': 'ፕሪሚየም+',
+    'plans.free.price': '$0 / ለዘላለም',
+    'plans.premium.price': '$2.99 / ወር',
+    'plans.premiumplus.price': '$4.99 / ወር',
+    'plans.cta.free': 'ነፃ ጀምር',
+    'plans.cta.premium': 'ፕሪሚየም አግኝ',
+    'plans.cta.premiumplus': 'ፕሪሚየም+ አግኝ',
+    'download.store': 'ከዚህ አውርድ',
+    'download.store.name': 'Google Play',
+    'contact.send': 'መልዕክት ላክ',
+    'cta.download': '📲 አፑን አውርድ',
+    // Hero stats
+    'hero.stat_members': 'አባሎች',
+    'hero.stat_countries': 'ሀገሮች',
+    'hero.stat_rating': 'ደረጃ',
+    // Features section
+    'features.title': 'ለእውነተኛ ግንኙነት የሚያስፈልጉ ሁሉም ነገሮች',
+    'features.subtitle': 'ለሐበሻ ሲንግሎቸ ተለይቶ የተሰራ — ለማህበረሰባችን ትርጉም ያላቸው ፊቸሮቸ።',
+    // Mission section
+    'mission.title': 'ሀበሻ ሃርትስ ለምን ተፈጠረ',
+    'mission.subtitle': 'የሀበሻ ሰዎችን ዓለም አቀፍ ማስተሳሰር — በባህሉ፣ ቋንቋ፣ የጋራ እሴቶች።',
+    'mission.m1.desc': 'ከደረቅ ወርፊ ያለፈ ግንኙነት — የጋራ እሴቶችን እና ባህላዊ መረዳት ላይ የተሰራ።',
+    'mission.m2.desc': 'ፍቅር ከመጀመሩ በፊት በድምፅ፣ ታሪኮች፣ ማህበረሰብ ተዋወቁ።',
+    'mission.m3.desc': 'የሀበሻ ሰዎች ሚገናኙ፣ የሚካፈሉ፣ ዓለም አቀፍ ሊያድጉ የሚችሉ ቦታ።',
+    'mission.m4.desc': 'የኢትዮጵያ እና ኤርትራ ባህሉ፣ ቋንቋ፣ ወጎች የሚካፈሉ ሰዎችን ማዛመድ።',
+    'mission.m5.desc': 'እያንዳንዱ ተጠቃሚ ደህንነት እና ክብር የማግኘት መብት አለው። ምንም ዓይነት ጥቃት ዜሮ ምቀባl።',
+    'mission.m6.desc': 'ዓለም አቀፍ ሀበሻ ዲያስፖራ — ከዓለም ማንኛውም ቦታ ይሰራሃናለን።',
+    // Founder section
+    'founder.title': 'በሀበሻ ምህንዶስ የተሰራ',
+    // Safety section
+    'safety.title': 'ደህንነቶ የእኛ ቀዳሚ ነው',
+    'safety.subtitle': 'ሀበሻ ሃርትስ ደህንነትና እምነት ምንጭ አድርጎ ተሠርቷል።',
+    // Plans section
+    'plans.subtitle': 'ነፃ ጀምሩ። ዝግጁ ሲሆኑ ያሻሽሉ።',
+    // How It Works section
+    'how.tag': '🚀 መጀመሪያ',
+    'how.title': 'እንዴት ይሰራል',
+    'how.subtitle': 'ሀበሻ ፍቅርዎን ለማግኘት ሶስት ቀላል ደረጃዎች።',
+    'how.step1_title': 'መገለጫ ፍጠሩ',
+    'how.step1_desc': 'ያለ ዋጋ ይመዝገቡ፣ ፎቶ፣ የድምፅ ባዮ፣ ስለ ራስዎ ወስኩ።',
+    'how.step2_title': 'ፕሮፋይሎችን ፈልጉ',
+    'how.step2_desc': 'ሀበሻ ፕሮፋይሎችን ይዳስሱ እና ሲፋፍ ያድርጉ።',
+    'how.step3_title': 'ይገናኙ & ይጨዋወቱ',
+    'how.step3_desc': 'ከወደዱት ሰው ጋር ማች ሁኑ — እውነተኛ የግል ውይይት ጀምሩ።',
+    // Privacy Policy
+    'pp.tag': '🔒 የግላዊነት መብት',
+    'pp.title_html': 'የግላዊነት <span class="gradient-text">ፖሊሲ</span>',
+    'pp.subtitle': 'ሀበሻ ሃርትስ መረጃዎችዎን እንዴት እንደሚሰበስብ፣ እንደሚጠቀምና እንደሚጠብቅ።',
+    'pp.updated_html': 'መጨረሻ የተሻሻለበት፦ ሰኔ 17, 2026 &middot; ለ ሀበሻ ሃርትስ መተግበሪያ (ፓኬጅ፦ <code>com.habeshahearts.app</code>) እና ለዚህ ድረ-ገጽ ይሠራል።',
+    'pp.toc.info_collect': 'የምንሰበስባቸው መረጃዎች',
+    'pp.toc.how_use': 'መረጃን እንዴት እንጠቀማለን',
+    'pp.toc.location': 'የአካባቢ መረጃ',
+    'pp.toc.photos': 'የመገለጫ ፎቶዎች',
+    'pp.toc.chat': 'የውይይት መልዕክቶች',
+    'pp.toc.device': 'የመሣሪያ መረጃ',
+    'pp.toc.analytics': 'Analytics',
+    'pp.toc.third_party': 'የሶስተኛ ወገን አገልግሎቶች',
+    'pp.toc.sharing': 'የመረጃ መጋራት',
+    'pp.toc.security': 'የመረጃ ደህንነት',
+    'pp.toc.rights': 'የተጠቃሚ መብቶችና ስረዛ',
+    'pp.toc.children': 'የልጆች ግላዊነት',
+    'pp.toc.contact': 'ያግኙን',
+    'pp.intro_html': 'ሀበሻ ሃርትስ ("እኛ" ወይም "ድርጅቱ") በ AYE Tech Hub ይተዳደራል። ይህ የግላዊነት ፖሊሲ ከ ሀበሻ ሃርትስ መተግበሪያ እና ድረ-ገጽ ተጠቃሚዎች የምንሰበስባቸውን መረጃዎች፣ እንዴት እንደምንጠቀምባቸው፣ ለማን እንደምናጋራቸው፣ እና ያሉዎትን ምርጫዎችና መብቶች ያብራራል። መለያ በመፍጠር ወይም መተግበሪያውን በመጠቀም በዚህ ፖሊሲ ውስጥ የተገለጹትን አሰራሮች ተቀብለዋል።',
+    'pp.info_collect.title': 'የምንሰበስባቸው መረጃዎች',
+    'pp.info_collect.body_html': '<p>የዴቲንግ አገልግሎቱን ለማስኬድ የሚከተሉትን የመረጃ ምድቦች እንሰበስባለን፦</p><ul><li><strong>የመለያ መረጃ፦</strong> ስም፣ ኢሜይል አድራሻ፣ የስልክ ቁጥር፣ የትውልድ ቀንና ጾታ፣ በምዝገባ ጊዜ የሚሰበሰብ (በGoogle ወይም Facebook መግቢያ ጨምሮ)።</li><li><strong>የመገለጫ መረጃ፦</strong> የመገለጫ ፎቶዎች፣ ባዮ ጽሑፍ፣ የድምፅ ባዮ ቅጂዎች፣ ፍላጎቶች፣ እና ሌላ ወደ መገለጫዎ የሚያክሉት ዝርዝር።</li><li><strong>የአካባቢ መረጃ፦</strong> ግምታዊ ወይም ትክክለኛ አካባቢ፣ በአቅራቢያዎ ያሉ ግጥሚያዎችን ለማሳየት ይጠቅማል (ከታች "የአካባቢ መረጃ አጠቃቀም" ይመልከቱ)።</li><li><strong>መልዕክቶችና ግንኙነቶች፦</strong> በመተግበሪያው ውስጥ የሚልኳቸው የውይይት መልዕክቶች፣ ላይኮች፣ ግጥሚያዎች እና ሪፖርቶች ይዘት።</li><li><strong>የመሣሪያና አጠቃቀም መረጃ፦</strong> የመሣሪያ ሞዴል፣ ስርዓተ ክወና፣ የመተግበሪያ ስሪት፣ የIP አድራሻ፣ የክራሽ መዝገቦች እና በመተግበሪያ ውስጥ የሚደረግ እንቅስቃሴ።</li><li><strong>የክፍያ መረጃ፦</strong> Premium ወይም Premium+ ሲገዙ ክፍያው በGoogle Play Billing ይከናወናል። ሙሉ የካርድ ቁጥርዎን አንቀበልም ወይም አናስቀምጥም።</li></ul>',
+    'pp.how_use.title': 'መረጃን እንዴት እንጠቀማለን',
+    'pp.how_use.body_html': '<p>የምንሰበስባቸውን መረጃዎች ለሚከተሉት እንጠቀማለን፦</p><ul><li>መለያዎንና መገለጫዎን መፍጠርና ማቆየት።</li><li>በምርጫዎች፣ አካባቢና እንቅስቃሴ መሠረት ተስማሚ ግጥሚያዎችንና ጥቆማዎችን ማሳየት።</li><li>መልዕክት መላላክ፣ ማዛመድ፣ ላይኮችንና ሌሎች የዴቲንግ መተግበሪያ ባህሪያትን ማንቃት።</li><li>መገለጫዎችን ማረጋገጥ፣ ማጭበርበርን መለየት፣ እና የማህበረሰብ መመሪያዎቻችንንና የአገልግሎት ውሎችን ማስከበር።</li><li>የደንበኝነት ክፍያዎችን (Premium / Premium+) ማስኬድና ሂሳብ መያዝ።</li><li>አስፈላጊ ማሳወቂያዎችን መላክ (ግጥሚያዎች፣ መልዕክቶች፣ የደህንነት ማንቂያዎች፣ የመለያ ዝመናዎች)።</li><li>በተደመረ ትንታኔ አማካኝነት የመተግበሪያ አፈጻጸምን ማሻሻልና አዳዲስ ባህሪያትን ማበጃት።</li></ul>',
+    'pp.location.title': 'የአካባቢ መረጃ አጠቃቀም',
+    'pp.location.body_html': '<p>ሀበሻ ሃርትስ በአቅራቢያዎ ያሉ ግጥሚያዎችን ለማሳየት እና በመገለጫዎች ላይ ግምታዊ ርቀት ለማሳየት የመሣሪያዎን አካባቢ ይጠቀማል። ትክክለኛ ወይም ግምታዊ የአካባቢ መረጃ ፍቃድ ከመሣሪያዎ ቅንብሮች መስጠት ይችላሉ። የአካባቢ መረጃ መስጠት ምርጫዊ ነው — አካባቢ ባያነቁም ቁልፍ ባህሪያቱን መጠቀም ይችላሉ፣ ነገር ግን የግጥሚያ ጥቆማዎች ብዙ ላይዛመዱ ይችላሉ። ትክክለኛውን የGPS መጋጠሚያዎችዎን ለሌሎች ተጠቃሚዎች አናሳይም፤ ግምታዊ ርቀት ወይም ከተማ ብቻ ይታያል። የአካባቢ ፍቃድን በማንኛውም ጊዜ ከመሣሪያዎ ቅንብሮች መሰረዝ ይችላሉ።</p>',
+    'pp.photos.title': 'የመገለጫ ፎቶዎች',
+    'pp.photos.body_html': '<p>የሚጭኗቸው ፎቶዎች በ Firebase Storage ላይ በጥንቃቄ ይቀመጡና እንደ መደበኛ የዴቲንግ መተግበሪያ አሰራር በይፋ መገለጫዎ ውስጥ ለሌሎች ተጠቃሚዎች ይታያሉ። ከራስዎ ውጭ የሌላ ሰው ፎቶ፣ ወይም የማህበረሰብ መመሪያዎቻችንን የሚጥስ ይዘት (ራቁትነት፣ ህጻናት፣ ጥቃት ወይም ሌላን አስመስሎ መታየት) አይጫኑ። እነዚህን መመሪያዎች የሚጥሱ ፎቶዎችን ማንሳት ወይም መለያዎችን ማገድ እንችላለን። ፎቶዎችዎን በማንኛውም ጊዜ ከመገለጫ ቅንብሮችዎ መሰረዝ ወይም መቀየር ይችላሉ።</p>',
+    'pp.chat.title': 'የውይይት መልዕክቶች',
+    'pp.chat.body_html': '<p>በ ሀበሻ ሃርትስ የሚልኳቸው መልዕክቶች ውይይቱን ለተቀባዩ ለማድረስ እና እንደ የመልዕክት ታሪክ፣ ሪፖርት እና ቁጥጥር ያሉ ባህሪያትን ለመደገፍ በአገልጋዮቻችን (Firebase Firestore) ላይ ይቀመጣሉ። የግል መልዕክቶችዎን ይዘት አንሸጥም። የቁጥጥር ቡድናችን የተሪፖርቱ ውይይቶችን የማህበረሰብ መመሪያዎች ጥሰት፣ ትንኮሳ ወይም የደህንነት ሪፖርቶችን ለመመርመር ብቻ ሊፈትሽ ይችላል። የተዘጉ ወይም የተሰረዙ ውይይቶች ከንቁ እይታ ይወገዳሉ ነገር ግን ለደህንነትና ለህጋዊ ተገዢነት ዓላማዎች ለአጭር ጊዜ ሊቆዩ ይችላሉ።</p>',
+    'pp.device.title': 'የመሣሪያ መረጃ',
+    'pp.device.body_html': '<p>መተግበሪያውን ሲጠቀሙ የተወሰኑ ቴክኒካዊ መረጃዎችን በራስ-ሰር እንሰበስባለን፣ የመሣሪያ ሞዴል፣ ስርዓተ ክወናና ስሪት፣ ልዩ የመሣሪያ መለያዎች፣ የተንቀሳቃሽ ስልክ ኔትወርክ መረጃ፣ የመተግበሪያ ስሪት፣ የቋንቋ ቅንብሮች እና የክራሽ/ምርመራ መዝገቦችን ይጨምራል። ይህ መረጃ መለያዎችን ለመጠበቅ፣ ስህተቶችን ለማረም እና በመሣሪያዎች መካከል ተስማሚነትን ለማረጋገጥ ይረዳናል።</p>',
+    'pp.analytics.title': 'Analytics',
+    'pp.analytics.body_html': '<p>ተጠቃሚዎች መተግበሪያውን እንዴት እንደሚጠቀሙ ለመረዳት Firebase Analytics እና Google Analytics ጨምሮ የትንታኔ መሣሪያዎችን እንጠቀማለን — ለምሳሌ የትኞቹ ባህሪያት በብዛት ይጠቀማሉ፣ የክፍለ ጊዜ ርዝመትና የተጠቃሚ ቆይታ። የትንታኔ መረጃ በአብዛኛው በተደመረ መልክ ይያዛል እና ምርቱን ለማሻሻል ይውላል፤ ግለሰብ ተጠቃሚዎችን በይፋ ለመለየት አይውልም።</p>',
+    'pp.third_party.title': 'የሶስተኛ ወገን አገልግሎቶች',
+    'pp.third_party.body_html': '<p>ሀበሻ ሃርትስ መተግበሪያውን ለማስኬድ በሚከተሉት የሶስተኛ ወገን አገልግሎት አቅራቢዎች ላይ ይተማመናል። እያንዳንዱ አቅራቢ መረጃን በራሱ የግላዊነት ፖሊሲ ስር ያስኬዳል፦</p><ul><li><strong>Firebase (Google):</strong> Authentication፣ Firestore database፣ Cloud Storage (ፎቶዎች/የድምፅ ባዮዎች)፣ Cloud Messaging (push notifications)፣ እና Crashlytics።</li><li><strong>Google Analytics / Firebase Analytics:</strong> በመተግበሪያ ውስጥ የአጠቃቀም ትንታኔ።</li><li><strong>Google AdMob:</strong> ለነፃ ደረጃ ተጠቃሚዎች ማስታወቂያ ሊያሳይ ይችላል እንዲሁም የመሣሪያ መለያዎችን (ለምሳሌ advertising ID) ለማስታወቂያ አቀራረብና የተወሰነ ግላዊነት ማበጃት ይጠቀማል፣ በመሣሪያዎ የማስታወቂያ-ክትትል ቅንብሮች መሠረት።</li><li><strong>የክፍያ አስኪያጅ፦</strong> Google Play Billing የPremium እና Premium+ የደንበኝነት ክፍያዎችን ያስኬዳል።</li><li><strong>Google / Facebook Sign-In:</strong> በፈቃደኝነት ላይ የተመሠረቱ ማህበራዊ መግቢያ አቅራቢዎች፣ በግልጽ ፍቃድዎ ብቻ ይጠቀማሉ።</li></ul>',
+    'pp.sharing.title': 'የመረጃ መጋራት',
+    'pp.sharing.body_html': '<p>የግል መረጃዎን አንሸጥም። መረጃን በሚከተሉት የተወሰኑ ሁኔታዎች ብቻ እናጋራለን፦</p><ul><li>ከላይ ከተዘረዘሩት አገልግሎት አቅራቢዎች ጋር፣ መተግበሪያውን ለማስኬድ ብቻ (ማስተናገድ፣ ማከማቻ፣ ትንታኔ፣ ክፍያ፣ push notifications)።</li><li>ከሌሎች ተጠቃሚዎች ጋር፣ በይፋ መገለጫዎ ላይ እንዲታይ በሚመርጡት ብቻ (ፎቶዎች፣ ባዮ፣ የድምፅ ባዮ፣ ግምታዊ ርቀት፣ የመስመር ላይ ሁኔታ)።</li><li>በህግ አስፈጻሚ ወይም በተቆጣጣሪ አካላት፣ በህግ ሲጠየቅ፣ በህጋዊ ሂደት ወይም የተጠቃሚዎቻችንን ደህንነት ለመጠበቅ።</li><li>ከውህደት፣ ግዢ ወይም የንብረት ሽያጭ ጋር በተያያዘ፣ በዚህ ፖሊሲ ስር ጥበቃ እንደቀጠለ ሆኖ።</li></ul>',
+    'pp.security.title': 'የመረጃ ደህንነት',
+    'pp.security.body_html': '<p>መረጃዎችዎን ለመጠበቅ የኢንዱስትሪ መለኪያ የደህንነት መለኪያዎችን እንጠቀማለን፣ የተመሰጠረ ግንኙነት (HTTPS/TLS)፣ ለተፈቀደላቸው ተጠቃሚዎች ብቻ መዳረሻን የሚገድብ የFirebase ደህንነት ህጎች፣ እና የሰራተኞችን ወደ ግል መረጃ መዳረሻ የሚገድቡ የመዳረሻ መቆጣጠሪያዎች ይገኙበታል። መረጃዎችን ለመጠበቅ በጠንካራ ብንሰራም፣ ምንም የመተላለፍ ወይም የማከማቻ ዘዴ 100% ደህንነቱ የተጠበቀ አይደለም፤ ፍጹም ደህንነትን ማረጋገጥ አንችልም።</p>',
+    'pp.rights.title': 'የተጠቃሚ መብቶችና የመረጃ ስረዛ',
+    'pp.rights.body_html': '<p>የግል መረጃዎን የማግኘት፣ የማረም፣ የመውጠን ወይም የመሰረዝ መብት አለዎት። የሚከተሉትን ማድረግ ይችላሉ፦</p><ul><li>በማንኛውም ጊዜ በመተግበሪያው ውስጥ በቀጥታ የመገለጫ መረጃዎችን ማረም።</li><li>ከመለያዎ የተወሰኑ ፎቶዎችን፣ የድምፅ ባዮዎችን ወይም ውይይቶችን መሰረዝ።</li><li>ከ Settings &rarr; Account &rarr; Delete Account መለያዎንና ተያያዥ መረጃዎችን ለዘላለም መሰረዝ፣ ወይም በርዕሰ ጉዳይ መስመር "DELETE MY ACCOUNT" ወደ <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a> ኢሜይል በመላክ።</li><li>እንዲሁም በድረ-ገጻችን በቀጥታ የመሰረዝ ጥያቄ ማቅረብ ይችላሉ፦ <a href="/habesha-hearts/delete-account" style="color:var(--green)">መለያ ሰርዝ</a>።</li><li>እርስዎን በተመለከተ የያዝነውን የግል መረጃ ቅጂ መጠየቅ።</li></ul><p>የመለያ ስረዛ ጥያቄዎች በ30 ቀናት ውስጥ ይከናወናሉ። አንዳንድ መረጃዎች በህግ፣ በደህንነት፣ በማጭበርበር መከላከል ወይም በሂሳብ አያያዝ ዓላማዎች (ለምሳሌ የግብይት መዝገቦች) ለተወሰነ ጊዜ ሊቆዩ ይችላሉ።</p>',
+    'pp.children.title': 'የልጆች ግላዊነት (ከ18 ዓመት በላይ ብቻ)',
+    'pp.children.body_html': '<p>ሀበሻ ሃርትስ ለ18 ዓመትና በላይ ለሆኑ ጎልማሶች ብቻ የተዘጋጀ ነው። ከ18 ዓመት በታች ከሆነ ሰው የግል መረጃ ሆን ብለን አንሰበስብም። መለያ መፍጠር ቢያንስ 18 ዓመት እንደሆኑ ማረጋገጥን ይጠይቃል። ተጠቃሚ ከ18 ዓመት በታች እንደሆነ ካወቅን፣ መለያውን በተቻለ ፍጥነት እናግደዋለን እንዲሁም ተያያዥ መረጃውን እንሰረዘዋለን። ህጻን መተግበሪያውን እየተጠቀመ ነው ብለው ካመኑ፣ እባክዎ በአስቸኳይ በ<a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a> ያግኙን።</p>',
+    'pp.contact.title': 'የእውቂያ መረጃ',
+    'pp.contact.body_html': '<div class="legal-contact-box"><p style="margin-bottom:6px"><strong>AYE Tech Hub — Habesha Hearts</strong></p><p style="margin-bottom:6px">ኢሜይል፦ <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a></p><p style="margin-bottom:0">Telegram፦ <a href="https://t.me/ayetechub" target="_blank" rel="noopener" style="color:var(--green)">@ayetechub</a></p></div><p style="margin-top:14px">ይህን የግላዊነት ፖሊሲ ከጊዜ ወደ ጊዜ ልናሻሽል እንችላለን። ጠቃሚ ለውጦች በመተግበሪያው ወይም በኢሜይል ይገለጻሉ፣ እና ከላይ ያለው "መጨረሻ የተሻሻለበት" ቀን የቅርቡን ክለሳ ያንጸባርቃል።</p>',
+    // Terms of Service
+    'tos.tag': '📜 ህጋዊ',
+    'tos.title_html': 'የአገልግሎት <span class="gradient-text">ውሎች</span>',
+    'tos.subtitle': 'ሀበሻ ሃርትስን ለመጠቀም የሚያስፈልጉ ደንቦች።',
+    'tos.updated': 'መጨረሻ የተሻሻለበት፦ ሰኔ 17, 2026',
+    'tos.eligibility.title': 'መለያ የመክፈት ብቁነት',
+    'tos.eligibility.body_html': '<p>መለያ ለመፍጠር ወይም ሀበሻ ሃርትስን ለመጠቀም ቢያንስ 18 ዓመት መሆን አለቦት። መተግበሪያውን በመጠቀም፣ 18 ወይም በላይ መሆንዎንና የሚያቀርቡት መረጃ ሁሉ ትክክለኛ መሆኑን ያረጋግጣሉ።</p>',
+    'tos.account.title': 'መለያዎ',
+    'tos.account.body_html': '<p>የመግቢያ መረጃዎችዎን ምስጢራዊነት መጠበቅና በመለያዎ ስር የሚደረግ ሁሉንም እንቅስቃሴ የመጠበቅ ኃላፊነት አለቦት። ያልተፈቀደ አጠቃቀም ካስተዋሉ ወዲያውኑ በ<a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a> ያሳውቁን።</p>',
+    'tos.conduct.title': 'የማህበረሰብ ሥነ-ምግባር',
+    'tos.conduct.body_html': '<p>ሌሎችን ማስቸገር፣ ማስፈራራት፣ ማጭበርበር፣ ሌላን አስመስሎ መታየት፣ ግልጽ ወይም ህገወጥ ይዘት መለጠፍ፣ ወይም መተግበሪያውን ለማንኛውም ህገወጥ ዓላማ መጠቀም እንደማይፈጽሙ ይቀበላሉ። ጥሰቶች በማህበረሰብ መመሪያዎቻችን መሠረት ይዘት መውገድ፣ መለያ ማገድ ወይም ለዘላለም ማስወገድ ሊያስከትሉ ይችላሉ።</p>',
+    'tos.subscriptions.title': 'ደንበኝነትና ክፍያዎች',
+    'tos.subscriptions.body_html': '<p>Premium እና Premium+ በGoogle Play Billing፣ በሀገርዎ የገንዘብ ምንዛሬ የሚከፈሉ ራስ-ሰር የሚታደሱ ደንበኝነቶች ናቸው። በማንኛውም ጊዜ መሰረዝ ይችላሉ፤ ስረዛው የአሁኑ የክፍያ ጊዜ መጨረሻ ላይ ይተገበራል። ክፍያዎች በህግ ወይም በGoogle Play ፖሊሲ ካልተጠየቀ በስተቀር አይመለሱም።</p>',
+    'tos.termination.title': 'መለያ ማቆም',
+    'tos.termination.body_html': '<p>እነዚህን ውሎች፣ የማህበረሰብ መመሪያዎቻችንን ወይም ተፈጻሚ ህግን የሚጥሱ መለያዎችን ማገድ ወይም ማቆም እንችላለን። በግላዊነት ፖሊሲያችን እንደተገለጸው መለያዎን በማንኛውም ጊዜ መሰረዝ ይችላሉ።</p>',
+    'tos.liability.title': 'የተግባር ማስጠንቀቂያና ተጠያቂነት',
+    'tos.liability.body_html': '<p>ሀበሻ ሃርትስ እንዳለ ("as is") ይቀርባል። ግጥሚያዎችን፣ ግንኙነቶችን ወይም ከመተግበሪያው አጠቃቀም የሚገኝ ውጤትን አንዋስድም፤ እንዲሁም በመድረኩ ላይ ወይም ውጭ ለሌሎች ተጠቃሚዎች ድርጊት ተጠያቂ አይደለንም። ሰው በአካል ሲያገኙ ሁልጊዜ ጥንቃቄ ያድርጉና ደህንነቱ የተጠበቀ የዴቲንግ ልምዶችን ይከተሉ።</p>',
+    'tos.changes.title': 'በዚህ ውሎች ላይ የሚደረጉ ለውጦች',
+    'tos.changes.body_html': '<p>እነዚህን ውሎች ከጊዜ ወደ ጊዜ ልናሻሽል እንችላለን። ለውጦቹ ከተተገበሩ በኋላ መተግበሪያውን መቀጠል የተሻሻሉትን ውሎች መቀበልን ያመለክታል።</p>',
+    'tos.contact.title': 'እውቂያ',
+    'tos.contact.body_html': '<p>ስለ እነዚህ ውሎች ጥያቄዎች ወደ <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a> ሊላኩ ይችላሉ።</p>',
+    // የልጆች ደህንነት ስታንዳርዶች
+    'cs.tag': '🛡️ ደህንነት',
+    'cs.title_html': 'የልጆች ደህንነት <span class="gradient-text">ስታንዳርዶች</span>',
+    'cs.subtitle': 'ሓበሻ ልብ ህፃናትን ከመጠበቅ እና ህፃናትን ከመጾ ጥቃትና ብደባ (CSAE) ለመከላከል ያለው ቁርጠኝነት።',
+    'cs.updated': 'መጨረሻ የተሻሻለበት፦ ሰኔ 18, 2026 · ለሓበሻ ልብ መተግበሪያ (ጥቅል፦ com.habeshahearts.app) ይተኬታል።',
+    'cs.commitment.title': 'ቁርጠኝነታችን',
+    'cs.commitment.body_html': '<p>ሓበሻ ልብ በማንኛውም መልኩ ለህፃናት ወሲባዊ ጥቃትና ብደባ (CSAE) ዜሮ መቻቻል አለው። ሓበሻ ልብ ለአዋቂዎች ብቻ የተዘጋጀ የግንኙነት መድረክ ነው፣ ከ18 ዓመት በታች ለሆነ ማንኛውም ሰው እንዲጠቅም የተነደፈ አይደለም። ህፃናትን የሚያስከትል፣ የሚያስጋ ወይም የሚበደል ይዘት፣ መለያ ወይም ድርጊት አንፈቅድም፣ እንደዚህ ያለ ይዘት ወይም መለያ ሲታወቅ በፍጥነት እናስወግዳለን።</p>',
+    'cs.age.title': 'የዕድሜ መስፈርት',
+    'cs.age.body_html': '<p>እያንዳንዱ ተጠቃሚ በምዝገባ ወቅት የልደት ቀኑን በማቅረብ ቢያንስ 18 ዓመት መሆኑን ማረጋገጥ አለበት። ከ18 ዓመት በታች ለሆነ ሰው ንብረት ሆነው የተገኙ መለያዎች በቅጽበት ይታገዳሉ እና ተያያዥ ውሂብ ይሰረዛል፣ ይህም ከ<a href="#pp-children" style="color:var(--green)">የልጆች ብሕታውነት</a> ፖሊሲያችን ጋር የተጣጣመ ነው።</p>',
+    'cs.prohibited.title': 'የተከለከለ ይዘት እና ድርጊት',
+    'cs.prohibited.body_html': '<p>የሚከተሉት በሓበሻ ልብ ላይ በጥብቅ የተከለከሉ ናቸው እና በፍጥነት መለያ መዘጋት እንዲሁም በሚመለከታቸው ጉዳዮች ለህግ አስከባሪዎችና ለብሔራዊ የጠፉና የተበደሉ ህፃናት ማእከል (NCMEC) ሪፖርት ማድረግ ያስከትላል፦</p><ul><li>ህፃንን የሚያሳይ፣ የሚያስከትል ወይም የሚያስጋ ምስል፣ ቪዲዮ ወይም ጽሑፍ።</li><li>ህፃንን ለማግባባት፣ ለማታለል ወይም ግንኙነት ለማድረግ የሚደረግ ማንኛውም ሙከራ።</li><li>ህፃን መሆንን መምሰል ወይም ከ18 ዓመት በታች መሆንን መግለጽ/ማመልከት።</li><li>በሌላ ቦታ የተቀመጠ CSAE ይዘት ማጋራት ወይም ማስተዋወቅ።</li></ul>',
+    'cs.prevention.title': 'ማወቅና መከላከል',
+    'cs.prevention.body_html': '<p>CSAE አደጋዎችን ለማወቅና ለመከላከል የራስ-ሰር እና የሰው ክለሳ ጥምረት እንጠቀማለን፣ ይህም የመለያ ፎቶ ክለሳ፣ በእያንዳንዱ መለያና ውይይት ላይ የውስጥ-መተግበሪያ ሪፖርት ማድረግ፣ እና በክለሳ ቡድናችን የተደረገ የሪፖርት ይዘት ማረጋገጫ ያካትታል። ለ CSAE የተጠቆሙ መለያዎችና ይዘቶች ለፍጥነት ክለሳ ቅድሚያ ይሰጣቸዋል።</p>',
+    'cs.report.title': 'ችግር እንዴት ሪፖርት ማድረግ እንደሚቻል',
+    'cs.report.body_html': '<p>ህፃንን የሚያካትት ይዘት ወይም ድርጊት፣ ወይም ማንኛውም የተጠረጠረ CSAE ካገጠመዎት፣ በቅጽበት ሪፖርት ያድርጉ፦</p><ul><li>በመተግበሪያው ውስጥ፦ በማንኛውም መለያ፣ ፎቶ ወይም ውይይት ላይ ያለውን "ሪፖርት" አማራጭ ይጠቀሙ።</li><li>በኢሜል፦ <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a>፣ በርዕስ መስመር "CHILD SAFETY CONCERN" ይጻፉ።</li></ul><p>CSAE ሪፖርቶችን እንደ ቀዳሚ ጉዳይ እንመለክታለን እና ሪፖርት ከደረሰበት በ24 ሰዓታት ውስጥ እርምጃ ለመውሰድ እንሞክራለን።</p>',
+    'cs.contact.title': 'የተመረጠ የእውቂያ ሰው',
+    'cs.contact.body_html': '<div class="legal-contact-box"><p style="margin-bottom:6px"><strong>Awet G. Nway — AYE Tech Hub, ሓበሻ ልብ</strong></p><p style="margin-bottom:0">ኢሜል፦ <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a></p></div><p style="margin-top:14px">ይህ እውቂያ ከህፃናት ወሲባዊ ጥቃትና ብደባ ጋር የተያያዙ ሪፖርቶችን መቀበል፣ መከለስ እና ምላሽ መስጠት፣ እንዲሁም በህግ ሲጠየቅ ከህግ አስከባሪዎች ጋር መተባበር ላይ ተጠያቂ ነው።</p>',
+  },
+  ti: {
+    'nav.features': 'ባህርያት',
+    'nav.mission': 'ዕላማና',
+    'nav.founder': 'መስራቲ',
+    'nav.safety': 'ድሕነት',
+    'nav.plans': 'ፕላናት',
+    'nav.contact': 'ርኸቡና',
+    'nav.download': '📲 ኣውርድ',
+    'hero.tag': '❤️ ናይ ሓበሻ ዴቲንግ ኣፕ',
+    'hero.btn_download': '📲 ብነጻ ኣውርድ',
+    'hero.btn_features': '✨ ባህርያት ርኣይ',
+    'features.tag': '✨ ናይ ኣፕ ባህርያት',
+    'mission.tag': '🌟 ዕላማና',
+    'safety.tag': '🛡 ድሕነትን እምነትን',
+    'plans.tag': '💎 ናይ ኣባልነት ፕላናት',
+    'founder.badge': 'መስራቲ & ዋና ፈጻሚ · AYE Tech Hub',
+    'feat.photo.title': 'ፎቶ ስዋይፕ',
+    'feat.photo.desc': 'ናይ ነፍሲ ወከፍ ፕሮፋይል ብዙ ፎቶታት ርኣይ። ሰላም ቅድሚ ምባልካ ምስ መን ከምዝርኸብካ ፍለጥ።',
+    'feat.voice.title': 'ቮይስ ባዮ',
+    'feat.voice.desc': 'ድምጽኻ ን 15 ሰኮንዲ ቀርጽ። ቅድሚ ምምስካር ናይ ካልኦት ድምጺ ስምዕ።',
+    'feat.msg.title': 'ፕራይቬት ሜሴጅ',
+    'feat.msg.desc': 'ናብ ዘፍቀርካዮ ሰብ ፕራይቬት ሜሴጅ ስደድ። ብኽብሪ ናይ ኦፐን ዝኾነ ርኸብ ጀምር።',
+    'feat.discover.title': 'ፕሮፋይላት ርኸብ',
+    'feat.discover.desc': 'ብዕድመ፣ ከተማ፣ ዝጥዕሙ ባህርያት ፊልተር ግበር። ንሓበሻ ጥራሕ።',
+    'feat.verified.title': 'ዝተረጋገጹ ፕሮፋይላት',
+    'feat.verified.desc': 'ናይ ሰማያዊ ባጅ ምረጋገጽ ምስ ሓቀኛ ሰባት ከምዘለካ ይሕብረካ — ቦት የለን።',
+    'feat.feed.title': 'ኮምዩኒቲ ፊድ',
+    'feat.feed.desc': 'ቅጽበታት ካብ ሕብረተሰብ ካፍሉ። ካብ ዴቲንግ ንላዕሊ — ናይ ሓበሻ ሶሻል ቦታ።',
+    'feat.premium.title': 'ፕሪሚየም & ፕሪሚየም+',
+    'feat.premium.desc': 'ዘይተደረተ ላይካት ክፈት፣ ዝወደዳካ ርኣይ፣ ፕሮፋይልካ ቡስት ግበር። ብናይ ሃገርካ ሸርፊ ብGoogle Play Billing ክፈል።',
+    'feat.safety.title': 'ሪፖርትን ብሎክን',
+    'feat.safety.desc': 'ምሉእ ናይ ሪፖርትን ብሎክን ሲስተም ሕብረተሰብ ድሕሩ ይሕሉ። ቡድናና ኩሎም ሪፖርታት ይምርምር።',
+    'mission.m1.title': 'ትርጉም ዘለዎ ርክብ',
+    'mission.m2.title': 'ቅድሚ ኹሉ ዕርክነት',
+    'mission.m3.title': 'ምህናጽ ሕብረተሰብ',
+    'mission.m4.title': 'ናይ ባህሊ ምትእስሳር',
+    'mission.m5.title': 'ኽብርን ድሕነትን',
+    'mission.m6.title': 'ናይ ዲያስፖራ ኩርዓት',
+    'plans.free': 'ናጻ',
+    'plans.premium': 'ፕሪሚየም',
+    'plans.premiumplus': 'ፕሪሚየም+',
+    'plans.free.price': '$0 / ንዘለኣለም',
+    'plans.premium.price': '$2.99 / ወርሒ',
+    'plans.premiumplus.price': '$4.99 / ወርሒ',
+    'plans.cta.free': 'ብነጻ ጀምር',
+    'plans.cta.premium': 'ፕሪሚየም ርኸብ',
+    'plans.cta.premiumplus': 'ፕሪሚየም+ ርኸብ',
+    'download.store': 'ካብዚ ኣውርድ',
+    'download.store.name': 'Google Play',
+    'contact.send': 'መልእኽቲ ስደድ',
+    'cta.download': '📲 ኣፑ ኣውርድ',
+    // Hero stats
+    'hero.stat_members': 'ኣባላት',
+    'hero.stat_countries': 'ሃገራት',
+    'hero.stat_rating': 'ሬቲን',
+    // Features section
+    'features.title': 'ንሓቀኛ ርክብ ዘድሊ ኹሉ',
+    'features.subtitle': 'ንሓበሻ አስኮብለ ብፍሉይ ዝተዳለወ — ምስ ናይ ማሕበረሰብና ዝሰማምዑ ፊቸራት።',
+    // Mission section
+    'mission.title': 'ንምንታይ ሓበሻ ሃርትስ ተሃኒጹ',
+    'mission.subtitle': 'ናይ ሓበሻ ሰባት ዓለምለኻዊ ምትእስሳር — ብባህሊ፣ ቋንቋ፣ ሓባራዊ ክብርታት።',
+    'mission.m1.desc': 'ካብ ገጽ ንላዕሊ ዝሓልፍ ርክብ — ብሓባራዊ ክብርታትን ናይ ባህሊ ምርድዳእን ዝህነጽ።',
+    'mission.m2.desc': 'ቅድሚ ፍቕሪ ምጅማሩ ብቮይስ፣ ዛንታ፣ ሕብረተሰብ ምፍላጥ።',
+    'mission.m3.desc': 'ናይ ሓበሻ ሰባት ዝራኸቡሉ፣ ዝካፈሉሉ፣ ዓለምለኻዊ ዝዓብዩሉ ቦታ።',
+    'mission.m4.desc': 'ናይ ኢትዮጵያን ኤርትራን ባህሊ፣ ቋንቋ፣ ባህሪ ዘካፍሉ ሰባት ምምጻም።',
+    'mission.m5.desc': 'ነፍሲ ወከፍ ተጠቃሚ ድሕነትን ኽብርን ናይ ምስማዕ መሰል ኣለዎ። ዝኾነ ዓይነት ጸገም ዜሮ ምቕባል።',
+    'mission.m6.desc': 'ናይ ሓበሻ ዲያስፖራ ብኩሉ ዓለም — ካብ ዝኮነ ቦታ ንሰርሓልካ።',
+    // Founder section
+    'founder.title': 'ብናይ ሓበሻ ኢንጂነር ዝተሃነጸ',
+    // Safety section
+    'safety.title': 'ድሕነትካ ቀዳምነትና እዩ',
+    'safety.subtitle': 'ሓበሻ ሃርትስ ምስ ድሕነትን እምነትን ኣብ ልቡ ተሃኒጹ።',
+    // Plans section
+    'plans.subtitle': 'ብነጻ ጀምር። ምስ ደለኻ ኣደምቕ።',
+    // How It Works section
+    'how.tag': '🚀 ምጅማር',
+    'how.title': 'ከመይ ይሰርሕ',
+    'how.subtitle': 'ሰለስተ ቀሊል ስጉምቲ ናብ ናይ ሓበሻ ርክብካ።',
+    'how.step1_title': 'ፕሮፋይልካ ፍጠር',
+    'how.step1_desc': 'ብነጻ ተመዝገብ ፎቶ፣ ቮይስ ባዮ፣ ብዛዕባኻ ወስኽ።',
+    'how.step2_title': 'ፕሮፋይላት ርኸብ',
+    'how.step2_desc': 'ናይ ሓበሻ ፕሮፋይላት ብፊልተርካ ርኣይን ስዋይፕ ግበርን።',
+    'how.step3_title': 'ተራኸቡን ዘረቡን',
+    'how.step3_desc': 'ዘፍቀርካዮ ሰብ ርኸቦ — ሓቀኛ ናይ ምስጢር ዝርርብ ጀምር።',
+    // Privacy Policy
+    'pp.tag': '🔒 ብሕታውነት',
+    'pp.title_html': 'ናይ ብሕታውነት <span class="gradient-text">ፖሊሲ</span>',
+    'pp.subtitle': 'ሓበሻ ሃርትስ ሓበሬታኻ ብኸመይ ይእክብ፣ ይጥቀምን ይከላኸልን።',
+    'pp.updated_html': 'ዳሕራይ ዝተሓደሰሉ፦ ሰነ 17, 2026 &middot; ንናይ ሓበሻ ሃርትስ ኣፕ (ፓኬጅ፦ <code>com.habeshahearts.app</code>) ከምኡውን ንዚ ወብሳይት ይምልከት።',
+    'pp.toc.info_collect': 'ዝእክቦም ሓበሬታት',
+    'pp.toc.how_use': 'ሓበሬታ ብኸመይ ንጥቀም',
+    'pp.toc.location': 'ሓበሬታ ኣካባቢ',
+    'pp.toc.photos': 'ናይ መግለጺ ፎቶታት',
+    'pp.toc.chat': 'ናይ ዝርርብ መልእኽትታት',
+    'pp.toc.device': 'ሓበሬታ መሳርሒ',
+    'pp.toc.analytics': 'Analytics',
+    'pp.toc.third_party': 'ናይ ሳልሳይ ኣካል ኣገልግሎታት',
+    'pp.toc.sharing': 'ምክፍፋል ሓበሬታ',
+    'pp.toc.security': 'ድሕነት ሓበሬታ',
+    'pp.toc.rights': 'መሰላትካን ስረዛን',
+    'pp.toc.children': 'ብሕታውነት ቆልዑ',
+    'pp.toc.contact': 'ርኸቡና',
+    'pp.intro_html': 'ሓበሻ ሃርትስ ("ንሕና" ወይ "ኩባንያ") ብ AYE Tech Hub ይመሓደር። እዚ ናይ ብሕታውነት ፖሊሲ ካብ ተጠቀምቲ ናይ ሓበሻ ሃርትስ ኣፕን ወብሳይትን እንታይ ሓበሬታ ንእክብ፣ ብኸመይ ንጥቀሞ፣ ምስ መን ንካፍሎ፣ ከምኡውን ዘለዉኹም ምርጫታትን መሰላትን ይገልጽ። ሕሳብ ብምክፋት ወይ ኣፕ ብምጥቃም፣ ኣብዚ ፖሊሲ ተገሊጹ ዘሎ ኣገባብ ትቕበሉ።',
+    'pp.info_collect.title': 'ዝእክቦም ሓበሬታት',
+    'pp.info_collect.body_html': '<p>ናይ ዴቲንግ ኣገልግሎት ንኸመሓድር ዝስዕብ ዓይነታት ሓበሬታ ንእክብ፦</p><ul><li><strong>ናይ ሕሳብ ሓበሬታ፦</strong> ሽም፣ ኢመይል፣ ቴሌፎን ቁጽሪ፣ ዕለተ-ልደትን ጾታን፣ ኣብ ግዜ ምምልካት ዝእከብ (ብGoogle ወይ Facebook መእተዊ ሓዊሱ)።</li><li><strong>ናይ መግለጺ ሓበሬታ፦</strong> ፎቶታት መግለጺ፣ ባዮ ጽሑፍ፣ ናይ ድምጺ ባዮ ቅርጺ፣ ድሌታት፣ ከምኡውን ካልእ ናብ መግለጺኻ ዝውስኾ ዝርዝር።</li><li><strong>ሓበሬታ ኣካባቢ፦</strong> ግምታዊ ወይ ልክዕ ኣካባቢ፣ ኣብ ጥቓኻ ዘለዉ ግጥምያታት ንኽርእዩ ይጠቅም (ኣብ ታሕቲ "ኣጠቓቕማ ሓበሬታ ኣካባቢ" ርአ)።</li><li><strong>መልእኽትታትን ርክባትን፦</strong> ኣብ ኣፕ ውሽጢ ዝሰዱዎም ናይ ዝርርብ መልእኽትታት፣ ላይክታት፣ ግጥምያታትን ሪፖርትታትን ትሕዝቶ።</li><li><strong>ሓበሬታ መሳርሕን ኣጠቓቕማን፦</strong> ሞዴል መሳርሒ፣ ስርዓተ ኦፐረሽን፣ ስሪት ኣፕ፣ ኣድራሻ IP፣ ናይ ክራሽ መዛግብትን ኣብ ኣፕ ዝግበር ንጥፈትን።</li><li><strong>ሓበሬታ ክፍሊት፦</strong> Premium ወይ Premium+ ምስ ዝዕድግዎ፣ ክፍሊት ብGoogle Play Billing ይስራሕ። ምሉእ ቁጽሪ ካርድኹም ኣይንቕበልን ኣይነቐምጥን።</li></ul>',
+    'pp.how_use.title': 'ሓበሬታ ብኸመይ ንጥቀም',
+    'pp.how_use.body_html': '<p>ዝእክቦም ሓበሬታት ንዝስዕብ ንጥቀም፦</p><ul><li>ሕሳብኩምን መግለጺኹምን ምፍጣርን ምሕላውን።</li><li>ብመሰረት ድሌታት፣ ኣካባቢን ንጥፈትን ዝመጣጣን ግጥምያታትን ሓሳባትን ምርኣይ።</li><li>መልእኽት ምልኣኽ፣ ምግጣም፣ ላይክታትን ካልኦት ቀንዲ ባህርያት ናይ ዴቲንግ ኣፕ ምክያድ።</li><li>መግለጺታት ምርግጋጽ፣ ምድንጋር ምልላይ፣ ከምኡውን ናይ ማሕበረሰብ መምርሕታትናን ናይ ኣገልግሎት ውዕላትናን ምትግባር።</li><li>ናይ ምድዳር ክፍሊታት (Premium / Premium+) ምስራሕን ቅብሊት ምሕላውን።</li><li>ኣገደስቲ ምልክታታት ምልኣኽ (ግጥምያታት፣ መልእኽትታት፣ ናይ ድሕነት መጠንቀቕታታት፣ ዝመሓየሹ ሕሳብ)።</li><li>ብእኩብ ትንታነ ኣቢሉ ኣፈጻጸማ ኣፕ ምምሕያሽን ሓደስቲ ባህርያት ምስራዕን።</li></ul>',
+    'pp.location.title': 'ኣጠቓቕማ ሓበሬታ ኣካባቢ',
+    'pp.location.body_html': '<p>ሓበሻ ሃርትስ ኣብ ጥቓኹም ዘለዉ ክኾኑ ዝኽእሉ ግጥምያታት ንኽርእዩ ከምኡውን ኣብ መግለጺታት ግምታዊ ርሕቀት ንኸርእይ ናይ መሳርሕኹም ኣካባቢ ይጠቅም። ልክዕ ወይ ግምታዊ ናይ ኣካባቢ ፍቓድ ካብ ቅንብራት መሳርሕኹም ክትህቡ ትኽእሉ ኢኹም። ናይ ኣካባቢ ፍቓድ ምሃብ ምርጫዊ እዩ — ኣካባቢ ብዘይምፍቃድኩም ቀንዲ ባህርያት ክትጠቕሙ ትኽእሉ ኢኹም፣ ግን ሓሳባት ግጥምያ ብዙሕ ላይዛመድ ይኽእል። ልክዕ ናይ GPS መጋጠምታትኩም ንኻልኦት ተጠቀምቲ ኣይነርእን፤ ግምታዊ ርሕቀት ወይ ከተማ ጥራይ ይርአ። ናይ ኣካባቢ ፍቓድ ብዝኾነ ግዜ ካብ ቅንብራት መሳርሕኹም ክትገፍፉ ትኽእሉ ኢኹም።</p>',
+    'pp.photos.title': 'ናይ መግለጺ ፎቶታት',
+    'pp.photos.body_html': '<p>ዝጸዓንዎም ፎቶታት ብጥንቃቐ ኣብ Firebase Storage ይቕመጡን ከም መደበኛ ኣገባብ ናይ ዴቲንግ ኣፕ ኣብ ህዝባዊ መግለጺኹም ንኻልኦት ተጠቀምቲ ይርኣዩን። ካብ ርእስኹም ወጻኢ ናይ ካልእ ሰብ ፎቶ፣ ወይ ንመምርሕታት ማሕበረሰብና ዝጥሕስ ትሕዝቶ (ዕርቃን፣ ህጻናት፣ ዓመጻ ወይ ምምሳል ካልእ ሰብ) ኣይትጽዓኑ። ንዚ መምርሕታት ዝጥሕሱ ፎቶታት ምውጋድ ወይ ሕሳባት ምዕጋት ንኽእል ኢና። ፎቶታትኩም ብዝኾነ ግዜ ካብ ቅንብራት መግለጺኹም ክትድምስሱ ወይ ክትቅይሩ ትኽእሉ ኢኹም።</p>',
+    'pp.chat.title': 'ናይ ዝርርብ መልእኽትታት',
+    'pp.chat.body_html': '<p>ብ ሓበሻ ሃርትስ ዝሰዱዎም መልእኽትታት ንተቐባላይ ንምብጻሕን ከም ታሪኽ መልእኽቲ፣ ሪፖርትን ቁጽጽርን ዝበሉ ባህርያት ንምድጋፍን ኣብ ሰርቨርና (Firebase Firestore) ይቕመጡ። ትሕዝቶ ናይ ብሕታዊ መልእኽትኩም ኣይንሸጦን። ጉጅለ ቁጽጽርና ንዝተሓበሩ ዝርርባት ናይ ማሕበረሰብ መምርሕታት ጥሕሰት፣ ምንዳድ ወይ ናይ ድሕነት ሪፖርትታት ንምምርማር ጥራይ ክፍትሽ ይኽእል። ዝተዓገቱ ወይ ዝተደምሰሱ ዝርርባት ካብ ንቑሕ ምርኣይ ይውገዱ ግን ንናይ ድሕነትን ሕጋዊ ተገዛእነትን ዓላማታት ንሓጺር ግዜ ክቐጽሉ ይኽእሉ።</p>',
+    'pp.device.title': 'ሓበሬታ መሳርሒ',
+    'pp.device.body_html': '<p>ኣፕ ክትጥቕሙ ኸለኹም ብዘይካ ናትኹም ፍቓድ ዝተወሰነ ቴክኒካዊ ሓበሬታ ንእክብ፣ ሞዴል መሳርሒ፣ ስርዓተ ኦፐረሽንን ስሪትን፣ ፍሉይ መለለዪ መሳርሒ፣ ሓበሬታ ኔትወርክ ተንቀሳቓሲ ቴሌፎን፣ ስሪት ኣፕ፣ ቅንብራት ቋንቋን ናይ ክራሽ/መርመራ መዛግብትን ዝሓዘ። እዚ ሓበሬታ ሕሳባት ንምጥንቃቕ፣ ጉድለታት ንምዕራይን ኣብ መንጎ መሳርሕታት ምትዕርራይ ንምርግጋጽን ይሕግዘና።</p>',
+    'pp.analytics.title': 'Analytics',
+    'pp.analytics.body_html': '<p>ተጠቀምቲ ኣፕ ብኸመይ ይጥቀሙ ምርዳእ ንኽእል Firebase Analytics ከምኡውን Google Analytics ሓዊስና ናይ ትንታነ ኣገልግሎታት ንጥቀም — ንኣብነት ኣየኖት ባህርያት ብብዝሒ ይጥቀሙ፣ ናይ ክፋል ግዜ ንውሓትን ምድህሳስን። ሓበሬታ ትንታነ ብሓፈሻ ብእኩብ ይተሓዝን ንምምሕያሽ ፍርያት ይውዕልን፤ ንህዝባዊ መለለዪ ውልቀ ተጠቀምቲ ኣይውዕልን።</p>',
+    'pp.third_party.title': 'ናይ ሳልሳይ ኣካል ኣገልግሎታት',
+    'pp.third_party.body_html': '<p>ሓበሻ ሃርትስ ኣፕ ንምምሕዳር ኣብ ዝስዕቡ ናይ ሳልሳይ ኣካል ኣገልግሎት ኣቅረቢቲ ይተኣማመን። ነፍሲ ወከፍ ኣቕራቢ ብናቱ ናይ ብሕታውነት ፖሊሲ ሓበሬታ ይሰርሕ፦</p><ul><li><strong>Firebase (Google):</strong> Authentication፣ Firestore database፣ Cloud Storage (ፎቶታት/ናይ ድምጺ ባዮ)፣ Cloud Messaging (push notifications)፣ ከምኡውን Crashlytics።</li><li><strong>Google Analytics / Firebase Analytics:</strong> ኣብ ኣፕ ናይ ኣጠቓቕማ ትንታነ።</li><li><strong>Google AdMob:</strong> ንናጻ-ደረጅ ተጠቀምቲ መወዳእታ ክርእይ ይኽእል ከምኡውን ናይ መሳርሒ መለለዪ (ንኣብነት advertising ID) ንምብጻሕ መወዳእታን ውሱን ምውቃስ መወዳእታን ይጠቅም፣ ብመሰረት ናይ መሳርሕኹም ናይ ምክትታል-መወዳእታ ቅንብራት።</li><li><strong>ናይ ክፍሊት ኣካያዲ፦</strong> Google Play Billing ናይ Premium ከምኡውን Premium+ ናይ ምድዳር ክፍሊታት ይሰርሕ።</li><li><strong>Google / Facebook Sign-In:</strong> ምርጫዊ ናይ ማሕበራዊ መእተዊ ኣቅረቢቲ፣ ብንጹር ፍቓድኩም ጥራይ ዝጥቀሙ።</li></ul>',
+    'pp.sharing.title': 'ምክፍፋል ሓበሬታ',
+    'pp.sharing.body_html': '<p>ብሕታዊ ሓበሬታኹም ኣይንሸጦን። ሓበሬታ ኣብ ዝስዕቡ ውሱናት ኣጋጣምታት ጥራይ ንካፍል፦</p><ul><li>ምስ ኣብ ላይ ተዘርዘሩ ኣቅረቢ ኣገልግሎታት፣ ኣፕ ንምምሕዳር ጥራይ (ኣስተናጋድነት፣ ምቕማጥ፣ ትንታነ፣ ክፍሊት፣ push notifications)።</li><li>ምስ ካልኦት ተጠቀምቲ፣ ኣብ ህዝባዊ መግለጺኹም ክርአ ብምምራጽኩም ዝተሓጽረ (ፎቶታት፣ ባዮ፣ ናይ ድምጺ ባዮ፣ ግምታዊ ርሕቀት፣ ናይ መስመር ኣቐማምጣ)።</li><li>ምስ ሕጋዊ ኣካላት ወይ ተቆጻጻርቲ፣ ብሕጊ ምስ ዝሕተት፣ ብሕጋዊ መስርሕ ወይ ድሕነት ተጠቀምትና ንምሕላው።</li><li>ምስ ምትእስሳር፣ ምግዛእ ወይ ናይ ንብረት ሽያጭ ብዝተኣሳሰረ፣ ኣብ ትሕቲ እዚ ፖሊሲ ምክልኻል ብምቕጻል።</li></ul>',
+    'pp.security.title': 'ድሕነት ሓበሬታ',
+    'pp.security.body_html': '<p>ሓበሬታኹም ንምክልኻል ናይ ኢንዳስትሪ መለክዒ ናይ ድሕነት ስጉምትታት ንጠቅም፣ ዝተመስጠረ ርክብ (HTTPS/TLS)፣ ንተፈቐድሎም ተጠቀምቲ ጥራይ ምብጻሕ ዝድርት ናይ Firebase ናይ ድሕነት ሕግታት፣ ከምኡውን ምብጻሕ ሰራሕተኛታት ናብ ብሕታዊ ሓበሬታ ዝድርት ናይ ምብጻሕ ቁጽጽራት ሓዊሱ። ሓበሬታኹም ንምክልኻል ብትግሃት ንሰርሕ እንተኾነ፣ ዝኾነ ናይ ምትሕልላፍ ወይ ምቕማጥ ኣገባብ 100% ድሑን ኣይኮነን፤ ምሉእ ድሕነት ምውሓስ ኣይንኽእልን ኢና።</p>',
+    'pp.rights.title': 'መሰላት ተጠቃሚን ምድምሳስ ሓበሬታን',
+    'pp.rights.body_html': '<p>ብሕታዊ ሓበሬታኹም ናይ ምብጻሕ፣ ምትዕርራይ፣ ምውጻእ ወይ ምድምሳስ መሰል ኣለኩም። ዝስዕብ ክትገብሩ ትኽእሉ፦</p><ul><li>ብዝኾነ ግዜ ኣብ ኣፕ ብቐጥታ ናይ መግለጺ ሓበሬታ ምትዕርራይ።</li><li>ካብ ሕሳብኩም ውሱናት ፎቶታት፣ ናይ ድምጺ ባዮ ወይ ናይ ዝርርብ ምድምሳስ።</li><li>ካብ Settings &rarr; Account &rarr; Delete Account ሕሳብኩምን ዝተኣሳሰረ ሓበሬታን ንሓዋሩ ምድምሳስ፣ ወይ ብኣርእስቲ "DELETE MY ACCOUNT" ናብ <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a> ኢመይል ብምልኣኽ።</li><li>ብተወሳኺ ብቐጥታ ካብ ወብሳይትና ናይ ምድምሳስ ሕቶ ክትልእኩ ትኽእሉ፦ <a href="/habesha-hearts/delete-account" style="color:var(--green)">መለያ ደምስስ</a>።</li><li>ብዛዕባኹም ዝሓዝናዮ ብሕታዊ ሓበሬታ ቅዳሕ ምሕታት።</li></ul><p>ናይ ሕሳብ ምድምሳስ ሕቶታት ኣብ ውሽጢ 30 መዓልታት ይስርሑ። ብሕጊ፣ ድሕነት፣ ምክልኻል ምድንጋር ወይ ሕሳብ ኣተኣሕሓዝ ዓላማታት (ንኣብነት ናይ ግብያት መዛግብቲ) ውሱናት ሓበሬታ ንሓጺር ግዜ ክቐጽል ይኽእል።</p>',
+    'pp.children.title': 'ብሕታውነት ቆልዑ (ካብ 18 ንላዕሊ ጥራይ)',
+    'pp.children.body_html': '<p>ሓበሻ ሃርትስ ካብ 18 ዓመት ንላዕሊ ንዘለዉ ዓበይቲ ጥራይ ዝተዳለወ እዩ። ካብ 18 ዓመት ንታሕቲ ካብ ዝኾነ ሰብ ብሕታዊ ሓበሬታ ኮነ ኢልና ኣይንእክብን። ሕሳብ ምፍጣር ቢያንስ 18 ዓመት ምዃንኩም ምርግጋጽ ይሓትት። ተጠቃሚ ካብ 18 ዓመት ንታሕቲ ምዃኑ እንተተፈለጠ፣ ሕሳቡ ብእንተኽኣለ ቅልጣፈ ክንዓግቶ ከምኡውን ዝተኣሳሰረ ሓበሬታ ክንድምስስ ኢና። ሕጻን ኣፕ ይጥቀም ኣሎ ኢልኩም እንተኣመንኩም፣ በጃኹም ብኡንብኡ ብ<a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a> ርኸቡና።</p>',
+    'pp.contact.title': 'ሓበሬታ ርክብ',
+    'pp.contact.body_html': '<div class="legal-contact-box"><p style="margin-bottom:6px"><strong>AYE Tech Hub — Habesha Hearts</strong></p><p style="margin-bottom:6px">ኢመይል፦ <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a></p><p style="margin-bottom:0">Telegram፦ <a href="https://t.me/ayetechub" target="_blank" rel="noopener" style="color:var(--green)">@ayetechub</a></p></div><p style="margin-top:14px">እዚ ናይ ብሕታውነት ፖሊሲ ካብ ግዜ ናብ ግዜ ክንዓርዮ ንኽእል ኢና። ኣገደስቲ ለውጥታት ብኣፕ ወይ ብኢመይል ክግለጹ እዮም፣ ከምኡውን ኣብ ላይ ዘሎ "ዳሕራይ ዝተሓደሰሉ" ዕለት ናይ ዝቐረበ ምክለሳ ኪንጸባረቕ።</p>',
+    // Terms of Service
+    'tos.tag': '📜 ሕጋዊ',
+    'tos.title_html': 'ውዕላት <span class="gradient-text">ኣገልግሎት</span>',
+    'tos.subtitle': 'ንሓበሻ ሃርትስ ንምጥቃም ዘድልዩ ሕግታት።',
+    'tos.updated': 'ዳሕራይ ዝተሓደሰሉ፦ ሰነ 17, 2026',
+    'tos.eligibility.title': 'ብቕዓት',
+    'tos.eligibility.body_html': '<p>ሕሳብ ንምፍጣር ወይ ሓበሻ ሃርትስ ንምጥቃም ቢያንስ 18 ዓመት ክትኮኑ ኣለኩም። ኣፕ ብምጥቃም፣ 18 ወይ ካብኡ ንላዕሊ ምዃንኩምን ዘቕርብዎ ኩሉ ሓበሬታ ልክዕ ምዃኑን ትኣረጋግጹ።</p>',
+    'tos.account.title': 'ሕሳብኩም',
+    'tos.account.body_html': '<p>ምስጢራውነት ናይ መእተዊ ሓበሬታኹም ምሕላውን ኣብ ትሕቲ ሕሳብኩም ዝግበር ኩሉ ንጥፈት ተሓታቲ ምዃንን ሓላፍነትኩም እዩ። ዘይተፈቐደ ኣጠቓቕማ እንተኣስተብሃልኩም ብኡንብኡ ብ<a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a> ኣፍልጡና።</p>',
+    'tos.conduct.title': 'ስነ-ምግባር ማሕበረሰብ',
+    'tos.conduct.body_html': '<p>ካልኦት ከይትህውኹ፣ ከይትፈርሁ፣ ከይትድንግሩ፣ ካልእ ሰብ ከይትመስሉ፣ ግልጺ ወይ ዘይሕጋዊ ትሕዝቶ ከይትልጥፉ፣ ወይ ኣፕ ንዝኾነ ዘይሕጋዊ ዓላማ ከይትጠቅሙ ትቕበሉ። ጥሕሰታት ብመሰረት ናይ ማሕበረሰብ መምርሕታትና ትሕዝቶ ምውጋድ፣ ሕሳብ ምዕጋት ወይ ንሓዋሩ ምድርቅቲ ክሳዕ ምብጻሕ ይኽእሉ።</p>',
+    'tos.subscriptions.title': 'ምድዳርን ክፍሊትን',
+    'tos.subscriptions.body_html': '<p>Premium ከምኡውን Premium+ ብGoogle Play Billing፣ ብናይ ሃገርካ ሸርፊ ዝኽፈሉ ብገዛእ ርእሱ ዝሕደሱ ምድዳራት እዮም። ብዝኾነ ግዜ ክትገፍፉ ትኽእሉ፤ ምግፋፍ ኣብ መወዳእታ ናይ ሕጂ ናይ ክፍሊት ግዜ ይፍጸም። ክፍሊታት ብሕጊ ወይ ብGoogle Play ፖሊሲ ካልእ ካልተሓተ ኣይምለሱን።</p>',
+    'tos.termination.title': 'ምቕጻል',
+    'tos.termination.body_html': '<p>ንዚ ውዕላት፣ ናይ ማሕበረሰብ መምርሕታትና ወይ ዝምልከት ሕጊ ዝጥሕሱ ሕሳባት ክንዓግት ወይ ክንውዲእ ንኽእል ኢና። ከምቲ ኣብ ናይ ብሕታውነት ፖሊሲና ተገሊጹ ዘሎ ሕሳብኩም ብዝኾነ ግዜ ክትድምስሱ ትኽእሉ ኢኹም።</p>',
+    'tos.liability.title': 'መጠንቀቕታን ተሓታትነትን',
+    'tos.liability.body_html': '<p>ሓበሻ ሃርትስ ከም ዘሎ ("as is") ይቐርብ። ግጥምያታት፣ ርክባት ወይ ካብ ኣጠቓቕማ ኣፕ ዝርከብ ውጽኢት ኣይነውሕስን፣ ከምኡውን ኣብ መድረኽ ወይ ወጻኢ ንዝግበር ናይ ካልኦት ተጠቀምቲ ተግባር ተሓታቲ ኣይኮንናን። ሰብ ብኣካል ክትራኸቡ ኸለኹም ኩሉ ግዜ ጥንቃቐ ግበሩ ከምኡውን ድሑን ናይ ዴቲንግ ልምድታት ተኸተሉ።</p>',
+    'tos.changes.title': 'ኣብዚ ውዕላት ዝግበር ለውጥታት',
+    'tos.changes.body_html': '<p>ንዚ ውዕላት ካብ ግዜ ናብ ግዜ ክነዐርዮ ንኽእል ኢና። ድሕሪ ለውጥታት ምትግባር ኣፕ ብምቕጻል ምጥቃም ንዝተዓረዩ ውዕላት ምቕባል የመልክት።</p>',
+    'tos.contact.title': 'ርክብ',
+    'tos.contact.body_html': '<p>ብዛዕባ እዚ ውዕላት ሕቶታት ናብ <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a> ክልኣኹ ይኽእሉ።</p>',
+    // ናይ ቆልዑ ድሕንነት መለክዒታት
+    'cs.tag': '🛡️ ድሕንነት',
+    'cs.title_html': 'ናይ ቆልዑ ድሕንነት <span class="gradient-text">መለክዒታት</span>',
+    'cs.subtitle': 'ሓበሻ ሃርትስ ንናእሽቱ ምክልኻልን ናይ ቆልዑ ጾታዊ ዓመጽን ምዝመዛን (CSAE) ምክልኻል ዘለዎ ቅሩብነት።',
+    'cs.updated': 'ናይ መወዳእታ ዝተሓደሰሉ፦ ሰነ 18, 2026 · ንናይ ሓበሻ ሃርትስ ምልክት ኣፕሊከሽን (ጥርዙ፦ com.habeshahearts.app) ይምልከት።',
+    'cs.commitment.title': 'ቅሩብነትና',
+    'cs.commitment.body_html': '<p>ሓበሻ ሃርትስ ብዝኾነ መልክዕ ንናይ ቆልዑ ጾታዊ ዓመጽን ምዝመዛን (CSAE) ዜሮ ምጽውዋር ኣለዎ። ሓበሻ ሃርትስ ንዓበይቲ ጥራይ ዝተዳለወ ናይ ምትእስሳር መድረኽ እዩ፣ ካብ 18 ዓመት ንታሕቲ ንዝኾነ ሰብ ክጥቅም ዝተነድፈ ኣይኮነን። ንቆልዑ ዘስቅኽ፣ ዘጋድድ ወይ ዝምዝምዝ ይዘት፣ መለለዪ ወይ ኣካይዳ ኣይንፍቅድን ኢና፣ ከምዚ ዝበለ ይዘት ወይ መለለዪ ምስ ተፈለጠ ብቕልጡፍ ነወግዶ ኢና።</p>',
+    'cs.age.title': 'ናይ ዕድመ መስርዓት',
+    'cs.age.body_html': '<p>ኩሉ ተጠቃማይ ኣብ ግዜ ምምዝገብ ናይ ልደት ዕለቱ ብምሃብ ቢያንስ 18 ዓመት ምዃኑ ከረጋግጽ ኣለዎ። ካብ 18 ዓመት ንታሕቲ ንዝኾነ ሰብ ዝብጽሑ መለለዪታት ብቕልጡፍ ይዕገቱ፣ ተሓባባሪ ዳታ ድማ ይድርዝ፣ እዚ ድማ ምስ <a href="#pp-children" style="color:var(--green)">ናይ ቆልዑ ብሕታውነት</a> ፖሊሲና ዝሰማማዕ እዩ።</p>',
+    'cs.prohibited.title': 'ዝተኸልከለ ይዘትን ኣካይዳን',
+    'cs.prohibited.body_html': '<p>ዝስዕብ ኣብ ሓበሻ ሃርትስ ብጽኑዕ ዝተኸልከለ እዩ፣ ብቕልጡፍ መለለዪ ምዕጻው እንተኾነ ድማ ናብ ሕግ ኣካላትን ብሔራዊ ማእከል ንዝጠፍኡን ዝምዝመዙን ቆልዑ (NCMEC) ጸብጻብ ምቕራብ ከስዕብ ይኽእል፦</p><ul><li>ንቆልዑ ዘርኢ፣ ዘስቅኽ ወይ ዘጋድድ ምስሊ፣ ቪድዮ ወይ ጽሑፍ።</li><li>ንቆልዑ ንምትላል፣ ንምትዕብርራቕ ወይ ርክብ ንምግባር ዝግበር ዝኾነ ፈተነ።</li><li>ቆልዓ ምዃንካ ምምሳል ወይ ካብ 18 ዓመት ንታሕቲ ምዃንካ ምግላጽ/ምሕባር።</li><li>ኣብ ካልእ ቦታ ዘሎ CSAE ይዘት ምክፍፋል ወይ ምስብሳብ።</li></ul>',
+    'cs.prevention.title': 'ምፍላጥን ምክልኻልን',
+    'cs.prevention.body_html': '<p>ናይ CSAE ሓደጋታት ንምፍላጥን ንምግባርን ናይ ቀጥታ-ብርሃን (automated) ምስ ናይ ሰብ ግምገማ ዝተወሃሃደ ኣገባብ ንጥቀም ኢና፣ እዚ ድማ ናይ መለለዪ ስእሊ ግምገማ፣ ኣብ ኩሉ መለለዪን ምዝርራብን ናይ ውሽጢ-ኣፕሊከሽን ጸብጻብ ምቕራብ፣ ከምኡ’ውን ብግምገማ ጉጅለና ዝግበር ናይ ጸብጻብ ይዘት ምርግጋጽ ይውሕዝ። ንCSAE ዝተሓበሩ መለለዪታትን ይዘታትን ቅድሚ ኩሉ ይግምገሙ።</p>',
+    'cs.report.title': 'ጭንቀት ብኸመይ ይጸብጸብ',
+    'cs.report.body_html': '<p>ንቆልዓ ዝምልክት ይዘት ወይ ኣካይዳ፣ ወይ ዝኾነ ዝተጠርጠረ CSAE እንተኣጋጠመካ፣ ብቕልጡፍ ጸብጻብ ኣቕርብ፦</p><ul><li>ኣብ ውሽጢ-ኣፕሊከሽን፦ ኣብ ዝኾነ መለለዪ፣ ስእሊ ወይ ዝርርብ ዘሎ "ጸብጻብ" ኣማራጺ ተጠቒም።</li><li>ብኢመይል፦ <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a>፣ ብኣርእስቲ መስመር "CHILD SAFETY CONCERN" ጽሓፍ።</li></ul><p>ናይ CSAE ጸብጻባት ከም ቀዳምነት ንግምግሞም ኢና፣ ጸብጻብ ካብ ምርካብና ኣብ ውሽጢ 24 ሰዓታት ስጉምቲ ንወስድ ኢና።</p>',
+    'cs.contact.title': 'ዝተመረጸ ሰብ ርክብ',
+    'cs.contact.body_html': '<div class="legal-contact-box"><p style="margin-bottom:6px"><strong>Awet G. Nway — AYE Tech Hub, ሓበሻ ሃርትስ</strong></p><p style="margin-bottom:0">ኢመይል፦ <a href="mailto:myhabeshadate@gmail.com" style="color:var(--green)">myhabeshadate@gmail.com</a></p></div><p style="margin-top:14px">እዚ ርክብ ምስ ናይ ቆልዑ ጾታዊ ዓመጽን ምዝመዛን ዝተኣሳሰሩ ጸብጻባት ምቕባል፣ ምግምጋምን ምምላስን፣ ከምኡ’ውን ብሕጊ ምስ ዝሕተት ምስ ሕግ ኣካላት ምትሕብባር ዝምልከት ተጠያቒ እዩ።</p>',
+  }
+};
+
+let currentLang = localStorage.getItem('hh_lang') || 'en';
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('hh_lang', lang);
+
+  // Update active button
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('lang-' + lang);
+  if (activeBtn) activeBtn.classList.add('active');
+
+  // Set Ethiopic font on body when using AM or TI
+  document.body.style.fontFamily = (lang !== 'en')
+    ? "'Noto Sans Ethiopic','Segoe UI',sans-serif"
+    : "'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',Arial,sans-serif";
+
+  const t = HH_TRANSLATIONS[lang] || HH_TRANSLATIONS.en;
+
+  // Swap all data-i18n text elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key]) el.textContent = t[key];
+  });
+
+  // Swap all data-i18n-html elements (allow HTML like <br/>)
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (t[key]) el.innerHTML = t[key];
+  });
+
+  // Hero headline special case
+  const headline = document.querySelector('.hero-headline');
+  if (headline) {
+    if (lang === 'am') headline.innerHTML = 'ሀበሻ<br/>ፍቅርህን<br/>ፈልግ';
+    else if (lang === 'ti') headline.innerHTML = 'ናይ ሓበሻ<br/>ፍቕርኻ<br/>ርኸብ';
+    else headline.innerHTML = 'Find Your<br/>Habesha<br/>Match';
+  }
+
+  // Hero subtitle
+  const subtitle = document.querySelector('.hero-subtitle');
+  if (subtitle) {
+    if (lang === 'am') subtitle.innerHTML = 'ለ<strong style="color:var(--green)">ኢትዮጵያ</strong> እና <strong style="color:var(--green)">ኤርትራ</strong> ነጠላ ሰዎች ዓለም አቀፍ የተሰጠ የመጀመሪያው ዴቲንግ አፕ። ባህልዎን፣ ቋንቋዎን እና እሴቶቻቸውን በትክክል ከሚረዱ ሰዎች ጋር ይገናኙ።';
+    else if (lang === 'ti') subtitle.innerHTML = 'ቀዳማይ ናይ ሓበሻ ዴቲንግ ኣፕ — ን<strong style="color:var(--green)">ኤርትራውያን</strong> ፡ ን<strong style="color:var(--green)">ኢትዮጵያውያን</strong> ከምኡ ዉን ዓለምለኻዊ ምስ ባህልኻ፣ ቋንቋኻ፣ ዕሙቆትካ ዝርዳእ ሰብ ርኸብ — ካብ ዝኮነ ቦታ።';
+    else subtitle.innerHTML = 'The first dedicated dating app for <strong style="color:var(--green)">Ethiopian</strong> and <strong style="color:var(--green)">Eritrean</strong> singles worldwide. Connect with someone who truly understands your culture, language, and values — wherever you are in the world.';
+  }
+
+  // Feature cards — map by title text
+  const featureMap = {
+    en: [
+      ['Photo Swiping','feat.photo.title','feat.photo.desc'],
+      ['Voice Bio','feat.voice.title','feat.voice.desc'],
+      ['Private Messaging','feat.msg.title','feat.msg.desc'],
+      ['Smart Discover','feat.discover.title','feat.discover.desc'],
+      ['Verified Profiles','feat.verified.title','feat.verified.desc'],
+      ['Community Feed','feat.feed.title','feat.feed.desc'],
+      ['Premium & Premium+','feat.premium.title','feat.premium.desc'],
+      ['Report & Block','feat.safety.title','feat.safety.desc'],
+    ]
+  };
+
+  document.querySelectorAll('.feature-card').forEach((card, i) => {
+    const titleEl = card.querySelector('.feature-title');
+    const descEl = card.querySelector('.feature-desc');
+    const keys = [
+      ['feat.photo.title','feat.photo.desc'],
+      ['feat.voice.title','feat.voice.desc'],
+      ['feat.msg.title','feat.msg.desc'],
+      ['feat.discover.title','feat.discover.desc'],
+      ['feat.verified.title','feat.verified.desc'],
+      ['feat.feed.title','feat.feed.desc'],
+      ['feat.premium.title','feat.premium.desc'],
+      ['feat.safety.title','feat.safety.desc'],
+    ];
+    if (keys[i] && titleEl && descEl) {
+      if (t[keys[i][0]]) titleEl.textContent = t[keys[i][0]];
+      if (t[keys[i][1]]) descEl.textContent = t[keys[i][1]];
+    }
+  });
+
+  // Mission cards
+  const missionTitles = document.querySelectorAll('.mission-title');
+  const missionKeys = ['mission.m1.title','mission.m2.title','mission.m3.title','mission.m4.title','mission.m5.title','mission.m6.title'];
+  missionTitles.forEach((el, i) => {
+    if (missionKeys[i] && t[missionKeys[i]]) el.textContent = t[missionKeys[i]];
+  });
+
+  // Plan names
+  const planNames = document.querySelectorAll('.plan-name');
+  const planKeys = ['plans.free','plans.premium','plans.premiumplus'];
+  planNames.forEach((el, i) => { if (planKeys[i] && t[planKeys[i]]) el.textContent = t[planKeys[i]]; });
+
+  // Plan CTA buttons
+  const planCtaBtns = document.querySelectorAll('.plans-grid .btn');
+  const ctaKeys = ['plans.cta.free','plans.cta.premium','plans.cta.premiumplus'];
+  planCtaBtns.forEach((el, i) => { if (ctaKeys[i] && t[ctaKeys[i]]) el.textContent = t[ctaKeys[i]]; });
+
+  // Floating CTA
+  const floatingBtn = document.querySelector('.floating-btn');
+  if (floatingBtn && t['cta.download']) floatingBtn.textContent = t['cta.download'];
+
+  // Contact submit button
+  const submitBtn = document.getElementById('fsubmit');
+  if (submitBtn && t['contact.send']) submitBtn.textContent = t['contact.send'];
+}
+
+// Init on page load
+document.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem('hh_lang') || 'en';
+  setLang(saved);
+});
+</script></body>
+</html>
