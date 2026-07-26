@@ -1,12 +1,27 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
     "target": {
       "namespace": "android_app",
       "package_name": "com.habeshahearts.app",
       "sha256_cert_fingerprints": [
         "5E:6A:01:10:56:60:03:41:DC:EA:B6:5F:9D:D4:83:75:39:B7:EF:11:17:01:50:5A:A2:22:75:A5:E1:9F:77:B4",
         "84:E4:B7:75:F3:AD:EE:D2:9E:BA:92:AC:A3:DB:56:7A:19:84:09:32:94:74:33:7D:7F:E1:DB:3D:D7:FB:1D:73"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.ayetechub.ayemarket",
+      "sha256_cert_fingerprints": [
+        "F9:66:4E:E9:44:90:CD:57:0E:88:A6:CB:3D:6C:87:61:7A:B8:36:FE:B6:48:12:68:7E:B5:9C:37:BA:FD:24:0F",
+        "D8:0A:05:93:83:B6:5B:71:4F:E4:97:78:9B:93:D2:58:7F:A8:FE:29:51:B4:90:0A:3A:EB:4F:EF:8D:3E:65:DC"
       ]
     }
   }
