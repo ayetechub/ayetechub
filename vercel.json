@@ -3,6 +3,9 @@
   "functions": {
     "api/chat.js": {
       "maxDuration": 30
+    },
+    "api/ayemarket-chat.js": {
+      "maxDuration": 30
     }
   },
   "rewrites": [
