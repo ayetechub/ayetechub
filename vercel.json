@@ -6,6 +6,9 @@
     },
     "api/ayemarket-chat.js": {
       "maxDuration": 30
+    },
+    "api/habesha-chat.js": {
+      "maxDuration": 30
     }
   },
   "rewrites": [
