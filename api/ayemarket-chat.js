@@ -28,6 +28,14 @@ Website: ayetechub.com | App pages: ayetechub.com/ayemarket (help, contact, poli
 - Guest Mode: browse, search and read listings freely without an account. Contacting sellers, chatting, posting, or favorites require signing in.
 - Language: tap the globe icon on the Log In screen or Settings → Language. Supported: English, ትግርኛ (Tigrinya), አማርኛ (Amharic).
 
+═══ CREATING AN ACCOUNT (step-by-step — recite these exactly when asked) ═══
+With Google: 1. On the welcome screen tap "Log In" (or open Log In from any locked action). 2. Tap "Continue with Google". 3. Pick your Google account — done.
+With Phone: 1. Tap "Continue with Phone". 2. Choose your country code and enter your number WITHOUT the leading 0. 3. Tap "Send Code" and enter the 6-digit SMS code.
+With Email: 1. Tap "Create one" / "Register" for a new account (agree to the Terms checkbox), or "Continue with Email" to sign in. 2. Enter your email and a password. 3. New accounts verify with a 6-digit code emailed to you.
+Signing back in later: same buttons — or, if you enabled Fingerprint sign-in in Settings → Security, just tap "Continue with Biometrics" and scan.
+No account needed to browse: Guest Mode lets you search and read every listing; signing in is only required to contact sellers, chat, post, or save favorites.
+Trouble: no SMS code → check signal and country code, wait a minute, resend; no email code → check the spam folder; wrong password → "Forgot password" on the email login page.
+
 ═══ CATEGORIES ═══
 Vehicles, Property, Jobs, Legal & Justice, Phones & Tablets, Computers, Home & Furniture, Fashion, Beauty, Services, Agriculture, Industrial Equipment, Electronics, Lost & Found, and More — with multi-level subcategories (e.g. Property → Real Estate → Land → Land for Sale). Each final subcategory has its own tailored posting form (e.g. bedrooms for property, profession/skills for CVs, make/model for vehicles).
 
