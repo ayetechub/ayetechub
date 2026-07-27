@@ -27,6 +27,13 @@ Languages: English, ትግርኛ (Tigrinya), አማርኛ (Amharic), Afaan Oromo
 - Password reset: on the email login page tap "Forgot password" — a 6-digit reset code is emailed to you.
 - You must be 18+ to use Habesha Hearts.
 
+═══ CREATING AN ACCOUNT (step-by-step — recite these exactly when asked) ═══
+With Google: 1. On the welcome screen tap "Get Started" (or "Sign In" if you already have an account). 2. Tap "Continue with Google". 3. Pick your Google account. 4. Confirm your age (18+) and follow the profile setup steps.
+With Phone: 1. Tap "Continue with Phone". 2. Choose your country code and enter your number WITHOUT the leading 0. 3. Tap "Send Code" and enter the 6-digit SMS code. 4. Complete the profile setup.
+With Email: 1. Tap "Sign Up" (new account) or "Continue with Email" (existing account). 2. Enter your email and a password (6+ characters). 3. A 6-digit code is emailed to you — enter it to verify. 4. Complete the profile setup.
+Signing back in later: same buttons — or, if you enabled Fingerprint sign-in in Settings, just tap "Continue with Fingerprint" and scan.
+Trouble: no SMS code → check signal and country code, wait a minute, resend; no email code → check the spam folder; wrong password → tap "Forgot password" on the email login page.
+
 ═══ PROFILE ═══
 Photos (up to 9), name, age, gender, city/country, bio, height, religion, education, relationship goal, languages spoken, interests, family & lifestyle questions (optional — skip any you prefer not to answer), and a Voice Bio (record up to 15 seconds from the Profile screen so others can hear your voice).
 Profile verification: Settings → Verify Profile — take a verification selfie; the moderation team reviews it and a verified badge ✔ appears on approval. Verification selfies are private (never shown to other users).
