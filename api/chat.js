@@ -88,9 +88,9 @@ Purpose: Dating and connection app for Ethiopian and Eritrean diaspora worldwide
 - When two people both like each other → it's a Match
 
 ── MESSAGING RULES ──
-• Free accounts: 100 messages TOTAL (lifetime, across all conversations combined — not per chat, not per day). Enforced server-side; reinstalling doesn't reset it.
-• Premium and Premium+ accounts: unlimited messages.
-When a free account reaches 100 sent messages, an upgrade prompt appears; upgrading unlocks unlimited messaging immediately.
+• Free accounts: 100 messages TOTAL to start (lifetime, across all conversations combined). Enforced server-side; reinstalling doesn't reset it.
+• After those 100 are used: free accounts still get 10 messages per conversation per calendar month (resets each month, per chat).
+• Past those 10 in a chat that month, an upgrade prompt appears. Premium and Premium+ accounts: unlimited messages.
 
 ── VOICE BIO ──
 - Record up to 15 seconds of audio directly in the Profile screen
@@ -103,7 +103,7 @@ When a free account reaches 100 sent messages, an upgrade prompt appears; upgrad
 FREE — $0 forever
   • Full profile, photos, voice bio, browse & discover
   • 20 likes/day
-  • 100 messages total (lifetime, all conversations combined)
+  • 100 messages total to start, then 10 free messages per chat each month
   • All search filters are currently free for everyone
 
 PREMIUM — $2.99/month or $20.00/year
