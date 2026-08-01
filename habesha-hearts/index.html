@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
-<title>Habesha Hearts – Ethiopian & Eritrean Dating App | Find Your Match</title>
+<title>Habesha Hearts – Ethiopian & Eritrean Dating App | Find Your Love</title>
 <meta name="description" content="Habesha Hearts is the premier dating app for Ethiopian and Eritrean diaspora worldwide. Find meaningful connections with people who share your culture, language, and values."/>
 <meta name="keywords" content="Habesha Hearts, Ethiopian dating app, Eritrean dating app, habesha dating, Ethiopian singles, Eritrean singles, diaspora dating, habesha match, Ethiopian diaspora"/>
 <meta name="author" content="AYE Tech Hub"/>
@@ -613,7 +613,7 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
       <img src="/assets/images/habesha-hearts-logo.png" alt="Habesha Hearts" style="width:58px;height:58px;border-radius:13px;animation:heartbeat 2.5s ease-in-out infinite;filter:drop-shadow(0 0 10px rgba(34,197,94,0.6))"/>
       <div class="brand-text">
         <div class="brand-name"><span style="color:var(--green)">Habesha </span><span style="color:#D32F2F">Hearts</span></div>
-        <div class="brand-tag">Find Your Match</div>
+        <div class="brand-tag">Find Your Love</div>
       </div>
     </a>
 
@@ -675,7 +675,7 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
         <img src="/assets/images/habesha-hearts-logo.png" alt="Habesha Hearts Logo" style="width:90px;height:90px;border-radius:20px;filter:drop-shadow(0 0 20px rgba(34,197,94,0.5))"/>
       </div>
       <div class="hero-tag reveal" style="border-color:rgba(34,197,94,0.4);background:rgba(34,197,94,0.08);color:var(--green)"><span data-i18n="hero.tag">❤️ The Habesha Dating App</span></div>
-      <h1 class="hero-headline gradient-text reveal"><span data-i18n-html="hero.headline">Find Your<br/>Habesha<br/>Match</span></h1>
+      <h1 class="hero-headline gradient-text reveal"><span data-i18n-html="hero.headline">Find your<br/>Habesha<br/>love</span></h1>
       <p class="hero-subtitle reveal"><span data-i18n-html="hero.subtitle">The first dedicated dating app for <strong style="color:var(--green)">Ethiopian</strong> and <strong style="color:var(--green)">Eritrean</strong> singles worldwide. Connect with someone who truly understands your culture, language, and values — wherever you are in the world.
       </p>
       <div class="hero-buttons reveal">
@@ -2249,9 +2249,11 @@ function setLang(lang) {
   // Hero headline special case
   const headline = document.querySelector('.hero-headline');
   if (headline) {
-    if (lang === 'am') headline.innerHTML = 'ሀበሻ<br/>ፍቅርህን<br/>ፈልግ';
-    else if (lang === 'ti') headline.innerHTML = 'ናይ ሓበሻ<br/>ፍቕርኻ<br/>ርኸብ';
-    else headline.innerHTML = 'Find Your<br/>Habesha<br/>Match';
+    // Matches the app's welcome tagline exactly (owner spec) —
+    // polite plural forms, same wording on both surfaces.
+    if (lang === 'am') headline.innerHTML = 'የሐበሻ<br/>ፍቅረኛዎን<br/>ያግኙ';
+    else if (lang === 'ti') headline.innerHTML = 'ናይ ሓበሻ<br/>ፍቕርኹም<br/>ርኸቡ';
+    else headline.innerHTML = 'Find your<br/>Habesha<br/>love';
   }
 
   // Hero subtitle
