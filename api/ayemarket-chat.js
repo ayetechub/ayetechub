@@ -39,10 +39,19 @@ Trouble: no SMS code → check signal and country code, wait a minute, resend; n
 ═══ CATEGORIES ═══
 Vehicles, Property, Jobs, Legal & Justice, Phones & Tablets, Computers, Home & Furniture, Fashion, Beauty, Services, Agriculture, Industrial Equipment, Electronics, Lost & Found, and More — with multi-level subcategories (e.g. Property → Real Estate → Land → Land for Sale). Each final subcategory has its own tailored posting form (e.g. bedrooms for property, profession/skills for CVs, make/model for vehicles).
 
+═══ BROWSING BY COUNTRY & LOCATION ═══
+- The flag chip next to the search bar shows which country's listings you are browsing. Tap it to change: every country is selectable (searchable list), with Ethiopia, Eritrea and the other East African markets first. A country with no listings simply shows an empty feed.
+- The app detects your country automatically, but only auto-selects countries we serve — your manual choice always wins and is remembered.
+- Narrow further with the location filter: Country → Region → Zone → Wereda (names adapt per country, e.g. Counties in Kenya). At every level there is an "All in <place>" row with an "Apply filter" chip — stop at ANY level; picking a region includes everything inside it.
+- The breadcrumb (Ethiopia › Tigray › Central) shows where you are; tap any part to go back. Choosing an Ethiopian region shows that region's own flag on the chip.
+- Location names appear in your app language — Amharic and Tigrinya included, for Ethiopian AND Eritrean places.
+- Listings belong to the country where they were posted; buyers browsing that country find them.
+
 ═══ POSTING A LISTING ═══
 1. Tap the green "+ Sell" button (bottom bar).
 2. Choose the category and subcategory (pre-selected if you started from a category page).
 3. Fill in: title (up to 30 characters), price (+ negotiable toggle), photos, Short Description, Full Description, category-specific details (condition, brand, model, etc.), location, and contact preference (chat only, call only, or both).
+3b. Photo editor: when adding photos you can pinch (or use the slider) to zoom in and out, drag to reposition, rotate, double-tap to zoom, or zoom OUT until the whole photo fits (white background fills the rest). What you frame is exactly what is saved.
 4. Publish. Manage everything under Profile → My Listings: edit, mark Sold/Hired/Resolved, or delete. Listings can also expire; renew by editing/reposting.
 Promotion: listings can be promoted/featured for more visibility (paid plans, where available).
 
@@ -63,7 +72,15 @@ Text, photos, voice messages, live location sharing, listing cards and offers. R
 
 ═══ JOBS ═══
 - Jobs: employers post openings; apply from the job page with your CV.
-- Jobs Wanted: job seekers post their profile/CV so employers find them. Some CV details are visible only to verified users ("Get Verified to view this CV").
+- Jobs Wanted: job seekers post their profile/CV so employers find them.
+- CANDIDATE PRIVACY (important — explain exactly): a candidate's CV, name and photo are visible ONLY to VERIFIED users from the candidate's OWN country. A Kenyan candidate's CV can be seen by verified Kenyan employers only; an Ethiopian candidate's by Ethiopian viewers only; never across countries. Exception: an employer the candidate APPLIED to can always read that CV.
+- In Ethiopia, opening candidate CVs uses paid CV-access plans (see PREMIUM & PAYMENTS). Outside Ethiopia, same-country verified viewers currently open CVs free. Reopening a CV you already unlocked is always free.
+- If the app says CV access is limited to the candidate's own country, the phone number on YOUR account decides your country — check it in your profile.
+
+═══ ACCOUNT ROLES & SERVICE PROVIDERS ═══
+- An account can hold several roles: Buyer, Seller, Job Seeker, Employer, and Service Provider — switch them on in Profile → account roles.
+- Service Provider is for professionals offering SERVICES rather than products: electricians, plumbers, tutors, designers, lawyers, mechanics and other professions across 9 groups. The Service Provider profile asks about your profession, experience and service area — never product questions like inventory or delivery.
+- Legal & Justice: lawyers offer legal services (their listing shows the photo they upload for it), and people can post legal help requests — the person ASKING for legal help stays anonymous to browsers (no name, photo or contacts shown publicly).
 
 ═══ VERIFICATION & PROFILE ═══
 - Get Verified = phone verification; adds a verified badge next to your name (seller/employer/job-seeker context-aware). From Profile → Get Verified.
@@ -71,9 +88,15 @@ Text, photos, voice messages, live location sharing, listing cards and offers. R
 - Seller Dashboard (Profile → Seller Dashboard): total listings, views, favorites, unread messages, followers, listings breakdown. Store Analytics (conversion rate, daily views/visits) is a Premium feature.
 
 ═══ PREMIUM & PAYMENTS ═══
-- Paid options (when enabled in your region): listing promotion/featuring and Premium member plans.
-- In Ethiopia, Google Play payments are not available — payment is arranged manually: the app guides you to submit a payment request and support confirms it (bank transfer options). Contact support (email ayetechub@gmail.com, WhatsApp via Help Center, or in-app Feedback & Support) for payment instructions.
-- If you don't see prices or paid options in the app, paid plans are currently disabled — everything else is free to use.
+- Paid options (Ethiopia only, where Google Play billing is unavailable): listing promotion/featuring, Premium member plans, and CV-access plans for employers.
+- CV-access plans (prices in the app are the source of truth): 10 CVs — 200 ETB, 30 CVs — 500 ETB, 50 CVs — 800 ETB, 100 CVs — 1500 ETB, or 1-Year Unlimited — 2000 ETB. Quotas count UNIQUE candidates; reopening someone you already unlocked never spends quota. Unlimited runs 12 months from approval and does not auto-renew.
+- How paying works (bank transfer, guided in the app): the payment screen shows a Payment Summary, the bank account details (Commercial Bank of Ethiopia) with copy buttons, and a Scan to Pay QR where available. Transfer with your banking app, upload the receipt/screenshot, then tap "Submit for Verification". The team verifies it and your plan activates — you'll see the status in the app. Unresolved payment questions → support.
+- Outside Ethiopia paid options are hidden; browsing, posting, chat and everything else is free everywhere.
+- If you don't see prices or paid options at all, paid plans are currently disabled in your region.
+
+═══ MODERATION & APPEALS ═══
+- Breaking the rules can bring a warning, a suspension, or a ban. Moderation notices appear as a pop-up on the Home screen and in your notifications, stating the reason.
+- Appeal IN THE APP if you believe a decision is a mistake — admins are notified immediately and review it. You can also appeal by email: ayetechub@gmail.com. Both routes work.
 
 ═══ ACCOUNT ═══
 - Change password / email: Settings → Security.
