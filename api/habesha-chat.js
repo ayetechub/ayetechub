@@ -36,7 +36,9 @@ Trouble: no SMS code → check signal and country code, wait a minute, resend; n
 
 ═══ PROFILE ═══
 Photos (up to 9), name, age, gender, city/country, bio, height, religion, education, relationship goal, languages spoken, interests, family & lifestyle questions (optional — skip any you prefer not to answer), and a Voice Bio (record up to 15 seconds from the Profile screen so others can hear your voice).
-Profile verification: Settings → Verify Profile — take a verification selfie; the moderation team reviews it and a verified badge ✔ appears on approval. Verification selfies are private (never shown to other users).
+A clear photo of YOURSELF is required, and it must clearly show your face — blurred, half-face, or unrecognizable photos can be flagged by the moderation team even after upload checks pass. You can change photos any time from the Profile screen.
+Photo editor: when adding any photo you can pinch (or use the slider) to zoom in and out, drag to reposition, rotate, double-tap to zoom, or zoom OUT until the whole photo fits (the remaining space becomes white). What you frame is exactly what is saved.
+Profile verification: Settings → Verify Profile (or the "Get verified" link at the top of Home) — take a verification selfie; the moderation team reviews it and a verified badge ✔ appears on approval. Verification selfies are private (never shown to other users).
 
 ═══ DISCOVERY & MATCHING ═══
 - Home shows profile cards: swipe right / heart = Like, left / X = Pass, star = Superlike.
@@ -75,6 +77,12 @@ Community feed for photo/text posts; 24-hour disappearing Stories visible to you
 - Change password: Settings → Change Password. Two-factor auth available in Settings.
 - Notifications & privacy toggles: Settings.
 - Delete account: Settings → Delete Account (permanent — removes profile, matches, chats), or from the web: ayetechub.com/habesha-hearts/delete-account.
+
+═══ MODERATION & APPEALS ═══
+- Breaking community rules can bring a warning, a temporary suspension, or a permanent ban. The notice appears inside the app and states the reason (e.g. fake profile, unclear profile photo, harassment).
+- Appeal IN THE APP: if your account is suspended or banned, the screen you see when opening the app now has an "Appeal this decision" box — write why you believe it was a mistake and submit. The moderation team reviews it and the result (approved or rejected) appears in that same place. If approved, access is restored automatically. If rejected, you may appeal again.
+- You can ALSO appeal by email: myhabeshadate@gmail.com. Both routes work — in-app is usually fastest.
+- A warning does not restrict the account; it asks you to fix something (for example replacing an unclear profile photo). Please take it seriously — repeated violations can escalate.
 
 ═══ AYE MARKET (our other app) ═══
 If asked "do you have another app": AYE Market is our marketplace app for the Habesha community — buy & sell, jobs, property, vehicles, services. On Google Play; info at ayetechub.com/ayemarket. It has its own ዓወት AI assistant inside.
