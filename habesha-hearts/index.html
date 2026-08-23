@@ -328,6 +328,7 @@ section{padding:80px 0;position:relative;overflow:hidden}
 .qr-wrap{
   display:flex;justify-content:center;
   margin-top:24px;
+  gap:18px;align-items:center;flex-wrap:wrap;
 }
 .qr-box{
   width:120px;height:120px;border-radius:16px;
@@ -338,6 +339,15 @@ section{padding:80px 0;position:relative;overflow:hidden}
   font-size:.65rem;color:var(--text-muted);text-align:center;letter-spacing:.5px;text-transform:uppercase;
 }
 .qr-box .qr-icon{font-size:2rem}
+/* Real Play-Store QR: white pad so it scans on the dark page; fixed
+   square so CSS can never stretch it. */
+.qr-box.qr-live{
+  width:auto;height:auto;padding:10px;background:#fff;
+  border:2px solid var(--border-strong);
+}
+.qr-box.qr-live img{display:block;width:132px;height:132px;max-width:100%}
+.qr-caption{display:flex;flex-direction:column;gap:4px;font-size:.85rem;color:var(--text-soft)}
+.qr-caption strong{color:var(--text);font-size:.95rem}
 .download-visual{display:flex;justify-content:center}
 .app-mockup{
   width:240px;height:480px;border-radius:40px;
@@ -884,9 +894,12 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
           </span>
         </div>
         <div class="qr-wrap" style="justify-content:flex-start;margin-top:28px">
-          <div class="qr-box">
-            <div class="qr-icon">📱</div>
-            <div>Scan to<br/>Download</div>
+          <a href="https://play.google.com/store/apps/details?id=com.habeshahearts.app" target="_blank" rel="noopener" class="qr-box qr-live" aria-label="Scan or tap to download Habesha Hearts on Google Play">
+            <img src="/assets/images/habesha-dating-google-play-qr.svg" alt="QR code linking to Habesha Hearts on Google Play" width="132" height="132" loading="lazy"/>
+          </a>
+          <div class="qr-caption">
+            <strong>Scan to Download Habesha Dating</strong>
+            <span>Available on Google Play</span>
           </div>
         </div>
         <p style="font-size:.72rem;color:var(--text-muted);margin-top:12px">
