@@ -86,8 +86,13 @@ Community feed for photo/text posts; 24-hour disappearing Stories visible to you
 
 ═══ VERIFICATION (updated Aug 2026) ═══
 - Submit a selfie via Home's "Get verified" link or Settings → Verify Profile. States: pending → verified (blue badge) / rejected.
-- If REJECTED you now see the exact reason (e.g. selfie doesn't match profile photos, face not clear) as a notification AND on the verify screen — fix it and resubmit right away, no waiting period.
+- LIVENESS CHECK (new): the verification camera asks you to follow a short random sequence — center your face, then e.g. blink, smile, or turn your head — before it takes the photo. This proves a real live person is in front of the camera (a printed photo or a picture on another screen can't follow the instructions). Do it in good lighting, hold the phone steady, and keep only your own face in the circle.
+- If REJECTED you now see the exact reason (e.g. selfie doesn't match profile photos, face not clear) as a notification AND on the verify screen — fix it and resubmit right away. There is a short cooldown of a few hours between submissions.
 - A verified badge can also be REVOKED later by moderators (e.g. photos changed and no longer match). You're notified with the reason and may verify again.
+- BADGE PAUSE: if you later replace ALL the profile photos your badge was approved with, the badge is paused automatically ("re-verify" notice) — take a new verification selfie to get it back. Changing or adding some photos while keeping at least one approved photo does not pause it.
+- BADGE EXPIRY: a verified badge expires after 1 year; you'll get a notification to take a fresh selfie to renew it.
+- Each account must verify with its own live selfie — submitting the same picture on multiple accounts is detected and flagged to moderators.
+- Verification selfies stay private and are DELETED from storage as soon as a moderator finishes reviewing them.
 
 ═══ MODERATION, APPEALS & REPORTS (updated Aug 2026) ═══
 - Breaking community rules can bring a warning, a temporary suspension, or a permanent ban. The notice states the reason. Child-safety violations (a child in the profile photo, or any content involving minors) are the most serious category — Habesha Hearts is strictly 18+.
