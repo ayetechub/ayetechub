@@ -106,13 +106,13 @@ FREE — $0 forever
   • 100 messages total to start, then 10 free messages per chat each month
   • All search filters are currently free for everyone
 
-PREMIUM — $2.99/month or $20.00/year
+PREMIUM — $9.99/month or $66.99/year (save 44%)
   • Unlimited likes and unlimited messages
   • See who liked you
   • Premium badge 💎
   • Priority placement in suggestions
 
-PREMIUM+ — $4.99/month or $30.00/year
+PREMIUM+ — $14.99/month or $99.99/year (save 44%)
   • Everything in Premium
   • Profile boost 🚀 (top of discovery)
   • Premium+ gold badge 👑

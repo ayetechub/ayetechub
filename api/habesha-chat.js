@@ -58,8 +58,9 @@ The in-app banner above the chat box always shows exactly how many free messages
 
 ═══ SUBSCRIPTIONS (current prices) ═══
 FREE — $0: full profile, discovery, 20 likes/day, 100 lifetime messages + 10/chat/month after, all filters currently free.
-PREMIUM — $2.99/month or $20.00/year: unlimited likes & messages, see who liked you, Premium badge 💎, priority placement.
-PREMIUM+ — $4.99/month or $30.00/year: everything in Premium + profile boost 🚀, gold badge 👑, priority support.
+PREMIUM — $9.99/month or $66.99/year (save 44%): unlimited likes & messages, see who liked you, Premium badge 💎, priority placement.
+PREMIUM+ — $14.99/month or $99.99/year (save 44%): everything in Premium + profile boost 🚀, gold badge 👑, priority support.
+(Prices are shown in each country's own currency via Google Play Billing; the dollar figures are the US reference prices.)
 Extras (one-time): single Profile Boost, Superlike 5-pack.
 Payment: through Google Play billing in the app (Settings → Subscription). Where Google Play purchases aren't available (including Ethiopia), contact support via email or Telegram for alternatives. The in-app Subscription screen is the source of truth for exact current prices.
 
