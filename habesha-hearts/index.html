@@ -802,7 +802,7 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
       <div class="feature-card reveal">
         <div class="feature-icon">🗺️</div>
         <div class="feature-title" data-i18n="feat.map.title">Map — Only If You Choose</div>
-        <div class="feature-desc" data-i18n="feat.map.desc">See verified members in your area. You appear <strong>only</strong> after you tap “Show me on the map”, your pin shows a general area of about 2&nbsp;km — never your street or address — and you can hide yourself at any moment.</div>
+        <div class="feature-desc" data-i18n="feat.map.desc">See verified members in your area. You appear <strong>only</strong> after you tap “Show me on the map”, your pin shows a general area of about 2&nbsp;km — never your street or address — and you can hide yourself at any moment. Appearing is free for verified members; browsing the map is a Premium+ feature.</div>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon">🔍</div>
@@ -1213,6 +1213,7 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
           <div class="plan-feature"><span class="no">✕</span> <span style="color:var(--text-muted)">Profile boost</span></div>
           <div class="plan-feature"><span class="no">✕</span> <span style="color:var(--text-muted)">Read receipts</span></div>
           <div class="plan-feature"><span class="no">✕</span> <span style="color:var(--text-muted)">Rewind swipes</span></div>
+          <div class="plan-feature"><span class="no">✕</span> <span style="color:var(--text-muted)">Browse the map</span></div>
         </div>
         <a href="#download" class="btn btn-outline" style="text-align:center">Get Started Free</a>
       </div>
@@ -1234,6 +1235,7 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
           <div class="plan-feature"><span class="chk">✓</span> Premium badge 👑</div>
           <div class="plan-feature"><span class="chk">✓</span> No banner · fewer swipe ads</div>
           <div class="plan-feature"><span class="no">✕</span> <span style="color:var(--text-muted)">Priority support</span></div>
+          <div class="plan-feature"><span class="no">✕</span> <span style="color:var(--text-muted)">Browse the map</span></div>
           <div class="plan-feature" style="margin-top:6px;border-top:1px solid rgba(34,197,94,0.15);padding-top:8px"><span class="chk">✓</span> <strong>Cancel anytime</strong></div>
         </div>
         <a href="#download" class="btn btn-green" style="text-align:center">Get Premium</a>
@@ -1253,6 +1255,7 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
           <div class="plan-feature"><span class="chk">✓</span> Travel mode</div>
           <div class="plan-feature"><span class="chk">✓</span> 5 profile boosts / month</div>
           <div class="plan-feature"><span class="chk">✓</span> Incognito browsing</div>
+          <div class="plan-feature"><span class="chk">✓</span> <strong>Full map access 🗺️</strong> <span style="color:var(--text-muted)">(verified profiles)</span></div>
           <div class="plan-feature"><span class="chk">✓</span> Premium+ diamond badge 💎</div>
           <div class="plan-feature" style="margin-top:6px;border-top:1px solid rgba(34,197,94,0.15);padding-top:8px"><span class="chk">✓</span> <strong>Cancel anytime</strong></div>
         </div>
@@ -1800,7 +1803,7 @@ const HH_TRANSLATIONS = {
     'feat.boost.title': 'Profile Boost',
     'feat.boost.desc': 'Put your profile at the top of Discovery for a full hour and get seen by far more people. Included monthly with Premium+, or buy a Boost pack any time.',
     'feat.map.title': 'Map — Only If You Choose',
-    'feat.map.desc': 'See verified members in your area. You appear only after you tap “Show me on the map”, your pin shows a general area of about 2 km — never your street or address — and you can hide yourself at any moment.',
+    'feat.map.desc': 'See verified members in your area. You appear only after you tap “Show me on the map”, your pin shows a general area of about 2 km — never your street or address — and you can hide yourself at any moment. Appearing is free for verified members; browsing the map is a Premium+ feature.',
     'feat.discover.title': 'Smart Discover',
     'feat.discover.desc': 'Swipe through curated profiles with glassmorphism cards. Filter by age, city, interests, and more.',
     'feat.verified.title': 'Verified Profiles',
@@ -1977,7 +1980,7 @@ const HH_TRANSLATIONS = {
     'feat.boost.title': 'ቡስት',
     'feat.boost.desc': 'መገለጫዎን ለሙሉ አንድ ሰዓት በዲስከቨሪ ላይ ቀዳሚ ያድርጉት፤ ብዙ ሰዎች ያዩዎታል። ከፕሪሚየም+ ጋር በየወሩ ይካተታል፤ ወይም በማንኛውም ጊዜ የቡስት ጥቅል ይግዙ።',
     'feat.map.title': 'ካርታ — እርስዎ ሲመርጡ ብቻ',
-    'feat.map.desc': 'በአካባቢዎ ያሉ የተረጋገጡ አባላትን ይመልከቱ። የሚታዩት «በካርታ ላይ አሳየኝ» ሲጫኑ ብቻ ነው፤ ምልክትዎ ወደ 2 ኪሎ ሜትር የሚሆን አጠቃላይ አካባቢ ያሳያል እንጂ መንገድዎን ወይም አድራሻዎን በፍጹም አያሳይም፤ በማንኛውም ጊዜም እራስዎን መደበቅ ይችላሉ።',
+    'feat.map.desc': 'በአካባቢዎ ያሉ የተረጋገጡ አባላትን ይመልከቱ። የሚታዩት «በካርታ ላይ አሳየኝ» ሲጫኑ ብቻ ነው፤ ምልክትዎ ወደ 2 ኪሎ ሜትር የሚሆን አጠቃላይ አካባቢ ያሳያል እንጂ መንገድዎን ወይም አድራሻዎን በፍጹም አያሳይም፤ በማንኛውም ጊዜም እራስዎን መደበቅ ይችላሉ። በካርታ ላይ መታየት ለተረጋገጡ አባላት ነፃ ነው፤ ካርታውን መመልከት ግን የፕሪሚየም+ አገልግሎት ነው።',
     'feat.discover.title': 'ፕሮፋይሎችን ፈልጉ',
     'feat.discover.desc': 'በዕድሜ፣ ከተማ፣ ፍላጎቶች እና ሌሎች ነገሮች ያጣሩ። ለሀበሻ ብቻ ።',
     'feat.verified.title': 'የተረጋገጡ ፕሮፋይሎች',
@@ -2149,7 +2152,7 @@ const HH_TRANSLATIONS = {
     'feat.boost.title': 'ቡስት',
     'feat.boost.desc': 'ንመንነትካ ንምሉእ ሓደ ሰዓት ኣብ ዲስከቨሪ ቀዳማይ ግበሮ፤ ብዙሓት ሰባት ይርእዩኻ። ምስ ፕሪሚየም+ ወርሓዊ ይካተት፤ ወይ ኣብ ዝኾነ ግዜ ጥርኑፍ ቡስት ግዛእ።',
     'feat.map.title': 'ካርታ — ንስኻ ምስ መረጽካ ጥራይ',
-    'feat.map.desc': 'ኣብ ከባቢኻ ዘለዉ ዝተረጋገጹ ኣባላት ርአ። እትረአ «ኣብ ካርታ ኣርእየኒ» ምስ ጠወቕካ ጥራይ እዩ፤ እቲ ምልክትካ ናይ ኣስታት 2 ኪሎ ሜተር ሓፈሻዊ ከባቢ እዩ ዘርኢ እምበር መንገድኻ ወይ ኣድራሻኻ ፈጺሙ ኣየርእን፤ ኣብ ዝኾነ ግዜ ድማ ንርእስኻ ክትሓብእ ትኽእል።',
+    'feat.map.desc': 'ኣብ ከባቢኻ ዘለዉ ዝተረጋገጹ ኣባላት ርአ። እትረአ «ኣብ ካርታ ኣርእየኒ» ምስ ጠወቕካ ጥራይ እዩ፤ እቲ ምልክትካ ናይ ኣስታት 2 ኪሎ ሜተር ሓፈሻዊ ከባቢ እዩ ዘርኢ እምበር መንገድኻ ወይ ኣድራሻኻ ፈጺሙ ኣየርእን፤ ኣብ ዝኾነ ግዜ ድማ ንርእስኻ ክትሓብእ ትኽእል። ኣብ ካርታ ምርኣይ ንዝተረጋገጹ ኣባላት ነጻ እዩ፤ ካርታ ምድህሳስ ግና ናይ ፕሪሚየም+ ኣገልግሎት እዩ።',
     'feat.discover.title': 'ፕሮፋይላት ርኸብ',
     'feat.discover.desc': 'ብዕድመ፣ ከተማ፣ ዝጥዕሙ ባህርያት ፊልተር ግበር። ንሓበሻ ጥራሕ።',
     'feat.verified.title': 'ዝተረጋገጹ ፕሮፋይላት',
