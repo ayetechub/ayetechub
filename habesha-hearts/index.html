@@ -791,8 +791,18 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon">💬</div>
-        <div class="feature-title">Private Messaging</div>
-        <div class="feature-desc">Send private messages to anyone you like. No match required — open, respectful communication from the start.</div>
+        <div class="feature-title" data-i18n="feat.msg.title">Match, Then Message</div>
+        <div class="feature-desc" data-i18n="feat.msg.desc">Like someone, and if they like you back it's a match — then you can chat. Matching is completely free, and Premium members can message anyone.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🚀</div>
+        <div class="feature-title" data-i18n="feat.boost.title">Profile Boost</div>
+        <div class="feature-desc" data-i18n="feat.boost.desc">Put your profile at the top of Discovery for a full hour and get seen by far more people. Included monthly with Premium+, or buy a Boost pack any time.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🗺️</div>
+        <div class="feature-title" data-i18n="feat.map.title">Map — Only If You Choose</div>
+        <div class="feature-desc" data-i18n="feat.map.desc">See verified members in your area. You appear <strong>only</strong> after you tap “Show me on the map”, your pin shows a general area of about 2&nbsp;km — never your street or address — and you can hide yourself at any moment.</div>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon">🔍</div>
@@ -1016,6 +1026,20 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
         <div class="faq-q" onclick="toggleFaq(this)">Who is the app for? <span class="faq-arrow">▼</span></div>
         <div class="faq-a">Habesha Hearts is designed for Ethiopian and Eritrean singles worldwide — whether you were born there or grew up in the diaspora. If you identify as Habesha and are looking for meaningful connections, this app is for you.</div>
       </div>
+      <!-- The three questions the app itself is asked most, answered
+           where people actually look for them. -->
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">Can people see where I live? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">No. You only appear on the map if you choose to, by tapping “Show me on the map” — until then nothing about your location is shared with anyone. When you do appear, your pin covers a general area of roughly <strong>2&nbsp;km</strong>, so it shows a neighbourhood rather than a street, a building or an address. You can hide yourself at any moment and that choice takes effect immediately. Your device is never tracked and your movements are never followed.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">How does messaging work? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Match first — that's free, and it's all you need to start chatting. From there you can send up to 3 messages in a row, and the moment the other person replies you can send 3 more. After 10 of your own messages in one conversation there's a short 10-minute pause, then it carries on as before. Replies you receive are always free and never counted. Premium and Premium+ members message without limits.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">What is Boost? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Boost puts your profile at the top of Discovery for a full hour, so many more people see you. Premium+ members receive Boosts monthly, and anyone can buy a Boost pack. It works best in the evening, when the most members are browsing.</div>
+      </div>
       <div class="faq-item reveal">
         <div class="faq-q" onclick="toggleFaq(this)">How does the voice bio work? <span class="faq-arrow">▼</span></div>
         <div class="faq-a">You can record up to 15 seconds of audio as your voice bio directly from your profile page. Other users can listen to your voice bio before messaging — giving them a sense of your personality before you connect.</div>
@@ -1122,6 +1146,18 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
         <div class="safety-icon">✅</div>
         <div class="safety-title">Profile Verification</div>
         <div class="safety-desc">Users can apply for a blue verified badge. Our team manually reviews verification requests to confirm real identity — no bots, no catfishing.</div>
+      </div>
+      <!-- The map worry, answered head-on. People hear "map" and assume
+           tracking; the honest answer is specific numbers and who holds
+           the switch, not reassurance. -->
+      <div class="safety-card reveal">
+        <div class="safety-icon">🗺️</div>
+        <div class="safety-title">Location You Control</div>
+        <div class="safety-desc">
+          You are <strong>never</strong> on the map unless you put yourself there. Nothing is shared until you tap “Show me on the map”, and even then your pin is deliberately approximate — a general area of roughly <strong>2&nbsp;km</strong>, never your exact position, street or address.
+          <br/><br/>
+          You stay visible for 24&nbsp;hours and can hide yourself at any moment; that choice always overrides everything else. <strong>Nobody can track your device or follow your movements</strong> — the map exists to help you meet people nearby, not to locate anyone.
+        </div>
       </div>
       <div class="safety-card reveal">
         <div class="safety-icon">🔒</div>
@@ -1759,8 +1795,12 @@ const HH_TRANSLATIONS = {
     'feat.photo.desc': 'Browse multiple photos per profile by swiping. Know exactly who you\'re connecting with before you say hello.',
     'feat.voice.title': 'Voice Bio',
     'feat.voice.desc': 'Record up to 15 seconds of your voice. Let your personality shine through — hear someone\'s voice before you match.',
-    'feat.msg.title': 'Private Messaging',
-    'feat.msg.desc': 'Send private messages to anyone you like. No match required — open, respectful communication from the start.',
+    'feat.msg.title': 'Match, Then Message',
+    'feat.msg.desc': 'Like someone, and if they like you back it’s a match — then you can chat. Matching is completely free, and Premium members can message anyone.',
+    'feat.boost.title': 'Profile Boost',
+    'feat.boost.desc': 'Put your profile at the top of Discovery for a full hour and get seen by far more people. Included monthly with Premium+, or buy a Boost pack any time.',
+    'feat.map.title': 'Map — Only If You Choose',
+    'feat.map.desc': 'See verified members in your area. You appear only after you tap “Show me on the map”, your pin shows a general area of about 2 km — never your street or address — and you can hide yourself at any moment.',
     'feat.discover.title': 'Smart Discover',
     'feat.discover.desc': 'Swipe through curated profiles with glassmorphism cards. Filter by age, city, interests, and more.',
     'feat.verified.title': 'Verified Profiles',
@@ -1932,8 +1972,12 @@ const HH_TRANSLATIONS = {
     'feat.photo.desc': 'ለእያንዳንዱ ፕሮፋይል ብዙ ፎቶዎችን ያስሱ። ሰላም ከማለትዎ በፊት ከ누ን እያነጋገሩ እንደሆነ ያውቃሉ።',
     'feat.voice.title': 'የድምፅ ባዮ',
     'feat.voice.desc': 'እስከ 15 ሰከንድ ድምፅዎን ይቅዱ። ከማዛመድ በፊት የሌሎችን ድምፅ ይስሙ።',
-    'feat.msg.title': 'የግል መልዕክት',
-    'feat.msg.desc': 'ለሚወዷቸው ሰዎች የግል መልዕክቶች ይላኩ። ክብርን ከሚያሳዩ ክፍት ግንኙነቶች ጀምሩ።',
+    'feat.msg.title': 'ተዛመዱ፣ ከዚያ ይላኩ',
+    'feat.msg.desc': 'አንድን ሰው ላይክ ያድርጉ፤ እነሱም ላይክ ካደረጉዎት ተዛመዳችሁ ማለት ነው — ከዚያ መወያየት ይችላሉ። መዛመድ ሙሉ በሙሉ ነፃ ነው፤ የፕሪሚየም አባላት ደግሞ ለማንኛውም ሰው መላክ ይችላሉ።',
+    'feat.boost.title': 'ቡስት',
+    'feat.boost.desc': 'መገለጫዎን ለሙሉ አንድ ሰዓት በዲስከቨሪ ላይ ቀዳሚ ያድርጉት፤ ብዙ ሰዎች ያዩዎታል። ከፕሪሚየም+ ጋር በየወሩ ይካተታል፤ ወይም በማንኛውም ጊዜ የቡስት ጥቅል ይግዙ።',
+    'feat.map.title': 'ካርታ — እርስዎ ሲመርጡ ብቻ',
+    'feat.map.desc': 'በአካባቢዎ ያሉ የተረጋገጡ አባላትን ይመልከቱ። የሚታዩት «በካርታ ላይ አሳየኝ» ሲጫኑ ብቻ ነው፤ ምልክትዎ ወደ 2 ኪሎ ሜትር የሚሆን አጠቃላይ አካባቢ ያሳያል እንጂ መንገድዎን ወይም አድራሻዎን በፍጹም አያሳይም፤ በማንኛውም ጊዜም እራስዎን መደበቅ ይችላሉ።',
     'feat.discover.title': 'ፕሮፋይሎችን ፈልጉ',
     'feat.discover.desc': 'በዕድሜ፣ ከተማ፣ ፍላጎቶች እና ሌሎች ነገሮች ያጣሩ። ለሀበሻ ብቻ ።',
     'feat.verified.title': 'የተረጋገጡ ፕሮፋይሎች',
@@ -2100,8 +2144,12 @@ const HH_TRANSLATIONS = {
     'feat.photo.desc': 'ናይ ነፍሲ ወከፍ ፕሮፋይል ብዙ ፎቶታት ርኣይ። ሰላም ቅድሚ ምባልካ ምስ መን ከምዝርኸብካ ፍለጥ።',
     'feat.voice.title': 'ቮይስ ባዮ',
     'feat.voice.desc': 'ድምጽኻ ን 15 ሰኮንዲ ቀርጽ። ቅድሚ ምምስካር ናይ ካልኦት ድምጺ ስምዕ።',
-    'feat.msg.title': 'ፕራይቬት ሜሴጅ',
-    'feat.msg.desc': 'ናብ ዘፍቀርካዮ ሰብ ፕራይቬት ሜሴጅ ስደድ። ብኽብሪ ናይ ኦፐን ዝኾነ ርኸብ ጀምር።',
+    'feat.msg.title': 'ተዛመድ፣ ድሕሪኡ ስደድ',
+    'feat.msg.desc': 'ንሓደ ሰብ ላይክ ግበሮ፤ ንሱ እውን ላይክ እንተገይሩልካ ተዛሚድኩም ማለት እዩ — ድሕሪኡ ክትዘራረቡ ትኽእሉ። ምዝማድ ምሉእ ብምሉእ ነጻ እዩ፤ ኣባላት ፕሪሚየም ድማ ናብ ዝኾነ ሰብ ክሰዱ ይኽእሉ።',
+    'feat.boost.title': 'ቡስት',
+    'feat.boost.desc': 'ንመንነትካ ንምሉእ ሓደ ሰዓት ኣብ ዲስከቨሪ ቀዳማይ ግበሮ፤ ብዙሓት ሰባት ይርእዩኻ። ምስ ፕሪሚየም+ ወርሓዊ ይካተት፤ ወይ ኣብ ዝኾነ ግዜ ጥርኑፍ ቡስት ግዛእ።',
+    'feat.map.title': 'ካርታ — ንስኻ ምስ መረጽካ ጥራይ',
+    'feat.map.desc': 'ኣብ ከባቢኻ ዘለዉ ዝተረጋገጹ ኣባላት ርአ። እትረአ «ኣብ ካርታ ኣርእየኒ» ምስ ጠወቕካ ጥራይ እዩ፤ እቲ ምልክትካ ናይ ኣስታት 2 ኪሎ ሜተር ሓፈሻዊ ከባቢ እዩ ዘርኢ እምበር መንገድኻ ወይ ኣድራሻኻ ፈጺሙ ኣየርእን፤ ኣብ ዝኾነ ግዜ ድማ ንርእስኻ ክትሓብእ ትኽእል።',
     'feat.discover.title': 'ፕሮፋይላት ርኸብ',
     'feat.discover.desc': 'ብዕድመ፣ ከተማ፣ ዝጥዕሙ ባህርያት ፊልተር ግበር። ንሓበሻ ጥራሕ።',
     'feat.verified.title': 'ዝተረጋገጹ ፕሮፋይላት',
