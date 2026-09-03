@@ -575,6 +575,11 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
 .plan-price{font-size:2.4rem;font-weight:900;margin-bottom:4px;color:var(--text)}
 .plan-price span{font-size:.85rem;font-weight:400;color:var(--text-muted)}
 .plan-birr{font-size:.85rem;color:var(--text-muted);margin-bottom:20px}
+.plan-ladder{margin:10px 0 18px;display:flex;flex-direction:column;gap:6px}
+.plan-tier{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:.86rem;color:var(--text-muted)}
+.plan-amt{font-weight:700;color:var(--text);white-space:nowrap}
+.plan-per{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap}
+.plan-off{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.02em;padding:2px 6px;border-radius:6px;background:rgba(34,197,94,0.15);color:#22c55e;white-space:nowrap}
 .plan-divider{height:1px;background:var(--border);margin:20px 0}
 .plan-features{flex:1;display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
 .plan-feature{display:flex;gap:10px;align-items:flex-start;font-size:.93rem;color:var(--text-soft)}
@@ -1221,8 +1226,12 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
       <div class="plan-card popular reveal">
         <div class="plan-badge">Most Popular</div>
         <div class="plan-name" style="margin-top:8px">Premium</div>
-        <div class="plan-price">$9.99 <span>/ month</span></div>
-        <div class="plan-birr">or $66.99 / year &middot; save 44%</div>
+        <div class="plan-price">$13.99 <span>/ month</span></div>
+        <div class="plan-ladder">
+          <div class="plan-tier"><span class="plan-per">Weekly</span><span class="plan-amt">$6.99</span></div>
+          <div class="plan-tier"><span class="plan-per">Monthly <span class="plan-off">50% OFF</span></span><span class="plan-amt">$13.99</span></div>
+          <div class="plan-tier"><span class="plan-per">Yearly <span class="plan-off">75% OFF</span></span><span class="plan-amt">$89.99</span></div>
+        </div>
         <div class="plan-divider"></div>
         <div class="plan-features">
           <div class="plan-feature"><span class="chk">✓</span> Unlimited likes</div>
@@ -1243,8 +1252,12 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
       <!-- PREMIUM PLUS -->
       <div class="plan-card reveal">
         <div class="plan-name">Premium+</div>
-        <div class="plan-price">$14.99 <span>/ month</span></div>
-        <div class="plan-birr">or $99.99 / year &middot; save 44%</div>
+        <div class="plan-price">$19.99 <span>/ month</span></div>
+        <div class="plan-ladder">
+          <div class="plan-tier"><span class="plan-per">Weekly</span><span class="plan-amt">$9.99</span></div>
+          <div class="plan-tier"><span class="plan-per">Monthly <span class="plan-off">50% OFF</span></span><span class="plan-amt">$19.99</span></div>
+          <div class="plan-tier"><span class="plan-per">Yearly <span class="plan-off">75% OFF</span></span><span class="plan-amt">$129.99</span></div>
+        </div>
         <div class="plan-divider"></div>
         <div class="plan-features">
           <div class="plan-feature"><span class="chk">✓</span> Everything in Premium</div>
@@ -1826,8 +1839,8 @@ const HH_TRANSLATIONS = {
     'plans.premium': 'Premium',
     'plans.premiumplus': 'Premium+',
     'plans.free.price': '$0 / forever',
-    'plans.premium.price': '$9.99 / month',
-    'plans.premiumplus.price': '$14.99 / month',
+    'plans.premium.price': '$13.99 / month',
+    'plans.premiumplus.price': '$19.99 / month',
     'plans.cta.free': 'Get Started Free',
     'plans.cta.premium': 'Get Premium',
     'plans.cta.premiumplus': 'Get Premium+',
@@ -2001,8 +2014,8 @@ const HH_TRANSLATIONS = {
     'plans.premium': 'ፕሪሚየም',
     'plans.premiumplus': 'ፕሪሚየም+',
     'plans.free.price': '$0 / ለዘላለም',
-    'plans.premium.price': '$9.99 / ወር',
-    'plans.premiumplus.price': '$14.99 / ወር',
+    'plans.premium.price': '$13.99 / ወር',
+    'plans.premiumplus.price': '$19.99 / ወር',
     'plans.cta.free': 'ነፃ ጀምር',
     'plans.cta.premium': 'ፕሪሚየም አግኝ',
     'plans.cta.premiumplus': 'ፕሪሚየም+ አግኝ',
@@ -2173,8 +2186,8 @@ const HH_TRANSLATIONS = {
     'plans.premium': 'ፕሪሚየም',
     'plans.premiumplus': 'ፕሪሚየም+',
     'plans.free.price': '$0 / ንዘለኣለም',
-    'plans.premium.price': '$9.99 / ወርሒ',
-    'plans.premiumplus.price': '$14.99 / ወርሒ',
+    'plans.premium.price': '$13.99 / ወርሒ',
+    'plans.premiumplus.price': '$19.99 / ወርሒ',
     'plans.cta.free': 'ብነጻ ጀምር',
     'plans.cta.premium': 'ፕሪሚየም ርኸብ',
     'plans.cta.premiumplus': 'ፕሪሚየም+ ርኸብ',
