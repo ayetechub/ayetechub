@@ -715,7 +715,14 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
       <p class="hero-subtitle reveal"><span data-i18n-html="hero.subtitle">The first dedicated dating app for <strong style="color:var(--green)">Ethiopian</strong> and <strong style="color:var(--green)">Eritrean</strong> singles worldwide. Connect with someone who truly understands your culture, language, and values — wherever you are in the world.
       </p>
       <div class="hero-buttons reveal">
-        <a href="#download" class="btn btn-green">
+        <!-- The real app, on its existing Firebase Hosting subdomain.
+             NOT an iframe: the Flutter web app owns its routing, Firebase
+             init and OAuth redirect URIs, and framing it would break
+             sign-in popups and deep links. -->
+        <a href="https://habeshahearts.ayetechub.com/" class="btn btn-green">
+          <span data-i18n="hero.btn_openweb">❤️ Open Habesha Hearts</span>
+        </a>
+        <a href="#download" class="btn btn-outline">
           <span data-i18n="hero.btn_download">📲 Download Free</span>
         </a>
         <a href="#features" class="btn btn-outline">
@@ -904,6 +911,28 @@ footer{background:rgba(2,8,23,0.98);border-top:1px solid var(--border);padding:4
 </section>
 
 <!-- ============================================================ DOWNLOAD ============================================================ -->
+<!-- ============================================================ WEB APP ============================================================ -->
+<!-- The real Habesha Hearts, usable in a browser. It stays on its own
+     Firebase Hosting subdomain -- the architecture already in this repo,
+     same Firebase project, same users, same matches -- rather than being
+     embedded: the Flutter web app owns its routing, Firebase
+     initialisation and OAuth redirect URIs, and an iframe would break
+     Google/Facebook sign-in popups, deep links and browser
+     back/forward. -->
+<section id="webapp">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:820px;margin:0 auto">
+      <div class="section-tag" data-i18n="webapp.tag">🌐 Use it in your browser</div>
+      <h2 class="section-title" data-i18n="webapp.title">Habesha Hearts on the Web</h2>
+      <p class="section-subtitle" data-i18n="webapp.subtitle">No download needed. Create your profile, add photos, discover people, like, match and message — straight from your browser, on any device. It is the same account and the same matches as the Android app.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin:26px 0 8px">
+        <a href="https://habeshahearts.ayetechub.com/" class="btn btn-green" data-i18n="webapp.cta">❤️ Open Habesha Hearts</a>
+      </div>
+      <p style="margin-top:14px;font-size:.8rem;opacity:.7" data-i18n="webapp.footnote">Works on phone, tablet and desktop. Your profile, likes and messages stay in sync.</p>
+    </div>
+  </div>
+</section>
+
 <section id="download">
   <div class="container">
     <div class="download-inner">
@@ -1799,6 +1828,12 @@ const HH_TRANSLATIONS = {
     'nav.contact': 'Contact',
     'nav.download': '📲 Download',
     'hero.tag': '❤️ The Habesha Dating App',
+    'hero.btn_openweb': '❤️ Open Habesha Hearts',
+    'webapp.tag': '🌐 Use it in your browser',
+    'webapp.title': 'Habesha Hearts on the Web',
+    'webapp.subtitle': 'No download needed. Create your profile, add photos, discover people, like, match and message — straight from your browser, on any device. It is the same account and the same matches as the Android app.',
+    'webapp.cta': '❤️ Open Habesha Hearts',
+    'webapp.footnote': 'Works on phone, tablet and desktop. Your profile, likes and messages stay in sync.',
     'hero.btn_download': '📲 Download Free',
     'hero.btn_features': '✨ See Features',
     'features.tag': '✨ App Features',
@@ -1977,6 +2012,12 @@ const HH_TRANSLATIONS = {
     'nav.contact': 'ያግኙን',
     'nav.download': '📲 አውርድ',
     'hero.tag': '❤️ የሀበሻ ዴቲንግ አፕ',
+    'hero.btn_openweb': '❤️ Habesha Hearts ክፈት',
+    'webapp.tag': '🌐 በኢንተርኔት ይጠቀሙ',
+    'webapp.title': 'Habesha Hearts በዌብ',
+    'webapp.subtitle': 'ማውረድ አያስፈልግም። ስዕልዎን ይጭኑ፣ ሰዎችን ይከታተሉ፣ ይውደጡ፣ ይገናኙ እና መልእክት ይላክኑ — በማንኛውም መሳርያ ከአሳሽዮ በቅጭታ። ተመሳሳይ ኣካውንትና ተመሳሳይ ግጥሚቶች ናቸው።',
+    'webapp.cta': '❤️ Habesha Hearts ክፈት',
+    'webapp.footnote': 'በስልክ፣ ታብሴትና ዴስክቴፕ ላይ ይሰራል።',
     'hero.btn_download': '📲 በነፃ አውርድ',
     'hero.btn_features': '✨ ባህሪያቱን ይመልከቱ',
     'features.tag': '✨ የአፕ ባህሪያት',
@@ -2149,6 +2190,12 @@ const HH_TRANSLATIONS = {
     'nav.contact': 'ርኸቡና',
     'nav.download': '📲 ኣውርድ',
     'hero.tag': '❤️ ናይ ሓበሻ ዴቲንግ ኣፕ',
+    'hero.btn_openweb': '❤️ Habesha Hearts ክፈቶ',
+    'webapp.tag': '🌐 ብብራውዘር ተጠቀማሉ',
+    'webapp.title': 'Habesha Hearts ኣብ ዌብ',
+    'webapp.subtitle': 'ምዘዎለብ ኣይደላይን። ፙሮፋይልክ ስሪሕ፣ ስዕልቲ ኣትዕት፣ ሰባት ርከብ፣ ላይክ ግበር፣ ተዛመድን ተለሆሆነ፣ — ኣብ ዝዎነ መሳርሂ። ትክክለኛ ኣካውንትን ትክክለኛ ተዛመድቲን እዮም።',
+    'webapp.cta': '❤️ Habesha Hearts ክፈቶ',
+    'webapp.footnote': 'ኣብ ስልክ፣ ታብለትን ዴስክቶብን ይሠርሕ።',
     'hero.btn_download': '📲 ብነጻ ኣውርድ',
     'hero.btn_features': '✨ ባህርያት ርኣይ',
     'features.tag': '✨ ናይ ኣፕ ባህርያት',
