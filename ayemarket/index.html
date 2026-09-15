@@ -518,7 +518,12 @@ html[lang="ti"] body,html[lang="am"] body{font-family:'Noto Sans Ethiopic','Sego
       <h1 class="hero-headline gradient-text reveal">AYE Market</h1>
       <p class="hero-subtitle reveal" data-i18n="hero.subtitle_html">Buy and sell anything locally — vehicles, property, electronics, fashion, services and more. Find a job or hire the right person. Chat, call, or WhatsApp sellers directly. Built for <strong style="color:var(--green)">Tigray</strong>, in <strong style="color:var(--green)">ትግርኛ</strong>, <strong style="color:var(--green)">አማርኛ</strong>, and English.</p>
       <div class="hero-buttons reveal">
-        <a href="#download" class="btn btn-green" data-i18n="hero.btnDownload">📲 Download Free</a>
+        <!-- The real marketplace, on its existing Firebase Hosting
+             subdomain. NOT an iframe: the Flutter web app owns its own
+             routing, Firebase init and OAuth redirect URIs, and framing
+             it would break sign-in popups and deep links. -->
+        <a href="https://ayemarket.ayetechub.com/" class="btn btn-green" data-i18n="hero.btnOpenWeb">🛒 Open AYE Market</a>
+        <a href="#download" class="btn btn-outline" data-i18n="hero.btnDownload">📲 Download Free</a>
         <a href="#features" class="btn btn-outline" data-i18n="hero.btnFeatures">✨ Explore Features</a>
       </div>
       <div class="hero-stats reveal">
@@ -1027,6 +1032,29 @@ html[lang="ti"] body,html[lang="am"] body{font-family:'Noto Sans Ethiopic','Sego
 </section>
 
 <!-- ============================================================ DOWNLOAD ============================================================ -->
+<!-- ============================================================ WEB APP ============================================================ -->
+<!-- The actual marketplace, reachable from a browser. It stays on its own
+     Firebase Hosting subdomain -- the architecture already in this repo --
+     rather than being embedded: the Flutter web app owns its routing,
+     Firebase initialisation and OAuth redirect URIs, and an iframe would
+     break Google/Facebook sign-in popups, deep links and browser
+     back/forward. Linking keeps one AYE Market identity without risking
+     any of that. -->
+<section id="webapp">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:820px;margin:0 auto">
+      <div class="section-tag" data-i18n="webapp.tag">🌐 Use it in your browser</div>
+      <h2 class="section-title" data-i18n="webapp.title_html">AYE Market on the <span class="gradient-text">Web</span></h2>
+      <p class="section-subtitle" data-i18n="webapp.subtitle">No download needed. Browse listings, post what you are selling, find jobs and services, and message buyers and sellers — straight from your browser, on any device.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin:26px 0 8px">
+        <a href="https://ayemarket.ayetechub.com/" class="btn btn-green" data-i18n="webapp.cta">🛒 Open AYE Market</a>
+        <a href="https://ayemarket.ayetechub.com/" class="btn btn-outline" data-i18n="webapp.ctaSell">➕ Start selling</a>
+      </div>
+      <p style="margin-top:14px;font-size:.8rem;color:var(--text-muted)" data-i18n="webapp.footnote">Same account, same listings, same messages as the Android app.</p>
+    </div>
+  </div>
+</section>
+
 <section id="download">
   <div class="container download-inner">
     <div class="reveal">
@@ -1161,6 +1189,13 @@ html[lang="ti"] body,html[lang="am"] body{font-family:'Noto Sans Ethiopic','Sego
 (function(){
 var translations={
 am:{
+"hero.btnOpenWeb":"🛒 AYE Market ክፈት",
+"webapp.tag":"🌐 በኢንተርኔት ይጠቀሙ",
+"webapp.title_html":"AYE Market በ<span class=\"gradient-text\">ዌብ</span>",
+"webapp.subtitle":"ማውረድ አያስፈልግም። ማስታወቂዮችን ይመልከቱ፣ የሚሽጡትን ይለጥፉ፣ ስራውንእና አገልግሎቶችን ይፈልጉ፣ ከገዢዮችና ከሽያጮች ጋር ይባበሉ — በማንኛውም መሳርያ፣ ከአሳሽዮ በቅጭታ።",
+"webapp.cta":"🛒 AYE Market ክፈት",
+"webapp.ctaSell":"➕ መሽጠጥ ጀምር",
+"webapp.footnote":"ተመሳሳይ ኣካውንት፣ ተመሳሳይ ማስታወቂያዎች፣ ተመሳሳይ መልእክቶች ከአንድሮይድ መተግበሪያው ጋር።",
 "nav.brandTag":"ግዛ · ሽጥ · ተገናኝ",
 "nav.categories":"ምድቦች",
 "nav.features":"ባህሪያት",
@@ -1432,6 +1467,13 @@ am:{
 "footer.madeFor":"ለትግራይ፣ ኢትዮጵያ የተሰራ 🇪🇹"
 },
 ti:{
+"hero.btnOpenWeb":"🛒 AYE Market ክፈቶ",
+"webapp.tag":"🌐 ብብራውዘር ተጠቀማሉ",
+"webapp.title_html":"AYE Market ኣብ <span class=\"gradient-text\">ዌብ</span>",
+"webapp.subtitle":"ምዘዎለብ ኣይደላይን። ምልክታታት ርኣይ፣ ዝተሳገይሮ ምልክታ ሰቀል፣ ስራን ኣገልግሎትን ርከብ፣ ምስ ዓደግቲን ሰዓቲን ተኺኣቦ — ኣብ ዝዎነ መሳርሂ።",
+"webapp.cta":"🛒 AYE Market ክፈቶ",
+"webapp.ctaSell":"➕ ምሽባጥ ጀምር",
+"webapp.footnote":"ትክክለኛ ኣካውንት፣ ትክክለኛ ምልክታታት፣ ትክክለኛ መልእክቲ ምስ ተሔብንትሰክቲ ኣንድሮይድ።",
 "nav.brandTag":"ግዛእ · ሽጥ · ተራኸብ",
 "nav.categories":"ዓይነታት",
 "nav.features":"ፊቸራት",
