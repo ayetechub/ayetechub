@@ -161,7 +161,7 @@ section{padding:80px 0;position:relative;overflow:hidden}
 [data-theme="light"] .store-badge{background:rgba(255,255,255,0.85)}
 .store-badge.disabled{opacity:.55;cursor:default}
 .store-badge.disabled:hover{border-color:var(--border-strong);box-shadow:none;transform:none}
-.store-icon{font-size:2rem;line-height:1}
+.store-icon{font-size:2rem;line-height:1;flex:0 0 auto;display:block}
 .store-info .store-sub{font-size:.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;display:block}
 .store-info .store-name{font-size:.95rem;font-weight:700;color:var(--text);display:block}
 
@@ -834,7 +834,7 @@ html[lang="ti"] body,html[lang="am"] body{font-family:'Noto Sans Ethiopic','Sego
     <div class="plans-grid">
       <div class="plan-card reveal">
         <div class="plan-name" data-i18n="pricing.planFreeName">Free</div>
-        <div class="plan-price">0 <span style="font-size:1rem">ETB</span></div>
+        <div class="plan-price" data-i18n="pricing.freePrice">Free</div>
         <div class="plan-period" data-i18n="pricing.periodForever">forever</div>
         <ul class="plan-features">
           <li class="plan-feature" data-i18n="pricing.free1">Unlimited browsing & search</li>
@@ -847,49 +847,69 @@ html[lang="ti"] body,html[lang="am"] body{font-family:'Noto Sans Ethiopic','Sego
         <a href="#download" class="btn btn-outline" data-i18n="pricing.btnGetStarted">Get Started</a>
       </div>
       <div class="plan-card reveal">
-        <div class="plan-name" style="color:var(--gold)" data-i18n="pricing.plan2Name">🚀 7-Day Promotion</div>
-        <div class="plan-price">200 <span style="font-size:1rem">ETB</span></div>
-        <div class="plan-period" data-i18n="pricing.period7day">one listing · 7 days</div>
+        <div class="plan-name" style="color:var(--gold)" data-i18n="pricing.plan2Name">🚀 Promote Listing</div>
+        <div class="plan-price">$6.99</div>
+        <div class="plan-period" data-i18n="pricing.period7day">one listing · 7 days · $14.99 for 30 days</div>
         <ul class="plan-features">
-          <li class="plan-feature" data-i18n="pricing.promo1">~5× more visibility</li>
-          <li class="plan-feature" data-i18n="pricing.promo2">Higher search ranking</li>
-          <li class="plan-feature" data-i18n="pricing.promo3">Top of category placement</li>
-          <li class="plan-feature" data-i18n="pricing.promo4">"Promoted" badge on your listing</li>
+          <li class="plan-feature" data-i18n="pricing.promo1">20× more visibility</li>
+          <li class="plan-feature" data-i18n="pricing.promo2">Top of every feed — above Premium+</li>
+          <li class="plan-feature" data-i18n="pricing.promo3">Higher search ranking</li>
+          <li class="plan-feature" data-i18n="pricing.promo4">Top of category</li>
+          <li class="plan-feature" data-i18n="pricing.promo5">Priority in search</li>
         </ul>
-        <a href="#download" class="btn btn-outline" data-i18n="pricing.btnPromote">Promote in App</a>
+        <a href="https://ayemarket.ayetechub.com/" class="btn btn-outline" data-i18n="pricing.btnPromote">Promote Listing</a>
+      </div>
+      <div class="plan-card reveal">
+        <div class="plan-name" style="color:#a855f7" data-i18n="pricing.plan5Name">⭐ Feature Listing</div>
+        <div class="plan-price">$4.99</div>
+        <div class="plan-period" data-i18n="pricing.periodFeatured">one listing · 7 days · $9.99 for 30 days</div>
+        <ul class="plan-features">
+          <li class="plan-feature" data-i18n="pricing.feat1">Featured placement in search results</li>
+          <li class="plan-feature" data-i18n="pricing.feat2">Top of category</li>
+          <li class="plan-feature" data-i18n="pricing.feat3">Ranks above Premium+ listings</li>
+          <li class="plan-feature" data-i18n="pricing.feat4">"Featured" badge</li>
+          <li class="plan-feature" data-i18n="pricing.feat5">Priority in search</li>
+        </ul>
+        <a href="https://ayemarket.ayetechub.com/" class="btn btn-outline" data-i18n="pricing.btnFeature">Feature Listing</a>
       </div>
       <div class="plan-card reveal">
         <div class="plan-name" style="color:var(--blue)" data-i18n="pricing.plan3Name">Premium</div>
-        <div class="plan-price">400 <span style="font-size:1rem">ETB</span></div>
+        <div class="plan-price">$4.99</div>
         <div class="plan-period" data-i18n="pricing.periodMonth">per month</div>
         <ul class="plan-features">
-          <li class="plan-feature" data-i18n="pricing.prem1">~10× more visibility</li>
-          <li class="plan-feature" data-i18n="pricing.prem2">Listings rank above free listings</li>
-          <li class="plan-feature" data-i18n="pricing.prem3">Featured Seller badge</li>
+          <li class="plan-feature" data-i18n="pricing.prem1">5× more visibility</li>
+          <li class="plan-feature" data-i18n="pricing.prem2">Listings appear before free listings</li>
+          <li class="plan-feature" data-i18n="pricing.prem3">Priority search ranking</li>
           <li class="plan-feature" data-i18n="pricing.prem4">More homepage exposure</li>
-          <li class="plan-feature" data-i18n="pricing.prem5">Detailed listing analytics</li>
-          <li class="plan-feature" data-i18n="pricing.prem6">Priority support</li>
+          <li class="plan-feature" data-i18n="pricing.prem5">Premium support</li>
+          <li class="plan-feature" data-i18n="pricing.prem6">Detailed analytics</li>
+          <li class="plan-feature" data-i18n="pricing.prem7">Unlimited listing refresh</li>
         </ul>
-        <a href="#download" class="btn btn-blue" data-i18n="pricing.btnUpgrade">Upgrade in App</a>
+        <a href="https://ayemarket.ayetechub.com/" class="btn btn-blue" data-i18n="pricing.btnUpgrade">Upgrade</a>
       </div>
       <div class="plan-card featured reveal">
         <div class="plan-ribbon" data-i18n="pricing.ribbon">Most Popular</div>
         <div class="plan-name" style="color:var(--gold)" data-i18n="pricing.plan4Name">Premium+</div>
-        <div class="plan-price">600 <span style="font-size:1rem">ETB</span></div>
+        <div class="plan-price">$6.99</div>
         <div class="plan-period" data-i18n="pricing.periodMonth">per month</div>
         <ul class="plan-features">
-          <li class="plan-feature" data-i18n="pricing.plus1">~15×+ more visibility — highest ranking</li>
-          <li class="plan-feature" data-i18n="pricing.plus2">Premium+ gold badge</li>
-          <li class="plan-feature" data-i18n="pricing.plus3">Homepage & category featured placement</li>
+          <li class="plan-feature" data-i18n="pricing.plus1">10× more visibility</li>
+          <li class="plan-feature" data-i18n="pricing.plus2">Highest search ranking</li>
+          <li class="plan-feature" data-i18n="pricing.plus3">Premium+ badge</li>
           <li class="plan-feature" data-i18n="pricing.plus4">Priority in suggested listings</li>
-          <li class="plan-feature" data-i18n="pricing.plus5">Performance-level analytics</li>
-          <li class="plan-feature" data-i18n="pricing.plus6">Early access to new features</li>
+          <li class="plan-feature" data-i18n="pricing.plus5">Premium support</li>
+          <li class="plan-feature" data-i18n="pricing.plus6">Listing performance analytics</li>
+          <li class="plan-feature" data-i18n="pricing.plus7">Highest trust score display</li>
         </ul>
-        <a href="#download" class="btn btn-green" data-i18n="pricing.btnUpgrade">Upgrade in App</a>
+        <a href="https://ayemarket.ayetechub.com/" class="btn btn-green" data-i18n="pricing.btnUpgrade">Upgrade</a>
       </div>
     </div>
     <p class="reveal" style="text-align:center;margin-top:30px;font-size:.9rem;color:var(--text-soft);max-width:680px;margin-left:auto;margin-right:auto;line-height:1.7" data-i18n="pricing.footnote_html">
-      💳 Payments are currently processed manually by our team — choose your plan in the app, follow the payment instructions, upload your receipt, and your upgrade activates on approval (usually within a business day). Automatic <strong style="color:var(--green)">Telebirr</strong> and <strong style="color:var(--green)">Chapa</strong> payments are coming soon. When a plan expires, your listings simply return to normal ranking — nothing is ever deleted.
+      💳 <strong style="color:var(--green)">Outside Ethiopia:</strong> payment is handled securely by Google Play in your own local currency — the prices above are the US base price. <strong>Subscriptions renew monthly until cancelled; cancel anytime in Play Store settings.</strong> Promote and Feature are one-time purchases for a single listing and do not renew.
+      <br><br>
+      🇪🇹 <strong style="color:var(--green)">In Ethiopia:</strong> Google Play billing is not available, so payment is made by bank transfer — choose your plan in the app, follow the instructions, upload your receipt, and your upgrade activates once our team confirms it. Ethiopian prices are set in ETB and shown in the app.
+      <br><br>
+      When a plan expires, your listings simply return to normal ranking — nothing is ever deleted.
     </p>
   </div>
 </section>
@@ -1063,11 +1083,18 @@ html[lang="ti"] body,html[lang="am"] body{font-family:'Noto Sans Ethiopic','Sego
       <p class="section-subtitle" style="margin:0 0 8px;max-width:none;text-align:left" data-i18n="download.subtitle">Free on Android. Post your first listing, find your next job, or hire your next hire — today.</p>
       <div class="download-buttons">
         <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.ayetechub.ayemarket" rel="noopener">
-          <span class="store-icon">▶</span>
+          <svg class="store-icon" viewBox="0 0 512 512" width="30" height="30" aria-hidden="true" focusable="false">
+            <path fill="#34A853" d="M47 25 305 256 47 487c-9-6-15-17-15-31V56c0-14 6-25 15-31z" transform="translate(0,0)"/>
+            <path fill="#4285F4" d="M47 25c5-3 11-5 18-5 6 0 13 2 19 5l210 119-58 58L47 25z"/>
+            <path fill="#FBBC04" d="M294 144l73 41c22 13 22 33 0 46l-73 41-58-64 58-64z"/>
+            <path fill="#EA4335" d="M47 487l189-175 58 58-210 119c-6 3-13 5-19 5-7 0-13-2-18-7z"/>
+          </svg>
           <span class="store-info"><span class="store-sub" data-i18n="download.getItOn">Get it on</span><span class="store-name">Google Play</span></span>
         </a>
         <span class="store-badge disabled" title="Coming soon" data-i18n-attr="title:download.comingSoonAttr">
-          <span class="store-icon"></span>
+          <svg class="store-icon" viewBox="0 0 384 512" width="28" height="28" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
+          </svg>
           <span class="store-info"><span class="store-sub" data-i18n="download.comingSoonTo">Coming soon to</span><span class="store-name">App Store</span></span>
         </span>
       </div>
@@ -1189,6 +1216,18 @@ html[lang="ti"] body,html[lang="am"] body{font-family:'Noto Sans Ethiopic','Sego
 (function(){
 var translations={
 am:{
+"pricing.freePrice":"ነጻ",
+"pricing.btnFeature":"ማስታወቂያ ተለይቶ አቅርብ",
+"pricing.plus7":"ከፍተኛው የእምነት ነጥብ ማሳየት",
+"pricing.prem7":"ያልተገደበ ማስታወቂያ ማደስ",
+"pricing.feat5":"በፍለጋ ቅድሚያ",
+"pricing.feat4":"\"ተለይቶ የቀረበ\" ባጅ",
+"pricing.feat3":"ከPremium+ ማስታወቂያዎች በላይ",
+"pricing.feat2":"የምድብ አናት",
+"pricing.feat1":"በፍለጋ ውጤቶች ተለይቶ የቀረበ ቦታ",
+"pricing.promo5":"በፍለጋ ቅድሚያ",
+"pricing.periodFeatured":"አንድ ማስታወቂያ · 7 ቀናት · $9.99 ለ30 ቀናት",
+"pricing.plan5Name":"⭐ ማስታወቂያ ተለይቶ አቅርብ",
 "hero.btnOpenWeb":"🛒 AYE Market ክፈት",
 "webapp.tag":"🌐 በኢንተርኔት ይጠቀሙ",
 "webapp.title_html":"AYE Market በ<span class=\"gradient-text\">ዌብ</span>",
@@ -1341,30 +1380,30 @@ am:{
 "pricing.free5":"ለስራዎች ያመልክቱ እና የስራ ፈላጊ ማስታወቂያዎችን ይለጥፉ",
 "pricing.free6":"መሰረታዊ የሻጭ ዳሽቦርድ",
 "pricing.btnGetStarted":"ይጀምሩ",
-"pricing.plan2Name":"🚀 7-ቀን ፕሮሞሽን",
-"pricing.period7day":"አንድ ዝርዝር · 7 ቀናት",
-"pricing.promo1":"~5× ተጨማሪ ታይነት",
-"pricing.promo2":"ከፍ ያለ የፍለጋ ደረጃ",
-"pricing.promo3":"በምድብ አናት ላይ አቀማመጥ",
-"pricing.promo4":"በዝርዝርዎ ላይ የ\"ፕሮሞት\" ባጅ",
-"pricing.btnPromote":"በመተግበሪያ ውስጥ ያስተዋውቁ",
+"pricing.plan2Name":"🚀 ማስታወቂያ አስተዋውቅ",
+"pricing.period7day":"አንድ ማስታወቂያ · 7 ቀናት · $14.99 ለ30 ቀናት",
+"pricing.promo1":"20× ብሩ ተጋባይነት",
+"pricing.promo2":"የሁሉም ፈጻድ አናት — ከPremium+ በላይ",
+"pricing.promo3":"ከፍተኛ የፍለጋ ደረጃ",
+"pricing.promo4":"የምድብ አናት",
+"pricing.btnPromote":"ማስታወቂያ አስተዋውቅ",
 "pricing.plan3Name":"ፕሪሚየም",
 "pricing.periodMonth":"በወር",
-"pricing.prem1":"~10× ተጨማሪ ታይነት",
-"pricing.prem2":"ዝርዝሮች ከነጻ ዝርዝሮች በላይ ደረጃ ይሰጣቸዋል",
-"pricing.prem3":"የተመረጠ ሻጭ ባጅ",
+"pricing.prem1":"5× ብሩ ተጋባይነት",
+"pricing.prem2":"ማስታወቂያዎች ከነጻ ማስታወቂያዎች በፊት ይታያሉ",
+"pricing.prem3":"የፍለጋ ደረጃ ቅድሚያ",
 "pricing.prem4":"ተጨማሪ የመነሻ ገጽ ተጋላጭነት",
-"pricing.prem5":"ዝርዝር የዝርዝር ትንታኔ",
-"pricing.prem6":"ቅድሚያ የሚሰጠው ድጋፍ",
-"pricing.btnUpgrade":"በመተግበሪያ ውስጥ ያሻሽሉ",
+"pricing.prem5":"የፕሪሚየም ድጋፍ",
+"pricing.prem6":"ዝርዝር ትንታኔ",
+"pricing.btnUpgrade":"አሳድግ",
 "pricing.ribbon":"በጣም ተወዳጅ",
 "pricing.plan4Name":"ፕሪሚየም+",
-"pricing.plus1":"~15×+ ተጨማሪ ታይነት — ከፍተኛ ደረጃ",
-"pricing.plus2":"የፕሪሚየም+ ወርቃማ ባጅ",
-"pricing.plus3":"በመነሻ ገጽ እና ምድብ ውስጥ የተለየ አቀማመጥ",
-"pricing.plus4":"በተጠቆሙ ዝርዝሮች ውስጥ ቅድሚያ",
-"pricing.plus5":"የአፈጻጸም-ደረጃ ትንታኔ",
-"pricing.plus6":"ለአዲስ ባህሪያት ቀደም ብሎ መዳረሻ",
+"pricing.plus1":"10× ብሩ ተጋባይነት",
+"pricing.plus2":"ከፍተኛው የፍለጋ ደረጃ",
+"pricing.plus3":"Premium+ ባጅ",
+"pricing.plus4":"በሚመለከቱ ማስታወቂያዎች ቅድሚያ",
+"pricing.plus5":"የፕሪሚየም ድጋፍ",
+"pricing.plus6":"የማስታወቂያ አፈጻጸም ትንታኔ",
 "pricing.footnote_html":"💳 ክፍያዎች በአሁኑ ጊዜ በቡድናችን በእጅ ይሰራሉ — በመተግበሪያው ውስጥ እቅድዎን ይምረጡ፣ የክፍያ መመሪያዎችን ይከተሉ፣ ደረሰኝዎን ይስቀሉ፣ ማሻሻያዎ ከጸደቀ በኋላ ይነቃል (አብዛኛውን ጊዜ በስራ ቀን ውስጥ)። ራስ-ሰር <strong style=\"color:var(--green)\">ቴሌብር</strong> እና <strong style=\"color:var(--green)\">ቻፓ</strong> ክፍያዎች በቅርቡ ይመጣሉ። እቅድ ሲያበቃ፣ ዝርዝሮችዎ በቀላሉ ወደ መደበኛ ደረጃ ይመለሳሉ — ምንም ነገር በጭራሽ አይሰረዝም።",
 "safety.tag":"🛡️ ደህንነት መጀመሪያ",
 "safety.title_html":"በልበ ሙሉነት <span class=\"gradient-text\">እንዲነግዱ</span> ተደርጎ የተሰራ",
@@ -1467,6 +1506,18 @@ am:{
 "footer.madeFor":"ለትግራይ፣ ኢትዮጵያ የተሰራ 🇪🇹"
 },
 ti:{
+"pricing.freePrice":"ናጻ",
+"pricing.btnFeature":"ምልክታ ፍሉይ ግበሮ",
+"pricing.plus7":"ላዕለዋይ ምርኣይ እምነት",
+"pricing.prem7":"ዘይተወሰነ ምሕዳስ ምልክታ",
+"pricing.feat5":"ቅድሚያ ኣብ ምድላይ",
+"pricing.feat4":"\"ፍሉይ\" ባጅ",
+"pricing.feat3":"ልዕሊ ምልክታታት Premium+",
+"pricing.feat2":"ጫፍ ምድብ",
+"pricing.feat1":"ፍሉይ ቦታ ኣብ ውጽኢት ምድላይ",
+"pricing.promo5":"ቅድሚያ ኣብ ምድላይ",
+"pricing.periodFeatured":"ሓደ ምልክታ · 7 መዓልትታት · $9.99 ን30 መዓልትታት",
+"pricing.plan5Name":"⭐ ምልክታ ፍሉይ ግበሮ",
 "hero.btnOpenWeb":"🛒 AYE Market ክፈቶ",
 "webapp.tag":"🌐 ብብራውዘር ተጠቀማሉ",
 "webapp.title_html":"AYE Market ኣብ <span class=\"gradient-text\">ዌብ</span>",
@@ -1619,30 +1670,30 @@ ti:{
 "pricing.free5":"ንስራሕቲ መልክቱ ከምኡውን ማስታወቅታ ስራሕ ደላይ ልጥፉ",
 "pricing.free6":"መሰረታዊ ዳሽቦርድ ሸያጣይ",
 "pricing.btnGetStarted":"ጀምሩ",
-"pricing.plan2Name":"🚀 7-መዓልቲ ፕሮሞሽን",
-"pricing.period7day":"ሓደ ዝርዝር · 7 መዓልቲ",
-"pricing.promo1":"~5× ተወሳኺ ተራእይነት",
-"pricing.promo2":"ልዑል ደረጃ ምድላይ",
-"pricing.promo3":"ኣብ ላዕሊ ዓይነት ቦታ",
-"pricing.promo4":"ኣብ ዝርዝርኹም ባጅ \"ፕሮሞት\"",
-"pricing.btnPromote":"ኣብ መተግበሪ ኣስተዋውቁ",
+"pricing.plan2Name":"🚀 ምልክታ ኣተኣታቶ",
+"pricing.period7day":"ሓደ ምልክታ · 7 መዓልትታት · $14.99 ን30 መዓልትታት",
+"pricing.promo1":"20× ብዝሕ ተራእዩ",
+"pricing.promo2":"ኣብ ጫፍ ኩሉ ዝርዝር — ልዕሊ Premium+",
+"pricing.promo3":"ላዕለዋይ መዓርጊ ምድላይ",
+"pricing.promo4":"ጫፍ ምድብ",
+"pricing.btnPromote":"ምልክታ ኣተኣታቶ",
 "pricing.plan3Name":"ፕሪሚየም",
 "pricing.periodMonth":"ኣብ ወርሒ",
-"pricing.prem1":"~10× ተወሳኺ ተራእይነት",
-"pricing.prem2":"ዝርዝራት ልዕሊ ናይ ነጻ ዝርዝራት ደረጃ ይወሃቦም",
-"pricing.prem3":"ባጅ ተመራጺ ሸያጣይ",
-"pricing.prem4":"ተወሳኺ ትርኢት ገጽ መእተዊ",
-"pricing.prem5":"ዝርዝር ትንተና ዝርዝር",
-"pricing.prem6":"ቀዳምነት ዘለዎ ደገፍ",
-"pricing.btnUpgrade":"ኣብ መተግበሪ ኣመሓይሹ",
+"pricing.prem1":"5× ብዝሕ ተራእዩ",
+"pricing.prem2":"ምልክታታት ቅድሚ ናጻ ምልክታታት ይረኣዩ",
+"pricing.prem3":"ቅድሚያ መዓርጊ ምድላይ",
+"pricing.prem4":"ተወሳኺ ተራእዩ ኣብ መእተዊ ገጽ",
+"pricing.prem5":"ፕሪሚየም ደገፍ",
+"pricing.prem6":"ዝርዝር ትንተና",
+"pricing.btnUpgrade":"ኣተዓርግ",
 "pricing.ribbon":"ኣዝዩ ተመራጺ",
 "pricing.plan4Name":"ፕሪሚየም+",
-"pricing.plus1":"~15×+ ተወሳኺ ተራእይነት — ልዑል ደረጃ",
-"pricing.plus2":"ወርቃዊ ባጅ ፕሪሚየም+",
-"pricing.plus3":"ኣብ ገጽ መእተውን ዓይነትን ፍሉይ ቦታ",
-"pricing.plus4":"ቀዳምነት ኣብ ዝተመኸሩ ዝርዝራት",
-"pricing.plus5":"ትንተና ደረጃ ኣፈጻጽማ",
-"pricing.plus6":"ኣቐዲምካ ምብጻሕ ሓደስቲ ፊቸራት",
+"pricing.plus1":"10× ብዝሕ ተራእዩ",
+"pricing.plus2":"ላዕለዋይ መዓርጊ ምድላይ",
+"pricing.plus3":"ባጅ Premium+",
+"pricing.plus4":"ቅድሚያ ኣብ ዝተመኽሩ ምልክታታት",
+"pricing.plus5":"ፕሪሚየም ደገፍ",
+"pricing.plus6":"ትንተና ኣፈጻጽማ ምልክታ",
 "pricing.footnote_html":"💳 ክፍሊታት ሕጂ ብጋንታና ብኢድ ይስርሑ ኣለዉ — ኣብ መተግበሪ ውጥንኩም ምረጹ፣ መምርሒ ክፍሊት ስዓቡ፣ ቅብሊትኩም ስቐሉ፣ ምምሕያሽኩም ምስ ጸደቐ ይነቕሕ (መብዛሕትኡ ግዜ ኣብ ውሽጢ ሓደ መዓልቲ ስራሕ)። ስሉጥ <strong style=\"color:var(--green)\">ተለብር</strong>ን <strong style=\"color:var(--green)\">ቻፓ</strong>ን ክፍሊታት ቀልጢፎም ክመጹ እዮም። ውጥን ምስ ኣብቀዐ፣ ዝርዝራትኩም ናብ ንቡር ደረጃ ይምለሱ — ዝኾነ ነገር ፈጺሙ ኣይድምሰስን።",
 "safety.tag":"🛡️ ውሕስነት ቀዳማይ",
 "safety.title_html":"ብምትእምማን <span class=\"gradient-text\">ንኽትነግዱ</span> ዝተሰርሐ",
