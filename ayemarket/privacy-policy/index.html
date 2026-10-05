@@ -34,7 +34,7 @@
     <div class="page-tag">🔒 Legal</div>
     <h1 class="page-title">Privacy <span class="gradient-text">Policy</span></h1>
     <p class="page-sub">What we collect, why, who processes it, and the rights you always keep.</p>
-    <span class="last-updated">Last updated: July 17, 2026</span>
+    <span class="last-updated">Last updated: October 5, 2026</span>
   </div>
 </div>
 
@@ -67,7 +67,7 @@
     <li><strong>Account information</strong> — full name, username, email address, phone number, date of birth, gender, profile photo, cover photo, and bio, where you choose to add them.</li>
     <li><strong>Listing content</strong> — titles, descriptions, prices, category attributes, photos (up to 8 per listing), and location details for anything you post.</li>
     <li><strong>Messages</strong> — the content of chats you send through the App, including any photos shared in chat.</li>
-    <li><strong>Verification documents</strong> — a government-issued ID (Fayda ID, Kebele Residence ID, Driver's License, Business License, or Passport) if you choose to request the verified badge. These are reviewed by our verification team only and are never visible to other users.</li>
+    <li><strong>Identity verification</strong> — if you choose to request the Verified badge: a government-issued ID (for example Fayda ID, Kebele Residence ID, Driver's License, Business License, or Passport), a live selfie taken with the App's own camera during a short liveness check (blink, smile or turn your head), a copy of your profile photo and name at that moment, and a phone number you type in, which we compare with the numbers on your profile and listings. Our verification team compares these by eye. We do not create or store face templates or other biometric identifiers; the only automatic checks are on your phone (whether a face is visible, and reading the name printed on your document) and a simple image fingerprint that detects the same picture being used on another account. Verification material is never visible to other users.</li>
     <li><strong>Job seeker information</strong> — if you use the Jobs Marketplace as a candidate: your CV/resume file, professional title, skills, languages, education level, field of study, experience level, expected salary, preferred work location, and contact preferences.</li>
     <li><strong>Job applications</strong> — the applications you submit, including your CV and any message to the employer.</li>
     <li><strong>Payment information</strong> — for Premium plans and listing promotions: the plan selected, amount, a generated payment reference number, and the payment receipt you upload. <strong>We never collect or store your bank account or card numbers</strong> — manual payments are verified by our team from the receipt you provide.</li>
@@ -77,10 +77,12 @@
 
   <h3>1.2 Information collected automatically</h3>
   <ul>
-    <li><strong>Location data</strong> — if you grant permission, precise GPS location powers nearby search and distance sorting. You can deny or revoke this permission anytime in your device settings; the App still works fully using manually selected region/city.</li>
-    <li><strong>Device information</strong> — device model, operating system version, app version, and installation identifiers.</li>
+    <li><strong>Location data</strong> — if you grant permission, precise GPS location powers nearby search and distance sorting. It is also recorded when you open the App (at most once every six hours), together with the accuracy your phone reports and the nearest city, to protect accounts and prevent fraud. This record is visible only to authorised AYE Market staff — never to other users and never on your profile. The App explains this and asks before using your location; you can decline or revoke the permission anytime in your device settings, and the App still works fully using a manually selected region/city.</li>
+    <li><strong>Device information</strong> — device model and manufacturer, operating system version, app version, time zone, device language/region, and installation identifiers, used for account security, fraud prevention and troubleshooting.</li>
     <li><strong>Usage information</strong> — listings you view (powers "recently viewed" and view counts), searches, favorites, and general app interaction.</li>
-    <li><strong>IP address</strong> — collected as part of normal network communication with our backend (Firebase) and by our website host.</li>
+    <li><strong>IP address</strong> — collected as part of normal network communication with our backend (Firebase) and by our website host. We use it to estimate the country you are connecting from (the country only, never your city); the address itself is not saved to your account.</li>
+    <li><strong>Advertising ID</strong> — free accounts see ads from Google AdMob, which uses your device's advertising ID. You can reset or delete it in your device's Google settings. Premium+ members see no ads.</li>
+    <li><strong>Crash reports and app usage</strong> — collected by Firebase Crashlytics and Google Analytics for Firebase to fix crashes and understand how the App is used.</li>
     <li><strong>Push notification tokens</strong> — a device token managed by Firebase Cloud Messaging, used solely to deliver notifications to your device.</li>
     <li><strong>Presence</strong> — an online/offline indicator and last-seen timestamp, shown to other users on your seller profile.</li>
   </ul>
@@ -96,11 +98,11 @@
     <li>Showing nearby listings and powering the Tigray location system and interactive map.</li>
     <li>Sending notifications about messages, listing activity, applications, payments, and account events.</li>
     <li>Reviewing verification submissions and manual payment requests.</li>
-    <li>Detecting and preventing fraud, scams, and violations of our <a href="/ayemarket/community-guidelines/">Community Guidelines</a>.</li>
+    <li>Detecting and preventing fraud, scams, impersonation, identity misuse, and violations of our <a href="/ayemarket/community-guidelines/">Community Guidelines</a> — including reviewing identity verification, device and location records when an account is investigated.</li>
     <li>Responding to support requests and improving the Service based on real usage.</li>
     <li>Complying with legal obligations.</li>
   </ul>
-  <p>We do not use your data for third-party advertising, and we do not sell personal data. See the <a href="/ayemarket/data-safety/">Data Safety</a> page for the exact disclosure mapping used in Google Play.</p>
+  <p>We do not sell personal data. Free accounts see ads served by Google AdMob, which may use your advertising ID to choose them (see section 3). See the <a href="/ayemarket/data-safety/">Data Safety</a> page for the exact disclosure mapping used in Google Play.</p>
 
   <h2 id="third-party">3. Third-party services</h2>
   <p>AYE Market is built on Google's Firebase platform. Each service processes only what its function requires:</p>
@@ -115,11 +117,15 @@
       <tr><td>Firebase Cloud Functions</td><td>The data above, server-side</td><td>Approvals, notifications, moderation automation</td></tr>
       <tr><td>Google / Facebook Sign-In</td><td>Name, email, profile photo (only for the method you choose)</td><td>Optional sign-in methods</td></tr>
       <tr><td>Google Play Billing</td><td>Purchase tokens (where used)</td><td>In-app purchase infrastructure</td></tr>
+      <tr><td>Google AdMob</td><td>Advertising ID, device and app information, IP address</td><td>Ads shown to free accounts</td></tr>
+      <tr><td>Firebase Crashlytics</td><td>Crash reports, device model, OS and app version</td><td>Finding and fixing crashes</td></tr>
+      <tr><td>Google Analytics for Firebase</td><td>App usage events, advertising ID</td><td>Measuring app usage and ads</td></tr>
+      <tr><td>Google ML Kit (on your phone)</td><td>Your verification selfie and document images, processed on the device</td><td>Checking a face is visible and reading the name on your document — the images are not sent to Google for this</td></tr>
     </tbody>
   </table>
   </div>
   <p>The WhatsApp, SMS, and phone-call buttons open your device's own apps via standard deep links — AYE Market never sees or stores the content of those conversations. Full detail: <a href="/ayemarket/third-party-services/">Third-Party Services</a>.</p>
-  <p>We do not currently use a dedicated analytics or crash-reporting SDK. If one is added in the future, this policy will be updated first.</p>
+  <p>Crash reporting and usage analytics are provided by Firebase Crashlytics and Google Analytics for Firebase, listed above.</p>
 
   <h2 id="sharing">4. Data sharing</h2>
   <p>We do not sell your personal information. Data is shared only:</p>
@@ -134,20 +140,22 @@
   <h2 id="retention">5. Data retention</h2>
   <ul>
     <li>Your information is retained while your account is active, plus a reasonable period afterward for legal, security, and fraud-prevention purposes.</li>
-    <li>Verification documents and payment receipts are kept only as long as needed for review and audit, then routinely deleted.</li>
+    <li>Identity verification material (your ID, live selfie, the copy of your profile photo, the phone check and the review decision) is kept for audit and fraud prevention while your account exists, and deleted with your account.</li>
+    <li>Device and location records are kept while your account exists and deleted with your account.</li>
+    <li>Payment receipts are kept only as long as needed for review and audit, then routinely deleted.</li>
     <li>Deleted listings are removed from public view immediately; residual copies may persist briefly in backups before automatic purging.</li>
     <li>On account deletion (see below), your personal data is permanently deleted — with one narrow exception: messages you sent in shared conversations are <strong>anonymized</strong> (your name and account link removed) rather than erased, so the other participant's own conversation history isn't destroyed.</li>
   </ul>
 
   <h2 id="security">6. How we protect your data</h2>
-  <p>Data in transit between the App and our servers is encrypted (HTTPS/TLS). Access is governed by server-side security rules built on least-privilege: only you can read your private messages; only the verification team can open submitted ID documents; only payment reviewers can see receipts; sensitive state changes (approving payments, deleting accounts) are performed exclusively by server-side functions after an administrator's explicit, logged action — never trusted from the app alone. No system is 100% secure, but our design assumes that and limits what any single point of failure can expose.</p>
+  <p>Data in transit between the App and our servers is encrypted (HTTPS/TLS). Access is governed by server-side security rules built on least-privilege: only you can read your private messages; only the verification team can open submitted ID documents and selfies; only authorised staff can see device and location records, and every time they open them it is logged; only payment reviewers can see receipts; sensitive state changes (approving payments, deleting accounts) are performed exclusively by server-side functions after an administrator's explicit, logged action — never trusted from the app alone. No system is 100% secure, but our design assumes that and limits what any single point of failure can expose.</p>
 
   <h2 id="rights">7. Your rights & choices</h2>
   <ul>
     <li><strong>Access & correction</strong> — edit your profile directly in the App (Settings → Profile), or request a correction via the <a href="/ayemarket/gdpr/">Privacy Rights</a> page.</li>
     <li><strong>Data export</strong> — request a copy of your data via the <a href="/ayemarket/gdpr/">Privacy Rights</a> page.</li>
     <li><strong>Deletion</strong> — permanently delete your account via <a href="/ayemarket/account-deletion/">Account Deletion</a>.</li>
-    <li><strong>Location permission</strong> — revocable anytime in your device's app settings.</li>
+    <li><strong>Location permission</strong> — optional, and revocable anytime in your device's app settings. Declining never stops you using the App.</li>
     <li><strong>Notifications</strong> — controllable in Settings → Notifications, or at the OS level.</li>
     <li><strong>Marketing</strong> — we don't send marketing emails; if that ever changes, you'll be able to opt out.</li>
   </ul>
